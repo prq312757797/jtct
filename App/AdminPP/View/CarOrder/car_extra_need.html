@@ -1,0 +1,61 @@
+<include file="Public/head" />
+<include file="Public/menu_car_order" />
+<div id="content">
+	<div id="content-header">
+		<h1>订单备注管理</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="{:U('CarOrder/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 订单管理</a>
+		<a href="#" class="current">订单备注管理</a>
+
+		<a href="car_extra_need_add" class="add_button"><button class="btn" >+添加订单备注</button></a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>订单备注管理</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th><input type="checkbox">编号</th>
+								<th>内容</th>
+								<th>操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							<foreach name="info" item="v">
+								<tr>
+									<td>{$v.id}</td>
+									<td>{$v.title}</td>
+
+									<td>
+										<a class="btn btn-default" title="编辑" alt="编辑" href="car_extra_need_edit/id/{$v['id']}" >
+											编辑
+										</a>
+										<a class="btn btn-danger" style="color:white;"  title="放回收站" alt="放回收站" href="car_extra_need_delete/id/{$v['id']}" onclick="if(confirm('确认移到回收站吗？')==false)return false;">
+											删除
+										</a>	
+									</td>
+								</tr>
+							</foreach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<include file="Public/foot" />
+
+

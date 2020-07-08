@@ -1,0 +1,55 @@
+<div class="tabT">
+	
+	 <if condition="$head_menu eq 1">
+	 	<ul class="tab">
+				<a href="{:U('Index/index')}"><li>商城概述</li></a>
+				<a href="{:U('Index/huandeng')}"><li>幻灯片</li></a>
+				<a href="{:U('Index/daohang')}"><li>导航图标</li></a>
+				<a href="{:U('Index/ad')}"><li>广告</li></a>
+				<a href="{:U('IndexZiXun/artical')}"><li>文章管理</li></a>
+				<a href="{:U('Index/index_re')}"><li>首页推荐</li></a>
+			<!--<a href="peisong"><li>配送方式</li></a>
+				<a href="gonggao"><li>公告管理</li></a>
+				<a href="pingjia"><li>评价管理</li></a>
+				<a href="tuihuo_add"><li>退货地址管理</li></a> -->
+			</ul>
+	 </if>
+	  <if condition="$head_menu eq 5">
+	 
+	 	<ul class="tab">
+				<a href="{:U('IndexZiXun/index')}"><li>小程序概述</li></a>
+				<!--<a href="{:U('IndexZiXun/ad')}"><li>广告</li></a>-->
+				<a href="{:U('IndexZiXun/huandeng')}"><li>幻灯片</li></a>
+				<a href="{:U('IndexZiXun/daohang')}"><li>导航图标</li></a>
+				<a href="{:U('IndexZiXun/artical')}"><li>文章管理</li></a>
+				<!--<a href="{:U('IndexZiXun/good_news')}"><li>好消息</li></a>-->
+				<!--<a href="{:U('IndexZiXun/announcement')}"><li>资讯公告</li></a>-->
+		</ul>
+	 	
+	 </if>
+	 <if condition="$head_menu eq 6">
+	 	 	<!--服务版-->
+	 	<ul class="tab">
+				<a href="{:U('IndexFuWu/index')}"><li>小程序概述</li></a>
+				<a href="{:U('IndexFuWu/ad')}"><li>广告</li></a>
+				<a href="{:U('IndexFuWu/huandeng')}"><li>幻灯片</li></a>
+			 <if condition="$program_id eq JT201711081030423109">
+			 	<!--无痛消费-->
+			 	<a href="{:U('IndexZiXun/artical')}"><li>公告文章</li></a>
+			 </if>
+				<!--<a href="{:U('IndexFuWu/daohang')}"><li>导航图标</li></a>-->
+				<!--<a href="{:U('IndexZiXun/good_news')}"><li>好消息</li></a>-->
+				<!--<a href="{:U('IndexZiXun/announcement')}"><li>资讯公告</li></a>-->
+		</ul>
+	 	
+	 </if>	
+	 <if condition="$program_id eq JT201712251106263726">
+		    	<!----------------------------宜拖车---------------------------------------------->
+		    	<!----------------------------宜拖车---------------------------------------------->
+		    	<!----------------------------宜拖车---------------------------------------------->
+		    <ul class="tab">
+				<a href="{:U('Index/index')}"><li>小程序概述</li></a>		
+			
+			</ul>
+		   </if>
+		</div>

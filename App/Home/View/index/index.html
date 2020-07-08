@@ -1,0 +1,83 @@
+
+	<include file="Public/head" />
+		<!--选项卡-->
+		<div class="tab" js-tab="1" style="width:80%;height:auto;margin:10px auto;background-color:#CAE1FF;padding:0px 20px;border-radius:6px;">
+			<div class="tab-cont">
+				<h3 style="padding:20px;border-bottom:1px dashed #000000;">账户信息</h3>			
+				<form id="form" name="form" action="{:U('Index/change_psw')}" method="post" class="form-horizontal form">
+					<div class="form-group" style="margin-top:40px;">
+						<label class="col-xs-12 col-sm-3 col-md-2 control-label">管理员帐号:</label>
+						<div class="col-sm-9 col-xs-12">								
+							<input type="text" class="form-control" value="{$agency["user_name"]}">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-3 col-md-2 control-label">管理员密码:</label>
+						<div class="col-sm-9 col-xs-12">
+							<input type="password" name="psw_old" class="form-control"  >
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-3 col-md-2 control-label" style="color:red;">新密码:</label>
+						<div class="col-sm-9 col-xs-12">
+							<input type="password" name="psw_new_1" class="form-control"  >
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-3 col-md-2 control-label" style="color:red;">确认密码:</label>
+						<div class="col-sm-9 col-xs-12">
+							<input type="password" name="psw_new_2" class="form-control" value="" >
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-3 col-md-2 control-label">服务商:</label>
+						<div class="col-sm-9 col-xs-12">
+							<p class="form-control-static">{$agency["user_company"]}</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-3 col-md-2 control-label"></label>
+						<div class="col-sm-9 col-xs-12" style="margin:10px; 0px;">
+							<input name="submit" id="submit" type="submit" value="确认提交" class="btn btn-primary">
+						</div>
+					</div>
+				</form>			
+				<!--交易安全-->				
+				<h3 style="padding:20px;border-bottom:1px dashed #000000;">交易安全</h3>
+				<form id="zfform" name="zfform" action="{:U('Index/change_psw_deal')}" method="post" class="form-horizontal form">
+					<div class="form-group" style="margin-top:40px;">
+						<p class="col-xs-12 col-sm-3 col-md-2 control-label">管理员帐号:</p>
+						<div class="col-sm-9 col-xs-12">
+							<input type="text"  value="{$agency["user_name"]}" class="form-control" readonly="">
+						</div>
+					</div>
+					<div class="form-group">
+						<p class="col-xs-12 col-sm-3 col-md-2 control-label">原交易密码:</p>
+						<div class="col-sm-9 col-xs-12">
+							<input type="password" name="user_zfpsw_old" class="form-control" >
+						</div>
+					</div>
+					<div class="form-group">
+						<p class="col-xs-12 col-sm-3 col-md-2 control-label">新交易密码:</p>
+						<div class="col-sm-9 col-xs-12">
+							<input type="password" name="user_zfpsw_new_1" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<p class="col-xs-12 col-sm-3 col-md-2 control-label">确认交易密码:</p>
+						<div class="col-sm-9 col-xs-12">
+							<input type="password" name="user_zfpsw_new_2" class="form-control" value="">
+						</div>
+					</div>
+					<div class="form-group">
+						<p class="col-xs-12 col-sm-3 col-md-2 control-label"></p>
+						<div class="col-sm-9 col-xs-12" style="margin:20px; 0px;">
+							<input name="zfsubmit" id="zfsubmit" type="submit" value="确认提交" class="btn btn-primary">
+						</div>
+					</div>
+				</form>								
+			</div>			
+		</div>
+		<include file="Public/foot" />
+	</body>
+</html>

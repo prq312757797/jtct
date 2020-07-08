@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>互联网生态圈营销中心</title>
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="__ROOT__/Public/new0127/css/selfcss.css" />
+		<link rel="stylesheet" href="__ROOT__/Public/new0127/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="__ROOT__/Public/new0127/css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" href="__ROOT__/Public/new0127/css/fullcalendar.css" />	
+		<link rel="stylesheet" href="__ROOT__/Public/new0127/css/unicorn.main.css" />
+		<link rel="stylesheet" href="__ROOT__/Public/new0127/css/unicorn.grey.css" class="skin-color" />
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+	<body>
+		<!-- 代码 开始 -->
+		<div id="header"><h1><a href="#">互联网生态圈营销中心</a></h1></div>
+        
+		<div id="user-nav" class="w80 navbar navbar-inverse ">
+            <!--================商城版==============开始==============-->
+<!--
+JT201808090855119076 ：能量ktv 
+JT201807260907385777 ：家庭教育  <if condition="$program_id eq JT201807260907385777">课程<else/>商品</if>
+-->
+            <if condition="$head_menu eq 1">
+            	<ul class="w100 nav btn-group ">
+	                <li class="btn btn-inverse"><a title="" href="{:U('Index/index')}"><i class="icon icon-home"></i> 
+	                	<span class="text">首页</span></a></li>
+	                <if condition="($program_id neq JT201808090855119076) & ($program_id neq JT201807260907385777)">	
+	          	    	<li class="btn btn-inverse"><a title="" href="{:U('Goods/selling')}"><i class="icon icon-shopping-cart"></i>
+	                	<span class="text">商品</span></a></li>
+	          	    </if>	
+	   				<if condition="($program_id eq JT201807260907385777)">	
+	          	    	<li class="btn btn-inverse"><a title="" href="{:U('Goods/selling')}"><i class="icon icon-shopping-cart"></i>
+	                	<span class="text">课程</span></a></li>
+	          	    </if>
+	                <if condition="($program_id eq JT201806151732369242)">	
+	                	<!--百业联盟-->
+	          	    	<li class="btn btn-inverse"><a title="" href="{:U('Plan/index')}"><i class="icon icon-shopping-cart"></i>
+	                	<span class="text">方案管理</span></a></li>
+	          	    </if>
+	                
+<if condition="$program_id eq JT201808090855119076">
+					<li class="btn btn-inverse"><a title="" href="{:U('Goods/selling')}"><i class="icon icon-shopping-cart"></i>
+	                	<span class="text">房台套餐</span></a></li>
+	 				<li class="btn btn-inverse"><a title="" href="{:U('Goodsbear/selling')}"><i class="icon icon-shopping-cart"></i>
+	                	<span class="text">在线酒水</span></a></li>	
+	                <li class="btn btn-inverse"><a title="" href="{:U('Goodsavec/selling')}"><i class="icon icon-shopping-cart"></i>
+	                	<span class="text">存酒管理</span></a></li>	
+	                <li class="btn btn-inverse"><a title="" href="{:U('Room/index')}"><i class="icon icon-shopping-cart"></i>
+	                	<span class="text">歌房</span></a></li>	
+	                <li class="btn btn-inverse"><a title="" href="{:U('Assistant/assistant_is')}"><i class="icon icon-shopping-cart"></i>
+	                	<span class="text">员工管理</span></a></li>	
+	                <!--<li class="btn btn-inverse"><a title="" href="{:U('Vip/index')}"><i class="icon icon-shopping-cart"></i>
+	                	<span class="text">会员管理</span></a></li>	-->
+	                <li class="btn btn-inverse"><a title="" href="{:U('Members/index')}"><i class="icon icon-user"></i> 
+	                	<span class="text">会员</span></a></li>
+	                <li class="btn btn-inverse"><a title="" href="{:U('Warehouse/canggui')}"><i class="icon icon-user"></i> 
+	                	<span class="text">仓库管理</span></a></li>
+</if>	
+<if condition="$program_id neq JT201808090855119076">               
+	                <li class="btn btn-inverse"><a title="" href="{:U('Members/index')}"><i class="icon icon-user"></i> 
+	                	<span class="text">会员</span></a></li>
+</if>	          	   
+<if condition="$program_id eq JT201710101645145951">     
+					<!--兰茜美容美甲-->
+	                <li class="btn btn-inverse"><a title="" href="{:U('Video/index')}"><i class="icon icon-user"></i> 
+	                	<span class="text">视频专区</span></a></li>
+	                <li class="btn btn-inverse"><a title="" href="{:U('Rebate/index')}"><i class="icon icon-user"></i> 
+	                	<span class="text">抵用券</span></a></li>
+</if>	
+<if condition="$program_id eq JT201810111844206577">     
+					<!--珠宝-->
+	                <li class="btn btn-inverse"><a title="" href="{:U('Gold/index')}"><i class="icon icon-user"></i> 
+	                	<span class="text">实时金价</span></a></li>
+</if>	
+	          	    <if condition="($program_id neq JT201807211029526361) && ($program_id neq JT201808090855119076)">
+	          	    	<li class="btn btn-inverse"><a title="" href="{:U('Order/index')}"><i class="icon icon-list-alt"></i> 
+	          	    	<span class="text">订单</span></a></li>
+	          	    </if>
+	          	    <if condition="$program_id eq JT201807211029526361">	
+	          	    	<li class="btn btn-inverse"><a title="" href="{:U('Booking/index')}"><i class="icon icon-list-alt"></i> 
+	          	    	<span class="text">订单</span></a></li>
+	          	    </if>	
+	          	    <if condition="$program_id eq JT201808090855119076">
+	          	    	<li class="btn btn-inverse"><a title="" href="{:U('Orderktvroom/index')}"><i class="icon icon-list-alt"></i> 
+	          	    	<span class="text">房台套餐订单</span></a></li>
+	          	    	<li class="btn btn-inverse"><a title="" href="{:U('Orderktvonlinebeer/index')}"><i class="icon icon-list-alt"></i> 
+	          	    	<span class="text">在线酒水订单</span></a></li>
+	          	    	
+	          	    </if>
+	          	    	
+	          	<!--<if condition="($program_id neq JT201709251030119718) and ($program_id neq JT201711041549052325) and ($program_id neq JT201710161553526657)">  	
+	          	    <li class="btn btn-inverse"><a title="" href="{:U('Preferential/index')}"><i class="icon icon-gift"></i> 
+	          	    	<span class="text">营销</span></a></li>	
+	            </if> -->
+	            <if condition="$duodian eq 1">    	
+	                <li class="btn btn-inverse"><a title="" href="{:U('Merch/index')}"><i class="icon icon-hdd"></i> 
+	                	<span class="text">多商户</span></a></li>
+	            </if>  
+	            <if condition="$fenxiao eq 1">
+	        	    <li class="btn btn-inverse"><a title="" href="{:U('Distribution/index')}"><i class="icon icon-fullscreen"></i> 
+	        	    	<span class="text">分销</span></a></li>
+	            </if>
+	            <if condition="$store['is_submit_contect'] eq 1">
+	        	    <li class="btn btn-inverse"><a title="" href="{:U('FuWucontect/index')}"><i class="icon icon-fullscreen"></i> 
+	        	    	<span class="text">联系管理</span></a></li>
+	            </if>
+	         	   <li class="btn btn-inverse"><a title="" href="{:U('Set/index')}"><i class="icon  icon-asterisk"></i> 
+	                	<span class="text">设置</span></a></li>
+	                <li class="fl_r btn btn-inverse "><a title="" href="{:U('Login/logout')}"><i class="icon  icon-share-alt"></i> 
+	                	<span class="text">退出</span></a></li>
+	            </ul>
+            </if>
+            <!--================商城版==============结束==============-->	
+            
+            <!--================资讯版==============开始==============-->
+             <if condition="$head_menu eq 5">
+             	<ul class="w100 nav btn-group ">
+	                <li class="btn btn-inverse"><a title="" href="{:U('IndexZiXun/index')}"><i class="icon icon-home"></i> 
+	                	<span class="text">首页</span></a></li>
+	            <if condition="$program_id eq JT201710160953394557"> 
+	            	<!--大创业平台-->
+	                <li class="btn btn-inverse"><a title="" href="{:U('InfoZiXun/caigou')}"><i class="icon icon-shopping-cart"></i>
+	                	<span class="text">信息管理</span></a></li>
+	            <else/>
+	            	<li class="btn btn-inverse"><a title="" href="{:U('Case/index')}"><i class="icon icon-shopping-cart"></i>
+	                	<span class="text">信息管理</span></a></li>
+	            </if>    	
+	                <li class="btn btn-inverse"><a title="" href="{:U('Members/index')}"><i class="icon icon-user"></i> 
+	                	<span class="text">会员</span></a></li>
+	            <if condition="$duodian eq 1">    	
+	                <li class="btn btn-inverse"><a title="" href="{:U('Merch/index')}"><i class="icon icon-hdd"></i> 
+	                	<span class="text">多商户</span></a></li>
+	            </if>  
+	            <if condition="$fenxiao eq 1">
+	        	    <li class="btn btn-inverse"><a title="" href="{:U('Distribution/index')}"><i class="icon icon-fullscreen"></i> 
+	        	    	<span class="text">分销</span></a></li>
+	             </if>
+	                <li class="btn btn-inverse"><a title="" href="{:U('Set/index')}"><i class="icon  icon-asterisk"></i> 
+	                	<span class="text">设置</span></a></li>
+	                <li class="fl_r btn btn-inverse "><a title="" href="{:U('Login/logout')}"><i class="icon  icon-share-alt"></i> 
+	                	<span class="text">退出</span></a></li>
+	            </ul>
+            </if>
+            <!--================资讯版==============结束==============-->
+            
+            <!--================生活服务版==============开始==============-->
+             <if condition="$head_menu eq 6">
+            	<ul class="w100 nav btn-group ">
+                <li class="btn btn-inverse"><a title="" href="{:U('IndexFuWu/index')}"><i class="icon icon-home"></i> 
+                	<span class="text">首页</span></a></li>
+		     	<li class="btn btn-inverse"><a title="" href="{:U('Goods/selling')}"><i class="icon icon-shopping-cart"></i>
+                	<span class="text">商品</span></a></li>
+				<li class="btn btn-inverse"><a title="" href="{:U('Order/index')}"><i class="icon icon-list-alt"></i> 
+          	    	<span class="text">订单</span></a></li>
+                
+                <li class="btn btn-inverse"><a title="" href="{:U('FuWucontect/index')}"><i class="icon icon-hdd"></i> 
+                	<span class="text">联系管理</span></a></li>
+<if condition="$program_id neq JT201711081030423109">
+		     	<li class="btn btn-inverse"><a title="" href="{:U('FuWuinfo/tiezi')}"><i class="icon icon-fullscreen"></i> 
+        	    	<span class="text">帖子</span></a></li>
+                <li class="btn btn-inverse"><a title="" href="{:U('Members/index')}"><i class="icon icon-user"></i> 
+                	<span class="text">会员</span></a></li>
+		     	
+          	    <li class="btn btn-inverse"><a title="" href="{:U('FuWurendezvous/index')}"><i class="icon icon-fullscreen"></i> 
+        	    	<span class="text">预约</span></a></li>
+        	    <li class="btn btn-inverse"><a title="" href="{:U('Preferential/index')}"><i class="icon icon-book"></i> 
+                	<span class="text">营销</span></a></li>
+</if>                  	
+ 
+        	    <if condition="$duodian eq 1">    	
+	                <li class="btn btn-inverse"><a title="" href="{:U('Merch/index')}"><i class="icon icon-hdd"></i> 
+	                	<span class="text">多商户</span></a></li>
+	            </if>  
+	            <if condition="$fenxiao eq 1">
+	        	    <li class="btn btn-inverse"><a title="" href="{:U('Distribution/index')}"><i class="icon icon-fullscreen"></i> 
+	        	    	<span class="text">分销</span></a></li>
+	             </if>	
+                <li class="btn btn-inverse"><a title="" href="{:U('Set/index')}"><i class="icon  icon-asterisk"></i> 
+                	<span class="text">设置</span></a></li>
+                <li class="fl_r btn btn-inverse "><a title="" href="{:U('Login/logout')}"><i class="icon  icon-share-alt"></i> 
+                	<span class="text">退出</span></a></li>
+            </ul>
+            </if>
+            <!--================生活服务版==============结束==============-->
+            
+            <!--================宜拖车==================开始==============-->
+            <if condition="$program_id eq JT201712251106263726">
+            	<ul class="w100 nav btn-group ">
+                <li class="btn btn-inverse"><a title="" href="{:U('Index/index')}"><i class="icon icon-home"></i> 
+                	<span class="text">首页</span></a></li>
+                <li class="btn btn-inverse"><a title="" href="{:U('CarManager/index')}"><i class="icon icon-shopping-cart"></i>
+                	<span class="text">车辆管理</span></a></li>
+                <li class="btn btn-inverse"><a title="" href="{:U('CarMembers/index')}"><i class="icon icon-user"></i> 
+                	<span class="text">会员管理</span></a></li>
+          	    <li class="btn btn-inverse"><a title="" href="{:U('CarOrder/index')}"><i class="icon icon-list-alt"></i> 
+          	    	<span class="text">订单管理</span></a></li>
+                <li class="btn btn-inverse"><a title="" href="{:U('CarServers/car_num')}"><i class="icon icon-book"></i> 
+                	<span class="text">服务管理</span></a></li>
+                <li class="btn btn-inverse"><a title="" href="{:U('Carinfo/info_list')}"><i class="icon icon-hdd"></i> 
+                	<span class="text">平台资讯</span></a></li>
+                <li class="btn btn-inverse"><a title="" href="{:U('Set/index')}"><i class="icon  icon-asterisk"></i> 
+                	<span class="text">设置</span></a></li>
+                <li class="fl_r btn btn-inverse "><a title="" href="{:U('Login/logout')}"><i class="icon  icon-share-alt"></i> 
+                	<span class="text">退出</span></a></li>
+            </ul>
+            </if><!--================宜拖车==============结束==============-->
+            
+            <!--================美牙管理培训中心==================开始==============-->
+            <if condition="$program_id eq JT201805140917546604">
+            	<ul class="w100 nav btn-group ">
+  
+                <li class="btn btn-inverse"><a title="" href="{:U('Set/my_indexedit')}"><i class="icon  icon-asterisk"></i> 
+                	<span class="text">设置</span></a></li>
+                <li class="fl_r btn btn-inverse "><a title="" href="{:U('Login/logout')}"><i class="icon  icon-share-alt"></i> 
+                	<span class="text">退出</span></a></li>
+            </ul>
+            </if><!--================美牙管理培训中心==============结束==============-->
+            
+        </div>     

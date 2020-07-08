@@ -1,0 +1,45 @@
+<include file="Public/head" />
+<div class="contert">
+			<h2 style="float:left;">充值记录</h2>		
+		    <table class="table table-hover">
+				<thead>
+				    <tr style="width:100%;">
+                        <th >编号</th>
+						<th >流水号</th>
+                        <th >充值金额</th>
+                        <th >充值时间</th>
+                        <th >服务商公司</th>
+						<th >备注</th>
+						<th >操作人</th>
+                        <th >操作</th>
+                    </tr>
+				</thead>
+				<tbody>
+				 <foreach name="record_cz" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+							 <td>{$v.running_num}</td>
+                            <td>{$v.recharge_gold}</td>
+							 <td>
+							 	<?=date("Y-m-d H:i:s",$v['recharge_time']);?>
+							 </td>
+                            <td>{$v.user_company}</td>
+							<td>{$v.content}</td>
+							<td>{$v.man_action}</td>
+                            <td>
+								<!--<a  title="修改" alt="修改" href="edit/user_id/{$v['user_id']}">修改</a>-->
+								<!--<a  title="修改" alt="修改" href="{:U('Servicer/edit'),array('user_id'=>$v['user_id'])}">修改</a>-->
+								<!--<a  title="修改" alt="修改" href="__ROOT__/adz.php/Servicer/edit/user_id/{$v['user_id']}">修改</a>-->
+								<a  title="删除" alt="删除" href="__ROOT__/adz.php/Servicer/delete3/id/{$v['id']}}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            </td>
+                        </tr>
+                    </foreach>	   
+				</tbody>					
+			</table>
+			<!--<button class="btn btn-primary" style="float:right;">返回</button>	-->		
+<a class="btn btn-primary" href="__ROOT__/adz.php/Servicer/index">返回</a>	 
+</div>
+		<div class="pages" style=" width: 100%;
+             margin-left: auto;    margin-top: 21px;text-align:center;
+             margin-right: auto;"> {$pages}</div>
+</div>

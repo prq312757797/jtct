@@ -1,0 +1,60 @@
+<include file="Public/head" />
+<style>
+td{
+text-align:center;
+}
+</style>
+<div style="width:100%;border:1px solid red;min-height:400px;">
+	<h4>服务商管理<notempty name="title">--</notempty>{$title}</h4>
+	<if condition="$show_add eq 1">
+		<a href="add">&nbsp&nbsp添加服务商</a><div style="height:12px;clear:both;"></div>
+	</if>
+<form method="post">
+            <table>
+                <tbody >
+                    <tr style="width:100%;">
+                        <th style="width:15%;">编号</th>
+						<th style="width:15%;">昵称</th>
+                        <th style="width:21%;">最后登录时间</th>
+                        <th style="width:15%;">最后登录ip</th>
+						<th style="width:15%;">状态</th>
+                        <th style="width:15%;">操作</th>
+                    </tr>
+                    <foreach name="user_info" item="v">
+                        <tr>
+                            <td>{$v.admin_id}</td>
+							 <td>{$v.admin_name}</td>
+                           
+							 <td>
+								<?=date("Y-m-d H:i:s",$v['admin_lasttime']);?>
+					
+							 </td>
+                            <td>{$v.admin_lastip}</td>
+						 <td>
+						 <if condition="$v.lock eq 1">未锁定</if>
+						 	 <if condition="$v.lock eq 2">锁定</if>
+						 </td>
+                            <td>
+								<!--<a  title="修改" alt="修改" href="edit/user_id/{$v['user_id']}">修改</a>-->
+								<!--<a  title="修改" alt="修改" href="{:U('Servicer/edit'),array('user_id'=>$v['user_id'])}">修改</a>-->
+								 <if condition="$v.lock eq 1">
+									<a  title="锁定" alt="锁定" href="__ROOT__/index.php/Admin/Members/lock/admin_id/{$v['admin_id']}">锁定</a>
+								 </if>
+								 <if condition="$v.lock eq 2">
+									<a  title="解锁" alt="解锁" href="__ROOT__/index.php/Admin/Members/lockout/admin_id/{$v['admin_id']}">解锁</a>
+								 </if>
+								  <if condition="$lever eq 1">
+								<a  title="改密" alt="改密" href="__ROOT__/index.php/Admin/Members/edit/admin_id/{$v['admin_id']}">改密码</a>
+								</if>
+								<a  title="删除" alt="删除" href="delete/admin_id/{$v['admin_id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            
+							</td>
+                        </tr>
+                    </foreach>
+                </tbody>
+            </table>
+</form>
+	<div class="pages" style=" width: 100%;
+             margin-left: auto;    margin-top: 21px;text-align:center;
+             margin-right: auto;"> {$pages}</div>
+</div>

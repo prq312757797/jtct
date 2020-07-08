@@ -1,0 +1,58 @@
+<include file="Public/head" />
+<div class="contert">	
+			<h2>服务商充值</h2>
+			<form class="form-horizontal" role="form" action="__ROOT__/adz.php/Servicer/top_up_add/user_id/{$v['user_id']}" method="post">
+				<div class="form-group">
+					<label for="firstname" class="col-sm-1 control-label">服务商账号：</label>
+					<div class="col-sm-11">
+						<input value="{$info.user_name}" readonly type="text" class="form-control" id="firstname" placeholder="请输入服务商账号"> 							  
+					</div>
+				</div>																						
+				
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">服务商公司:</label>
+					<div class="col-sm-11">
+						<input value="{$info.user_company}" readonly type="text" class="form-control" id="lastname" placeholder="请输入公司名">								  
+					</div>
+				</div>	
+				
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">当前余额:</label>
+					<div class="col-sm-11">
+						<input value="{$info.user_balance}" readonly type="text" class="form-control" id="lastname">								  
+					</div>
+				</div>	
+				
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">联系电话:</label>
+					<div class="col-sm-11">
+						<input value="{$info.user_tel}" readonly type="text" class="form-control" id="lastname" placeholder="请输入您的手机号">								  
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">充值金额:</label>
+					<div class="col-sm-11">
+						<input name="price_add" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9]/g,'')"   type="text" class="form-control" id="lastname">								  
+					<input type="hidden" name="user_id"   value="{$info.user_id}">  
+					<input type="hidden" name="man_action"   value="{$man_action}"> 
+					<input type="hidden" name="running_num"   value="{$running_num}"> 
+					<input type="hidden" name="user_balance"  value="{$info.user_balance}">  
+					</div>
+				</div>	
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">备注:</label>
+					<div class="col-sm-11">
+						<textarea name="content" class="form-control" rows="3"></textarea>								  
+					</div>
+				</div>
+				<div style="float:right;">
+				<!--<button type="button" class="btn btn-default">返回</button>-->
+				<a class="btn btn-default" href="__ROOT__/adz.php/Servicer/index">返回</a>
+				<button type="submit" class="btn btn-primary">确认充值</button>								
+			</div>
+			</form>							
+				
+															
+		</div>
+

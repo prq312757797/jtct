@@ -1,0 +1,128 @@
+<include file="Public/head" />
+<include file="Public/menu_members" />
+<script src="__ROOT__/Public/ys0925/jquery.js"></script>
+<style>
+	.fileinput-button {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.fileinput-button input{
+		position:absolute;
+		right: 0px;
+		top: 0px;
+		opacity: 0;
+		-ms-filter: 'alpha(opacity=0)';
+		font-size: 200px;
+	}
+</style>
+
+<div id="content">
+	<div id="content-header">
+		<h1>会员等级管理</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="{:U('Members/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 会员</a>
+		<a href="{:U('Members/members_lever')}" class="tip-bottom">会员等级</a>
+		<a href="#" class="current">会员等级管理</a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-align-justify"></i>
+								</span>
+						<h5>会员等级管理</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<form action="{:U('Members/run_members_lever_add',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+						
+
+						<div class="control-group">
+							<label class="control-label">等级数</label>
+							<div class="controls">
+								<input type="text" name="member_level" value="{$info['member_level']}" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">等级名称</label>
+							<div class="controls">
+								<input type="text"  name="member_level_name" value="{$info['member_level_name']}"/>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">升级条件</label>
+							<div class="controls">
+								<input type="text"  name="condition" value="{$info['condition']}"/>
+								<span class="help-block">（消费多少金额）</span>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">折扣数</label>
+							<div class="controls">
+								<input type="text"  name="discount" value="{$info['discount']}"/>
+								<span class="help-block">0.1到10之间的数字</span>
+							</div>
+						</div>
+						
+						
+						<div class="control-group">
+							<label class="control-label">状态</label>
+							<empty name="info">
+								<div class="controls">
+									<label class="radio-inline is_show">
+										<input type="radio" name="state" value="1" checked=""> 使用
+									</label>
+									<label class="radio-inline is_show">
+										<input type="radio" name="state" value="0"> 隐藏
+									</label>
+								</div>
+								<else/>
+								<if condition="$info.state eq 1">
+									<div class="controls">
+										<label class="radio-inline is_show">
+											<input type="radio" name="state" value="1" checked=""> 使用
+										</label>
+										<label class="radio-inline is_show">
+											<input type="radio" name="state" value="0"> 隐藏
+										</label>
+									</div>
+								</if>
+								<if condition="$info.state eq 0">
+									<div class="controls">
+										<label class="radio-inline is_show">
+											<input type="radio" name="state" value="1" > 使用
+										</label>
+										<label class="radio-inline is_show">
+											<input type="radio" name="state" value="0" checked=""> 隐藏
+										</label>
+									</div>
+								</if>
+							</empty>
+
+						</div>
+						<div class="form-actions">
+							<button type="submit" class="btn btn-primary">保存</button>
+							<button type="button" onclick="history.back()" class="btn btn-primary">返回列表</button>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--原来的 modal 框位置-->
+<include file="Public/self_url" />
+<include file="Public/foot" />
+<include file="Public/image_yl" />
+
+
+
+
+

@@ -1,0 +1,120 @@
+<include file="Public/head" />
+<include file="Public/menu" />
+<script src="__ROOT__/Public/ys0925/jquery.js"></script>
+<script src="__ROOT__/Public/ys0925/bootstrap.min.js"></script>
+<style>
+        .fileinput-button {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .fileinput-button input{
+            position:absolute;
+            right: 0px;
+            top: 0px;
+            opacity: 0;
+            -ms-filter: 'alpha(opacity=0)';
+            font-size: 200px;
+        }
+    </style>
+<div id="content">
+			<div id="content-header">
+				<h1>幻灯片编辑</h1>
+			</div>
+			<div id="breadcrumb">
+				<a href="{:U('Index/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+				<a href="{:U('Index/huandeng')}" class="tip-bottom">幻灯片管理</a>
+				<a href="#" class="current">幻灯片编辑</a>
+			</div>
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="widget-box">
+					<div class="tabs-container">
+	                <div class="tabs">	
+							<div class="widget-title">
+								<span class="icon">
+									<i class="icon-align-justify"></i>									
+								</span>
+
+								<ul class="nav nav-tabs"style="height:60px;width:100%;">
+									<li class="active">
+										<a data-toggle="tab" href="#tab-01" aria-expanded="true"> 基本</a>
+									</li>
+									<li class="">
+										<a data-toggle="tab" href="#tab-02" aria-expanded="false">多商户端</a>
+									</li>	
+									<li class="">
+										<a data-toggle="tab" href="#tab-03" aria-expanded="false">入驻申请协议</a>
+									</li>	
+								</ul>
+							</div>
+							<!--开始-->
+							<div class="tab-content">						
+									<div id="tab-01" class="tab-pane active">
+									      <div class="widget-content nopadding">
+											<form action="{:U('Index/run_huandeng_add',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+												<div class="control-group">
+													<label class="control-label">排1序</label>
+													<div class="controls">
+														<input type="text"  name="sort" value="<?php  echo empty($info['sort'])?1:$info['sort'];?>"/>
+														<span class="help-block">数字越小，排名越靠前</span>
+													</div>
+												</div>
+												<div class="form-actions">
+													<button type="submit" class="btn btn-primary">保存</button>
+												</div>
+											</form>
+										</div>
+									</div>
+									<div id="tab-02" class="tab-pane">
+									      <div class="widget-content nopadding">
+											<form action="{:U('Index/run_huandeng_add',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+												<div class="control-group">
+													<label class="control-label">排2序</label>
+													<div class="controls">
+														<input type="text"  name="sort" value="<?php  echo empty($info['sort'])?1:$info['sort'];?>"/>
+														<span class="help-block">数字越小，排名越靠前</span>
+													</div>
+												</div>
+												<div class="form-actions">
+													<button type="submit" class="btn btn-primary">保存</button>
+												</div>
+											</form>
+										</div>
+									</div>
+									<div id="tab-03" class="tab-pane">
+									      <div class="widget-content nopadding">
+											<form action="{:U('Index/run_huandeng_add',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+												<div class="control-group">
+													<label class="control-label">排3序</label>
+													<div class="controls">
+														<input type="text"  name="sort" value="<?php  echo empty($info['sort'])?1:$info['sort'];?>"/>
+														<span class="help-block">数字越小，排名越靠前</span>
+													</div>
+												</div>
+												<div class="form-actions">
+													<button type="submit" class="btn btn-primary">保存</button>
+												</div>
+											</form>
+										</div>
+									</div>
+									  
+								</div>
+				</div>
+			</div>
+							<!--结束-->
+						</div>						
+					</div>
+				</div>
+				
+			</div>
+		</div>
+				
+
+	
+	<include file="Public/foot" /> 
+	<include file="Public/image_yl" /> 
+</body>
+</html>

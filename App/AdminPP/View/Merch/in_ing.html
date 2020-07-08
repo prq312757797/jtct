@@ -1,0 +1,145 @@
+<include file="Public/head" />
+<include file="Public/menu_merch" />
+<div id="content">
+	<div id="content-header">
+		<h1>多商户管理</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 多商户管理</a>
+		<a href="#" class="current">推荐中商户</a>
+
+		<!--<span><a href="add_sh" class="add_button"><button class="btn" >+添加新商户</button></a></span>-->
+		
+		<button id="search_button" class="btn" style="float: right;margin-top: 3px;margin-left: -3px;margin-right: 22px;" >搜索</button>
+		<input type="text" placeholder="商户名称" value="{$his_str}" id="search_str" style="float: right;margin-top: 3px;" onBlur="this.value=ignoreSpaces(this.value);">
+	
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>推荐中商户</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th style="width:5%;">编号</th>
+								<th style="width:5%;">商户名称</th>
+								<if condition="$program_id eq JT201806151732369242">
+									<th style="width:5%;">管理员</th>
+								</if>
+
+								<th style="width:5%;">联系人</th>
+								<th style="width:5%;">申请时间</th>
+								<th style="width:5%;">到期时间</th>
+								<th style="width:5%;">状态</th>
+								<if condition="$program_id eq JT201806151732369242">
+									<th style="width:5%;">剩余消费券</th>
+								</if>
+								<th style="width:12%;">操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							<foreach name="list" item="v">
+								<tr>
+									<td>{$v.id} <if condition="$v['is_recommend'] eq 1"><span style="color:red;">（推荐中）</span></if></td>
+									<td>{$v.sh_name}</td>
+									<if condition="$program_id eq JT201806151732369242">
+										<td>
+											<notempty name="v['openid']">
+												<span style="color:red;">默认管理员：</span><br/>{$v['name_1']}
+												<else/>
+												<empty name="v['openid_manager']">
+													<a class="btn btn-default"  title="点击设置" alt="点击设置" href="manager_list?shop_id={$v['id']}&change_state=0" >
+														点击设置
+													</a>
+												<else/>
+												<span style="color:green;">设置管理员：</span><br/><a href="manager_list?shop_id={$v['id']}&change_state=1" onclick="if(confirm('确认修改设置的管理员吗？')==false)return false;">{$v.name_2}</a>
+											</empty>
+											</notempty>	
+										</td>
+									</if>
+								
+									<td>{$v.linkman}<br>{$v.tel}</td>
+									<td>
+										<?=date("Y-m-d H:i:s",$v['time_add']);?>
+									</td>
+									<td>
+										<?=date("Y-m-d H:i:s",$v['time_over']);?>
+									</td>
+									<td>
+										<if condition="$v.state eq 1">待审核</if>
+										<if condition="$v.state eq 2">待入驻</if>
+										<if condition="$v.state eq 3">入驻中</if>
+										<if condition="$v.state eq 4">禁止</if>
+
+									</td>
+									<if condition="$program_id eq JT201806151732369242">
+										<td>	
+											<if condition="$v['coupon_dsh_num'] eq 0">
+												<a class="btn btn-default enter_send_counpon" a="{$coupon_dsh_price}" b="{$v['id']}" >发放消费券</a>
+												<else/>{$v.coupon_dsh_num}
+											</if>
+										</td>
+									</if>
+									
+									<td>
+										<a class="btn btn-default"  title="查看详情" alt="查看详情" href="edit_sh/id/{$v['id']}" >
+											查看详情
+										</a>
+										<a class="btn btn-default" title="二维码" alt="二维码" href="qdcode/id/{$v['id']}" >
+											二维码
+										</a>	
+										<a class="btn btn-danger" style="color:white;"  title="暂停" alt="暂停" href="sh_stop_used/id/{$v['id']}" onclick="if(confirm('确认停止服务吗？')==false)return false;">
+											暂停
+										</a>
+									</td>
+								</tr>
+							</foreach>
+							</tbody>
+						</table>
+						<div class="pages self_css"> {$pages}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<include file="Public/send_coupon" />
+<include file="Public/foot" />
+<include file="Public/input_search" />
+<script>
+
+$(".enter_send_counpon").click(function(){
+	$("#add-event_send_coupon").click();	
+	$("#coupon_price").val($(this).attr("a"))
+	$("#dsh_id").val($(this).attr("b"))
+})
+	
+</script>
+<script>
+	$("#div_submit_send_coupon").click(function(){
+
+		if(!$("#send_coupon_num").val()){
+			alert("请填发放数量");
+			return false;
+		}
+		console.log($("#dsh_id").val())
+		$.post('__ROOT__/adp.php/Merch/send_coupon',{'dsh_id':$("#dsh_id").val(),'send_coupon_num':$("#send_coupon_num").val()},function(date){	
+			if(date.state==1){
+				alert("设置成功");
+			window.location.reload();
+			}else{
+				alert("退设置失败");
+			}
+        },'json');
+	})
+
+</script>	

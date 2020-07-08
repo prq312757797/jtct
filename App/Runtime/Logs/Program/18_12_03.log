@@ -1,0 +1,42 @@
+[ 2018-12-03T08:39:38+08:00 ] 127.0.0.1 /pg.php/Dsh/assistant_listktv?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0070s ]
+SQL: SELECT assistant_add.id,assistant_add.name,assistant_add.tel,assistant_add.time_registe,assistant_add.num,
+		time_stop,assistant_add.time_agree,assistant_add.shop_id,assistant_add.state,
+(case when assistant_add.num is not null then assistant_add.num else 0 end) as ass_num 
+
+FROM `assistant_add` 
+
+WHERE assistant_add.program_id = 'JT201808090855119076' [ RunTime:0.0070s ]
+
+[ 2018-12-03T08:39:38+08:00 ] 127.0.0.1 /pg.php/index/goods_fl_list_ktv?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0070s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( is_show=1 and attribute_style=1 and uid=1422 and program_id='JT201808090855119076' )  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0110s ]
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1449 ORDER BY sort  [ RunTime:0.0130s ]
+
+[ 2018-12-03T08:39:39+08:00 ] 127.0.0.1 /pg.php/Index/guanzhu_goods?program_id=JT201810111844206577&openid=oyuRG4zVOgrfba5Oetqz5B97KYGo&latitude=22.72174,114.06031&city=%E6%B7%B1%E5%9C%B3%E5%B8%82&district=%E5%AE%9D%E5%AE%89%E5%8C%BA
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `members` WHERE ( openid='oyuRG4zVOgrfba5Oetqz5B97KYGo'and program_id='JT201810111844206577' ) LIMIT 1   [ RunTime:0.2470s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `goods` WHERE `goods_state` = 1 AND `program_id` = 'JT201810111844206577' AND `fenlei_1` <> '' ORDER BY sort  [ RunTime:0.0770s ]
+NOTIC: [8] Undefined variable: guanzhu_3 D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 3961 行.
+NOTIC: [8] Undefined variable: guanzhu_4 D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 3961 行.
+

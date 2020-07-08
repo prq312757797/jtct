@@ -1,0 +1,82 @@
+<include file="Public/head" />
+<include file="Public/menu_merch" />
+<div id="content">
+	<div id="content-header">
+		
+		<if condition="$change_state eq 1">
+			<h1>修改商户管理员</h1><else/><h1>设置商户管理员</h1>
+		</if>
+	</div>
+	<div id="breadcrumb">
+		<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 多商户管理</a>
+		<a href="#" class="current">
+			<if condition="$change_state eq 1">
+				修改商户管理员<else/>设置商户管理员
+			</if>
+		</a>
+		
+
+		<!--<span><a href="add_sh" class="add_button"><button class="btn" >+添加新商户</button></a></span>-->
+		
+		<button id="search_button_dsh_manerger" class="btn" style="float: right;margin-top: 3px;margin-left: -3px;margin-right: 22px;" >搜索</button>
+		<input type="text" placeholder="会员昵称" value="{$his_str}" id="search_str" style="float: right;margin-top: 3px;" onBlur="this.value=ignoreSpaces(this.value);">
+	
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+						<span class="icon">
+							<i class="icon-th"></i>
+						</span>
+					
+						<if condition="$change_state eq 1">
+							<h5>修改商户管理员</h5><else/><h5>设置商户管理员</h5>
+						</if>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th style="width:5%;">编号</th>
+								<th style="width:5%;">会员</th>
+								<th style="width:5%;">是否是管理员</th>
+								<th style="width:12%;">操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							<foreach name="list" item="v">
+								<tr>
+									<td>{$v.id}</td>
+									<td style="text-align: left!important;"><img style="width:50px;height:50px;" src="{$v.head}"> {$v.nickname}</td>
+									<td>
+										<empty name="v['sh_name']">
+											非管理员
+											<else/>商户：{$v['sh_name']}
+										</empty>
+									</td>
+									<td>
+										<empty name="v['sh_name']">
+										<a class="btn btn-default"  title="查看详情" alt="查看详情" href="__ROOT__/adp.php/Merch/manager_set?openid={$v['openid']}&shop_id={$shop_id}" >
+											设置管理员
+										</a>	
+										</empty>
+									</td>
+								</tr>
+							</foreach>
+							</tbody>
+						</table>
+						<div class="pages self_css"> {$pages}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<include file="Public/foot" />
+<include file="Public/input_search" />
+

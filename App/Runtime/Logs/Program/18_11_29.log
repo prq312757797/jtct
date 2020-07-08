@@ -1,0 +1,28 @@
+[ 2018-11-29T17:36:35+08:00 ] 127.0.0.1 /pg.php/Index/build_order?array_id=10970%2C&openid=otNaZ5ZD2RtPzPSLFehvaD5oquFg&program_id=JT201710101645145951
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `man_shouhuo` [ RunTime:0.0070s ]
+SQL: SELECT `id`,`man_shouhuo`,`man_phone`,`man_address` FROM `man_shouhuo` WHERE `state` = 1 AND `is_used` = 1 AND `openid` = 'otNaZ5ZD2RtPzPSLFehvaD5oquFg' AND `program_id` = 'JT201710101645145951' LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`goods_id`,`buy_num`,`guige_key`,`guige_key02`,`guige_name02`,`guige_remark`,`guige_price`,`guige_name`,`is_use_guige`,`is_on_lever_price`,`members_price_discount` FROM `order` WHERE `id` IN ('10970','')  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`cost`,`kezhong`,`fenlei_1`,`fenlei_2`,`price_sell_1`,`price_sell_2`,`json_price_cl`,`guige_json_price_cl`,`fenlei_zhekou`,`is_on_mixpay`,`image`,`goods_title`,`price_sell`,`integral_sell`,`goods_subtitle01`,`goods_subtitle02`,`goods_subtitle03`,`goods_subtitle04`,`goods_subtitle05`,`is_on_wholesale_discount` FROM `goods` WHERE `id` = 494 LIMIT 1   [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: guige_cailiao D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 1546 行.
+SQL: SHOW COLUMNS FROM `preferential_record` [ RunTime:0.0080s ]
+SQL: SELECT preferential_record.id as pre_id,preferential_record.num,preferential_record.preferential_id,preferential.title,preferential.image,preferential.conditions,preferential.pre_price FROM `preferential_record` left join preferential ON preferential_record.preferential_id=preferential.id  WHERE ( preferential_record.openid='otNaZ5ZD2RtPzPSLFehvaD5oquFg' and preferential_record.program_id='JT201710101645145951' ) GROUP BY preferential_id  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `members` WHERE ( program_id='JT201710101645145951'and openid='otNaZ5ZD2RtPzPSLFehvaD5oquFg' ) LIMIT 1   [ RunTime:0.2440s ]
+SQL: SHOW COLUMNS FROM `member_level` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `member_level` WHERE ( id='' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `fx_goods_buy` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `fx_goods_buy` WHERE ( program_id='JT201710101645145951'and lever_id='0' )  [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: order_num D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 1575 行.
+NOTIC: [8] Undefined variable: arr1116 D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 1580 行.
+NOTIC: [8] Undefined variable: change_price D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 1580 行.
+SQL: SHOW COLUMNS FROM `rebate_record` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `rebate_record` WHERE ( state=0 and openid='otNaZ5ZD2RtPzPSLFehvaD5oquFg'and program_id='JT201710101645145951' ) LIMIT 1   [ RunTime:0.0070s ]
+

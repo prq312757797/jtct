@@ -1,0 +1,342 @@
+
+	<include file="Public/head" />     
+	<style>
+   *{padding:0px; margin:0px;}
+	a{text-decoration: none;}
+	#myModal .modal-body {padding: 10px 15px;}
+		#myModal .tab-pane {margin-top: 5px; min-height: 350px; max-height: 350px; overflow-y: auto;}
+		#myModal .page-header {padding: 9px 0; margin-bottom: 8px;}
+		#myModal .page-header h4 {margin: 0;}
+		#myModal .btn {margin-bottom: 3px;}
+		#myModal .modal-dialog {width: 880px;}
+		#myModal .line {border-bottom: 1px dashed #ddd; color: #999; height: 36px; line-height: 36px;}
+		#myModal .line .icon {height: 35px; width: 30px; position: relative; float: left;}
+		#myModal .line .icon.icon-1:before {content: ""; width: 10px; height: 10px; border: 1px dashed #ccc; position: absolute; top: 12px; left: 10px;}
+		#myModal .line .icon.icon-2 {width: 50px;}
+		#myModal .line .icon.icon-2:before {content: ""; width: 10px; height: 10px; border-left: 1px dashed #ccc; border-bottom: 1px dashed #ccc; position: absolute; top: 12px; left: 20px;}
+		#myModal .line .icon.icon-3 {width: 60px;}
+		#myModal .line .icon.icon-3:before {content: ""; width: 10px; height: 10px; border-left: 1px dashed #ccc; border-bottom: 1px dashed #ccc; position: absolute; top: 12px; left: 30px;}
+		#myModal .line .btn-sm {float: right; margin-top: 5px; margin-right: 5px; height: 24px; line-height: 24px; padding: 0 10px;}
+		#myModal .line .text {display: block;}
+		#myModal .line .label-sm {padding: 2px 5px;}
+		#myModal .line.good {height: 60px; padding: 4px 0;}
+		#myModal .line.good .image {height: 50px; width: 50px; border: 1px solid #ccc; float: left;}
+		#myModal .line.good .image img {height: 100%; width: 100%;}
+		#myModal .line.good .text {padding-left: 60px; height: 52px;}
+		#myModal .line.good .text p {padding: 0; margin: 0;}
+		#myModal .line.good .text .name {font-size: 15px; line-height: 32px; height: 28px;}
+		#myModal .line.good .text .price {font-size: 12px; line-height: 18px; height: 18px;}
+		#myModal .line.good .btn-sm {height: 32px; padding: 5px 10px; line-height: 22px; margin-top: 9px;}
+		#myModal .tip {line-height: 250px; text-align: center;}
+		#myModal .nav-tabs > li > a {padding: 8px 20px;}
+</style>
+	<div class="contert">
+		<include file="Public/menu" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con"  style="width:1000px;margin:20px auto;" >
+				<div style="margin:10px 20px;border-bottom:1px solid #000000;">
+					<span style="font-size:26px;">广告管理</span>
+				</div>
+
+				<form class="form-signin" action="{:U('Index/run_ad_add',array('id'=>$info['id']))}" method="post" class="form-horizontal form-validate" enctype="multipart/form-data" novalidate="novalidate">
+					<input type="hidden" id="program_id" name="program_id" class="form-control" value="">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">排序</label>
+						<div class="col-sm-9 col-xs-12">
+							<input type="text" name="sort" value="{$info['sort']}" class="form-control valid"  required autofocus/>
+							<span class="help-block">数字越大，排名越靠前</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label must">广告标题</label>
+						<div class="col-sm-9 col-xs-12 ">
+							<input type="text" id="" name="title" value="{$info['title']}" class="form-control" value="" required>
+						<span class="help-block"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label must">广告图片</label>
+						<div class="col-sm-9 col-xs-12">
+							<div class="input-group " style="width:100%;">
+								<input type="file" name="image02"  class="form-control" id="doca" onchange="javascript:setImagePreviews();">
+								<div style="clear:both;color:red;width:100%;">温馨提示：导航图标大小240*292</div>
+								<notempty name="info['image']">
+									<img style="width:120px;height:146px;" id="old_img" src="__ROOT__/Uploads/{$info.image}">
+								</notempty>
+								 <div class="col-sm-10">
+							      	<img id="previewa" src=""style="display:none;  border-radius:6px;">
+							      <span class="help-block"></span>
+								 </div>
+								<span class="help-block"></span>
+							</div>
+							     </div>
+							     
+					 </div>
+	         
+	                <div class="form-group">
+	                    <label class="col-sm-2 control-label">广告链接</label>
+	                    <div class="col-sm-9 col-xs-12">
+	                    	<div class="input-group form-group" style="margin: 0;">
+	                    		<input type="text"  id="url_value" name="url"  value="{$info['url']}"  class="form-control valid"  placeholder="" id="advlink" required>
+	                    		<span data-input="#advlink" data-toggle="modal" data-target="#myModal" class="input-group-addon btn btn-default">选择链接</span>
+	                   		</div>
+	                    </div>
+	                </div>
+	         
+	                <div class="form-group">
+	                    <label class="col-sm-2 control-label">状态</label>
+	                    <div class="col-sm-9 col-xs-12">
+	                    	<empty name="info">
+	                    		
+	                    		<label class="radio-inline">
+		                            <input type="radio" name="is_show" value="1" checked=""> 显示
+		                    	</label>
+		                        <label class="radio-inline">
+		                            <input type="radio" name="is_show" value="2"> 隐藏
+		                        </label>
+	                        <else/>
+	                        	<if condition="$info.is_show eq 1">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_show" value="1" checked=""> 显示
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_show" value="2"> 隐藏
+			                        </label>
+		                        </if>
+		                        <if condition="$info.is_show eq 2">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_show" value="1"> 显示
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_show" value="2"  checked=""> 隐藏
+			                        </label>
+		                        </if>
+	                    	</empty>
+	                    	
+	                    </div>
+	                </div>
+            
+		            <div class="form-group">
+		                <label class="col-sm-2 control-label"></label>
+		                <div class="col-sm-9 col-xs-12" style="text-align:right;">
+		                	<input type="submit" onclick="gosubmit2()" id="sales" value="确认提交" class="btn btn-primary">
+		                	<input type="button" name="" onclick="history.back()" style="margin-left:10px;" value="返回列表" class="btn btn-default">
+		                </div>
+		            </div> 		           
+                </form>
+           </div>
+			   <!--选择链接的modal---------------------------------开始-------->   
+			   <div class="modal fade" id="myModal" aria-hidden="false" style="display:none;">
+	<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button data-dismiss="modal" class="close" type="button">×</button>
+            <h4 class="modal-title">选择链接</h4>
+        </div>
+        <div class="modal-body">
+        	<ul class="nav nav-tabs" id="selectUrlTab">
+        		<li class="active"><a href="#sut_shop">商城</a></li>
+				<li class=""><a href="#sut_good">商品</a></li>
+				<li class=""><a href="#sut_cate">商品分类</a></li>
+				<!--<li class=""><a href="#sut_coupon">优惠券</a></li>	-->								
+			</ul>
+			<div class="tab-content ">
+<!--diyend-->
+				<div class="tab-pane active" id="sut_shop">					
+					<div class="page-header">
+						<h4> 商城页面</h4></div>				
+					<nav data-href="" class="btn btn-default btn-sm choose_007"  value="#" title="商城首页">商城首页</nav>
+					<nav data-href="" class="btn btn-default btn-sm choose_007"  value="../product/fenlei_detail" title="分类导航">分类导航</nav>
+					<nav data-href="" class="btn btn-default btn-sm choose_007"  value="../product/fenlei_detail" title="全部商品">全部商品</nav>		
+					<nav data-href="" class="btn btn-default btn-sm choose_007"  value="../cart/cart?switchTab=1" title="购物车">购物车</nav>
+					
+					
+					<nav data-href="" class="btn btn-default btn-sm choose_007"  value="../address/phone" title="联系电话">联系电话</nav>
+		
+		<!--			<div class="page-header">
+						<h4><i class="fa fa-folder-open-o"></i>多商铺</h4>
+					</div>
+					<nav data-href="" class="btn btn-default btn-sm" title="店铺列表">店铺列表</nav>					
+					<nav data-href="" class="btn btn-default btn-sm" title="店铺申请">店铺申请</nav>					
+		--><!--			<div class="page-header">
+						<h4><i class="fa fa-folder-open-o"></i> 商品属性</h4>
+					</div>
+					<nav data-href="" class="btn btn-default btn-sm" title="推荐商品">推荐商品</nav>
+					<nav data-href="" class="btn btn-default btn-sm" title="新品上市">新品上市</nav>
+					<nav data-href="" class="btn btn-default btn-sm" title="热卖商品">热卖商品</nav>					
+					<nav data-href="" class="btn btn-default btn-sm" title="促销商品">促销商品</nav>					
+					<nav data-href="" class="btn btn-default btn-sm" title="卖家包邮">卖家包邮</nav>
+		-->			<div class="page-header">
+						<h4><i class="fa fa-folder-open-o"></i> 会员中心</h4>
+					</div>
+					<nav data-href="" class="btn btn-default btn-sm choose_007" value="../user/user" title="会员中心">会员中心</nav>
+					<nav data-href="" class="btn btn-default btn-sm choose_007" value="../user/to_my" title="我的订单(全部)">我的订单(全部)</nav>
+					<nav data-href="" class="btn btn-default btn-sm choose_007" value="../user/to_my" title="待付款订单">待付款订单</nav>
+					<nav data-href="" class="btn btn-default btn-sm choose_007" value="../user/to_my" title="待发货订单">待发货订单</nav>
+					<nav data-href="" class="btn btn-default btn-sm choose_007" value="../user/to_my" title="待收货订单">待收货订单</nav>
+					<nav data-href="" class="btn btn-default btn-sm choose_007" value="../user/to_my" title="已完成订单">已完成订单</nav>
+					<nav data-href="" class="btn btn-default btn-sm choose_007" value="../user/shoucang" title="我的收藏">我的收藏</nav>
+					<nav data-href="" class="btn btn-default btn-sm choose_007" value="../user/to_my" title="关于我们">关于我们</nav>
+					<nav data-href="" class="btn btn-default btn-sm choose_007"  value="../address/user-address/user-address" title="用户地址展示">用户地址展示</nav>
+		<!--			<div class="page-header">
+						<h4><i class="fa fa-folder-open-o"></i> 优惠券</h4>
+					</div>
+					<nav data-href="" class="btn btn-default btn-sm" title="领取优惠券">领取优惠券</nav>
+					<nav data-href="" class="btn btn-default btn-sm" title="我的优惠券">我的优惠券</nav>
+			-->	
+				</div>
+					
+				<div class="tab-pane" id="sut_good">
+					<div class="input-group">
+						<input type="text" placeholder="请输入商品名称进行搜索" id="select-good-kw" value="" class="form-control search_title">
+							<span class="input-group-addon btn btn-default select-btn "  id="search"  data-type="good">搜索</span>
+					</div>
+					<div id="select-good-list" >
+					<!--	<li><img src="__ROOT__/Uploads/2017-09-01/59a936cf44aa2.jpg">12</li>
+					-->
+					
+					<!--<div class="line" style="height: 55px;line-height: 55px;">
+						<nav title="选择" class="btn btn-default btn-sm" data-href="">选择</nav>
+						<div class="text"><img style="width:25px;height:25px;" src="__ROOT__/Uploads/2017-09-01/59a936cf44aa2.jpg">123</div>
+					</div>-->
+					
+					</div>
+				</div>
+				
+				<div class="tab-pane" id="sut_cate">
+			<foreach name="fenlei" item="v">
+					<div class="line">
+						<div class="icon icon-1"></div>
+						<nav title="选择" class="btn btn-default btn-sm choose_007" value="../category/index?switchTab=1">选择</nav>
+						<div class="text">{$v.title}</div>
+					</div>
+				<foreach name="v['child']" item="vo">
+					<div class="line">
+						<div class="icon icon-2"></div>
+						<nav title="选择" class="btn btn-default btn-sm choose_007" value="../category/index?switchTab=1">选择</nav>
+						<div class="text">{$vo.title}</div>
+					</div>
+				</foreach>
+			</foreach>
+					
+				</div>	
+				<!--优惠券   开始--------------->
+				<!--<div class="tab-pane" id="sut_coupon">
+					<div class="input-group">
+						<input type="text" placeholder="请输入优惠券名称进行搜索" id="select-coupon-kw" value="" class="form-control">
+						<span class="input-group-addon btn btn-default select-btn" data-type="coupon">搜索</span>
+					</div> 
+					<div id="select-coupon-list"></div>
+				</div>-->
+				<!--优惠券   结束--------------->
+            </div>
+	        <div class="modal-footer">
+	            <button data-dismiss="modal" class="btn btn-default" id="guanbi" type="button">关闭</button>
+	        </div>
+        <script>
+        	$(function(){
+        		$("#myModal").find('#selectUrlTab a').click(function(e) {
+					$('#tab').val($(this).attr('href'));
+					e.preventDefault();
+					$(this).tab('show');
+				});
+        	});
+        </script>
+        
+        <!--选择链接的modal---------------huandeng_add.html------------------结束-------->
+   		      
+			</div>			    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+<script>
+	var aaaa = []
+	var that = this
+	$(".choose_007").click(function(){
+
+		$("#url_value").val($(this).attr("value"));
+		$("#guanbi").click();
+	})
+	
+	
+        
+        $("#search").click(function(){
+        	if(!$(".search_title").val()){
+        		alert("请填写商品名称");
+        		return false;
+        	}
+        	 	
+   $.post('__ROOT__/adp.php/Index/self_url_goods',{'title':$(".search_title").val()},function(data){
+   console.log(data);
+	    	
+	    	var obj=eval(data);
+			var dh='';
+	        for (var i=0;i<obj.length;i++){  
+	         console.log(i);
+				dh+=' <div class="line" style="height: 55px;line-height: 55px;">  ';		
+	       		dh+=' <nav title="选择" class="btn btn-default btn-sm choose_007 " id="'+obj[i].id +'" onclick="f2(this)" value=" ' +obj[i].id + ' " data-href="">选择</nav> ';
+	       		dh+=' <div class="text">  ';
+	       		dh+=' <img style="width:25px;height:25px;" src="https://sz800800.cn/Uploads/' +obj[i].image + ' ">  ';
+	       		dh+=  obj[i].goods_title  ;
+	       		dh+=' </div>  ';
+	       		dh+=' </div>  ';
+	        //22aa
+	         }
+	         document.getElementById('select-good-list').innerHTML=dh;
+	        },'json');
+        })
+    
+        function f2(item){
+       		//alert(item.id);
+	       	$("#url_value").val("../product/detail?productId="+item.id);
+			$("#guanbi").click();	
+        }
+        
+        
+</script>
+<script type="text/javascript">
+//下面用于图片上传预览功能
+function setImagePreviews(avalue) {
+var docObj=document.getElementById("doca");
+var imgObjPreview=document.getElementById("previewa");
+	if(docObj.files &&docObj.files[0]){
+		//火狐下，直接设img属性
+		imgObjPreview.style.display = 'block';
+		imgObjPreview.style.width = '120px';
+		imgObjPreview.style.height = '146px'; 
+		if(document.getElementById("old_img")!=null){
+			document.getElementById("old_img").style.display = 'none';
+		}
+		 
+		imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+	}else{
+		//IE下，使用滤镜
+		docObj.select();
+			var imgSrc = document.selection.createRange().text;
+			var localImagId = document.getElementById("localImag");
+		//图片必须设置初始大小
+		localImagId.style.width ="120px";
+		localImagId.style.height = "146px";
+		//图片异常的捕捉，防止用户修改后缀来伪造图片
+			try{
+			localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+			localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+			}
+			catch(e){
+				alert("您上传的图片格式不正确，请重新选择!");
+				return false;
+				}
+				imgObjPreview.style.display = 'none';
+				document.selection.empty();
+				}
+			return true;
+			}
+ 
+</script>
+</body>
+
+</html>
+
+	

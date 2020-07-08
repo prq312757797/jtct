@@ -1,0 +1,166 @@
+
+	<include file="Public/head" />
+	<style>
+		tr,tr th,tr td{
+			text-align:center;
+		}
+	</style>
+		<div class="tab" style="width:90%;height:auto;margin:20px auto;background-color:#CAE1FF;padding:20px;border-radius:6px;">
+			<!--添加客户-->
+			<a href="useradd" style="float:right;margin:6px;"><button class="btn btn-primary">添加客户</button></a>
+			<div class="tab-cont">					
+				<div class="panel panel-info">
+					<div class="panel-heading">筛选</div>
+					<div class="panel-body">
+						<form action="" method="get" class="form-horizontal" role="form">
+							<input type="hidden" name="c" value="user">
+							<input type="hidden" name="a" value="display">
+							<input type="hidden" name="status" value="">
+							<input type="hidden" name="endtime" value="">
+							<input type="hidden" name="group" value="">
+							<div class="form-group">
+								<label class="col-xs-12 col-sm-2 col-md-2 col-lg-1 control-label">状态</label>
+								<div class="col-sm-8 col-lg-9 col-xs-12">
+									<div class="btn-group">
+										<a href="" class="btn btn-primary">不限</a>
+										<a href="" class="btn btn-default">启用</a>
+										<a href="" class="btn btn-default">禁用</a>
+									</div>
+								</div>
+							</div>		                     
+				            <!--<div class="form-group">
+								<label class="col-xs-12 col-sm-2 col-md-2 col-lg-1 control-label">平台</label>
+								<div class="col-sm-8 col-lg-9 col-xs-12">
+									<div class="btn-group">
+										<a href="" class="btn btn-primary">不限</a>
+										<a href="" class="btn btn-default">全网</a>
+										<a href="" class="btn btn-default">公众平台</a>
+										<a href="" class="btn btn-default">小程序</a>
+									</div>
+								</div>
+							</div>	-->
+							<div class="form-group">
+								<label class="col-xs-12 col-sm-2 col-md-2 col-lg-1 control-label">服务商</label>
+								<div class="col-sm-8 col-lg-9 col-xs-12" style="width: 35%">
+							        <input type="text" readonly="readonly" class="form-control" value="{$shanghu[0][user_company]}"> 				                              		
+							    </div>
+							</div>
+							<!--<div class="form-group">
+					            <label for="inputPassword3" class="col-xs-12 col-sm-2 col-md-2 col-lg-1 control-label">入网时间段</label>
+					            <div class="col-sm-8 col-lg-9 col-xs-12">
+									<input name="time_range[start]" type="hidden" value="2017-09-11">
+									<input name="time_range[end]" type="hidden" value="2017-09-11">
+									<button class="btn btn-default daterange daterange-date" type="button">
+										<span class="date-title">2017-09-11 至 2017-09-11</span> 
+										<i class="fa fa-calendar"></i>
+									</button>
+							    </div>
+							</div>-->
+							<div class="form-group">
+								<label class="col-xs-12 col-sm-2 col-md-2 col-lg-1 control-label">关键词</label>
+								<div class="col-sm-8 col-lg-9 col-xs-12" style="width: 35%">
+									<input class="form-control" name="username" id="" type="text" value="" placeholder="请输入客户姓名/平台名称">				
+								</div>			
+								<div class="col-xs-12 col-sm-2 col-lg-2">
+								    <button class="btn btn-default"><i class="fa fa-search"></i>搜索</button>
+							    </div>				
+						   </div>					
+		                </form>
+					</div>
+				</div>
+            <!--列表-->
+			    <table class="table table-hover" style="background-color:lightskyblue;">
+					<thead class="navbar-inner">
+						<tr>
+							<th style="width:4%">序号</th>
+							<th style="width:12%">服务商</th>
+							<th style="width:6%">客户账号</th>
+							<th style="width:8%">客户姓名</th>
+			                <th style="width:8%">公众号名称</th>
+							<th style="width:8%">小程序</th>
+			                <th style="width:6%">快捷通知</th>
+			                <th style="width:6%">邮箱通知</th>
+			                <th style="width:6%">SMS数</th>
+			                <th style="width:7%">状态</th>
+							<th style="width:22%">操作</th>                            
+						</tr>
+					</thead>
+					<tbody>
+						<foreach name="shanghu" item="v">
+						<tr>
+							<td>{$v.self_sort}</td>
+							<td>{$v.user_company}</td>
+							<td>{$v.name}</td>
+							<td><a href="{:U('User/edit_user',array('id'=>$v['shanghu_id']))}">{$v.realname}</a></td>
+			                <td>
+			                	<if condition="$v.is_gongzhognhao eq 1">
+			                		<span class="label label-warning">已绑定</span>
+			                	</if>
+			                		<if condition="$v.is_gongzhognhao eq 2">
+			                		<span class="label label-default">未绑定</span>
+			                	</if>
+			                </td>                              
+			                <td>
+			                	<empty name="v['program_id']">
+			                		<span class="label label-warning">已绑定</span>
+			                		<else/><span class="label label-default">未绑定</span>
+			                	</empty>                           
+			                <td>
+			                	<if condition="$v.quick_notice eq 1">
+			                		<a href="javascript:void(0)" class="smsb" s="0" ping="" uid="12169"><span class="label label-success">已开通</span></a>	                
+			                	</if>
+			                	<if condition="$v.quick_notice eq 2">
+			                		<a href="javascript:void(0)" class="smsb" s="0" ping="" uid="12169"><span class="label label-success">未开通</span></a>	                
+			                	</if>
+			                </td>  
+			                <td>
+			                	<if condition="$v.mail_notice eq 1">
+			                		<a ping="" s="1" href="javascript:void(0)" uid="12169" class="emailb"><span class="label label-warning">已开通E</span></a>	                
+			               		</if>
+			                	<if condition="$v.mail_notice eq 2">
+			                		<a ping="" s="1" href="javascript:void(0)" uid="12169" class="emailb"><span class="label label-warning">未开通E</span></a>	                
+			               		</if>
+			                 </td> 
+			                <td>{$v.SMS_num}</td>
+			                <td>
+			                	<!--状态 - state（1：启用、2：审核中、3：禁用、4：拒绝审核）-->
+			                	<if condition="$v.state eq 1">
+			                		<span class="label label-success">正常状态</span> 	                
+			               		</if>
+			                	<if condition="$v.state eq 2">
+			                		<span class="label label-success">审核中</span> 	                
+			               		</if>
+			               		<if condition="$v.state eq 3">
+			                		<span class="label label-success">禁用</span> 	                
+			               		</if>
+			               		<if condition="$v.state eq 4">
+			                		<span class="label label-success">拒绝审核</span> 	                
+			               		</if>
+			                </td>                 																
+								<style type="text/css">						
+									#ed div{ float: left; margin-left: 10px}
+								</style>				
+							<td id="ed" style="padding-left: 3%;">
+								<div>
+									<a href="{:U('User/edit_user',array('id'=>$v['shanghu_id']))}">编辑</a>&nbsp;&nbsp;|
+							    </div>
+								<div>
+									<a href="__URL__/programinfo?uid={$v.shanghu_id}" >小程序</a>&nbsp;&nbsp;|
+								</div>
+								<div>
+			                		<a href="">禁止</a>&nbsp;&nbsp;|
+								</div>								  
+								<div>			
+							        <a class="" id="11811" dl="dancong" cid="90" hasweichat="2" hasapp="1" href="__URL__/recharge?id={$v.shanghu_id}">充值</a>&nbsp;&nbsp;|
+							   </div>
+							</td>                				
+						</tr> 
+						</foreach>	
+					</tbody>
+				</table>           			
+			</div>
+		</div>
+		<include file="Public/foot" />
+	</body>
+
+</html>	

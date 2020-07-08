@@ -1,0 +1,102 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_merch" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con"  style="min-height: 840px;">
+				<div style="height:60px;border-bottom:1px solid #000000;padding:10px;background:skyblue;">
+					<h4 style="margin:10px;float:left;">商户分类管理 <small>总数: <span>{$count}</span></small></h4>
+					<div style="float:right;">
+						<!--<button class="btn btn-primary">添加商户分类</button>-->
+						 <a href="merch_fenlei_add" class="btn btn-primary"><i class="fa fa-plus"></i> 添加商户分类</a>	
+					</div>
+				</div>
+				<table class="table table-responsive table-hover">
+					<thead class="navbar-inner" style="background:gainsboro;">
+					<tr>
+						<th style="width:25px;"><input type="checkbox"></th>
+						<th style="width: 35px;">排序</th>
+						<th style="width: 180px;">分类名称</th>
+						<!--<th style="width: 180px;">分类图标</th>-->
+						<th style="width:80px;">是否启用</th>
+						<th style="width: 180px;">操作</th>
+					</tr>
+					</thead>
+					<tbody>
+					<foreach name="info" item="v">
+					<tr>
+						<td> <input type="checkbox" value=""></td>
+						<td>{$v.sort}</td>
+						<td>{$v.title}</td>
+						<!--<td>
+							<img src="http://res.cnmmsc.org/attachment/images/5958/2017/08/pvKbKKVoBHK2VvVk2kFvtPvT9Kt2m1.png" style="width:38px;height:38px;padding:1px;border:1px solid #ccc;">
+						</td>-->
+						<td>
+				           <!-- <span class="label label-success" data-toggle="" data-switch-value="1" data-switch-value0="">
+				                                启用    </span>-->
+					        <if condition="$v.is_show eq 1">
+				                <div class="label label-success peng_is_ok peng_ok" data-toggle="ajaxSwitch" data-switch-value="1" >
+				                	<input type="hidden" value="{$v.id}">
+							 		<span>显示</span>
+				                </div>
+				            </if>
+					        <if condition="$v.is_show eq 2">
+					            <div class="label label-default peng_is_ok peng_not" data-toggle="ajaxSwitch" data-switch-value="1" >
+					            	<input type="hidden" value="{$v.id}">
+							 			<span>隐藏</span>
+					            </div>
+					        </if>    
+				        
+						</td>
+						<td style="text-align:left;">
+							<a href="merch_fenlei_edit?id={$v.id}" class="btn btn-default btn-sm" style="margin-left: 38%;">修改 </a>
+							<a data-toggle="ajaxRemove" href="" class="btn btn-default btn-sm" data-confirm="确认要删除分类吗?">删除</a>
+						</td>
+					</tr>
+					</foreach>	
+					<!--<tr>
+						<td> <input type="checkbox" value=""></td>
+						<td>合作商户</td>
+						<td>
+							<img src="http://res.cnmmsc.org/attachment/images/5958/2017/08/pvKbKKVoBHK2VvVk2kFvtPvT9Kt2m1.png" style="width:38px;height:38px;padding:1px;border:1px solid #ccc;">
+						</td>
+						<td>
+				            <span class="label label-success" data-toggle="" data-switch-value="1" data-switch-value0="">
+				                                启用    </span>
+						</td>
+						<td style="text-align:left;">
+							<a href="" class="btn btn-default btn-sm">修改 </a>
+							<a data-toggle="ajaxRemove" href="" class="btn btn-default btn-sm" data-confirm="确认要删除分类吗?">删除</a>
+						</td>
+					</tr>-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!--====================主体  结束===============-->
+	</div>	
+<script>
+	//广告ajax 显示隐藏
+	$(".peng_is_ok").click(function(){
+		var onw_id=$(this).children('input').val();
+	
+		var that = this;
+	
+		 $.post('__ROOT__/adp.php/Index/ajax_change_show',{'id':onw_id,'from_id':"4"},function(date){
+	        if(date==1){
+	        	if($(that).attr("class")=="label label-success peng_is_ok peng_ok"){
+	        		$(that).attr("class","label label-default peng_is_ok peng_not");
+	        		$(that).children('span').text("隐藏");
+	        	}else if($(that).attr("class")=="label label-default peng_is_ok peng_not"){
+	        		$(that).attr("class","label label-success peng_is_ok peng_ok");
+	        		$(that).children('span').text("显示");
+	        	}
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>
+</body>
+</html>

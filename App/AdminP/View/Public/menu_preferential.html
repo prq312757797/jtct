@@ -1,0 +1,19 @@
+		<div class="tabT">
+			<ul class="tab">
+			<a href="#"><li>营销管理</li></a>
+			<hr>
+				<li style="text-align:left;padding: 0;">基本 </li>	
+				<a href="{:U('Preferential/index')}"><li>满额立减</li></a>
+				<a href="{:U('Preferential/pass_youhui')}"><li>满额包邮</li></a>
+			<hr>
+				<li style="text-align:left;padding: 0;">优惠券</li>	
+				<a href="{:U('Preferential/manager')}"><li>优惠券管理</li></a>
+				<a href="{:U('Preferential/send')}"><li>手动发送</li></a>
+				<a href="{:U('Preferential/record')}"><li>发放记录</li></a>
+				
+			<if condition="$program_id eq JT201710111415434441">
+			<hr>
+				<a href="{:U('Preferential/fw_mam')}"><li>服务管理员</li></a>
+			</if>
+			</ul>
+		</div>

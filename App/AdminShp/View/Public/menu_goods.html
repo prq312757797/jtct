@@ -1,0 +1,33 @@
+		<div id="sidebar">
+
+
+	 	<ul>
+			<li ><a href="{:U('Goods/selling')}"><i class="icon icon-shopping-cart"></i> 
+					<span>出售中</span></a></li>
+			<li><a href="{:U('Goods/haved_selled')}"><i class="icon icon-shopping-cart"></i> 
+					<span>已售罄</span></a></li>
+			<li><a href="{:U('Goods/cangku')}"><i class="icon icon-shopping-cart"></i> 
+					<span>仓库中</span></a></li>
+			<li><a href="{:U('Goods/huishou')}"><i class="icon icon-shopping-cart"></i> 
+					<span>回收站</span></a></li>
+			<li><a href="{:U('Goods/fenlei')}"><i class="icon icon-shopping-cart"></i> 
+					<span>商品分类</span></a></li>
+		<if condition="$head_menu eq 6">
+			<li><a href="{:U('Goods/jingpin')}"><i class="icon icon-shopping-cart"></i> 
+					<span>精品商品</span></a></li>
+		</if>	
+		<if condition="$program_id eq JT201712021113483120">
+			<li><a href="{:U('Goods/price_daili')}"><i class="icon icon-shopping-cart"></i> 
+					<span>代理购买价管理</span></a></li>
+		</if>
+			<!--<li><a href="shanxuan"><i class="icon icon-th"></i> 
+					<span>筛选区间</span></a></li>
+			<li><a href="biaoqian"><i class="icon icon-th-list"></i> 
+					<span>标签管理</span></a></li>-->
+		</ul>
+	
+</div>
+
+
+
+		

@@ -1,0 +1,63 @@
+<include file="Public/head" />
+<include file="Public/menu_set" />
+<div id="content">
+	<div id="content-header">
+		<h1>平台联系管理</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 设置</a>
+		<a href="#" class="current">平台联系管理</a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>平台联系管理</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th>编号</th>
+								<th>姓名</th>
+								<th>电话</th>
+								<th>提交时间</th>
+								<th>操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							<foreach name="ad" item="v">
+								<tr>
+									<td>{$v.id}</td>
+									<td>{$v.realname}</td>
+									<td>{$v.tel_contect}</td>
+									<td>{$v.time_set|date="Y-m-d",###}<br>{$v.time_set|date="H:i:s",###}</td>
+									
+									<td>
+										<button class="btn btn-default">
+											<a  title="查看" alt="查看" href="man_contect_con/id/{$v['id']}" >查看</a>
+										</button>
+										<button class="btn btn-danger">
+											<a style="color:white;"  title="删除" alt="删除" href="man_contect_del/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+										</button>
+									</td>
+								</tr>
+							</foreach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<include file="Public/foot" />
+
+

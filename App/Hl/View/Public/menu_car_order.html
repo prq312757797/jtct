@@ -1,0 +1,23 @@
+<div id="sidebar">
+	<ul>
+		<!--	1:待付款,2：待分配，3：待服务、4：服务完成，5：已取消  tk_count  -->
+		<li><a href="{:U('CarOrder/index')}"><i class="icon icon-shopping-cart"></i>
+			<span>订单概述</span></a></li>
+		<li><a href="{:U('CarOrder/order_paying')}"><i class="icon icon-shopping-cart"></i>
+			<span>待付款</span></a></li>
+		<li><a href="{:U('CarOrder/order_payed')}"><i class="icon icon-shopping-cart"></i>
+			<span>待分配</span></a></li>
+		<li><a href="{:U('CarOrder/order_serving')}"><i class="icon icon-shopping-cart"></i>
+			<span>待服务</span></a></li>
+		<li><a href="{:U('CarOrder/order_done')}"><i class="icon icon-shopping-cart"></i>
+			<span>服务完成</span></a></li>
+		<li><a href="{:U('CarOrder/order_none')}"><i class="icon icon-shopping-cart"></i>
+			<span>已取消  &nbsp<span style="color:red; <if condition='$tk_count gt 0'> display:none;<else/>display:none;</if>"> ( {$tk_count} ) </span></span></a></li>
+		<li><a href="{:U('CarOrder/order_all')}"><i class="icon icon-shopping-cart"></i>
+			<span>全部订单</span></a></li>
+		<li><a href="{:U('CarOrder/order_cancel')}"><i class="icon icon-shopping-cart"></i>
+			<span>订单取消原因</span></a></li>
+		<li><a href="{:U('CarOrder/car_extra_need')}"><i class="icon icon-shopping-cart"></i>
+			<span>订单备注管理</span></a></li>	
+	</ul>
+</div>				

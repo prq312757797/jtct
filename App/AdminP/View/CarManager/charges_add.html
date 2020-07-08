@@ -1,0 +1,93 @@
+
+	<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_car" />
+		<!--收费标准-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con"  style="width:1000px;margin:20px auto;" >
+				<div style="margin:10px 20px;border-bottom:1px solid #000000;">
+					<span style="font-size:26px;">计费标准管理</span>
+				</div>
+				<form action="{:U('CarManager/run_charges_add',array('id'=>$info['id']))}" method="post" class="form-horizontal form-validate" enctype="multipart/form-data" novalidate="novalidate">
+
+                    <div class="form">
+                       <label class="col-sm-2 control-label">排序</label>
+	                    <div class="col-sm-9 col-xs-12">
+	                        <input type="text" name="sort" class="form-control valid" value="<?php echo $info['sort']?$info['sort']:1;?>" aria-invalid="false">
+	                        <span class="help-block">数字越小，排名越靠前</span>
+	                    </div>
+                    </div>
+                <!--名称-->
+	                <div class="form">
+	                    <label class="col-sm-2 control-label must">名称</label>
+	                    <div class="col-sm-9 col-xs-12 ">
+	                        <input type="text" id="" name="title" class="form-control" value="{$info['title']}" data-rule-required="true" aria-required="true">
+	                      <span class="help-block"></span>
+	                    </div>
+	                </div>
+	           <!--起步价-->
+	                  <div class="form">
+	                    <label class="col-sm-2 control-label must">起步价</label>
+	                    <div class="col-sm-9 col-xs-12 ">
+	                        <input type="text" id="" name="price_start" class="form-control" value="{$info['price_start']}" data-rule-required="true" aria-required="true">
+	                      <span class="help-block"></span>
+	                    </div>
+	                </div>
+	            <!--基础里程-->
+	                   <div class="form">
+	                    <label class="col-sm-2 control-label must">基础里程</label>
+	                    <div class="col-sm-9 col-xs-12 ">
+	                        <input type="text" id="" name="basis_miles" class="form-control" value="{$info['basis_miles']}" data-rule-required="true" aria-required="true">
+	                      <span class="help-block">起步价内包含的基础里程（单位：公里）</span>
+	                    </div>
+	                </div>
+	            <!--里程计价-->
+	                   <div class="form">
+	                    <label class="col-sm-2 control-label must">里程计价</label>
+	                    <div class="col-sm-9 col-xs-12 ">
+	                        <input type="text" id="" name="per_price" class="form-control" value="{$info['per_price']}" data-rule-required="true" aria-required="true">
+	                      <span class="help-block">超出基础里程之后的计价比例</span>
+	                    </div>
+	                </div>
+	                
+	            <!--基础里程-->
+	                   <div class="form">
+	                    <label class="col-sm-2 control-label must">长途里程</label>
+	                    <div class="col-sm-9 col-xs-12 ">
+	                        <input type="text" id="" name="ct_miles" class="form-control" value="{$info['ct_miles']}" data-rule-required="true" aria-required="true">
+	                      <span class="help-block">长途里程超过后加收长途里程额外计价（单位：公里）</span>
+	                    </div>
+	                </div>
+	                
+	            <!--长途返程里程计价-->
+	                   <div class="form">
+	                    <label class="col-sm-2 control-label must">长途额外计价</label>
+	                    <div class="col-sm-9 col-xs-12 ">
+	                        <input type="text" id="" name="ct_per_price" class="form-control" value="{$info['ct_per_price']}" data-rule-required="true" aria-required="true">
+	                      <span class="help-block">长途返程里程额外计价</span>
+	                    </div>
+	                </div>
+	         
+	               
+            
+		            <div class="form">
+		                <label class="col-sm-2 control-label"></label>
+		                <div class="col-sm-9 col-xs-12" style="margin-top: 25px;float: right;width: 30%;">
+		                	<input type="submit" id="box" value="确认提交" class="btn btn-primary">
+		                	<input type="button" name="" onclick="history.back()" style="margin-left:10px;" value="返回列表" class="btn btn-default">
+		                </div>
+		            </div> 
+                </form>
+           </div>
+			      
+			</div>			    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+
+</html>
+
+	

@@ -1,0 +1,47 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_set" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">
+				<div class="tab-content ">
+                    <div class="form">
+                        <label class="col-sm-2 control-label">CERT证书文件</label>
+                        <div class="col-sm-9 col-xs-12">
+                            <input type="hidden" name="data[weixin_cert]" value="">
+                             <input type="file" name="weixin_cert_file" class="form-control">
+                            <span class="help-block">
+                            <span class="label label-danger">未上传</span>
+                                                                下载证书 cert.zip 中的 apiclient_cert.pem 文件</span>
+                        </div>
+                    </div>
+                    <div class="form">
+                        <label class="col-sm-2 control-label">KEY密钥文件</label>
+                        <div class="col-sm-9 col-xs-12">
+                            <input type="hidden" name="data[weixin_key]" value="">
+                            <input type="file" name="weixin_key_file" class="form-control">
+                            <span class="help-block">
+                            <span class="label label-danger">未上传</span>
+                                                                       下载证书 cert.zip 中的 apiclient_key.pem 文件 </span>                           
+                          </div>
+                    </div>
+                    <div class="form">
+                        <label class="col-sm-2 control-label">ROOT文件</label>
+                        <div class="col-sm-9 col-xs-12">
+                            <input type="hidden" name="data[weixin_root]" value="">                           
+                            <input type="file" name="weixin_root_file" class="form-control">
+                            <span class="help-block">
+                            <span class="label label-danger">未上传</span>
+                                                                下载证书 cert.zip 中的 rootca.pem 文件
+                            </span>
+                          </div>
+                    </div>
+                </div>
+            </div>		    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<include file="Public/head" />
+<include file="Public/menu_warehouse" />
+<script src="__ROOT__/Public/ys0925/jquery.js"></script>
+<style>
+	.fileinput-button {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.fileinput-button input{
+		position:absolute;
+		right: 0px;
+		top: 0px;
+		opacity: 0;
+		-ms-filter: 'alpha(opacity=0)';
+		font-size: 200px;
+	}
+	.w93{
+		width:93%!important;
+	}
+	input[type="text"]{
+		    margin-bottom: 5px;
+	}
+	td{
+		padding:0!important;	
+		line-height: 30px!important;
+	}
+	.f30{
+		font-size: 30px;
+	}
+</style>
+
+<div id="content">
+	<div id="content-header">
+		<h1>商品总览</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="{:U('Index/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+		<a href="{:U('Warehouse/canggui')}" class="tip-bottom">仓柜管理</a>
+		<a href="#" class="current">商品总览</a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-align-justify"></i>
+								</span>
+						<h5>商品总览</h5>
+					</div>
+					<div class="widget-content nopadding">
+			
+		
+<script>
+	function action_12(item){
+		for (var i=1;i<3;i++){
+			$(".child_"+$(item).attr("k")).css("display","none")
+			$(".child_"+$(item).attr("k")).each(function(){    
+                $(this).children("select").attr("name","")
+            })
+			
+
+			$("#id_"+$(item).attr("k")+"_"+$("#id_"+$(item).attr("k")).find("option:selected").val()).css("display","block")
+			
+			$("#id_"+$(item).attr("k")+"_"+$("#id_"+$(item).attr("k")).find("option:selected").val()).children("select").attr("id","choose_"+$(item).attr("k"))
+			$("#id_"+$(item).attr("k")+"_"+$("#id_"+$(item).attr("k")).find("option:selected").val()).children("select").attr("name","a100[]")
+		}
+	}
+</script>
+
+						<table class="table table-bordered table-striped" style="    border-top: 1px solid #ccc;">
+							<thead>
+							<tr>
+								
+								<th style="width:5%;">大类</th>
+								
+								<th style="width:5%;">小类</th>
+								<th style="width:5%;">修改大类</th>
+								<th style="width:5%;">修改小类</th>
+								<th style="width:10%;">物品名称</th>
+								
+								<th style="width:10%;">规格</th>
+								<th style="width:10%;">单位</th>
+								<th style="width:1%;"></th>
+								<th style="width:1%;"></th>
+							</tr>
+							</thead>
+							
+							<tbody>
+							<foreach name="list" item="v" key="k">
+								<tr>
+									<td ><input type="text" style="margin-bottom: 5px;" class="w93" readonly value="{$v.fenlei_1_title}"/></td>
+									<td><input type="text" class="w93" readonly value="{$v.fenlei_2_title}"/></td>
+									<td>
+										<select name="fenlei_1" class="w100" onchange="action_12(this)"  k="{$k}" id="id_{$k}">
+											<option></option>
+											<foreach name="fenlei" item="v0">
+												<option value="{$v0.id}">{$v0.title}</option>
+											</foreach>
+										</select>
+									</td>
+									<td >
+										<foreach name="fenlei" item="v1">
+											<div id="id_{$k}_{$v1.id}" class="child_{$k}" style="display:none;">
+
+												<select name="" class="w100"  a="{$k}_{$v1.id}">
+													<option ></option>
+													<foreach name="v1['child']" item="v2">
+														<option value="{$v2.id}">{$v2.title}</option>
+													</foreach>
+												</select>
+											</div>
+										</foreach>
+									</td>
+									
+									<td>
+										<a  href="javascript:;" val="{$v.id}" text_name="goods_title" class="edit_text">{$v.goods_title}</a>
+					 					<input type="text" class="sort_text w40x" id="goods_title_{$v.id}" value="{$v.goods_title}" style="display:none;">
+										
+									</td>
+									<td>
+										<a  href="javascript:;" val="{$v.id}" text_name="ktv_guige" class="edit_text">{$v.ktv_guige}</a>
+					 					<input type="text" class="sort_text w40x" id="ktv_guige_{$v.id}" value="{$v.ktv_guige}" style="display:none;">
+									
+								
+									</td>
+									<td>
+										<a  href="javascript:;" val="{$v.id}" text_name="ktv_danwei" class="edit_text">{$v.ktv_danwei}</a>
+					 					<input type="text" class="sort_text w40x" id="ktv_danwei_{$v.id}" value="{$v.ktv_danwei}" style="display:none;">
+									
+										
+									</td>
+									<td><a  href="javascript:;" val="{$v.id}" key="{$k}"  class="goods_save f30" >○</a></td>
+									<td><a  href="javascript:;" val="{$v.id}"  class="goods_delete">X</a></td>
+								</tr>
+							
+							</foreach>
+	
+							</tbody>
+					
+							
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--原来的 modal 框位置-->
+<include file="Public/self_url" />
+<include file="Public/foot" />
+<include file="Public/image_yl" />
+
+<script>
+$(".show_select").click(function(){
+	var that=this
+	var id_select=$("#id_select_"+$(that).attr("a")).attr("is_show")
+//	var ktv_danwei=$("#ktv_danwei_"+$(that).attr("val")).val()
+if(id_select==0){
+	$(".show_select").css("display","none")
+	$(".select_td").css("display","block")
+	$("#id_select_"+$(that).attr("a")).attr("is_show","1")
+	$("#text_select_1").text("修改大类")
+	$("#text_select_2").text("修改小类")
+	
+}else if(id_select==1){
+	$(".show_select").css("display","block")
+	$(".select_td").css("display","none")
+		$("#id_select_"+$(that).attr("a")).attr("is_show","0")
+}
+
+})
+	//异步列表页的内容     ==============================================
+	//style   1:商品表内容
+	$(".edit_text").click(function(){
+		var self_input=$(this).parents('td').children('input')
+		var that=this
+
+		$(this).css("display","none");
+		self_input.css("display","block");
+		self_input.focus();
+		self_input.blur(function(){
+
+			$(that).text(self_input.val());
+			$(that).css("display","block");
+			self_input.css("display","none");
+//			 $.post('__ROOT__/adp.php/Index/ajax_change_text',{'style':1,'text_name':$(that).attr("text_name"),'id':$(that).attr("val"),'text_val':self_input.val()},function(date){
+//	        if(date==1){
+//	        	alert("成功");
+//	        }else{
+//	        	
+//	        }
+//      },'json');
+		});
+	})
+//	商品删除
+	$(".goods_delete").click(function(){
+
+		var that=this
+		if(confirm('确认删除商品吗？')==false){
+			return false
+		}else{
+			$.post('__ROOT__/adp.php/Warehouse/goods_deletektv',{'id':$(that).attr("val")},function(data){
+		        if(data==1){
+		        	alert("成功");
+		        	location.reload()
+		        }else{
+		        	
+		        }
+	        },'json');
+		}
+	})
+//	商品保存
+	$(".goods_save").click(function(){
+		var that=this
+		
+		var goods_title=$("#goods_title_"+$(that).attr("val")).val()
+		var ktv_danwei=$("#ktv_danwei_"+$(that).attr("val")).val()
+		var ktv_guige=$("#ktv_guige_"+$(that).attr("val")).val()
+		
+	
+
+		
+		console.log(goods_title)
+		console.log(ktv_danwei)
+		
+		console.log(ktv_guige)
+		console.log($(that).attr("val"))
+		
+		var data={
+//			'fenlei_1':fenlei_1,
+//			'fenlei_2':fenlei_2,
+			'goods_title':goods_title,
+			'ktv_danwei':ktv_danwei,
+			'ktv_guige':ktv_guige,
+			'id':$(that).attr("val"),
+		}
+		
+		if($("#id_"+$(that).attr("key")).find("option:selected").val()){
+			data.fenlei_1=$("#id_"+$(that).attr("key")).find("option:selected").val()
+		}
+		if($("#choose_"+$(that).attr("key")).find("option:selected").val()){
+			data.fenlei_2=$("#choose_"+$(that).attr("key")).find("option:selected").val()
+		}
+				console.log(data)
+		$.post('__ROOT__/adp.php/Warehouse/goods_savektv',data,function(data){
+		        if(data==1){
+		        	alert("成功");
+		        	location.reload()
+		        }else{
+		        	
+		        }
+	        },'json');
+	})	
+</script> 
+
+

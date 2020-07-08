@@ -1,0 +1,38 @@
+<div id="sidebar">
+
+	<if condition="$head_menu eq 1">
+		<ul>
+			<li ><a href="{:U('Members/index')}"><i class="icon icon-shopping-cart"></i>
+				<span>会员概述</span></a></li>
+			<li><a href="{:U('Members/members')}"><i class="icon icon-shopping-cart"></i>
+				<span>会员管理</span></a></li>
+			<li><a href="{:U('Members/members_lever')}"><i class="icon icon-shopping-cart"></i>
+				<span><if condition="$program_id eq JT201808090855119076">会员卡<else/>会员等级</if></span></a></li>
+			<!--<li><a href="{:U('Members/members_group')}"><i class="icon icon-shopping-cart"></i>
+				<span>会员分组</span></a></li>-->
+			<if condition="($program_id eq JT201711101339052665) or ($program_id eq JT201709011821539094)">
+			<li><a href="{:U('Members/members_account')}"><i class="icon icon-shopping-cart"></i>
+				<span>会员账号管理</span></a></li>
+			</if>
+			<if condition="($program_id eq JT201806151732369242)">
+			<li><a href="{:U('Members/ad_add')}"><i class="icon icon-shopping-cart"></i>
+				<span>资料登记广告</span></a></li>
+			</if>
+			<if condition="$head_menu eq 5">
+				<li ><a href="{:U('Members/cash_ing')}"><i class="icon icon-shopping-cart"></i>
+					<span>待审核的</span></a></li>
+				<li><a href="{:U('Members/cash_git')}"><i class="icon icon-shopping-cart"></i>
+					<span>待打款的</span></a></li>
+				<li><a href="{:U('Members/cash_done')}"><i class="icon icon-shopping-cart"></i>
+					<span>已打款的</span></a></li>
+				<li><a href="{:U('Members/cash_none')}"><i class="icon icon-shopping-cart"></i>
+					<span>无效的</span></a></li>
+
+				<li><a href="{:U('Members/integral_set')}"><i class="icon icon-shopping-cart"></i>
+					<span>会员积分充值设置</span></a></li>
+			</if>
+
+		</ul>
+	</if>
+
+</div>

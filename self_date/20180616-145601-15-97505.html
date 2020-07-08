@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+     
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+    <!–[if lte IE 8]>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <![endif]–>
+    <!–[if IE 9]>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7;IE=9"/>
+    <![endif]–>
+    <title>涨跌幅排行_数据中心_同花顺财经</title>
+            <link rel="stylesheet" href="http://s.thsi.cn/css/datacenter/financial/base.css"/>
+        <link rel="stylesheet" href="http://s.thsi.cn/css/datacenter/financial/page.css"/>
+        <link rel="stylesheet" href="http://s.thsi.cn/css/datacenter/iwcxg.css"/>
+    <link rel="stylesheet" href="http://s.thsi.cn/css/datacenter/hqcss.css"/>
+        	<style type="text/css">
+	
+	body{font-size:13px;}
+	div.header a:hover{text-decoration:none;}
+	.m_hd{background-size:1200px;background-repeat:repeat-x;}
+	.m_box .hd{background-image:url(http://i.thsi.cn/images/newdata/common.jpg); BACKGROUND-REPEAT: repeat-x;background-size:1200px;}	
+	.m_box .hd h2{font-weight:bold;}
+	.jjyyb_flash_bd li{width:255px;}
+	.yyfg{width:570px;}
+	.subnav a{width:198px;}
+	.lhb_wt{width:20%;}
+	.jj_yyb_group1, .jj_yyb_group2{width:598px;}
+	.post{width:100%;}
+	.m_box .bd{width:auto;}
+	
+	</style>
+		
+<style type="text/css">
+
+    #footer{border-top:1px solid #777;clear:both;overflow:hidden;padding-top:10px;text-align:center;font-size:12px;line-height:24px;width:1200px;margin:10px auto;font-family:tahoma,arial;}
+    #footer p{margin:0;}
+    #footer p.c333{color:#333;}
+    #footer span{color:#999999;padding:0 10px;}
+    #footer a{line-height:24px;color:#000;text-decoration:none;}
+    #footer a:hover{color:#CC3300;text-decoration:none;}
+    #footer .smarterwiki-linkify{padding:0 14px;}
+    .logined_box{height: 68px;color: #fff;font-size: 14px;}
+    .logined_box a{display: block;height: 68px;float: left;line-height: 68px;color: #fff;  }
+    .login_box span,.logined_box span{float: left;line-height: 68px;margin: 0 5px;  }
+
+</style></head>
+<body>
+<div class="header">
+    <div class="header-search">
+        <div class="w1200 clearfix">
+            <div class="hdlogo">
+                <a target="_blank" class="site-logo" href="http://www.10jqka.com.cn"> <img width="142" height="46" src="http://i.thsi.cn/images/datacenter/financial/logo-ths.png" title="同花顺" alt="同花顺"></a>
+                <h1><a target="_blank" title="数据中心" class="sub-logo" href="http://data.10jqka.com.cn/">数据中心</a></h1>
+            </div>
+          <div class="search-box">
+                <div class="search-list">
+                    <a href="###">信息</a><span>|</span>
+                    <a href="###"  class="cur">股票</a><span>|</span>
+                    <a href="###">百科</a>
+                </div>
+                <div class="search-main">
+                    <span style="display: none;">
+                        <input type="text" value="搜研报/看公告/找概念" class="search-input" id="search-input-xx">
+                        <input type="submit" value="" class="search-btn" id="search-btn-xx">
+                    </span>
+                    <span>
+                        <input type="text" value="输入股票/基金代码、简称或关键字" class="search-input" id="search-input-gp">
+                        <input type="submit" value="" class="search-btn" id="search-btn-gp">
+                    </span>
+                    <span style="display: none;">
+                        <input type="text" value="请输入词条名" class="search-input" id="search-input-bk">
+                        <input type="submit" value="" class="search-btn" id="search-btn-bk">
+                    </span>
+                </div>
+            </div>
+           <div class="login-box hide">
+                <a href="http://upass.10jqka.com.cn/login?redir=HTTP_REFERER" target="_blank">登录
+
+</a><span>|</span>
+                <a href="http://upass.10jqka.com.cn/register" target="_blank">注册</a>
+            </div>
+            <div class="logined_box fr">
+                <a href="http://stock.10jqka.com.cn/my/" target="_blank" id="J_username"></a>
+                <span>|</span>
+                <a href="javascript:;" id="header_logined_out" target="_self" class="homeloginout">退出</a>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="w1200 inner-nav">
+            <a href="http://data.10jqka.com.cn/market/longhu/" nav="lhb" tid="longhu" >龙虎榜</a>
+            <a href="http://data.10jqka.com.cn/ipo/xgsgyzq/" nav="xgsj"  tid="xingu" >新股数据</a>
+            <a href="http://data.10jqka.com.cn/ipo/bond/" nav="bond"  tid="kezhuanzhai" >可转债</a>
+            <a href="http://data.10jqka.com.cn/financial/yjyg/" nav="cwfx" tid="caiwu" >财务分析</a>
+            <a href="http://data.10jqka.com.cn/funds/ggzjl/" nav="zjlx"  tid="zijin" >资金流向</a>
+            <a href="http://data.10jqka.com.cn/rank/cxg/" nav="jsxg" tid="xuangu" >技术选股</a>
+            <a href="http://data.10jqka.com.cn/market/rzrq/" nav="rzrq" tid="liangrong" >融资融券</a>
+            <a href="http://data.10jqka.com.cn/market/dzjy/" nav="dzjy" tid="dazong" >大宗交易</a>
+            <a href="http://data.10jqka.com.cn/market/xsjj/" nav="xsjj" tid="xianshou" >限售解禁</a>
+            <a href="http://data.10jqka.com.cn/hgt/hgtb/" nav="hgt" tid="hushen" >沪深港通</a>
+            <a href="http://data.10jqka.com.cn/tradetips/mrtbts/" nav="jyts" tid="jiaoyitishi" >交易提示</a>
+            <a href="http://q.10jqka.com.cn" target="_blank" tid="hangqing">行情中心</a>
+            <a href="http://data.10jqka.com.cn/gzqh/" nav="more" tid="gengduo" class="cur">更多</a>
+        </div>
+        <div class="sub-nav">
+            <span class="xgsj-list">
+                <a href="http://data.10jqka.com.cn/ipo/xgsgyzq/" target="_blank" tid="xgsg">新股申购</a>
+                <a href="http://data.10jqka.com.cn/ipo/xgpt/" target="_blank" tid="xgrl">新股日历</a>
+                <a href="http://data.10jqka.com.cn/ipo/xgsh/" target="_blank" tid="xgsh">新股上会</a>
+                <a href="http://data.10jqka.com.cn/ipo/xgyp/" target="_blank" tid="xgyp">新股预披露</a>
+                <a href="http://data.10jqka.com.cn/ipo/xgsr/" target="_blank" tid="xgsr">上市首日</a>
+                <a href="http://data.10jqka.com.cn/ipo/syg/" target="_blank" tid="syg">IPO受益股</a>
+            </span>
+            <span class="cwfx-list">
+                <a href="http://data.10jqka.com.cn/financial/yjyg/" target="_blank" tid="yjyg">业绩预告</a>
+                <a href="http://data.10jqka.com.cn/financial/yjkb/" target="_blank" tid="yjkb">业绩快报</a>
+                <a href="http://data.10jqka.com.cn/financial/yjgg/" target="_blank" tid="yjgg">业绩公告</a>
+                <a href="http://data.10jqka.com.cn/financial/yypl/" target="_blank" tid="yypl">业绩预披露</a>
+                <a href="http://data.10jqka.com.cn/financial/sgpx/" target="_blank" tid="sgpx">高送转</a>
+                <a href="http://data.10jqka.com.cn/financial/ggjy/" target="_blank" tid="ggcg">高管持股</a>
+            </span>
+            <span class="zjlx-list">
+                <a href="http://data.10jqka.com.cn/funds/ggzjl/" target="_blank" tid="ggzj">个股资金</a>
+                <a href="http://data.10jqka.com.cn/funds/gnzjl/" target="_blank" tid="gnzjl">概念资金</a>
+                <a href="http://data.10jqka.com.cn/funds/hyzjl/" target="_blank" tid="hyzjl">行业资金</a>
+                <a href="http://data.10jqka.com.cn/funds/ddzz/" target="_blank" tid="ddzz">大单追踪</a>
+            </span>
+            <span class="jsxg-list">
+                <a href="http://data.10jqka.com.cn/rank/cxg/" target="_blank" tid="cxg">创新高</a>
+                <a href="http://data.10jqka.com.cn/rank/cxd/" target="_blank" tid="cxd">创新低</a>
+                <a href="http://data.10jqka.com.cn/rank/lxsz/" target="_blank" tid="lxsz">连续上涨</a>
+                <a href="http://data.10jqka.com.cn/rank/lxxd/" target="_blank" tid="lxxd">连续下跌</a>
+                <a href="http://data.10jqka.com.cn/rank/cxfl/" target="_blank" tid="cxfl">持续放量</a>
+                <a href="http://data.10jqka.com.cn/rank/cxsl/" target="_blank" tid="cxsl">持续缩量</a>
+                <a href="http://data.10jqka.com.cn/rank/xstp/" target="_blank" tid="xstp">向上突破</a>
+                <a href="http://data.10jqka.com.cn/rank/xxtp/" target="_blank" tid="xxtp">向下突破</a>
+                <a href="http://data.10jqka.com.cn/rank/ljqs/" target="_blank" tid="ljqs">量价齐升</a>
+                <a href="http://data.10jqka.com.cn/rank/ljqd/" target="_blank" tid="ljqd">量价齐跌</a>
+            </span>
+            <span class="hgt-list">
+                <a href="http://data.10jqka.com.cn/hgt/hgtb/" target="_blank" tid="hgt">沪股通</a>
+                <a href="http://data.10jqka.com.cn/hgt/ggtb/" target="_blank" tid="ggtb">港股通(沪)</a>
+                <a href="http://data.10jqka.com.cn/hgt/sgtb/" target="_blank" tid="sgtb">深股通</a>
+                <a href="http://data.10jqka.com.cn/hgt/ggtbs/" target="_blank" tid="ggtbs">港股通(深)</a>
+            </span>
+            <span class="jyts-list">
+                <a href="http://data.10jqka.com.cn/tradetips/mrtbts/" target="_blank" tid="mrtbts">每日特别提示</a>
+                <a href="http://data.10jqka.com.cn/tradetips/tfpts/" target="_blank" tid="tfpts">停复牌提示</a>
+                <a href="http://data.10jqka.com.cn/tradetips/gddh/" target="_blank" tid="gddh">股东大会</a>
+                <a href="http://data.10jqka.com.cn/tradetips/tbcl/" target="_blank" tid="tbcl">特别处理</a>
+                <a href="http://data.10jqka.com.cn/market/ggsd/" target="_blank" tid="ggsd">公告速递</a>
+                
+            </span>
+            <span class="more-list">
+                <a href="http://data.10jqka.com.cn/financial/xzjp/" target="_blank" tid="xzjp">险资举牌</a>
+                <a href="http://data.10jqka.com.cn/gzqh/" target="_blank" tid="gzqh">股指期货</a>
+                <a href="http://data.10jqka.com.cn/market/zdfph/" target="_blank" tid="zdfph">涨跌幅排行</a>
+                <a href="http://data.10jqka.com.cn/market/ggsyl/" target="_blank" tid="ggsyl">个股市盈率</a>
+                <a href="http://data.10jqka.com.cn/market/ahgbj/" target="_blank" tid="ahgbj">AH股比价</a>
+                <a href="http://data.10jqka.com.cn/market/abgbj/" target="_blank" tid="abgbj">AB股比价</a>
+                <a href="http://data.10jqka.com.cn/macro/cpi/" nav="macro" tid="hongguan" >宏观数据</a>
+            </span>
+        </div>
+    </div>
+</div><div class="container w1200">
+<div class="page-nav">
+    <div class="crumbs">
+        <a class="crumbs-links" href="http://www.10jqka.com.cn" target="_blank">同花顺</a>
+        <span class="gt">&gt;</span><a class="crumbs-links"  href="http://data.10jqka.com.cn" target="_blank">数据中心</a>
+                        <span class="gt">&gt;</span><span class="cur">
+        涨跌幅排行
+        </span>        
+	        </div>
+    <div class="latest-concern">
+        <span><i class="icon">HOT</i>&nbsp;热门关注：</span>
+        &nbsp;&nbsp;<a href="http://data.10jqka.com.cn/financial/xzjp/#refCountId=data_55f13c7e_426" target="_blank" title="险资举牌" class="c-rise">险资举牌</a>
+        &nbsp;&nbsp;<a href="http://data.10jqka.com.cn/market/longhu/#refCountId=data_55f13c7e_426" target="_blank" title="龙虎榜单">龙虎榜单</a>
+        &nbsp;&nbsp;<a href="http://data.10jqka.com.cn/market/rzrq/#refCountId=data_55f13c7e_426" target="_blank" title="融资融券">融资融券</a>
+        &nbsp;&nbsp;<a href="http://data.10jqka.com.cn/market/dzjy/#refCountId=data_55f13c7e_426" target="_blank" title="大宗交易">大宗交易</a>
+    </div>
+</div><div class="page-cont">
+	<div class="page-row">
+	    <div class="page-tab">
+	    	    <a href="javascript:void(0)" class="cur">涨跌幅排行</a>
+	    	    <a href="http://data.10jqka.com.cn/market/ggsyl/">个股市盈率</a>
+	            <a href="http://data.10jqka.com.cn/market/ahgbj/" >AH股比价</a>
+	            <a href="http://data.10jqka.com.cn/market/abgbj/" >AB股比价</a>
+	    </div>
+</div>
+<div class="page-main" id="datacenter_change_content">
+<div class="table-tit">
+    <h2 class="icon-sgpx">涨跌幅排行</h2>
+    <!--span class="page-search-box">
+        <input type="text" class="search-input" id="search-center" value="输入股票/基金代码、简称或关键字"/>
+        <input type="submit" class="search-btn" value="" id="search-center-submit"/>
+    </span-->
+    <div class="sel-report">
+        <span class="fr">更新时间：2018-06-16 14:06:55</span>
+    </div>
+</div>
+<div class="table-tab J-ajax-board">
+    <a href="javascript:void(0)" class="cur J-board-item" board="">总表</a>
+    <a href="javascript:void(0)" class="J-board-item" board="3">三日</a>
+    <a href="javascript:void(0)" class="J-board-item" board="5">五日</a>
+    
+</div>
+<div class="page-table" id="J-ajax-main">
+    <div class="page-loading" style="display: none;">
+        <div class="mask"></div>
+        <div class="loading-img"></div>
+    </div>
+        <table class="m-table J-ajax-table">
+						<thead class="rows">
+							<tr>
+								<th style="width: 54px;" rowspan="2">序号</th>
+								<th style="width: 80px;" rowspan="2"><a href="javascript:void(0)" class="J-ajax-a" field="code" >代码</a><i class="arr-down"></i></th> 
+								<th style="width: 90px;" rowspan="2">简称</th>
+								<th style="width: 74px;" rowspan="2"><a href="javascript:void(0)" class="J-ajax-a" field="zxj" >最新价<br/>（元）</a><i class="arr-down"></i></th> 
+								<th  colspan="3" class="th-col"style="width: 222px;">涨跌幅最新（%）</th>
+								<th  colspan="3" class="th-col"style="width: 222px;">累计换手率（%）</th>
+								<th  colspan="3" class="th-col"style="width: 222px;">资金净流入（元）</th>
+							</tr>
+							<tr>
+							
+								<th style="width: 74px;" class="cur"><a href="javascript:void(0)" class="J-ajax-a" field="zdf" order="asc">当日</a><i class="arr-down"></i></th> 
+								<th style="width: 74px;"><a href="javascript:void(0)" class="J-ajax-a" field="zdf3" >三日</a><i class="arr-down"></i></th> 
+								<th style="width: 74px;"><a href="javascript:void(0)" class="J-ajax-a" field="zdf5" >五日</a><i class="arr-down"></i></th> 
+								<th style="width: 74px;"><a href="javascript:void(0)" class="J-ajax-a" field="hsl" >当日</a><i class="arr-down"></i></th> 
+								<th style="width: 74px;"><a href="javascript:void(0)" class="J-ajax-a" field="ljhsl3" >三日</a><i class="arr-down"></i></th> 
+								<th style="width: 74px;"><a href="javascript:void(0)" class="J-ajax-a" field="ljhsl5" >五日</a><i class="arr-down"></i></th> 
+								<th style="width: 74px;"><a href="javascript:void(0)" class="J-ajax-a" field="zjjlr" >当日</a><i class="arr-down"></i></th> 
+								<th style="width: 74px;"><a href="javascript:void(0)" class="J-ajax-a" field="zjjlr3" >三日</a><i class="arr-down"></i></th> 
+								<th style="width: 74px;"><a href="javascript:void(0)" class="J-ajax-a" field="zjjlr5" >五日</a><i class="arr-down"></i></th> 
+							</tr>
+						</thead>
+						<tbody>
+																				<tr class="even">   
+								<td class="first tc">701</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/600908/"  target="_blank">600908</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/600908/"  target="_blank" code="hs_600908" class="J_showCanvas">无锡银行</a></td>
+								<td class="tr c-fall ">6.15</td>
+								<td class="tr c-fall cur">-0.48</td>
+								<td class="tr c-fall ">-1.83</td>
+								<td class="tr c-fall ">-1.83</td>
+								<td class="tr c-rise ">0.56</td>
+								<td class="tr c-rise ">1.49</td>
+								<td class="tr c-rise ">2.83</td>
+								<td class="tr c-fall ">-541.34万</td>
+								<td class="tr c-fall ">-950.49万</td>
+								<td class="tr c-fall ">-1181.24万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">702</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/002489/"  target="_blank">002489</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/002489/"  target="_blank" code="hs_002489" class="J_showCanvas">浙江永强</a></td>
+								<td class="tr c-fall ">4.04</td>
+								<td class="tr c-fall cur">-0.49</td>
+								<td class="tr c-fall ">-1.03</td>
+								<td class="tr c-fall ">-0.62</td>
+								<td class="tr c-rise ">0.22</td>
+								<td class="tr c-rise ">0.69</td>
+								<td class="tr c-rise ">1.00</td>
+								<td class="tr c-fall ">-398.63万</td>
+								<td class="tr c-fall ">-279.96万</td>
+								<td class="tr c-fall ">-246.71万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">703</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/002516/"  target="_blank">002516</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/002516/"  target="_blank" code="hs_002516" class="J_showCanvas">旷达科技</a></td>
+								<td class="tr c-fall ">4.01</td>
+								<td class="tr c-fall cur">-0.50</td>
+								<td class="tr c-fall ">-0.70</td>
+								<td class="tr c-fall ">-0.70</td>
+								<td class="tr c-rise ">1.08</td>
+								<td class="tr c-rise ">2.45</td>
+								<td class="tr c-rise ">3.67</td>
+								<td class="tr c-fall ">-1370.02万</td>
+								<td class="tr c-fall ">-2033.97万</td>
+								<td class="tr c-fall ">-1565.17万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">704</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/002341/"  target="_blank">002341</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/002341/"  target="_blank" code="hs_002341" class="J_showCanvas">新纶科技</a></td>
+								<td class="tr c-fall ">13.90</td>
+								<td class="tr c-fall cur">-0.50</td>
+								<td class="tr c-fall ">-3.82</td>
+								<td class="tr c-fall ">-6.25</td>
+								<td class="tr c-rise ">1.28</td>
+								<td class="tr c-rise ">3.77</td>
+								<td class="tr c-rise ">7.08</td>
+								<td class="tr c-fall ">-1517.47万</td>
+								<td class="tr c-fall ">-3599.80万</td>
+								<td class="tr c-fall ">-8592.51万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">705</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/002193/"  target="_blank">002193</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/002193/"  target="_blank" code="hs_002193" class="J_showCanvas">如意集团</a></td>
+								<td class="tr c-fall ">15.81</td>
+								<td class="tr c-fall cur">-0.50</td>
+								<td class="tr c-fall ">-0.80</td>
+								<td class="tr c-fall ">-0.80</td>
+								<td class="tr c-rise ">0.82</td>
+								<td class="tr c-rise ">1.05</td>
+								<td class="tr c-rise ">1.44</td>
+								<td class="tr c-rise ">1792.43万</td>
+								<td class="tr c-rise ">1803.99万</td>
+								<td class="tr c-rise ">2520.72万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">706</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/000789/"  target="_blank">000789</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/000789/"  target="_blank" code="hs_000789" class="J_showCanvas">万年青</a></td>
+								<td class="tr c-fall ">12.04</td>
+								<td class="tr c-fall cur">-0.50</td>
+								<td class="tr c-fall ">-0.45</td>
+								<td class="tr c-rise ">4.98</td>
+								<td class="tr c-rise ">5.58</td>
+								<td class="tr c-rise ">12.84</td>
+								<td class="tr c-rise ">22.01</td>
+								<td class="tr c-fall ">-458.15万</td>
+								<td class="tr c-fall ">-1599.98万</td>
+								<td class="tr c-rise ">1.09亿</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">707</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/002807/"  target="_blank">002807</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/002807/"  target="_blank" code="hs_002807" class="J_showCanvas">江阴银行</a></td>
+								<td class="tr c-fall ">5.87</td>
+								<td class="tr c-fall cur">-0.51</td>
+								<td class="tr c-fall ">-3.47</td>
+								<td class="tr c-fall ">-3.32</td>
+								<td class="tr c-rise ">0.97</td>
+								<td class="tr c-rise ">2.73</td>
+								<td class="tr c-rise ">4.25</td>
+								<td class="tr c-fall ">-449.01万</td>
+								<td class="tr c-fall ">-1720.18万</td>
+								<td class="tr c-fall ">-2028.12万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">708</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/600882/"  target="_blank">600882</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/600882/"  target="_blank" code="hs_600882" class="J_showCanvas">广泽股份</a></td>
+								<td class="tr c-fall ">7.85</td>
+								<td class="tr c-fall cur">-0.51</td>
+								<td class="tr c-fall ">-1.83</td>
+								<td class="tr c-fall ">-4.46</td>
+								<td class="tr c-rise ">0.17</td>
+								<td class="tr c-rise ">0.45</td>
+								<td class="tr c-rise ">0.95</td>
+								<td class="tr c-rise ">30.94万</td>
+								<td class="tr c-fall ">-43.32万</td>
+								<td class="tr c-fall ">-231.15万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">709</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/601158/"  target="_blank">601158</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/601158/"  target="_blank" code="hs_601158" class="J_showCanvas">重庆水务</a></td>
+								<td class="tr c-fall ">5.75</td>
+								<td class="tr c-fall cur">-0.52</td>
+								<td class="tr c-fall ">-1.99</td>
+								<td class="tr">0.00</td>
+								<td class="tr c-rise ">0.04</td>
+								<td class="tr c-rise ">0.14</td>
+								<td class="tr c-rise ">0.24</td>
+								<td class="tr c-fall ">-103.63万</td>
+								<td class="tr c-fall ">-1427.43万</td>
+								<td class="tr c-fall ">-2370.11万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">710</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/000783/"  target="_blank">000783</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/000783/"  target="_blank" code="hs_000783" class="J_showCanvas">长江证券</a></td>
+								<td class="tr c-fall ">5.78</td>
+								<td class="tr c-fall cur">-0.52</td>
+								<td class="tr c-fall ">-2.92</td>
+								<td class="tr c-fall ">-3.80</td>
+								<td class="tr c-rise ">0.28</td>
+								<td class="tr c-rise ">0.72</td>
+								<td class="tr c-rise ">1.10</td>
+								<td class="tr c-fall ">-610.77万</td>
+								<td class="tr c-fall ">-2758.27万</td>
+								<td class="tr c-fall ">-4386.28万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">711</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/600104/"  target="_blank">600104</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/600104/"  target="_blank" code="hs_600104" class="J_showCanvas">上汽集团</a></td>
+								<td class="tr c-fall ">36.53</td>
+								<td class="tr c-fall cur">-0.52</td>
+								<td class="tr c-fall ">-0.43</td>
+								<td class="tr c-rise ">1.14</td>
+								<td class="tr c-rise ">0.18</td>
+								<td class="tr c-rise ">0.40</td>
+								<td class="tr c-rise ">0.65</td>
+								<td class="tr c-fall ">-1.39亿</td>
+								<td class="tr c-fall ">-1.85亿</td>
+								<td class="tr c-fall ">-9719.73万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">712</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/600305/"  target="_blank">600305</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/600305/"  target="_blank" code="hs_600305" class="J_showCanvas">恒顺醋业</a></td>
+								<td class="tr c-fall ">9.31</td>
+								<td class="tr c-fall cur">-0.53</td>
+								<td class="tr c-fall ">-5.62</td>
+								<td class="tr c-fall ">-5.27</td>
+								<td class="tr c-rise ">1.49</td>
+								<td class="tr c-rise ">6.60</td>
+								<td class="tr c-rise ">11.88</td>
+								<td class="tr c-fall ">-1432.58万</td>
+								<td class="tr c-fall ">-8548.99万</td>
+								<td class="tr c-fall ">-7429.07万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">713</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/300230/"  target="_blank">300230</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/300230/"  target="_blank" code="hs_300230" class="J_showCanvas">永利股份</a></td>
+								<td class="tr c-fall ">5.65</td>
+								<td class="tr c-fall cur">-0.53</td>
+								<td class="tr c-fall ">-3.89</td>
+								<td class="tr c-fall ">-8.06</td>
+								<td class="tr c-rise ">1.98</td>
+								<td class="tr c-rise ">6.20</td>
+								<td class="tr c-rise ">11.24</td>
+								<td class="tr c-fall ">-939.07万</td>
+								<td class="tr c-fall ">-2955.55万</td>
+								<td class="tr c-fall ">-6152.08万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">714</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/002303/"  target="_blank">002303</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/002303/"  target="_blank" code="hs_002303" class="J_showCanvas">美盈森</a></td>
+								<td class="tr c-fall ">5.65</td>
+								<td class="tr c-fall cur">-0.53</td>
+								<td class="tr c-fall ">-2.47</td>
+								<td class="tr c-fall ">-3.89</td>
+								<td class="tr c-rise ">0.39</td>
+								<td class="tr c-rise ">0.99</td>
+								<td class="tr c-rise ">1.94</td>
+								<td class="tr c-fall ">-1053.75万</td>
+								<td class="tr c-fall ">-1898.23万</td>
+								<td class="tr c-fall ">-3753.07万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">715</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/000750/"  target="_blank">000750</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/000750/"  target="_blank" code="hs_000750" class="J_showCanvas">国海证券</a></td>
+								<td class="tr c-fall ">3.77</td>
+								<td class="tr c-fall cur">-0.53</td>
+								<td class="tr c-fall ">-2.57</td>
+								<td class="tr c-fall ">-2.57</td>
+								<td class="tr c-rise ">0.31</td>
+								<td class="tr c-rise ">0.71</td>
+								<td class="tr c-rise ">1.25</td>
+								<td class="tr c-fall ">-638.08万</td>
+								<td class="tr c-fall ">-1545.55万</td>
+								<td class="tr c-fall ">-2837.66万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">716</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/002514/"  target="_blank">002514</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/002514/"  target="_blank" code="hs_002514" class="J_showCanvas">宝馨科技</a></td>
+								<td class="tr c-fall ">5.66</td>
+								<td class="tr c-fall cur">-0.53</td>
+								<td class="tr c-fall ">-2.69</td>
+								<td class="tr c-fall ">-1.19</td>
+								<td class="tr c-rise ">0.49</td>
+								<td class="tr c-rise ">1.58</td>
+								<td class="tr c-rise ">2.53</td>
+								<td class="tr c-fall ">-153.91万</td>
+								<td class="tr c-fall ">-796.62万</td>
+								<td class="tr c-fall ">-791.99万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">717</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/002627/"  target="_blank">002627</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/002627/"  target="_blank" code="hs_002627" class="J_showCanvas">宜昌交运</a></td>
+								<td class="tr c-fall ">18.45</td>
+								<td class="tr c-fall cur">-0.54</td>
+								<td class="tr c-fall ">-1.85</td>
+								<td class="tr c-fall ">-2.24</td>
+								<td class="tr c-rise ">0.99</td>
+								<td class="tr c-rise ">1.97</td>
+								<td class="tr c-rise ">2.78</td>
+								<td class="tr c-fall ">-867.08万</td>
+								<td class="tr c-fall ">-1227.74万</td>
+								<td class="tr c-fall ">-1265.62万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">718</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/002221/"  target="_blank">002221</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/002221/"  target="_blank" code="hs_002221" class="J_showCanvas">东华能源</a></td>
+								<td class="tr c-fall ">10.99</td>
+								<td class="tr c-fall cur">-0.54</td>
+								<td class="tr c-fall ">-0.97</td>
+								<td class="tr c-fall ">-0.62</td>
+								<td class="tr c-rise ">0.43</td>
+								<td class="tr c-rise ">1.03</td>
+								<td class="tr c-rise ">1.69</td>
+								<td class="tr c-fall ">-374.18万</td>
+								<td class="tr c-fall ">-1001.48万</td>
+								<td class="tr c-fall ">-966.00万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">719</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/601336/"  target="_blank">601336</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/601336/"  target="_blank" code="hs_601336" class="J_showCanvas">新华保险</a></td>
+								<td class="tr c-fall ">47.23</td>
+								<td class="tr c-fall cur">-0.55</td>
+								<td class="tr c-rise ">0.68</td>
+								<td class="tr">0.00</td>
+								<td class="tr c-rise ">0.93</td>
+								<td class="tr c-rise ">3.16</td>
+								<td class="tr c-rise ">5.34</td>
+								<td class="tr c-fall ">-1.57亿</td>
+								<td class="tr c-fall ">-8849.96万</td>
+								<td class="tr c-rise ">7800.68万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">720</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/600961/"  target="_blank">600961</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/600961/"  target="_blank" code="hs_600961" class="J_showCanvas">株冶集团</a></td>
+								<td class="tr c-fall ">7.11</td>
+								<td class="tr c-fall cur">-0.56</td>
+								<td class="tr c-fall ">-1.20</td>
+								<td class="tr c-fall ">-0.93</td>
+								<td class="tr c-rise ">0.19</td>
+								<td class="tr c-rise ">0.36</td>
+								<td class="tr c-rise ">0.47</td>
+								<td class="tr c-fall ">-268.22万</td>
+								<td class="tr c-fall ">-399.12万</td>
+								<td class="tr c-fall ">-339.43万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">721</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/600642/"  target="_blank">600642</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/600642/"  target="_blank" code="hs_600642" class="J_showCanvas">申能股份</a></td>
+								<td class="tr c-fall ">5.36</td>
+								<td class="tr c-fall cur">-0.56</td>
+								<td class="tr c-fall ">-0.77</td>
+								<td class="tr c-fall ">-1.27</td>
+								<td class="tr c-rise ">0.13</td>
+								<td class="tr c-rise ">0.28</td>
+								<td class="tr c-rise ">0.48</td>
+								<td class="tr c-fall ">-457.13万</td>
+								<td class="tr c-fall ">-407.96万</td>
+								<td class="tr c-fall ">-666.87万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">722</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/002117/"  target="_blank">002117</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/002117/"  target="_blank" code="hs_002117" class="J_showCanvas">东港股份</a></td>
+								<td class="tr c-fall ">15.83</td>
+								<td class="tr c-fall cur">-0.56</td>
+								<td class="tr c-fall ">-1.82</td>
+								<td class="tr c-fall ">-1.65</td>
+								<td class="tr c-rise ">0.49</td>
+								<td class="tr c-rise ">1.36</td>
+								<td class="tr c-rise ">2.16</td>
+								<td class="tr c-rise ">41.82万</td>
+								<td class="tr c-fall ">-773.18万</td>
+								<td class="tr c-fall ">-851.38万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">723</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/000970/"  target="_blank">000970</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/000970/"  target="_blank" code="hs_000970" class="J_showCanvas">中科三环</a></td>
+								<td class="tr c-fall ">10.72</td>
+								<td class="tr c-fall cur">-0.56</td>
+								<td class="tr c-fall ">-0.09</td>
+								<td class="tr c-rise ">0.09</td>
+								<td class="tr c-rise ">1.04</td>
+								<td class="tr c-rise ">2.95</td>
+								<td class="tr c-rise ">4.21</td>
+								<td class="tr c-fall ">-1742.71万</td>
+								<td class="tr c-fall ">-1858.64万</td>
+								<td class="tr c-fall ">-3301.39万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">724</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/600360/"  target="_blank">600360</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/600360/"  target="_blank" code="hs_600360" class="J_showCanvas">华微电子</a></td>
+								<td class="tr c-fall ">7.12</td>
+								<td class="tr c-fall cur">-0.56</td>
+								<td class="tr c-rise ">3.51</td>
+								<td class="tr c-rise ">4.25</td>
+								<td class="tr c-rise ">2.82</td>
+								<td class="tr c-rise ">8.77</td>
+								<td class="tr c-rise ">11.68</td>
+								<td class="tr c-fall ">-1877.13万</td>
+								<td class="tr c-fall ">-121.15万</td>
+								<td class="tr c-fall ">-589.16万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">725</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/300015/"  target="_blank">300015</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/300015/"  target="_blank" code="hs_300015" class="J_showCanvas">爱尔眼科</a></td>
+								<td class="tr c-fall ">29.95</td>
+								<td class="tr c-fall cur">-0.56</td>
+								<td class="tr c-fall ">-2.93</td>
+								<td class="tr c-fall ">-5.10</td>
+								<td class="tr c-rise ">0.44</td>
+								<td class="tr c-rise ">1.93</td>
+								<td class="tr c-rise ">3.33</td>
+								<td class="tr c-rise ">17.89万</td>
+								<td class="tr c-fall ">-8506.42万</td>
+								<td class="tr c-fall ">-1.83亿</td>
+							</tr>
+														<tr >   
+								<td class="first tc">726</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/300046/"  target="_blank">300046</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/300046/"  target="_blank" code="hs_300046" class="J_showCanvas">台基股份</a></td>
+								<td class="tr c-fall ">12.18</td>
+								<td class="tr c-fall cur">-0.57</td>
+								<td class="tr">0.00</td>
+								<td class="tr c-fall ">-1.62</td>
+								<td class="tr c-rise ">2.73</td>
+								<td class="tr c-rise ">8.84</td>
+								<td class="tr c-rise ">12.78</td>
+								<td class="tr c-fall ">-1397.04万</td>
+								<td class="tr c-fall ">-1485.36万</td>
+								<td class="tr c-fall ">-3472.95万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">727</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/000802/"  target="_blank">000802</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/000802/"  target="_blank" code="hs_000802" class="J_showCanvas">北京文化</a></td>
+								<td class="tr c-fall ">10.45</td>
+								<td class="tr c-fall cur">-0.57</td>
+								<td class="tr c-fall ">-1.07</td>
+								<td class="tr c-fall ">-2.88</td>
+								<td class="tr c-rise ">0.78</td>
+								<td class="tr c-rise ">2.19</td>
+								<td class="tr c-rise ">3.89</td>
+								<td class="tr c-fall ">-38.94万</td>
+								<td class="tr c-fall ">-199.01万</td>
+								<td class="tr c-fall ">-1717.78万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">728</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/603359/"  target="_blank">603359</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/603359/"  target="_blank" code="hs_603359" class="J_showCanvas">东珠景观</a></td>
+								<td class="tr c-fall ">22.64</td>
+								<td class="tr c-fall cur">-0.57</td>
+								<td class="tr c-fall ">-3.71</td>
+								<td class="tr">0.00</td>
+								<td class="tr c-rise ">1.92</td>
+								<td class="tr c-rise ">6.02</td>
+								<td class="tr c-rise ">10.65</td>
+								<td class="tr c-fall ">-1073.61万</td>
+								<td class="tr c-fall ">-2162.77万</td>
+								<td class="tr c-fall ">-4186.50万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">729</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/600537/"  target="_blank">600537</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/600537/"  target="_blank" code="hs_600537" class="J_showCanvas">亿晶光电</a></td>
+								<td class="tr c-fall ">3.49</td>
+								<td class="tr c-fall cur">-0.57</td>
+								<td class="tr c-fall ">-1.64</td>
+								<td class="tr c-fall ">-2.60</td>
+								<td class="tr c-rise ">0.51</td>
+								<td class="tr c-rise ">1.42</td>
+								<td class="tr c-rise ">2.10</td>
+								<td class="tr c-rise ">243.02万</td>
+								<td class="tr c-rise ">20.21万</td>
+								<td class="tr c-rise ">41.03万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">730</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/300234/"  target="_blank">300234</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/300234/"  target="_blank" code="hs_300234" class="J_showCanvas">开尔新材</a></td>
+								<td class="tr c-fall ">6.89</td>
+								<td class="tr c-fall cur">-0.58</td>
+								<td class="tr c-fall ">-3.56</td>
+								<td class="tr c-fall ">-3.28</td>
+								<td class="tr c-rise ">0.93</td>
+								<td class="tr c-rise ">2.17</td>
+								<td class="tr c-rise ">4.08</td>
+								<td class="tr c-rise ">11.90万</td>
+								<td class="tr c-fall ">-188.94万</td>
+								<td class="tr c-fall ">-291.90万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">731</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/600259/"  target="_blank">600259</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/600259/"  target="_blank" code="hs_600259" class="J_showCanvas">广晟有色</a></td>
+								<td class="tr c-fall ">30.94</td>
+								<td class="tr c-fall cur">-0.58</td>
+								<td class="tr c-rise ">2.04</td>
+								<td class="tr c-rise ">2.20</td>
+								<td class="tr c-rise ">1.32</td>
+								<td class="tr c-rise ">4.00</td>
+								<td class="tr c-rise ">5.07</td>
+								<td class="tr c-fall ">-847.86万</td>
+								<td class="tr c-rise ">1583.43万</td>
+								<td class="tr c-rise ">1351.86万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">732</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/600010/"  target="_blank">600010</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/600010/"  target="_blank" code="hs_600010" class="J_showCanvas">包钢股份</a></td>
+								<td class="tr c-fall ">1.70</td>
+								<td class="tr c-fall cur">-0.58</td>
+								<td class="tr">0.00</td>
+								<td class="tr c-rise ">0.56</td>
+								<td class="tr c-rise ">0.60</td>
+								<td class="tr c-rise ">1.75</td>
+								<td class="tr c-rise ">2.46</td>
+								<td class="tr c-fall ">-1910.76万</td>
+								<td class="tr c-rise ">1.18亿</td>
+								<td class="tr c-rise ">1.18亿</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">733</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/002558/"  target="_blank">002558</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/002558/"  target="_blank" code="hs_002558" class="J_showCanvas">巨人网络</a></td>
+								<td class="tr c-fall ">23.80</td>
+								<td class="tr c-fall cur">-0.58</td>
+								<td class="tr c-fall ">-0.37</td>
+								<td class="tr">0.00</td>
+								<td class="tr c-rise ">0.84</td>
+								<td class="tr c-rise ">2.41</td>
+								<td class="tr c-rise ">3.85</td>
+								<td class="tr c-rise ">4.39万</td>
+								<td class="tr c-rise ">163.76万</td>
+								<td class="tr c-fall ">-1163.94万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">734</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/000685/"  target="_blank">000685</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/000685/"  target="_blank" code="hs_000685" class="J_showCanvas">中山公用</a></td>
+								<td class="tr c-fall ">8.50</td>
+								<td class="tr c-fall cur">-0.58</td>
+								<td class="tr c-fall ">-2.53</td>
+								<td class="tr c-fall ">-2.92</td>
+								<td class="tr c-rise ">0.18</td>
+								<td class="tr c-rise ">0.58</td>
+								<td class="tr c-rise ">1.02</td>
+								<td class="tr c-fall ">-47.30万</td>
+								<td class="tr c-fall ">-425.56万</td>
+								<td class="tr c-fall ">-1126.65万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">735</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/000090/"  target="_blank">000090</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/000090/"  target="_blank" code="hs_000090" class="J_showCanvas">天健集团</a></td>
+								<td class="tr c-fall ">8.53</td>
+								<td class="tr c-fall cur">-0.58</td>
+								<td class="tr c-fall ">-1.02</td>
+								<td class="tr c-rise ">0.09</td>
+								<td class="tr c-rise ">0.56</td>
+								<td class="tr c-rise ">1.17</td>
+								<td class="tr c-rise ">1.66</td>
+								<td class="tr c-fall ">-740.04万</td>
+								<td class="tr c-fall ">-1058.23万</td>
+								<td class="tr c-fall ">-1139.77万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">736</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/000006/"  target="_blank">000006</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/000006/"  target="_blank" code="hs_000006" class="J_showCanvas">深振业A</a></td>
+								<td class="tr c-fall ">6.89</td>
+								<td class="tr c-fall cur">-0.58</td>
+								<td class="tr c-fall ">-0.13</td>
+								<td class="tr c-rise ">0.80</td>
+								<td class="tr c-rise ">1.04</td>
+								<td class="tr c-rise ">2.74</td>
+								<td class="tr c-rise ">3.75</td>
+								<td class="tr c-fall ">-1118.85万</td>
+								<td class="tr c-rise ">477.22万</td>
+								<td class="tr c-rise ">630.05万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">737</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/002206/"  target="_blank">002206</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/002206/"  target="_blank" code="hs_002206" class="J_showCanvas">海利得</a></td>
+								<td class="tr c-fall ">5.03</td>
+								<td class="tr c-fall cur">-0.59</td>
+								<td class="tr c-fall ">-3.22</td>
+								<td class="tr c-fall ">-0.81</td>
+								<td class="tr c-rise ">0.64</td>
+								<td class="tr c-rise ">1.56</td>
+								<td class="tr c-rise ">2.53</td>
+								<td class="tr c-fall ">-974.02万</td>
+								<td class="tr c-fall ">-2886.36万</td>
+								<td class="tr c-fall ">-4004.73万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">738</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/002643/"  target="_blank">002643</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/002643/"  target="_blank" code="hs_002643" class="J_showCanvas">万润股份</a></td>
+								<td class="tr c-fall ">8.35</td>
+								<td class="tr c-fall cur">-0.59</td>
+								<td class="tr c-fall ">-2.05</td>
+								<td class="tr c-fall ">-2.05</td>
+								<td class="tr c-rise ">0.43</td>
+								<td class="tr c-rise ">1.02</td>
+								<td class="tr c-rise ">1.80</td>
+								<td class="tr c-fall ">-684.75万</td>
+								<td class="tr c-fall ">-1646.67万</td>
+								<td class="tr c-fall ">-2218.73万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">739</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/300095/"  target="_blank">300095</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/300095/"  target="_blank" code="hs_300095" class="J_showCanvas">华伍股份</a></td>
+								<td class="tr c-fall ">6.68</td>
+								<td class="tr c-fall cur">-0.59</td>
+								<td class="tr c-fall ">-0.74</td>
+								<td class="tr c-fall ">-0.30</td>
+								<td class="tr c-rise ">0.75</td>
+								<td class="tr c-rise ">2.01</td>
+								<td class="tr c-rise ">2.59</td>
+								<td class="tr c-rise ">111.17万</td>
+								<td class="tr c-fall ">-33.99万</td>
+								<td class="tr c-fall ">-15.00万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">740</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/300671/"  target="_blank">300671</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/300671/"  target="_blank" code="hs_300671" class="J_showCanvas">富满电子</a></td>
+								<td class="tr c-fall ">28.58</td>
+								<td class="tr c-fall cur">-0.59</td>
+								<td class="tr c-rise ">4.79</td>
+								<td class="tr c-rise ">3.55</td>
+								<td class="tr c-rise ">10.00</td>
+								<td class="tr c-rise ">28.71</td>
+								<td class="tr c-rise ">37.93</td>
+								<td class="tr c-fall ">-321.82万</td>
+								<td class="tr c-rise ">171.39万</td>
+								<td class="tr c-fall ">-190.07万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">741</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/300661/"  target="_blank">300661</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/300661/"  target="_blank" code="hs_300661" class="J_showCanvas">圣邦股份</a></td>
+								<td class="tr c-fall ">114.87</td>
+								<td class="tr c-fall cur">-0.59</td>
+								<td class="tr c-rise ">6.37</td>
+								<td class="tr c-rise ">6.86</td>
+								<td class="tr c-rise ">1.54</td>
+								<td class="tr c-rise ">5.62</td>
+								<td class="tr c-rise ">7.11</td>
+								<td class="tr c-rise ">378.59万</td>
+								<td class="tr c-rise ">2577.27万</td>
+								<td class="tr c-rise ">3095.53万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">742</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/600277/"  target="_blank">600277</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/600277/"  target="_blank" code="hs_600277" class="J_showCanvas">亿利洁能</a></td>
+								<td class="tr c-fall ">4.93</td>
+								<td class="tr c-fall cur">-0.60</td>
+								<td class="tr c-fall ">-0.55</td>
+								<td class="tr c-fall ">-0.55</td>
+								<td class="tr c-rise ">0.29</td>
+								<td class="tr c-rise ">0.62</td>
+								<td class="tr c-rise ">0.89</td>
+								<td class="tr c-fall ">-159.74万</td>
+								<td class="tr c-fall ">-18.76万</td>
+								<td class="tr c-rise ">417.96万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">743</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/600887/"  target="_blank">600887</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/600887/"  target="_blank" code="hs_600887" class="J_showCanvas">伊利股份</a></td>
+								<td class="tr c-fall ">29.63</td>
+								<td class="tr c-fall cur">-0.60</td>
+								<td class="tr c-fall ">-4.45</td>
+								<td class="tr c-fall ">-1.14</td>
+								<td class="tr c-rise ">0.99</td>
+								<td class="tr c-rise ">2.98</td>
+								<td class="tr c-rise ">5.36</td>
+								<td class="tr c-fall ">-1.91亿</td>
+								<td class="tr c-fall ">-9.58亿</td>
+								<td class="tr c-fall ">-3.67亿</td>
+							</tr>
+														<tr >   
+								<td class="first tc">744</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/300384/"  target="_blank">300384</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/300384/"  target="_blank" code="hs_300384" class="J_showCanvas">三联虹普</a></td>
+								<td class="tr c-fall ">29.70</td>
+								<td class="tr c-fall cur">-0.60</td>
+								<td class="tr c-fall ">-4.88</td>
+								<td class="tr c-fall ">-4.05</td>
+								<td class="tr c-rise ">1.52</td>
+								<td class="tr c-rise ">4.27</td>
+								<td class="tr c-rise ">6.40</td>
+								<td class="tr c-fall ">-748.82万</td>
+								<td class="tr c-fall ">-1457.36万</td>
+								<td class="tr c-fall ">-1441.45万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">745</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/002224/"  target="_blank">002224</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/002224/"  target="_blank" code="hs_002224" class="J_showCanvas">三力士</a></td>
+								<td class="tr c-fall ">6.66</td>
+								<td class="tr c-fall cur">-0.60</td>
+								<td class="tr c-fall ">-2.31</td>
+								<td class="tr c-fall ">-1.65</td>
+								<td class="tr c-rise ">0.61</td>
+								<td class="tr c-rise ">1.54</td>
+								<td class="tr c-rise ">2.42</td>
+								<td class="tr c-fall ">-58.99万</td>
+								<td class="tr c-fall ">-373.82万</td>
+								<td class="tr c-fall ">-416.07万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">746</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/002639/"  target="_blank">002639</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/002639/"  target="_blank" code="hs_002639" class="J_showCanvas">雪人股份</a></td>
+								<td class="tr c-fall ">6.62</td>
+								<td class="tr c-fall cur">-0.60</td>
+								<td class="tr c-fall ">-1.46</td>
+								<td class="tr c-fall ">-2.03</td>
+								<td class="tr c-rise ">1.63</td>
+								<td class="tr c-rise ">4.46</td>
+								<td class="tr c-rise ">6.87</td>
+								<td class="tr c-rise ">1535.40万</td>
+								<td class="tr c-rise ">646.48万</td>
+								<td class="tr c-fall ">-347.49万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">747</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/000965/"  target="_blank">000965</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/000965/"  target="_blank" code="hs_000965" class="J_showCanvas">天保基建</a></td>
+								<td class="tr c-fall ">4.85</td>
+								<td class="tr c-fall cur">-0.61</td>
+								<td class="tr c-fall ">-1.60</td>
+								<td class="tr c-fall ">-0.22</td>
+								<td class="tr c-rise ">0.43</td>
+								<td class="tr c-rise ">1.07</td>
+								<td class="tr c-rise ">1.81</td>
+								<td class="tr c-fall ">-385.08万</td>
+								<td class="tr c-fall ">-347.76万</td>
+								<td class="tr c-fall ">-286.66万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">748</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/600557/"  target="_blank">600557</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/600557/"  target="_blank" code="hs_600557" class="J_showCanvas">康缘药业</a></td>
+								<td class="tr c-fall ">12.97</td>
+								<td class="tr c-fall cur">-0.61</td>
+								<td class="tr c-fall ">-1.15</td>
+								<td class="tr c-fall ">-0.86</td>
+								<td class="tr c-rise ">0.47</td>
+								<td class="tr c-rise ">1.44</td>
+								<td class="tr c-rise ">2.55</td>
+								<td class="tr c-fall ">-725.72万</td>
+								<td class="tr c-fall ">-1658.20万</td>
+								<td class="tr c-fall ">-2414.72万</td>
+							</tr>
+														<tr class="even">   
+								<td class="first tc">749</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/600791/"  target="_blank">600791</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/600791/"  target="_blank" code="hs_600791" class="J_showCanvas">京能置业</a></td>
+								<td class="tr c-fall ">4.82</td>
+								<td class="tr c-fall cur">-0.62</td>
+								<td class="tr c-fall ">-1.41</td>
+								<td class="tr c-fall ">-1.58</td>
+								<td class="tr c-rise ">0.41</td>
+								<td class="tr c-rise ">0.94</td>
+								<td class="tr c-rise ">1.42</td>
+								<td class="tr c-fall ">-181.28万</td>
+								<td class="tr c-fall ">-637.84万</td>
+								<td class="tr c-fall ">-701.78万</td>
+							</tr>
+														<tr >   
+								<td class="first tc">750</td>
+								<td class="tc "><a href="http://stockpage.10jqka.com.cn/300699/"  target="_blank">300699</a></td>
+								<td class="tc"><a href="http://stockpage.10jqka.com.cn/300699/"  target="_blank" code="hs_300699" class="J_showCanvas">光威复材</a></td>
+								<td class="tr c-fall ">46.80</td>
+								<td class="tr c-fall cur">-0.62</td>
+								<td class="tr c-rise ">0.32</td>
+								<td class="tr c-fall ">-0.85</td>
+								<td class="tr c-rise ">1.76</td>
+								<td class="tr c-rise ">6.22</td>
+								<td class="tr c-rise ">10.85</td>
+								<td class="tr c-fall ">-945.51万</td>
+								<td class="tr c-fall ">-721.88万</td>
+								<td class="tr c-fall ">-2814.58万</td>
+							</tr>
+																				</tbody>
+					</table>
+			<input type="hidden" id="request" value='{"field":"zdf","order":"desc","page":"15"}'>
+		<input type="hidden" id="baseUrl" value='market/zdfph'>
+		<input type="hidden" id="requestQuery" value=''><input type="hidden" id="cate_id" value="44"/>
+<input type="hidden" id="username" value="涨跌幅排行"/>
+    <div class="m-page J-ajax-page">
+    	&nbsp;<a class="changePage" page="1" href="javascript:void(0);">首页</a>&nbsp;<a class="changePage" page="14" href="javascript:void(0);">上一页</a>&nbsp;&nbsp;<a class="changePage" page="11" href="javascript:void(0);">11</a>&nbsp;&nbsp;<a class="changePage" page="12" href="javascript:void(0);">12</a>&nbsp;&nbsp;<a class="changePage" page="13" href="javascript:void(0);">13</a>&nbsp;&nbsp;<a class="changePage" page="14" href="javascript:void(0);">14</a>&nbsp;&nbsp;<a class="cur" href="javascript:void(0)">15</a>&nbsp;&nbsp;<a class="changePage" page="16" href="javascript:void(0);">下一页</a><a class="changePage" page="66" href="javascript:void(0);">尾页</a><span class="page_info">15/66</span>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer" style="margin-top: 35px;">
+    <p>
+        <a href="http://news.10jqka.com.cn/tzz/" rel="nofollow">投资者关系</a><span class="ff">|</span>
+        <a href="http://news.10jqka.com.cn/c/20100105/61833421.shtml" rel="nofollow">关于同花顺</a><span>|</span>
+        <a href="http://download.10jqka.com.cn/">股票软件</a><span>|</span>
+        <a href="http://www.10jqka.com.cn/ia/pass_buck.php" rel="nofollow">法律声明</a><span>|</span>
+        <a href="http://www.10jqka.com.cn/hexin_license.htm" rel="nofollow">运营许可</a><span>|</span>
+        <a href="http://www.10jqka.com.cn/modules.php?name=what&amp;page=cooperate" rel="nofollow">内容合作</a><span>|</span>
+        <a href="http://www.10jqka.com.cn/hexin_contact.htm" rel="nofollow">联系我们</a><span>|</span>
+        <a href="http://news.10jqka.com.cn/list/link.shtml" rel="nofollow">友情链接</a><span>|</span>
+        <!--<a href="http://news.10jqka.com.cn/msg/" rel="nofollow">网友意见箱</a><span>|</span>-->
+        <a href="http://job.10jqka.com.cn/" rel="nofollow">招聘英才</a>
+    </p>
+	<p class="c333">免责声明:本信息由同花顺金融研究中心提供，仅供参考，同花顺金融研究中心力求但不保证数据的完全准确，如有错漏请以中国证监会指定上市公司信息披露媒体为准，</p>
+	<p class="c333">同花顺金融研究中心不对因该资料全部或部分内容而引致的盈亏承担任何责任。用户个人对服务的使用承担风险。同花顺对此不作任何类型的担保。</p>
+    <p class="c333">Copyright Zhejiang Hithink Flush Information Network Co., Ltd. All rights reserved.</p>
+    <p class="c333"> 浙江核新同花顺网络信息股份有限公司版权所有</p>
+</div>
+<div class="fixedbar">
+     <div class="feedback">
+        <a href="###" title="反馈"></a>
+        <div class="feedback-box" style="display: none;">
+            <div class="hd">提交建议</div>
+            <div class="bd clearfix">
+                <textarea class="txt">如果您想对我们的产品提出意见或建议，请在这里填写，您的建议是同花顺数据进步的动力!</textarea>
+                <input type="text" class="tel" value="留下邮箱/QQ号以便我们回复您。"/>
+                <p><input type="submit" value="发表" class="btn"/></p>
+            </div>
+        </div>
+    </div>
+    <a href="###" title="收藏" class="collect"></a>
+    <a href="#" title="置顶" class="gotop"></a>
+</div>
+<script type="text/javascript" src="//s.thsi.cn/js/chameleon/chameleon.min.1529132.js"></script><script>
+	
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?60bad21af9c824a4a0530d5dbf4357ca";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?78c58f01938e4d85eaf619eae71b4ed1";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?f79b64788a4e377c608617fba4c736e2";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	
+</script><script type="text/javascript" src="http://s.thsi.cn/cb?js/;jquery-1.8.3.min.js;/js/navigation/;jquery.bgiframe.min.js;jquery.ui.position.min.js;autocomplete-2.0.2.min.js;default_v2.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://s.thsi.cn/js/ta.min.20150914.js"></script>
+<script src="http://s.thsi.cn/cb?/js/autocomplete_iwencai.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://s.thsi.cn/cb?js/home/;ths_core.min.js;ths_quote.min.js;ths_index_v3.3.min.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/js/home/v6/weblogin_v3.20170609.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/js/datacenter/financial/main_v1-4.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/cb?js/ucenter/subMenu_v3.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/js/datacenter/iwcxg.js"></script>
+<script type="text/javascript" src="http://s.thsi.cn/js/datacenter/header-search.js"></script>
+<script type="text/javascript">
+    
+//TA.log({id:statId,fid:'dbdatacenter'});
+
+var statId = 'db21409812';
+var fidId = 'data_zdfph';
+
+if (typeof(fidId)!="undefined" && fidId!=null) {
+	TA.log({id:statId,fid:'info_gather,dbdatacenter,'+fidId});
+} else {
+	TA.log({id:statId,fid:'info_gather,dbdatacenter'});
+}
+
+</script>
+<!--[if IE]><script type="text/javascript" src="http://s.thsi.cn/cb?js/excanvas.min.js"></script><![endif]-->
+<script>
+
+function codeSubmit($btn) {
+	this.bindFunc = function ($auto, input) {
+		$btn.bind('click', function(){
+			//var text = $auto.find('dd.selected').eq(0).text();
+			var text = $("#search_input").val();
+			if (typeof(text) != 'undefined') {
+				url = "http://www.iwencai.com/stockpick/search?preParams=&ts=1&f=1&qs=1&querytype=&searchfilter=&tid=stockpick&w=" + encodeURIComponent(text);
+			} else {
+				text = input.value;
+				url = "http://www.iwencai.com/stockpick/search?preParams=&ts=1&f=1&qs=1&querytype=&searchfilter=&tid=stockpick&w=" + encodeURIComponent(text);
+			}
+			if (url) {
+				window.open(url);
+			}
+		})
+	}
+}
+
+$("#lhb_searchBtn").click(function(){
+	var code = $("#stockcomplete").val();
+	if (code != '代码/名称/拼音') {
+		if($("#iframeA").length>=1){
+			var url  = "http://data.10jqka.com.cn/market/lhbcjmx/code/"+code+"/?client=on#refCountId=data_50d3c749_54";
+		} else {
+			var url  = "http://data.10jqka.com.cn/market/lhbcjmx/code/"+code+"/#refCountId=data_50d3c749_54";
+		}
+		
+		window.open(url);
+	}
+});
+
+$("#lhborgan_searchBtn").click(function(){
+	var name = $("#j_name").val();
+	if (name != '请输入营业部名称或拼音') {
+		if($("#iframeA").length>=1){
+			var url  = "http://data.10jqka.com.cn/ifyyb/convert/name/"+encodeURI(name)+"/?client=on#refCountId=data_50d3c749_54";
+		} else {
+			var url  = "http://data.10jqka.com.cn/ifyyb/convert/name/"+encodeURI(name)+"/#refCountId=data_50d3c749_54";
+		}
+		
+		window.open(url);
+	}
+});
+
+$("#lhb_searchBtn").click(function(){
+	var code = $("#stockcomplete").val();
+	if (code != '代码/名称/拼音') {
+		if($("#iframeA").length>=1){
+			var url  = "http://data.10jqka.com.cn/market/lhbcjmx/code/"+code+"/?client=on#refCountId=data_50d3c749_54";
+		} else {
+			var url  = "http://data.10jqka.com.cn/market/lhbcjmx/code/"+code+"/#refCountId=data_50d3c749_54";
+		}
+		
+		window.open(url);
+	}
+});
+
+//大单追踪查询 2015-9-8 jinpeng2@meyhexin.com
+$("#ddzz_searchBtn").click(function(){
+	var code = $("#stockcomplete").val();
+	if (code != '代码/名称/拼音') {
+		if($("#iframeA").length>=1){
+			var url  = "http://data.10jqka.com.cn/funds/dddetail/code/"+code+"/?client=on#refCountId=data_50d3c749_54";
+		} else {
+			var url  = "http://data.10jqka.com.cn/funds/dddetail/code/"+code+"/#refCountId=data_50d3c749_54";
+		}
+		
+		window.open(url);
+	}
+});
+
+//按键精灵个股选择及回车操作
+var clickOrg = {
+	run : function (code, op) {
+		if($("#iframeA").length>=1){
+			var url = "http://data.10jqka.com.cn/market/yybzjsl/orgcode/" + op.spy.toUpperCase()+'?client=on';
+		} else {
+			var url = "http://data.10jqka.com.cn/market/yybzjsl/orgcode/" + op.spy.toUpperCase();
+		}
+		window.open(url);
+	}
+};
+
+var clickStock = {
+	run : function (code) {
+		var baseUrl = "http://data.10jqka.com.cn/market/lhbcjmx/code/";
+		if($("#iframeA").length>=1){
+			var url = baseUrl+code+"/?client=on#refCountId=data_50d3c749_54";
+		} else {
+			var url = baseUrl+code+"/#refCountId=data_50d3c749_54";
+		}
+		window.open(url);
+	}
+};
+var clickVal= {
+		run : function (code) {
+			$('#stockcomplete').val(code);
+		}
+	};
+
+$("#stockcomplete").autocomplete({
+    fund : false,
+    extra : false,
+    
+	    clickFunc:[clickVal]
+        
+});
+
+$("#j_name").autocomplete({
+	fund  :false,
+	stock :false,
+	extra :false,
+	yyb	  :true,
+	clickFunc:[clickOrg]
+});
+
+$("#search_input").autocomplete_iwencai({
+	func : [new codeSubmit($(".search_btn"))]
+});
+
+
+$(function() {
+    $pop = $('#J_lhb_index_pop');
+    $('body').on('mouseenter', '.lhb_index_top_ques', function() {
+        var offset = $(this).offset();
+        $pop.html($(this).attr("val"));
+        $pop.css({
+            'left': offset.left - 20,
+            'top' : offset.top  + 23
+        }).find('em').text($(this).text()).end().show();
+    }).on('mouseleave', '.lhb_index_top_ques', function() {
+        $pop.hide();
+    });  
+})
+
+function taNav() {
+    $("a").each(function(index){
+        $(this).bind('click', function(){
+            var statid = $(this).attr('statid') || null;
+            if (statid) {
+                TA.log({id:statid, nj:1});
+            }
+        });
+    });
+}
+taNav();
+
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "//hm.baidu.com/hm.js?78c58f01938e4d85eaf619eae71b4ed1";
+var s = document.getElementsByTagName("script")[0]; 
+s.parentNode.insertBefore(hm, s);
+})();
+
+</script>
+<div id="new_stockInfo_con" class="stockCanvas_con new_stockInfo_con stockInfo_constockCanvas_con" style="width:614px;display:none">
+    <div class="canvas_tab">
+        <ul>
+            <li style="margin-right:6px;"><span id='hx_canvas_stock_name' class="can-span" style="display:inline-block;"></span></li>
+            <li style="margin-right:6px;" class="active"><a href="javascript:;" class='draw-type' id="changefsView" style="_width:30px;">分时</a></li>
+            <li><a href="javascript:;" class="draw-type klView" data-type='0' style="border-right: medium none; _width:30px;">日线</a></li>
+            <li><a href="javascript:;" class="draw-type klView" data-type='1' style="_width:30px;">周线</a></li>
+            <li><a href="javascript:;" class="draw-type klView" data-type='2' style="border-left: medium none; _width:30px;">月线</a></li>
+            <li data-role="fuquan-status" class='fuquan-status' style="margin-left:4px;display:none;">
+                <a href="javascript:;" data-fuquan="1" style="_width:30px;">前复权<span class="canvas-list-arrow">arrow</span></a>
+                <div class='khover' style='display:none;' >
+                    <a data-type="1" href="javascript:;">前复权</a>
+                    <a data-type="2" href="javascript:;">后复权</a>
+                    <a data-type="0" href="javascript:;">不复权</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="canvas-btn-box" style="display:none;">
+        <ul>
+            <li><a href="javascript:;" id="preEvent" class="canvas-get-pre"></a></li>
+            <li><a href="javascript:;" id="nextEvent" class="canvas-get-next" ></a></li>
+            <li><a href="javascript:;" id="zoomInEvent" class="canvas-zoom-in"></a></li>
+            <li><a href="javascript:;" id="zoomOutEvent" class="canvas-zoom-out"></a></li>
+        </ul>
+    </div>
+    <div class="canvas_target_fun">
+        <ul>
+            <li class="active"><a href="javascript:;" data-type="MACD" >MACD</a></li>
+            <li><a href="javascript:;" data-type="KDJ" >KDJ</a></li>
+            <li><a href="javascript:;" data-type="RSI" >RSI</a></li>
+            <li><a href="javascript:;" data-type="BOLL" >BOLL</a></li>
+            <li><a href="javascript:;" data-type="W&R" >W&R</a></li>
+            <li><a href="javascript:;" data-type="ASI" >ASI</a></li>
+            <li><a href="javascript:;" data-type="BIAS" >BIAS</a></li>
+            <li><a href="javascript:;" data-type="VR" >VR</a></li>
+        </ul>
+    </div>
+    <div id="canvasPanel" class="canvas-panel" style="width: 613px; height:400px; position: relative; display:none;">
+        <div class="hx-powered-logo unRemovePanel">Powered by 10jqka</div>
+        <div class="opacity-stock-name" style="display:none;"><span id='canvasStockInfo'></span><span id='suspensionId' style='display:none;'>停牌</span></div>
+        <canvas id='tcanvas' width="613" height="400"></canvas>
+    </div>
+    <div class="canvas-panel-mask"></div>
+</div>
+<div id="stockInfo_trangle" class="stockInfo_trangle stockinfo_trangle_left" style="display: none;">
+    <div class="trangle_inner"></div>
+</div>
+
+<!--webHQ顶部资源文件-->
+<link href="http://s.thsi.cn/js/webHQ/1.1.5/main.min.css" rel="stylesheet">
+<script src="http://s.thsi.cn/js/webHQ/resources/excanvas.min.js"></script>
+<script src="http://s.thsi.cn/js/datacenter/require.min.js"></script>
+<!--webHQ底部资源文件-->
+<script src="http://s.thsi.cn/js/datacenter/dataProvider.js"></script>
+<!--webHQ页面操作-->
+<script src="http://s.thsi.cn/js/datacenter/hqopt.min.js"></script>
+
+
+</body>
+</html>

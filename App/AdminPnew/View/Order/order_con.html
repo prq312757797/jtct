@@ -1,0 +1,431 @@
+<include file="Public/head" />     
+<style>
+/*.panel{
+     text-align:center;
+     height:80px;
+     line-height:80px;
+}*/
+.step-region ul li{
+	list-style: none;
+	float: left;
+
+	margin-left: 140px;
+	margin-top:20px;	
+}
+.step-region {
+	text-align:center;
+	font-size: 20px;
+	background-color: gainsboro;
+	border-radius:4px;
+	margin: 8px auto;
+	width:90%; 
+	height:200px; 
+}
+
+.order-container-left {
+    float: left;
+    width: 300px;
+    line-height:40px;
+    margin-left:40px;
+    }
+.order-container-right {
+    border-left: 1px solid #f2f2f2;
+    float: left;
+    width: 700px;
+    height: 465px;
+    line-height:40px;
+    position: relative;
+}
+</style>
+<!--订单详情-->	
+	<div class="contert" >	
+<include file="Public/menu_order" />	
+        <div class="" id="">
+			<div class="con" style="min-height:900px; width:auto;" >	
+				<div class="page-heading" style="border-bottom:1px solid #000000;">
+					<h4 style="margin:10px;">订单详情:</h4>							
+				</div>
+				<!--<div class="step-region" style="">
+				    <ul class="ui-step ui-step-4">
+				        <li class="ui-step-done">
+				        <div class="ui-step-title">买家下单</div>
+				        <div class="ui-step-number">1</div>
+				        <div class="ui-step-meta">2017-09-04<br>17:14:17</div>
+				        </li>
+				        <li>
+				        <div class="ui-step-title">买家付款</div>
+				        <div class="ui-step-number">2</div>
+				        <div class="ui-step-meta"></div>
+				        </li>
+				        <li>
+				        <div class="ui-step-title"> 商家发货
+				            </div>
+				        <div class="ui-step-number">3</div>
+				        <div class="ui-step-meta"></div>
+				        </li>
+				        <li>
+				        <div class="ui-step-title">订单完成</div>
+				        <div class="ui-step-number">4</div>
+				        <div class="ui-step-meta"></div>
+				        </li>
+				    </ul>
+                </div>-->
+	<div style="width:auto;height:490px;">	
+		<div class="order-container-left" style="background:white;">
+            <div class="panel-body">
+                <h4 class="m-t-none m-b">订单信息</h4>
+                <div class="form-group" style="padding:0 10px;">
+                    <table class="ordertable" style="table-layout:fixed">
+                        <tbody><tr>
+                            <td style="width:80px">订单编号：</td>
+                            <td>{$order_con.order_form_order_num}</td>
+                        </tr>
+                        <tr>
+                            <td>订单金额：</td>
+                            <td>￥{$order_con.buy_price} &nbsp;&nbsp;
+                            	<a data-toggle="popover" data-html="true" data-placement="right" data-content="<table style='width:100%;'>
+					                <tr>
+					                    <td  style='border:none;text-align:right;'>商品小计：</td>
+					                    <td  style='border:none;text-align:right;'>￥200.00</td>
+					                </tr>
+					                <tr>
+					                    <td  style='border:none;text-align:right;'>运费：</td>
+					                    <td  style='border:none;text-align:right;'>￥0.00</td>
+					                </tr>
+					                <tr>
+					                    <td style='border:none;text-align:right;'>应收款：</td>
+					                    <td  style='border:none;text-align:right;color:green;'>￥200.00</td>
+					                </tr>
+                                   </table>"data-original-title="" title=""></a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="width:80px">付款方式：</td>
+                            <td>微信支付 </td>
+                        </tr>
+
+                        <tr>
+                            <td>买家:</td>
+                            <td>
+                            	<a href="" target="_blank"></a> &nbsp;&nbsp;<a data-toggle="popover" data-html="true" data-placement="right" data-content="<table style='width:100%;'>
+					                <tr>
+					                    <td  style='border:none;text-align:right;' colspan='2'>
+					                    	<img src='https://wx.qlogo.cn/mmopen/vi_32/GhXBVPIdJ8CL21ngVhX57ia7tU29TZxhcVVg2TONTaiarXfBddegVBfELtECzTnYortTmbaw3KjwfOaicadZJWjMA/0' style='width:100px;height:100px;padding:1px;border:1px solid #ccc' />
+					                    </td>
+					                </tr>
+					                <tr>
+					                    <td  style='border:none;text-align:right;'>ID：</td>
+					                    <td  style='border:none;text-align:right;'>1456644</td>
+					                </tr>
+					                <tr>
+					                    <td  style='border:none;text-align:right;'>昵称：</td>
+					                    <td  style='border:none;text-align:right;'></td>
+					                </tr>
+					                <tr>
+					                    <td  style='border:none;text-align:right;'>姓名：</td>
+					                    <td  style='border:none;text-align:right;'></td>
+					                </tr>
+					                <tr>
+					                    <td  style='border:none;text-align:right;'>手机号：</td>
+					                    <td  style='border:none;text-align:right;'></td>
+					                </tr>
+					                <tr>
+					                    <td  style='border:none;text-align:right;'>微信号：</td>
+					                    <td  style='border:none;text-align:right;'></td>
+					                </tr>
+                                   </table>
+                                 "data-original-title="" title="">{$order_con.nickname}</a>
+                            </td>
+                        </tr>
+                                <tr>
+		                            <td style="width:80px">发票抬头：</td>
+		                            <td>undefined</td>
+		                        </tr>
+                          </tbody>
+                    </table>
+                    <table class="ordertable" style="table-layout:fixed;border-top:1px dotted #ccc">
+                        <tbody>
+                        	<tr>
+	                            <td style="width:80px">配送方式：</td>
+	                            <td>快递</td>
+                            </tr>
+                        
+                            <tr>
+	                            <td style="width:80px">收货人：</td>
+	                            <td style="word-break: break-all;white-space: normal">
+		                                                   地址：{$order_con.man_address}, 联系人：{$order_con.man_shouhuo}, 联系电话：{$order_con.man_phone}
+	                                <a class="js-clip" data-url="北京市1 北京辖区 东城区 天空, 测试, 13522221121">[复制]</a>
+	                                <div class="zclip" id="zclip-ZeroClipboardMovie_1" style="position: absolute; left: 123px; top: 45px; width: 34px; height: 19px; z-index: 99;">
+	                                	<!--<embed id="ZeroClipboardMovie_1" src="th="34" height="19" name="ZeroClipboardMovie_1" align="middle"  >-->                               		
+	                                </div>
+                                </td>
+                            </tr>                        
+                        
+		                    <tr>
+		                        <td style="width:80px"></td>
+		                        <td style="word-break: break-all;white-space: normal">
+		                        	<a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" href="">编辑收货信息</a></td>
+		                    </tr>                                               
+                         </tbody>
+                    </table>
+                 </div>
+            </div>
+        </div>			
+			<!--右边-->
+		<div class="order-container-right" style="background:white;">
+	            <div class="panel-body" style="height:380px;">
+	                <div class="row">
+	                    <div class="col-sm-3 control-label" style="padding-top:10px;">订单状态: </div>
+	                    <div class="col-sm-9 col-xs-12">
+	                        <h3 class="form-control-static">
+
+	                        <span class="text-default">
+
+							<if condition="$order_con.state eq 1">待付款</if>
+							<if condition="$order_con.state eq 2">待发货</if>
+							<if condition="$order_con.state eq 3">待收货</if>
+							<if condition="$order_con.state eq 4">待评价</if>
+							<if condition="$order_con.state eq 5">退换/售后</if>
+							<if condition="$order_con.state eq 6">已关闭</if>
+							<if condition="$order_con.state eq 7">已完成</if>
+
+							</span>                                                                                                                                                                                               </h3>
+	                    </div>
+	                </div>
+	                <div class="form-group">
+	                    <label class="col-sm-3 control-label"></label>
+	                    <div class="col-sm-9 col-xs-12">
+	                        <div class="form-control-static">
+
+								<if condition="$order_con.state eq 1">等待买家付款</if>
+								<if condition="$order_con.state eq 2">等待卖家发货</if>
+								<if condition="$order_con.state eq 3">等待买家收货</if>
+								<if condition="$order_con.state eq 4">等待买家评价</if>
+								<if condition="$order_con.state eq 5">等待买家退换/售后</if>
+								<if condition="$order_con.state eq 6">订单已关闭</if>
+								<if condition="$order_con.state eq 7">订单已完成</if>
+	                    </div>
+	                </div>
+	                <div class="form-group">
+	                    <label class="col-sm-3 control-label"></label>
+	                    <div class="col-sm-9 col-xs-12">
+	                        <p class="form-control-static ops">
+	                                                        <!--未付款-->
+						       <a class="btn btn-primary btn-xs" data-toggle="ajaxPost" href="" data-confirm="确认此订单已付款吗？">确认发货</a>    
+						                            &nbsp;&nbsp;
+						        <a data-toggle="modal" data-target="#myred" href="">订单改价</a>&nbsp;&nbsp;
+						        <a data-toggle="modal" data-target="#mystar" href="">备注</a>
+						    </p>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>	
+				<!--编辑收货信息模态框-->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				    <div class="modal-dialog">
+				        <div class="modal-content">
+				            <div class="modal-header">
+				                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				                <h4 class="modal-title" id="myModalLabel">编辑收货信息</h4>
+				            </div>
+				            <div class="modal-body" style="height:280px;">
+				            	<form class="form-horizontal form-validate">
+				            	<div class="form-group">
+				                    <label class="col-sm-2 control-label">收 货 人 :</label>
+				                    <div class="col-sm-10 col-xs-12">
+				                        <input type="text" name="realname" class="form-control valid" value="{$order_con.man_shouhuo}" data-rule-required="true" aria-required="true" aria-invalid="false" aria-describedby="realname-error"><span id="realname-error" class="help-block-validate"></span>
+				                    </div>
+				              </div>
+				                <div class="form-group">
+				                    <label class="col-sm-2 control-label">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机 :</label>
+				                    <div class="col-sm-10 col-xs-12">
+				                        <input type="text" name="mobile" class="form-control" value="{$order_con.man_phone}" data-rule-required="true" aria-required="true">
+				                    </div>
+				                </div>
+				                <div>
+				                    <label class="col-sm-2 control-label">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址 :</label>
+				                    <div class="col-sm-9 col-xs-12">
+				                        <p>
+				                        <!--  <select id="sel-provance" name="province" onchange="selectCity();" class="select form-control" style="width:123px;display:inline;">
+				                            <option value="请选择省份">请选择省份</option>
+				                            <option value="北京市">北京市</option>
+				                            <option value="天津市">天津市</option>
+				                            <option value="河北省">河北省</option>
+				                            <option value="山西省">山西省</option>
+				                            <option value="内蒙古自治区">内蒙古自治区</option>
+				                            <option value="辽宁省">辽宁省</option>
+				                            <option value="吉林省">吉林省</option>
+				                            <option value="黑龙江省">黑龙江省</option>
+				                            <option value="上海市">上海市</option>
+				                            <option value="江苏省">江苏省</option>
+				                            <option value="浙江省">浙江省</option>
+				                            <option value="安徽省">安徽省</option>
+				                            <option value="福建省">福建省</option>
+				                            <option value="江西省">江西省</option>
+				                            <option value="山东省">山东省</option>
+				                            <option value="河南省">河南省</option>
+				                            <option value="湖北省">湖北省</option>
+				                            <option value="湖南省">湖南省</option>
+				                            <option value="广东省">广东省</option>
+				                            <option value="广西壮族自治区">广西壮族自治区</option>
+				                            <option value="海南省">海南省</option>
+				                            <option value="重庆市">重庆市</option>
+				                            <option value="四川省">四川省</option>
+				                            <option value="贵州省">贵州省</option>
+				                            <option value="云南省">云南省</option>
+				                            <option value="西藏自治区">西藏自治区</option>
+				                            <option value="陕西省">陕西省</option>
+				                            <option value="甘肃省">甘肃省</option>
+				                            <option value="青海省">青海省</option>
+				                            <option value="宁夏回族自治区">宁夏回族自治区</option>
+				                            <option value="新疆维吾尔自治区">新疆维吾尔自治区</option>
+				                            <option value="台湾省">台湾省</option>
+				                            <option value="香港特别行政区">香港特别行政区</option>
+				                            <option value="澳门特别行政区">澳门特别行政区</option>
+				                           </select>-->
+				                       <!-- <select id="sel-city" name="city" onchange="selectcounty(0)" class="select form-control" style="width:135px;display:inline;">
+				                            <option value="北京市">北京市</option>
+				                        </select>-->
+				                          <!--  <select id="sel-area" name="area" class="select form-control" style="width:130px;display:inline;">
+					                            <option value="东城区">东城区</option>
+					                            <option value="西城区">西城区</option>
+					                            <option value="朝阳区">朝阳区</option>
+					                            <option value="丰台区">丰台区</option>
+					                            <option value="石景山区">石景山区</option>
+					                            <option value="海淀区">海淀区</option>
+					                            <option value="门头沟区">门头沟区</option>
+					                            <option value="房山区">房山区</option>
+					                            <option value="通州区">通州区</option>
+					                            <option value="顺义区">顺义区</option>
+					                            <option value="昌平区">昌平区</option>
+					                            <option value="大兴区">大兴区</option>
+					                            <option value="怀柔区">怀柔区</option>
+					                            <option value="平谷区">平谷区</option>
+					                            <option value="密云区">密云区</option>
+					                            <option value="延庆区">延庆区</option>
+				                            </select>-->
+				                        </p>
+				                        <input type="text" name="address" class="form-control" value="{$order_con.man_address}" data-rule-required="true" aria-required="true">
+				                    </div>
+				                </div>
+				            </form>
+				            </div>
+				            <div class="modal-footer">
+				            	 <button type="button" class="btn btn-primary">保存</button>
+				                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				               
+				            </div>
+				        </div><!-- /.modal-content -->
+				    </div><!-- /.modal -->
+				</div>
+				  <!--订单改价模态框-->
+	        <div class="modal fade" id="myred" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+			    <div class="modal-dialog" style="width:800px;">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                <h4 class="modal-title" id="myModalLabel">订单改价</h4>
+			            </div>
+			            <div class="modal-body" style="height:360px; width:800px;">
+			            	<table class="table" style="table-layout:fixed">
+								<tbody>
+									<tr>
+										<th style="width:200px;">商品名称</th>
+										<th>单价</th>
+										<th>数量</th>
+										<th style="width: 150px">小计</th>
+										<th>加价或减价</th>
+										<th>运费 - <a href="javascript:;"免运费</a></th>
+									</tr>
+								</tbody>
+								<tbody>
+									<tr>
+										<td style="overflow:hidden;">鸭屎香单丛茶</td>
+										<td class="realprice">200.00</td>
+										<td>1</td>
+										<td>200.00		</td>																											
+										<td valign="top">
+											<input type="number" class="form-control changeprice_orderprice" name="changegoodsprice[28464]">
+										</td>			
+										<td valign="top" rowspan="1" style="vertical-align: top;">
+											<input type="number" class="form-control" id="changeprice_dispatchprice" value="0.00" name="changedispatchprice">											
+										</td>
+									</tr>									
+									<tr>
+										<td colspan="2"></td>
+										<td colspan="" style="color:green">应收款</td>
+										<td colspan="" style="color:green">200.00</td>
+										<td colspan="2" style="color:red">改价后价格不能小于0元</td>
+									</tr>
+								</tbody>			
+							</table>						
+						     <div class="form" style="width: 100%; height:120px;">
+								<div class="col-xs-12 col-sm-9 col-md-8 col-lg-8">
+									<div class="form-control-static">
+			
+										<b>购买者信息</b>  北京市 北京辖区 东城区 天空 测试 13522221111<br>
+										<b>买家实付</b>： <span id="orderprice">200.00</span> + <span id="dispatchprice">0.00</span> <span id="changeprice" style="color: green;"> + 1</span> = <span id="lastprice">201.00</span><br>
+										<b>买家实付</b> = 原价 + 运费 + 涨价或减价<br><br>
+										<b><span style="color:red">*</span>该订单最多支持99次改价，您已经修改 <span style="color:red">0</span> 次<br>
+									</b></div><b>
+								</b></div><b>
+							</b></div>
+						    						   						     			                   			           
+				            <div class="modal-footer">
+				            	<button type="button" class="btn btn-primary">保存</button>
+				                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>				               
+				            </div>
+			            </div>
+			        </div><!-- /.modal-content -->
+			    </div><!-- /.modal -->					
+	        </div>				      					
+				<!--备注模态框-->
+			<div class="modal fade" id="mystar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                <h4 class="modal-title" id="myModalLabel">备注</h4>
+			            </div>
+			            <div class="modal-body" style="height:240px;">
+			            	<form role="form">
+								  <div class="form-group">								 
+								    <textarea class="form-control" rows="3" placeholder="卖家备注" style="height:130px;"></textarea>
+								  </div>
+							</form>			           			           
+				            <div class="modal-footer">
+				            	<button type="button" class="btn btn-primary">保存</button>
+				                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>				               
+				            </div>
+			            </div>
+			        </div><!-- /.modal-content -->
+			    </div><!-- /.modal -->
+			</div>				 		
+	    </div>	
+	</div>	 
+	
+    <div class="panel-body table-responsive" style="background-color:white;margin: 0px 40px;">
+    	<h2 style="border-bottom:1px solid #000000;">商品信息</h2>
+        <table class="table table-hover">
+            <thead class="navbar-inner">
+                <tr>
+                    <th style="width:200px">标题</th>
+                    <th>规格/编号/条码</th>
+                    <th style="text-align: center;">单价(元)/数量</th>
+                    <th style="text-align: center;">折扣前/折扣后(元)</th>		                                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="full"> 鸭屎香单丛茶  </td>
+                    <td>     </td>  	                                              	                  
+                    <td style="text-align:center;">200<br>x1</td>
+                    <td style="color:red;text-align:center;">200.00/200.00</td>	    	                                                                                                                                         
+                </tr>				                                                
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

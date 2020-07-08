@@ -1,0 +1,37 @@
+<script>
+	var val=1;
+   	var val_1=val-1;
+   		
+	 $("#more_img").click(function(){
+
+   		var dh = '';
+
+		
+		dh += ' <div class="canshu_total">  ';
+		dh += ' 	<div class="canshu_name">  ';	
+		dh += ' 		<input type="text" name="canshu_name[]"  value="" class="form-control" placeholder="请输入参数名">  ';
+		dh += ' 	</div>  ';
+		dh += ' 	<div class="canshu_val">  ';
+		dh += ' 		<input type="text" name="canshu_val[]"  value="" class="form-control" placeholder="请输入参数值">  ';
+		dh += ' 	</div>  ';
+		dh += ' 	<div class="col-sm-1">  ';
+	//	dh += ' 		<span  onclick="delet_canshu(this)"  style="    line-height: 37px;">X</span>  ';
+		dh += ' 	</div>  ';
+		dh += ' </div>  ';
+		dh += ' <div style="clear: both;" id="muban_b_'+val;
+		dh += '"></div>';
+		document.getElementById('muban_b_'+val_1).innerHTML = dh;
+		if(val<14){
+			val++;
+			val_1++;	
+		}else{
+			alert("图片限制15个参数");
+		}
+   })
+	 
+//删除参数
+	 
+	 function delet_canshu(item){
+	 	$(item).parents('div.col-sm-1').parents('div.canshu_total').remove();
+	 }
+	 </script>

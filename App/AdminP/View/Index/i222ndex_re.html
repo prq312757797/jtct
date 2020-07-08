@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/dragsort/css/ht26_style.css"/>
+<script src="__ROOT__/Public/dragsort/jquery-1.7.2.js"></script>
+<script src="__ROOT__/Public/dragsort/jquery.dragsort-0.5.1.js"></script>
+	
+	<script type="text/javascript">
+	
+
+	$("ul:first").dragsort();
+	
+	
+		
+		function init(){
+		
+		$("#list1").dragsort({ dragSelector: "div", dragBetween: true, dragEnd: saveOrder, placeHolderTemplate: "" });
+		function saveOrder() {
+			var data = $("#list1 span").map(function() { 
+						return $(this).find("input:eq(0)").val(); 
+						}).get();
+			$("input[name=list1SortOrder]").val(data.join("|"));
+			alert($(".list").val());
+		};
+	
+		}
+	</script>
+
+<title>图表管理03</title>
+</head>
+
+<body onload="init();">
+<div class="ht26_co margin_left14 margin_top20">
+
+ <ul id="list1" class="wz_l margin_top8">
+  <span><input type="hidden" value="1"/><div class="tb03_box2"><div class="tb03_img4"><img src="__ROOT__/Public/dragsort/image/tb03_gb.png"></div><div class="tb03_img2"><img src="__ROOT__/Public/dragsort/image/tb03_img2.jpg"></div><div class="tb_tg">1111</div></div></span>
+  <span><input type="hidden" value="2"/><div class="tb03_box2"><div class="tb03_img1"><img src="__ROOT__/Public/dragsort/image/tb03_gb.png"></div><div class="tb03_img2"><img src="__ROOT__/Public/dragsort/image/tb03_img2.jpg"></div><div class="tb_tg">2222</div></div></span>
+  <span><input type="hidden" value="3"/><div class="tb03_box2"><div class="tb03_img1"><img src="__ROOT__/Public/dragsort/image/tb03_gb.png"></div><div class="tb03_img2"><img src="__ROOT__/Public/dragsort/image/tb03_img2.jpg"></div><div class="tb_tg">3333</div></div></span>
+  <span><input type="hidden" value="4"/><div class="tb03_box2"><div class="tb03_img1"><img src="__ROOT__/Public/dragsort/image/tb03_gb.png"></div><div class="tb03_img2"><img src="__ROOT__/Public/dragsort/image/tb03_img2.jpg"></div><div class="tb_tg">4444</div></div></span>
+  <span><input type="hidden" value="5"/><div class="tb03_box2"><div class="tb03_img1"><img src="__ROOT__/Public/dragsort/image/tb03_gb.png"></div><div class="tb03_img2"><img src="__ROOT__/Public/dragsort/image/tb03_img2.jpg"></div><div class="tb_tg">5555</div></div></span>
+  <div class="qc"></div>
+ </ul>
+
+	<!-- save sort order here which can be retrieved on server on postback -->
+	<input class="list" name="list1SortOrder" type="text" style="display:none" />
+ 
+
+</div>
+
+</body>
+</html>

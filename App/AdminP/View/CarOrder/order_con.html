@@ -1,0 +1,219 @@
+<include file="Public/head" />     
+<style>
+/*.panel{
+     text-align:center;
+     height:80px;
+     line-height:80px;
+}*/
+.step-region ul li{
+	list-style: none;
+	float: left;
+
+	margin-left: 140px;
+	margin-top:20px;	
+}
+.step-region {
+	text-align:center;
+	font-size: 20px;
+	background-color: gainsboro;
+	border-radius:4px;
+	margin: 8px auto;
+	width:90%; 
+	height:200px; 
+}
+
+.order-container-left {
+    float: left;
+    width: 300px;
+    line-height:40px;
+    margin-left:40px;
+    }
+.order-container-right {
+    border-left: 1px solid #f2f2f2;
+    float: left;
+    width: 700px;
+    height: 465px;
+    line-height:40px;
+    position: relative;
+}
+</style>
+<!--订单详情-->	
+	<div class="contert" >	
+<include file="Public/menu_car_order" />	
+        <div class="" id="">
+			<div class="con" style="min-height:900px; width:auto;" >	
+				<div class="page-heading" style="border-bottom:1px solid #000000;">
+					<h4 style="margin:10px;">订单详情:</h4>							
+				</div>
+				
+	<div style="width:auto;height:490px;">	
+		<div class="order-container-left" style="background:white;">
+            <div class="panel-body">
+                <h4 class="m-t-none m-b">订单信息</h4>
+                <div class="form-group" style="padding:0 10px;">
+                    <table class="ordertable" style="table-layout:fixed">
+                        <tbody><tr>
+                            <td style="width:80px">订单编号：</td>
+                            <td>{$order_con.order_num}</td>
+                        </tr>
+                        <tr>
+                            <td>订单金额：</td>
+                            <td>￥
+                            	<if condition="$order_con.is_change_price eq 1">
+					      			<span style="color:red;">{$order_con.change_price}</span>（<span style="text-decoration:line-through; text-decoration;">{$order_con.price}</span>）
+					      			<else/>{$order_con.price}
+					    		</if>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="width:80px">付款方式：</td>
+                            <td>微信支付 </td>
+                        </tr>
+                          <tr>
+                            <td style="width:80px">预约时间：</td>
+                            <td>
+                            	<empty name="order_con['time_server']">无<else/>{$order_con.time_server}</empty>
+                            	 </td>
+                        </tr>
+ 						<tr>
+                            <td style="width:80px">订单备注：</td>
+                            <td>
+                            	<li><foreach name="order_con['order_remark']" item="v" key="k">{$k}:{$v.title}</foreach><notempty name="order_con['extra_need_custom']"> <br>自定义备注：{$order_con.extra_need_custom}</notempty></li>   
+                             
+                            </td>
+                        </tr>
+                            
+                          </tbody>
+                    </table>
+                    <table class="ordertable" style="table-layout:fixed;border-top:1px dotted #ccc">
+                        <tbody>
+                        <!--	<tr>
+	                            <td style="width:80px">配送方式：</td>
+	                            <td>快递</td>
+                            </tr>-->
+                        
+                            <tr>
+	                            <td style="width:80px">服务地址：</td>
+	                            <td style="word-break: break-all;white-space: normal">
+		                           
+		                            <li>联系人：{$order_con.linkman}</li>
+		                            <li>联系电话：{$order_con.tel}</li>
+		                            <li>起始地址：{$order_con.address}</li>                 
+		      						<li>结束地址：{$order_con.address_end_text}</li>    
+		      						
+		      				   </td>
+                                
+                            </tr>                        
+                        
+		                    <tr>
+		                        <td style="width:80px"></td>
+		                        <td style="word-break: break-all;white-space: normal">
+		                        	<a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" href="">编辑收货信息</a></td>
+		                    </tr>                                               
+                         </tbody>
+                    </table>
+                 </div>
+            </div>
+        </div>			
+			<!--右边-->
+		<div class="order-container-right" style="background:white;">
+	            <div class="panel-body" style="height:380px;">
+	                <div class="row">
+	                    <div class="col-sm-3 control-label" style="padding-top:10px;">订单状态: </div>
+	                    <div class="col-sm-9 col-xs-12">
+	                        <h3 class="form-control-static">
+
+	                        <span class="text-default">
+
+							<if condition="$order_con.state eq 1">待付款</if>
+							<if condition="$order_con.state eq 2">待发货</if>
+							<if condition="$order_con.state eq 3">待收货</if>
+							<if condition="$order_con.state eq 4">待评价</if>
+							<if condition="$order_con.state eq 5">退换/售后</if>
+							<if condition="$order_con.state eq 6">已关闭</if>
+							<if condition="$order_con.state eq 7">已完成</if>
+
+							</span>                                                                                                                                                                                               </h3>
+	                    </div>
+	                </div>
+	                <div class="form-group">
+	                    <label class="col-sm-3 control-label"></label>
+	                    <div class="col-sm-9 col-xs-12">
+	                        <div class="form-control-static">
+
+								<if condition="$order_con.state eq 1">等待买家付款</if>
+								<if condition="$order_con.state eq 2">等待卖家发货</if>
+								<if condition="$order_con.state eq 3">等待买家收货</if>
+								<if condition="$order_con.state eq 4">等待买家评价</if>
+								<if condition="$order_con.state eq 5">等待买家退换/售后</if>
+								<if condition="$order_con.state eq 6">订单已关闭</if>
+								<if condition="$order_con.state eq 7">订单已完成</if>
+	                    </div>
+	                </div>
+	                <div class="form-group">
+	                    <label class="col-sm-3 control-label"></label>
+	                    <div class="col-sm-9 col-xs-12">
+	                        <p class="form-control-static ops">
+	                                                        <!--未付款-->
+						   <!--    <a class="btn btn-primary btn-xs" data-toggle="ajaxPost" href="" data-confirm="确认此订单已付款吗？">确认发货</a>    
+						    -->                        &nbsp;&nbsp;
+						      <!--  <a data-toggle="modal" data-target="#myred" href="">订单改价</a>&nbsp;&nbsp;
+						   -->     <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#mystar" href="">备注</a>
+						   
+						    </p>
+	                    </div>
+	                </div>
+	                <div class="form-group">								 
+								    <textarea class="form-control" rows="3" value="" disabled="disabled" style="height:130px; readonly">{$order_con.remark}</textarea>
+					</div>
+	            </div>
+	        </div>	
+
+				<!--备注模态框-->
+			<div class="modal fade" id="mystar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			                <h4 class="modal-title" id="myModalLabel">备注</h4>
+			            </div>
+			            <div class="modal-body" style="height:240px;">
+			            	<form role="form" >
+			            		<input id="order_num" value="{$order_con.order_num}" type="hidden">
+								  <div class="form-group">								 
+								    <textarea class="form-control" rows="3" id="text_remark" placeholder="备注" style="height:130px;">{$order_con.remark}</textarea>
+								  </div>
+							</form>			           			           
+				            <div class="modal-footer">
+				            	<button type="button" class="btn btn-primary" id="div_submit">保存</button>
+				                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>				               
+				            </div>
+			            </div>
+			        </div><!-- /.modal-content -->
+			    </div><!-- /.modal -->
+			</div>				 		
+	    </div>	
+	</div>	 
+	
+<script>
+		$("#div_submit").click(function(){
+
+		if(!$("#text_remark").val()){
+			alert("请填写订单备注");
+			return false;
+		}
+
+		$.post('__ROOT__/adp.php/CarOrder/text_remark',{'order_num':$("#order_num").val(),'remark':$("#text_remark").val()},function(date){	
+			if(date==1){
+				alert("设置成功");
+				//window.location.href='__ROOT__/adp.php/Order/allder_shouhuo';
+				window.location.reload();
+			}else{
+				alert("设置失败");
+			}
+        },'json');
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<include file="Public/head" />
+<include file="Public/menu_distribution" />
+<div id="content">
+	<div id="content-header">
+		<h1>分销佣金设置管理</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 分销系统</a>
+		<a href="#" class="current">分销佣金管理</a>
+
+		<a href="fx_lever_add" class="add_button"><button class="btn" >+添加新等级</button></a>
+	</div>
+	<div class="container-fluid">
+<if condition="$program_id eq JT201712021113483120"><!--蔡氏养生发展下线分销-->		
+		<div class="text_t pd_35 pt_5" style="    color: #a94442;background-color: #f2dede;border-color: #ebccd1;padding: 9px;margin-bottom: -16px;border: 1px solid transparent;border-radius: 4px;">
+   			 提示: 点击金额进行编辑，点击金额以外内容，完成编辑。
+		</div>
+</if>		
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>分销佣金设置管理</h5>
+					</div>
+					<div class="widget-content nopadding">
+<if condition="$program_id eq JT201712021113483120"><!--蔡氏养生发展下线分销-->
+	<include file="Distribution/fx_lever_caishi" />	
+	<else/>
+							<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th>等级名称</th>
+								<th>一级佣金比例</th>
+								<th>二级佣金比例</th>
+								<th>升级条件</th>
+								<th>操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							<foreach name="list" item="v">
+								<tr>
+									<td>{$v.title}</td>
+									<td>{$v.bl_lever_1}</td>
+									<td>{$v.bl_lever_2}</td>
+									<td>{$v.默认等级}</td>
+									
+									<td>
+										<button class="btn btn-default">
+											<a  title="编辑" alt="编辑" href="fx_lever_edit/id/{$v['id']}" >编辑</a>
+										</button>
+	<if condition='($program_id neq JT201803151807521312) and $program_id neq JT201710101645145951'>
+											<if condition="$v.cannot_d neq 1">
+											<button class="btn btn-danger">
+												
+													<a style="color:white;"  title="删除" alt="删除" href="fx_lever_delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+													
+											</button>
+											</if>
+	</if>
+									</td>
+								</tr>
+							</foreach>
+							</tbody>
+						</table>
+</if>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<include file="Public/modal" /> 
+	<include file="Public/foot" />
+<script>
+
+	//异步列表页的内容     ==============================================
+
+	$(".edit_text").click(function(){
+		var self_input=$(this).parent('td').children('input')
+		var that=this
+
+		$(this).css("display","none");
+		self_input.css("display","block");
+		self_input.focus();
+		self_input.blur(function(){
+			//异步修改排序
+			$(that).text(self_input.val());
+			$(that).css("display","block");
+			self_input.css("display","none");
+			 $.post('__ROOT__/adp.php/Distribution/ajax_change_text',{'style':1,'text_name':$(that).attr("text_name"),'id':$(that).attr("val"),'text_val':self_input.val()},function(date){
+	        if(date==1){
+//	        	alert("成功");
+//	        	location.reload();
+					$("#myModalLabel").text("修改成功")
+					$("#add-event").click();
+	        }else{
+	        	
+	        }
+        },'json');
+		});
+	})
+</script>
+

@@ -1,0 +1,66 @@
+<include file="Public/head" />
+<include file="Public/menu_distribution" />
+<div id="content">
+	<div id="content-header">
+		<h1>已打款提现申请</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="{:U('Distribution/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 分销系统</a>
+		<a href="#" class="current">已打款提现申请</a>
+
+	<!--	<a href="ad_add" class="add_button"><button class="btn" >+添加新广告</button></a>-->
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>已打款提现申请</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th>单号</th>
+								<th>申请人</th>
+								<th>申请金额</th>
+								<th>申请状态</th>
+								<th>申请时间</th>
+								<th>打款时间</th>
+							</tr>
+							</thead>
+							<tbody>
+							<foreach name="info" item="v">
+								<tr>
+									<td>{$v.order_num}</td>
+									<td><img src="{$v.head}" style="width:50px;height:50px;border:1px solid #ccc; padding:1px;"> {$v.nickname} </td>
+									<td>{$v.money_01} 元</td>
+
+									<td>
+										<if condition="$v.state eq 1">待审核</if>
+							        	<if condition="$v.state eq 2">审核通过</if>
+							        	<if condition="$v.state eq 3">审核拒绝</if>
+							        	<if condition="$v.state eq 4">已打款</if>
+							        	<if condition="$v.state eq 5">位置错误</if>
+									</td>
+									 <td ><?=date("Y-m-d H:i:s",$v['time_set']);?></td>
+									 <td ><?=date("Y-m-d H:i:s",$v['time_give_money']);?></td>
+								</tr>
+							</foreach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<include file="Public/foot" />
+
+

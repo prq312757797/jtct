@@ -1,0 +1,86 @@
+<include file="Public/head" />
+<div class="contert">		   			 						
+				<form action="{:U('Servicer/runAdd',array('user_id'=>$info['user_id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
+					<div class="form-group">
+						<label for="firstname" class="col-sm-1 control-label">账号：</label>
+						<div class="col-sm-11">
+							<input name="user_name" value="{$info.user_name}" type="text" class="form-control" id="firstname"  placeholder="请输入账号">											  
+						</div>
+					</div>	
+				<empty name="info['user_name']">
+					<div class="form-group">
+						<label for="firstname" class="col-sm-1 control-label">密码：</label>
+						<div class="col-sm-11">
+							<input name="user_psw" value="{$info.user_psw}" type="text" class="form-control" id="firstname"  placeholder="设置服务商密码">											  
+						</div>
+					</div>
+				</empty>
+				
+					<div class="form-group">
+						<label for="lastname" class="col-sm-1 control-label">所属公司:</label>
+						<div class="col-sm-11">
+							<input name="user_company" value="{$info.user_company}" type="text" class="form-control" id="lastname" placeholder="请输入公司名称"> 											  
+						</div>
+					</div>		
+					<div class="form-group">
+						<label for="lastname" class="col-sm-1 control-label">联系方式:</label>
+						<div class="col-sm-11">
+							<input name="user_tel" value="{$info.user_tel}" type="text" class="form-control" id="lastname" placeholder="请输入公司名称"> 											  
+						</div>
+					</div>	
+					<div class="form-group">
+						<label for="lastname" class="col-sm-1 control-label">电子邮箱:</label>
+						<div class="col-sm-11">
+							<input name="user_mail" value="{$info.user_mail}" type="text" class="form-control" id="lastname"> 											  
+						</div>
+					</div>						
+					<!--<div class="form-group">
+						<label for="lastname" class="col-sm-1 control-label">小程序APPID:</label>
+						<div class="col-sm-11">
+							<input name="appid" value="{$info.appid}" type="text" class="form-control" id="lastname" >											 
+						</div>
+					</div>						
+					<div class="form-group">
+						<label for="lastname" class="col-sm-1 control-label">最近登入时间:</label>
+						<div class="col-sm-11">
+							<input  value="{$info.user_lasttime}" type="text" class="form-control" id="lastname" >										   
+						</div>
+					</div>						
+					<div class="form-group">
+						<label for="lastname" class="col-sm-1 control-label">最近登录IP:</label>
+						<div class="col-sm-11">
+							<input  value="{$info.user_lastip}" type="text" class="form-control" id="lastname">								  
+						</div>
+					</div>		-->				
+					<div class="form-group">
+						<label for="lastname" class="col-sm-1 control-label">身份证号码:</label>
+						<div class="col-sm-11">
+							<input name="user_idcard" value="{$info.user_idcard}" type="text" class="form-control" id="lastname">								  
+						</div>
+					</div>					
+					<div class="form-group">
+						<label for="lastname" class="col-sm-1 control-label">身份证正面图:</label>
+						<div class="col-sm-11">
+							<input name="user_idcardz"  type="file" class="form-control" id="lastname">								  
+						<notempty name="info['user_idcardz']">
+							<img src="__ROOT__/Uploads/{$info.user_idcardz}" style="width:200px;height:200px;">
+						</notempty>
+						</div>
+					</div>						
+					<div class="form-group">
+						<label for="lastname" class="col-sm-1 control-label">身份证反面图:</label>
+						<div class="col-sm-11">
+							<input name="user_idcardf"  type="file" class="form-control" id="lastname">								  
+							<notempty name="info['user_idcardf']">
+								<img src="__ROOT__/Uploads/{$info.user_idcardf}" style="width:200px;height:200px;">	
+							</notempty>
+						</div>
+					</div>	
+					<div style="float:right;">
+					<button type='submit' class="btn btn-primary">保存</button>
+					<button class="btn btn-primary" onclick="history.go(-1)">返回</button>
+				</div>
+				</form>	
+				
+			</div>			
+		</div>

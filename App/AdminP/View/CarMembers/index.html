@@ -1,0 +1,51 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_car_members" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">				 
+						<div style="border-bottom:1px solid #000000;">
+							<h3 style="margin:20px 0px 20px 20px;">会员概述</h3>
+						</div>						
+						<div class="col-lg-12" style="text-align:center;margin-top:10px;">
+							<input type="hidden" name="program_id" class="form-control" value="1"> 
+							
+							<!--会员概述 ===================开始====================-->
+						    <div class="ibox float-e-margins col-sm-4 peng_members" style="border:1px solid #000000">
+						        <div class="ibox-title">		          
+						            <h3 style="padding: 5px;">今日新增会员</h3>
+						        </div>
+						        <div class="ibox-content">
+						            <h1 class="no-margins today-count" name="k1">{$today}</h1>						           
+						            <small>新增会员</small>
+						        </div>
+						    </div>
+						    <div class="ibox float-e-margins col-sm-4 peng_members" style="border: 1px solid #000000">
+					            <div class="ibox-title">
+					                <h3 style="padding: 5px;">昨日新增会员</h3>
+					            </div>
+					            <div class="ibox-content">
+					                <h1 class="no-margins yesterday-count" name="k2">{$yesterday}</h1>					                
+					                <small>新增会员</small>
+					            </div>
+				           </div>		    
+						    <div class="ibox-content float-e-margins col-sm-4 peng_members" style="border: 1px solid #000000">
+					            <div class="ibox-title">                
+					                <h3 style="padding: 5px;">过去七天新增会员</h3>
+					            </div>
+					            <div class="ibox-content">
+					                <h1 class="no-margins seven-count" name="k3">{$in_weeken}</h1>					               
+					                <small>新增会员</small>
+					            </div>
+				           </div>		        
+					  	<!--会员概述 ===================结束====================-->
+
+					    </div>
+					</div>				    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+</html>

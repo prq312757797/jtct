@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>深恒利服务商管理</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="__ROOT__/Public/css/Recharge.css" />
+<style>
+.contert{
+width:80%;
+height:100%;
+/*border:1px solid hotpink;*/
+margin:0px auto;
+border-radius:6px;
+}
+</style>
+	</head>
+	<body>
+			<include file="Public/head" />
+		
+		<div class="contert">
+			<h2 style="float:left;">消费记录</h2>	
+			<button class="btn btn-primary" style="float:right;margin-top:20px;" onclick="history.go(-1)">返回</button>
+		    <table class="table table-hover">
+				  <thead>
+				    <tr>
+				      <th>编号</th>
+				      <th>流水号</th>
+				      <th>平台类型</th>
+				      <th>小程序ID</th>
+				      <th>平台名称</th>
+				      <th>消费类型</th>
+				      <th>消费金额</th>
+				      <th>余额</th>
+				      <th>消费日期</th>
+				      <th>消费备注</th>
+				      <th>消费状态</th>
+				      <th>操作</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <foreach name="record_xf" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+							 <td>{$v.running_num}</td>
+                            <td>
+							
+							<if condition="$v.type eq 1">小程序</if>
+							<if condition="$v.type eq 2">公众号</if>
+							</td>
+							 <td>{$v.appid}</td>
+                            <td>{$v.mcheng}</td>
+							<td>{$v.deal_type}
+						
+							</td>
+							<td>{$v.deal_gold}</td>
+							
+							<td>{$v.balance}</td>
+                            <td>
+								<?=date("Y-m-d H:i:s",$v['deal_time']);?>
+							</td>
+							 <td>{$v.content}</td>
+                            <td>
+								<if condition="$v.status eq 1">审核中</if>
+								<if condition="$v.status eq 2">成功</if>
+								<if condition="$v.status eq 3">失败、退款</if>		
+							</td>
+						
+                            <td>
+								<!--<a  title="修改" alt="修改" href="edit/user_id/{$v['user_id']}">修改</a>-->
+								<!--<a  title="修改" alt="修改" href="{:U('Servicer/edit'),array('user_id'=>$v['user_id'])}">修改</a>-->
+								<!--<<a  title="详情" alt="详情" href="__ROOT__/index.php/Admin/Servicer/edit/user_id/{$v['user_id']}">详情</a>-->
+								<a  title="删除" alt="删除" href="__ROOT__/index.php/Admin/Servicer/delete2/id/{$v['id']}}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            </td>
+                        </tr>
+                    </foreach>			   
+				  </tbody>
+			</table>
+<div class="pages" style=" width: 100%;
+             margin-left: auto;    margin-top: 21px;text-align:center;
+             margin-right: auto;"> {$pages}</div>
+</div>
+			<div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+			                    &times;
+			                </button>
+			                <h4 class="modal-title" id="myModalLabel">
+			                                                 您确定要删除吗？
+			                </h4>
+			            </div>    
+			            <div class="modal-footer">
+			                <button type="button" class="btn btn-default" data-dismiss="modal">放弃删除 </button>               
+			                <button type="button" class="btn btn-primary">确定删除 </button>                            
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<a href="../service.html"><button class="btn btn-group" style="float:right;margin:260px 80px 0px 0px;">返回</button></a>
+	   </div>								
+	</body>
+</html>

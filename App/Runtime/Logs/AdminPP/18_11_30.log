@@ -1,0 +1,1461 @@
+[ 2018-11-30T08:42:13+08:00 ] 127.0.0.1 /adp.php/Rebate/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+NOTIC: [8] Undefined index: program_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 27 行.
+NOTIC: [8] Undefined index: muban_type D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 29 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: program_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 31 行.
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='' ) LIMIT 1   [ RunTime:0.0090s ]
+NOTIC: [8] Undefined index: muban_type D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 36 行.
+NOTIC: [8] Undefined index: muban_type D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 49 行.
+NOTIC: [8] Undefined index: muban_type D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 53 行.
+NOTIC: [8] Undefined index: muban_type D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 57 行.
+
+[ 2018-11-30T08:42:13+08:00 ] 127.0.0.1 /adp.php/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: is_child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\debf2e6179d932033399c5a5fb1f054a.php 第 14 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-30T08:42:29+08:00 ] 127.0.0.1 /adp.php/login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `user_info` WHERE `name` = '能量KTV系统' LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT * FROM `user_info` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: lock D:\phpStudy\WWW\jtct\App\AdminPP\Controller\LoginController.class.php 第 49 行.
+SQL: UPDATE `user_info` SET `lasttime`='1543538549',`lastip`='127.0.0.1' WHERE `id` = 253 [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `qianyue` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `qianyue` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+
+[ 2018-11-30T08:42:29+08:00 ] 127.0.0.1 /adp.php/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0110s ]
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='0' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='1' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='2' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `program_title`,`program_logo`,`abstract` FROM `store` WHERE `program_id` = 'JT201808090855119076' LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `order_form` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `order_form` WHERE ( state=7 and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `order_form` WHERE ( state=2 and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `order_form` WHERE ( state=5 and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0100s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 24 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 31 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 33 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 37 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 53 行.
+NOTIC: [8] Use of undefined constant JT201710101645145951 - assumed 'JT201710101645145951' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 55 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 60 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 65 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 67 行.
+NOTIC: [8] Use of undefined constant JT201709251030119718 - assumed 'JT201709251030119718' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201711041549052325 - assumed 'JT201711041549052325' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201710161553526657 - assumed 'JT201710161553526657' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 143 行.
+NOTIC: [8] Use of undefined constant JT201805140917546604 - assumed 'JT201805140917546604' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 163 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 177 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 181 行.
+NOTIC: [8] Use of undefined constant JT201807211029434559 - assumed 'JT201807211029434559' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 189 行.
+NOTIC: [8] Use of undefined constant JT201807211029434559 - assumed 'JT201807211029434559' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 192 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\79e78aa56d6ee764a7c0e0b735a71cbb.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.081005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.081005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-30T08:42:34+08:00 ] 127.0.0.1 /adp.php/Index/daohang.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0120s ]
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0100s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='0' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='1' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='2' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `direction` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`sort`,`title`,`url`,`image`,`is_show` FROM `direction` WHERE `program_id` = 'JT201808090855119076' AND ( (title like "%%")  AND (is_show like "%%") ) ORDER BY sort  [ RunTime:0.0090s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 24 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 31 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 33 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 37 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 53 行.
+NOTIC: [8] Use of undefined constant JT201710101645145951 - assumed 'JT201710101645145951' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 55 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 60 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 65 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 67 行.
+NOTIC: [8] Use of undefined constant JT201709251030119718 - assumed 'JT201709251030119718' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201711041549052325 - assumed 'JT201711041549052325' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201710161553526657 - assumed 'JT201710161553526657' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 143 行.
+NOTIC: [8] Use of undefined constant JT201805140917546604 - assumed 'JT201805140917546604' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 163 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 177 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 181 行.
+NOTIC: [8] Use of undefined constant JT201807211029434559 - assumed 'JT201807211029434559' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 189 行.
+NOTIC: [8] Use of undefined constant JT201807211029434559 - assumed 'JT201807211029434559' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 192 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-30T08:42:38+08:00 ] 127.0.0.1 /adp.php/Index/daohang_edit/id/750
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0090s ]
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2 LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='0' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='1' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='2' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `url_search` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `url_search` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `direction` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `direction` WHERE ( id=750 ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`uid`,`title`,`image_1`,`is_show` FROM `attribute` WHERE ( dsh_id=0 and attribute_style=1 and is_show=1 and program_id='JT201808090855119076' )  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `artical` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`title`,`is_show` FROM `artical` WHERE (  is_show=1 and program_id='JT201808090855119076' )  [ RunTime:0.0080s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 24 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 31 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 33 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 37 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 53 行.
+NOTIC: [8] Use of undefined constant JT201710101645145951 - assumed 'JT201710101645145951' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 55 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 60 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 65 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 67 行.
+NOTIC: [8] Use of undefined constant JT201709251030119718 - assumed 'JT201709251030119718' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201711041549052325 - assumed 'JT201711041549052325' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201710161553526657 - assumed 'JT201710161553526657' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 143 行.
+NOTIC: [8] Use of undefined constant JT201805140917546604 - assumed 'JT201805140917546604' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 163 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 177 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 181 行.
+NOTIC: [8] Use of undefined constant JT201807211029434559 - assumed 'JT201807211029434559' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 189 行.
+NOTIC: [8] Use of undefined constant JT201807211029434559 - assumed 'JT201807211029434559' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 192 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 228 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 395 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 398 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 411 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 422 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 483 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 483 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 483 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 497 行.
+NOTIC: [8] Undefined variable: fenlei_dsh D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\fcce8b10dbe556a3c00c88019d1d6c6e.php 第 498 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.114007s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.114007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-30T08:42:45+08:00 ] 127.0.0.1 /adp.php/Index/run_daohang_add/id/750.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0090s ]
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0070s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2 LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3 LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5 LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='0' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='1' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='2' ) LIMIT 1   [ RunTime:0.0070s ]
+NOTIC: [2] Missing argument 1 for I(), called in D:\phpStudy\WWW\jtct\App\AdminPP\Controller\IndexController.class.php on line 256 and defined D:\phpStudy\WWW\jtct\ThinkPHP\Common\functions.php 第 271 行.
+NOTIC: [8] Undefined variable: name D:\phpStudy\WWW\jtct\ThinkPHP\Common\functions.php 第 273 行.
+NOTIC: [8] Undefined variable: name D:\phpStudy\WWW\jtct\ThinkPHP\Common\functions.php 第 278 行.
+NOTIC: [8] Undefined variable: name D:\phpStudy\WWW\jtct\ThinkPHP\Common\functions.php 第 339 行.
+NOTIC: [2] finfo_file(): Empty filename or path D:\phpStudy\WWW\jtct\ThinkPHP\Library\Think\Upload.class.php 第 152 行.
+SQL: SHOW COLUMNS FROM `direction` [ RunTime:0.0080s ]
+SQL: UPDATE `direction` SET `sort`='4',`title`='在线服务',`url`='',`is_show`='1',`program_id`='JT201808090855119076' WHERE `id` = 750 [ RunTime:0.0080s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007001s ]
+
+[ 2018-11-30T08:42:46+08:00 ] 127.0.0.1 /adp.php/Index/daohang.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0100s ]
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0100s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2 LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3 LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4 LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='0' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='1' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='2' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `direction` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`sort`,`title`,`url`,`image`,`is_show` FROM `direction` WHERE `program_id` = 'JT201808090855119076' AND ( (title like "%%")  AND (is_show like "%%") ) ORDER BY sort  [ RunTime:0.0090s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 24 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 31 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 33 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 37 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 53 行.
+NOTIC: [8] Use of undefined constant JT201710101645145951 - assumed 'JT201710101645145951' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 55 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 60 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 65 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 67 行.
+NOTIC: [8] Use of undefined constant JT201709251030119718 - assumed 'JT201709251030119718' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201711041549052325 - assumed 'JT201711041549052325' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201710161553526657 - assumed 'JT201710161553526657' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 143 行.
+NOTIC: [8] Use of undefined constant JT201805140917546604 - assumed 'JT201805140917546604' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 163 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 177 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 181 行.
+NOTIC: [8] Use of undefined constant JT201807211029434559 - assumed 'JT201807211029434559' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 189 行.
+NOTIC: [8] Use of undefined constant JT201807211029434559 - assumed 'JT201807211029434559' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 192 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\7ba0d901531b27c7677ac93d5670044b.php 第 228 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-30T17:43:00+08:00 ] 127.0.0.1 /adp.php/Goodsavec/selling.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0100s ]
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='0' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='1' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='2' ) LIMIT 1   [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: str D:\phpStudy\WWW\jtct\App\AdminPP\Controller\GoodsavecController.class.php 第 61 行.
+NOTIC: [8] Undefined index: str_f D:\phpStudy\WWW\jtct\App\AdminPP\Controller\GoodsavecController.class.php 第 61 行.
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods` WHERE `goods_state` IN ('1','3') AND `program_id` = 'JT201808090855119076' AND `by_onlinebear` = 2 LIMIT 1   [ RunTime:0.0120s ]
+SQL: select * from goods  where by_onlinebear=2 and  program_id='JT201808090855119076' and goods_state in (1,3)  order by sort asc Limit 0, 10 [ RunTime:0.0120s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\jtct\ThinkPHP\Library\Component\Page.class.php 第 153 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\jtct\ThinkPHP\Library\Component\Page.class.php 第 153 行.
+NOTIC: [8] Undefined offset: 2 D:\phpStudy\WWW\jtct\ThinkPHP\Library\Component\Page.class.php 第 153 行.
+NOTIC: [8] Undefined offset: 9 D:\phpStudy\WWW\jtct\ThinkPHP\Library\Component\Page.class.php 第 153 行.
+SQL: SELECT `sh_name` FROM `user_info_dsh` WHERE ( id='0' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `sh_name` FROM `user_info_dsh` WHERE ( id='0' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `sh_name` FROM `user_info_dsh` WHERE ( id='0' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `sh_name` FROM `user_info_dsh` WHERE ( id='0' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `sh_name` FROM `user_info_dsh` WHERE ( id='0' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `sh_name` FROM `user_info_dsh` WHERE ( id='0' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `sh_name` FROM `user_info_dsh` WHERE ( id='0' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `muban` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `muban` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `shuxing` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `shuxing` WHERE ( banbenleixing_type='' )  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `index_recommend` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `index_recommend` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 24 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 31 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 33 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 37 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 53 行.
+NOTIC: [8] Use of undefined constant JT201710101645145951 - assumed 'JT201710101645145951' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 55 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 60 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 65 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 67 行.
+NOTIC: [8] Use of undefined constant JT201709251030119718 - assumed 'JT201709251030119718' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201711041549052325 - assumed 'JT201711041549052325' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201710161553526657 - assumed 'JT201710161553526657' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 143 行.
+NOTIC: [8] Use of undefined constant JT201805140917546604 - assumed 'JT201805140917546604' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 163 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 250 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 259 行.
+NOTIC: [8] Use of undefined constant JT201803151807521312 - assumed 'JT201803151807521312' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 271 行.
+NOTIC: [8] Use of undefined constant JT201711031347219168 - assumed 'JT201711031347219168' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 279 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 250 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 259 行.
+NOTIC: [8] Use of undefined constant JT201803151807521312 - assumed 'JT201803151807521312' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 271 行.
+NOTIC: [8] Use of undefined constant JT201711031347219168 - assumed 'JT201711031347219168' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 279 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 250 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 259 行.
+NOTIC: [8] Use of undefined constant JT201803151807521312 - assumed 'JT201803151807521312' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 271 行.
+NOTIC: [8] Use of undefined constant JT201711031347219168 - assumed 'JT201711031347219168' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 279 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 250 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 259 行.
+NOTIC: [8] Use of undefined constant JT201803151807521312 - assumed 'JT201803151807521312' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 271 行.
+NOTIC: [8] Use of undefined constant JT201711031347219168 - assumed 'JT201711031347219168' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 279 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 250 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 259 行.
+NOTIC: [8] Use of undefined constant JT201803151807521312 - assumed 'JT201803151807521312' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 271 行.
+NOTIC: [8] Use of undefined constant JT201711031347219168 - assumed 'JT201711031347219168' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 279 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 250 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 259 行.
+NOTIC: [8] Use of undefined constant JT201803151807521312 - assumed 'JT201803151807521312' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 271 行.
+NOTIC: [8] Use of undefined constant JT201711031347219168 - assumed 'JT201711031347219168' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 279 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 250 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 259 行.
+NOTIC: [8] Use of undefined constant JT201803151807521312 - assumed 'JT201803151807521312' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 271 行.
+NOTIC: [8] Use of undefined constant JT201711031347219168 - assumed 'JT201711031347219168' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\ca08267b874e4d1e37f17d190a53c3f0.php 第 279 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.060003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-30T17:43:01+08:00 ] 127.0.0.1 /adp.php/Goods/selling.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0100s ]
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='0' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='1' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='2' ) LIMIT 1   [ RunTime:0.0090s ]
+NOTIC: [8] Undefined index: str D:\phpStudy\WWW\jtct\App\AdminPP\Controller\GoodsController.class.php 第 180 行.
+NOTIC: [8] Undefined index: str D:\phpStudy\WWW\jtct\App\AdminPP\Controller\GoodsController.class.php 第 181 行.
+NOTIC: [8] Undefined index: str_f D:\phpStudy\WWW\jtct\App\AdminPP\Controller\GoodsController.class.php 第 181 行.
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods` WHERE `goods_state` IN ('1','3') AND `program_id` = 'JT201808090855119076' AND `goods_baiye` = 0 LIMIT 1   [ RunTime:0.0120s ]
+SQL: select * from goods  where goods_baiye=0 and by_onlinebear=0 and program_id='JT201808090855119076' and goods_state in (1,3)  order by sort asc Limit 0, 6 [ RunTime:0.0230s ]
+NOTIC: [8] Undefined offset: 0 D:\phpStudy\WWW\jtct\ThinkPHP\Library\Component\Page.class.php 第 153 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\jtct\ThinkPHP\Library\Component\Page.class.php 第 153 行.
+NOTIC: [8] Undefined offset: 2 D:\phpStudy\WWW\jtct\ThinkPHP\Library\Component\Page.class.php 第 153 行.
+NOTIC: [8] Undefined offset: 9 D:\phpStudy\WWW\jtct\ThinkPHP\Library\Component\Page.class.php 第 153 行.
+SQL: SELECT `sh_name` FROM `user_info_dsh` WHERE ( id='0' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `sh_name` FROM `user_info_dsh` WHERE ( id='0' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `sh_name` FROM `user_info_dsh` WHERE ( id='0' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `sh_name` FROM `user_info_dsh` WHERE ( id='0' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `sh_name` FROM `user_info_dsh` WHERE ( id='0' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `sh_name` FROM `user_info_dsh` WHERE ( id='0' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `muban` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `muban` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `shuxing` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `shuxing` WHERE ( banbenleixing_type='' )  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `index_recommend` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `index_recommend` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 24 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 31 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 33 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 37 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 53 行.
+NOTIC: [8] Use of undefined constant JT201710101645145951 - assumed 'JT201710101645145951' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 55 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 60 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 65 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 67 行.
+NOTIC: [8] Use of undefined constant JT201709251030119718 - assumed 'JT201709251030119718' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201711041549052325 - assumed 'JT201711041549052325' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201710161553526657 - assumed 'JT201710161553526657' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 143 行.
+NOTIC: [8] Use of undefined constant JT201805140917546604 - assumed 'JT201805140917546604' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 163 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 186 行.
+NOTIC: [8] Use of undefined constant JT201712021113483120 - assumed 'JT201712021113483120' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 192 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 194 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 237 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 244 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 245 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 248 行.
+NOTIC: [8] Use of undefined constant JT201803151807521312 - assumed 'JT201803151807521312' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 250 行.
+NOTIC: [8] Use of undefined constant JT201711031347219168 - assumed 'JT201711031347219168' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 252 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 270 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 285 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 293 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 322 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 332 行.
+NOTIC: [8] Use of undefined constant JT201803151807521312 - assumed 'JT201803151807521312' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 360 行.
+NOTIC: [8] Use of undefined constant JT201711031347219168 - assumed 'JT201711031347219168' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 368 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 270 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 285 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 293 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 322 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 332 行.
+NOTIC: [8] Use of undefined constant JT201803151807521312 - assumed 'JT201803151807521312' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 360 行.
+NOTIC: [8] Use of undefined constant JT201711031347219168 - assumed 'JT201711031347219168' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 368 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 270 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 285 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 293 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 322 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 332 行.
+NOTIC: [8] Use of undefined constant JT201803151807521312 - assumed 'JT201803151807521312' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 360 行.
+NOTIC: [8] Use of undefined constant JT201711031347219168 - assumed 'JT201711031347219168' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 368 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 270 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 285 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 293 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 322 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 332 行.
+NOTIC: [8] Use of undefined constant JT201803151807521312 - assumed 'JT201803151807521312' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 360 行.
+NOTIC: [8] Use of undefined constant JT201711031347219168 - assumed 'JT201711031347219168' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 368 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 270 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 285 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 293 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 322 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 332 行.
+NOTIC: [8] Use of undefined constant JT201803151807521312 - assumed 'JT201803151807521312' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 360 行.
+NOTIC: [8] Use of undefined constant JT201711031347219168 - assumed 'JT201711031347219168' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 368 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 270 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 285 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 293 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 322 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 332 行.
+NOTIC: [8] Use of undefined constant JT201803151807521312 - assumed 'JT201803151807521312' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 360 行.
+NOTIC: [8] Use of undefined constant JT201711031347219168 - assumed 'JT201711031347219168' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\5e1002d5c40e40fc015932826acddd7c.php 第 368 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-30T17:43:03+08:00 ] 127.0.0.1 /adp.php/Room/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0080s ]
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1 LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3 LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5 LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='0' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='1' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='2' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `program_title`,`program_logo`,`abstract` FROM `store` WHERE `program_id` = 'JT201808090855119076' LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `order_form` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `order_form` WHERE ( state=7 and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `order_form` WHERE ( state=2 and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `order_form` WHERE ( state=5 and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 24 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 31 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 33 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 37 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 53 行.
+NOTIC: [8] Use of undefined constant JT201710101645145951 - assumed 'JT201710101645145951' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 55 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 60 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 65 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 67 行.
+NOTIC: [8] Use of undefined constant JT201709251030119718 - assumed 'JT201709251030119718' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201711041549052325 - assumed 'JT201711041549052325' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201710161553526657 - assumed 'JT201710161553526657' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 143 行.
+NOTIC: [8] Use of undefined constant JT201805140917546604 - assumed 'JT201805140917546604' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0d033dd0a5435b9a8ccc4d50a9982872.php 第 163 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-30T17:43:04+08:00 ] 127.0.0.1 /adp.php/Room/room_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0090s ]
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4 LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='0' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='1' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='2' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `room_manager` WHERE `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0080s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1449' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1450' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1450' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1449' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1451' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1451' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1449' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1449' ) LIMIT 1   [ RunTime:0.0080s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 24 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 31 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 33 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 37 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 53 行.
+NOTIC: [8] Use of undefined constant JT201710101645145951 - assumed 'JT201710101645145951' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 55 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 60 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 65 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 67 行.
+NOTIC: [8] Use of undefined constant JT201709251030119718 - assumed 'JT201709251030119718' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201711041549052325 - assumed 'JT201711041549052325' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201710161553526657 - assumed 'JT201710161553526657' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 143 行.
+NOTIC: [8] Use of undefined constant JT201805140917546604 - assumed 'JT201805140917546604' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 163 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.092005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.092005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-30T17:43:06+08:00 ] 127.0.0.1 /adp.php/Room/room_list_edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0120s ]
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0110s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0120s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1 LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2 LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3 LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4 LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5 LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='0' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='1' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='2' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `room_manager` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT * FROM `attribute` WHERE ( id='1449' ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( uid=0 and attribute_style=1 and dsh_id=0 and program_id='JT201808090855119076' )  [ RunTime:0.0120s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 24 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 31 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 33 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 37 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 53 行.
+NOTIC: [8] Use of undefined constant JT201710101645145951 - assumed 'JT201710101645145951' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 55 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 60 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 65 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 67 行.
+NOTIC: [8] Use of undefined constant JT201709251030119718 - assumed 'JT201709251030119718' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201711041549052325 - assumed 'JT201711041549052325' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201710161553526657 - assumed 'JT201710161553526657' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 143 行.
+NOTIC: [8] Use of undefined constant JT201805140917546604 - assumed 'JT201805140917546604' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 163 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 272 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 275 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 278 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 281 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 357 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 360 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 373 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 376 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 377 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 378 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 379 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 380 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 383 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 384 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 388 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 389 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 390 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 391 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 392 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 393 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 394 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 395 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 396 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 402 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 403 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 404 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 405 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 406 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 459 行.
+NOTIC: [8] Undefined variable: fenlei_dsh D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 460 行.
+NOTIC: [8] Undefined variable: artical D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 476 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-30T17:59:46+08:00 ] 127.0.0.1 /adp.php/Room/room_list_edit/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0110s ]
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='0' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='1' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='2' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `room_manager` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT * FROM `attribute` WHERE ( id='1449' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( uid=0 and attribute_style=1 and dsh_id=0 and program_id='JT201808090855119076' )  [ RunTime:0.0100s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 24 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 31 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 33 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 37 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 53 行.
+NOTIC: [8] Use of undefined constant JT201710101645145951 - assumed 'JT201710101645145951' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 55 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 60 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 65 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 67 行.
+NOTIC: [8] Use of undefined constant JT201709251030119718 - assumed 'JT201709251030119718' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201711041549052325 - assumed 'JT201711041549052325' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201710161553526657 - assumed 'JT201710161553526657' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 143 行.
+NOTIC: [8] Use of undefined constant JT201805140917546604 - assumed 'JT201805140917546604' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 163 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 272 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 275 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 278 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 281 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 357 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 360 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 373 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 376 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 377 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 378 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 379 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 380 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 383 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 384 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 388 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 389 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 390 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 391 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 392 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 393 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 394 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 395 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 396 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 402 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 403 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 404 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 405 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 406 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 459 行.
+NOTIC: [8] Undefined variable: fenlei_dsh D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 460 行.
+NOTIC: [8] Undefined variable: artical D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 476 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-30T18:00:06+08:00 ] 127.0.0.1 /adp.php/Room/room_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0110s ]
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4 LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='0' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='1' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='2' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `room_manager` WHERE `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0110s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1449' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1450' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1450' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1449' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1451' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1451' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1449' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `title` FROM `attribute` WHERE ( id='1449' ) LIMIT 1   [ RunTime:0.0100s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 24 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 31 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 33 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 37 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 53 行.
+NOTIC: [8] Use of undefined constant JT201710101645145951 - assumed 'JT201710101645145951' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 55 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 60 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 65 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 67 行.
+NOTIC: [8] Use of undefined constant JT201709251030119718 - assumed 'JT201709251030119718' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201711041549052325 - assumed 'JT201711041549052325' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201710161553526657 - assumed 'JT201710161553526657' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 143 行.
+NOTIC: [8] Use of undefined constant JT201805140917546604 - assumed 'JT201805140917546604' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\0110aed3f51e9cfd31607bd0e3bc6afc.php 第 163 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-30T18:00:07+08:00 ] 127.0.0.1 /adp.php/Room/room_list_edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0090s ]
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='0' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='1' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='2' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `room_manager` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT * FROM `attribute` WHERE ( id='1450' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( uid=0 and attribute_style=1 and dsh_id=0 and program_id='JT201808090855119076' )  [ RunTime:0.0080s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 24 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 31 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 33 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 37 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 53 行.
+NOTIC: [8] Use of undefined constant JT201710101645145951 - assumed 'JT201710101645145951' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 55 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 60 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 65 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 67 行.
+NOTIC: [8] Use of undefined constant JT201709251030119718 - assumed 'JT201709251030119718' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201711041549052325 - assumed 'JT201711041549052325' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201710161553526657 - assumed 'JT201710161553526657' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 143 行.
+NOTIC: [8] Use of undefined constant JT201805140917546604 - assumed 'JT201805140917546604' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 163 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 272 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 275 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 278 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 281 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 357 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 360 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 373 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 376 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 377 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 378 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 379 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 380 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 383 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 384 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 388 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 389 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 390 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 391 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 392 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 393 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 394 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 395 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 396 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 402 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 403 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 404 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 405 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 406 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 459 行.
+NOTIC: [8] Undefined variable: fenlei_dsh D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 460 行.
+NOTIC: [8] Undefined variable: artical D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 476 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-30T18:02:25+08:00 ] 127.0.0.1 /adp.php/Room/room_list_edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0090s ]
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1 LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2 LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3 LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='0' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='1' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='2' ) LIMIT 1   [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `room_manager` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT * FROM `attribute` WHERE ( id='1450' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( uid=0 and attribute_style=1 and dsh_id=0 and program_id='JT201808090855119076' )  [ RunTime:0.0070s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 24 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 31 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 33 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 37 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 53 行.
+NOTIC: [8] Use of undefined constant JT201710101645145951 - assumed 'JT201710101645145951' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 55 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 60 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 65 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 67 行.
+NOTIC: [8] Use of undefined constant JT201709251030119718 - assumed 'JT201709251030119718' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201711041549052325 - assumed 'JT201711041549052325' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201710161553526657 - assumed 'JT201710161553526657' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 143 行.
+NOTIC: [8] Use of undefined constant JT201805140917546604 - assumed 'JT201805140917546604' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 163 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 272 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 275 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 278 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 281 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 357 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 360 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 373 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 376 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 377 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 378 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 379 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 380 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 383 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 384 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 388 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 389 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 390 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 391 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 392 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 393 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 394 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 395 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 396 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 402 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 403 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 404 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 405 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 406 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 459 行.
+NOTIC: [8] Undefined variable: fenlei_dsh D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 460 行.
+NOTIC: [8] Undefined variable: artical D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 476 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2018-11-30T18:07:24+08:00 ] 127.0.0.1 /adp.php/Room/room_list_edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0100s ]
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2 LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3 LIMIT 1   [ RunTime:0.0190s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5 LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='0' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='1' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='2' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `room_manager` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT * FROM `attribute` WHERE ( id='1450' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( uid=0 and attribute_style=1 and dsh_id=0 and program_id='JT201808090855119076' )  [ RunTime:0.0110s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 24 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 31 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 33 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 37 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 53 行.
+NOTIC: [8] Use of undefined constant JT201710101645145951 - assumed 'JT201710101645145951' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 55 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 60 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 65 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 67 行.
+NOTIC: [8] Use of undefined constant JT201709251030119718 - assumed 'JT201709251030119718' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201711041549052325 - assumed 'JT201711041549052325' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201710161553526657 - assumed 'JT201710161553526657' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 143 行.
+NOTIC: [8] Use of undefined constant JT201805140917546604 - assumed 'JT201805140917546604' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 163 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 272 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 275 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 278 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 281 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 357 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 360 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 373 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 376 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 377 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 378 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 379 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 380 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 383 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 384 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 388 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 389 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 390 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 391 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 392 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 393 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 394 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 395 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 396 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 402 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 403 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 404 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 405 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 406 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 459 行.
+NOTIC: [8] Undefined variable: fenlei_dsh D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 460 行.
+NOTIC: [8] Undefined variable: artical D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 476 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-11-30T18:13:46+08:00 ] 127.0.0.1 /adp.php/Room/room_list_edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0100s ]
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4 LIMIT 1   [ RunTime:0.0100s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='0' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='1' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='2' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `room_manager` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT * FROM `attribute` WHERE ( id='1450' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( uid=0 and attribute_style=1 and dsh_id=0 and program_id='JT201808090855119076' )  [ RunTime:0.0090s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 24 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 31 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 33 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 37 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 53 行.
+NOTIC: [8] Use of undefined constant JT201710101645145951 - assumed 'JT201710101645145951' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 55 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 60 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 65 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 67 行.
+NOTIC: [8] Use of undefined constant JT201709251030119718 - assumed 'JT201709251030119718' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201711041549052325 - assumed 'JT201711041549052325' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201710161553526657 - assumed 'JT201710161553526657' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 143 行.
+NOTIC: [8] Use of undefined constant JT201805140917546604 - assumed 'JT201805140917546604' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 163 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 272 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 275 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 278 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 281 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 357 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 360 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 373 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 376 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 377 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 378 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 379 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 380 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 383 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 384 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 388 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 389 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 390 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 391 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 392 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 393 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 394 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 395 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 396 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 402 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 403 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 404 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 405 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 406 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 459 行.
+NOTIC: [8] Undefined variable: fenlei_dsh D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 460 行.
+NOTIC: [8] Undefined variable: artical D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 476 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-11-30T18:24:55+08:00 ] 127.0.0.1 /adp.php/Room/room_list_edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 9 行.
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0100s ]
+SQL: SELECT `is_show_vedio`,`is_submit_contect`,`in_on_guige`,`is_on_pifa`,`fenlei_lever` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminPP\Controller\CommonController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3 LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4 LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5 LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='0' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='1' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `assistant_add` WHERE ( program_id='JT201808090855119076'and state='2' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `room_manager` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `attribute` WHERE ( id='1422' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SELECT * FROM `attribute` WHERE ( id='1450' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( uid=0 and attribute_style=1 and dsh_id=0 and program_id='JT201808090855119076' )  [ RunTime:0.0090s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 24 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 29 行.
+NOTIC: [8] Use of undefined constant JT201807260907385777 - assumed 'JT201807260907385777' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 31 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 33 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 37 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 53 行.
+NOTIC: [8] Use of undefined constant JT201710101645145951 - assumed 'JT201710101645145951' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 55 行.
+NOTIC: [8] Use of undefined constant JT201810111844206577 - assumed 'JT201810111844206577' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 60 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 63 行.
+NOTIC: [8] Use of undefined constant JT201807211029526361 - assumed 'JT201807211029526361' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 65 行.
+NOTIC: [8] Use of undefined constant JT201808090855119076 - assumed 'JT201808090855119076' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 67 行.
+NOTIC: [8] Use of undefined constant JT201709251030119718 - assumed 'JT201709251030119718' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201711041549052325 - assumed 'JT201711041549052325' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201710161553526657 - assumed 'JT201710161553526657' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 72 行.
+NOTIC: [8] Use of undefined constant JT201712251106263726 - assumed 'JT201712251106263726' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 143 行.
+NOTIC: [8] Use of undefined constant JT201805140917546604 - assumed 'JT201805140917546604' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 163 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 272 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 275 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 278 行.
+NOTIC: [8] Undefined index: is_show D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 281 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 357 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 360 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 373 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 376 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 377 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 378 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 379 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 380 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 383 行.
+NOTIC: [8] Use of undefined constant JT201806151732369242 - assumed 'JT201806151732369242' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 384 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 388 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 389 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 390 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 391 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 392 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 393 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 394 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 395 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 396 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 402 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 403 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 404 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 405 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 406 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201710231803407137 - assumed 'JT201710231803407137' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 445 行.
+NOTIC: [8] Undefined variable: url_search D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 447 行.
+NOTIC: [8] Undefined index: child D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 451 行.
+NOTIC: [8] Use of undefined constant JT201711081030423109 - assumed 'JT201711081030423109' D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 459 行.
+NOTIC: [8] Undefined variable: fenlei_dsh D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 460 行.
+NOTIC: [8] Undefined variable: artical D:\phpStudy\WWW\jtct\App\Runtime\Cache\AdminPP\3d90f00b10a1e1e1f80f6d9fe346a1c4.php 第 476 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

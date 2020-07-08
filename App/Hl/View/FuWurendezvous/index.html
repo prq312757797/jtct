@@ -1,0 +1,242 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_FuWu_yuyue" />
+		<!--预约信息管理 -->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">	
+				<div style="border-bottom:1px solid #000000;height:60px;padding:20px;">
+					<p style="float:left;font-size:18px;">预约信息管理</p>	
+				</div>
+               <div style="width:100%;height:180px;">
+				<form name="myupload" id="myupload" enctype='multipart/form-data' action="__URL__/yuyue_save" method="post">
+				
+				    <div class="form" style="height:210px; width:80%;">
+						<label class="col-sm-2 control-label">预约页广告:</label>
+						<div class="col-sm-10 col-xs-12">
+							<input type="file" class="files" name="image_fu_fenlei" id="doca" onchange="javascript:setImagePreviews();" style="width:150px;">
+							
+							<notempty name="image">
+								<img src="__ROOT__/Uploads/{$image.image_fu_fenlei}" id="old_img" style="width:230px;height:180px;"/>							
+							</notempty>
+							<div class="col-sm-10">
+							    <img id="previewa" src=""style="display:none; border-radius:6px;">							    
+						    </div>
+						      <span class="help-block"></span>
+						      	<input type="submit" id="box" value="确认提交" class="btn btn-primary">
+						</div>
+					</div>
+					
+				
+				</form>	
+			</div>
+               
+               <form action="" style="margin:0px 40px;">
+					<table class="table table-hover table-responsive" style="margin:20px auto;"> 
+					    <thead class="navbar-inner">
+					        <tr>
+					            <th style="width:60px;"><!--<input type="checkbox" id="checkAll">-->编号</th>
+					           <!-- <th style="width:60px;text-align:center;">排序</th>-->
+					            <th style="width:80px;text-align:center;">预约服务名</th>
+					            <th style="width:100px;">预约人</th>
+					            <th style="width:100px;">手机号</th>
+					            <th style="width:100px;">预约人数</th>
+					            <th style="width:100px;">到场时间</th>
+					            <th style="width:60px;">预约时间</th>
+					            <th style="width:100px;">操作</th>
+					        </tr>
+					    </thead>
+					    
+					     <foreach name="info" item="v">
+					     	<tbody id="bots">
+                        <tr>
+                            <td>{$v.id}</td>
+							 <!--<td>
+							 	<a  href="javascript:;" val="{$v.id}" class="edit_sort">{$v.sort}</a>
+							 	<input type="text" class="sort_value" value="{$v.sort}" style="display:none;width: 38px;text-align: center;    margin-left: auto;margin-right: auto;">
+							</td>-->
+							<td>{$v.goods_name}</td>
+							<td>{$v.name}</td>
+							<td>{$v.tel}</td>
+							<td>{$v.num}</td>
+							<td>{$v.date_come}<br>{$v.time_come}</td>
+							<td>  <?=date("Y-m-d H:i:s",$v['time_set']);?></td>
+                            <td>
+                            	<a  title="修改" alt="修改" href="tiezi_add/id/{$v['id']}" >详情</a>
+								<a  title="回收" alt="回收" href="zx_delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            </td>
+                        </tr>
+                
+                        
+                        </tbody> 
+                    </foreach>	
+					    				   
+	                </table>  
+
+				 </form>
+            </div>			    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+
+<script>
+	//异步修改商品 排序
+	$(".edit_sort").click(function(){
+		var self_input=$(this).parent('td').children('input')
+		var that=this
+		//alert($(this).attr("val"));
+		$(this).css("display","none");
+		self_input.css("display","block");
+		self_input.focus();
+		self_input.blur(function(){
+			//异步修改排序
+			//alert($(that).attr("val"));
+			$(that).text(self_input.val());
+			$(that).css("display","block");
+			self_input.css("display","none");
+			 $.post('__ROOT__/adp.php/Goods/ajax_sort_goods',{'id':$(that).attr("val"),'sort_val':self_input.val()},function(date){
+	        if(date==1){
+	        	alert("成功");
+	        }else{
+	        	
+	        }
+        },'json');
+		});
+	})
+</script>
+<script>
+	//商品ajax上下架
+	$(".peng_is_ok").click(function(){
+		var onw_id=$(this).children('input').val();
+	
+		var that = this;
+		 $.post('__ROOT__/adp.php/Goods/ajax_change_ok',{'id':onw_id},function(date){
+	        if(date==1){
+	        	if($(that).attr("class")=="peng_is_ok peng_ok"){
+	        		$(that).attr("class","peng_is_ok peng_not");
+	        		$(that).children('span').text("下架");
+	        	}else if($(that).attr("class")=="peng_is_ok peng_not"){
+	        		$(that).attr("class","peng_is_ok peng_ok");
+	        		$(that).children('span').text("上架");
+	        	}
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>
+<script>
+
+	
+
+	$(".attribute01").click(function(){
+		var onw_id=$(this).parent('td.get_id').children('input').val();
+		var that = this;
+		//{:U('get_price')}
+		//$.post('__ROOT__/adp.php/Goods/ajax_change_shuxing01',{'id':onw_id},function(ajax_back){
+		$.post('{:U('Goods/ajax_change_shuxing01')}',{'id':onw_id},function(ajax_back){
+		
+			console.log(ajax_back);
+			if(ajax_back==1){
+				$(that).css("color","red");
+			}else if(ajax_back==2){
+				$(that).css("color","");
+			}
+        },'json');
+	})
+	
+	$(".attribute02").click(function(){
+		var onw_id=$(this).parent('td.get_id').children('input').val();
+		var that = this;
+		 $.post('__ROOT__/adp.php/Goods/ajax_change_shuxing02',{'id':onw_id},function(ajax_back){
+			console.log(ajax_back);
+			if(ajax_back==1){
+				$(that).css("color","red");
+			}else if(ajax_back==2){
+				$(that).css("color","");
+			}
+        },'json');
+	})
+	
+	$(".attribute03").click(function(){
+		var onw_id=$(this).parent('td.get_id').children('input').val();
+		var that = this;
+		 $.post('__ROOT__/adp.php/Goods/ajax_change_shuxing03',{'id':onw_id},function(ajax_back){
+			console.log(ajax_back);
+			if(ajax_back==1){
+				$(that).css("color","red");
+			}else if(ajax_back==2){
+				$(that).css("color","");
+			}
+        },'json');
+	})
+	
+	$(".attribute04").click(function(){
+		var onw_id=$(this).parent('td.get_id').children('input').val();
+		var that = this;
+		 $.post('__ROOT__/adp.php/Goods/ajax_change_shuxing04',{'id':onw_id},function(ajax_back){
+			console.log(ajax_back);
+			if(ajax_back==1){
+				$(that).css("color","red");
+			}else if(ajax_back==2){
+				$(that).css("color","");
+			}
+        },'json');
+	})
+	
+	$(".attribute05").click(function(){
+		var onw_id=$(this).parent('td.get_id').children('input').val();
+		var that = this;
+		 $.post('__ROOT__/adp.php/Goods/ajax_change_shuxing05',{'id':onw_id},function(ajax_back){
+			console.log(ajax_back);
+			if(ajax_back==1){
+				//显示红色
+				$(that).css("color","red");
+			}else if(ajax_back==2){
+				$(that).css("color","");
+			}
+        },'json');
+	})
+</script>
+<script>
+	//下面用于图片上传预览功能
+function setImagePreviews(avalue) {
+var docObj=document.getElementById("doca");
+var imgObjPreview=document.getElementById("previewa");
+	if(docObj.files &&docObj.files[0]){
+		//火狐下，直接设img属性
+		imgObjPreview.style.display = 'block';
+		imgObjPreview.style.width = '230px';
+		imgObjPreview.style.height = '150px'; 
+		if(document.getElementById("old_img")!=null){
+			document.getElementById("old_img").style.display = 'none';
+		}
+		 
+		imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+	}else{
+		//IE下，使用滤镜
+		docObj.select();
+			var imgSrc = document.selection.createRange().text;
+			var localImagId = document.getElementById("localImag");
+		//图片必须设置初始大小
+		localImagId.style.width ="230px";
+		localImagId.style.height = "150px";
+		//图片异常的捕捉，防止用户修改后缀来伪造图片
+			try{
+			localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+			localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+			}
+			catch(e){
+				alert("您上传的图片格式不正确，请重新选择!");
+				return false;
+				}
+				imgObjPreview.style.display = 'none';
+				document.selection.empty();
+				}
+			return true;
+			}
+</script>
+</body>
+
+</html>

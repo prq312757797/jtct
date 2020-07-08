@@ -1,0 +1,54 @@
+<include file="Public/head" />
+		<div class="tab" style="width:80%;height:auto;margin:20px auto;background-color:#CAE1FF;padding:60px;border-radius:6px;">
+			<div class="tab-cont">					
+			    <div class="modal-content" style="padding-left:40px;">
+					<div class="modal-header">
+						<h3>小程序详情信息</h3>						
+					</div>				
+	                <div style="font-size:20px">
+	                	<label>客户姓名 :</label>
+	                	<span>{$info1.realname}</span>
+	                </div>
+	                <div style="font-size:20px">
+	                	<label>客户手机号 :</label>
+	                	<span>{$info1.tel}</span>
+	                </div>
+	                <div style="font-size:20px">
+	                	<label>客户邮箱 :</label>
+	                	<span>{$info1.mail}</span>
+	                </div>
+	                <div style="font-size:20px">
+	                	<label>模版 :</label>
+	                	<span>{$info2.muban_name} </span>
+	                </div>
+					<div style="font-size:20px">
+						<label>客户身份证号 :</label>
+						<span>{$info1.idcard}</span>
+					</div>
+	                <div style="font-size:20px">
+	                	<label>身份证正面 :</label>
+	                	<span><br><br><img style="width:350px;height:400px;" src="__ROOT__/Uploads/{$info1.idcardz}"></span>
+	                </div><br>
+	                <div style="font-size:20px">
+	                	<label>身份证反面 :</label>
+	                	<span><br><br><img style="width:350px;height:400px;" src="__ROOT__/Uploads/{$info1.idcardf}"></span>
+	                </div><br>
+	                <div style="font-size:20px">
+	                	<label>合同附件 :</label>
+	                	<span><br><br><img style="width:350px;height:400px;" src="__ROOT__/Uploads/{$info3.contract_img}"></span>
+	                </div><br>
+	                <div style="font-size:20px">
+	                	<label>备注信息:</label>
+	                	<span>{$info3.remark}</span>
+	                </div>            			
+					<div style="text-align:right;margin:40px;">
+						<a href="__URL__/index"/> <button class="btn btn-default" onclick="history.go(-1)">返回上一级</button></a>
+					</div>
+			    </div>         
+				
+			</div>
+		</div>
+	<include file="Public/foot" />
+	</body>
+
+</html>

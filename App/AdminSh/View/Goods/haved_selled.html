@@ -1,0 +1,60 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_goods" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">		
+				<div style="border-bottom:1px solid #000000;padding:10px;">
+					<h3>商品管理</h3>
+				</div>
+				<!--<p style="margin:10px 40px;">商品管理</p>-->	  
+				<form action="" style="margin:0px 40px;">			
+					<table class="table table-hover table-responsive" style="margin:20px auto;"> 
+					    <thead class="navbar-inner">
+					        <tr>
+					            <th style="width:30px;"><input type="checkbox"></th>
+					            <th style="width:60px;text-align:center;">排序</th>
+					            <th style="width:80px;text-align:center;">商品</th>
+					            <th style="width:100px;">&nbsp;</th>
+					            <th style="width:60px;">价格</th>
+					            <th style="width:60px;">库存</th>
+					            <th style="width:70px;">销量</th>
+					            <th style="width:60px;">状态</th>
+					            <th style="width:100px;">操作</th>
+					        </tr>
+					    </thead>
+					    <tbody id="boxs">	
+					    	<foreach name="goods" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+							 <td>{$v.sort}</td>
+							 <td>{$v.goods_title}</td>
+							 <td>
+							 <!--	<img src="__ROOT__/Uploads/{$v.image}">
+							-->
+							 <img src="__ROOT__/Uploads/2017-09-01/59a936cf44aa2.jpg">
+							 </td>
+							 <td>{$v.price_sell}</td>
+							  <td>{$v.number}</td>
+							  <td>{$v.sell_num}</td>
+		
+							 <td>
+							 	<if condition="$v.goods_state eq 1">上架</if>
+							 	<if condition="$v.goods_state eq 3">下架</if>
+							 </td>
+                            <td>
+									<a  title="删除" alt="删除" href="delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+							</td>
+                        </tr>
+                    </foreach>	
+					    </tbody> 				   
+	                </table>  
+            	</form>
+			</div>	    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+</html>

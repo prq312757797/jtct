@@ -1,0 +1,140 @@
+		<div id="sidebar">
+			<ul>
+				<li ><a href="{:U('Merch/index')}"><i class="icon icon-shopping-cart"></i>
+					<span>多商户概述</span></a></li>
+
+				<!--入驻申请-->
+				<li class="submenu open">
+					<a href="{:U('Merch/apply_ing')}"><i class="icon icon-th-list"></i> 
+						<span>入驻申请</span> <span class="label">2</span></a>
+					<ul>
+						<li><a href="{:U('Merch/apply_ing')}">
+							<span>申请中<span style="color:red;"> ( {$apply_ing} ) </span></span>
+						</a></li>
+						<li><a href="{:U('Merch/apply_reject')}">
+							<span>驳回<span style="color:red;"> ( {$apply_reject} ) </span></span>
+						</a></li>
+					</ul>
+				</li>
+				
+				<!--多商户管理-->
+				<li class="submenu open">
+					<a href="{:U('Merch/in_wait')}"><i class="icon icon-th-list"></i> 
+						<span>多商户管理</span> <span class="label">4</span></a>
+					<ul>
+						<li><a href="{:U('Merch/in_wait')}">
+							<span>待入驻<span style="color:red;"> ( {$in_wait} ) </span></span>
+						</a></li>
+						<li><a href="{:U('Merch/in_ing')}">
+							<span>入驻中<span style="color:red;"> ( {$in_ing} ) </span></span>
+						</a></li>
+						<li><a href="{:U('Merch/in_stop')}">
+							<span>暂停中<span style="color:red;"> ( {$in_stop} ) </span></span>
+						</a></li>
+						<li><a href="{:U('Merch/index_re')}">
+							<span>推荐中<span style="color:red;"> </span></span>
+						</a></li>
+					</ul>
+				</li>
+<!--店员管理-->
+<if condition="$program_id eq JT201806151732369242">
+				<li class="submenu open">
+					<a href="{:U('Merch/assistant_is')}"><i class="icon icon-th-list"></i> 
+						<span>店员管理</span> <span class="label">3</span></a>
+					<ul>
+						<li><a href="{:U('Merch/assistant_is')}">
+							<span>申请中<span style="color:red;"> ( {$assistant_is} ) </span></span>
+						</a></li>
+						<li><a href="{:U('Merch/assistant_ing')}">
+							<span>服务中<span style="color:red;"> ( {$assistant_ing} ) </span></span>
+						</a></li>
+						<li><a href="{:U('Merch/assistant_stop')}">
+							<span>暂停中<span style="color:red;"> ( {$assistant_stop} ) </span></span>
+						</a></li>
+						
+					</ul>
+				</li>
+</if>			
+				<if condition="($program_id eq JT201806151732369242)">
+				<li><a href="{:U('Merch/ad_add')}"><i class="icon icon-shopping-cart"></i>
+					<span>商户列表广告</span></a></li>
+				</if>
+			<!--	<li><a href="{:U('Merch/in_stop_soon')}"><i class="icon icon-shopping-cart"></i>
+					<span>即将到期</span></a></li>
+				<li><a href="{:U('Merch/merch_group')}"><i class="icon icon-shopping-cart"></i>
+					<span>多商户分组</span></a></li>   1031...9.07暂关-->
+
+				<li><a href="{:U('Merch/merch_fenlei')}"><i class="icon icon-shopping-cart"></i>
+					<span>多商户分类</span></a></li>
+					<if condition="$program_id eq JT201711081030423109">
+				<li><a href="{:U('Merch/merch_pay_set')}"><i class="icon icon-shopping-cart"></i>
+					<span>多商户支付方式</span></a></li>
+				<li><a href="{:U('Merch/merch_pay_record')}"><i class="icon icon-shopping-cart"></i>
+					<span>入驻支付记录</span></a></li>	
+					</if>
+				<!--<li><a href="{:U('Merch/merch_area_set')}"><i class="icon icon-shopping-cart"></i>
+					<span>多商户区域管理</span></a></li>-->
+
+
+				<!--<li><a href="{:U('Merch/order_count')}"><i class="icon icon-shopping-cart"></i>
+					<span>订单统计</span></a></li>
+				<li><a href="{:U('Merch/merch_count')}"><i class="icon icon-shopping-cart"></i>
+					<span>多商户统计</span></a></li>-->
+<if condition="$is_put_info eq 1">
+				<!--子商户活动-->
+				<li class="submenu open">
+					<a href="{:U('Merch/artical_index')}"><i class="icon icon-th-list"></i> 
+						<span>子商户活动</span> <span class="label">2</span></a>
+					<ul>
+						<li><a href="{:U('Merch/artical_index')}">
+							<span>首页推荐活动<span style="color:red;"> </span></span>
+						</a></li>
+						<li><a href="{:U('Merch/artical_registe')}">
+							<span>首页推荐审核<span style="color:red;"> </span></span>
+						</a></li>
+					</ul>
+				</li>
+
+</if>
+<if condition="$program_id neq JT201711081030423109">
+				<!--提现申请-->
+				<li class="submenu open">
+					<a href="{:U('Merch/cash_appay')}"><i class="icon icon-th-list"></i> 
+						<span>提现申请提现申请</span> <span class="label">3</span></a>
+					<ul>
+						<li><a href="{:U('Merch/cash_appay')}">
+							<span>待确认<span style="color:red;"> </span></span>
+						</a></li>
+						<li><a href="{:U('Merch/cash_pay')}">
+							<span>待打款<span style="color:red;"> </span></span>
+						</a></li>
+						<li><a href="{:U('Merch/cash_pay_done')}">
+							<span>已打款<span style="color:red;"> </span></span>
+						</a></li>
+						<li><a href="{:U('Merch/cash_none')}">
+							<span>无效的<span style="color:red;"> </span></span>
+						</a></li>
+					</ul>
+				</li>
+
+
+				<!--订单结算-->
+				<!--<li><a href="{:U('Merch/m_merch_appay')}"><i class="icon icon-shopping-cart"></i>
+					<span>待确认</span></a></li>
+				<li><a href="{:U('Merch/m_merch_wite')}"><i class="icon icon-shopping-cart"></i>
+					<span>待结算</span></a></li>
+				<li><a href="{:U('Merch/m_merch_done')}"><i class="icon icon-shopping-cart"></i>
+					<span>已结算</span></a>
+				<li><a href="{:U('Merch/m_merch_build')}"><i class="icon icon-shopping-cart"></i>
+					<span>创建结算清单</span></a></li>-->
+</if>
+				<!--基础设置-->
+				<li><a href="{:U('Merch/merch_set')}"><i class="icon icon-shopping-cart"></i>
+					<span>基础设置</span></a></li>
+
+			<!--	<li><a href="{:U('Merch/shanxuan')}"><i class="icon icon-shopping-cart"></i>
+					<span>筛选区间</span></a></li>
+				<li><a href="{:U('Merch/biaoqian')}"><i class="icon icon-shopping-cart"></i>
+					<span>标签管理</span></a></li>-->
+			</ul>
+		</div>

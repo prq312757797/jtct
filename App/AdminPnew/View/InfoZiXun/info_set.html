@@ -1,0 +1,139 @@
+<include file="Public/head" />
+    
+         
+	<div class="contert">
+	<div id="getId">
+		<include file="Public/menu_ZiXun_info" />
+		<!--发布页面设置-->
+		<!--====================主体-----开始========================-->
+		
+		<div class="show" id="tabC1">
+			<div class="con">
+				<div style="border-bottom:1px solid #000000;height:60px; padding:20px;">
+				    <span style="font-size:20px;">小程序内广告图设置</span>
+				</div> 			
+ 				  <form name="myupload" id="myupload" enctype='multipart/form-data' action="__URL__/info_set_submit" method="post">
+				
+				    <div class="form" style="height:210px; width:80%;">
+						<label class="col-sm-2 control-label">信息列表页广告图:</label>
+						<div class="col-sm-10 col-xs-12">
+							<input type="file" class="files" name="zx_info_list_img" id="doca" onchange="javascript:setImagePreviews();" style="width:150px;">
+							<notempty name="data['zx_info_list_img']">
+								<img src="__ROOT__/Uploads/{$data.zx_info_list_img}" id="old_img" style="width:150px;height:150px;"/>							
+							</notempty>
+							<div class="col-sm-10">
+							    <img id="previewa" src=""style="display:none; border-radius:6px;">							    
+						    </div>
+						      <span class="help-block"></span>
+						</div>
+					</div>
+				
+				
+				<div class="form" style="height:210px; width:80%;">
+						<label class="col-sm-2 control-label">发布页面广告图:</label>
+						<div class="col-sm-10 col-xs-12">
+							<input type="file" class="files" name="zx_enter_img" id="doca02" onchange="javascript:setImagePreviews02();" style="width:150px;">
+							<notempty name="data['zx_enter_img']">
+								<img src="__ROOT__/Uploads/{$data.zx_enter_img}" id="old_img02" style="width:150px;height:150px;"/>							
+							</notempty>
+							<div class="col-sm-10">
+							    <img id="previewa02" src=""style="display:none; border-radius:6px;">							    
+						    </div>
+						      <span class="help-block"></span>
+						</div>
+					</div>
+
+		            <div class="form-group" style="margin-top:80px;">
+						<label class="col-sm-1 control-label"></label>
+						<div class="col-sm-11 col-xs-12">
+							<input type="submit" id="addons" value="确认提交"   class="btn btn-primary">
+						<!--	<input type="button" name="" onclick="history.back()" style="margin-left:10px;" value="返回上一页" class="btn btn-default">
+						--></div>
+					</div>
+					
+				</form>	
+			   
+			</div>			    
+				<!--====================主体  结束===============-->
+            </div>				
+        </div>		
+	
+	</div>	
+	
+<script type="text/javascript">
+//下面用于图片上传预览功能
+function setImagePreviews(avalue) {
+var docObj=document.getElementById("doca");
+var imgObjPreview=document.getElementById("previewa");
+	if(docObj.files &&docObj.files[0]){
+		//火狐下，直接设img属性
+		imgObjPreview.style.display = 'block';
+		imgObjPreview.style.width = '150px';
+		imgObjPreview.style.height = '150px'; 
+		if(document.getElementById("old_img")!=null){
+			document.getElementById("old_img").style.display = 'none';
+		}
+		 
+		imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+	}else{
+		//IE下，使用滤镜
+		docObj.select();
+			var imgSrc = document.selection.createRange().text;
+			var localImagId = document.getElementById("localImag");
+		//图片必须设置初始大小
+		localImagId.style.width ="150px";
+		localImagId.style.height = "150px";
+		//图片异常的捕捉，防止用户修改后缀来伪造图片
+			try{
+			localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+			localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+			}
+			catch(e){
+				alert("您上传的图片格式不正确，请重新选择!");
+				return false;
+				}
+				imgObjPreview.style.display = 'none';
+				document.selection.empty();
+				}
+			return true;
+			}
+
+
+function setImagePreviews02(avalue) {
+var docObj=document.getElementById("doca02");
+var imgObjPreview=document.getElementById("previewa02");
+	if(docObj.files &&docObj.files[0]){
+		//火狐下，直接设img属性
+		imgObjPreview.style.display = 'block';
+		imgObjPreview.style.width = '150px';
+		imgObjPreview.style.height = '150px'; 
+		if(document.getElementById("old_img02")!=null){
+			document.getElementById("old_img02").style.display = 'none';
+		}
+		 
+		imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+	}else{
+		//IE下，使用滤镜
+		docObj.select();
+			var imgSrc = document.selection.createRange().text;
+			var localImagId = document.getElementById("localImag02");
+		//图片必须设置初始大小
+		localImagId.style.width ="150px";
+		localImagId.style.height = "150px";
+		//图片异常的捕捉，防止用户修改后缀来伪造图片
+			try{
+			localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+			localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+			}
+			catch(e){
+				alert("您上传的图片格式不正确，请重新选择!");
+				return false;
+				}
+				imgObjPreview.style.display = 'none';
+				document.selection.empty();
+				}
+			return true;
+			}
+ </script>	
+</body>
+</html>

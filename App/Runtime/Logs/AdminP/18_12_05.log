@@ -1,0 +1,19 @@
+[ 2018-12-05T12:19:57+08:00 ] 127.0.0.1 /adpp.php/Goods/ajax_fenlei_2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: shanghu_id D:\phpStudy\WWW\jtct\App\AdminP\Controller\CommonController.class.php 第 13 行.
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\AdminP\Controller\CommonController.class.php 第 36 行.
+SQL: SHOW COLUMNS FROM `user_info_dsh` [ RunTime:0.0150s ]
+SQL: SELECT `id`,`sort`,`sh_name`,`linkman`,`tel`,`time_add`,`time_over`,`state`,`main_project` FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 1  [ RunTime:0.0140s ]
+SQL: SELECT `id`,`sort`,`sh_name`,`linkman`,`tel`,`time_add`,`time_over`,`state`,`main_project` FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 2  [ RunTime:0.0140s ]
+SQL: SELECT `id`,`sort`,`sh_name`,`linkman`,`tel`,`time_add`,`time_over`,`state`,`main_project` FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 3  [ RunTime:0.0140s ]
+SQL: SELECT `id`,`sort`,`sh_name`,`linkman`,`tel`,`time_add`,`time_over`,`state`,`main_project` FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 4  [ RunTime:0.0130s ]
+SQL: SELECT `id`,`sort`,`sh_name`,`linkman`,`tel`,`time_add`,`time_over`,`state`,`main_project` FROM `user_info_dsh` WHERE `program_id` = 'JT201808090855119076' AND `state` = 5  [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `attribute` WHERE `uid` = 0 AND `attribute_style` = 1 AND `title` = 'KTV包厢' AND `program_id` = 'JT201808090855119076' LIMIT 1   [ RunTime:0.0150s ]
+SQL: SELECT * FROM `attribute` WHERE ( uid='1422' )  [ RunTime:0.0150s ]
+

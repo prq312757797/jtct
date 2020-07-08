@@ -1,0 +1,86 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">	
+				<div style="border-bottom:1px solid #000000;height:60px; padding:20px;">
+				    <span style=" font-size:20px;">广告管理</span>
+				    <a href="ad_add"><button class="btn btn-primary" style="float:right;">+添加新广告</button></a>
+				</div>	
+				<form action="" method="post">
+                  <table class="table table-responsive table-hover">
+			        <thead class="navbar-inner">
+			            <tr>
+			                <th style="width:30px"><input type="checkbox"></th>
+			                <th style="width:60px">顺序</th>					
+			                <th style="width:100px">标题</th>
+			                <th>链接</th> 
+			                <th style="width:50px">显示</th>
+			                <th style="width: 200px;">操作</th>
+			            </tr>
+			        </thead>
+			        <tbody id="main_content">	
+			        		<foreach name="ad" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+							 <td>{$v.sort}</td>
+							 <td>{$v.title}</td>
+							 <td>{$v.url}</td>
+							
+							 <td>
+							 	<if condition="$v.is_show eq 1">
+							 		<div class="peng_is_ok peng_ok">
+							 			<input type="hidden" value="{$v.id}">
+							 			<span>显示</span>
+							 		</div>
+							 	</if>
+							 	
+							 	<if condition="$v.is_show eq 2">
+							 		<div class="peng_is_ok peng_not">
+							 			<input type="hidden" value="{$v.id}">
+							 			<span>隐藏</span>
+							 		</div>
+							 	</if>
+							 </td>
+                            <td>
+                            	<button class="btn btn-default">
+								    <a  title="修改" alt="修改" href="ad_edit/id/{$v['id']}" >修改</a>
+								</button>
+								<button class="btn btn-danger">
+								   <a style="color:white;" title="删除" alt="删除" href="ad_delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+							    </button>
+                            </td>
+                        </tr>
+                    </foreach>	
+			        </tbody>
+			        </table>                
+               </form>			
+			</div>		    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+<script>
+	//广告ajax 显示隐藏
+	$(".peng_is_ok").click(function(){
+		var onw_id=$(this).children('input').val();
+	
+		var that = this;
+		 $.post('__ROOT__/adp.php/Index/ajax_change_show',{'id':onw_id,'from_id':"2"},function(date){
+	        if(date==1){
+	        	if($(that).attr("class")=="peng_is_ok peng_ok"){
+	        		$(that).attr("class","peng_is_ok peng_not");
+	        		$(that).children('span').text("隐藏");
+	        	}else if($(that).attr("class")=="peng_is_ok peng_not"){
+	        		$(that).attr("class","peng_is_ok peng_ok");
+	        		$(that).children('span').text("显示");
+	        	}
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>
+</body>
+</html>

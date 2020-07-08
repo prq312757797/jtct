@@ -1,0 +1,51 @@
+<include file="Public/head" />
+<div class="contert">
+			<h2 style="    width: 50%;
+    float: left;">小程序模板 特色管理</h2>
+				<div style="float:right;margin-bottom:20px;    margin-top: 20px;">
+						
+					<a href="__ROOT__/adz.php/Formwork/add_banben_ts?lid={$lid}"><button type="" class="btn btn-primary">添加版本特色</button></a>
+			<!--		<button class="btn btn-danger"onclick="history.go(-1)">返回</button>
+			-->
+			<a class="btn btn-default" href="__ROOT__/adz.php/Formwork/leixing">返回</a>
+				
+</div>	
+		    <table class="table table-hover">		    	   
+				<thead>
+				    <tr>
+				      <th>编号</th>
+				      <th>特色名称</th>
+				      <th>特色差价</th>
+					  <th>所属类型</th>
+					
+					<th>状态</th>
+				      <th>操作</th>
+				    </tr>
+				</thead>
+				<tbody>
+				  <foreach name="info" item="v">
+                        <tr>
+                            <td>{$v.id}</td> 
+                            <td>{$v.name}</td>
+                            <td>{$v.price}</td>
+							<td>{$v.leixing_name}</td>
+							
+							<td>
+								<if condition="$v['state'] eq 1">可用</if>
+								<if condition="$v['state'] eq 2"><span style="color:red;">禁用</span></if>
+							</td>
+							<td>
+								<a  title="修改" alt="修改" href="__ROOT__/adz.php/Formwork/edit_banben_ts/id/{$v['id']}">修改</a>
+								<a  title="删除" alt="删除" href="__ROOT__/adz.php/Formwork/delete_banben_ts/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            </td>
+                        </tr>
+                    </foreach>		   
+				</tbody>
+			</table>
+		
+						
+		</div>
+	<div class="pages" style=" width: 100%;
+             margin-left: auto;    margin-top: 21px;text-align:center;
+             margin-right: auto;"> {$pages}</div>
+	</div>

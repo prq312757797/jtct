@@ -1,0 +1,138 @@
+<include file="Public/head" />
+<include file="Public/menu_secondhand" />
+<style>
+	.feilei{
+		margin-bottom: 4px;
+		padding: 8px 35px 8px 14px;
+		color: #468847;
+		background-color: #dff0d8;
+		border-color: #d6e9c6;
+	}
+	.feilei_2{
+		margin-bottom: 4px;
+		padding: 8px 35px 8px 14px;
+		color: #468847;
+		background-color: #e6e6e5;
+		padding-left: 33px;
+		border-color: #d6e9c6;
+	}
+	.function{
+    padding: 6px;
+    float: right;
+    margin-right: 1%;
+    margin-top: 1px;
+	}
+</style>
+<div id="content">
+	<div id="content-header">
+		<h1>商品分类</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 美容护肤</a>
+		<a href="#" class="current">商品分类</a>
+
+		<button class="btn function" >分类级别：二级</button>
+		<button class="btn function" id="btnExpand"><span>折叠所有</span><input type="hidden" value="1"></button>
+		
+		<a href="fenlei_add" class="add_button"><button class="btn" >添加新分类</button></a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>商品分类</h5>
+					</div>
+					<foreach name="fenlei" item="v">
+						<div class="widget-content nopadding">
+						
+							<div class="feilei">
+								<strong><i class="icon-minus is_show_child"></i> [ID: {$v.id}][ID: {$v.sort}] {$v.title}</strong>
+								
+								<a class="btn btn-default" style="float: right; margin-top: -5px;"  title="删除" alt="删除"  href="fenlei_delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;"><i class="icon icon-trash"></i> </a>
+								
+								<a class="btn btn-default" style="float: right; margin-top: -5px;"  title="添加" alt="添加" href="fenlei_add02/id/{$v['id']}" ><i class="icon icon-plus"></i></a>
+								<a class="btn btn-default" style="float: right; margin-top: -5px;"  title="修改" alt="修改" href="fenlei_edit/id/{$v['id']}" ><i class="icon icon-list-alt"></i></a>
+								
+								<if condition="$v.is_show eq 1" >
+									<span class="peng_is_ok peng_ok" style="float: right;margin-right: 12px;">上架</span>
+								</if>
+								<if condition="$v.is_show eq 2">
+									<span class="peng_is_ok peng_not" style="float: right;margin-right: 12px;">下架</span>
+								</if>
+							</div>
+							<foreach name="v['child']" item="vo">
+							<div class="feilei_2 show02" >
+								<input type="hidden" value="2">
+								<notempty name="vo['image_1']">
+								<img src="__ROOT__/Uploads/{$vo.image_1}" style="width:30px;height:30px;">
+								</notempty>
+								<strong>[ID: {$vo.id}] {$vo.title}  </strong>
+								<a class="btn btn-default" style="float: right; margin-top: -5px;"  title="删除" alt="删除" href="fenlei_delete02/id/{$vo['id']}" onclick="if(confirm('确认删除吗？')==false)return false;"><i class="icon icon-trash"></i> </a>
+								<a class="btn btn-default" style="float: right; margin-top: -5px;"  title="修改" alt="修改" href="fenlei_edit/id/{$vo['id']}" ><i class="icon icon-list-alt"></i></a>
+								<if condition="$v.is_show eq 1" >
+									<span class="peng_is_ok peng_ok" style="float: right;margin-right: 51px;">上架</span>
+								</if>
+								<if condition="$v.is_show eq 2">
+									<span class="peng_is_ok peng_not" style="float: right;margin-right: 51px;">下架</span>
+								</if>
+							</div>
+							</foreach>
+						</div>
+					</foreach>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<include file="Public/foot" />
+<script>
+	//点击主分类控制是否显示子分类
+	$(".is_show_child").click(function(){
+		
+		var change=$(this).parents('div.nopadding').children('div.show02');
+		var change_num=change.children('input').val();
+		if(change_num==1){
+			change.css("display","block");
+			change.children('input').val("2");
+		}else if(change_num==2){
+			change.css("display","none");
+			change.children('input').val("1");
+			
+		}
+	
+	})
+	
+	//控制所有子类 展开 关闭
+	$("#btnExpand").click(function(){
+		var action_all=$(this).children('input').val();
+
+		if(action_all=="1"){
+		
+			$(".show02").css("display","none");
+			$(".show02").children('input').val("1");
+			
+			$(this).children('span').text("显示所有");
+			$(this).children('input').val("2");
+			
+		}else {
+		
+			$(".show02").css("display","block");
+			$(".show02").children('input').val("2");
+			
+			
+			$(this).children('span').text("折叠所有");
+			$(this).children('input').val("1");
+			
+		}
+		
+	})
+</script>
+
+
+
+

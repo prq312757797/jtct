@@ -1,0 +1,299 @@
+<include file="Public/head" />  
+ <script type="text/javascript" src="__ROOT__/Public/js/jquery.min.js"></script>
+ <script src="__ROOT__/Public/js/distpicker.data.js"></script>
+ <script src="__ROOT__/Public/js/distpicker.js"></script>
+ <script src="__ROOT__/Public/js/main.js"></script>
+	<div class="contert">
+		<include file="Public/menu_preferential" />
+		<!--添加优惠券-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con" style="height:auto;">
+				
+			<div style="margin:10px 20px;border-bottom:1px solid #000000;">
+				<empty name="info">
+					<span style="font-size:26px;">添加优惠券</span>
+					<else/><span style="font-size:26px;">编辑优惠券</span>
+				</empty>
+					
+			</div>
+				<!--  横向分页开始  -->
+			<div class="tabs-container">
+					<div class="tabs">
+						<ul class="nav nav-tabs"style="height:40px;width:100%;">
+							<li class="active">
+								<a data-toggle="tab" href="#tab-test_1" aria-expanded="true"> 基础优惠券</a>
+							</li>
+							<li class="">
+								<a data-toggle="tab" href="#tab-test_2" aria-expanded="false"> 消费码优惠券</a>
+							</li>
+							
+						</ul>
+						<div class="tab-content">
+							
+							<div id="tab-test_1" class="tab-pane active">					
+								<div class="panel-body">
+								  	<form class="form-signin" action="{:U('run_manager_add',array('id'=>$info['id']))}" method="post" class="form-horizontal form-validate" enctype="multipart/form-data" novalidate="novalidate">
+									<input type="hidden" id="program_id" name="program_id" class="form-control" value="">
+									<!--排序-->
+									<div class="form-group">
+										<label class="col-sm-2 control-label">排序</label>
+										<div class="col-sm-9 col-xs-12">
+											<input type="text" name="sort" value="<?php echo empty($info)?1:$info['sort'] ; ?>" class="form-control valid"  required autofocus/>
+											<span class="help-block"></span>
+										</div>
+									</div>
+									<!--标题-->
+									<div class="form-group">
+										<label class="col-sm-2 control-label must">标题</label>
+										<div class="col-sm-9 col-xs-12 ">
+											<input type="text" id="" name="title" value="{$info['title']}" class="form-control" value="" required>
+										    <span class="help-block"></span>
+										</div>
+									</div>
+									<!--图片-->
+									<div class="form-group">
+										<label class="col-sm-2 control-label must">图片</label>
+										<div class="col-sm-9 col-xs-12">
+											<div class="input-group " style="width:100%;">
+												<input type="file" name="image"  class="form-control" id="doca" onchange="javascript:setImagePreviews();">
+												<div style="clear:both;color:red;width:100%;"></div>
+												<notempty name="info['image']">
+													<img style="width:120px;height:146px;" id="old_img" src="__ROOT__/Uploads/{$info.image}">
+												</notempty>
+												 <div class="col-sm-10">
+											      	<img id="previewa" src=""style="display:none;  border-radius:6px;">							    
+												 </div>		
+												 <span class="help-block"></span>
+											</div>
+										</div>							     
+									 </div>
+					    		    <!--使用条件-->
+									<div class="form-group">
+										<label class="col-sm-2 control-label">使用条件</label>
+										<div class="col-sm-9 col-xs-12">
+											<input type="text" name="conditions" value="{$info['conditions']}" class="form-control valid"  required autofocus/>
+											<span class="help-block">消费满多少可用, 空或0 不限制</span>
+										</div>
+									</div>
+					         
+					            <!--优惠金额-->
+									<div class="form-group">
+										<label class="col-sm-2 control-label">优惠金额</label>
+										<div class="col-sm-9 col-xs-12">
+											<input type="text" name="pre_price" value="{$info['pre_price']}" class="form-control valid"  required autofocus/>
+											<span class="help-block"></span>
+										</div>
+									</div>
+					            <!--使用时间限制-->
+									<div class="form-group">
+										<label class="col-sm-2 control-label">使用时间限制</label>
+										<div class="col-sm-9 col-xs-12">
+											<input type="text" name="time_use_on" value="{$info['time_use_on']}" class="form-control valid"  required autofocus/>
+											<span class="help-block"></span>
+										</div>
+									</div>
+					         
+					          <!--优惠方式-->
+									<div class="form-group">
+										<label class="col-sm-2 control-label">优惠方式</label>
+										<div class="col-sm-9 col-xs-12">
+											<input type="text" name="pre_mode" value="立减" class="form-control valid"  required autofocus/>
+											<span class="help- block"></span>
+										</div>
+									</div>
+									
+							 <!--发放总数-->
+									<div class="form-group">
+										<label class="col-sm-2 control-label">发放总数</label>
+										<div class="col-sm-9 col-xs-12">
+											<input type="text" name="num" value="{$info['num']}" class="form-control valid"  required autofocus/>
+											<span class="help-block"></span>
+										</div>
+									</div>
+					                
+				            
+						            <div class="form-group">
+					                <label class="col-sm-2 control-label"></label>
+					                <div class="col-sm-9 col-xs-12" style="text-align:right;">
+					                	<input type="submit" onclick="gosubmit2()" id="sales" value="确认提交" class="btn btn-primary">
+					                	<input type="button" name="" onclick="history.back()" style="margin-left:10px;" value="返回列表" class="btn btn-default">
+					                </div>
+					            </div> 		           
+			                </form>
+			                   </div>				  
+						    </div>
+						
+			                <div id="tab-test_2" class="tab-pane">	
+			                	<div class="tab-pane   active" id="tab_basic">
+									<div class="panel-body">
+								       <form class="form-signin" action="{:U('run_manager_add',array('id'=>$info['id']))}" method="post" class="form-horizontal form-validate" enctype="multipart/form-data" novalidate="novalidate">
+											<input type="hidden" id="program_id" name="program_id" class="form-control" value="">
+											<!--排序-->
+											<div class="form-group">
+												<label class="col-sm-2 control-label">排序</label>
+												<div class="col-sm-9 col-xs-12">
+													<input type="text" name="sort" value="<?php echo empty($info)?1:$info['sort'] ; ?>" class="form-control valid"  required autofocus/>
+													<span class="help-block"></span>
+												</div>
+											</div>
+											<!--标题-->
+											<div class="form-group">
+												<label class="col-sm-2 control-label must">标题</label>
+												<div class="col-sm-9 col-xs-12 ">
+													<input type="text" id="" name="title" value="{$info['title']}" class="form-control" value="" required>
+												    <span class="help-block"></span>
+												</div>
+											</div>
+											<!--图片-->
+											<div class="form-group">
+												<label class="col-sm-2 control-label must">图片</label>
+												<div class="col-sm-9 col-xs-12">
+													<div class="input-group " style="width:100%;">
+														<input type="file" name="image"  class="form-control" id="doca" onchange="javascript:setImagePreviews();">
+														<div style="clear:both;color:red;width:100%;"></div>
+														<notempty name="info['image']">
+															<img style="width:120px;height:146px;" id="old_img" src="__ROOT__/Uploads/{$info.image}">
+														</notempty>
+														 <div class="col-sm-10">
+													      	<img id="previewa" src=""style="display:none;  border-radius:6px;">							    
+														 </div>		
+														 <span class="help-block"></span>
+													</div>
+												</div>							     
+											 </div>
+							    		    <!--使用条件-->
+											<div class="form-group">
+												<label class="col-sm-2 control-label">使用条件</label>
+												<div class="col-sm-9 col-xs-12">
+													<input type="text" name="conditions" value="{$info['conditions']}" class="form-control valid"  required autofocus/>
+													<span class="help-block">消费满多少可用, 空或0 不限制</span>
+												</div>
+											</div>
+							         
+							            <!--优惠金额-->
+											<div class="form-group">
+												<label class="col-sm-2 control-label">优惠金额</label>
+												<div class="col-sm-9 col-xs-12">
+													<input type="text" name="pre_price" value="{$info['pre_price']}" class="form-control valid"  required autofocus/>
+													<span class="help-block"></span>
+												</div>
+											</div>
+							            <!--使用时间限制-->
+											<div class="form-group">
+												<label class="col-sm-2 control-label">使用时间限制</label>
+												<div class="col-sm-9 col-xs-12">
+													<input type="text" name="time_use_on" value="{$info['time_use_on']}" class="form-control valid"  required autofocus/>
+													<span class="help-block"></span>
+												</div>
+											</div>
+							         
+							          <!--优惠方式-->
+											<div class="form-group">
+												<label class="col-sm-2 control-label">优惠方式</label>
+												<div class="col-sm-9 col-xs-12">
+													<input type="text" name="pre_mode" value="立减" class="form-control valid"  required autofocus/>
+													<span class="help- block"></span>
+												</div>
+											</div>
+											
+									 <!--发放总数-->
+											<div class="form-group">
+												<label class="col-sm-2 control-label">发放总数</label>
+												<div class="col-sm-9 col-xs-12">
+													<input type="text" name="num" value="{$info['num']}" class="form-control valid"  required autofocus/>
+													<span class="help-block"></span>
+												</div>
+											</div>
+							                
+						            
+								            <div class="form-group">
+							                <label class="col-sm-2 control-label"></label>
+							                <div class="col-sm-9 col-xs-12" style="text-align:right;">
+							                	<input type="submit" onclick="gosubmit2()" id="sales" value="确认提交" class="btn btn-primary">
+							                	<input type="button" name="" onclick="history.back()" style="margin-left:10px;" value="返回列表" class="btn btn-default">
+							                </div>
+							            </div> 		           
+					                </form>
+									</div>
+								</div>	
+							</div>
+				
+						</div>
+					</div>
+				</div>
+				<!--  横向分页结束  -->
+				
+
+
+            </div>
+				
+				
+				
+			</div>
+		</div>
+		<!--====================主体  结束===============-->
+	</div>	
+<script>
+	  function checkLogin() {
+        if(!$("#psw").val()){
+            alert("请填写新密码");
+            $("#psw").focus();
+            return false;
+        }
+         if(!$("#psw01").val()){
+            alert("请再次填写密码");
+            $("#psw01").focus();
+            return false;
+        }
+         
+         if($("#psw").val()!=$("#psw01").val()){
+         	  $("#psw01").val("");
+         	alert("两次密码输入不一致");
+         	
+         	return false;
+         }
+       }
+</script>
+
+<script type="text/javascript">
+//下面用于图片上传预览功能
+function setImagePreviews(avalue) {
+var docObj=document.getElementById("doca");
+var imgObjPreview=document.getElementById("previewa");
+	if(docObj.files &&docObj.files[0]){
+		//火狐下，直接设img属性
+		imgObjPreview.style.display = 'block';
+		imgObjPreview.style.width = '120px';
+		imgObjPreview.style.height = '146px'; 
+		if(document.getElementById("old_img")!=null){
+			document.getElementById("old_img").style.display = 'none';
+		}
+		 
+		imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+	}else{
+		//IE下，使用滤镜
+		docObj.select();
+			var imgSrc = document.selection.createRange().text;
+			var localImagId = document.getElementById("localImag");
+		//图片必须设置初始大小
+		localImagId.style.width ="120px";
+		localImagId.style.height = "146px";
+		//图片异常的捕捉，防止用户修改后缀来伪造图片
+			try{
+			localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+			localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+			}
+			catch(e){
+				alert("您上传的图片格式不正确，请重新选择!");
+				return false;
+				}
+				imgObjPreview.style.display = 'none';
+				document.selection.empty();
+				}
+			return true;
+			}
+ 
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<include file="Public/head" />
+<include file="Public/menu_car" />
+<style>
+	.feilei{
+		margin-bottom: 4px;
+		padding: 8px 35px 8px 14px;
+		color: #468847;
+		background-color: #dff0d8;
+		border-color: #d6e9c6;
+	}
+	.feilei_2{
+		margin-bottom: 4px;
+		padding: 8px 35px 8px 14px;
+		color: #468847;
+		background-color: #e6e6e5;
+		padding-left: 33px;
+		border-color: #d6e9c6;
+	}
+	.function{
+    padding: 6px;
+    float: right;
+    margin-right: 1%;
+    margin-top: 1px;
+	}
+</style>
+<div id="content">
+	<div id="content-header">
+		<h1>车种分类</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="{:U('CarManager/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 车辆管理</a>
+		<a href="#" class="current">车种分类</a>
+
+		<!--<button class="btn function" >添加新分类</button>-->
+		<a href="fenlei_add" class="add_button"><button class="btn" >+添加新分类</button></a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>车种分类</h5>
+					</div>
+					<foreach name="fenlei" item="v">
+						<div class="widget-content nopadding">
+						
+							<div class="feilei">
+								<strong><i class="icon-minus is_show_child"></i> [ID: {$v.id}] {$v.title}</strong>
+								<a class="btn btn-default" style="float: right; margin-top: -5px;"  title="删除" alt="删除" href="fenlei_delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;"><i class="icon icon-trash"></i> </a>
+								
+								<a class="btn btn-default" style="float: right; margin-top: -5px;"  title="修改" alt="修改" href="fenlei_edit/id/{$v['id']}" ><i class="icon icon-list-alt"></i></a>
+								<if condition="$v.is_show eq 1" >
+									
+									<span class="peng_is_ok peng_ok" style="float: right;margin-right: 12px;">
+										<span>显示</span>
+										<input type="hidden" value="{$v.id}">
+									</span>
+								</if>
+								<if condition="$v.is_show eq 2">
+									<span class="peng_is_ok peng_not" style="float: right;margin-right: 12px;">
+										<span>隐藏</span>
+										<input type="hidden" value="{$v.id}">
+									</span>
+								</if>
+							</div>
+							
+						</div>
+					</foreach>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<include file="Public/foot" />
+<script>
+	$(".peng_is_ok").click(function(){
+		var onw_id=$(this).children('input').val();
+		var that = this;
+
+		 $.post('__ROOT__/adp.php/Index/ajax_change_show',{'id':onw_id,'from_id':"5"},function(date){
+	        if(date==1){
+	        	if($(that).attr("class")=="peng_is_ok peng_ok"){
+	        		
+	        		$(that).attr("class","peng_is_ok peng_not");
+	        		$(that).children('span').text("隐藏");
+	        	}else if($(that).attr("class")=="peng_is_ok peng_not"){
+	        	
+	        		$(that).attr("class","peng_is_ok peng_ok");
+	        		$(that).children('span').text("显示");
+	        	}
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>
+
+
+
+
+

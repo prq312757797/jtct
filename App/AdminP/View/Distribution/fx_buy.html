@@ -1,0 +1,171 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_distribution" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">
+				<div style="height:60px;border-bottom:1px solid #000000;padding:20px;background:skyblue;">
+					<h4 style="float:left;">vip优惠设置管理 <!--<small>总数: <span>0</span></small>--></h4>
+					<!--<if condition="($program_id neq JT201712021113483120) and ($program_id neq JT201802032149345468)">
+						<a href="fx_lever_add"><button class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="float:right;">添加新等级</button></a>
+			
+					</if>-->
+				</div>
+				<style>
+					td{
+						border: 1px solid;
+						padding: 17px 24px;
+						text-align: center;
+						width: 6%;
+					}
+					.sort_text{
+						display:none;width: 80px;text-align: center;    margin-left: auto;margin-right: auto;
+					}
+				</style>
+				<div class="alert alert-danger" style="margin:10px 20px;">
+					提示: 点击金额进行编辑，点击金额以外内容，完成编辑。
+				</div>
+				<table style="margin-top:2px;">
+					<tr >
+						<td style="font-size:18px;">纯现金消费（%）</td>
+						<td>现金支付比例</td>
+						<td>积分支付比例</td>
+						<td>返点比例</td>
+					</tr>
+					<tr>
+						<td>vip1</td>
+						<td>
+							<a  href="javascript:;" val="{$list.0.id}" text_name="cash_pro" class="edit_text">{$list.0.cash_pro}</a>
+							<input type="text" class="sort_text" value="{$list.0.cash_pro}" >
+						</td>
+						<td>
+							<a  href="javascript:;" val="{$list.0.id}" text_name="price_fy" class="">0</a>
+							<input type="text" class="sort_text" value="{$list.0.price_fy}" >
+						</td>
+						<td>
+							<a  href="javascript:;" val="{$list.0.id}" text_name="cash_return" class="edit_text">{$list.0.cash_return}</a>
+							<input type="text" class="sort_text" value="{$list.0.cash_return}" >
+						</td>
+					</tr>
+					<tr>
+						<td>vip2</td>
+						<td>
+							<a  href="javascript:;" val="{$list.1.id}" text_name="cash_pro" class="edit_text">{$list.1.cash_pro}</a>
+							<input type="text" class="sort_text" value="{$list.1.cash_pro}" >
+						</td>
+						<td>
+
+							<a  href="javascript:;" val="{$list.1.id}" text_name="price_fy" class="">0</a>
+							<input type="text" class="sort_text" value="{$list.1.price_fy}" >
+						</td>
+						<td>
+							<a  href="javascript:;" val="{$list.1.id}" text_name="cash_return" class="edit_text">{$list.1.cash_return}</a>
+							<input type="text" class="sort_text" value="{$list.1.cash_return}" >
+						</td>
+					</tr>
+					<tr>
+						<td>vip3</td>
+						<td>
+							<a  href="javascript:;" val="{$list.2.id}" text_name="cash_pro" class="edit_text">{$list.2.cash_pro}</a>
+							<input type="text" class="sort_text" value="{$list.2.cash_pro}" >
+						</td>
+						<td>
+							<a  href="javascript:;" val="{$list.2.id}" text_name="price_fy" class="">0</a>
+							<input type="text" class="sort_text" value="{$list.2.price_fy}" >
+						</td>
+						<td>
+							<a  href="javascript:;" val="{$list.2.id}" text_name="cash_return" class="edit_text">{$list.2.cash_return}</a>
+							<input type="text" class="sort_text" value="{$list.2.cash_return}" >
+						</td>
+					</tr>
+				</table>
+
+				<table style="margin-top:12px;">
+					<tr>
+						<td style="font-size:18px;">现金积分混合消费（%）</td>
+						<td>现金支付比例</td>
+						<td>积分支付比例</td>
+						<td>返点比例</td>
+					</tr>
+					<tr>
+						<td>vip1</td>
+						<td>
+							<a  href="javascript:;" val="{$list.3.id}" text_name="cash_pro" class="edit_text">{$list.3.cash_pro}</a>
+							<input type="text" class="sort_text" value="{$list.3.cash_pro}" >
+						</td>
+						<td>
+							<a  href="javascript:;" val="{$list.3.id}" text_name="integral_pro" class="edit_text">{$list.3.integral_pro}</a>
+							<input type="text" class="sort_text" value="{$list.3.integral_pro}" >
+						</td>
+						<td>
+							<a  href="javascript:;" val="{$list.3.id}" text_name="price_fy" class="">0</a>
+							<input type="text" class="sort_text" value="{$list.3.price_fy}" >
+						</td>
+					</tr>
+					<tr>
+						<td>vip2</td>
+						<td>
+							<a  href="javascript:;" val="{$list.4.id}" text_name="cash_pro" class="edit_text">{$list.4.cash_pro}</a>
+							<input type="text" class="sort_text" value="{$list.4.cash_pro}" >
+						</td>
+						<td>
+							<a  href="javascript:;" val="{$list.4.id}" text_name="integral_pro" class="edit_text">{$list.4.integral_pro}</a>
+							<input type="text" class="sort_text" value="{$list.4.integral_pro}" >
+						</td>
+						<td>
+							<a  href="javascript:;" val="{$list.14.id}" text_name="price_fy" class="">0</a>
+							<input type="text" class="sort_text" value="{$list.4.price_fy}" >
+						</td>
+					</tr>
+					<tr>
+						<td>vip3</td>
+						<td>
+							<a  href="javascript:;" val="{$list.5.id}" text_name="cash_pro" class="edit_text">{$list.5.cash_pro}</a>
+							<input type="text" class="sort_text" value="{$list.5.cash_pro}" >
+						</td>
+						<td>
+							<a  href="javascript:;" val="{$list.5.id}" text_name="integral_pro" class="edit_text">{$list.5.integral_pro}</a>
+							<input type="text" class="sort_text" value="{$list.5.integral_pro}" >
+						</td>
+						<td>
+							<a  href="javascript:;" val="{$list.17.id}" text_name="price_fy" class="">0</a>
+							<input type="text" class="sort_text" value="{$list.5.price_fy}" >
+						</td>
+					</tr>
+				</table>
+				
+				
+			</div>		    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+<script>
+
+	//异步列表页的内容     ==============================================
+
+	$(".edit_text").click(function(){
+		var self_input=$(this).parent('td').children('input')
+		var that=this
+
+		$(this).css("display","none");
+		self_input.css("display","block");
+		self_input.focus();
+		self_input.blur(function(){
+			//异步修改排序
+			$(that).text(self_input.val());
+			$(that).css("display","block");
+			self_input.css("display","none");
+			 $.post('__ROOT__/adp.php/Distribution/ajax_change_text',{'style':2,'text_name':$(that).attr("text_name"),'id':$(that).attr("val"),'text_val':self_input.val()},function(date){
+	        if(date==1){
+	        	alert("成功");
+	        	location.reload();
+	        }else{
+	        	
+	        }
+        },'json');
+		});
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<include file="Public/head" />
+<div class="contert"style="padding-right:20px;">
+	<form action="{:U('Program/img_upload',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" role="form" style="" onsubmit="return check();">
+		<div class="form-group">
+			<label for="firstname" class="col-sm-1 control-label">小程序名称:</label>
+			<div class="col-sm-11">
+				<input type="text" name="program_name" value="{$info.program_name}" class="form-control aa" id="firstname" placeholder="小程序名称">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="firstname" class="col-sm-1 control-label">小程序id:</label>
+			<div class="col-sm-11">
+				<input type="text" name="program_id" value="{$info.program_id}" class="form-control aa" id="firstname" placeholder="小程序名称">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="lastname" class="col-sm-1 control-label">操作人：</label>
+			<div class="col-sm-11">
+				<input type="text" name="man_action" value="<?php echo empty($gengxin)?$info['man_action']:null; ?>"  class="form-control aa" id="man_action" placeholder="操作人">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="lastname" class="col-sm-1 control-label">备注：</label>
+			<div class="col-sm-11">
+				<input type="text" name="remark" value="<?php echo empty($gengxin)?$info['remark']:null; ?>"  class="form-control aa" id="remark" placeholder="备注">
+			</div>
+			</div>
+			<div class="form-group">
+			<label for="lastname" class="col-sm-1 control-label">文件：</label>
+			<div class="col-sm-11">
+				<input type="file" name="url"   class="form-control aa" id="url" placeholder="文件">
+			</div>
+		</div>
+		<div style="float:right;">
+			<button type='submit' class="btn btn-default">确认添加</button>
+			<div class="btn btn-primary"onclick="history.go(-1)">返回</div>
+		</div>
+
+	</form>
+
+<script>
+	function check(){
+		
+			 var aa="0";
+           $(".aa").each(function(){
+           	if(!$(this).val()){
+               aa++;
+            }
+           })
+           if(aa!=0){
+           	 alert("所有内容不能为空");
+                return false;
+           }
+
+		}
+	
+</script>
+</div>

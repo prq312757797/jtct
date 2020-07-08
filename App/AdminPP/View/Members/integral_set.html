@@ -1,0 +1,121 @@
+<include file="Public/head" />     
+	<style>
+		.jifen{width:100%;text-align:center;}
+		
+		.jifen tr{
+			border:1px solid red;
+			padding:5px;
+		}
+		
+		.jifen td{
+			border:1px solid red;
+			padding:5px;
+		}
+		.jifen th{
+			border:1px solid red;
+			padding:5px;
+		}
+	</style>
+	<div class="contert">
+		<include file="Public/menu_members" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">
+				<div style="border-bottom:1px solid #000000;">
+					<h3 style="margin:20px 0px 20px 20px;">会员积分充值设置</h3>
+				</div>
+					<if condition="$show_message eq 2">
+			        		未设置积分优惠
+			        	<hr>
+	<form onsubmit="return checkdate();"  enctype='multipart/form-data' action="{:U('Members/set_integral_submit')}" method="post">
+	
+			        	<table class="jifen">
+			        		<tr>
+			        			<th>金额</th>
+			        			<th>积分值</th>
+			        		</tr>
+			        		<tr>
+			        			<td><input class="aa" value="" name="money[]" onkeyup="this.value=this.value.replace(/\s+/g,'')"></td>
+			        			<td><input class="aa" value="" name="integral[]" onkeyup="this.value=this.value.replace(/\s+/g,'')"></td>
+			        		</tr>
+			        		<tr>
+			        			<td><input class="aa" value="" name="money[]" onkeyup="this.value=this.value.replace(/\s+/g,'')"></td>
+			        			<td><input class="aa" value="" name="integral[]" onkeyup="this.value=this.value.replace(/\s+/g,'')"></td>
+			        		</tr>
+			        		<tr>
+			        			<td><input class="aa" value="" name="money[]" onkeyup="this.value=this.value.replace(/\s+/g,'')"></td>
+			        			<td><input class="aa" value="" name="integral[]" onkeyup="this.value=this.value.replace(/\s+/g,'')"></td>
+			        		</tr>
+			        		<tr>
+			        			<td><input class="aa" value="" name="money[]" onkeyup="this.value=this.value.replace(/\s+/g,'')"></td>
+			        			<td><input class="aa" value="" name="integral[]" onkeyup="this.value=this.value.replace(/\s+/g,'')"></td>
+			        		</tr>
+			        		<tr>
+			        			<td><input class="aa" value="" name="money[]" onkeyup="this.value=this.value.replace(/\s+/g,'')"></td>
+			        			<td><input class="aa" value="" name="integral[]" onkeyup="this.value=this.value.replace(/\s+/g,'')"></td>
+			        		</tr>
+			        		<tr>
+			        			<td><input class="aa" value="" name="money[]"></td>
+			        			<td><input class="aa" value="" name="integral[]"></td>
+			        		</tr>
+			        	</table>
+			        	<button class="btn btn-primary" style="float:right;margin-right:100px;">保存</button>
+			</form>        	
+			        <else/>
+			        
+			       <form onsubmit="return checkdate();" enctype='multipart/form-data' action="{:U('Members/set_integral_submit',array('id'=>$intergral_id))}" method="post">
+	 
+				<table class="table table-hover table-responsive" id="maintable2">
+			        <thead>
+			            <tr>
+			               <!-- <th style="width:25px;"><input type="checkbox"></th>-->
+			                <th>编号</th>
+			                <th>金额</th>
+			                <th>积分值</th>
+			            </tr>
+			        </thead>
+			        <tbody>
+			        	
+			        
+			        <foreach name="list" item="v" key="k">
+				            <tr style="background:#D8BFD8;" id="content2" target="sid_user">
+				             <!--   <td><input type="checkbox"></td>-->
+				              <td id=""><?=$k+1;?></td>
+				                <td id=""><input class="aa" name="money[]" value="{$v.money}" onkeyup="this.value=this.value.replace(/\s+/g,'')"></td>
+				                <td id=""><input class="aa" name="integral[]" value="{$v.integral}" onkeyup="this.value=this.value.replace(/\s+/g,'')"></td>
+				              <!--  <td><a class="btn btn-default  btn-sm" href="">分组会员</a>    </td>  --> 			                	                                 			               
+				            </tr>  
+			          </foreach>
+			        	
+			    
+			        </tbody>
+			    </table>
+			        	<button class="btn btn-primary" style="float:right;margin-right:100px;">保存</button>
+		
+			    </form>
+			      </if>
+			</div>   
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+<script>
+	function checkdate(){
+			
+        var aa="0";
+           $(".aa").each(function(){
+          // 	console.log($(this).val());
+           	if(!$(this).val()){
+               aa++;
+            }
+           })
+
+           if(aa!=0){
+           	 alert("积分优惠设置不能为空");
+                return false;
+           }
+
+		}
+	</script>
+</body>
+</html>

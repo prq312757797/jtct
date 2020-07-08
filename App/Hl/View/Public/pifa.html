@@ -1,0 +1,72 @@
+<script>
+		//批发价填写数量的时候必须判断结束数量大于起始数量  最后判断同一个数不能存在全部的批发数量条件里
+		$(".num_end").blur(function(){	
+			var num_start=$(this).parents('div.pifa_total').children('input.num_start').val();
+			
+			
+			if($(this).val()<num_start){
+				alert("批发结束数量必须大于起始数量,请重新输入");
+				$(this).val("");
+			}else{
+				
+			}
+		})
+		
+		
+		//more_wholesale   更多批发价
+		var val03=1;
+   	var val_103=val03-1;
+		$("#more_wholesale").click(function(){
+var dh = '';
+		
+		dh += ' <div class="pifa_total">  ';				
+		dh += ' <span class="input-group-addon pifa_input" >起始件数(≥)</span>  ';
+		dh += ' <input  type="text" name="num_start[]"  value="" id="num_start" class="form-control num_start pifa_input_2" >  ';	
+		dh += ' <span class="input-group-addon pifa_input" >结束件数(<)</span>  ';	
+		dh +='  <input  type="text" name="num_end[]"  value="" id="num_end" class="form-control num_end pifa_input_2" > ';									
+		dh += ' <span class="input-group-addon pifa_input" >折扣</span>  ';
+		dh += ' <input  type="text" name="wholesale_discount[]"  value="" id="wholesale_discount" class="form-control wholesale_discount12138 pifa_input_2" >  ';
+		dh += ' <span class="input-group-addon pifa_input" >参考价</span> ';
+		
+		dh += ' <input  type="text" name="wholesale_price[]"  value=""  id="wholesale_price" class="form-control valid price_reference pifa_input_2"  aria-invalid="false" style="text-align:center;"> ';
+		dh += ' <span class="input-group-addon" style="width:5px;"> 元  </span> ';
+//		dh += ' <span  onclick="delet_pifa(this)" a="{$v.id}" style="width:5px;" class="input-group-addon">X</span> ';
+		dh += ' </div> ';
+		//document.getElementById('muban_b_'+val_102).innerHTML = dh;
+		$('#test456').append(dh)
+		if(val03<14){
+			val03++;
+			val_103++;	
+		}else{
+			alert("限制15个参数");
+		}
+		})
+		
+		
+		
+function delet_pifa(item){
+	 	var r=confirm("是否确定删除本条内容");
+	 	var id_pifa=$(item).attr("a");
+
+	  if (r==true){
+			$.post('__ROOT__/adp.php/Goods/delete_pifa',{'id':id_pifa},function(date){
+    	
+       if(date==1){
+       		alert("删除成功");
+       		location.reload();
+       }else{
+       		alert("删除失败");
+       }
+
+        },'json');
+	   }
+	 }
+
+//参考价计算  wholesale_discount
+		$(".wholesale_discount12138").change(function(){
+	
+			var reference_price=$("#price_sell").val();
+
+			$(this).parents("div.pifa_total").children("input.price_reference").val($(this).val()*reference_price);
+		})
+	</script>

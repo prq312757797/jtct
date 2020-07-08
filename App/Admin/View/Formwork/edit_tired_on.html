@@ -1,0 +1,136 @@
+<include file="Public/head" />
+<script type="text/javascript" src="__ROOT__/Public/webuploader/FileUpload.js"></script>
+ <script type="text/javascript" src="__ROOT__/Public/js/jquery.min.js"></script>
+  <script type="text/javascript" src="__ROOT__/Public/js/pingtu.js"></script>
+   
+<div class="contert">	
+			<h2>小程序模板生成</h2>
+			<form  class="form-horizontal" role="form" action="{:U('Formwork/runAdd',array('id'=>$info['id']))}" method="post" onsubmit="return checkLogin();">
+				<div class="form-group">
+					<label for="firstname" class="col-sm-1 control-label">模板编号：</label>
+					<div class="col-sm-11">
+						<empty name="muban_num">
+							<input value="{$info.program_id}" readonly   type="text" class="form-control" id="firstname" placeholder="请输入模板编号"> 							  
+						
+						<else/>
+							<input value="{$muban_num}" readonly name="program_id"  type="text" class="form-control" id="firstname" placeholder="请输入模板编号"> 							  
+						
+						</empty>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">服务商公司:</label>
+					<div class="col-sm-11">
+						<input value="{$agency_info.user_company}" name="muban_name"  type="text" class="form-control" id="lastname" placeholder="请输入模板名称">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">商户账号:</label>
+					<div class="col-sm-11">
+						<input value="{$agency_info.name}" name="muban_name"  type="text" class="form-control" id="lastname" placeholder="请输入模板名称">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">小程序名称:</label>
+					<div class="col-sm-11">
+						<input value="{$info.muban_name}" name="muban_name"  type="text" class="form-control" id="lastname" placeholder="请输入模板名称">								  
+					</div>
+				</div>	
+				
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">模板类型:</label>
+					<div class="col-sm-11">
+					<select name="muban_type" id="city_area_select" onchange="gradeChange()">
+						<option value=" ">选择模板类型</option>
+							<foreach name="muban_b" item="v">
+								<notempty name="info['muban_type']">
+									<option value="{$info.muban_type}">{$info.muban_type_name}</option>
+								
+								</notempty>
+								<option value="{$v.id}">{$v.name}</option>
+							</foreach>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">模板版本:</label>
+					<div class="col-sm-11">
+					    <select  id="road_from_select" onchange="show_price()">
+						<option value=" ">选择模板版本</option>
+						
+						
+					    </select>
+					<input type="hidden" name="muban_type_text" id="city_road_input" >
+               
+					</div>
+				</div>
+
+
+			
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">模板价格:</label>
+					<div class="col-sm-11">
+						<input value="{$info.price}" name="price" type="text" class="form-control" id="lastname" placeholder="请输入模板价格">								  
+					</div>
+				</div>
+				
+				<empty name="muban_num">
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">录入时间:</label>
+					<div class="col-sm-11">
+						<input value="<?=date("Y-m-d H:i:s",$info['time_set']);?>"  type="text" class="form-control" id="lastname" placeholder="" readonly>								  
+					</div>
+				</div>
+				</empty>
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">模板特点:</label>
+					<div class="col-sm-11">
+						<textarea name="content" class="form-control" rows="12"></textarea>								  
+					</div>
+				</div>
+				<div style="float:right;">
+				<!--<button type="button" class="btn btn-default">返回</button>-->
+				<a class="btn btn-default" href="__ROOT__/adz.php/Formwork/index">返回</a>
+				<button type="submit" class="btn btn-primary">确认</button>								
+			</div>
+			</form>							
+				
+															
+		</div>
+		
+<script>
+    KindEditor.ready(function(K) {
+        var editor1 = K.create('textarea[name="content"]', {
+            cssPath : '__ROOT__/Public/keditor/plugins/code/prettify.css',
+            uploadJson : '__ROOT__/Public/keditor/php/upload_json.php',
+            fileManagerJson : '__ROOT__/Public/keditor/php/file_manager_json.php',
+            allowFileManager : true
+        });
+        prettyPrint();
+    });
+</script>
+<script>
+function checkLogin(){
+	 var city_road=$("#road_from_select").find("option:selected").text();
+        $("#city_road_input").val(city_road);
+}
+	
+    function gradeChange(){
+    	var city_area=$("#city_area_select").find("option:selected").text();
+        $("#road_from_select").empty();
+     
+        $.post('__ROOT__/jtct/adz.php/Formwork/ajax_muban',{'name':city_area},function(arr_road){
+    		
+         for (var i=0;i<arr_road.length;i++){
+                console.log(arr_road[i]);
+                $("#road_from_select").append($("<option></option>").text(arr_road[i]));
+            }
+
+        },'json');
+         
+    }
+    function show_price(){
+    	alert(111);
+    }
+</script>

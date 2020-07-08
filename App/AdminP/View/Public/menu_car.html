@@ -1,0 +1,19 @@
+	<style>
+	td{
+	    text-align: center;
+}
+</style>
+	<div class="tabT">
+			<ul class="tab">
+				<a href="{:U('CarManager/index')}"><li>车种管理</li></a>
+				<a href="{:U('CarManager/fenlei')}"><li>车种分类</li></a>
+				<a href="{:U('CarManager/charges')}"><li>计费管理</li></a>
+				<a href="{:U('CarManager/car_parking')}"><li>发车位置管理</li></a>
+				<if condition="$head_menu eq 6">
+					<a href="{:U('Goods/jingpin')}"><li>精品商品</li></a>
+				</if>
+				<!--<a href="shanxuan"><li>筛选区间</li></a>
+				<a href="biaoqian"><li>标签管理</li></a>-->
+
+			</ul>
+		</div>

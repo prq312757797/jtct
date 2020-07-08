@@ -1,0 +1,176 @@
+<include file="Public/head" />
+<include file="Public/menu" />
+
+<script src="__ROOT__/Public/dragsort/jquery-1.7.2.js"></script>
+<script src="__ROOT__/Public/dragsort/jquery.dragsort-0.5.1.js"></script>
+<script type="text/javascript">
+	$("div:first").dragsort();
+		function init(){	
+		$("#list1").dragsort({ dragSelector: "div", dragBetween: true, dragEnd: saveOrder, placeHolderTemplate: "" });
+		function saveOrder() {
+			var data = $("#list1 b").map(function() { 
+				
+						return $(this).find("input.a").val(); 
+						}).get();
+			$("input[name=list1SortOrder]").val(data.join(","));
+		};
+		}
+	</script>
+<style>
+	.div0511{
+		width:800px;
+		height:43px;
+		border:1px solid #cac3c3;
+		line-height:45px;
+		background:white;
+		float:left;
+		padding-left:20px;
+		border-radius:4px;
+	}
+	.fenlei{
+		width:15%;
+		height:80%;
+		border:1px solid #000000;
+		float:left;margin-top: 5px;
+		text-align: center;
+		margin-left:10px;
+		border-radius: 8px;
+	}
+	.list0511{
+		border: 1px solid #cac3c3;
+	    background: #f1f0f0;
+	    padding: 7px 12px;
+	    border-radius: 4px;
+	    color: #888181;
+	}
+	.img0511{
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: -12px;
+            left: -8px;
+	}
+	.a{
+            height: 26px;
+            float: left;
+            width: 69px;
+            margin-top: 8px;
+            margin-left: 6px;
+            text-align: center;
+            line-height: 26px;
+	}
+		
+	.text_t{
+		    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+	}
+	.pd_35{
+		padding-left: 35px;
+	}
+	.pt_5{
+		padding-top: 5px;
+	}
+		.action_button{
+		float:right;margin-right:100px;margin-top: 8px;
+	}
+</style>
+<body onload="init();">
+
+
+<div id="content">
+	<div id="content-header">
+		<h1>首页推荐</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="{:U('Index/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+		<a href="#" class="current">首页推荐</a>
+
+
+	</div>
+	<div class="container-fluid">
+		<div class="text_t pd_35 pt_5">提示: <span>请在下方选择要显示的推荐分类</span>;<br><span class="pd_35">拖动改变选择顺序即为显示顺序</span>;<br><span class="pd_35">点击编辑按钮编辑推荐分类</span>;</div>
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>首页推荐</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<div class="row-fluid">
+					<div class="span12 center" style="text-align: center;padding: 37px;">					
+						
+						<div class="div0511" id="list1" >			
+					    	<foreach name="index_recommend" item="v">
+		                        <b>
+		                            <input class="a" type="text" style="display:none;" value="{$v}"/>
+		                            <span class="list0511">{$v}</span>
+		                        </b>
+					        </foreach>
+                        </div>
+                        <input class="list" name="list1SortOrder" type="text" style="display:none" />
+                        <button id="enter" class="btn btn-primary action_button" >保存</button>
+			    		<button id="edit" class="btn btn-primary action_button" >编辑</button>
+					</div>	
+				</div>
+
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+	
+	<include file="Public/modal"/> 
+	<include file="Public/foot" />
+<script>
+    
+    $("#nav").hover(function(){
+        window.location='__ROOT__/adp.php/index/index.html';
+    })
+	$("#enter").click(function(){
+		var data = $("#list1 b").map(function() { 
+						return $(this).find("input.a").val(); 
+						}).get();
+			$("input[name=list1SortOrder]").val(data.join(","));
+		console.log($(".list").val())
+	
+		 $.post('__ROOT__/adp.php/Index/ajax_re',{'con':$(".list").val()},function(data){
+			
+					$("#myModalLabel").text(data.msg)
+					$("#add-event").click();
+			
+        },'json');
+	})
+	$("#edit").click(function(){
+		if($(this).text()=="编辑"){
+			$(this).text("返回")
+			$(".a").each(function(){
+				$(this).css("display","block");
+				
+			})
+			$(".list0511").each(function(){
+				$(this).css("display","none");
+			})
+		}else{
+			$(this).text("编辑") 
+			$(".a").each(function(){
+				$(this).css("display","none");
+				
+			})
+			$(".list0511").each(function(){
+				$(this).css("display","");
+			})
+		}
+		
+		
+	})
+</script>
+</body>
+</html>

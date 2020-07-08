@@ -1,0 +1,53 @@
+<include file="Public/head" />
+<div class="contert">
+			<h2 style="    width: 50%;
+    float: left;">小程序模板 类型管理</h2>
+				<div style="float:right;margin-bottom:20px;    margin-top: 20px;">
+						
+					<a href="add_leixing"><button type="" class="btn btn-primary">添加小程序类型</button></a>
+			<!--		<button class="btn btn-danger"onclick="history.go(-1)">返回</button>
+			-->
+			<a class="btn btn-default" href="__ROOT__/adz.php/Formwork/index">返回</a>
+				
+</div>	
+		    <table class="table table-hover" >
+				<thead>
+				    <tr>
+				      <th>编号</th>
+				      <th>名称</th>
+						<th>版本号管理</th>
+						<th>版本特色管理</th>
+						<th>状态</th>
+				      <th>操作</th>
+				    </tr>
+				</thead>
+				<tbody>
+				  <foreach name="user_info" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+                            <td>{$v.name}</td>
+							<td>
+								<a href="__ROOT__/adz.php/Formwork/banben/id/{$v['id']}">点击管理（版本数：<span style="color:red;">{$v.bb_num}</span>）</a>
+							</td>
+							<td>
+								<a href="__ROOT__/adz.php/Formwork/banben_ts/id/{$v['id']}">点击管理（特色数：<span style="color:red;">{$v.ts_num}</span>）</a>
+							</td>
+							<td>
+								<if condition="$v['state'] eq 1">可用</if>
+								<if condition="$v['state'] eq 2"><span style="color:red;">禁用</span></if>
+							</td>
+							<td>
+								<a  title="修改" alt="修改" href="__ROOT__/adz.php/Formwork/edit_leixing/id/{$v['id']}">修改</a>
+								<a  title="删除" alt="删除" href="delete_leixing/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            </td>
+                        </tr>
+                    </foreach>		   
+				</tbody>
+			</table>
+		
+						
+		</div>
+	<div class="pages" style=" width: 100%;
+             margin-left: auto;    margin-top: 21px;text-align:center;
+             margin-right: auto;"> {$pages}</div>
+	</div>

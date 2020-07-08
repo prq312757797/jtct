@@ -1,0 +1,516 @@
+
+	<include file="Public/head" />     
+ <script type="text/javascript" src="__ROOT__/Public/js/jquery.min.js"></script>
+  <script type="text/javascript" src="__ROOT__/Public/js/pingtu.js"></script>
+   
+   
+   <link rel="stylesheet" href="__PUBLIC__/keditor/themes/default/default.css" />
+    <link rel="stylesheet" href="__ROOT__/Public/keditor/plugins/code/prettify.css" />
+    <script charset="utf-8" src="__ROOT__/Public/keditor/kindeditor-all-min.js"></script>
+    <script charset="utf-8" src="__ROOT__/Public/keditor/lang/zh-CN.js"></script>
+    <script charset="utf-8" src="__ROOT__/Public/keditor/plugins/code/prettify.js"></script>
+
+	<div class="contert">
+		<include file="Public/menu_goods" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<form name="myupload" id="myupload" enctype='multipart/form-data' action="{:U('Goods/run_goods_add',array('id'=>$info['id']))}" method="post">
+	
+				<!--基本- -开始----------->
+				<div class="show" id="tabC1">
+					<div class="con" style="margin-left:134;">
+						<div style="width:100%;min-height:1050px;">
+							<div class="form-group">
+								<label for="firstname" class="col-sm-2 control-label">排序：</label>
+								<input type="text" class="form-control" name="sort" value="{$info.sort}" id="sort">
+								<span class="help-block">数字越大，排名越靠前,如果为空，默认排序方式为创建时间</span>
+							</div>
+							<div class="form-group">
+								<label for="firstname" class="col-sm-2 control-label">商品名称：</label>
+								<input type="text" class="form-control" name="goods_title" value="{$info.goods_title}" id="goods_title">
+								<span class="help-block" style="color:red;">此项必填</span>
+							</div>
+							<div class="form-group">
+								<label for="firstname" class="col-sm-2 control-label">副标题：</label>
+								<input type="text" class="form-control" name="goods_subtitle" value="{$info.goods_subtitle}" id="goods_subtitle">
+							</div>
+							<div class="form-group">
+								<label for="firstname" class="col-sm-2 control-label">商品短标题：</label>
+								<input type="text" class="form-control" name="goods_shorttitle" value="{$info.goods_shorttitle}" id="goods_shorttitle">
+								<span class="help-block">商品短标题 用于快递打印,以及小型热敏打印机打印</span>
+							</div>
+							<!--<div class="form-group">
+								<label for="firstname" class="col-sm-2 control-label">商品数量：</label>
+								<input type="text" class="form-control" name="number" id="number">
+							</div>-->
+							<div class="form-group">
+								<label class="col-xs-12 col-sm-3 col-md-2">分类</label>
+								<div class="col-sm-8 col-xs-12">
+									<div class="row row-fix tpl-category-container">
+										<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+											<select name="fenlei_1_title" class="form-control tpl-category-parent valid" value="selected" onchange="gradeChange()" id="city_area_select"  >
+												
+												<empty name="is_edit">
+													<option value="">请选择分类</option>
+													<else/>
+													<option>{$info.fenlei_1_title}</option>
+												</empty>
+												<foreach name="fenlei" item="v">
+														<option >{$v.title}</option>
+												</foreach>
+											</select>
+										</div>
+										<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+											<select name="fenlei_2_title" class="form-control tpl-category-child" id="road_from_select" >
+												<empty name="is_edit">
+													<option>请选择子分类</option>
+													<else/>
+													<option>{$info.fenlei_2_title}</option>
+												</empty>
+												
+											</select>
+										</div>
+									</div>
+								</div>
+							</div><br>
+
+							<!--<div class="form-group">
+								<label for="firstname" class="col-sm-2 control-label">其他分类：</label>
+								<input type="text" class="form-control" name="fenlei_2">
+							</div>-->
+							<!--商品属性-->
+							<div class="form-group">
+								<label class="col-sm-2 control-label">商品属性:</label>
+								<div class="col-sm-9 col-xs-12">
+									<label for="good_attribute" class="checkbox-inline">
+							            <input type="checkbox" name="good_attribute01" value="1" id="good_attribute"> 推荐
+							        </label>
+									<label for="isnew" class="checkbox-inline">
+							            <input type="checkbox" name="good_attribute02" value="1" id="isnew"> 新品
+							        </label>
+									<label for="ishot" class="checkbox-inline">
+							            <input type="checkbox" name="good_attribute03" value="1" id="ishot"> 热卖
+							        </label>
+									<label for="issendfree" class="checkbox-inline">
+							            <input type="checkbox" name="good_attribute04" value="1" id="issendfree"> 包邮
+							        </label>
+									<label for="isdiscount" class="checkbox-inline">
+							            <input type="checkbox" name="good_attribute05" value="1" id="isdiscount"> 促销
+							        </label>
+								</div>
+							</div>
+							</br>
+							<!--商品价格-->
+							<div class="form-group">
+								<label class="col-sm-2 control-label">商品价格</label>
+								<div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+										<input type="text" name="price_sell"  value="{$info.price_sell}" id="price_own" class="form-control" value="">
+										<span class="input-group-addon">元 原价</span>
+										<input type="text" name="price_own" value="{$info.price_own}" id="cost" class="form-control valid" value="" aria-invalid="false">
+										<span class="input-group-addon">元 成本</span>
+										<input type="text" name="cost" value="{$info.cost}" id="cost" class="form-control" value="">
+										<span class="input-group-addon">元</span>
+									</div>
+									<span class="help-block">尽量填写完整，有助于于商品销售的数据分析,如果填写的金额为0，则为面议！</span>
+								</div>
+							</div>
+
+							<!--商品图片-->
+							<div class="form-group">
+								<label class="col-sm-2 control-label must">商品图片</label>
+								<div class="col-sm-9 col-xs-12">
+									<input type="file" value="fdfdfdf" name="image01" id="image01" >
+										<notempty name="image01">
+											<img src="__ROOT__/Uploads/{$image01}" style="width:150px;height:150px;">
+										</notempty>
+									<input type="file" value="fdfdfdf" name="image02" id="image02" >
+										<notempty name="image02">
+											<img src="__ROOT__/Uploads/{$image02}" style="width:150px;height:150px;">
+										</notempty>
+									<input type="file" value="fdfdfdf" name="image03" id="image03" >
+										<notempty name="image03">
+											<img src="__ROOT__/Uploads/{$image03}" style="width:150px;height:150px;">
+										</notempty>
+									<input type="file" value="fdfdfdf" name="image04" id="image04" >
+										<notempty name="image04">
+											<img src="__ROOT__/Uploads/{$image04}" style="width:150px;height:150px;">
+										</notempty>
+									
+									<input type="file" value="fdfdfdf" name="image05" id="image05" >
+										<notempty name="image05">
+											<img src="__ROOT__/Uploads/{$image05}" style="width:150px;height:150px;">
+										</notempty>
+									<div class="input-group multi-img-details ui-sortable"></div>
+					
+								</div>
+							</div>
+							<!--已出售商品-->								
+							<div class="form-group">
+								<label class="col-sm-2 control-label">已出售数</label>
+								<div class="col-sm-10 col-xs-12">
+									<div class="input-group">
+										<input type="number" name="sell_num" value="{$info.sell_num}" id="sales" class="form-control valid"  aria-invalid="false">
+										<span class="input-group-addon">件</span>
+									</div>
+									<span class="help-block">物品虚拟出售数，会员下单此数据就增加, 无论是否支付</span>
+								</div>
+							</div>
+							<!--用户收藏数-->
+							<div class="form-group">
+								<label class="col-sm-2 control-label">用户收藏数</label>
+								<div class="col-sm-10 col-xs-12">
+									<div class="input-group">
+										<input type="number" name="collect_num" value="{$info.collect_num}" id="sales" class="form-control valid"  aria-invalid="false">
+										<span class="input-group-addon">次</span>
+									</div>
+									<span class="help-block">此数据为虚拟数据，真实显示为真实数据加虚拟数据</span>
+								</div>
+							</div>
+							<!--商品描述-->
+							<div class="form-group">
+								<label class="col-sm-2 control-label">商品详情</label>
+								<div class="col-sm-10 col-xs-12">
+									<div class="input-group">
+										<textarea rows="12" name="goods_content" class="form-control valid"aria-invalid="false">{$info.goods_content}</textarea>
+										<span class="input-group-addon"></span>
+									</div>
+									<span class="help-block"></span>
+								</div>
+							</div>
+							<!--发票-->
+							<div class="form-group">
+								<label class="col-sm-2 control-label">发票</label>
+								<div class="col-sm-10 col-xs-12">
+									<label class="checkbox-inline">
+				                    <input type="checkbox" name="is_fapiao" value="1" id="is_fapiao"> 支持</label>
+								</div>
+							</div>
+						</div>
+						
+						<!--结尾-->
+						<div style="width:100%;height:40px;">
+							<div class="form-group">
+								<label class="col-sm-2 control-label">标签</label>
+								<div class="col-sm-10">
+									<label class="checkbox-inline"><input type="checkbox" name="quality" value="1"> 正品保证</label>
+									<label class="checkbox-inline"><input type="checkbox" name="seven" value="1"> 7天无理由退换</label>
+									<label class="checkbox-inline"><input type="checkbox" name="repair" value="1"> 保修</label>
+								</div>
+							</div>
+						</div>
+						<!--自定义标签-->
+						<div class="form-group">
+							<label class="col-sm-2 control-label">自定义标签</label>
+							<div class="col-sm-10 col-xs-12">
+								<div id="labelname_selector">
+									<div class="input-group">
+										<input type="text" value="" class="form-control text valid">
+										<div class="input-group-btn">
+											<button class="btn btn-primary" type="">选择标签</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="width:100%;height:40px;">
+							<div class="form-group">
+								<label class="col-sm-2 control-label">上架</label>
+								<div class="col-sm-10 col-xs-12">
+									<label class="radio-inline"><input type="radio" name="status" value="0" checked="true"> 否</label>
+									<label class="radio-inline"><input type="radio" name="status" value="1"> 上架</label>
+								</div>
+							</div>
+						</div>
+
+						<div style="width:100%;height:40px;">
+							<div class="form-group">
+								<label class="col-sm-2 control-label">是否支持退换货</label>
+								<div class="col-sm-9 col-xs-12">
+									<label class="radio-inline"><input type="radio" name="is_tuihuan" value="1"> 否</label>
+									<label class="radio-inline"><input type="radio" name="is_tuihuan" value="0" checked="true"> 是</label>
+								</div>
+							</div>
+						</div>
+						<div style="width:100%;height:120px;">
+							<div class="form-group">
+								<label class="col-sm-2 control-label">确认收货时间</label>
+								<div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+										<span class="input-group-addon">发货后</span>
+										<input type="number" name="day_shouhuo"  value="{$info.day_shouhuo}" class="form-control valid" value="" aria-invalid="false">
+										<span class="input-group-addon">天</span>
+									</div>
+									<div class="help-block">0读取系统设置 -1为不自动收货</div>
+								</div>
+								<!--<input name="" id=""  type="submit" value="提交" onclick="gosubmit2()"/>-->
+								<button class="btn btn-primary" style="float:right;margin-right:240px;">保存商品</button>
+							</div>
+						</div>
+					</div>
+				</div>  
+				<!--基本- -结束----------->
+				<!--库存---开始--------->
+				<div class="show" id="tabC2">	
+					<div class="con" style="margin-left:134;">
+						<div class="cot">
+							<p>编码：<input type="text" name="bianma" value="{$info.bianma}" style="width:600px;"></p>
+							<p>条码：<input type="text" name="tiaoma" value="{$info.tiaoma}" style="width:600px;"></p>
+							<p>重量：<input type="text" name="zhongliang" value="{$info.zhongliang}" style="width:600px;"></p>
+							<p>库存：<input type="text" name="kucun_change" value="{$info.kucun_change}" style="width:600px;"><br>
+								<span style="color:red;margin-left:46px;">商品的剩余数量, 如启用多规格，则此处设置无效.</span>
+							</p>
+							<div class="col-sm-12">
+								<label for="totalcnf1" class="radio-inline"><input type="radio" name="totalcnf" value="0" id="totalcnf1" checked="true"> 拍下减库存</label>
+								<label for="totalcnf2" class="radio-inline"><input type="radio" name="totalcnf" value="1" id="totalcnf2"> 付款减库存</label>
+								<label for="totalcnf3" class="radio-inline"><input type="radio" name="totalcnf" value="2" id="totalcnf3"> 永不减库存</label>
+							</div>
+
+							<div class="col-sm-12">
+								<label class="checkbox-inline">
+								<input type="checkbox" id="bdc" value="1" name="">启用商品规格
+							    </label>
+								<span class="help-block">启用商品规格后，商品的价格及库存以商品规格为准,库存设置为0则会到”已售罄“中，手机也不会显示, -1为不限制</span>
+							</div>
+						</div>
+						<button class="btn btn-primary" style="margin-left:260px;">保存商品</button>
+					</div>
+				</div>
+				<!--库存---结束--------->
+				<!--参数-------------开始-->
+				<div class="show" id="tabC3">
+					<div class="con">
+				    <textarea name="" id="" style="width:1000px;height:260px; margin:20px 20px;">						
+					</textarea>
+						<table>
+							<thead>
+								<tr>
+									<td style="width:160px;">参数名称</td>
+									<input type="" name="canshu_title[]" id="" value="参数名称1" />
+									<input type="" name="canshu_title[]" id="" value="参数名称2" />
+									<td>参数值 <small>拖动行可进行排序</small></td>
+									<input type="" name="canshu_con[]" id="" value="参数值1" />
+									<input type="" name="canshu_con[]" id="" value="参数值2" />
+									<th style="width:60px;"></th>
+								</tr>
+							</thead>
+							<tbody id="" class="">
+							</tbody>
+							<tbody>
+								<tr>
+									<td colspan="3">
+										<a href="" id="" onclick="" class="btn btn-default" title="添加参数">添加参数</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!--<button class="btn btn-primary" style="">保存商品</button>-->
+					</div>
+				</div>
+				<!--参数-------------结束-->
+				<!--详情--开始------------------->
+				<!--<div class="show" id="tabC4">
+					<div class="con">
+						<div class="form-group">
+								<label class="col-sm-2 control-label">商品详情</label>
+								<div class="col-sm-10 col-xs-12">
+									<div class="input-group">
+										<textarea rows="12" name="goods_content" class="form-control valid"aria-invalid="false">{$info.goods_content}</textarea>
+										<span class="input-group-addon"></span>
+									</div>
+									<span class="help-block"></span>
+								</div>
+							</div>
+					</div>
+				</div>-->
+					<!--详情--结束------------------->
+				<!--购买权限--------开始------------>
+				<!--<div class="hidden" id="tabC5">
+					<div class="con">
+						<div class="form-group">
+							<div class="">
+								<label for="firstname" class="control-label">单次最多购买:</label>
+								<input type="text" class="form-control"  value="{$info.sort}" id="">
+								<span style="color:red;margin-left:60px;">用户单次购买此商品数量限制</span>
+							</div>
+							<div class="">
+								<label for="firstname" class="control-label">单次最底购买:</label>
+								<input type="text" class="form-control" value="{$info.sort}" id="">
+								<span style="color:red;margin-left:60px;">用户单次必须最少购买此商品数量限制</span>
+							</div>
+							<div class="">
+								<label for="firstname" class="control-label">最多购买:</label>
+								<input type="text" class="form-control" value="{$info.sort}" id="">
+								<span style="color:red;margin-left:60px;">用户购买过的此商品数量限制</span>
+							</div>
+						</div>
+						<button class="btn btn-primary" style="margin-left:260px;">保存页面</button>
+
+					</div>
+				</div>-->
+				<!--购买权限--------结束------------>
+				<!--营销    开始------------>
+			<!--	<div class="hidden" id="tabC6">
+					<div class="con">
+						<div class="tab" js-tab="1">
+							
+							<div class="box">
+								<div class="tab-title">
+									<a href="javascript:;" class="item item-cur">包邮条件</a>
+									<a href="javascript:;" class="item">重复购买</a>
+								</div>
+							</div>
+							<div class="tab-cont">
+								<ul class="tab-cont__wrap">
+									<li class="item">
+
+										<div class="form-group">
+											<label class="col-sm-2 control-label">单品满件包邮</label>
+											<div class="col-sm-10">
+												<div class="input-group">
+													<span class="input-group-addon">满</span>
+													<input type="text" name="ednum" value="" class="form-control valid" aria-invalid="false">
+													<span class="input-group-addon">件</span>
+												</div>
+												<span class="help-block">如果设置0或空，则不支持满件包邮</span>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 control-label">单品满额包邮</label>
+											<div class="col-sm-10">
+												<div class="input-group">
+													<span class="input-group-addon">满</span>
+													<input type="text" name="edmoney" value="" class="form-control valid" aria-invalid="false">
+													<span class="input-group-addon">元</span>
+												</div>
+												<span class="help-block">如果设置0或空，则不支持满额包邮</span>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-2 control-label">不参与单品包邮地区</label>
+											<div class="col-sm-10">
+												<div id="areas" class="form-control-static"></div>
+												<a href="" class="btn btn-default">添加不参加满包邮的地区</a>
+												<input type="hidden" id="" name="edareas" value="">
+												<span class="help-block">如果设置0或空，则不支持满件包邮</span>
+											</div>
+										</div>
+
+									</li>
+									<li class="item">
+										<div class="form-group">
+											<label class="col-sm-2 control-label">重复购买折扣</label>
+											<div class="col-sm-10 col-xs-12">
+												<div class="input-group">
+													<input type="number" name="buyagain" class="form-control valid" value="" aria-invalid="false">
+													<span class="input-group-addon">折</span>
+												</div>
+												<span class="help-block">重复购买此商品,享受的折扣</span>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-2 control-label">持续使用?</label>
+											<div class="col-sm-10 col-xs-12">
+												<label class="radio-inline"><input type="radio" name="buyagain_islong" value="0" checked="true"> 否</label>
+												<label class="radio-inline"><input type="radio" name="buyagain_islong" value="1"> 是</label>
+												<span class="help-block">购买一次后,以后都使用这个折扣</span>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-2 control-label">使用条件</label>
+											<div class="col-sm-9 col-xs-12">
+												<label class="radio-inline"><input type="radio" name="buyagain_condition" value="0" checked="true"> 订单付款后</label>
+												<label class="radio-inline"><input type="radio" name="buyagain_condition" value="1"> 订单完成后</label>
+												<span class="help-block">重复购买使用条件,是付款后还是完成后 , 默认是付款后</span>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="col-sm-2 control-label">可以使用优惠</label>
+											<div class="col-sm-9 col-xs-12">
+												<label class="radio-inline"><input type="radio" name="buyagain_sale" value="0" checked="true"> 否</label>
+												<label class="radio-inline"><input type="radio" name="buyagain_sale" value="1"> 是</label>
+												<span class="help-block">重复购买时,是否与其他优惠共享!其他优惠享受后,在使用这个折扣</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>-->
+				<!--营销        结束------------>
+				<!--会员折扣    开始------------>
+				<!--<div class="hidden" id="tabC7">
+					<div class="con">
+						<div class="col-sm-12">
+							<h4>统一设置折扣 0.1-10之间</h4>
+						</div>
+
+						<div class="form-group discounts-info">
+							<div class="col-sm-12">
+								<div class="alert alert-info">
+									只有当折扣大于0，小于10的情况下才能生效，否则按自身会员等级折扣计算<br> 如果折扣为空或者0，则不设置折扣, 折扣和固定金额都有,则优先使用折扣
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-2 control-label" style="text-align:center;">默认会员</label>
+							<div class="col-sm-6 col-xs-12">
+								<div class="input-group">
+									<input type="number" name="discounts[default]" class="form-control" value="" data-min="0" data-max="10">
+									<div class="input-group-addon">折 或者 会员价</div>
+									<input type="number" name="discounts[default_pay]" class="form-control" value="">
+									<div class="input-group-addon">元</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>-->
+				<!--会员折扣    结束------------>
+			
+		</form>
+			</div>			    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+
+<script>
+	 function gradeChange(){
+	 	
+    	var city_area=$("#city_area_select").find("option:selected").text();
+        $("#road_from_select").empty();
+    
+        $.post('__ROOT__/jtct/index.php/AdminP/Goods/ajax_fenlei_2',{'title':city_area},function(arr_road){
+    	
+         for (var i=0;i<arr_road.length;i++){
+               
+                $("#road_from_select").append($("<option></option>").text(arr_road[i]));
+            }
+
+        },'json');
+         
+    }
+</script>
+
+<script>
+    KindEditor.ready(function(K) {
+        var editor1 = K.create('textarea[name="goods_content"]', {
+            cssPath : '__ROOT__/Public/keditor/plugins/code/prettify.css',
+            uploadJson : '__ROOT__/Public/keditor/php/upload_json.php',
+            fileManagerJson : '__ROOT__/Public/keditor/php/file_manager_json.php',
+            allowFileManager : true
+        });
+        prettyPrint();
+    });
+</script>
+</html>
+
+	

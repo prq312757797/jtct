@@ -1,0 +1,45 @@
+<div id="sidebar">
+
+
+		<ul>
+		
+			<li ><a href="{:U('Orderktvroom/index')}"><i class="icon icon-shopping-cart"></i>
+				<span>订单概述</span></a></li>
+			<li><a href="{:U('Orderktvroom/allder_fukuan')}"><i class="icon icon-shopping-cart"></i>
+				<span>待付款</span></a></li>
+			<li><a href="{:U('Orderktvroom/allder_fahuo')}"><i class="icon icon-shopping-cart"></i>
+				<span>未使用</span></a></li>
+			<!--<li><a href="{:U('Orderktvroom/allder_shouhuo')}"><i class="icon icon-shopping-cart"></i>
+				<span>待收货</span></a></li>
+			<li><a href="{:U('Orderktvroom/allder_pingjia')}"><i class="icon icon-shopping-cart"></i>
+				<span>待评价</span></a></li>-->
+			<li><a href="{:U('Orderktvroom/allder_wancehgn')}"><i class="icon icon-shopping-cart"></i>
+				<span>已完成</span></a></li>
+			<li><a href="{:U('Orderktvroom/allder_tuikuan')}"><i class="icon icon-shopping-cart"></i>
+				<span>待退款</span></a></li>
+			<li><a href="{:U('Orderktvroom/allder_tuikuandone')}"><i class="icon icon-shopping-cart"></i>
+				<span>已退款</span></a></li>
+			<li><a href="{:U('Orderktvroom/allder_close')}"><i class="icon icon-shopping-cart"></i>
+				<span>已关闭</span></a></li>
+			
+			<li><a href="{:U('Orderktvroom/order_all')}"><i class="icon icon-shopping-cart"></i>
+				<span><if condition="$program_id eq JT201806151732369242">全部订单(发货订单)<else/>全部订单</if></span></a></li>
+			
+			<if condition="$program_id eq JT201806151732369242">
+				<li><a href="{:U('Orderktvroom/order_hexiao')}"><i class="icon icon-shopping-cart"></i>
+				<span>核销消费订单</span></a></li>
+			</if>
+			<!--
+
+			<li><a href="{:U('Order/weiquan_beg')}"><i class="icon icon-shopping-cart"></i>
+				<span>维权申请</span></a></li>
+			<li><a href="{:U('Order/weiquan_over')}"><i class="icon icon-shopping-cart"></i>
+				<span>维权完成</span></a></li>
+			<li><a href="{:U('Order/fahuo')}"><i class="icon icon-shopping-cart"></i>
+				<span>批量发货</span></a></li>
+
+				-->
+		</ul>
+
+
+</div>

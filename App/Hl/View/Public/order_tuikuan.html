@@ -1,0 +1,60 @@
+		<style>
+			.modal_text{
+				text-align: center;
+			    color: #555555;
+			    font-size: 28px;
+			    font-weight: normal;
+			}
+			.modal_label{
+				width: 21%;
+			    float: left;
+			    text-align: center;
+			    height: 30px;
+			    line-height: 41px;
+			}
+		</style>
+
+		<!-- 按钮触发模态框 -->
+<a id="add-event_tuikuan" style="display:none;" data-toggle="modal" href="#modal-add-event_tuikuan" class="btn btn-success btn-mini"><i class="icon-plus icon-white"></i> </a>
+		<div class="modal hide" id="modal-add-event_tuikuan">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h3> 订单退款</h3>
+			</div>
+			<div class="modal-body">
+			
+				<div class="control-group">
+					<label class="control-label modal_label">交易单号：</label>
+					<div class="controls">
+						 <input type="text" id="order_num_tk" value="" readonly class="form-control w70 mt5">
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label modal_label">订单已付款：</label>
+					<div class="controls">
+						 <input type="text" id="price_payed" readonly class="form-control w70 mt5">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label modal_label">退款金额：</label>
+					<div class="controls">
+						 <input type="text" id="price_tk" class="form-control w70 mt5">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label modal_label" style="width: 69%;">备注：订单退款操作默认只能退款一次，请谨慎操作</label>
+				</div>
+				
+			</div>
+			<input type="hidden" value="" id="openid" name="openid"> 
+			<div class="modal-footer">
+				
+				<a href="#" class="btn" data-dismiss="modal">取消</a>
+			
+				<input type="submit" value="确认退款" class="btn btn-primary " id="div_submit_tk">
+			</div>
+		</div>
+
+			
+			

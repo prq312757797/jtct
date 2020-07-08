@@ -1,0 +1,105 @@
+<include file="Public/head" />
+<include file="Public/menu_members" />
+<div id="content">
+	<div id="content-header">
+		<h1>会员管理</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 会员</a>
+		<a href="#" class="current">会员管理</a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+						<span class="icon">
+							<i class="icon-th"></i>
+						</span>
+						<h5>会员管理</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th style="width:30px;"><input type="checkbox" id="checkAll"></th>
+								<th>会员</th>
+								<!--<th>详细信息</th>-->
+								<th>等级/分组</th>
+								<th>个人积分</th>
+								<th>个人佣金</th>
+								<th>注册时间</th>
+								<if condition="$program_id eq JT201806151732369242">
+									<th>填写资料</th>
+								</if>
+							
+								<th>成交</th>
+								<!--<th>黑名单</th>-->
+								<th>操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							<foreach name="list" item="v">
+								<tr>
+									<td>{$v.id}</td>
+									<td style="text-align: left!important;"><img style="width:50px;height:50px;" src="{$v.head}"> {$v.nickname}</td>
+									<!--<td></td>-->
+									<td>{$v.level_name}/{$v.group_name}</td>
+									<td>{$v.integral}</td>
+									<td> <?php echo $v['fx_yongjin_leiji']-$v['fx_yongjin_dakuan'] ;?></td>
+									<td>
+										<!--<?=date("Y-m-d H:i:s",$v['register_time']);?>-->
+										
+										{$v.register_time|date='Y-m-d H:i:s',###}
+									</td>
+									
+									<if condition="$program_id eq JT201806151732369242">
+										<td>
+											<empty name="v['realname']">
+												未编辑
+												<else/>
+												已编辑
+											</empty>
+										</td>
+									</if>
+									<td>{$v.deal_num}</td>
+									<!--<td>
+										<if condition="$v.blacklist eq 1">
+											<div class="peng_is_ok peng_ok">
+												<input type="hidden" value="{$v.id}">
+												<span>正常</span>
+											</div>
+										</if>
+
+										<if condition="$v.blacklist eq 2">
+											<div class="peng_is_ok peng_not">
+												<input type="hidden" value="{$v.id}">
+												<span>黑名单</span>
+											</div>
+										</if>
+									</td>-->
+									<td>
+										<a  title="详情" alt="详情" href="members_con/id/{$v['id']}" >
+											<button class="btn btn-default">详情</button>
+										</a>
+										<a style="color:white;"  title="删除" alt="删除" href="delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">
+											<button class="btn btn-danger">删除</button>
+										</a>
+									</td>
+								</tr>
+							</foreach>
+							</tbody>
+						</table>
+						<div class="pages self_css"> {$pages}</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<include file="Public/foot" />
+
+

@@ -1,0 +1,157 @@
+<script>
+	     //图片预览函数 ==================================================== 111
+        function setImagePreviews(avalue) {
+			var docObj=document.getElementById("doca");
+			var imgObjPreview=document.getElementById("previewa");
+
+		 var file = docObj.files[0];
+		
+		if (window.FileReader) {  
+            var reader = new FileReader();  
+            reader.readAsDataURL(file);  
+            //监听文件读取结束后事件  
+            reader.onloadend = function (e) {
+                showXY(e.target.result,file.fileName);  
+            }; 
+        }  
+        
+        function showXY(source){  
+		    var img = document.getElementById("loc_img");  
+		    img.src = source;  
+		    $("#image_area").css("display","block"); 
+		} 
+			return true;
+		}
+        //图片预览函数 ==================================================== 222
+        function setImagePreviews_2(avalue) {
+			var docObj_2=document.getElementById("doca_2");
+
+		 var file = docObj_2.files[0];
+		
+		if (window.FileReader) {  
+            var reader = new FileReader();  
+            reader.readAsDataURL(file);  
+            //监听文件读取结束后事件  
+            reader.onloadend = function (e) {
+                showXY_2(e.target.result,file.fileName);  
+            }; 
+        }  
+        
+        function showXY_2(source){  
+		    var img = document.getElementById("loc_img_2");  
+		    img.src = source;  
+		    $("#image_area_2").css("display","block"); 
+		} 
+			return true;
+		}
+        
+                //图片预览函数 ==================================================== 333
+        function setImagePreviews_3(avalue) {
+			var docObj_3=document.getElementById("doca_3");
+
+		 var file = docObj_3.files[0];
+		
+		if (window.FileReader) {  
+            var reader = new FileReader();  
+            reader.readAsDataURL(file);  
+            //监听文件读取结束后事件  
+            reader.onloadend = function (e) {
+                showXY_3(e.target.result,file.fileName);  
+            }; 
+        }  
+        
+        function showXY_3(source){  
+		    var img = document.getElementById("loc_img_3");  
+		    img.src = source;  
+		    $("#image_area_3").css("display","block"); 
+		} 
+			return true;
+		}
+                //图片预览函数 ==================================================== 444
+        function setImagePreviews_4(avalue) {
+			var docObj_4=document.getElementById("doca_4");
+
+		 var file = docObj_4.files[0];
+		
+		if (window.FileReader) {  
+            var reader = new FileReader();  
+            reader.readAsDataURL(file);  
+            //监听文件读取结束后事件  
+            reader.onloadend = function (e) {
+                showXY_4(e.target.result,file.fileName);  
+            }; 
+        }  
+        
+        function showXY_4(source){  
+		    var img = document.getElementById("loc_img_4");  
+		    img.src = source;  
+		    $("#image_area_4").css("display","block"); 
+		} 
+			return true;
+		}
+                //图片预览函数 ==================================================== 555
+        function setImagePreviews_5(avalue) {
+			var docObj_5=document.getElementById("doca_5");
+
+		 var file = docObj_5.files[0];
+		
+		if (window.FileReader) {  
+            var reader = new FileReader();  
+            reader.readAsDataURL(file);  
+            //监听文件读取结束后事件  
+            reader.onloadend = function (e) {
+                showXY_5(e.target.result,file.fileName);  
+            }; 
+        }  
+        
+        function showXY_5(source){  
+		    var img = document.getElementById("loc_img_5");  
+		    img.src = source;  
+		    $("#image_area_5").css("display","block"); 
+		} 
+			return true;
+		}
+
+
+//有图片显示图片
+
+	if($("#image_name").val()!=""){
+		 $("#image_area").css("display","block");
+		 $("#image_area").children("img#loc_img").attr("src","__ROOT__/Uploads/"+$("#image_name").val());
+	}
+	if($("#image_name_2").val()!=""){
+		 $("#image_area_2").css("display","block");
+		 $("#image_area_2").children("img#loc_img_2").attr("src","__ROOT__/Uploads/"+$("#image_name_2").val());
+	}
+	if($("#image_name_3").val()!=""){
+		 $("#image_area_3").css("display","block");
+		 $("#image_area_3").children("img#loc_img_3").attr("src","__ROOT__/Uploads/"+$("#image_name_3").val());
+	}
+	if($("#image_name_4").val()!=""){
+		 $("#image_area_4").css("display","block");
+		 $("#image_area_4").children("img#loc_img_4").attr("src","__ROOT__/Uploads/"+$("#image_name_4").val());
+	}
+	if($("#image_name_5").val()!=""){
+		 $("#image_area_5").css("display","block");
+		 $("#image_area_5").children("img#loc_img_5").attr("src","__ROOT__/Uploads/"+$("#image_name_5").val());
+	}
+	
+	
+</script>
+<script>
+	//删除图片
+	$(".delete_img").click(function(){
+
+		if(confirm("确定要删除图片吗？")==true){
+			$.post('__ROOT__/adpp.php/Goods/ajax_delete_img',{'id':$(this).attr("a"),'key':$(this).attr("b")},function(date){
+  				if(date==1){
+  					window.location.reload();
+  				}else{
+  					alert('删除失败');
+  				}
+		    },'json');	
+		} 	
+	})
+		
+		
+	</script>

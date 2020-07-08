@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>深恒利管理员管理</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="__ROOT__/Public/css/tube.css" />
+<style>
+.contert{
+width:80%;
+height:100%;
+margin:0px auto;
+border-radius:8px;
+}
+</style>
+	</head>
+	<body>
+<include file="Public/head" />	
+		<div class="contert">
+		    <table class="table table-hover">
+		   <!-- <button class="btn btn-primary" style="margin:40px;float:right;"data-toggle="modal" data-target="#mytube">添加管理员</button>
+			-->	
+			<h3>管理员管理</h3>
+		<if condition="$show_add eq 1">
+		<a class="btn btn-primary" href="add" style="margin:40px;float:right;">&nbsp&nbsp添加管理员</a><div style="height:12px;clear:both;"></div>
+	</if>	
+				
+				<thead>
+				    <tr>
+				      <th style="width:20px;">编号</th>
+				      <th style="width:60px;">昵称</th>
+				      <th style="width:100px;">最后登录时间</th>
+				      <th style="width:100px;">最后登录IP</th>				      
+				      <th style="width:40px;">状态</th>
+				      <th style="width:120px;">操作</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				  	 <foreach name="user_info" item="v">
+                        <tr>
+                            <td>{$v.admin_id}</td>
+							 <td>{$v.admin_name}</td>
+                           
+							 <td>
+							 	<notempty name="v['admin_lasttime']">
+							 			<?=date("Y-m-d H:i:s",$v['admin_lasttime']);?>
+							 	</notempty>
+
+							 </td>
+                            <td>{$v.admin_lastip}</td>
+						 <td>
+						 <if condition="$v.lock eq 1">未锁定</if>
+						 	 <if condition="$v.lock eq 2">锁定</if>
+						 </td>
+                            <td>
+								<!--<a  title="修改" alt="修改" href="edit/user_id/{$v['user_id']}">修改</a>-->
+								<!--<a  title="修改" alt="修改" href="{:U('Servicer/edit'),array('user_id'=>$v['user_id'])}">修改</a>-->
+								 <if condition="$v.lock eq 1">
+									<a  title="锁定" alt="锁定" href="__ROOT__/index.php/Admin/Members/lock/admin_id/{$v['admin_id']}">锁定</a>
+								 </if>
+								 <if condition="$v.lock eq 2">
+									<a  title="解锁" alt="解锁" href="__ROOT__/index.php/Admin/Members/lockout/admin_id/{$v['admin_id']}">解锁</a>
+								 </if>
+								  <if condition="$lever eq 1">
+								<a  title="改密" alt="改密" href="__ROOT__/index.php/Admin/Members/edit/admin_id/{$v['admin_id']}">改密码</a>
+								</if>
+								<a  title="删除" alt="删除" href="delete/admin_id/{$v['admin_id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            
+							</td>
+                        </tr>
+                    </foreach>
+				    
+				  </tbody>
+			</table>
+			<!--添加管理员模态框-->
+			<div class="modal fade" id="mytube" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							请输入想要添加的管理员
+						</h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" role="form">																							
+							<div class="form-group">
+								<label for="lastname" class="col-sm-2 control-label">管理员昵称:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="lastname" placeholder="请输入管理员账号">
+										   
+								</div>
+							</div>								
+							<div class="form-group">
+								<label for="lastname" class="col-sm-2 control-label">管理员密码:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="lastname" placeholder="请输入管理员密码">								  
+								</div>
+							</div>	
+						</form>									
+				    </div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">放弃添加</button>				
+						<button type="button" class="btn btn-primary">确认添加</button>									
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+			<!--锁定模态框-->
+			<div class="modal fade" id="mylogo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							您确认锁定吗？
+						</h4>
+					</div>		
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">放弃锁定</button>				
+						<button type="button" class="btn btn-primary">确认锁定</button>									
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+		
+		<!--改密码模态框-->
+		<div class="modal fade" id="mystar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							您确定需要改密码吗？
+						</h4>
+					</div>	
+					<div class="modal-body">
+						<form class="form-horizontal" role="form">																							
+							<div class="form-group">
+								<label for="lastname" class="col-sm-2 control-label">管理员账号:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="lastname" placeholder="请输入账号">
+										   
+								</div>
+							</div>	
+							
+							<div class="form-group">
+								<label for="lastname" class="col-sm-2 control-label">管理员密码:</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="lastname" placeholder="请输入密码">								  
+								</div>
+							</div>	
+						</form>									
+				    </div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">放弃修改</button>				
+						<button type="button" class="btn btn-primary">确认修改</button>									
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+		
+		
+		
+			<!--删除模态框-->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							您确认删除吗？
+						</h4>
+					</div>						
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">放弃删除</button>				
+						<button type="button" class="btn btn-primary">确认删除</button>									
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+			
+		</div>
+	</body>
+</html>

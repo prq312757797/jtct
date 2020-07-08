@@ -1,0 +1,66 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_members" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">
+				<div style="border-bottom:1px solid #000000;height:60px;padding:10px;">
+					<h3 style="width:30%;float: left;">会员开店福利</h3>
+		
+				</div>
+				<table id="maintable1"  class="table table-hover table-responsive">
+		        <thead>
+			        <tr>
+			
+			            <th style="width:60px;">等级名称</th>
+			            <th style="width:80px;">返回佣金比例</th>			
+			        </tr>
+		        </thead>
+		        <tbody id="grade">    
+		        	<foreach name="list" item="v">
+			        <tr style="background-color:#eee;" id="content1" target="sid_user">
+				     
+				        <td >
+				      		  {$v.title}	
+				        </td>              
+				        <td >
+				        	<a  href="javascript:;" val="{$v.id}" class="edit_sort">{$v.commission_per}</a>
+							<input type="text" class="sort_value" value="{$v.commission_per}" style="display:none;width: 38px;text-align: center;    margin-left: auto;margin-right: auto;">
+							
+				        </td>
+				     
+			        </tr> 
+			        </foreach>
+		        </tbody>
+                </table>
+			</div>	    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+<script>
+	//异步修改商品 排序
+	$(".edit_sort").click(function(){
+		var self_input=$(this).parent('td').children('input')
+		var that=this
+		
+		$(this).css("display","none");
+		self_input.css("display","block");
+		self_input.focus();
+		self_input.blur(function(){
+			//异步修改排序
+			$(that).text(self_input.val());
+			$(that).css("display","block");
+			self_input.css("display","none");
+			 $.post('__ROOT__/adp.php/Members/ajax_edit',{'id':$(that).attr("val"),'text':self_input.val()},function(date){
+	        if(date==1){
+	        	alert("成功");
+	        }else{
+	        	
+	        }
+        },'json');
+		});
+	})
+</script>
+</body>
+</html>

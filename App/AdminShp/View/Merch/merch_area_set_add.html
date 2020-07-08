@@ -1,0 +1,50 @@
+
+	<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_merch" />
+		<!--商户区域管理-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con"  style="width:1000px;margin:20px auto;" >
+				<div style="margin:10px 20px;border-bottom:1px solid #000000;">
+					<span style="font-size:26px;">商户区域管理</span>
+				</div>
+				<form action="{:U('Merch/merch_area_set_runadd',array('id'=>$info['id']))}" method="post" class="form-horizontal form-validate" enctype="multipart/form-data" novalidate="novalidate">
+				              
+              
+                   
+                    <div class="form">
+                       <label class="col-sm-2 control-label">排序</label>
+	                    <div class="col-sm-9 col-xs-12">
+	                        <input type="text" name="sort" class="form-control valid" value="<?php echo $info['sort']?$info['sort']:1;?>" aria-invalid="false">
+	                        <span class="help-block">数字越小，排名越靠前</span>
+	                    </div>
+                    </div>
+	                <div class="form">
+	                    <label class="col-sm-2 control-label must">区域名称</label>
+	                    <div class="col-sm-9 col-xs-12 ">
+	                        <input type="text" id="" name="title" class="form-control" value="{$info['title']}" data-rule-required="true" aria-required="true">
+	                      <span class="help-block"></span>
+	                    </div>
+	                </div>
+
+		            <div class="form">
+		                <label class="col-sm-2 control-label"></label>
+		                <div class="col-sm-9 col-xs-12" style="margin-top: 25px;">
+		                	<input type="submit" id="box" value="确认提交" class="btn btn-primary">
+		                	<input type="button" name="" onclick="history.back()" style="margin-left:10px;" value="返回列表" class="btn btn-default">
+		                </div>
+		            </div> 
+                </form>
+           </div>
+			      
+			</div>			    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+
+</html>
+
+	

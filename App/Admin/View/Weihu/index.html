@@ -1,0 +1,88 @@
+<include file="Public/head" />
+
+
+<div class="contert">
+			<h2 style="    width: 30%;float: left;">内部维护管理</h2>
+	<div style="clear:both;font-weight:bold;color:red;font-size:16px;">注：提交维护内容需要注明维护位置：A=总后台、B=服务商后台、C=小程序后台、D=手机端页面</div>
+	
+	<div style="clear:both;width:100%;height:90px;border:1px solid;">
+		<div style="width：100%">提交内容：<input id="content" style="width:50%" type="text"></div>
+		<div style="width：100%;margin-top:10px;">提 &nbsp交&nbsp&nbsp人：<input id="tijiaoren" style="width:50%" type="text">
+		<div id="tijiao" style="margin-right:120px;width:60px;text-align: center;;border:1px solid;float:right;">提交</div>
+		</div>
+	</div>
+		    <table class="table table-hover">		    	   
+				<thead>
+				    <tr>
+				      <th>编号</th>
+				      <th>维护内容</th>
+				      <th>提出人</th>
+				    			      
+				      <th>提出时间</th>
+				      <th>处理状态</th>
+				        <th>技术处理人</th>	
+				      <th>处理时间</th>
+						 <th>操作</th>
+				    </tr>
+				</thead>
+				<tbody>
+				  <foreach name="weihu" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+							 <td>{$v.content}</td>
+                            <td>{$v.tichuren}</td>
+							
+                            <td>{$v.time_tichu}</td>
+							<td>
+								<if condition="$v.is_wancheng eq 1"><span style="color:green;">已处理</span></if>
+								<if condition="$v.is_wancheng eq 2"><span style="color:red;">未处理</span></if>
+						
+							</td>
+							 <td>{$v.jishu}</td>
+							 <td>{$v.time_wancehng}</td>
+							  <td class="up_td">
+							  	<input style="float:right;width:60px;" type="text" class="jishuren">
+								  <div class="up_xiugai"  a="{$v.id}" style="float:right;width:66px;text-align:center;border:1px solid ;">
+								  	完成修改
+								  </div>
+							  </td>
+							   <td><a href="__ROOT__/adz.php/Weihu/delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a></td>
+                        </tr>
+                    </foreach>		   
+				</tbody>
+			</table>
+		
+						
+		</div>
+	<div class="pages" style=" width: 100%;
+             margin-left: auto;    margin-top: 21px;text-align:center;
+             margin-right: auto;"> {$pages}</div>
+	</div>
+
+<script>
+	$("#tijiao").click(function(){
+
+		 $.post('__ROOT__/adz.php/Weihu/ajax_weihu',{'content':$("#content").val(),'tijiaoren':$("#tijiaoren").val()},function(a){
+			if(a==1){
+				alert("提交成功");
+				location.reload();
+			}else{
+				alert("提交失败");
+			}
+        },'json');
+	})
+	
+	$(".up_xiugai").click(function(){
+		//alert($(this).attr("a"));
+		var id=$(this).attr("a");
+		var tijiaoren=$(this).parent('td.up_td').children('input').val();
+		$.post('__ROOT__/adz.php/Weihu/ajax_dafu',{'id':id,'tijiaoren':tijiaoren},function(a){
+			if(a==1){
+				alert("提交成功");
+				location.reload();
+			}else{
+				alert("提交失败");
+			}
+        },'json');
+	})
+</script>

@@ -1,0 +1,109 @@
+<include file="Public/head" />
+<div class="contert">
+			<h2 style="    width: 50%;
+    float: left;">微信小程序申请审核管理</h2>
+				<div style="float:right;margin-bottom:20px;    margin-top: 20px;">
+				<!--	<a href="add"><button type="" class="btn btn-primary">添加管理员</button></a>
+				-->
+				<a class="btn btn-default" href="index_new">版本升级入口</a>
+				
+				<button class="btn btn-danger"onclick="history.go(-1)">返回</button>
+				
+				
+			</div>	
+		    <table class="table table-hover">		    	   
+				<thead>
+				     <tr style="width:100%;">
+                        <th >编号</th>
+						<th >小程序名称</th>
+                        <th >服务商公司</th>
+                        <th >商户账号</th>
+                     
+                        <th >模板类型</th>
+						 <th >模板特色</th>
+
+                        <th >模板版本</th>
+						 <th >模板风格</th>
+                        <th >价格</th>
+						 <th >审核状态</th>
+						 <th >是否生成模板</th>
+						   <th >申请时间</th>
+                        <th >操作</th>
+                    </tr>
+				</thead>
+				<tbody>
+				   <foreach name="user_info" item="v">
+                        <tr>
+                            <td>{$v.qianyue_id}</td>
+							 <td>
+							 	<empty name="appmcheng['appmcheng']">
+							 		未绑定
+							 		<else/>{$v.appmcheng}</td>
+							 		
+							 	</empty>
+							 	
+							 <td>{$v.user_company}</td>
+							 <td>{$v.user_info_name}</td>
+						
+							 <td>{$v.muban_l_name}</td>
+							<td><!--{$v.muban_tese}-->
+								基础版
+								<if condition="$v.tese02 neq null">
+									{$v.tese01}、
+								</if>
+								<if condition="$v.tese02 neq null">
+									{$v.tese02}、
+								</if>
+								<if condition="$v.tese02 neq null">
+									{$v.tese03}
+								</if>
+							</td>
+							 <td>{$v.muban_b_name}</td>
+							<td>{$v.muban_f_name}</td>
+							 <td>{$v.muban_price}</td>
+
+							  <td>
+								<if condition="$v.qianyue_state eq 1">通过审核</if>
+								<if condition="$v.qianyue_state eq 2">审核中</if>
+								<if condition="$v.qianyue_state eq 3">禁用</if>
+								 </td>
+							<td>
+								<if condition="$v.is_tired eq 1">未生成</if>
+								<if condition="$v.is_tired eq 2"><span style="color:green">已生成</span></if>
+							</td>
+							 <td>
+								<?=date("Y-m-d H:i:s",$v['qianyue_add_time']);?>
+							 </td>
+						
+                            <td>
+								<!--<a  title="修改" alt="修改" href="edit/user_id/{$v['user_id']}">修改</a>-->
+								<!--<a  title="修改" alt="修改" href="{:U('Servicer/edit'),array('user_id'=>$v['user_id'])}">修改</a>-->
+					
+										 <if condition="$v.qianyue_state eq 1">
+											<a  title="禁用" alt="禁用" href="__ROOT__/adz.php/Audit/lock/id/{$v['qianyue_id']}">禁用</a>
+										 </if>
+										 <if condition="$v.qianyue_state eq 2">
+											<a  title="通过审核" alt="通过审核" href="__ROOT__/adz.php/Audit/lockout/id/{$v['qianyue_id']}" onclick="if(confirm('确认通过审核吗？')==false)return false;">通过</a>
+											<a  title="拒绝审核" alt="拒绝审核" href="__ROOT__/adz.php/Audit/lockout_j/id/{$v['qianyue_id']}" onclick="if(confirm('确认拒绝审核吗？')==false)return false;">拒绝</a>
+										
+										 </if>
+										<if condition="$v.qianyue_state eq 3">
+											<a  title="恢复使用" alt="恢复使用" href="__ROOT__/adz.php/Audit/lock_on_1/id/{$v['qianyue_id']}" onclick="if(confirm('确认通过审核吗？')==false)return false;">恢复</a>
+										</if>
+								  <if condition="$lever eq 1">
+								<a  title="改密" alt="改密" href="__ROOT__/adz.php/Audit/edit/id/{$v['qianyue_id']}">详情</a>
+								</if>
+								<a  title="删除" alt="删除" href="delete/id/{$v['qianyue_id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            
+							</td>
+                        </tr>
+                    </foreach>	   
+				</tbody>
+			</table>
+		
+						
+		</div>
+	<div class="pages" style=" width: 100%;
+             margin-left: auto;    margin-top: 21px;text-align:center;
+             margin-right: auto;"> {$pages}</div>
+</div>

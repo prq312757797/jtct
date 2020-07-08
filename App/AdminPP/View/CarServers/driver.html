@@ -1,0 +1,85 @@
+<include file="Public/head" />
+<include file="Public/menu_car_servers" />
+<div id="content">
+	<div id="content-header">
+		<h1>司机管理</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="{:U('CarServers/car_num')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 服务管理</a>
+		<a href="#" class="current">司机管理</a>
+
+		<a href="driver_add" class="add_button"><button class="btn" >+添加司机</button></a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>司机管理</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th><input type="checkbox"></th>
+								<th>姓名</th>
+								
+								<th>手机号</th>
+								<th>添加时间</th>
+								
+								<th>绑定车牌</th>
+								<th>绑定微信</th>
+								<th>操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							<foreach name="ad" item="v">
+								<tr>
+									 <td>{$v.id}</td>
+									<td>{$v.name}</td>
+									<td>{$v.linktel}</td>
+									<td>
+										<?php  echo date("Y-m-d H:i:s",$v['time_admin_set']); ?>
+									</td>
+									<td>
+									<empty name="v['car_num']">未绑定<else/>{$v.car_num}</empty>
+									
+									</td>
+									<td>
+									<if condition="$v['is_tired'] eq 1"><span style="color:green;">已绑定</span><else/>未绑定</if>
+									
+									</td>
+									<td>
+										<a class="btn btn-default" title="编辑" alt="编辑" href="driver_edit/id/{$v['id']}" >
+											编辑
+										</a>
+										<empty name="v['car_num']">
+											<else/>
+											<a class="btn btn-danger" style="color:white;"  title="取消绑定" alt="取消绑定" href="tied_out/id/{$v['id']}" onclick="if(confirm('是否取消绑定？')==false)return false;">
+												取消绑定
+											</a>	
+										</empty>
+				
+										<a class="btn btn-danger" style="color:white;"  title="放回收站" alt="放回收站" href="driver_delete/id/{$v['id']}" onclick="if(confirm('确认移到回收站吗？')==false)return false;">
+											删除
+										</a>	
+									</td>
+								</tr>
+							</foreach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<include file="Public/foot" />
+
+

@@ -1,0 +1,246 @@
+<include file="Public/head" />
+<link rel="stylesheet" href="__ROOT__/Public/img_show/css/viewer.min.css">
+<style>
+	* { margin: 0; padding: 0;}
+	#dowebok { width: 700px; margin: 0 auto; font-size: 0;}
+	#dowebok li { display: inline-block; width: 32%; margin-left: 1%; padding-top: 1%;}
+	#dowebok li img { width: 100%;}
+</style>
+<script>
+    $(function() {
+        $('#dowebok').viewer({
+            url: 'data-original',
+        });
+    });
+</script>
+<div class="contert">	
+
+	<if condition="$is_add eq 1">
+		<h2>小程序风格添加</h2>
+		<form  onsubmit="return check();" class="form-horizontal" role="form" enctype="multipart/form-data" action="{:U('Formwork/runAdd_banben_fg',array('bid'=>$info2))}" method="post">
+
+	</if>
+	<if condition="$is_add eq 2">
+		<h2>小程序风格修改</h2>
+		<form onsubmit="return check();"  class="form-horizontal" role="form" enctype="multipart/form-data" action="{:U('Formwork/runAdd_banben_fg',array('id'=>$info['id'],'bid'=>$info['bid']))}" method="post">
+
+	</if>
+			<div class="form-group">
+					<label for="firstname" class="col-sm-1 control-label">风格编号：</label>
+					<div class="col-sm-11">
+						<input id="up_name" type="hidden" vlaue="<?php echo $up_name."-"; ?>">
+						<input value="<?php echo empty($info)?$up_name."-":$info['name'];?>" name="name"  id="name" type="text" class="form-control" id="" placeholder="">
+					</div>
+				</div>	
+				
+				<div class="form-group">
+					<label for="firstname" class="col-sm-1 control-label">风格备注：</label>
+					<div class="col-sm-11">
+						<input value="{$info.remark}" name="remark"  type="text" class="form-control" id="" placeholder="">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="firstname" class="col-sm-1 control-label">风格差价：</label>
+					<div class="col-sm-11">
+						<input value="{$info.price}" name="price"  type="text" class="form-control" id="" placeholder="">
+					</div>
+				</div>	
+				
+				<div class="form-group">
+					<label for="firstname" class="col-sm-1 control-label">风格特点：</label>
+					<div class="col-sm-11">
+				
+					<foreach name="fg_ts" item="v" key="k">
+						<if condition="$k eq 0">
+							<input name="characteristics[]" type="checkbox" checked
+								<?php 
+										$os=explode(",",$info['characteristics']);
+										if(in_array($v['id'], $os)) {
+											echo "checked";
+										}
+								 ?>
+									 value="{$v.id}" />{$v.instruction}&nbsp &nbsp
+							<else/>
+							<input name="characteristics[]" type="checkbox"
+								<?php 
+										$os=explode(",",$info['characteristics']);
+										if(in_array($v['id'], $os)) {
+											echo "checked";
+										}
+								 ?>
+									 value="{$v.id}" />{$v.instruction}&nbsp &nbsp
+						</if>
+						
+					</foreach>
+				
+					</div>
+				</div>	
+				
+				<div class="form-group">
+					<label for="firstname" class="col-sm-1 control-label">指定本模板类下特色：</label>
+					<div class="col-sm-11">
+						<foreach name="fg_own_tt" item="v" key="k">
+							<if condition="$k eq 0">
+								<input name="muban_l_ts[]"  type="checkbox" checked
+									<?php 
+											$os=explode(",",$info['muban_l_ts']);
+											if($os[$k]==1) { echo "checked"; }
+									 ?>
+									 value="{$k}" />{$v.name}&nbsp &nbsp
+							 <else/>
+							 <input name="muban_l_ts[]"  type="checkbox"
+									<?php 
+											$os=explode(",",$info['muban_l_ts']);
+											if($os[$k]==1 ){ echo "checked"; }
+									 ?>
+										 value="{$k}" />{$v.name}&nbsp &nbsp
+							</if>
+						
+					</foreach>
+					</div>
+				</div>	
+				<!--特色总数-->
+				<input value="{$total_ts}" name="total_ts"  type="hidden" >
+				
+				<div class="form-group">
+					<label for="firstname" class="col-sm-1 control-label">风格案例：</label>
+					<div class="col-sm-11">
+						<input value="{$info.case_text}" name="case_text"  type="text" class="form-control" id="firstname" placeholder="">
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">是否使用:</label>
+					<div class="col-sm-11">
+						<empty name="info">
+							<label class="radio-inline"><input type="radio" name="state" value="1" checked="true"> 使用</label>
+							<label class="radio-inline"><input type="radio" name="state" value="2" > 禁用</label>
+							<else/>
+							<if condition="$info.state eq 1">
+								<label class="radio-inline"><input type="radio" name="state" value="1" checked="true"> 使用</label>
+								<else/>	
+								<label class="radio-inline"><input type="radio" name="state" value="1"> 使用</label>
+							</if>
+							<if condition="$info.state eq 2">
+								<label class="radio-inline"><input type="radio" name="state" value="2" checked="true"> 禁用</label>
+								<else/>	
+								<label class="radio-inline"><input type="radio" name="state" value="2" > 禁用</label>
+							</if>
+						</empty>			
+						
+						
+						
+						<span class="help-block"></span>						
+					</div>
+				</div>
+				<div class="form-group">	
+					<div id="more_img" style="border:1px solid;padding:3px;width:100px;text-align:center;margin-right:12px;float:right;border-radius:4px;">更多图片</div>
+						<input value="" name="case_img[]"  type="file" >
+					<div style="margin-top: 12px;" id="muban_b_0"></div>
+				</div>	
+			
+				<notempty name="info['case_img']">
+			
+					<div id="dowebok">
+						<foreach name="info['arr']" item="vo" key="k">
+							<div  style="width: 100px;height: 100px;float: left;margin-left:12px;">
+								<div  style="" a="{$info['id']}" b="{$k}"  class="delete_img">	</div>
+									
+								<!--<img src="__ROOT__/Uploads/{$vo}" onclick="f2(this)" class="show_big_img" style="width:100px;height:100px;">-->
+								<img data-original="__ROOT__/Uploads/{$vo}" src="__ROOT__/Uploads/{$vo}" class="show_big_img" onclick="f2(this)" style="width:100px;height:100px;">
+							</div>
+						</foreach>
+				
+				</div>
+				</notempty>
+			</div>	
+			<!--<div  style="z-index:9999;width: 50%;height: 400px;border: 1px solid;border-radius:10px;position: fixed;left: 10%;top: 10%;">
+				<img  id="big_img" style="width:100%;"/>
+			</div>-->
+			
+			
+				<div style="clear:both;"></div>
+			<div style="float:right;margin:30px 30px;">
+				<!--<button type="button" class="btn btn-default">返回</button>-->
+				<if condition="$is_add eq 1">
+					<a class="btn btn-default" href="__ROOT__/adz.php/Formwork/banben_fg?id={$info2}">返回</a>
+				</if>
+					<if condition="$is_add eq 2">
+						<a class="btn btn-default" href="__ROOT__/adz.php/Formwork/banben_fg?id={$info['bid']}">返回</a>
+					</if>
+				<button type="submit" class="btn btn-primary">确认</button>
+			</div>
+			</form>																		
+		</div>
+		
+<script>
+	function check(){
+	
+		/*if(!$("#appmcheng").val()){
+                alert("请填写小程序名称名");
+                $("#appmcheng").focus();
+                return false;
+            }*/
+           if(!$("#name").val()){
+                alert("请填风格编号");
+                $("#name").focus();
+                return false;
+            }
+           if($("#name").val()==$("#up_name").val()){
+                alert("请填写完整风格编号");
+                $("#name").focus();
+                return false;
+            }
+	}
+</script>
+<script>
+		$(".delete_img").click(function(){
+			//alert($(this).attr("b"));
+	
+			if(confirm("确定要删除图片吗？")==true){
+					 $.post('__ROOT__/adz.php/Formwork/ajax_delete_img',{'id':$(this).attr("a"),'key':$(this).attr("b")},function(date){
+			  				if(date==1){
+			  					window.location.reload();
+			  				}else{
+			  					alert('删除失败');
+			  				}
+				        },'json');	
+				} 	
+		})
+		
+		
+	</script>
+<script src="__ROOT__/Public/img_show/jquery.min.js"></script>
+<script src="__ROOT__/Public/img_show/js/viewer-jquery.min.js"></script>
+
+
+<script>
+	var val=1;
+   	var val_1=val-1;
+   		
+	 $("#more_img").click(function(){
+   		var dh = '';
+   		dh += ' <div><input  name="case_img[]" type="file"></div>  ';
+   		dh += ' <div style="margin-top: 12px;" id="muban_b_'+val;
+		dh += '"></div>';			
+		document.getElementById('muban_b_'+val_1).innerHTML = dh;
+		if(val<9){
+			val++;
+			val_1++;	
+		}else{
+			alert("图片限制10张");
+		}
+   })
+</script>
+
+<script>
+    KindEditor.ready(function(K) {
+        var editor1 = K.create('textarea[name="remark"]', {
+            cssPath : '__ROOT__/Public/keditor/plugins/code/prettify.css',
+            uploadJson : '__ROOT__/Public/keditor/php/upload_json.php',
+            fileManagerJson : '__ROOT__/Public/keditor/php/file_manager_json.php',
+            allowFileManager : true
+        });
+        prettyPrint();
+    });
+</script>

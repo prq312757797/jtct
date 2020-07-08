@@ -1,0 +1,41 @@
+<include file="Public/head" />
+<div class="contert">
+			<h2 style="    width: 50%;
+    float: left;">小程序模板 类型管理</h2>
+				<div style="float:right;margin-bottom:20px;    margin-top: 20px;">
+					<a class="btn btn-default" href="__ROOT__/adz.php/Formwork/index">返回</a>
+				</div>	
+		    <table class="table table-hover" >
+				<thead>
+				    <tr>
+				        <th>编号</th>
+				     	<th>说明</th>
+						<th>状态</th>
+				      <th>操作</th>
+				    </tr>
+				</thead>
+				<tbody>
+				  <foreach name="user_info" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+                            <td>{$v.instruction}</td>
+						
+							<td>
+								<if condition="$v['state'] eq 1">可用</if>
+								<if condition="$v['state'] eq 2"><span style="color:red;">禁用</span></if>
+							</td>
+							<td>
+								<a  title="修改" alt="修改" href="__ROOT__/adz.php/Formwork/edit_d_fengge/id/{$v['id']}">修改</a>
+							<!--	<a  title="删除" alt="删除" href="delete_d_fengge/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                           --> </td>
+                        </tr>
+                    </foreach>		   
+				</tbody>
+			</table>
+		
+						
+		</div>
+	<div class="pages" style=" width: 100%;
+             margin-left: auto;    margin-top: 21px;text-align:center;
+             margin-right: auto;"> {$pages}</div>
+	</div>

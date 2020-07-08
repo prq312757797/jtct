@@ -1,0 +1,197 @@
+
+	<include file="Public/head" /> 
+
+	
+	<div class="contert">
+		<include file="Public/menu" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con"  style="width:1000px;margin:20px auto;" >
+				<div style="margin:10px 20px;border-bottom:1px solid #000000;">
+					<span style="font-size:26px;">幻灯片管理</span>
+			<!--		<a href="slide.html"><button class="btn btn-primary" style="float:right;">+添加幻灯片</button></a>
+			-->	</div>
+
+				<form class="form-signin" action="{:U('IndexZiXun/run_huandeng_add',array('id'=>$info['id']))}" method="post" class="form-horizontal form-validate" enctype="multipart/form-data" novalidate="novalidate">
+					<input type="hidden" id="program_id" name="program_id" class="form-control" value="">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">排序</label>
+						<div class="col-sm-9 col-xs-12">
+							<input type="text" name="sort" value="<?php echo $info['sort']?$info['sort']:1 ;?>" class="form-control valid"  required autofocus/>
+							<span class="help-block">数字越大，排名越靠前</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label must">幻灯片标题</label>
+						<div class="col-sm-9 col-xs-12 ">
+							<input type="text" id="" name="title"  class="form-control" value="{$info['title']}" required>
+						<span class="help-block"></span>	
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label must">幻灯片图片</label>
+						<div class="col-sm-9 col-xs-12">
+							<div class="input-group " style="width:100%;">
+								<input type="file" name="image02" value="{$info['image']}" class="form-control" id="doca" onchange="javascript:setImagePreviews();">
+						
+								<notempty name="info['image']">
+									<img style="width:480px;height:200px;" id="old_img" src="__ROOT__/Uploads/{$info.image}">
+								</notempty>
+								<div class="col-sm-10">
+							      	<img id="previewa" src=""style="display:none; border-radius:6px;">
+							        <span class="help-block"></span>
+								</div>														
+							</div>
+					    </div>
+					 </div>
+	          
+	                <div class="form-group">
+	                    <label class="col-sm-2 control-label">幻灯片链接</label>
+	                    <div class="col-sm-9 col-xs-12">
+	                    	<div class="input-group form-group" style="margin: 0;">
+	                    		<input type="text" id="url_value" name="url"  value="{$info['url']}"  class="form-control valid"  placeholder="" id="advlink" required>                   		 
+	                    		<span data-input="#advlink" data-toggle="modal" data-target="#myModal" class="input-group-addon btn btn-default">选择链接</span>                   		      
+	                    	</div>
+	                    	 <span class="help-block"></span>
+	                    </div>
+	                </div>
+	         
+	                <div class="form-group">
+	                    <label class="col-sm-2 control-label">状态</label>
+	                    <div class="col-sm-9 col-xs-12">
+	                    	<empty name="info">	                    		
+	                    		<label class="radio-inline">
+		                            <input type="radio" name="is_show" value="1" checked=""> 显示
+		                    	</label>
+		                        <label class="radio-inline">
+		                            <input type="radio" name="is_show" value="0"> 隐藏
+		                        </label>
+	                        <else/>
+	                        	<if condition="$info.is_show eq 1">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_show" value="1" checked=""> 显示
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_show" value="0"> 隐藏
+			                        </label>
+		                        </if>
+		                        <if condition="$info.is_show eq 0">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_show" value="1"> 显示
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_show" value="0"  checked=""> 隐藏
+			                        </label>
+		                        </if>
+	                    	</empty>
+	                    	
+	                    </div>
+	                </div>
+            
+		            <div class="form-group">
+		                <label class="col-sm-2 control-label"></label>
+		                <div class="col-sm-9 col-xs-12" style="text-align:right;">
+		                	<input type="submit" onclick="gosubmit2()" id="sales" value="确认提交" class="btn btn-primary">
+		                	<input type="button" name="" onclick="history.back()" style="margin-left:10px;" value="返回列表" class="btn btn-default">
+		                </div>
+		            </div> 		           
+                </form>
+           </div>
+			 <!--原来的 modal 框位置-->
+			 <include file="Public/self_url" /> 
+    </div>
+ </div>
+</div>
+			</div>			    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+<script>
+	var aaaa = []
+	var that = this
+	$(".choose_007").click(function(){
+
+		$("#url_value").val($(this).attr("value"));
+		$("#guanbi").click();
+	})
+
+        $("#search").click(function(){
+        	
+        	if(!$(".search_title").val()){
+        		alert("请填写商品名称");
+        		return false;
+        	}
+        //	 console.log($(".search_title").val());
+        	 	
+   $.post('__ROOT__/adp.php/Index/self_url_goods',{'title':$(".search_title").val()},function(data){
+   console.log(data);
+	    	
+	    	var obj=eval(data);
+			var dh='';
+	        for (var i=0;i<obj.length;i++){  
+	         console.log(i);
+				dh+=' <div class="line" style="height: 55px;line-height: 55px;">  ';		
+	       		dh+=' <nav title="选择" class="btn btn-default btn-sm choose_007 " id="'+obj[i].id +'" onclick="f2(this)" value=" ' +obj[i].id + ' " data-href="">选择</nav> ';
+	       		dh+=' <div class="text">  ';
+	       		dh+=' <img style="width:25px;height:25px;" src="https://sz800800.cn/Uploads/' +obj[i].image + ' ">  ';
+	       		dh+=  obj[i].goods_title  ;
+	       		dh+=' </div>  ';
+	       		dh+=' </div>  ';
+	        //22aa
+	         }
+	         document.getElementById('select-good-list').innerHTML=dh;
+	        },'json');
+        })
+    
+        function f2(item){
+       		//alert(item.id);
+	       	$("#url_value").val("../product/detail?productId="+item.id);
+			$("#guanbi").click();	
+        }
+        
+        
+</script>
+<script type="text/javascript">
+//下面用于图片上传预览功能
+function setImagePreviews(avalue) {
+var docObj=document.getElementById("doca");
+var imgObjPreview=document.getElementById("previewa");
+	if(docObj.files &&docObj.files[0]){
+		//火狐下，直接设img属性
+		imgObjPreview.style.display = 'block';
+		imgObjPreview.style.width = '480px';
+		imgObjPreview.style.height = '200px'; 
+		if(document.getElementById("old_img")!=null){
+			document.getElementById("old_img").style.display = 'none';
+		}	
+		imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+	}else{
+		//IE下，使用滤镜
+		docObj.select();
+			var imgSrc = document.selection.createRange().text;
+			var localImagId = document.getElementById("localImag");
+		//图片必须设置初始大小
+		localImagId.style.width ="140px";
+		localImagId.style.height = "160px";
+		//图片异常的捕捉，防止用户修改后缀来伪造图片
+			try{
+			localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+			localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+			}
+			catch(e){
+				alert("您上传的图片格式不正确，请重新选择!");
+				return false;
+				}
+				imgObjPreview.style.display = 'none';
+				document.selection.empty();
+		}
+			return true;
+}
+ 
+</script>
+</html>
+
+	

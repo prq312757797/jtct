@@ -1,0 +1,179 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<style>
+			.line-height{
+				    line-height: 29px;
+			}
+		</style>
+		<include file="Public/menu_car_order" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		 <if condition="$empty eq 1">
+		 	<div class="show" id="tabC1">
+			<div class="con">
+			    <div class="page-heading" style="border-bottom:1px solid #000000;padding-left:20px;">
+					<h4 style="margin-top:20px;">订单管理 - 已关闭订单</h4>
+					<span>订单数:  <span class="text-danger" id="ygb_num"></span>  订单金额:  <span class="text-danger" id="ygb_sum">0.00</span> </span>					
+				</div>
+				<div class="panel panel-default" name="ygb">                 
+				        暂时没有任何订单				  
+				</div>
+			</div>		    
+				====================主体  结束===============
+           </div>				
+	</div>
+		 <else />
+		<div class="show" id="tabC1">
+			<div class="con">
+			    <div class="page-heading" style="border-bottom:1px solid #000000;padding-left:20px;">
+					<h4 style="margin-top:20px;">订单管理 - 已关闭订单</h4>
+					<span>订单数:  <span class="text-danger">{$list[sum][num]}</span>  订单金额:  <span class="text-danger">{$list[sum][sum]}</span> </span>					
+					<a href="order_none?csv=1"><button class="btn btn-primary" style="    float: right;position: relative;top: -25px;left: -21px;"> 批量导出 </button></a>	
+			
+			    </div>
+			<form action="">
+				<table class="table table-responsive" style="table-layout: fixed; background:paleturquoise;">
+				    <tbody>
+					    <tr style="background:plum">
+				
+					        <td style="width:17%;border-left:1px solid #f2f2f2;">车型</td>
+					        <td style="width:17%;text-align: center;;">价格</td>
+					        <td style="width:17%;text-align: center;">联系人</td>
+					        <td style="width:17%;text-align: center;">联系电话</td>
+					        <td style="width:17%;text-align: center;">下单时间</td>
+					        <td style="width:17%;text-align: center">操作</td>
+					      
+					    </tr>
+					    <volist name="list" id="vo">
+					   
+					  
+					    <tr class="trorder">
+					        <td colspan="4" style="text-align: left;padding-left: 2%;">订单编号:  {$vo.order_num}   </td>                                        
+					        <td colspan="4" style="text-align:right;font-size:12px;" class="aops">
+					            <a class="op" data-toggle="ajaxModal" href="__URL__/close_order?id={$vo.id}">关闭订单</a>
+					            <a class="op" data-toggle="ajaxModal" href="javascript:">
+					            	<span  data-toggle="modal" data-target="#mystar" class="enter_kd" a="{$vo.order_num}" b="{$vo.price}">订单改价</span>
+					            </a>                                                                                                  
+					            <a class="op" href="order_con?order_num={$vo.order_num}">查看详情</a>
+					           <!-- <a class="op" data-toggle="ajaxModal" href="">备注</a>-->
+					               <a data-toggle="modal" data-target="#mystar_remark" href="">备注</a>
+					           <include file="CarOrder/order_remark" />  
+					        </td>
+					    </tr>
+					  
+					    <tr class="trbody">
+					        <td style="overflow:hidden;">
+					        	<img src="__ROOT__/Uploads/{$vo.car_image}" style="width:50px;height:50px;border:1px solid #ccc; padding:1px;">
+					       	 {$vo.car_title}
+					        </td>
+					     
+					        <td>
+					        	<if condition="$vo.is_change_price eq 1">
+					      			<span style="color:red;">{$vo.change_price}</span>（<span style="text-decoration:line-through; text-decoration;">{$vo.price}</span>）
+					      			<else/>{$vo.price}
+					    		</if>
+					        </td>
+					        <td rowspan="1" style="text-align: center;">                  
+					            {$vo.fw_name} 
+					        </td>         
+					        
+					        <td rowspan="1" style="text-align:center">
+					         	{$vo.fw_tel}           
+						    </td>
+						    <td rowspan="1" style="text-align:center">
+						            {$vo.time_xd|date="Y-m-d",###}<br>{$vo.time_xd|date="H:i:s",###}
+						    </td>
+						    <td rowspan="1" class="ops" style="line-height:20px;text-align:center">
+						    	
+						    	<if condition="$vo['state'] eq 1"><span class="text-danger">待付款</span></if>
+						    	<if condition="$vo['state'] eq 2"><span class="text-danger">待服务</span></if>
+						    	<if condition="$vo['state'] eq 5"><span class="text-danger">已取消</span>
+						    	<br>
+						       	  
+									<if condition="$vo['state_tuikuan'] eq 0">无需退款</if>
+						       	 	<if condition="$vo['state_tuikuan'] eq 1">已退款：{$vo.pirce_tuikuan}元</if>
+						       	 	<if condition="$vo['state_tuikuan'] eq 2"> <span class="btn btn-primary btn-xs enter_tk"  data-toggle="modal" data-target="#mystar_tuikuan" a="{$vo.order_num}" b="{$vo.price}">待退款</span> </if>
+						    	
+						    	<!--	<span  data-toggle="modal" data-target="#mystar" class="enter_kd" a="{$vo.order_num}" b="{$vo.price}">订单改价</span>
+					           -->
+						    	</if>
+						    	<if condition="$vo['state'] eq 4"><span class="text-danger">已完成</spa n></if>
+						    	  </td>
+					    </tr>
+					</volist>
+  
+				    </tbody>
+				
+				</table>
+				    <div class="pages" style=" width: 100%;margin-left: auto;text-align:center;margin-top: -7px;margin-bottom: 10px;margin-right: auto;"> 
+					{$pages}
+				</div>
+			</form>						
+			</div>	    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+</if>
+<include file="Public/change_price" />  
+<include file="Public/order_tuikuan" />  
+<input type="hidden" value="{$program_id}" id="program_id">
+<script>
+	$("#div_submit").click(function(){
+		if(!$("#change_price").val()){
+			alert("请填写修改价格");
+			return false;
+		}
+
+		$.post('__ROOT__/adp.php/CarOrder/change_price',{'order_num':$("#order_num").val(),'price':$("#change_price").val()},function(date){	
+			if(date==1){
+				alert("设置成功");
+				//window.location.href='__ROOT__/adp.php/Order/allder_shouhuo';
+				window.location.reload();
+			}else{
+				alert("设置失败");
+			}
+        },'json');
+	})
+	
+		$("#div_submit_tk").click(function(){
+		if(!$("#price_tk").val()){
+			alert("请填写退款金额");
+			return false;
+		}
+		/*if($("#price_tk").val()>$("#price_payed").val()){
+			alert("退款金额有误");
+			$("#price_tk").val("")
+			return false;
+		}*/
+
+		$.post('__ROOT__/index.php/Wxtk/refund_111',{'order_num':$("#order_num_tk").val(),'refund_fee':$("#price_tk").val(),'program_id':$("#program_id").val(),'buy_state':1},function(date){	
+	
+			if(date==1){
+				alert("退款成功");
+				//window.location.href='__ROOT__/adp.php/Order/allder_shouhuo';
+				window.location.reload();
+			}else{
+				alert("退款失败");
+			}
+        },'json');
+	})
+	
+		$(".enter_kd").click(function(){
+		var that=this;	
+	
+		$("#order_num12138").val($(this).attr("a"));
+		$("#price_old").val($(this).attr("b"));
+		
+	})
+		$(".enter_tk").click(function(){
+		var that=this;	
+	
+		$("#order_num_tk").val($(this).attr("a"));
+		$("#price_payed").val($(this).attr("b"));
+		
+	})
+		
+</script>				
+				
+</body>
+</html>

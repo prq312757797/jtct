@@ -1,0 +1,169 @@
+		<style>
+			.modal_text{
+				text-align: center;
+			    color: #555555;
+			    font-size: 28px;
+			    font-weight: normal;
+			}
+			.modal_label{
+				width: 21%;
+			    float: left;
+			    text-align: center;
+			    height: 30px;
+			    line-height: 41px;
+			}
+			.f_left{
+				float: right;
+			}
+			.m_l_20{
+				margin-left:19px;
+			}
+		</style>
+
+		<!-- 按钮触发模态框 -->
+<a id="add-event_3" style="display:none;" data-toggle="modal" href="#modal-add-event_3" class="btn btn-success btn-mini"><i class="icon-plus icon-white"></i> </a>
+		<div class="modal hide" id="modal-add-event_3">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h3>订单打印</h3>
+			</div>
+			<div class="modal-body">
+			
+				<div class="control-group">
+					<label class="control-label modal_label">订单号码：</label>
+					<div class="controls">
+						 <input type="text" id="order_print" readonly class="form-control w70 mt5">
+						 <input type="hidden" id="float_num" readonly class="form-control w70 mt5">
+					</div>
+				</div>
+				<div class="control-group">
+					<volist name="list" id="vo" key="ke">
+						<div id="id_{$ke}" style="display:none;">
+							
+							<volist name="vo[info]" id="sub" key="k2">
+								<div class="input_num" style="float: left;">货架号：<input class="p_put_num" type="text"></div>
+								<div class="p_price f_left m_l_20">{$sub.price_sell} </div>
+								<div class="p_title f_left m_l_20">{$sub.goods_title} </div>
+								<div class="p_num " style="float: left;margin-left:20px;">0{$k2} </div>
+							</volist>
+						</div>
+					</volist>
+				</div>
+				<div class="control-group" style="display:none;38">
+					 总价金额：<input type="text" id="price_1" value="12" class="form-control w70 mt5"><br>
+					 应收金额：<input type="text" id="price_2" value="13" class="form-control w70 mt5"><br>
+					 欠费金额：<input type="text" id="price_3" value="14" class="form-control w70 mt5"><br>
+					 
+					 客户姓名：<input type="text" id="man_name" value="张三" class="form-control w70 mt5"><br>
+					 客户电话：<input type="text" id="man_tel" value="18966666666" class="form-control w70 mt5"><br>
+					<!-- 取衣时间：<input type="text" id="time_get" value="2018-12-12" class="form-control w70 mt5"><br>-->
+				</div>
+				
+			</div>
+			<input type="hidden" value="" id="openid" name="openid"> 
+			<div class="modal-footer">
+				<!--<a href='CLodop_Setup_for_Win32NT.exe' target='_self'>执行安装</a>
+			
+				<a href="#" class="btn" data-dismiss="modal">取消</a>-->
+				<a href="javascript:" onclick="back()" class="btn" data-dismiss="modal">取消</a>
+				<input type="submit" value="确认打印" class="btn btn-primary " onclick="prn_Preview()">
+			</div>
+			
+			
+			<script src="__ROOT__/Public/js/test/LodopFuncs.js"></script> 
+		<object id="LODOP_OB" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width=0 height=0> 
+			<embed id="LODOP_EM" type="application/x-print-lodop" width=0 height=0 pluginspage="install_lodop32.exe"></embed>
+		</object> 
+
+        <script type="text/javascript" language="javascript">
+        	function back(){
+        		window.location.reload()
+        	}
+        
+            var LODOP; //声明为全局变量  
+            function prn_Preview() {
+            	
+                CreatePrintPage();
+                LODOP.PREVIEW();
+            };
+            function prn_PRINT() {
+                CreatePrintPage();
+                LODOP.PRINT();
+            };
+            function CreatePrintPage() {
+                var date = new Date();
+                var year = date.getFullYear();
+                var month = date.getMonth() + 1;
+                var day = date.getDate();
+                var hour = date.getHours();
+                var minute = date.getMinutes();
+                var second = date.getSeconds();
+                LODOP = getLodop(document.getElementById('LODOP1'), document.getElementById('LODOP_EM1'));
+
+				var per=20
+				var val_title=[]
+				var val_price=[]
+				var val_put_num=[]
+				$(".class_show").children("div.p_title").each(function(i){
+					val_title[i]=$(this).text()
+				})
+				$(".class_show").children("div.p_price").each(function(i){
+					val_price[i]=$(this).text()
+				})
+				$(".class_show").children("div.input_num").children("input.p_put_num").each(function(i){
+					
+					val_put_num[i]=$(this).val()
+					
+//					if($(this).val()==''){
+//						alert("请填写货架号")
+//						return false;
+//					}
+				})
+				var goods_lenght=$(".class_show").children("div.p_title").length
+			
+				console.log(val_put_num)
+                LODOP.PRINT_INITA(0, 0, 300, 300, "打印条码"); 
+                LODOP.ADD_PRINT_TEXT(per*1,28,300,20,"流水号："+$("#float_num").val()+" ");
+                LODOP.ADD_PRINT_TEXT(per*2,0,300,20,"打印时间：" + year + "/" + month + "/"+ day + " " + hour + ":"+ minute + ":" + second);
+				LODOP.ADD_PRINT_TEXT(per*3, 5, 300, 20, "编号   名称   颜色    价格");
+				
+				
+				for(var k=0;k<goods_lenght;k++){
+			
+					LODOP.ADD_PRINT_TEXT(per*(4+k*2), 8, 300, 20, val_title[k]);
+					LODOP.ADD_PRINT_TEXT(per*(4+k*2), 138, 300, 20, val_price[k]);
+					if(val_put_num[k]){
+						LODOP.ADD_PRINT_TEXT(per*(5+k*2), 5, 300, 20, "货架号： "+val_put_num[k]+"  0" + (k+1));
+					}else{
+						LODOP.ADD_PRINT_TEXT(per*(5+k*2), 5, 300, 20, "货架号：未填写" +"  " + (k+1));
+					}
+					
+				}
+				
+//				LODOP.ADD_PRINT_TEXT(per*4, 8, 300, 20, "T恤");
+//				LODOP.ADD_PRINT_TEXT(per*4, 138, 300, 20, "12元");
+//				LODOP.ADD_PRINT_TEXT(per*5, 5, 300, 20, "货架号：A0239 01");
+//				LODOP.ADD_PRINT_TEXT(per*6, 8, 300, 20, "T恤");
+//				LODOP.ADD_PRINT_TEXT(per*6, 138, 300, 20, "12元");
+//				LODOP.ADD_PRINT_TEXT(per*7, 5, 300, 20, "货架号：A0239 01");
+//				LODOP.ADD_PRINT_TEXT(per*8, 8, 300, 20, "T恤");
+//				LODOP.ADD_PRINT_TEXT(per*8, 138, 300, 20, "12元");
+//				LODOP.ADD_PRINT_TEXT(per*9, 5, 300, 20, "货架号：A0239 01");
+				
+				
+				LODOP.ADD_PRINT_TEXT(per*(7+goods_lenght), 25, 300, 20, "总 价 金 额："+$("#price_1").val()+"元");
+				LODOP.ADD_PRINT_TEXT(per*(8+goods_lenght), 25, 300, 20, "应 收 金 额："+$("#price_2").val()+"元");
+				LODOP.ADD_PRINT_TEXT(per*(9+goods_lenght), 25, 300, 20, "欠 费 金 额："+$("#price_3").val()+"元");
+				
+				LODOP.ADD_PRINT_TEXT(per*(10+goods_lenght), 5, 300, 20, "店员编号：管理员");
+				LODOP.ADD_PRINT_TEXT(per*(11+goods_lenght), 5, 300, 20, "客户电话："+$("#man_name").val()+" ");
+				LODOP.ADD_PRINT_TEXT(per*(12+goods_lenght), 5, 300, 20, "客户姓名："+$("#man_tel").val()+" ");
+//				LODOP.ADD_PRINT_TEXT(per*(13+goods_lenght), 5, 300, 20, "取衣日期："+$("#time_get").val()+" ");
+
+            };	 
+
+</script>
+		</div>
+
+			
+			

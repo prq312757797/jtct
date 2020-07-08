@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>深恒利服务商管理</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="__ROOT__/Public/css/service.css" />
+<style>
+.contert{
+width:80%;
+height:100%;
+/*border:1px solid hotpink;*/
+margin:0px auto;
+border-radius:6px;
+}
+</style>
+	</head>
+	<body>
+		<include file="Public/head" />	
+		<div class="contert">
+		    <table class="table table-hover">
+		
+		
+		<!--<button class="btn btn-primary" style="margin:40px;float:right;"data-toggle="modal" data-target="#myservice">添加服务商</button>
+		-->
+		<if condition="$show_add eq 1">
+		<a class="btn btn-primary" href="add" style="margin:40px;float:right;">&nbsp&nbsp添加服务商</a><div style="height:12px;clear:both;"></div>
+	</if>	
+		<thead>
+				    <tr>
+				      <th>编号</th>
+				      <th>账号</th>
+				      <th>所属公司</th>
+				      <th>余额</th>				      
+				      <th>电话</th>
+				      <th>邮箱</th>
+				      <th>充值</th>
+				      <th>消费记录</th>
+				      <th>充值记录</th>
+				      <th>加盟日期</th>
+				      <th>操作</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <foreach name="user_info" item="v">
+                        <tr>
+                            <td>{$v.user_id}</td>
+							 <td>{$v.user_name}</td>
+                            <td>{$v.user_company}</td>
+							 <td>{$v.user_balance}</td>
+                            <td>{$v.user_tel}</td>
+							<td>{$v.user_mail}</td>
+							
+							<td>
+							<a href="top_up/user_id/{$v['user_id']}">点击充值</a>
+							</td>
+							<td>
+							<a href="record_xf/user_id/{$v['user_id']}">交易记录</a>
+							</td>
+							<td>
+							<a href="record_cz/user_id/{$v['user_id']}">充值记录</a>
+							</td>
+							<td>
+								<?=date("Y-m-d H:i:s",$v['add_time']);?>
+						
+							</td>
+                            <td>
+								<!--<a  title="修改" alt="修改" href="edit/user_id/{$v['user_id']}">修改</a>-->
+								<!--<a  title="修改" alt="修改" href="{:U('Servicer/edit'),array('user_id'=>$v['user_id'])}">修改</a>-->
+								<a  title="修改" alt="修改" href="__ROOT__/index.php/Admin/Servicer/edit/user_id/{$v['user_id']}">详情</a>
+								<a  title="删除" alt="删除" href="delete/user_id/{$v['user_id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            </td>
+                        </tr>
+                    </foreach>			   
+				  </tbody>
+			</table>
+			<!--添加服务商模态框-->
+			<div class="modal fade" id="myservice"role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title" id="myModalLabel">
+								添加服务商
+							</h4>primary
+						</div>
+						<div class="modal-body">				
+							<form class="form-horizontal" role="form">
+								<div class="form-group">
+									<label for="firstname" class="col-sm-2 control-label">账号：</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" id="firstname" 
+											   placeholder="请输入服务商账号">
+									</div>
+								</div>																						
+								
+								<div class="form-group">
+									<label for="lastname" class="col-sm-2 control-label">密码:</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" id="lastname" placeholder="请输入您的密码">								  
+									</div>
+								</div>	
+								
+								<div class="form-group">
+									<label for="lastname" class="col-sm-2 control-label">电话:</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" id="lastname" placeholder="请输入您的电话">								  
+									</div>
+								</div>	
+								
+								<div class="form-group">
+									<label for="lastname" class="col-sm-2 control-label">邮箱:</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" id="lastname" placeholder="请输入您的邮箱号">								  
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label for="lastname" class="col-sm-2 control-label">小程序APPid:</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" id="lastname" placeholder="请输入您的小程序APPid">								  
+									</div>
+								</div>	
+							</form>							
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">放弃添加</button>				
+							<button type="button" class="btn btn-primary">确认添加</button>								
+						</div>
+					</div>
+				</div>
+			</div>
+			 <!--充值模态框-->
+			<div class="modal fade" id="myModal"role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>														
+							<h4 class="modal-title" id="myModalLabel">服务商管理——充值</h4>															
+						</div>
+						<div class="modal-body">				
+							<form class="form-horizontal" role="form">
+								<div class="form-group">
+									<label for="firstname" class="col-sm-2 control-label">服务商账号：</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" id="firstname" placeholder="请输入服务商账号">											   
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label for="lastname" class="col-sm-2 control-label">服务商公司:</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" id="lastname" placeholder="请输入公司名称">											  
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label for="lastname" class="col-sm-2 control-label">当前余额:</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" id="lastname"> 									  
+									</div>
+								</div>	
+								
+								<div class="form-group">
+									<label for="lastname" class="col-sm-2 control-label">手机号码:</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" id="lastname"  placeholder="请输入手机号码">											  
+									</div>
+								</div>	
+								
+								<div class="form-group">
+									<label for="lastname" class="col-sm-2 control-label">充值金额:</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" id="lastname" placeholder="请输入充值金额">											   
+									</div>
+								</div>	
+								
+								<div class="form-group">
+									<label for="lastname" class="col-sm-2 control-label">备注:</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" id="lastname" placeholder="请输入您想说的话">								  
+									</div>
+								</div>	
+							</form>							
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>				
+							<button type="button" class="btn btn-primary">确定充值</button>								
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--删除模态框-->
+			<div class="modal fade" id="mydelete"role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title" id="myModalLabel">
+								你确定删除吗？
+							</h4>
+						</div>						
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">放弃删除</button>				
+							<button type="button" class="btn btn-primary">确定删除</button>								
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="../index.html"><button class="btn btn-group" style="float:right;margin:260px 80px 0px 0px;">返回</button></a>
+		</div>
+	</body>
+</html>

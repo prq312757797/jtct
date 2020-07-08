@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>互联网生态圈营销中心</title>
+		
+	<!--	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+-->		
+		<link rel="stylesheet" href="__ROOT__/Public/ys0925/bootstrap.min.css">
+		<script src="__ROOT__/Public/ys0925/jquery.js"></script>
+		<script src="__ROOT__/Public/ys0925/bootstrap.min.js"></script>
+		
+		
+	<link rel="stylesheet" href="__ROOT__/Public/Agency/css/css.css">
+	
+	</head>
+	
+<body>
+		<div class="header-top">
+			<div class="width-center">
+				<div class="header-title">
+					<strong>互联网生态圈营销中心</strong>
+					<!--<span>全国咨询热线</span>
+					<span>00-000-00000000</span>-->
+				</div>
+				<div class="header-right">
+					<ul class="nav navbar-nav" style="">
+						<if condition="$is_action01 eq 1">
+								<a href="{:U('Index/index')}" class="btn btn-success active">
+								<!--<i class="fa fa-user"></i>-->
+								<span>我的账户</span>
+								</a>
+							<else/>
+								<a href="{:U('Index/index')}" class="btn btn-success ">
+								<!--<i class="fa fa-user"></i>-->
+								<span>我的账户</span>
+								</a>
+						</if>
+						
+						<if condition="$is_action02 eq 1">
+								<a href="{:U('ProgramList/index')}" class="btn btn-success active">
+									<!--<i class="fa fa-th-large"></i>-->
+									<span>平台管理</span>
+								</a>
+							<else/>
+								<a href="{:U('ProgramList/index')}" class="btn btn-success">
+									<!--<i class="fa fa-th-large"></i>-->
+									<span>平台管理</span>
+								</a>
+						</if>
+						<if condition="$is_action03 eq 1">
+								<a href="{:U('Systems/index')}" class="btn btn-success active">
+									<!--<i class="fa fa-sitemap"></i>-->
+									<span>系统管理</span>
+								</a>	
+							<else/>
+								<a href="{:U('Systems/index')}" class="btn btn-success">
+									<!--<i class="fa fa-sitemap"></i>-->
+									<span>系统管理</span>
+								</a>
+						</if>
+						
+						
+						<a href="{:U('Login/logout')}" class="btn btn-success">
+							<!--<i class="fa fa-sign-out"></i>-->
+							<span>退出平台</span>
+						</a>
+			       </ul>									
+				</div>
+			</div>
+			
+		</div>

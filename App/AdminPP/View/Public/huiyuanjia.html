@@ -1,0 +1,10 @@
+<script>
+		//会员价输入折扣自动计算价格
+		
+		$(".discount").change(function(){
+			var googs_price=$("#price_sell").val();
+
+			$(this).parents("div.input-group").children("input.price_mem").val($(this).val()*googs_price);
+		})
+		
+	</script>

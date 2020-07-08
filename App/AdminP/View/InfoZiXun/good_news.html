@@ -1,0 +1,74 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_ZiXun_info" />
+		<!--新消息管理-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">	
+				<div style="border-bottom:1px solid #000000;height:60px; padding:20px;">
+				    <span style=" font-size:20px;">好消息管理 (<span style="color:red;">{$count}</span>)</span>
+				    <a href="good_news_add"><button class="btn btn-primary" style="float:right;">+添加新消息</button></a>
+				</div>	
+				<form action="" method="post">
+                  <table class="table table-hover table-responsive" style="margin:20px auto;"> 
+					    <thead class="navbar-inner">
+					        <tr>
+					            <th style="width:60px;"><input type="checkbox" id="checkAll">编号</th>
+					            <th style="width:60px;text-align:center;">排序</th>
+					            <th style="width:80px;text-align:center;">标题</th>
+					            <th style="width:100px;">发布人</th>
+					            <th style="width:60px;">联系方式</th>
+					            <th style="width:60px;">分类</th>
+					            <th style="width:60px;">提交时间</th>
+					            <!--<th style="width:60px;">通过审核时间</th>-->
+					            <th style="width:100px;">操作</th>
+					        </tr>
+					    </thead>
+					    
+					     <foreach name="info" item="v">
+					     	<tbody id="bots">
+                        <tr>
+                            <td>{$v.id}</td>
+							 <td>
+							 	<a  href="javascript:;" val="{$v.id}" class="edit_sort">{$v.sort}</a>
+							 	<input type="text" class="sort_value" value="{$v.sort}" style="display:none;width: 38px;text-align: center;    margin-left: auto;margin-right: auto;">
+							 </td>
+							 <td>{$v.title}</td>
+						<!--	 <td>
+							 	<img style="width:40px;height:40px;" src="__ROOT__/Uploads/{$v.image}">						
+							</td>-->
+							<td>{$v.openid}</td>
+							<td>{$v.tel}</td>
+							<td>{$v.attribute_title}</td>
+							  
+							<td>  <?=date("Y-m-d H:i:s",$v['time_input']);?></td>
+							<!--<td>  <?=date("Y-m-d H:i:s",$v['time_agree']);?></td>  -->
+						
+                            <td>
+                            	<a  title="修改" alt="修改" href="good_news_edit/id/{$v['id']}" >详情</a>
+						<!--		<a  title="回收" alt="回收" href="goods_huishou/id/{$v['id']}" onclick="if(confirm('确认移到回收站吗？')==false)return false;">放回收站</a>
+						-->
+                            <a  title="回收" alt="回收" href="good_news_delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            </td>
+                        </tr>
+                
+                        
+                        </tbody> 
+                    </foreach>	
+					    				   
+	                </table>             
+               </form>			
+			</div>		    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+	
+<script>
+	
+	$("#qq").click(function(){
+	
+		setTimeout("alert(123);",1000);
+	})
+	</script>
+</body>
+</html>

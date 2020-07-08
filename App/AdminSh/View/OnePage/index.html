@@ -1,0 +1,43 @@
+<include file="Public/onepage_head" />     
+	<div class="contert">
+		<include file="Public/onepage_menu" />
+		<!--单页版-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">
+				<form class="form-signin" action="{:U('OnePage/one_page',array('id'=>$info['id']))}" method="post" class="form-horizontal form-validate" enctype="multipart/form-data" novalidate="novalidate">
+		
+					<div class="form-group">
+						<label class="col-sm-2 control-label must">单页小程序</label>
+						<div class="col-sm-9 col-xs-12">
+							<div class="input-group " style="width:100%;">
+								<input type="file" name="image"  class="form-control" id="doca" onchange="javascript:setImagePreviews();">
+								<div style="clear:both;color:red;width:100%;">温馨提示：导航图标大小240*292</div>
+								<notempty name="info['image_one_page']">
+									<img style="width:120px;height:146px;" id="old_img" src="__ROOT__/Uploads/{$info.image_one_page}">
+								</notempty>
+								 <div class="col-sm-10">
+							      	<img id="previewa" src=""style="display:none;  border-radius:6px;">
+							      <span class="help-block"></span>
+								 </div>
+								<span class="help-block"></span>
+							</div>
+						</div>    
+					 </div>
+
+		            <div class="form-group">
+		                <label class="col-sm-2 control-label"></label>
+		                <div class="col-sm-9 col-xs-12" style="text-align:right;">
+		                	<input type="submit" onclick="gosubmit2()" id="sales" value="确认提交" class="btn btn-primary">
+		                	<input type="button" name="" onclick="history.back()" style="margin-left:10px;" value="返回列表" class="btn btn-default">
+		                </div>
+		            </div> 		           
+                </form>
+			      
+			</div>			    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+</html>

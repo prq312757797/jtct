@@ -1,0 +1,107 @@
+<include file="Public/head" />
+<include file="Public/menu_set" />
+<script src="__ROOT__/Public/ys0925/jquery.js"></script>
+
+<!--百度编辑器-->
+<script type="text/javascript" charset="utf-8" src="__ROOT__/Public/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__ROOT__/Public/ueditor/ueditor.all.min.js"> </script>
+
+<script type="text/javascript" charset="utf-8" src="__ROOT__/Public/ueditor/lang/zh-cn/zh-cn.js"></script>
+   <style>
+	.fileinput-button {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.fileinput-button input{
+		position:absolute;
+		right: 0px;	
+		top: 0px;
+		opacity: 0;
+		-ms-filter: 'alpha(opacity=0)';
+		font-size: 200px;
+	}
+</style>
+
+<div id="content">
+	<div id="content-header">
+		<h1>小程序基础设置</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="{:U('Set/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 设置</a>
+		<a href="{:U('Set/index')}" class="tip-bottom">基础设置</a>
+		<a href="#" class="current">小程序基础设置</a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-align-justify"></i>
+								</span>
+						<h5>小程序基础设置</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<form action="{:U('Set/index_save')}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+<!--小程序名称-->
+						<div class="control-group">
+							<label class="control-label">小程序名称</label>
+							<div class="controls">
+								<input type="text" name="program_title" value="{$data['program_title']}" />
+							</div>
+						</div>
+<!--小程序名称-->
+						<div class="control-group">
+							<label class="control-label">小程序编号</label>
+							<div class="controls">
+								<input type="text" readonly  value="{$program_id}" />
+							</div>
+						</div>
+<!--logo-->
+						<div class="control-group ">
+							<label class="control-label">小程序logo</label>
+							<div class="controls">
+								<input type="text" value="{$data['program_logo']}" id="image_name" />
+								<span class="btn btn-success fileinput-button">
+									<span>上传</span>
+									<input type="file" name="program_logo" id="doca"  onchange="javascript:setImagePreviews();">
+								</span>
+
+								<div class="help-block bd_gray mt15 w81 b_r_4 max_h_165 " style="display:none;" id="image_area">
+									<img class="h_92 p_1" src="" id="loc_img" />
+								</div>
+
+							</div>
+						</div>				
+<!--小程序介绍-->
+						<div class="control-group">
+							<label class="control-label">小程序介绍</label>
+							<div class="controls">
+								<!--<textarea rows="6" name="abstract"  >{$data.abstract}</textarea>-->
+								<textarea rows="6" name="abstract" id="goods_content" >{$data.abstract}</textarea>
+							</div>
+						</div>					
+				
+						<div class="form-actions">
+							<button type="submit" class="btn btn-primary">保存</button>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<include file="Public/foot" />
+<include file="Public/image_yl" />
+
+<script type="text/javascript">
+    var ue = UE.getEditor('goods_content');
+</script>
+
+
+

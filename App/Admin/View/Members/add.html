@@ -1,0 +1,23 @@
+<include file="Public/head" />
+<div class="contert"style="padding-right:20px;">
+	<form action="{:U('Members/runAdd',array('admin_id'=>$info['admin_id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" role="form" style="">
+		<div class="form-group">
+			<label for="firstname" class="col-sm-1 control-label">管理员昵称:</label>
+			<div class="col-sm-11">
+				<input type="text" name="admin_name" value="{$info.admin_name}" class="form-control" id="firstname" placeholder="请输入名字">				   
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="lastname" class="col-sm-1 control-label">管理员密码：</label>
+			<div class="col-sm-11">
+				<input type="text" name="admin_psw"  class="form-control" id="lastname" placeholder="请输入密码">				   
+			</div>
+		</div>
+		<div style="float:right;">
+			<button type='submit' class="btn btn-default">确认添加</button>
+			<button class="btn btn-primary"onclick="history.go(-1)">返回</button>
+	    </div>
+	
+	</form>
+	
+</div>

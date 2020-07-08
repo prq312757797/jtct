@@ -1,0 +1,125 @@
+
+	<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_ZiXun_info" />
+		<!--资讯分类-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con"  style="width:1000px;margin:20px auto;" >
+				<div style="margin:10px 20px;border-bottom:1px solid #000000;">
+					<span style="font-size:26px;">资讯分类管理</span>
+				</div>
+				<form action="{:U('InfoZiXun/run_fenlei_add',array('id'=>$info['id']))}" method="post" class="form-horizontal form-validate" enctype="multipart/form-data" novalidate="novalidate">
+				              
+                <empty name="add_child">
+                	<empty name="info['id']">
+						<input type="hidden" name="uid" value="0">
+					<else/>
+						<input type="hidden" name="uid" value="{$info['uid']}">
+					</empty>  
+				<else/>
+                	<input type="hidden" name="uid" value="{$add_child}">
+                </empty>   
+                   
+                    <div class="form">
+                       <label class="col-sm-2 control-label">排序</label>
+	                    <div class="col-sm-9 col-xs-12">
+	                        <input type="text" name="sort" class="form-control valid" value="<?php echo $info['sort']?$info['sort']:1;?>" aria-invalid="false">
+	                        <span class="help-block">数字越小，排名越靠前</span>
+	                    </div>
+                    </div>
+	                <div class="form">
+	                    <label class="col-sm-2 control-label must">行业名称</label>
+	                    <div class="col-sm-9 col-xs-12 ">
+	                        <input type="text" id="" name="title" class="form-control" value="{$info['title']}" data-rule-required="true" aria-required="true">
+	                      <span class="help-block">行业名称</span>
+	                    </div>
+	                </div>
+	             <!--   <div class="form" style="">
+	 
+	                    <label class="col-sm-2 control-label must">分类图片</label>
+		                <div class="col-sm-9 col-xs-12">                    		                        	
+					        <div class="input-group ">
+					        
+								<input type="file" name="image02" value="" class="form-control" >
+							
+							</div>
+							<div class="input-group " style="margin-top:5em;">
+								<img src="" this.title='图片未找到.'" class="img-responsive img-thumbnail" width="150">
+								<em class="close" style="position:absolute; top:0px;right:-14px;" title="删除这张图片" onclick="">×</em>
+							</div>   
+							<span class="help-block">建议尺寸:750 * 320 , 请将所有分类图片尺寸保持一致</span>	                            	                        
+					     	<notempty name="info['image_1']">
+					     		<img src="__ROOT__/Uploads/{$info['image_1']}"  style="width:100px;height:100px;">
+					 		 </notempty>	
+						</div>
+					 </div>-->
+	            
+	                <div class="form">
+	                    <label class="col-sm-2 control-label">分类描述</label>
+	                    <div class="col-sm-9 col-xs-12">
+	                    	<div class="input-group form-group" style="margin: 0;">
+	                    		<textarea type="text" rows="3"  class="form-control valid" name="miaoshu" placeholder="" id="advlink">{$info['miaoshu']}</textarea>
+	                    		<!--<span data-input="#advlink" data-toggle="selectUrl" class="input-group-addon btn btn-default">选择链接</span>-->
+	                   		</div>
+	                    </div>
+	                </div>
+	         
+	                <div class="form">
+	                    <label class="col-sm-2 control-label">状态</label>
+	                    <div class="col-sm-9 col-xs-12">
+	                    	<!--<label class="radio-inline">
+	                            <input type="radio" name="is_show" value="1'" checked=""> 显示
+	                        </label>
+	                        <label class="radio-inline">
+	                            <input type="radio" name="is_show" value="0'" > 隐藏
+	                        </label>-->
+	                        <empty name="info">
+	                    		
+	                    		<label class="radio-inline">
+		                            <input type="radio" name="is_show" value="1" checked=""> 显示
+		                    	</label>
+		                        <label class="radio-inline">
+		                            <input type="radio" name="is_show" value="2"> 隐藏
+		                        </label>
+	                        <else/>
+	                        	<if condition="$info.is_show eq 1">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_show" value="1" checked=""> 显示
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_show" value="2"> 隐藏
+			                        </label>
+		                        </if>
+		                        <if condition="$info.is_show eq 2">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_show" value="1"> 显示
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_show" value="2"  checked=""> 隐藏
+			                        </label>
+		                        </if>
+	                    	</empty>
+	                    </div>
+	                </div>
+            
+		            <div class="form">
+		                <label class="col-sm-2 control-label"></label>
+		                <div class="col-sm-9 col-xs-12" style="margin-top: 25px;">
+		                	<input type="submit" id="box" value="确认提交" class="btn btn-primary">
+		                	<input type="button" name="" onclick="history.back()" style="margin-left:10px;" value="返回列表" class="btn btn-default">
+		                </div>
+		            </div> 
+                </form>
+           </div>
+			      
+			</div>			    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+
+</html>
+
+	

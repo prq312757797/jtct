@@ -1,0 +1,38 @@
+<div class="tabT">
+			<ul class="tab">
+				<a href="{:U('Members/index')}"><li>会员概述</li></a>
+				<a href="{:U('Members/members')}"><li>会员管理</li></a>
+				<a href="{:U('Members/members_lever')}"><li>会员等级</li></a>
+				<a href="{:U('Members/members_group')}"><li>会员分组</li></a>
+				<if condition="$is_13 eq 1">
+				<!----------------------------会员多身份信息交互------------红娘---------------------------------->
+		    	<!----------------------------会员多身份信息交互------------红娘---------------------------------->
+		    	<!----------------------------会员多身份信息交互------------红娘---------------------------------->
+				<a href="{:U('Members/members_hn')}"><li>红娘管理</li></a>
+				<a href="{:U('Members/members_ds')}"><li>单身管理</li></a>
+		
+				</if>
+				<if condition="$is_08 eq 1">
+					<hr>
+					<a href="{:U('Members/cash_ing')}"><li>待审核的</li></a>
+					<a href="{:U('Members/cash_git')}"><li>待打款的</li></a>
+					<a href="{:U('Members/cash_done')}"><li>已打款的</li></a>
+					<a href="{:U('Members/cash_none')}"><li>无效的</li></a>
+		    	<hr>
+					<a href="{:U('Members/integral_set')}"><li>会员积分充值设置</li></a>
+				</if>
+				<if condition="$head_menu eq 5">
+		    	<!----------------------------资讯版---------------------------------------------->
+		    	<!----------------------------资讯版---------------------------------------------->
+		    	<!----------------------------资讯版---------------------------------------------->
+		    		
+		    	<hr>
+					<a href="{:U('Members/cash_ing')}"><li>待审核的</li></a>
+					<a href="{:U('Members/cash_git')}"><li>待打款的</li></a>
+					<a href="{:U('Members/cash_done')}"><li>已打款的</li></a>
+					<a href="{:U('Members/cash_none')}"><li>无效的</li></a>
+		    	<hr>
+					<a href="{:U('Members/integral_set')}"><li>会员积分充值设置</li></a>
+		    	</if>
+			</ul>
+		</div>

@@ -1,0 +1,78 @@
+<include file="Public/head" />
+<script type="text/javascript" src="__ROOT__/Public/webuploader/FileUpload.js"></script>
+ <script type="text/javascript" src="__ROOT__/Public/js/jquery.min.js"></script>
+  <script type="text/javascript" src="__ROOT__/Public/js/pingtu.js"></script>
+      
+<style>
+	.self_top{
+	width:100%;
+	margin-top:4px;
+	}
+
+	.self_left{
+	width:150px;
+	float:left;
+	}
+	.self_back{
+	margin-top: 12px;
+	float: left;
+	width: 39px;
+	text-align: center;
+	border: 1px solid;
+	padding: 3px;
+	margin-left: 35%;
+	font-size: 12px;
+	border-radius: 3px;
+	}
+</style>
+<form method="post" enctype="multipart/form-data" class="form-x one-form form-auto form-horizontal" id="form" action="{:U('Formwork/runAdd',array('user_id'=>$info['user_id']))}">
+	<div class="self_top">
+		<div class="self_left">模板编号:</div>
+		<input type="text" class="input" name="user_name" size="60" value="{$info.user_name}">
+	</div>	
+    <div class="self_top"> 
+		<div class="self_left">模板名称:</div>
+		<input type="text" class="input" name="user_company" size="60" value="{$info.user_company}">
+	</div>	
+    <div class="self_top">
+		<div class="self_left">模板类型:</div>
+		<input type="text" class="input" readonly size="60" value="{$info.user_balance}">        
+    </div>	
+	<div class="self_top">
+		<div class="self_left">模板版本:</div>
+		<input type="text" class="input" readonly size="60" value="{$info.user_tel}">        
+    </div>	
+	<div class="self_top">
+		<div class="self_left">模板价格:</div>
+		<input type="text" class="input" readonly size="60" value="{$info.user_lasttime}">        
+    </div>	
+	<div class="self_top">
+		<div class="self_left">录入时间:</div>
+		<input type="text" class="input" readonly size="60" value="{$info.user_lastip}">        
+    </div>	
+	<div class="self_top">
+		<div class="self_left">模板特点:</div>
+	   <div class="col-sm-11">
+						<textarea name="content" class="form-control" rows="3"></textarea>								  
+					</div> </div>	
+	<div class="self_back" onclick="history.go(-1)">返回</div>		
+	
+	<button style="margin-left: 1%;margin-top: 12px;" id="ajaxForm" type='submit'>保存</button>
+		
+</form>
+
+<div style="clear:both;height:50px;"></div>
+
+
+<script>
+    KindEditor.ready(function(K) {
+        var editor1 = K.create('textarea[name="content"]', {
+            cssPath : '__ROOT__/Public/keditor/plugins/code/prettify.css',
+            uploadJson : '__ROOT__/Public/keditor/php/upload_json.php',
+            fileManagerJson : '__ROOT__/Public/keditor/php/file_manager_json.php',
+            allowFileManager : true
+        });
+        prettyPrint();
+    });
+</script>
+

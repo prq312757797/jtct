@@ -1,0 +1,80 @@
+<include file="Public/head" />
+<include file="Public/menu_merch" />
+<div id="content">
+	<div id="content-header">
+		<h1>商户分类管理</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 多商户管理</a>
+		<a href="#" class="current">商户分类管理</a>
+
+		<a href="merch_fenlei_add" class="add_button"><button class="btn" >+添加商户分类</button></a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>商户分类管理</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+
+								<th>排序</th>
+								<th>分类名称</th>
+								<th>是否启用</th>
+
+								<th>操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							<foreach name="info" item="v">
+								<tr>
+
+									<td>{$v.sort}</td>
+									<td>{$v.title}</td>
+
+									<td>
+										<if condition="$v.is_show eq 1">
+											<div class="peng_is_ok peng_ok">
+												<input type="hidden" value="{$v.id}">
+												<span>显示</span>
+											</div>
+										</if>
+
+										<if condition="$v.is_show eq 2">
+											<div class="peng_is_ok peng_not">
+												<input type="hidden" value="{$v.id}">
+												<span>隐藏</span>
+											</div>
+										</if>
+									</td>
+									<td>
+										<button class="btn btn-default">
+											<a  title="修改" alt="修改" href="merch_fenlei_edit/id/{$v['id']}" >修改</a>
+										</button>
+										<button class="btn btn-danger">
+											<a style="color:white;"  title="删除" alt="删除" href="merch_fenlei_delete/id/{$v['id']}" onclick="if(confirm('确认要删除分类吗？')==false)return false;">删除</a>
+										</button>
+									</td>
+								</tr>
+							</foreach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<include file="Public/foot" />
+
+

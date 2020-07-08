@@ -1,0 +1,55 @@
+<include file="Public/head" />     
+
+	<div class="contert">
+		<include file="Public/menu_FuWucontect" />
+		<!--服务平台联系管理-->
+		<!--====================主体-----开始==============FuWucontect==========-->
+		<div class="show" id="tabC1">
+			<div class="con">															        		        
+                <div class="page-heading" style="border-bottom:1px solid #000000; padding:20px;"> 
+				    <h4>服务平台联系管理</h4>
+				</div>			
+				<table class="table table-hover">		    	   
+				<thead>
+				    <tr>
+				      <th>编号</th>
+				      <th>姓名</th>
+				      <th>手机号</th>
+				      <th>qq/微信</th>				      
+				      <th>咨询内容</th>
+				     <th>提交时间</th>
+				      <th>操作</th>
+				    </tr>
+				</thead>
+				<tbody>
+				  <foreach name="info" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+                            <td>{$v.realname}</td>
+							<td>{$v.tel_contect}</td>
+							<td>{$v.qq}<br>{$v.weixin}</td>
+							<td>{$v.zixun_content}</td>
+                            <td>
+                          		  <?=date("Y-m-d H:i:s",$v['time_set']);?>
+							</td>
+							<td>
+								<!--<a  title="详情" alt="详情" href="con/id/{$v['id']}">详情</a>-->
+								<a  title="删除" alt="删除" href="delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            </td>
+                        </tr>
+                    </foreach>		   
+				</tbody>
+			</table>
+                
+                	<div class="pages" style="margin-bottom:55px; width: 100%;
+             margin-left: auto;    margin-top: 21px;text-align:center;
+             margin-right: auto;"> {$pages}</div>
+	</div>
+			</div>		    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+
+</html>

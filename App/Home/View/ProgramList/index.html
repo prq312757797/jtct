@@ -1,0 +1,119 @@
+
+<include file="Public/head" />
+		
+		<div class="tab" style="width:90%;height:auto;margin:0px auto;background-color:#CAE1FF;padding:20px;margin-top:20px;border-radius:6px;">
+			<div class="tab-cont">	
+					<ol class="breadcrumb">
+						<li><a href="./?refresh"><i class="fa fa-home"></i></a></li>
+						<li><a href="./index.php?c=system&amp;a=&amp;">系统</a></li>
+						<li class="active">平台列表</li>
+					</ol>
+					<div class="alert alert-danger">
+						温馨提示：
+						<i class="fa fa-info-circle"></i>
+						Hi，尊敬的服务商：<span class="text-strong">“深圳市吉泰创投有限公司”</span>您好，您当前账户的可用虚拟余额为
+						<span class="text-strong">￥<label style="color:red">{$user_balance}</label></span>元，冻结虚拟余额为<span class="text-strong">￥<label style="color:red">{$dj_balance}</label></span>元，<!--现金为:<span class="text-strong" style="color: red">0元</span>-->
+					</div>
+					<!--搜索框-->
+					<!--<form action="./index.php" method="get" role="form">
+						<input type="hidden" name="c" value="account">
+						<input type="hidden" name="a" value="display">
+						<div class="form-group">
+							<div class="input-group">
+								<input type="text" class="form-control " placeholder="请输入微信公众号名称/客户姓名/小程序名称" name="keyword" id="s_keyword" value="">
+								<input type="text" class="form-control hide" placeholder="请输入微信公众号ID" name="s_uniacid" id="s_uniacid" value="">
+								<div class="input-group-btn">
+									<button class="btn btn-default"><i class="fa fa-search"></i> 搜索</button>
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>									
+								</div>
+							</div>
+						</div>
+					</form>	-->
+					<!--按钮-->	
+					<div class="input-group" style="margin-bottom: 20px;">
+        			<!--<a class="btn btn-primary" href=""><i class="fa fa-plus"></i> 添加公众号</a>-->
+					<a class="btn btn-primary" style="margin-left:20px; border-color:#149BDF; background-color:#149BDF;" href="{:U('ProgramList/addprogram_info')}"><i class="fa fa-plus"></i> 添加微信小程序</a>		
+					<!--<a class="btn btn-primary" style="margin-left:20px; border-color:#42CA4C; background-color:#04C7DB" href=""><i class="fa fa-plus"></i> 添加支付宝小程序</a>-->					
+            	</div>
+				<!--客户列表-->	
+	<ul class="list-unstyled account">
+				
+	  <foreach name="list" item="v">
+	    <li>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="row clearfix">
+						<div class="col-xs-6">
+						  	<span style="cursor:pointer; color:#999;" class="setmeal-hover">
+								服务商 : {$v.user_company} | 
+							</span>
+						    <span style="cursor:pointer; color:#999;" class="setmeal-hover">
+								客户 : {$v.shanghu_realname}  |
+							</span>
+                             <span style="cursor:pointer; color:#999;" class="setmeal-hover">
+								手机号 : {$v.shanghu_tel} 
+							</span>                               
+						</div>						
+						<div class="col-xs-6 text-right">							
+						   <notempty name="v['function_id']">
+						   		<a class="btn btn-default" href="__ROOT__/admin.php/index/index?shanghu_id={$v.shanghu_id}" target="_blank" style="color:#3C763D" class="manage">
+							  		管理微信小程序
+							  		<!--{$v.qianyue_program_id}-->
+						  		</a>
+						   	<else/>
+							   	<a class="btn btn-default" href="__ROOT__/adp.php/index/index?shanghu_id={$v.shanghu_id}" target="_blank" style="color:#3C763D" class="manage">
+							  		管理微信小程序
+							  		<!--{$v.qianyue_program_id}-->
+							  	</a>
+						   </notempty>
+						  
+						  	</button> 
+						</div>						
+					</div>
+				</div>
+				<ul class="panel-body list-group">
+					<li class="row list-group-item" style="padding-top: 15px;height: 80px;">
+						<div class="col-xs-12 col-sm-12 col-md-2 col-lg-1">
+							<if condition="$v.qianyue_is_tired eq 1">未生成小程序
+							<else/>
+								<img src="__ROOT__/Uploads/{$v.program_logo}" class="" width="50" height="50">						
+							</if>
+						</div>
+						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-5 item" style="font-size:16px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;">
+							<font style="">{$v.qianyue_appmcheng}</font><br>
+							<span class="label label-info">微信小程序</span>
+						</div>
+															
+						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 item text-right" style="float: right; width: 28%!important;">
+							<span style="width:80px; text-align:center; display:block;">								
+								<a href="javascript:void(0)">
+								   <i class="fa fa-2x fa-check-circle text-success" style="position:absolute; top:15px; margin-left: 30px; color:#5cb85c;" data-toggle="tooltip" data-placement="top" title="成功接入"></i>
+								</a>								
+							</span>								
+							<div style="display:inline-block; border-left:1px #DDD solid; padding-left:20px; margin-left:20px;">
+								<a href="{:U('ProgramList/PLqianyue',array('program_id'=>$v['qianyue_program_id']))}" class="btn btn-sm btn-primary" style="color:#fff;"><i class="fa fa-book"></i>签约信息</a>
+								<a href="{:U('ProgramList/PLcanshu',array('program_id'=>$v['qianyue_program_id']))}" class="btn btn-sm btn-primary" style="color:#fff;"><i class="fa fa-pencil"></i>参数编辑</a>
+							</div>							
+						</div>
+					</li>
+	<!--服务期限-->
+					<div class="list-group-bottom" style="background-color:white;padding-top:20px;">
+						<div class="col-xs-6 list-group-bottom-left" style="width: 88%">														
+						    <span id="pp" style="color:green;width:24%">服务有效期 : <?=date("Y-m-d H:i:s",$v['qianyue_beian_time']);?> ~ <?=date("Y-m-d H:i:s",$v['qianyue_end_time']);?></span>
+						</div>
+						<div class="col-xs-6 text-right list-group-bottom-right" style="width: 12%;">
+							<label>ID：<a href="javascript:void(0)" style="color:blue">{$v.qianyue_id}</a></label>
+						</div>
+					</div>
+	<!--服务期限-->
+				</ul>
+		    </div>
+	    </li>	
+	      </foreach>
+	</ul>				
+																								
+		</div>
+	</div>
+	<include file="Public/foot" />		
+</body>
+</html>

@@ -1,0 +1,43 @@
+
+	<include file="Public/head" />
+		<div class="tab" style="width:80%;height:auto;margin:20px auto;background-color:#CAE1FF;padding:20px;border-radius:6px;">
+			<div class="tab-cont">					
+				<h2 class="page-header">客户管理</h2>	 
+				<div class="clearfix">
+					<a href="{:U('Index/index')}" class="tile img-rounded">
+						<!--<span class="glyphicon glyphicon-briefcase"></span>-->
+						<button class="btn btn-info"><span>我的账户</span></button>
+					</a>
+					<a href="{:U('User/index')}" class="tile img-rounded">
+						 <!--<span class="glyphicon glyphicon-user"></span>-->
+						<button class="btn btn-info"><span>用户管理</span></button>
+					</a>						
+				</div>	
+				
+				<h2 class="page-header">平台管理</h2>
+				<div class="clearfix" >		           
+					<div class="clearfix">
+						<a href="{:U('ProgramList/index')}" class="tile img-rounded">
+							<!--<span class="glyphicon glyphicon-th-large"></span>-->
+							<button class="btn btn-info"><span>平台列表</span></button>
+						</a>									            
+			       </div>
+			    </div> 
+			    
+			    <h2 class="page-header">财务管理</h2>
+				<div class="clearfix">					  
+					<a href="{:U('Systems/record_xf')}" class="tile img-rounded">
+						<!--<span class="glyphicon glyphicon-usd"></span>-->
+						<button class="btn btn-info"><span>消费记录</span></button>
+					</a>
+					<a href="{:U('Systems/record_cz')}" class="tile tile-2x img-rounded">
+						<!--<span class="glyphicon glyphicon-picture"></span>-->
+						<button class="btn btn-info"><span>充值记录</span></button>
+					</a>								
+				</div>			
+			</div>
+		</div>
+		<include file="Public/foot" />
+	</body>
+
+</html>

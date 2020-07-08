@@ -1,0 +1,52 @@
+<include file="Public/head" />
+<div class="contert">
+			<h2 style="    width: 50%;
+    float: left;">小程序模板 风格管理</h2>
+				<div style="float:right;margin-bottom:20px;    margin-top: 20px;">
+						
+			<a href="__ROOT__/adz.php/Formwork/add_banben_fg?bid={$bid}"><button type="" class="btn btn-primary">添加风格</button></a>
+			<!--		<button class="btn btn-danger"onclick="history.go(-1)">返回</button>
+			-->
+			<a class="btn btn-default" href="__ROOT__/adz.php/Formwork/banben?id={$back_id}">返回</a><!--回到版本号列表，需要得到版本类型id-->
+				
+</div>	
+		    <table class="table table-hover">		    	   
+				<thead>
+				    <tr>
+				    <th>编号</th>
+				    <th>风格编号</th>
+				    <th>风格名称</th>
+				    <th>风格差价</th>
+					<th>所属版本号</th>
+					<th>状态</th>
+				    <th>操作</th>
+				    </tr>
+				</thead>
+				<tbody>
+				  <foreach name="info" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+                            <td>{$v.name}</td>
+                            <td>{$v.remark}(<span style="color:red;">{$v.count_img}</span>)</td>
+                            <td>{$v.price}</td>
+							<td>{$v.leixing_name}</td>
+							
+							<td>
+								<if condition="$v['state'] eq 1">可用</if>
+								<if condition="$v['state'] eq 2"><span style="color:red;">禁用</span></if>
+							</td>
+							<td>
+								<a  title="修改" alt="修改" href="__ROOT__/adz.php/Formwork/edit_banben_fg/id/{$v['id']}">修改</a>
+								<a  title="删除" alt="删除" href="__ROOT__/adz.php/Formwork/delete_banben_fg/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            </td>
+                        </tr>
+                    </foreach>		   
+				</tbody>
+			</table>
+		
+						
+		</div>
+	<div class="pages" style=" width: 100%;
+             margin-left: auto;    margin-top: 21px;text-align:center;
+             margin-right: auto;"> {$pages}</div>
+	</div>

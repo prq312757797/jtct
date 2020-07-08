@@ -1,0 +1,94 @@
+<include file="Public/head" />
+<include file="Public/menu_gold" />
+<div id="content">
+	<div id="content-header">
+		<h1>价格调整</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="{:U('Index/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+		<a href="#" class="current">价格调整</a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+						<span class="icon">
+							<i class="icon-th"></i>
+						</span>
+						<h5>价格调整</h5>
+						<h5 id="time">{$list.16.Date}</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th style="width:33%;">商品/平台价格</th>
+								<th style="width:33%;">回购</th>
+								<th style="width:33%;">销售</th>
+							</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>黄金</td>
+									<td>							
+										<a  href="javascript:;" val="{$info.0.id}" class="change_num">{$info.0.control_price}</a>
+					 					<input type="text" class="sort_text w40x" value="{$info.0.control_price}" style="display:none;">
+									</td>
+									<td>
+										<a  href="javascript:;" val="{$info.1.id}" class="change_num">{$info.1.control_price}</a>
+					 					<input type="text" class="sort_text w40x" value="{$info.1.control_price}" style="display:none;">
+									
+									</td>
+								</tr>
+								<tr>
+									<td>白银</td>
+									<td>
+										<a  href="javascript:;" val="{$info.2.id}" class="change_num">{$info.2.control_price}</a>
+					 					<input type="text" class="sort_text w40x" value="{$info.2.control_price}" style="display:none;">
+										
+									</td>
+									<td>
+										<a  href="javascript:;" val="{$info.3.id}" class="change_num">{$info.3.control_price}</a>
+					 					<input type="text" class="sort_text w40x" value="{$info.3.control_price}" style="display:none;">
+										
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<include file="Public/foot" />
+<script>
+
+	//异步列表页的内容     ==============================================
+	$(".change_num").click(function(){
+		var self_input=$(this).parents('td').children('input')
+		var that=this
+
+		$(this).css("display","none");
+		self_input.css("display","block");
+		self_input.focus();
+
+		self_input.blur(function(){
+			$(that).text(self_input.val());
+			$(that).css("display","block");
+			self_input.css("display","none");
+			 $.post('__ROOT__/adp.php/Gold/ajax_change_text',{'id':$(that).attr("val"),'text_val':self_input.val()},function(date){
+	        if(date==1){
+	        	alert("成功");
+	        }else{
+	
+	        }
+        },'json');
+		});
+	})
+</script> 
+

@@ -1,0 +1,102 @@
+<include file="Public/head" />
+	<div class="tab" style="width:80%;height:auto;margin:10px auto;background-color:#CAE1FF;padding:20px; border-radius:6PX;">
+		<div class="tab-cont">									
+   			<div class="center">
+   				<div class="conter-center">
+   					<h4 style="padding:10px;border-bottom:1px dashed #000000;">请填写小程序基本信息:</h4>
+   				  	<form class="form-horizontal" role="form" action="__URL__/addprogram" method="post" onsubmit="return checkdate();">		
+						<div class="form-group">
+							<label for="lastname" class="col-sm-2 control-label">小程序名称:</label>
+							<div class="col-sm-9">
+								<input type="text" name="appmcheng" class="form-control" id="appmcheng" placeholder="请填写小程序的名称" onkeyup="this.value=this.value.replace(/\s+/g,'')">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="lastname" class="col-sm-2 control-label">原始ID:</label>
+							<div class="col-sm-9">
+								<input type="text" name="start_id" class="form-control" id="start_id"  placeholder="请填写小程序的原始ID" onkeyup="this.value=this.value.replace(/\s+/g,'')">	
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="lastname" class="col-sm-2 control-label">APPID：</label>
+							<div class="col-sm-9">
+								<input type="text" name="appid" class="form-control" id="appid" placeholder="请填写小程序的APPID" onkeyup="this.value=this.value.replace(/\s+/g,'')"> 
+							</div>							
+						</div>
+						<div class="form-group">
+							<label for="lastname" class="col-sm-2 control-label">AppSecret：</label>
+							<div class="col-sm-9">
+								<input type="text" name="appsecret" class="form-control" id="appsecret" placeholder="请填写小程序AppSecret" onkeyup="this.value=this.value.replace(/\s+/g,'')">						  
+							</div>
+						</div>				 				
+ 
+   					   <h4 style="padding:10px;border-bottom:1px dashed #000000;">小程序支付模式:</h4>					
+						<div class="form-group">
+							<label for="lastname" class="col-sm-2 control-label">支付方式:</label>
+							<div class="col-sm-9">
+								<select class="form-control" name="payment">
+									<option>个人支付</option>
+									<option>服务商支付</option>										
+								</select>
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="lastname" class="col-sm-2 control-label">商户号:</label>
+							<div class="col-sm-9">
+								<input type="text" name="shanghu_num" class="form-control" id="shanghu_num" onkeyup="this.value=this.value.replace(/\s+/g,'')">	
+								<div class="help-block"></div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="lastname" class="col-sm-2 control-label">支付密钥：</label>
+							<div class="col-sm-9">
+								<input type="text" name="pay_key" class="form-control" id="pay_key" onkeyup="this.value=this.value.replace(/\s+/g,'')"> 
+							</div>							
+						</div>	
+						<button type="submit" class="btn btn-primary" style="margin-left:200px;">下一步</button>
+                   </form>  
+   			    </div>
+   		   </div>    		             
+		</div>
+	</div>	        
+	<include file="Public/foot" />
+	
+	<script>
+		function checkdate(){
+			if(!$("#appmcheng").val()){
+                alert("请填写小程序名称名");
+                $("#appmcheng").focus();
+                return false;
+            }
+			if(!$("#start_id").val()){
+                alert("请填写原始ID");
+                $("#start_id").focus();
+                return false;
+            }
+			
+			if(!$("#appid").val()){
+                alert("请填写APPID");
+                $("#appid").focus();
+                return false;
+            }
+			if(!$("#appsecret").val()){
+                alert("请填写AppSecret");
+                $("#appsecret").focus();
+                return false;
+            }
+			/*if(!$("#shanghu_num").val()){
+                alert("请填写商户号");
+                $("#shanghu_num").focus();
+                return false;
+            }
+			if(!$("#pay_key").val()){
+                alert("请填写支付密钥");
+                $("#pay_key").focus();
+                return false;
+            }*/
+			
+		}
+	</script>
+	</body>
+</html>

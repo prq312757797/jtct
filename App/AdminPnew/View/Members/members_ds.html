@@ -1,0 +1,117 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_members" />
+		<!--单身管理-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">	
+				<div style="border-bottom:1px solid #000000;">
+					<h3 style="margin:20px 0px 20px 20px;">单身管理</h3>
+				</div>	
+				<table id="maintable" class="table table-hover table-responsive">
+		            <thead class="navbar-inner">
+		                <tr>
+		                    <th style="width:30px;"><input type="checkbox" id="checkAll"></th>		                    
+		                    <th style="width:140px;text-align:left;">姓名</th>
+		                    <!--<th style="width:120px;">头像</th> -->                   
+		                    <th style="width:100px;">性别/年龄</th>
+		                    <th style="width:100px;">积分</th>
+		                    <th style="width:100px;">媒婆</th>  
+		                      <th style="width:100px;">资料审核状态</th> 
+		                      <th style="width:100px;">设置推荐</th> 
+		                    <th style="width:132px;">操作</th>
+		                </tr>
+		            </thead>
+		            <tbody id="blacklis">		       
+			           	<foreach name="info" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+							 <td style="text-align:left;"><img style="width:50px;height:50px;" src="__ROOT__/Uploads/{$v.headimg}"> {$v.name}</td>
+							
+							<td><if condition="$v.sex eq 1">男<else/>女</if>&nbsp/&nbsp<empty name="v['age']">密<else/>{$v.age}</empty></td>
+							
+							<td>{$v.integral}</td>
+							<td>{$v.name_np}</td>
+							 <td>
+							 	<if condition="$v.state eq 1">
+							 		<div class="peng_is_ok peng_ok">
+							 			<input type="hidden" value="{$v.id}">
+							 			<span>正常</span>
+							 		</div>
+							 	</if>
+							 	<if condition="$v.state eq 2">
+							 		<div class="peng_is_ok peng_not">
+							 			<input type="hidden" value="{$v.id}"><span>待审</span>
+							 		</div>
+							 	</if>
+							 	<if condition="$v.state eq 3">
+							 		<div class="peng_is_ok peng_not">
+							 			<input type="hidden" value="{$v.id}">
+							 			<span>禁用</span>
+							 		</div>
+							 	</if>
+							 </td>
+							<td>
+							   		<if condition="$v.is_recommend eq 1">
+							   		<div class="peng_is_ok peng_ok">
+							 			<input type="hidden" a="1"  value="{$v.id}"><span>已推荐</span>
+							 		</div>
+							   		</if>
+							   		<if condition="$v.is_recommend eq 2">
+							   		<div class="peng_is_ok peng_not">
+							 			<input type="hidden" a="1"  value="{$v.id}"><span>未推荐</span>
+							 		</div>
+							   		</if>
+							</td>
+                            <td>
+                        
+                           	    <a class="btn btn-default" title="详情" alt="详情" href="aishenmembers_con/id/{$v['id']}" >详情</a>
+                     		    <a class="btn btn-default" title="通过" alt="通过" href="say_yes?id={$v['id']}&from=1" >通过</a>
+                     		    <a class="btn btn-default" title="禁用" alt="禁用" href="say_no?id={$v['id']}&from=1" >禁用</a>
+                      
+								<!--  <a class="btn btn-danger" style="color:white;" title="删除" alt="删除" href="delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+							-->
+                            </td>
+                        </tr>
+                    </foreach>	
+            		</tbody>
+        		</table>
+            </div>	    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+<script>
+	$(".peng_is_ok").click(function(){
+		var onw_id=$(this).children('input').val();
+		var style_a=$(this).children('input').attr("a");
+		var that = this;
+		//style_a   1：异步推荐 、2：异步明星 
+		 $.post('__ROOT__/admin.php/Members/ajax_change_state',{'id':onw_id,'style_a':style_a},function(date){
+	        if(date==1){
+	        	if($(that).attr("class")=="peng_is_ok peng_ok"){
+	        		$(that).attr("class","peng_is_ok peng_not");
+	        		
+	        		if(style_a==1){
+	        			$(that).children('span').text("未推荐");
+	        		}else if(style_a==2){
+	        			$(that).children('span').text("一般红娘");
+	        		}
+	        		
+	        	}else if($(that).attr("class")=="peng_is_ok peng_not"){
+	        		$(that).attr("class","peng_is_ok peng_ok");
+	        	//	$(that).children('span').text("正常");
+	        		if(style_a==1){
+	        			$(that).children('span').text("已推荐");
+	        		}else if(style_a==2){
+	        			$(that).children('span').text("明星红娘");
+	        		}
+	        	}
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>
+</html>

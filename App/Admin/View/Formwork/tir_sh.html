@@ -1,0 +1,74 @@
+<include file="Public/head" />
+<div class="contert">
+			<h2 style="    width: 50%;
+    float: left;">小程序模板生成绑定管理</h2>
+				<div style="float:right;margin-bottom:20px;    margin-top: 20px;">
+				<!--	<a href="leixing"><button type="" class="btn btn-primary">模板类型管理</button></a>
+
+					<a href="add"><button type="" class="btn btn-primary">添加小程序模板</button></a>
+			--><!--		<button class="btn btn-danger"onclick="history.go(-1)">返回</button>
+			--></div>	
+		    <table class="table table-hover">		    	   
+				<thead>
+				    <tr>
+				      <th>编号</th>
+						<th >小程序名称</th>
+						<th >服务商公司</th>
+						<th >商户账号</th>
+						<th >模板类型</th>
+						<th >模板版本</th>
+						<th >价格</th>
+						<th >审核状态</th>
+						<th >是否生成模板</th>
+						<th >申请时间</th>
+				      <th>操作</th>
+				    </tr>
+				</thead>
+				<tbody>
+				  <foreach name="shanghu" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+							<td>
+								<empty name="shanghu['appmcheng']">
+									未绑定
+									<else/>
+									{$v.appmcheng}
+								</empty>
+								</td>
+							<td>{$v.agency_name}</td>
+							<td>{$v.shagnhu_name}</td>
+
+							<td>{$v.muban_name}</td>
+							<td>{$v.muban_bb_name}</td>
+							<td>{$v.muban_price}</td>
+
+							<td>
+								<if condition="$v.state eq 1">通过审核</if>
+								<if condition="$v.state eq 2">审核中</if>
+								<if condition="$v.state eq 3">禁用</if>
+							</td>
+							<td>
+								<if condition="$v.is_tired eq 1">未生成</if>
+								<if condition="$v.is_tired eq 2">已生成</if>
+							</td>
+							<td>
+								<?=date("Y-m-d H:i:s",$v['add_time']);?>
+							</td>
+							<td>
+								<a  title="生成模板" alt="生成模板" href="__ROOT__/adz.php/Formwork/tired_on/id/{$v['id']}">生成模板</a>
+							</td>
+							<!--<td>
+								<a  title="修改" alt="修改" href="__ROOT__/adz.php/Formwork/edit/id/{$v['id']}">详情</a>
+								<a  title="删除" alt="删除" href="delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            </td>-->
+                        </tr>
+                    </foreach>		   
+				</tbody>
+			</table>
+		
+						
+		</div>
+	<div class="pages" style=" width: 100%;
+             margin-left: auto;    margin-top: 21px;text-align:center;
+             margin-right: auto;"> {$pages}</div>
+	</div>

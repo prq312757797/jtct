@@ -1,0 +1,332 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_distribution" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">
+				<div style="height:60px;border-bottom:1px solid #000000;padding:20px;background:skyblue;">
+					<h4 style="float:left;">分销佣金设置管理 <!--<small>总数: <span>0</span></small>--></h4>
+					<if condition="($program_id neq JT201712021113483120) and ($program_id neq JT201802032149345468)">
+						<a href="fx_lever_add"><button class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="float:right;">添加新等级</button></a>
+			
+					</if>
+				</div>
+				<if condition="$program_id eq JT201712021113483120"><!--蔡氏养生发展下线分销-->
+					<style>
+						td{
+							    border: 1px solid;
+							    padding: 17px 24px;
+							    text-align: center;
+							    width: 6%;
+						}
+						.sort_text{
+							display:none;width: 80px;text-align: center;    margin-left: auto;margin-right: auto;
+						}
+					</style>
+					<div class="alert alert-danger" style="margin:10px 20px;">
+						提示: 点击金额进行编辑，点击金额以外内容，完成编辑。
+					</div>
+					<table style="margin-top:2px;">
+						<tr > 
+							<td style="font-size:18px;">一级分销佣金（元）</td>
+							<td>初级代理消费</td>
+							<td>中级代理消费</td>
+							<td>高级代理消费</td>
+						</tr>
+						<tr> 
+							<td>初级代理</td>
+							<td>
+								<a  href="javascript:;" val="{$list.0.id}" text_name="price_fy" class="edit_text">{$list.0.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.0.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.1.id}" text_name="price_fy" class="edit_text">{$list.1.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.1.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.2.id}" text_name="price_fy" class="edit_text">{$list.2.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.2.price_fy}" >
+							</td>
+						</tr>
+						<tr> 
+							<td>中级代理</td>
+							<td>
+								<a  href="javascript:;" val="{$list.3.id}" text_name="price_fy" class="edit_text">{$list.3.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.3.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.4.id}" text_name="price_fy" class="edit_text">{$list.4.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.4.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.5.id}" text_name="price_fy" class="edit_text">{$list.5.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.5.price_fy}" >
+							</td>
+						</tr>
+						<tr> 
+							<td>高级代理</td>
+							<td>
+								<a  href="javascript:;" val="{$list.6.id}" text_name="price_fy" class="edit_text">{$list.6.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.6.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.7.id}" text_name="price_fy" class="edit_text">{$list.7.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.7.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.8.id}" text_name="price_fy" class="edit_text">{$list.8.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.8.price_fy}" >
+							</td>
+						</tr>
+					</table>
+					
+					<table style="margin-top:12px;">
+						<tr> 
+							<td style="font-size:18px;">二级分销佣金（元）</td>
+							<td>初级代理消费</td>
+							<td>中级代理消费</td>
+							<td>高级代理消费</td>
+						</tr>
+						<tr> 
+							<td>初级代理</td>
+							<td>
+								<a  href="javascript:;" val="{$list.9.id}" text_name="price_fy" class="edit_text">{$list.9.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.9.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.10.id}" text_name="price_fy" class="edit_text">{$list.10.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.10.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.11.id}" text_name="price_fy" class="edit_text">{$list.11.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.11.price_fy}" >
+							</td>
+						</tr>
+						<tr> 
+							<td>中级代理</td>
+							<td>
+								<a  href="javascript:;" val="{$list.12.id}" text_name="price_fy" class="edit_text">{$list.12.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.12.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.13.id}" text_name="price_fy" class="edit_text">{$list.13.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.13.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.14.id}" text_name="price_fy" class="edit_text">{$list.14.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.14.price_fy}" >
+							</td>
+						</tr>
+						<tr> 
+							<td>高级代理</td>
+							<td>
+								<a  href="javascript:;" val="{$list.15.id}" text_name="price_fy" class="edit_text">{$list.15.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.15.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.16.id}" text_name="price_fy" class="edit_text">{$list.16.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.16.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.17.id}" text_name="price_fy" class="edit_text">{$list.17.price_fy}</a>
+							 	<input type="text" class="sort_text" value="{$list.17.price_fy}" >
+							</td>
+						</tr>
+					</table>
+					<elseif condition="$program_id eq JT201802032149345468"/><!--易选购发展下线分销-->
+					<style>
+						td{
+							border: 1px solid;
+							padding: 17px 24px;
+							text-align: center;
+							width: 6%;
+						}
+						.sort_text{
+							display:none;width: 80px;text-align: center;    margin-left: auto;margin-right: auto;
+						}
+					</style>
+					<div class="alert alert-danger" style="margin:10px 20px;">
+						提示: 点击金额进行编辑，点击金额以外内容，完成编辑。
+					</div>
+					<table style="margin-top:2px;">
+						<tr >
+							<td style="font-size:18px;">一级分销佣金（元）</td>
+							<td>vip1 价格</td>
+							<td>vip2 价格</td>
+							<td>vip3 价格</td>
+						</tr>
+						<tr>
+							<td>vip1</td>
+							<td>
+								<a  href="javascript:;" val="{$list.0.id}" text_name="price_fy" class="edit_text">{$list.0.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.0.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.1.id}" text_name="price_fy" class="edit_text">{$list.1.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.1.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.2.id}" text_name="price_fy" class="edit_text">{$list.2.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.2.price_fy}" >
+							</td>
+						</tr>
+						<tr>
+							<td>vip2</td>
+							<td>
+								<a  href="javascript:;" val="{$list.3.id}" text_name="price_fy" class="edit_text">{$list.3.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.3.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.4.id}" text_name="price_fy" class="edit_text">{$list.4.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.4.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.5.id}" text_name="price_fy" class="edit_text">{$list.5.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.5.price_fy}" >
+							</td>
+						</tr>
+						<tr>
+							<td>vip3</td>
+							<td>
+								<a  href="javascript:;" val="{$list.6.id}" text_name="price_fy" class="edit_text">{$list.6.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.6.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.7.id}" text_name="price_fy" class="edit_text">{$list.7.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.7.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.8.id}" text_name="price_fy" class="edit_text">{$list.8.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.8.price_fy}" >
+							</td>
+						</tr>
+					</table>
+
+					<table style="margin-top:12px;">
+						<tr>
+							<td style="font-size:18px;">二级分销佣金（元）</td>
+							<td>vip1 价格</td>
+							<td>vip2 价格</td>
+							<td>vip3 价格</td>
+						</tr>
+						<tr>
+							<td>vip1</td>
+							<td>
+								<a  href="javascript:;" val="{$list.9.id}" text_name="price_fy" class="edit_text">{$list.9.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.9.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.10.id}" text_name="price_fy" class="edit_text">{$list.10.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.10.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.11.id}" text_name="price_fy" class="edit_text">{$list.11.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.11.price_fy}" >
+							</td>
+						</tr>
+						<tr>
+							<td>vip2</td>
+							<td>
+								<a  href="javascript:;" val="{$list.12.id}" text_name="price_fy" class="edit_text">{$list.12.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.12.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.13.id}" text_name="price_fy" class="edit_text">{$list.13.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.13.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.14.id}" text_name="price_fy" class="edit_text">{$list.14.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.14.price_fy}" >
+							</td>
+						</tr>
+						<tr>
+							<td>vip3</td>
+							<td>
+								<a  href="javascript:;" val="{$list.15.id}" text_name="price_fy" class="edit_text">{$list.15.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.15.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.16.id}" text_name="price_fy" class="edit_text">{$list.16.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.16.price_fy}" >
+							</td>
+							<td>
+								<a  href="javascript:;" val="{$list.17.id}" text_name="price_fy" class="edit_text">{$list.17.price_fy}</a>
+								<input type="text" class="sort_text" value="{$list.17.price_fy}" >
+							</td>
+						</tr>
+					</table>
+					<else/>
+					
+					<div class="alert alert-danger" style="margin:10px 20px;">
+					提示: 没有设置等级的分销商将按默认设置计算提成。商品指定的佣金金额的优先级仍是最高的，也就是说只要商品指定了佣金金额就按商品的佣金金额来计算，不受等级影响
+				</div>
+				<form action="" method="post">
+					<table class="table table-responsive table-hover" >
+						<thead>
+						<tr>
+							<th style="width:180px;">等级名称</th>
+							<th style="width:100px;">一级佣金比例</th>
+							<th style="width:100px;">二级佣金比例</th>
+							<th style="width:280px;">升级条件</th>
+							<th style="width:280px;">操作</th>
+						</tr>
+						</thead>
+						<tbody>
+						<foreach name="list" item="v">
+							<tr style="background:#f2f2f2">
+								<td>{$v.title}</td>
+								<td>{$v.bl_lever_1}</td>
+								<td>{$v.bl_lever_2}</td>
+								<td>默认等级</td>
+								<td>
+									<a class="btn btn-default btn-sm"  href="fx_lever_edit/id/{$v['id']}" title="编辑">编辑</a>
+									
+									<if condition='$program_id neq JT201803151807521312'>
+										<a class="btn btn-default btn-sm"   href="fx_lever_delete/id/{$v['id']}" title="编辑">删除</a>
+									</if>
+								</td>
+							
+							</tr>
+						</foreach>
+						
+
+						</tbody>
+					</table>
+				</form>
+				</if>
+				
+				
+			</div>		    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+<script>
+
+	//异步列表页的内容     ==============================================
+
+	$(".edit_text").click(function(){
+		var self_input=$(this).parent('td').children('input')
+		var that=this
+
+		$(this).css("display","none");
+		self_input.css("display","block");
+		self_input.focus();
+		self_input.blur(function(){
+			//异步修改排序
+			$(that).text(self_input.val());
+			$(that).css("display","block");
+			self_input.css("display","none");
+			 $.post('__ROOT__/adp.php/Distribution/ajax_change_text',{'style':1,'text_name':$(that).attr("text_name"),'id':$(that).attr("val"),'text_val':self_input.val()},function(date){
+	        if(date==1){
+	        	alert("成功");
+	        	location.reload();
+	        }else{
+	        	
+	        }
+        },'json');
+		});
+	})
+</script>
+</body>
+</html>

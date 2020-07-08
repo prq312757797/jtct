@@ -1,0 +1,110 @@
+<div class="modal fade" id="mystar_tuikuan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog"style="width:800px;height: auto;">
+						<div class="modal-content" >
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									&times;
+								</button>
+								<h4 class="modal-title" id="myModalLabel">
+									订单退款
+								</h4>
+							</div>
+							<div class="modal-body" style="min-height: 320px;">
+								<form action="" method="post">
+									<div class="form-group line-height">
+									    <label for="firstname" class="col-sm-3 control-label">订单号：</label>
+									    <div class="col-sm-8">
+									      <input type="text" class="form-control" id="order_num_tk" readonly>
+									      <div class="help-block"></div>
+									    </div>
+								    </div>
+								    <div class="form-group line-height">
+									    <label for="firstname" class="col-sm-3 control-label">订单已付款：</label>
+									    <div class="col-sm-8">
+									      <input type="text" class="form-control" id="price_payed" readonly>
+									      <div class="help-block"></div>
+									    </div>
+								    </div>
+								     <div class="form-group line-height">
+									    <label for="firstname" class="col-sm-3 control-label">退款金额：</label>
+									    <div class="col-sm-8">
+									      <input type="text" class="form-control" id="price_tk" >
+									      <div class="help-block"></div>
+									    </div>
+								    </div>
+								   
+								</form>
+							</div>
+							<div class="modal-footer">																			
+								<button type="button" class="btn btn-primary" id="div_submit_tk">确认退款</button>	
+								<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>	
+							</div>
+						</div><!-- /.modal-content -->
+					</div>
+						
+					<!-- /.modal -->
+				</div>
+<input type="hidden" value="{$program_id}" id="program_id">
+<script>
+	$("#div_submit").click(function(){
+		if(!$("#change_price").val()){
+			alert("请填写修改价格");
+			return false;
+		}
+
+		$.post('__ROOT__/adp.php/CarOrder/change_price',{'order_num':$("#order_num").val(),'price':$("#change_price").val()},function(date){	
+			if(date==1){
+				alert("设置成功");
+				//window.location.href='__ROOT__/adp.php/Order/allder_shouhuo';
+				window.location.reload();
+			}else{
+				alert("设置失败");
+			}
+        },'json');
+	})
+	
+		$("#div_submit_tk").click(function(){
+			
+		if(!$("#price_tk").val()){
+			alert("请填写退款金额");
+			return false;
+		}
+		/*if($("#price_tk").val()>$("#price_payed").val()){
+			alert("退款金额有误");
+			$("#price_tk").val("")
+			return false;
+		}*/
+
+		$.post('__ROOT__/index.php/Wxtk/refund_111',{'order_num':$("#order_num_tk").val(),'refund_fee':$("#price_tk").val(),'buy_state':1,'program_id':$("#program_id").val()},function(date){	
+	
+			if(date==1){
+				$.post('__ROOT__/adp.php/order/tk_finish',{'order_num':$("#order_num_tk").val(),'pirce_tuikuan':$("#price_tk").val()},function(date){	
+				
+		        },'json');
+		        
+		        alert("退款成功");
+				//window.location.href='__ROOT__/adp.php/Order/allder_shouhuo';
+			//	window.location.reload();
+				
+			}else{
+				alert("退款失败");
+			}
+        },'json');
+	})
+	
+		$(".enter_kd").click(function(){
+		var that=this;	
+	
+		$("#order_num12138").val($(this).attr("a"));
+		$("#price_old").val($(this).attr("b"));
+		
+	})
+		$(".enter_tk").click(function(){
+		var that=this;	
+	
+		$("#order_num_tk").val($(this).attr("a"));
+		$("#price_payed").val($(this).attr("b"));
+		
+	})
+		
+</script>		

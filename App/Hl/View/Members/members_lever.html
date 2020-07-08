@@ -1,0 +1,77 @@
+<include file="Public/head" />
+<include file="Public/menu_members" />
+<div id="content">
+	<div id="content-header">
+		<h1>会员等级</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 会员</a>
+		<a href="#" class="current">会员等级</a>
+
+		<a href="members_lever_add" class="add_button"><button class="btn" >+添加等级</button></a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>会员等级</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th style="width:30px;"><input type="checkbox"></th>
+								<th>等级</th>
+								<th>等级名称</th>
+								<th>会员价格</th>
+								<th>折扣</th>
+								
+								<th>是否启用</th>
+								<th>操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							<foreach name="member_level" item="v">
+								<tr>
+									<td><input type="checkbox"></td>
+									<td id="member_level">{$v.member_level}</td>
+									<td id="member_level_name">{$v.member_level_name}</td>
+									<td >{$v.price}</td>
+									<td>{$v.discount}</td>
+									
+									<td id="state">
+										<if condition="$v.state eq 0">否</if>
+										<if condition="$v.state eq 1">是</if>
+									</td>
+									<td>
+										
+										<a  title="修改" alt="修改" href="__ROOT__/adp.php/Members/members_lever_edit?id={$v.id}" >
+											<button class="btn btn-default">修改</button>
+										</a>
+<if condition="$v.cannot_d eq 2">
+										<a style="color:white;"  title="删除" alt="删除" href="__ROOT__/adp.php/Members/members_lever_delete?id={$v.id}" onclick="if(confirm('确认删除吗？')==false)return false;">
+											<button class="btn btn-danger">删除</button>
+										</a>										
+</if>
+
+									</td>
+								</tr>
+							</foreach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<include file="Public/foot" />
+
+

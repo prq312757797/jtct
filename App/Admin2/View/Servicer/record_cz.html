@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>深恒利服务商管理</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="__ROOT__/Public/css/Recharge.css" />
+<style>
+.contert{
+width:80%;
+height:100%;
+/*border:1px solid hotpink;*/
+margin:0px auto;
+border-radius:6px;
+}
+</style>
+	</head>
+	<body>
+			<include file="Public/head" />
+		
+		<div class="contert">
+			<h2 style="float:left;">充值记录</h2>	
+			<button class="btn btn-primary" style="float:right;margin-top:20px;" onclick="history.go(-1)">返回</button>
+		    <table class="table table-hover">
+				  <thead>
+				   <tr style="width:100%;">
+                        <th style="width:5%;">编号</th>
+						<th style="width:5%;">流水号</th>
+                        <th style="width:5%;">充值金额</th>
+                        <th style="width:5%;">充值时间</th>
+                        <th style="width:5%;">服务商公司</th>
+						<th style="width:5%;">备注</th>
+						<th style="width:5%;">操作人</th>
+                        <th style="width:5%;">操作</th>
+                    </tr>
+				  </thead>
+				  <tbody>
+				      <foreach name="record_cz" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+							 <td>{$v.running_num}</td>
+                            <td>{$v.recharge_gold}</td>
+							 <td>
+							 	<?=date("Y-m-d H:i:s",$v['recharge_time']);?>
+							 </td>
+                            <td>{$v.user_company}</td>
+							<td>{$v.content}</td>
+							<td>{$v.man_action}</td>
+                            <td>
+								<!--<a  title="修改" alt="修改" href="edit/user_id/{$v['user_id']}">修改</a>-->
+								<!--<a  title="修改" alt="修改" href="{:U('Servicer/edit'),array('user_id'=>$v['user_id'])}">修改</a>-->
+								<!--<a  title="修改" alt="修改" href="__ROOT__/index.php/Admin/Servicer/edit/user_id/{$v['user_id']}">修改</a>-->
+								<a  title="删除" alt="删除" href="__ROOT__/index.php/Admin/Servicer/delete3/id/{$v['id']}}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            </td>
+                        </tr>
+                    </foreach>		   
+				  </tbody>
+			</table>
+<div class="pages" style=" width: 100%;
+             margin-left: auto;    margin-top: 21px;text-align:center;
+             margin-right: auto;"> {$pages}</div>
+	</div>
+			<div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+			                    &times;
+			                </button>
+			                <h4 class="modal-title" id="myModalLabel">
+			                                                 您确定要删除吗？
+			                </h4>
+			            </div>    
+			            <div class="modal-footer">
+			                <button type="button" class="btn btn-default" data-dismiss="modal">放弃删除 </button>               
+			                <button type="button" class="btn btn-primary">确定删除 </button>                            
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<a href="../service.html"><button class="btn btn-group" style="float:right;margin:260px 80px 0px 0px;">返回</button></a>
+	   </div>								
+	</body>
+</html>

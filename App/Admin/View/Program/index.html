@@ -1,0 +1,59 @@
+<include file="Public/head" />
+<div class="contert">
+	<h2 style="    width: 15%;
+    float: left;">模板文件管理</h2>
+	<div style="float:right;margin-bottom:20px;    margin-top: 20px;">
+		<a href="add"><button type="" class="btn btn-primary">添加模板文件</button></a>
+		<button class="btn btn-danger"onclick="history.go(-1)">返回</button>
+	</div>
+	<table class="table table-hover">
+		<thead>
+		<tr style="width:100%;">
+			<th >编号</th>
+			<th >小程序</th>
+			<th >小程序id</th>
+			<th >更新时间</th>
+			<th >最后操作人</th>
+			<th >最近下载时间</th>
+			<th >操作</th>
+		</tr>
+		</thead>
+		<tbody>
+		<foreach name="user_info" item="v">
+			<tr>
+				<td>{$v.id}</td>
+				<td>{$v.program_name}</td>
+				<td>{$v.program_id}</td>
+				<td>
+					<?=date("Y-m-d H:i:s",$v['time']);?>
+				</td>
+				<td>{$v.man_action}</td>
+				<td>
+					<notempty name="v['time_last_download']">
+						<?=date("Y-m-d H:i:s",$v['time_last_download']);?>
+						<else/>未被下载
+					</notempty>
+
+				</td>
+				<td>
+					<a  title="更新版本" alt="更新版本" href="__ROOT__/adz.php/Program/edit?id={$v['id']}&gengxin=1">更新版本</a>
+					<if condition="$is_admin neq 3">
+						<a  title="下载" alt="下载" href="__ROOT__/adz.php/Program/load_zip/id/{$v['id']}">下载</a>
+					</if>
+
+				<!--<a  title="删除" alt="删除" href="__ROOT__/adz.php/Program/delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+				-->
+					<a  title="历史版本" alt="历史版本" href="__ROOT__/adz.php/Program/history/program_id/{$v['program_id']}">历史版本</a>
+			
+				</td>
+			</tr>
+		</foreach>
+		</tbody>
+	</table>
+
+
+</div>
+<div class="pages" style=" width: 100%;
+             margin-left: auto;    margin-top: 21px;text-align:center;
+             margin-right: auto;"> {$pages}</div>
+</div>

@@ -1,0 +1,56 @@
+		<style>
+			.modal_text{
+				text-align: center;
+			    color: #555555;
+			    font-size: 28px;
+			    font-weight: normal;
+			}
+			.modal_label{
+				width: 21%;
+			    float: left;
+			    text-align: center;
+			    height: 30px;
+			    line-height: 41px;
+			}
+		</style>
+
+		<!-- 按钮触发模态框 -->
+<a id="add-event_2" style="display:none;" data-toggle="modal" href="#modal-add-event_2" class="btn btn-success btn-mini"><i class="icon-plus icon-white"></i> </a>
+		<div class="modal hide" id="modal-add-event_2">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h3> 订单改价</h3>
+			</div>
+			<div class="modal-body">
+			
+				<div class="control-group">
+					<label class="control-label modal_label">交易单号：</label>
+					<div class="controls">
+						 <input type="text" id="order_num12138" readonly class="form-control w70 mt5">
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label modal_label">商品原价：</label>
+					<div class="controls">
+						 <input type="text" id="price_old" readonly class="form-control w70 mt5">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label modal_label">修改价格：</label>
+					<div class="controls">
+						 <input type="text" id="change_price" class="form-control w70 mt5">
+					</div>
+				</div>
+				
+			</div>
+			<input type="hidden" value="" id="openid" name="openid"> 
+			<div class="modal-footer">
+				<a href="#" class="btn" data-dismiss="modal">取消</a>
+			
+				<input type="submit" value="确认" class="btn btn-primary " id="div_submit">
+			</div>
+		</div>
+
+			
+			

@@ -1,0 +1,86 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_goods" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">									
+			<!--	<p style="margin:20px;">回收站管理</p>	-->                
+					<!--<p style="margin:10px 40px;">回收站管理</p>-->	 
+				<div style="border-bottom:1px solid #000000;padding:20px;height:60px;">
+					<!--	<h4>回收站管理</h4>-->
+						 <p style="float:left;font-size:18px;">回收站管理</p>	
+                 	<div class="input-group" style="margin:0px 40px;    width: 20%; float: right;">				 
+	                 	<input type="text" class="input-sm form-control" id="text_str" value="" placeholder="商品编号/名称"><span class="input-group-btn">                  		
+	               	    <a href="test?str=" id="a_str"><button class="btn btn-sm btn-primary" style="float:right;">搜索</button></a>	
+	               	</div> 
+				</div>
+			<!--	<div class="input-group" style="margin:0px 40px;">				 
+                    <input type="text" class="input-sm form-control" name="keyword" value="" placeholder="ID/名称/编号/条码/商户名称"><span class="input-group-btn">                  		
+                    <button class="btn btn-sm btn-primary" type="submit">搜索</button></span>
+                </div> -->
+               
+                <form action="">
+					<table class="table table-hover table-responsive" > 
+					    <thead class="navbar-inner">
+					        <tr>
+					            <th style="width:30px;"><input type="checkbox" id="checkAll">编号</th>
+					            <th style="width:60px;text-align:center;">排序</th>
+					            <th style="width:80px;text-align:center;">商品名称</th>
+					            <th style="width:100px;">图片</th>
+					            <th style="width:60px;">价格</th>
+					            <th style="width:60px;">库存</th>
+					            <th style="width:70px;">销量</th>
+					           <!-- <th style="width:60px;">状态</th>-->
+					            <th style="width:100px;">操作</th>
+					        </tr>
+					    </thead>
+					    <tbody id="bots">
+					        	<foreach name="goods" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+							 <td>{$v.sort}</td>
+							 <td>{$v.goods_title}</td>
+							 <td>
+							 	<img style="width:100px;height:100px;" src="__ROOT__/Uploads/{$v.image}">
+							
+							<!-- <img style="width:100px;height:100px;" src="__ROOT__/Uploads/2017-09-01/59a936cf44aa2.jpg">
+							--> </td>
+							 <td>{$v.price_sell}</td>
+							  <td>{$v.number}</td>
+							  <td>{$v.sell_num}</td>
+		
+							 <!--<td>
+							 	<if condition="$v.goods_state eq 1">上架</if>
+							 	<if condition="$v.goods_state eq 3">下架</if>
+							 </td>-->
+                            <td>
+                            	<a  title="详情" alt="详情" href="goods_edit/id/{$v['id']}" ><span style="border:1px solid;padding:3px;">详情</span></a>
+                            	<a  title="恢复商品" alt="恢复商品" href="goods_huishou_back/id/{$v['id']}" ><span style="border:1px solid;padding:3px;">恢复商品</span></a>
+								<a  title="彻底删除" alt="彻底删除" href="goods_delete/id/{$v['id']}" onclick="if(confirm('确认彻底删除吗？')==false)return false;"><span style="border:1px solid;padding:3px;">彻底删除</span></a>
+							</td>
+                        </tr>
+                    </foreach>	
+					    </tbody> 				   
+	                </table>  
+
+				 </form>
+			</div>
+			      
+			</div>			    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+	<div class="pages" style=" width: 100%;margin-left: auto;text-align:center;margin-top: -7px;margin-bottom: 10px;margin-right: auto;"> 
+	{$pages}
+</div>
+<script>
+//商品编号、名称模糊搜索			
+	$("#text_str").change(function(){
+		var href=$("#a_str").attr("href");
+		$("#a_str").attr("href","test?str="+$("#text_str").val());
+	})
+			
+</script>
+</body>
+</html>

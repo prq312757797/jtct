@@ -1,0 +1,226 @@
+<include file="Public/head" />   
+<!--百度编辑器-->
+    	    <script type="text/javascript" charset="utf-8" src="__ROOT__/Public/ueditor/ueditor.config.js"></script>
+	    <script type="text/javascript" charset="utf-8" src="__ROOT__/Public/ueditor/ueditor.all.min.js"> </script>
+	    
+	    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+	    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+	    <script type="text/javascript" charset="utf-8" src="__ROOT__/Public/ueditor/lang/zh-cn/zh-cn.js"></script>
+ 
+<style type="text/css">
+	.tabs ul li a{
+		padding: 20px 40px;
+	}
+</style>
+	<div class="contert">
+		<include file="Public/menu_merch" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con" style="min-height: 840px;">
+				<div style="border-bottom:1px solid #000000;padding:20px;">
+					<h4>基础设置:</h4>
+				</div>
+				<div class="tabs-container">
+	                <div class="tabs">
+						<ul class="nav nav-tabs"style="height:60px;width:100%;">
+							<li class="active">
+								<a data-toggle="tab" href="#tab-basic" aria-expanded="true"> 基本</a>
+							</li>
+							<!--<li class="">
+								<a data-toggle="tab" href="#tab-trade" aria-expanded="false"> 入驻设置</a>
+							</li>	-->
+							<li class="">
+								<a data-toggle="tab" href="#tab-babkc" aria-expanded="false">多商户端</a>
+							</li>	
+							<li class="">
+								<a data-toggle="tab" href="#tab-backs" aria-expanded="false">入驻申请协议</a>
+							</li>	
+						</ul>
+						<div class="tab-content">						
+							<div id="tab-basic" class="tab-pane active">
+							
+						      <form action="{:U('Merch/user_submit_0',array('id'=>$user_info['id']))}" method="post">
+							  	
+								<div class="tab-pane active" id="tab_basic">
+									<div class="form-group">
+									    <label class="col-sm-2 control-label">是否开启多商户</label>
+									    <div class="col-sm-10">
+									    	<if condition="$is_on_dsh eq 1">
+									    		<label class="radio-inline">
+										        	<input type="radio" name="is_on_dsh" value="2"> 不开启
+										        </label>
+										        <label class="radio-inline">
+										        	<input type="radio" name="is_on_dsh" value="1" checked="checked"> 开启
+										        </label>
+									    	</if>
+									        <if condition="$is_on_dsh eq 2">
+									    		<label class="radio-inline">
+										        	<input type="radio" name="is_on_dsh" value="2" checked="checked"> 不开启
+										        </label>
+										        <label class="radio-inline">
+										        	<input type="radio" name="is_on_dsh" value="1" > 开启
+										        </label>
+									    	</if>
+									        <div class="help-block"></div>
+									    </div>
+								    </div>								
+									<!--<div class="form-group">
+									    <label class="col-sm-2 control-label">商户提现方式</label>
+									    <div class="col-sm-10 col-xs-12">								              								
+									        <label for="applycashalipay" class="checkbox-inline">
+									            <input type="checkbox" name="" value="1" id="applycashalipay"> 手动提现到支付宝
+									        </label>
+									
+									        <label for="applycashcard" class="checkbox-inline">
+									            <input type="checkbox" name="data[applycashcard]" value="1" id="applycashcard"> 手动提现到银行卡
+									        </label>
+									
+									        <div class="help-block">支持的银行请到<a href="" target="_blank">【银行设置】</a>进行设置,使用手动提现到银行卡必须设置支持的银行</div>
+									
+									        <div class="help-block">提示: 提现方式支持多选</div>
+									    </div>
+									</div>-->
+									<div class="form-group">
+										<label class="col-sm-2 control-label"></label>
+										<div class="col-sm-10 col-xs-12">
+											<input type="submit" value="确认提交" class="btn btn-primary">
+										</div>
+								    </div>
+						        </div>
+						      </form>	
+							</div>
+							<div id="tab-trade"  class="tab-pane">
+							  <form action="">
+						        <div class="tab-pane  active" id="tab_enter">
+						        	<div class="form-group">
+									    <label class="col-sm-2 control-label">手机入驻开关</label>
+									    <div class="col-sm-10">
+									         <label class="radio-inline">
+									         	<input type="radio" class="open_apply" name="" value="0"> 不允许
+									         </label>
+									        <label class="radio-inline">
+									        	<input type="radio" class="open_apply" name="" value="1" checked="checked"> 允许
+									        </label>
+									        <div class="help-block">是否允许商户从手机端申请入驻</div>
+									    </div>
+									</div>
+									<div class="form-group protocol-group">
+									    <label class="col-sm-2 control-label">显示入驻申请协议</label>
+									    <div class="col-sm-10">
+									        <label class="radio-inline">
+									        	<input type="radio" name="" value="0"> 隐藏
+									        </label>
+									        <label class="radio-inline">
+									        	<input type="radio" name="" value="1" checked="checked"> 显示
+									        </label>
+									         <span class="help-block"></span>
+									    </div>						   
+									</div>
+									<div class="form-group">
+									    <label class="col-sm-2 control-label">入驻宣传头部图片</label>
+									    <div class="col-sm-10 col-xs-12">      
+											<div class="input-group ">
+												<input type="text" name="data[regbg]" value="" class="form-control" autocomplete="off">
+												<span class="input-group-btn">
+													<button class="btn btn-default" type="button" onclick="showImageDialog(this);">选择图片</button>
+												</span>
+											</div>
+											<div class="input-group " style="margin-top:.5em;">
+												<img src="../addons/ewei_app/plugin/merch/template/mobile/default/static/images/regbg.png" onerror=";this.title='图片未找到.'" class="img-responsive img-thumbnail" width="150">
+												<em class="close" style="position:absolute; top: 0px; right: -14px;" title="删除这张图片" onclick="deleteImage(this)">×</em>
+											</div>       
+											<span class="help-block">入驻宣传封面 建议尺寸 640 * 320</span>
+									    </div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label"></label>
+										<div class="col-sm-10 col-xs-12">
+											<input type="submit" value="确认提交" class="btn btn-primary">
+										</div>
+								    </div>
+                                </div>
+                                </form>
+							</div>
+						    <div id="tab-babkc" class="tab-pane">	
+						      <form action="">
+						     	<div class="tab-pane  active" id="tab_web">
+						     		<div class="form-group">
+										<label class="col-sm-2 control-label">子商户登录地址</label>
+										<div class="col-sm-10 col-xs-12">
+											<p class="form-control-static">
+											<!--	<a href="javascript:;" class="js-clip" title="点击复制链接" data-url="http://www.jt.com/adsh.php/Login/index.html?ownid={$ownid}">http://www.jt.com/adsh.php/Login/index.html?ownid={$ownid}</a>
+											-->		<a href="javascript:;" class="js-clip" title="点击复制链接" data-url="https://sz800800.cn/adsh.php/Login/index.html?ownid={$ownid}">https://sz800800.cn/adsh.php/Login/index.html?ownid={$ownid}</a>
+									
+											</p>
+										</div>
+									</div>								
+									<!--<div class="form-group">
+										<label class="col-sm-2 control-label">登录页面宣传图</label>
+										<div class="col-sm-10 col-xs-12">									
+											<div class="input-group ">
+												<input type="text" name="data[regpic]" value="images/5958/2017/09/cuw8W1uEtwLLwaIe83iED3t33a3EAV.png" class="form-control" autocomplete="off">
+												<span class="input-group-btn">
+													<button class="btn btn-default" type="button" onclick="showImageDialog(this);">选择图片</button>
+												</span>
+											</div>
+											<div class="input-group " style="margin-top:.5em;">
+												<img src="http://res.cnmmsc.org/attachment/images/5958/2017/09/cuw8W1uEtwLLwaIe83iED3t33a3EAV.png" onerror="this.src='../addons/ewei_app/plugin/merch/template/mobile/default/static/images/regbg.png'; this.title='图片未找到.'" class="img-responsive img-thumbnail" width="150">
+												<em class="close" style="position:absolute; top: 0px; right: -14px;" title="删除这张图片" onclick="deleteImage(this)">×</em>
+											</div>	
+											<span class="help-block">入驻宣传封面 建议尺寸400 * 180</span>
+										</div>
+									</div>-->
+									<!--<div class="form-group">
+										<label class="col-sm-2 control-label"></label>
+										<div class="col-sm-9 col-xs-12">
+											<input type="submit" value="确认提交" class="btn btn-primary">
+										</div>
+								    </div>-->
+						       </div>	
+						      </form>
+						    </div>
+						    <div id="tab-backs" class="tab-pane">	
+						      <form action="{:U('Merch/xieyi_submit',array('id'=>$info['id']))}" method="post">
+						     	<div class="tab-pane  active" id="tab_protocol" style="">
+						     		<div class="form-group">
+								        <label class="col-sm-2 control-label">协议名称</label>
+									    <div class="col-sm-9 col-xs-12">
+									        <input type="text" class="form-control valid" name="xieyi_title" value="{$info.xieyi_title}" aria-invalid="false">
+									  <span class="help-block"></span>		
+									    </div>
+									</div>
+								
+									<div class="form-group" style="">
+									    <label class="col-sm-2 control-label">协议内容</label>
+									    <div class="col-sm-9 col-xs-12" style="">
+									    		<textarea rows="32" name="xieyi_con" id="goods_content" >{$info.xieyi_con}</textarea>
+												<span class="help-block"></span>						    	 									    	
+									    </div>
+									</div>	
+									<div class="form-group">
+										<label class="col-sm-2 control-label"></label>
+										<div class="col-sm-10 col-xs-12">
+											<input type="submit" value="确认提交" class="btn btn-primary">
+										</div>
+								    </div>
+								</div>	
+							  </form>
+						    </div>
+						  
+						</div>
+					</div>
+				</div>
+			 
+			</div>
+		</div>
+		<!--====================主体  结束===============-->
+	</div>	
+<script type="text/javascript">
+//====================================百度编辑器
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    var ue = UE.getEditor('goods_content');
+</script>
+</body>
+</html>

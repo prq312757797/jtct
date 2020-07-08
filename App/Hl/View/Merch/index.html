@@ -1,0 +1,124 @@
+<include file="Public/head" />
+<include file="Public/menu_merch" />
+<style>
+	.feilei{
+		margin-bottom: 4px;
+		padding: 8px 35px 8px 14px;
+		color: #468847;
+		background-color: #dff0d8;
+		border-color: #d6e9c6;
+	}
+	.function{
+		padding: 3px;
+		float: right;
+		margin-right: 1%;
+		margin-top: 4px;
+	}
+	.title_self{
+		width:100%!important;line-height: 43px!important;font-size: 18px!important;
+	}
+	.con_self{
+		width:100%!important;
+	}
+</style>
+<div id="content">
+	<div id="content-header">
+		<h1>多商户概述</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 多商户系统</a>
+		<a href="#" class="current">多商户概述</a>
+
+
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>多商户概述</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<div class="alert alert-error alert-block">
+							<a class="close" data-dismiss="alert" href="#">×</a>
+							<h4 class="alert-heading">多商户操作介绍</h4>
+								1：子商户入驻有两个方式，后台录入和手机端申请<br/>
+							<if condition="$program_id eq JT201806151732369242">
+								2：后台录入的子商户必须绑定商户管理员便于手机端管理商户
+							</if>
+							
+							
+						</div>
+						<div class="row-fluid">
+							<div class="span12 center" style="text-align: center;">					
+								<ul class="stat-boxes" style="width:100%;">
+									<li style="width:10%;    height: 60px;">
+										<div class="right title_self" >入驻申请管理</div>
+									</li>
+									<li style="width:20%;">
+										<div class="right con_self" >入驻申请中<strong>{$count['k1']}</strong></div>
+									</li>
+									<li style="width:20%;">
+										<div class="right con_self">入驻申请驳回<strong>{$count['k2']}</strong></div>
+									</li>
+									<li style="width:20%;">
+										<div class="right con_self">待入驻商户<strong>{$count['k3']}</strong></div>
+									</li>
+								</ul>
+								
+								<ul class="stat-boxes" style="width:100%;">
+									<li style="width:10%;    height: 60px;">
+										<div class="right title_self" >已入驻商户管理</div>
+									</li>
+									<li style="width:20%;">
+										<div class="right con_self" >入驻中商户<strong>{$count['k4']}</strong></div>
+									</li>
+									<li style="width:20%;">
+										<div class="right con_self">暂停中商户<strong>{$count['k5']}</strong></div>
+									</li>
+									<li style="width:20%;">
+										<div class="right con_self">即将到期的商户<strong>0</strong></div>
+									</li>
+								</ul>
+								
+								<!--<ul class="stat-boxes" style="width:100%;">
+									<li style="width:10%;    height: 60px;">
+										<div class="right title_self" >已完成订单统计</div>
+									</li>
+									<li style="width:20%;">
+										<div class="right con_self" >订单数<strong>0</strong></div>
+									</li>
+									<li style="width:20%;">
+										<div class="right con_self">订单金额<strong>0</strong></div>
+									</li>
+								</ul>
+								<ul class="stat-boxes" style="width:100%;">
+									<li style="width:10%;    height: 60px;">
+										<div class="right title_self" >总订单统计</div>
+									</li>
+									<li style="width:20%;">
+										<div class="right con_self" >订单数<strong>0</strong></div>
+									</li>
+									<li style="width:20%;">
+										<div class="right con_self">订单金额<strong>0</strong></div>
+									</li>
+								</ul>-->
+							</div>	
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<include file="Public/foot" />
+
+

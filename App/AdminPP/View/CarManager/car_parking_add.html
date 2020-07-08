@@ -1,0 +1,96 @@
+<include file="Public/head" />
+<include file="Public/menu_car" />
+<script src="__ROOT__/Public/ys0925/jquery.js"></script>
+<style>
+	.fileinput-button {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.fileinput-button input{
+		position:absolute;
+		right: 0px;
+		top: 0px;
+		opacity: 0;
+		-ms-filter: 'alpha(opacity=0)';
+		font-size: 200px;
+	}
+</style>
+
+<div id="content">
+	<div id="content-header">
+		<h1>发车位置编辑</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="{:U('CarManager/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 车辆管理</a>
+		<a href="{:U('CarManager/fenlei')}" class="tip-bottom">发车位置管理</a>
+		<a href="#" class="current">发车位置编辑</a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-align-justify"></i>
+								</span>
+						<h5>发车位置编辑</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<form action="{:U('CarManager/run_car_parking_add',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+						<div class="control-group">
+							<label class="control-label">排序</label>
+							<div class="controls">
+								<input type="text"  name="sort" value="<?php  echo empty($info['sort'])?1:$info['sort'];?>"/>
+								<span class="help-block">数字越小，排名越靠前</span>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">地址</label>
+							<div class="controls">
+								<input type="text" name="address" value="{$info['address']}" />
+								<span class="help-block"></span>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">经度、纬度</label>
+							<div class="controls">
+								<input type="text" name="lng_lat" value="{$info['lng_lat']}" />
+								<a href="http://lbs.qq.com/tool/getpoint/index.html" target='__blank' class="btn btn-default" type="button">选择坐标</a>
+							
+								<span class="help-block">地理位置  点击<选择坐标>将真实地址的当前坐标内容复制到本框内</span>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">备注</label>
+							<div class="controls">
+								<input type="text" name="remark" value="{$info['remark']}" />
+								<span class="help-block"></span>
+							</div>
+						</div>
+						
+						<div class="form-actions">
+							<button type="submit" class="btn btn-primary">保存</button>
+							
+							<input type="button" onclick="history.back()" class="btn btn-default" value="返回">
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--原来的 modal 框位置-->
+<include file="Public/self_url" />
+<include file="Public/foot" />
+<include file="Public/image_yl" />
+
+
+
+
+

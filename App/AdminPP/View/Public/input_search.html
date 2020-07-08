@@ -1,0 +1,89 @@
+<script>
+    //消除input里面的空格
+	function ignoreSpaces(string) {
+	    var temp = "";
+	    string = '' + string;
+	    splitstring = string.split(" ");
+	    for(i = 0; i < splitstring.length; i++)
+	            temp += splitstring[i];
+	    return temp;
+	}
+    var myURL_input = document.URL;
+    domain_input = myURL_input.split('?');
+    console.log(myURL_input)
+    console.log(domain_input[0])
+
+	//搜索  --子商户名称
+	$("#search_button").click(function(){
+	  location.href=domain_input[0]+'?str='+$("#search_str").val();
+	});
+	
+	//搜索  --会员昵称搜索
+	$("#search_button_members").click(function(){
+	  location.href=domain_input[0]+'?str='+$("#search_str").val();
+	});
+	
+	//搜索  --能量KTV管理员
+	$("#search_button_ktvmanager").click(function(){
+	  location.href=domain_input[0]+'?str='+$("#search_str").val();
+	});
+	
+	//搜索  --能量KTV订单监测
+	$("#search_button_order_ing").click(function(){
+	  location.href=domain_input[0]+'?str='+$("#search_str").val();
+	});
+	
+	//搜索  --商品名称搜索
+	$("#search_button_goods").click(function(){
+		console.log(111111)
+	  location.href=domain_input[0]+'?str='+$("#search_str").val();
+	});
+	
+	
+	//搜索  --子商户管理员候选人
+	$("#search_button_dsh_manerger").click(function(){
+ 	var a=domain_input[0].split("?shop_id=")
+ 
+ 	var b=domain_input[1].split("&")
+	
+   	var c=b[0].split("shop_id=")
+
+	if(b[1]=="change_state=1"){
+
+ 		console.log(a[0]+'?shop_id='+c[1]+'&change_state=1&str='+$("#search_str").val())
+//		return false
+	    location.href=a[0]+'?shop_id='+c[1]+'&change_state=1&str='+$("#search_str").val()
+	}else{
+
+ 		console.log(a[0]+'?shop_id='+c[1]+'&change_state=0&str='+$("#search_str").val())
+//		return false
+	    location.href=a[0]+'?shop_id='+c[1]+'&change_state=0&str='+$("#search_str").val()
+	}
+ 	console.log(domain_input[0])
+ 	console.log(a[0]+'?shop_id='+c[1]+'&str='+$("#search_str").val())
+ 
+
+	});
+	
+	//订单号码
+	$("#search_button_order_num").click(function(){
+
+if(myURL_input.indexOf("?")>-1){
+	console.log("有问号")
+	
+	location.href=domain_input[0]+'?str='+$("#search_str").val()
+}else{
+	location.href=myURL_input+'?str='+$("#search_str").val()
+}
+
+	console.log(a[0]+'?str='+$("#search_str").val())
+//	    location.href=a[0]+'?shop_id='+c[1]+'&change_state=1&str='+$("#search_str").val()
+	});
+	
+	
+	//导出
+	$("#csv_button").click(function(){
+		console.log(222)
+	  location.href=domain_input[0]+'?csv=1'+'&date_1='+$("#st").val()+'&date_2='+$("#et").val();
+	});
+</script>

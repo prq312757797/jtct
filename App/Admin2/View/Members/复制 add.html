@@ -1,0 +1,42 @@
+<include file="Public/head" />
+<style>
+	.self_top{
+	width:100%;
+	margin-top:4px;
+	}
+
+	.self_left{
+	padding-left:12px;
+	width:150px;
+	float:left;
+	}
+	.self_back{
+	margin-top: 12px;
+	float: left;
+	width: 39px;
+	text-align: center;
+	border: 1px solid;
+	padding: 3px;
+	margin-left: 35%;
+	font-size: 12px;
+	border-radius: 3px;
+	}
+</style>
+<form method="post" enctype="multipart/form-data" class="form-x one-form form-auto form-horizontal" id="form" action="{:U('Members/runAdd',array('admin_id'=>$info['admin_id']))}">
+	
+	<div class="self_top">
+		<div class="self_left">管理员昵称:</div>
+		<input type="text" class="input" name="admin_name" size="60" value="{$info.admin_name}">
+	</div>	
+	<div class="self_top">
+		<div class="self_left">密码:</div>
+		<input type="text" class="input" name="admin_psw" size="60" value="">
+	</div>	
+  
+	<div class="self_back" onclick="history.go(-1)">返回</div>		
+	
+	<button style="margin-left: 1%;margin-top: 12px;" id="ajaxForm" type='submit'>保存</button>
+		
+</form>
+
+<div style="clear:both;height:50px;"></div>

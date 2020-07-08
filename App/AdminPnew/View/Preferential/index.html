@@ -1,0 +1,113 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_preferential" />
+		<!--满额立减设置-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con" style="">
+				<div style="border-bottom:1px solid #000000;height:60px; padding:20px;">
+				    <span style="font-size:20px;">满额立减设置</span>
+
+				     <div class="btn btn-default" style=" float: right; " id="more_input">添加优惠项</div>
+				</div> 	
+				
+		<form name="myupload" id="myupload" enctype='multipart/form-data' action="__URL__/pass_lijian_add" method="post">		
+   		   
+   		   <empty name="info">
+   		   	 <div class="col-sm-12" style="margin-top: 15px;">
+	                <div class='input-group'>
+	                    <span class="input-group-addon">单笔订单满</span>
+	                    <input type="text" name="base_buy_money[]"  value="" class="form-control" />
+	                    <span class='input-group-addon'>元 立减</span>
+	                    <input type="text" name="pre_money[]"  value="" class="form-control" />
+	                    <span class='input-group-addon'>元</span>
+				  		<div class="input-group-btn">
+				     		<button type='button' class="btn btn-default ajax_delete" a="{$k}"><i class="fa fa-minus  " >-</i></button>
+				  		</div>
+	                </div>
+	            </div>
+	            
+	            <else/>
+	            <foreach name="info" item="v" key="k">
+	   		    <div class="col-sm-12" style="margin-top: 15px;">
+	                <div class='input-group'>
+	                    <span class="input-group-addon">单笔订单满</span>
+	                    <input type="text" name="base_buy_money[]"  value="{$v.base_buy_money}" class="form-control" />
+	                    <span class='input-group-addon'>元 立减</span>
+	                    <input type="text" name="pre_money[]"  value="{$v.pre_money}" class="form-control" />
+	                    <span class='input-group-addon'>元</span>
+				  		<div class="input-group-btn">
+				     		<button type='button' class="btn btn-default ajax_delete" a="{$k}"><i class="fa fa-minus  " >-</i></button>
+				  		</div>
+	                </div>
+	            </div>
+            </foreach>
+   		   </empty>
+			<div id="muban_b_0"></div>
+            <div class="col-sm-12" style="margin-top: 15px;">
+            	 <div class="form-group">
+		                <label class="col-sm-2 control-label"></label>
+		                <div class="col-sm-9 col-xs-12" style="text-align:right;">
+		                	<input type="submit" onclick="gosubmit2()" id="sales" value="确认提交" class="btn btn-primary">
+		               <!-- 	<input type="button" name="" onclick="history.back()" style="margin-left:10px;" value="返回列表" class="btn btn-default">
+		              -->  </div>
+		            </div> 	
+		    </div>
+		</form>
+		
+		</div>
+		<!--====================主体  结束===============-->
+	</div>	
+	<script>
+		//页面添加好多好多样式内容
+	var val=1;
+   	var val_1=val-1;
+   		
+	 $("#more_input").click(function(){
+	 	console.log(val_1);
+   		var dh = '';
+
+		dh += ' <div class="col-sm-12" style="margin-top: 15px;">  ';
+		dh += ' 	<div class="input-group">  ';	
+		dh += ' 		<span class="input-group-addon">单笔订单满</span>  ';
+		dh += ' 		<input type="text" name="base_buy_money[]"  value="" class="form-control" />  ';
+		dh += ' 		<span class="input-group-addon">元 立减</span>  ';
+		dh += ' 		<input type="text" name="pre_money[]"  value="" class="form-control" /> ';	
+		dh += ' 		<span class="input-group-addon">元</span> ';			
+		dh += ' 		<div class="input-group-btn">  ';
+		dh += ' 			<button type="button" class="btn btn-default ajax_delete"><i class="fa fa-minus  " >-</i></button>  ';
+		dh += ' 		</div> ';
+		dh += ' 	</div> ';
+		dh += ' </div> ';
+		dh += ' <div style="" id="muban_b_'+val;
+		dh += '"></div>';
+		document.getElementById('muban_b_'+val_1).innerHTML = dh;
+		if(val<19){
+			val++;
+			val_1++;	
+		}else{
+			alert("图片限制20个优惠");
+		}
+   })
+	 
+	 function f1(item){
+	 //	item.value = 1
+	 }
+</script>	
+<script>
+	$(".ajax_delete").click(function(){
+		//alert($(this).attr("a"));
+		
+		  $.post('__ROOT__/adp.php/Preferential/delete_lijian',{'key':$(this).attr("a")},function(date){
+    			if(date==1){
+	    			alert("设置成功");
+		        	window.location.reload();
+		        }else{
+		        	alert("操作过于频繁");
+		        }
+
+        },'json');
+	})
+</script>
+</body>
+</html>

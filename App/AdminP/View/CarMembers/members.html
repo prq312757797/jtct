@@ -1,0 +1,100 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_car_members" />
+		<!--平台会员-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">	
+				<div style="border-bottom:1px solid #000000;height:60px;padding:20px;">
+					<!--<h3 style="margin:20px 0px 20px 20px;">会员概述	</h3>-->
+						<p style="float:left;font-size:18px;">平台会员</p>	
+						
+							<div class="input-group" style="margin:0px 40px;    width: 20%; float: right;">				 
+		                 	   <input type="text" class="input-sm form-control" id="search_str" value="" placeholder="会员昵称 / openid" onBlur="this.value=ignoreSpaces(this.value);"><span class="input-group-btn" >                  		
+		               	    	<button class="btn btn-sm btn-primary" id="search_button" type="submit">搜索</button></span>
+		               		</div> 
+	              	 	
+				
+				
+				</div>
+				<table id="maintable" class="table table-hover table-responsive">
+		            <thead class="navbar-inner">
+		                <tr>
+		                    <th style="width:30px;"><input type="checkbox" id="checkAll"></th>		                    
+		                    <th style="width:140px;text-align:left;">会员</th>
+		                              
+		                   <!-- <th style="width:100px;">等级/分组</th>-->
+		                    <th style="width:100px;">注册时间</th>
+		                    <th style="width:104px;">操作</th>
+		                </tr>
+		            </thead>
+		            <tbody id="blacklis">		       
+			           	<foreach name="list" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+							<td style="text-align:left;"><img style="width:50px;height:50px;" src="{$v.head}"> {$v.nickname}</td>
+							
+							<!--<td>{$v.level_name}/{$v.group_name}</td>-->
+							<td>
+							 	 <?php  echo date("Y-m-d H:i:s",$v['register_time']);?>
+							 </td>
+                            <td>
+                            	<a class="btn btn-default" title="详情" alt="详情" href="members_con/id/{$v['id']}" >详情</a>
+							<!--	<a  class="btn btn-danger" style="color:white;" title="删除" alt="删除" href="delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                           -->
+                            </td>
+                        </tr>
+                    </foreach>	
+            		</tbody>
+        		</table>
+        		<div class="pages self_css" > {$pages} </div>
+            </div>	    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+<script>
+    //消除input里面的空格
+	function ignoreSpaces(string) {
+	    var temp = "";
+	    string = '' + string;
+	    splitstring = string.split(" ");
+	    for(i = 0; i < splitstring.length; i++)
+	            temp += splitstring[i];
+	    return temp;
+	}
+    var myURL_input = document.URL;
+
+    domain_input = myURL_input.split('?');
+    console.log(domain_input[0])
+	//搜索
+	$("#search_button").click(function(){
+
+	  location.href=domain_input[0]+'?str='+$("#search_str").val();
+	});
+	
+</script>
+<script>
+	$(".peng_is_ok").click(function(){
+		var onw_id=$(this).children('input').val();
+		//var str01=that.attr("class");
+			//	var arr01=str.split(" ");
+		//alert(arr[1]);
+		var that = this;
+		 $.post('__ROOT__/adp.php/Members/ajax_change_ok',{'id':onw_id},function(date){
+	        if(date==1){
+	        	if($(that).attr("class")=="peng_is_ok peng_ok"){
+	        		$(that).attr("class","peng_is_ok peng_not");
+	        		$(that).children('span').text("黑名单");
+	        	}else if($(that).attr("class")=="peng_is_ok peng_not"){
+	        		$(that).attr("class","peng_is_ok peng_ok");
+	        		$(that).children('span').text("正常");
+	        	}
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>
+</html>

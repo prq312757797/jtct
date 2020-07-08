@@ -1,0 +1,110 @@
+<include file="Public/head" />     
+<include file="Public/menu_beauty" /> 
+		<div id="content">
+			<div id="content-header">
+				<h1>商品管理</h1>
+			</div>
+			<div id="breadcrumb">
+				<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 商品</a>
+				<a href="#" class="current">回收站</a>
+				
+				<!-- <a href="goods_add" class="add_button"><button class="btn" >+添加商品</button></a>-->
+			</div>
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="widget-box">
+							<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+								<h5>回收站</h5>
+							</div>
+							<div class="widget-content nopadding">
+								<table class="table table-bordered table-striped">
+									<thead>
+										<tr>
+											<th style="width:5%;">编号</th>
+											<th style="width:5%;">排序</th>
+											<th style="width:10%;">商品名称</th>
+											<th style="width:10%;">图片</th>
+											<th style="width:5%;">价格</th>
+											<th style="width:5%;">库存</th>
+											<th style="width:5%;">销量</th>
+											<!--<th style="width:5%;">状态</th>-->
+											<th style="width:12%;">操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<foreach name="goods" item="v">
+										<tr>
+											<td class="l_h50">{$v.id}</td>
+											<td class="l_h50">
+												<a  href="javascript:;" val="{$v.id}" class="edit_sort">{$v.sort}</a>
+							 					<input type="text" class="sort_value" value="{$v.sort}" style="display:none;width: 38px;text-align: center;    margin-left: auto;margin-right: auto;">
+											</td>
+											<td class="l_h50">
+												<a  href="javascript:;" val="{$v.id}" text_name="goods_title" class="edit_text">{$v.goods_title}</a>
+											 	<input type="text" class="sort_text" value="{$v.goods_title}" style="display:none;width: 80px;text-align: center;    margin-left: auto;margin-right: auto;">
+											</td>
+											<td>
+											 	<img style="width:55px;height:55px;" src="__ROOT__/Uploads/{$v.image}">
+											</td>
+											<td class="l_h50">
+											  	<a  href="javascript:;" val="{$v.id}" text_name="price_sell" class="edit_text">{$v.price_sell}</a>
+											 	<input type="text" class="sort_text" value="{$v.price_sell}" style="display:none;width: 80px;text-align: center;    margin-left: auto;margin-right: auto;">																						 
+											</td>
+											<td class="l_h50">
+											   	<a  href="javascript:;" val="{$v.id}" text_name="number" class="edit_text">{$v.number}</a>
+											 	<input type="text" class="sort_text" value="{$v.number}" style="display:none;width: 50px;text-align: center;    margin-left: auto;margin-right: auto;">											
+											</td>
+											<td class="l_h50">
+											  	<a  href="javascript:;" val="{$v.id}" text_name="sell_num" class="edit_text">{$v.sell_num}</a>
+											 	<input type="text" class="sort_text" value="{$v.sell_num}" style="display:none;width: 50px;text-align: center;    margin-left: auto;margin-right: auto;">
+											  </td> 
+											<!-- <td class="l_h50">
+											 	<if condition="$v.goods_state eq 1" >
+											 		<div class="peng_is_ok peng_ok " style="margin-top:15px;">
+											 			<input type="hidden" value="{$v.id}">
+											 			<span>上架</span>
+											 		</div>
+												 </if>
+											 	<if condition="$v.goods_state eq 3">
+											 		<div class="peng_is_ok peng_not"  style="margin-top:15px;">
+											 			<input type="hidden" value="{$v.id}">
+											 			<span>下架</span>
+											 		</div>
+											 	</if>
+											 </td>-->
+											<td>
+												<li>
+													<a class="btn btn-default"  title="详情" alt="详情" href="goods_edit/id/{$v['id']}" >详情</a>
+													<a   class="btn btn-info" style="color:white;" title="恢复商品" alt="恢复商品" href="goods_huishou_back/id/{$v['id']}" ><span style="border:1px solid;padding:3px;">恢复商品</span></a>
+												
+					                            	<a   class="btn btn-info" style="color:white;" title="彻底删除" alt="彻底删除" href="goods_delete/id/{$v['id']}" onclick="if(confirm('确认彻底删除吗？')==false)return false;"><span style="border:1px solid;padding:3px;">彻底删除</span></a>
+												
+				                            	</li>
+				                            	
+				                            </td>
+										</tr>
+										</foreach>	 
+									</tbody>
+								</table>	
+								
+
+							</div>
+
+						</div>
+<div class="pages" style=" width: 100%;margin-left: auto;text-align:center;margin-top: -7px;margin-bottom: 10px;margin-right: auto;"> 
+	{$pages}
+</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+            
+	<include file="Public/foot" /> 
+	
+

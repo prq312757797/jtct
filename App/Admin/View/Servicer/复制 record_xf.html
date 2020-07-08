@@ -1,0 +1,75 @@
+<include file="Public/head" />
+<style>
+td{
+text-align:center;
+}
+</style>
+<div style="width:100%;border:1px solid red;min-height:400px;">
+	
+	<h4>服务商管理<notempty name="title">--</notempty>{$title}</h4>
+	<if condition="$show_add eq 1">
+		<a href="add">&nbsp&nbsp添加服务商</a><div style="height:12px;clear:both;"></div>
+	</if>
+	<div style="float:right;border:1px solid ;padding:5px;margin-top: -3%;margin-right: 3%; " >
+	<a href="__ROOT__/index.php/Admin/Servicer/index">返回</a></div>
+
+<form method="post">
+            <table>
+                <tbody>
+                    <tr style="width:100%;">
+                        <th style="width:5%;">编号</th>
+						<th style="width:5%;">流水号</th>
+                        <th style="width:5%;">平台类型</th>
+                        <th style="width:5%;">小程序ID</th>
+                        <th style="width:5%;">平台名称</th>
+						<th style="width:5%;">消费类型</th>
+						<th style="width:5%;">消费金额</th>
+						
+						<th style="width:5%;">余额</th>
+						<th style="width:5%;">消费日期</th>
+						<th style="width:5%;">消费备注</th>
+						<th style="width:5%;">消费状态</th><!--1审核中2成功3失败,退款-->
+                        <th style="width:5%;">操作</th>
+                    </tr>
+                    <foreach name="record_xf" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+							 <td>{$v.running_num}</td>
+                            <td>
+							
+							<if condition="$v.type eq 1">小程序</if>
+							<if condition="$v.type eq 2">公众号</if>
+							</td>
+							 <td>{$v.appid}</td>
+                            <td>{$v.mcheng}</td>
+							<td>{$v.deal_type}
+						
+							</td>
+							<td>{$v.deal_gold}</td>
+							
+							<td>{$v.balance}</td>
+                            <td>
+								<?=date("Y-m-d H:i:s",$v['deal_time']);?>
+							</td>
+							 <td>{$v.content}</td>
+                            <td>
+								<if condition="$v.status eq 1">审核中</if>
+								<if condition="$v.status eq 2">成功</if>
+								<if condition="$v.status eq 3">失败、退款</if>		
+							</td>
+						
+                            <td>
+								<!--<a  title="修改" alt="修改" href="edit/user_id/{$v['user_id']}">修改</a>-->
+								<!--<a  title="修改" alt="修改" href="{:U('Servicer/edit'),array('user_id'=>$v['user_id'])}">修改</a>-->
+								<!--<<a  title="详情" alt="详情" href="__ROOT__/index.php/Admin/Servicer/edit/user_id/{$v['user_id']}">详情</a>-->
+								<a  title="删除" alt="删除" href="__ROOT__/index.php/Admin/Servicer/delete2/id/{$v['id']}}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            </td>
+                        </tr>
+                    </foreach>
+                </tbody>
+            </table>
+</form>
+	<div class="pages" style=" width: 100%;
+             margin-left: auto;    margin-top: 21px;text-align:center;
+             margin-right: auto;"> {$pages}</div>
+</div>

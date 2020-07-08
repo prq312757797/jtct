@@ -1,0 +1,135 @@
+<include file="Public/head" />
+<include file="Public/menu_beauty" />
+<script src="__ROOT__/Public/ys0925/jquery.js"></script>
+<style>
+	.fileinput-button {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.fileinput-button input{
+		position:absolute;
+		right: 0px;
+		top: 0px;
+		opacity: 0;
+		-ms-filter: 'alpha(opacity=0)';
+		font-size: 200px;
+	}
+</style>
+
+<div id="content">
+	<div id="content-header">
+		<h1>导航图标编辑</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="{:U('Indexbeauty/huandeng')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 美容护肤</a>
+		<a href="{:U('Index/danghang')}" class="tip-bottom">导航图标管理</a>
+		<a href="#" class="current">导航图标编辑</a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-align-justify"></i>
+								</span>
+						<h5>导航图标编辑</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<form action="{:U('Indexbeauty/run_daohang_add',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+						<div class="control-group">
+							<label class="control-label">排序</label>
+							<div class="controls">
+								<input type="text"  name="sort" value="<?php  echo empty($info['sort'])?1:$info['sort'];?>"/>
+								<span class="help-block">数字越小，排名越靠前</span>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">标题</label>
+							<div class="controls">
+								<input type="text" name="title" value="{$info['title']}" />
+							</div>
+						</div>
+						<!--<div class="control-group">
+							<label class="control-label">链接</label>
+							<div class="controls">
+								<input type="text" id="url_value" name="url" value="{$info['url']}"/>
+								<span data-input="#advlink" data-toggle="modal" data-target="#myModal" class="input-group-addon btn btn-default">选择链接</span>
+
+							</div>
+						</div>-->
+
+						<div class="control-group ">
+							<label class="control-label">图片</label>
+							<div class="controls">
+								<input type="text" value="{$info['image']}" id="image_name" />
+								<span class="btn btn-success fileinput-button">
+										            <span>上传</span>
+										            <input type="file" name="image02" id="doca"  onchange="javascript:setImagePreviews();">
+										       </span>
+
+								<div class="help-block bd_gray mt15 w81 b_r_4 max_h_165 " style="display:none;" id="image_area">
+									<img class="h_92 p_1" src="" id="loc_img" />
+								</div>
+
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">状态</label>
+							<empty name="info">
+								<div class="controls">
+									<label class="radio-inline is_show">
+										<input type="radio" name="is_show" value="1" checked=""> 显示
+									</label>
+									<label class="radio-inline is_show">
+										<input type="radio" name="is_show" value="2"> 隐藏
+									</label>
+								</div>
+								<else/>
+								<if condition="$info.is_show eq 1">
+									<div class="controls">
+										<label class="radio-inline is_show">
+											<input type="radio" name="is_show" value="1" checked=""> 显示
+										</label>
+										<label class="radio-inline is_show">
+											<input type="radio" name="is_show" value="2"> 隐藏
+										</label>
+									</div>
+								</if>
+								<if condition="$info.is_show eq 2">
+									<div class="controls">
+										<label class="radio-inline is_show">
+											<input type="radio" name="is_show" value="1" > 显示
+										</label>
+										<label class="radio-inline is_show">
+											<input type="radio" name="is_show" value="2" checked=""> 隐藏
+										</label>
+									</div>
+								</if>
+							</empty>
+
+						</div>
+						<div class="form-actions">
+							<button type="submit" class="btn btn-primary">保存</button>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--原来的 modal 框位置-->
+<include file="Public/self_url" />
+<include file="Public/foot" />
+<include file="Public/image_yl" />
+
+
+
+
+

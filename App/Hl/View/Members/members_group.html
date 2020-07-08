@@ -1,0 +1,62 @@
+<include file="Public/head" />
+<include file="Public/menu_members" />
+<div id="content">
+	<div id="content-header">
+		<h1>会员分组</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 会员</a>
+		<a href="members_group" class="current">会员分组</a>
+
+		<a href="members_group_add" class="add_button"><button class="btn" >+添加分组</button></a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>会员分组</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th style="width:25px;"><input type="checkbox"></th>
+								<th>分组名称</th>
+								<th>会员数</th>
+								<th>操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							<foreach name="member_group" item="v">
+								<tr>
+									<td><input type="checkbox"></td>
+									<td id="member_group_name">{$v.member_group_name}</td>
+									<td id="num_member"></td>
+									<td>
+										<a class="btn btn-default  btn-sm" href="">分组会员</a>
+										<if condition="$v.cannot_d eq 2">
+										<button class="btn btn-danger">
+											<a style="color:white;"  title="删除" alt="删除" href="__ROOT__/adp.php/Members/members_group_delete?id={$v.id}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+										</button>
+										</if>
+									</td>
+								</tr>
+							</foreach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<include file="Public/foot" />
+
+

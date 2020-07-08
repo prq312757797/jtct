@@ -1,0 +1,104 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_distribution" />
+		<!--分销代理管理-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">	
+				<div style="border-bottom:1px solid #000000;height:60px; padding:20px;">
+				    <span style=" font-size:20px;">分销代理管理</span>
+				<!--    <a href="artical_add"><button class="btn btn-primary" style="float:right;">+添加新文章</button></a>
+				--></div>	
+				<form action="" method="post">
+                  <table class="table table-responsive table-hover">
+			        <thead class="navbar-inner">
+			            <tr>
+			                <th style="width:5%"><input type="checkbox"></th>
+			               		
+			                <th style="width:25%">代理级别</th>
+			            <if condition="$program_id eq JT201712021113483120"><!--蔡氏养生发展下线分销-->
+			                <th style="width:25%">购买价格</th>
+			                <th style="width:25%">购买数量</th>
+						</if>
+						<if condition="$program_id eq JT201802032149345468"><!--易选购发展下线分销-->
+							<th style="width:25%">支付价格（元）</th>
+						</if>
+			              <!--  <th style="width: 200px;">操作</th>-->
+			            </tr>
+			        </thead>	
+			        <tbody id="main_content">	
+			        		<foreach name="list" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+							
+							 <td>{$v.lever_title}</td>
+							<if condition="$program_id eq JT201712021113483120"><!--蔡氏养生发展下线分销-->
+							 	<td>{$v.buy_price}</td>
+								<td>{$v.condition}</td>
+							</if>
+							<if condition="$program_id eq JT201802032149345468"><!--易选购发展下线分销-->
+								<td>
+								<a  href="javascript:;" val="{$v.id}" class="edit_sort">{$v.condition_price}</a>
+							<input type="text" class="sort_value" value="{$v.condition_price}" style="display:none;width: 38px;text-align: center;    margin-left: auto;margin-right: auto;">
+						
+								</td>
+							</if>
+
+                          
+                        </tr>
+                    </foreach>	
+			        </tbody>
+			        </table>                
+               </form>			
+			</div>		    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+<script>
+	//广告ajax 显示隐藏
+	$(".peng_is_ok").click(function(){
+		var onw_id=$(this).children('input').val();
+	
+		var that = this;
+		 $.post('__ROOT__/adp.php/Index/ajax_change_show',{'id':onw_id,'from_id':"2"},function(date){
+	        if(date==1){
+	        	if($(that).attr("class")=="peng_is_ok peng_ok"){
+	        		$(that).attr("class","peng_is_ok peng_not");
+	        		$(that).children('span').text("隐藏");
+	        	}else if($(that).attr("class")=="peng_is_ok peng_not"){
+	        		$(that).attr("class","peng_is_ok peng_ok");
+	        		$(that).children('span').text("显示");
+	        	}
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>
+
+<script>
+	//异步修改商品 排序
+	$(".edit_sort").click(function(){
+		var self_input=$(this).parent('td').children('input')
+		var that=this
+		
+		$(this).css("display","none");
+		self_input.css("display","block");
+		self_input.focus();
+		self_input.blur(function(){
+			//异步修改排序
+			$(that).text(self_input.val());
+			$(that).css("display","block");
+			self_input.css("display","none");
+			 $.post('__ROOT__/adp.php/Distribution/ajax_edit',{'id':$(that).attr("val"),'text':self_input.val()},function(date){
+	        if(date==1){
+	        	alert("成功");
+	        }else{
+	        	
+	        }
+        },'json');
+		});
+	})
+</script>
+</body>
+</html>

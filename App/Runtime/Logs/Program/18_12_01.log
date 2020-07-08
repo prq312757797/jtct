@@ -1,0 +1,485 @@
+[ 2018-12-01T11:49:29+08:00 ] 127.0.0.1 /pg.php/Index/build_order?array_id=10970%2C&openid=otNaZ5ZD2RtPzPSLFehvaD5oquFg&program_id=JT201710101645145951
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `man_shouhuo` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`man_shouhuo`,`man_phone`,`man_address` FROM `man_shouhuo` WHERE `state` = 1 AND `is_used` = 1 AND `openid` = 'otNaZ5ZD2RtPzPSLFehvaD5oquFg' AND `program_id` = 'JT201710101645145951' LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`goods_id`,`buy_num`,`guige_key`,`guige_key02`,`guige_name02`,`guige_remark`,`guige_price`,`guige_name`,`is_use_guige`,`is_on_lever_price`,`members_price_discount` FROM `order` WHERE `id` IN ('10970','')  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`cost`,`kezhong`,`fenlei_1`,`fenlei_2`,`price_sell_1`,`price_sell_2`,`json_price_cl`,`guige_json_price_cl`,`fenlei_zhekou`,`is_on_mixpay`,`image`,`goods_title`,`price_sell`,`integral_sell`,`goods_subtitle01`,`goods_subtitle02`,`goods_subtitle03`,`goods_subtitle04`,`goods_subtitle05`,`is_on_wholesale_discount` FROM `goods` WHERE `id` = 494 LIMIT 1   [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: guige_cailiao D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 1546 行.
+SQL: SHOW COLUMNS FROM `preferential_record` [ RunTime:0.0090s ]
+SQL: SELECT preferential_record.id as pre_id,preferential_record.num,preferential_record.preferential_id,preferential.title,preferential.image,preferential.conditions,preferential.pre_price FROM `preferential_record` left join preferential ON preferential_record.preferential_id=preferential.id  WHERE ( preferential_record.openid='otNaZ5ZD2RtPzPSLFehvaD5oquFg' and preferential_record.program_id='JT201710101645145951' ) GROUP BY preferential_id  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `members` WHERE ( program_id='JT201710101645145951'and openid='otNaZ5ZD2RtPzPSLFehvaD5oquFg' ) LIMIT 1   [ RunTime:0.2450s ]
+SQL: SHOW COLUMNS FROM `member_level` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `member_level` WHERE ( id='' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `fx_goods_buy` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `fx_goods_buy` WHERE ( program_id='JT201710101645145951'and lever_id='0' )  [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: order_num D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 1575 行.
+NOTIC: [8] Undefined variable: arr1116 D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 1580 行.
+NOTIC: [8] Undefined variable: change_price D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 1580 行.
+SQL: SHOW COLUMNS FROM `rebate_record` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `rebate_record` WHERE ( state=0 and openid='otNaZ5ZD2RtPzPSLFehvaD5oquFg'and program_id='JT201710101645145951' ) LIMIT 1   [ RunTime:0.0070s ]
+
+[ 2018-12-01T15:40:05+08:00 ] 127.0.0.1 /pg.php/Dsh/assistant_listktv?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-01T15:42:03+08:00 ] 127.0.0.1 /pg.php/Dsh/assistant_listktv?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0090s ]
+SQL: SELECT assistant_add.id,assistant_add.name,assistant_add.tel,assistant_add.time_registe,assistant_add.num,
+		time_stop,assistant_add.time_agree,assistant_add.shop_id,assistant_add.state,
+(case when assistant_add.num is not null then assistant_add.num else 0 end) as ass_num 
+
+FROM `assistant_add` 
+
+WHERE assistant_add.program_id = 'JT201808090855119076' [ RunTime:0.0090s ]
+
+[ 2018-12-01T15:43:37+08:00 ] 127.0.0.1 /pg.php/Dsh/assistant_listktv?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0090s ]
+SQL: SELECT assistant_add.id,assistant_add.name,assistant_add.tel,assistant_add.time_registe,
+		time_stop,assistant_add.time_agree,assistant_add.shop_id,assistant_add.state,
+(case when assistant_add.num is not null then assistant_add.num else 0 end) as ass_num 
+
+FROM `assistant_add` 
+
+WHERE assistant_add.program_id = 'JT201808090855119076' [ RunTime:0.0100s ]
+
+[ 2018-12-01T15:43:46+08:00 ] 127.0.0.1 /pg.php/Dsh/assistant_listktv?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `assistant_add` [ RunTime:0.0090s ]
+SQL: SELECT assistant_add.id,assistant_add.name,assistant_add.tel,assistant_add.time_registe,
+		time_stop,assistant_add.time_agree,assistant_add.shop_id,assistant_add.state,
+(case when assistant_add.num is not null then assistant_add.num else 0 end) 
+
+FROM `assistant_add` 
+
+WHERE assistant_add.program_id = 'JT201808090855119076' [ RunTime:0.0090s ]
+
+[ 2018-12-01T17:39:35+08:00 ] 127.0.0.1 /pg.php/Index/index_show?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `qianyue` [ RunTime:0.0100s ]
+SQL: SELECT `state`,`muban_type`,`function_id` FROM `qianyue` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 73 行.
+SQL: SELECT `id`,`state_online` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0650s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 124 行.
+SQL: SELECT `id`,`fx_state`,`gold_shoucang`,`shouyi`,`silver_shoucang` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0700s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`is_on_dsh` FROM `user_info` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `huandeng` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`url`,`image` FROM `huandeng` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `ad` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`url`,`image`,`title` FROM `ad` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' AND `is_special` = 0 ORDER BY sort  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `direction` [ RunTime:0.0070s ]
+SQL: SELECT `id`,`image`,`url`,`title`,`sort` FROM `direction` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0090s ]
+SQL: SELECT `phone_ask`,`sh_jd`,`is_on_index_ad`,`index_ad_img`,`index_ad_showtime`,`address`,`program_title`,`is_show_indexfl`,`index_abstract`,`video`,`video_image`,`is_submit_contect`,`is_artical`,`fenlei_lever`,`is_on_showgoods`,`zx_info_list_img`,`is_double_huandeng`,`is_on_dsh` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`sort`,`area_re`,`goods_video`,`image`,`goods_title`,`sell_num`,`goods_shorttitle`,`good_attribute`,`price_sell`,`is_use_consumption_num`,`price_own`,`goods_subtitle`,`goods_subtitle01`,`goods_subtitle02`,`goods_subtitle03`,`goods_subtitle04`,`goods_subtitle05` FROM `goods` WHERE `goods_state` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_booking D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 228 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 3583 行.
+NOTIC: [8] Undefined variable: arr_new D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 3587 行.
+SQL: SHOW COLUMNS FROM `preferential` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `preferential` WHERE ( program_id='JT201808090855119076' ) ORDER BY sort  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `artical` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `artical` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' AND `state` = 1 ORDER BY sort  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `index_recommend` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `index_recommend` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0070s ]
+NOTIC: [8] Undefined variable: diy_html D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 265 行.
+NOTIC: [8] Undefined variable: attribute D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 265 行.
+
+[ 2018-12-01T17:39:53+08:00 ] 127.0.0.1 /pg.php/Index/index_show?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `qianyue` [ RunTime:0.0090s ]
+SQL: SELECT `state`,`muban_type`,`function_id` FROM `qianyue` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0090s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 73 行.
+SQL: SELECT `id`,`state_online` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0660s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 124 行.
+SQL: SELECT `id`,`fx_state`,`gold_shoucang`,`shouyi`,`silver_shoucang` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0690s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`is_on_dsh` FROM `user_info` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `huandeng` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`url`,`image` FROM `huandeng` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `ad` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`url`,`image`,`title` FROM `ad` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' AND `is_special` = 0 ORDER BY sort  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `direction` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`image`,`url`,`title`,`sort` FROM `direction` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0090s ]
+SQL: SELECT `phone_ask`,`sh_jd`,`is_on_index_ad`,`index_ad_img`,`index_ad_showtime`,`address`,`program_title`,`is_show_indexfl`,`index_abstract`,`video`,`video_image`,`is_submit_contect`,`is_artical`,`fenlei_lever`,`is_on_showgoods`,`zx_info_list_img`,`is_double_huandeng`,`is_on_dsh` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`sort`,`area_re`,`goods_video`,`image`,`goods_title`,`sell_num`,`goods_shorttitle`,`good_attribute`,`price_sell`,`is_use_consumption_num`,`price_own`,`goods_subtitle`,`goods_subtitle01`,`goods_subtitle02`,`goods_subtitle03`,`goods_subtitle04`,`goods_subtitle05` FROM `goods` WHERE `goods_state` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+
+[ 2018-12-01T17:40:00+08:00 ] 127.0.0.1 /pg.php/Index/index_show?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `qianyue` [ RunTime:0.0110s ]
+SQL: SELECT `state`,`muban_type`,`function_id` FROM `qianyue` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 73 行.
+SQL: SELECT `id`,`state_online` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0680s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 124 行.
+SQL: SELECT `id`,`fx_state`,`gold_shoucang`,`shouyi`,`silver_shoucang` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0710s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0100s ]
+SQL: SELECT `id`,`is_on_dsh` FROM `user_info` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `huandeng` [ RunTime:0.0100s ]
+SQL: SELECT `id`,`url`,`image` FROM `huandeng` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `ad` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`url`,`image`,`title` FROM `ad` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' AND `is_special` = 0 ORDER BY sort  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `direction` [ RunTime:0.0100s ]
+SQL: SELECT `id`,`image`,`url`,`title`,`sort` FROM `direction` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0110s ]
+SQL: SELECT `phone_ask`,`sh_jd`,`is_on_index_ad`,`index_ad_img`,`index_ad_showtime`,`address`,`program_title`,`is_show_indexfl`,`index_abstract`,`video`,`video_image`,`is_submit_contect`,`is_artical`,`fenlei_lever`,`is_on_showgoods`,`zx_info_list_img`,`is_double_huandeng`,`is_on_dsh` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0120s ]
+SQL: SELECT `id`,`sort`,`area_re`,`goods_video`,`image`,`goods_title`,`sell_num`,`goods_shorttitle`,`good_attribute`,`price_sell`,`is_use_consumption_num`,`price_own`,`goods_subtitle`,`goods_subtitle01`,`goods_subtitle02`,`goods_subtitle03`,`goods_subtitle04`,`goods_subtitle05` FROM `goods` WHERE `goods_state` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0140s ]
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_choose D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 217 行.
+NOTIC: [8] Undefined index: index_booking D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 226 行.
+
+[ 2018-12-01T17:40:24+08:00 ] 127.0.0.1 /pg.php/Index/index_show?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `qianyue` [ RunTime:0.0080s ]
+SQL: SELECT `state`,`muban_type`,`function_id` FROM `qianyue` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 73 行.
+SQL: SELECT `id`,`state_online` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0650s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 124 行.
+SQL: SELECT `id`,`fx_state`,`gold_shoucang`,`shouyi`,`silver_shoucang` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0700s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`is_on_dsh` FROM `user_info` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `huandeng` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`url`,`image` FROM `huandeng` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `ad` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`url`,`image`,`title` FROM `ad` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' AND `is_special` = 0 ORDER BY sort  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `direction` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`image`,`url`,`title`,`sort` FROM `direction` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0090s ]
+SQL: SELECT `phone_ask`,`sh_jd`,`is_on_index_ad`,`index_ad_img`,`index_ad_showtime`,`address`,`program_title`,`is_show_indexfl`,`index_abstract`,`video`,`video_image`,`is_submit_contect`,`is_artical`,`fenlei_lever`,`is_on_showgoods`,`zx_info_list_img`,`is_double_huandeng`,`is_on_dsh` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`sort`,`area_re`,`goods_video`,`index_choose`,`image`,`goods_title`,`sell_num`,`goods_shorttitle`,`good_attribute`,`price_sell`,`is_use_consumption_num`,`price_own`,`goods_subtitle`,`goods_subtitle01`,`goods_subtitle02`,`goods_subtitle03`,`goods_subtitle04`,`goods_subtitle05` FROM `goods` WHERE `goods_state` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0110s ]
+
+[ 2018-12-01T17:46:46+08:00 ] 127.0.0.1 /pg.php/Index/index_show?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `qianyue` [ RunTime:0.0090s ]
+SQL: SELECT `state`,`muban_type`,`function_id` FROM `qianyue` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0090s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 73 行.
+SQL: SELECT `id`,`state_online` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0640s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 124 行.
+SQL: SELECT `id`,`fx_state`,`gold_shoucang`,`shouyi`,`silver_shoucang` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0680s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`is_on_dsh` FROM `user_info` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `huandeng` [ RunTime:0.0110s ]
+SQL: SELECT `id`,`url`,`image` FROM `huandeng` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `ad` [ RunTime:0.0070s ]
+SQL: SELECT `id`,`url`,`image`,`title` FROM `ad` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' AND `is_special` = 0 ORDER BY sort  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `direction` [ RunTime:0.0070s ]
+SQL: SELECT `id`,`image`,`url`,`title`,`sort` FROM `direction` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0090s ]
+SQL: SELECT `phone_ask`,`sh_jd`,`is_on_index_ad`,`index_ad_img`,`index_ad_showtime`,`address`,`program_title`,`is_show_indexfl`,`index_abstract`,`video`,`video_image`,`is_submit_contect`,`is_artical`,`fenlei_lever`,`is_on_showgoods`,`zx_info_list_img`,`is_double_huandeng`,`is_on_dsh` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`sort`,`area_re`,`goods_video`,`index_choose`,`image`,`goods_title`,`sell_num`,`goods_shorttitle`,`good_attribute`,`price_sell`,`is_use_consumption_num`,`price_own`,`goods_subtitle`,`goods_subtitle01`,`goods_subtitle02`,`goods_subtitle03`,`goods_subtitle04`,`goods_subtitle05` FROM `goods` WHERE `goods_state` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0110s ]
+NOTIC: [8] Undefined offset: 4 D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 233 行.
+
+[ 2018-12-01T17:47:02+08:00 ] 127.0.0.1 /pg.php/Index/index_show?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `qianyue` [ RunTime:0.0090s ]
+SQL: SELECT `state`,`muban_type`,`function_id` FROM `qianyue` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0090s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 73 行.
+SQL: SELECT `id`,`state_online` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0650s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 124 行.
+SQL: SELECT `id`,`fx_state`,`gold_shoucang`,`shouyi`,`silver_shoucang` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0690s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`is_on_dsh` FROM `user_info` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `huandeng` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`url`,`image` FROM `huandeng` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `ad` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`url`,`image`,`title` FROM `ad` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' AND `is_special` = 0 ORDER BY sort  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `direction` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`image`,`url`,`title`,`sort` FROM `direction` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0100s ]
+SQL: SELECT `phone_ask`,`sh_jd`,`is_on_index_ad`,`index_ad_img`,`index_ad_showtime`,`address`,`program_title`,`is_show_indexfl`,`index_abstract`,`video`,`video_image`,`is_submit_contect`,`is_artical`,`fenlei_lever`,`is_on_showgoods`,`zx_info_list_img`,`is_double_huandeng`,`is_on_dsh` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0110s ]
+SQL: SELECT `id`,`sort`,`area_re`,`goods_video`,`index_choose`,`image`,`goods_title`,`sell_num`,`goods_shorttitle`,`good_attribute`,`price_sell`,`is_use_consumption_num`,`price_own`,`goods_subtitle`,`goods_subtitle01`,`goods_subtitle02`,`goods_subtitle03`,`goods_subtitle04`,`goods_subtitle05` FROM `goods` WHERE `goods_state` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0120s ]
+
+[ 2018-12-01T17:47:28+08:00 ] 127.0.0.1 /pg.php/Index/index_show?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `qianyue` [ RunTime:0.0090s ]
+SQL: SELECT `state`,`muban_type`,`function_id` FROM `qianyue` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 73 行.
+SQL: SELECT `id`,`state_online` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0660s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 124 行.
+SQL: SELECT `id`,`fx_state`,`gold_shoucang`,`shouyi`,`silver_shoucang` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0700s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`is_on_dsh` FROM `user_info` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `huandeng` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`url`,`image` FROM `huandeng` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `ad` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`url`,`image`,`title` FROM `ad` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' AND `is_special` = 0 ORDER BY sort  [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `direction` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`image`,`url`,`title`,`sort` FROM `direction` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0100s ]
+SQL: SELECT `phone_ask`,`sh_jd`,`is_on_index_ad`,`index_ad_img`,`index_ad_showtime`,`address`,`program_title`,`is_show_indexfl`,`index_abstract`,`video`,`video_image`,`is_submit_contect`,`is_artical`,`fenlei_lever`,`is_on_showgoods`,`zx_info_list_img`,`is_double_huandeng`,`is_on_dsh` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0100s ]
+SQL: SELECT `id`,`sort`,`area_re`,`goods_video`,`index_choose`,`image`,`goods_title`,`sell_num`,`goods_shorttitle`,`good_attribute`,`price_sell`,`is_use_consumption_num`,`price_own`,`goods_subtitle`,`goods_subtitle01`,`goods_subtitle02`,`goods_subtitle03`,`goods_subtitle04`,`goods_subtitle05` FROM `goods` WHERE `goods_state` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0130s ]
+NOTIC: [8] Undefined offset: 4 D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 234 行.
+
+[ 2018-12-01T17:48:01+08:00 ] 127.0.0.1 /pg.php/Index/index_show?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `qianyue` [ RunTime:0.0080s ]
+SQL: SELECT `state`,`muban_type`,`function_id` FROM `qianyue` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 73 行.
+SQL: SELECT `id`,`state_online` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0640s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 124 行.
+SQL: SELECT `id`,`fx_state`,`gold_shoucang`,`shouyi`,`silver_shoucang` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0680s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`is_on_dsh` FROM `user_info` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `huandeng` [ RunTime:0.0070s ]
+SQL: SELECT `id`,`url`,`image` FROM `huandeng` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `ad` [ RunTime:0.0070s ]
+SQL: SELECT `id`,`url`,`image`,`title` FROM `ad` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' AND `is_special` = 0 ORDER BY sort  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `direction` [ RunTime:0.0070s ]
+SQL: SELECT `id`,`image`,`url`,`title`,`sort` FROM `direction` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0080s ]
+SQL: SELECT `phone_ask`,`sh_jd`,`is_on_index_ad`,`index_ad_img`,`index_ad_showtime`,`address`,`program_title`,`is_show_indexfl`,`index_abstract`,`video`,`video_image`,`is_submit_contect`,`is_artical`,`fenlei_lever`,`is_on_showgoods`,`zx_info_list_img`,`is_double_huandeng`,`is_on_dsh` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`sort`,`area_re`,`goods_video`,`index_choose`,`image`,`goods_title`,`sell_num`,`goods_shorttitle`,`good_attribute`,`price_sell`,`is_use_consumption_num`,`price_own`,`goods_subtitle`,`goods_subtitle01`,`goods_subtitle02`,`goods_subtitle03`,`goods_subtitle04`,`goods_subtitle05` FROM `goods` WHERE `goods_state` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0110s ]
+
+[ 2018-12-01T17:48:06+08:00 ] 127.0.0.1 /pg.php/Index/index_show?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `qianyue` [ RunTime:0.0110s ]
+SQL: SELECT `state`,`muban_type`,`function_id` FROM `qianyue` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 73 行.
+SQL: SELECT `id`,`state_online` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0670s ]
+NOTIC: [8] Undefined index: openid D:\phpStudy\WWW\jtct\App\Program\Controller\IndexController.class.php 第 124 行.
+SQL: SELECT `id`,`fx_state`,`gold_shoucang`,`shouyi`,`silver_shoucang` FROM `members` WHERE ( openid=''and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0710s ]
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0100s ]
+SQL: SELECT `id`,`is_on_dsh` FROM `user_info` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `huandeng` [ RunTime:0.0110s ]
+SQL: SELECT `id`,`url`,`image` FROM `huandeng` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `ad` [ RunTime:0.0100s ]
+SQL: SELECT `id`,`url`,`image`,`title` FROM `ad` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' AND `is_special` = 0 ORDER BY sort  [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `direction` [ RunTime:0.0090s ]
+SQL: SELECT `id`,`image`,`url`,`title`,`sort` FROM `direction` WHERE `is_show` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `store` [ RunTime:0.0110s ]
+SQL: SELECT `phone_ask`,`sh_jd`,`is_on_index_ad`,`index_ad_img`,`index_ad_showtime`,`address`,`program_title`,`is_show_indexfl`,`index_abstract`,`video`,`video_image`,`is_submit_contect`,`is_artical`,`fenlei_lever`,`is_on_showgoods`,`zx_info_list_img`,`is_double_huandeng`,`is_on_dsh` FROM `store` WHERE ( program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0110s ]
+SQL: SELECT `id`,`sort`,`area_re`,`goods_video`,`index_choose`,`image`,`goods_title`,`sell_num`,`goods_shorttitle`,`good_attribute`,`price_sell`,`is_use_consumption_num`,`price_own`,`goods_subtitle`,`goods_subtitle01`,`goods_subtitle02`,`goods_subtitle03`,`goods_subtitle04`,`goods_subtitle05` FROM `goods` WHERE `goods_state` = 1 AND `program_id` = 'JT201808090855119076' ORDER BY sort  [ RunTime:0.0130s ]
+

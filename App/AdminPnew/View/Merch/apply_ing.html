@@ -1,0 +1,86 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_merch" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con" style="min-height: 840px;">
+				<div style="height:60px;border-bottom:1px solid #000000;padding:10px;background:skyblue;">
+					<!--<button class="btn btn-primary">添加新商户</button>-->
+					<h4 style="margin:10px;float:left;">多商户入驻申请 <small>总数: <span>0</span></small></h4>
+					<div style="float: right;">
+						<!--<button class="btn btn-primary">添加新商户</button>-->
+						<a href="add_sh" class="btn btn-primary">添加新商户</a>
+					</div>
+				</div>
+				
+				<table class="table table-hover table-responsive">
+				    <thead class="navbar-inner">
+				    <tr>
+				        <th style="width:25px;"><input type="checkbox"></th>
+				        <th style="width:40px;">排序</th>
+				        <th style="width:150px;">商户名称</th>
+				        <th style="width:90px;">主营项目</th>
+				        <th style="width:90px;">联系人</th>
+				        <th style="width:90px;">申请时间</th>
+				        <th style="width:100px;">操作</th>
+				    </tr>
+				    </thead>
+				    <tbody>
+				    	<foreach name="list" item="v">
+				        <tr rel="pop" data-title="ID: {$v.id} ">				
+					        <td>
+					            <input value="{$v.id}" type="checkbox">
+					        </td>
+					        <td>{$v.sort} 111</td>
+					        <td>{$v.sh_name} 222</td>
+					        <td>{$v.main_project} 333</td>
+					        <td>{$v.linkman} <br>{$v.tel} </td>
+					        <td>
+					        	<?=date("Y-m-d H:i:s",$v['time_add']);?>
+					        </td>
+					        <td style="overflow:visible;">
+			                    <a href="apply_con/id/{$v['id']}"  class="btn btn-default btn-sm">
+					                <i class="fa fa-edit"></i> 详情
+					            </a>  
+					            
+			                    <a href="sh_agree/id/{$v['id']}" onclick="if(confirm('确认已经完整阅读申请详情，即将审核吗？')==false)return false;" class="btn btn-default btn-sm">
+					                <i class="fa fa-edit"></i> 处理申请
+					            </a>
+					            
+                                <a data-toggle="ajaxRemove" href="sh_reject/id/{$v['id']}" class="btn btn-default btn-sm" onclick="if(confirm('确认拒绝吗？')==false)return false;">
+                                	<i class="fa fa-trash"></i> 删除
+                                </a>    
+                                
+					        </td>
+					    </tr>
+					    </foreach>	      
+			        </tbody>
+			    </table>
+			</div>
+		</div>
+		<!--====================主体  结束===============-->
+	</div>	
+<script>
+	//商品ajax上下架
+	$(".peng_is_ok").click(function(){
+		var onw_id=$(this).children('input').val();
+	
+		var that = this;
+		 $.post('__ROOT__/adp.php/Goods/ajax_change_ok',{'id':onw_id},function(date){
+	        if(date==1){
+	        	if($(that).attr("class")=="peng_is_ok peng_ok"){
+	        		$(that).attr("class","peng_is_ok peng_not");
+	        		$(that).children('span').text("下架");
+	        	}else if($(that).attr("class")=="peng_is_ok peng_not"){
+	        		$(that).attr("class","peng_is_ok peng_ok");
+	        		$(that).children('span').text("上架");
+	        	}
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>
+</body>
+</html>

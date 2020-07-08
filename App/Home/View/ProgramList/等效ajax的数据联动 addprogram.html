@@ -1,0 +1,196 @@
+<include file="Public/head" />
+//等效异步的操作
+	    <script language="JavaScript">
+			var onecount;
+			onecount = 0;
+			subcat = new Array();
+			<foreach name="mblist" item="values">
+				subcat[{$key}] = new Array("{$values.name}", "{$values.lid}", "{$values.id}","{$values.price}");
+			</foreach>
+
+			onecount = subcat.length;
+			function changelocation(locationid) {
+				document.getElementById("muban_bname").length = 0;
+
+				var locationid = locationid;
+				//alert(locationid);
+				var i;
+				for(i = 0; i < onecount; i++) {
+					if(subcat[i][1] == locationid) {
+						document.getElementById("muban_bname").options[document.getElementById("muban_bname").length] = new Option(subcat[i][0], subcat[i][2]);
+					}
+				}
+                show();
+			}
+		</script> 
+		<div class="tab" style="width:90%;height:auto;margin:20px auto;background-color:gainsboro; padding:20px;">
+			<div class="tab-cont">					
+				<div class="contert">		
+   			<div class="center">
+   				<div class="conter-center">
+   					<p>请填写小程序基本信息:</p>
+   				    <form class="form-horizontal" role="form" action="__URL__/addprogram_submit" method="post" enctype="multipart/form-data">							
+						<div class="form-group">
+							<label for="lastname" class="col-sm-2 control-label">账号:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="name" id="" >
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="lastname" class="col-sm-2 control-label">密码:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="psw" id="" >	
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="lastname" class="col-sm-2 control-label">合同号：</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="contract_id" id=""> 
+							</div>							
+						</div>
+						<!--<div class="form-group">
+							<label for="lastname" class="col-sm-2 control-label">合同附件：</label>
+							<div class="col-sm-10">
+								<input type="file" class="form-control" name="contract_img" id="" >						  
+							</div>
+						</div>	-->
+						<div class="form-group">
+						    <label for="inputPassword" class="col-sm-2 control-label">合同附件：</label>
+						     <input type="file" name="contract_img" id="doc" onchange="javascript:setImagePreview();">			
+						    <div class="col-sm-10">
+						      	<img id="preview" src=""style="display:block; width:140px; height:160px;border:1px solid #000000; border-radius:6px;">
+						    </div>
+						</div>	
+								
+						
+						
+						<!--请选择模板风格-->
+						<div class="form-group">
+							<label class="col-sm-2  control-label">模板风格选择</label>
+							<div class="col-sm-10">
+								<select name="muban_lid" size="1" id="muban_lname" onChange="changelocation(document.getElementById('muban_lname').options[document.getElementById('muban_lname').selectedIndex].value)">
+									<option value="">===请选择模板风格===</option>
+		
+									<foreach name="mlist" item="value">
+										<option value="{$value.id}">{$value.name}</option>
+									</foreach>
+								</select>
+							</div>
+						</div>
+						<!--模板版本选择-->
+						<div class="form-group">
+							<label class="col-sm-2  control-label">模板版本选择</label>
+							<div class="col-sm-10">
+								<select name="muban_bid" id="muban_bname" onchange="show()">
+									<option value="">===请选择小类===</option>
+								</select>
+							</div>
+						</div>
+						<!--模板类型风格-->
+						<div class="form-group">
+							<label class="col-sm-2  control-label">模板类型风格</label>
+							<div class="col-sm-10">
+								<input type="checkbox" name="good_attribute02" value="1" id="isnew" checked> 热卖
+						 		<input type="checkbox" name="good_attribute02" value="1" id="isnew" checked> 热卖
+						 		<input type="checkbox" name="good_attribute02" value="1" id="isnew" checked> 热卖
+						
+							</div>
+						</div>
+						
+						<!--模板型号风格-->
+						<div class="form-group">
+							<label class="col-sm-2  control-label">模板型号风格</label>
+							<div class="col-sm-10">
+								<input type="checkbox" name="good_attribute02" value="1" id="isnew" checked> 热卖
+						 		<input type="checkbox" name="good_attribute02" value="1" id="isnew" checked> 热卖
+						 		<input type="checkbox" name="good_attribute02" value="1" id="isnew" checked> 热卖
+						
+							</div>
+						</div>
+						<div class="form-group">
+						<label class="col-sm-2  control-label">年限：</label>
+						&nbsp&nbsp&nbsp<input type="text" readonly="readonly" value="1" name="years"  id="years"/>
+						</div>
+						<div class="form-group">
+						<label class="col-sm-2  control-label">价格：</label>
+						<input type="text" readonly="readonly" value="" name="price" id="price"/>
+						</div>
+						<div class="form-group">
+						<label class="col-sm-2  control-label">备注：</label>
+						&nbsp&nbsp&nbsp<input type="text" value="" name="remark"  id="remark"/>
+						</div>
+						<input type="submit" value="提交" />
+						<input type="button" onclick="history.go(-1)" value="返回上一页">
+                    </form>  
+   			   </div> 
+   		    </div>    		
+                     
+				<div class="bottom">
+					<p>备案号：粤ICP备17113431号-1</p>
+					<p>版权所有：互联网生态圈营销中心</p>
+				</div>
+			</div>
+		</div>
+		<!--图片预览-->
+<script type="text/javascript">
+//下面用于图片上传预览功能
+function setImagePreview(avalue) {
+var docObj=document.getElementById("doc");
+var imgObjPreview=document.getElementById("preview");
+if(docObj.files &&docObj.files[0])
+{
+//火狐下，直接设img属性
+imgObjPreview.style.display = 'block';
+imgObjPreview.style.width = '140px';
+imgObjPreview.style.height = '160px'; 
+ 
+imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+}
+else
+{
+//IE下，使用滤镜
+docObj.select();
+var imgSrc = document.selection.createRange().text;
+var localImagId = document.getElementById("localImag");
+//图片必须设置初始大小
+localImagId.style.width ="140px";
+localImagId.style.height = "160px";
+//图片异常的捕捉，防止用户修改后缀来伪造图片
+try{
+localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+}
+catch(e)
+{
+alert("您上传的图片格式不正确，请重新选择!");
+return false;
+}
+imgObjPreview.style.display = 'none';
+document.selection.empty();
+}
+return true;
+}
+ 
+</script>
+
+	<script type="text/javascript">  
+    function show(){  
+
+      var bid=document.getElementById('muban_bname').value;
+      var lid=document.getElementById('muban_lname').value;
+      $.ajax({
+                        type:"GET",
+                          url:"{:U('get_price')}",
+//                      url:"__ROOT__/ProgramList/get_price",
+                        data:{muban_bid:bid,muban_lid:lid},
+                        dataType: "json",
+                        success:function(ss){
+                        document.getElementById('price').value=ss.price;  
+                        }
+                    });
+     } 
+     
+</script>
+	</body>
+
+</html>

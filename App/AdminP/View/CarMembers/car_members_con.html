@@ -1,0 +1,361 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_car_members" />
+		<!--会员详情-->
+		<!--====================主体-----开始========================-->
+<div class="show" id="tabC1">
+	<div class="con"  style="width:100%;margin:0px auto;" >
+		<div class="contert">	
+        	<if condition="$info['state'] eq 1">
+				 <h2 style="padding:20px;border-bottom:1px solid #000000;">司机详情</h2>
+			</if>
+			<if condition="$info['state'] eq 2">
+				 <h2 style="padding:20px;border-bottom:1px solid #000000;">合作单位详情</h2>
+			</if>
+			<if condition="$info['state'] eq 3">
+				 <h2 style="padding:20px;border-bottom:1px solid #000000;">签约会员详情</h2>
+			</if>
+             <div class="tabs-container"style="float:left;width:1000px;">
+                <div class="tabs"style="width:1000px;">
+					<ul class="nav nav-tabs" >
+						<li class="active">
+							<a data-toggle="tab" href="#tab-basic" aria-expanded="true"> 基本信息</a>
+						</li>
+						<li class="">
+							<a data-toggle="tab" href="#tab-account" aria-expanded="false"> 密码管理</a>
+						</li>
+						<if condition="$info['state'] eq 3">
+						<li class="">
+							<a data-toggle="tab" href="#tab-003" aria-expanded="false"> 积分充值</a>
+						</li>
+						</if>
+					
+					</ul>
+					<div class="tab-content">
+						<div id="tab-basic" class="tab-pane active" >
+							<div class="form-group" style="margin-top:20px;">
+							    <label class="col-sm-2 control-label">头像</label>
+							    <div class="col-sm-10 col-xs-12">
+							        <img src="__ROOT__/Uploads/{$info["headimage"]}" style="width:50px;height:50px;padding:1px;border:1px solid #ccc">
+				                </div>
+		                    </div>
+							<div class="form-group" style="margin-top:20px;">
+							    <label class="col-sm-2 control-label">OPENID</label>
+							    <div class="col-sm-10 col-xs-12">
+								    <div class="form-control-static js-clip" data-url="">	
+								    	
+								    	 {$info["openid"]}</div>
+								    <div class="zclip" id="" style="position: absolute; left: 15px; top: 0px; width: 623px; height: 34px; z-index: 99;">
+								    <!--	<embed id="" src="" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="623" height="34" name="ZeroClipboardMovie_1" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="" flashvars="id=1&amp;width=623&amp;height=34" wmode="transparent">						    	
+								   -->
+							
+								    </div>
+							    </div>
+							</div>
+							
+						
+							<div class="form-group" style="margin-top:20px;">
+							    <label class="col-sm-2 control-label">姓名</label>
+							    <div class="col-sm-10 col-xs-12">
+							        <input type="text" name="" class="form-control" value="{$info["name"]}">
+							         <span class="help-block"></span>	
+							    </div>
+							</div>
+							
+							<if condition="$info['state'] eq 3">
+							<div class="form-group" style="margin-top:20px;">
+							    <label class="col-sm-2 control-label">积分</label>
+							    <div class="col-sm-10 col-xs-12">
+	
+							         <input type="text" name="" class="form-control" readonly value=" {$info["integral"]}">
+							         <span class="help-block"></span>	
+							    </div>
+							</div>
+							</if>
+							<div class="form-group" style="margin-top:20px;">
+							    <label class="col-sm-2 control-label">联系电话</label>
+							    <div class="col-sm-10 col-xs-12">
+							        <input type="text" name="" class="form-control" value="{$info["linktel"]}">
+							         <span class="help-block"></span>	
+							    </div>
+							</div>
+							<div class="form-group" style="margin-top:20px;">
+							    <label class="col-sm-2 control-label">登录账号</label>
+							    <div class="col-sm-10 col-xs-12">
+							        <input type="text" name="" class="form-control" value="{$info["account"]}">
+							         <span class="help-block"></span>	
+							    </div>
+							</div>
+							<div class="form-group" style="margin-top:20px;">
+							    <label class="col-sm-2 control-label">注册时间</label>
+							    <div class="col-sm-10 col-xs-12">
+							        <div class="form-control-static"><?php echo date("Y-m-d H:i:s",$info["time_register"]); ?></div>
+							    </div>
+							</div>
+							<div class="form-group" style="margin-top:20px;">
+							    <label class="col-sm-2 control-label">审核通过时间</label>
+							    <div class="col-sm-10 col-xs-12">
+							        <div class="form-control-static"><?php echo date("Y-m-d H:i:s",$info["time_agree"]); ?></div>
+							    </div>
+							</div>
+							<if condition="$info['state'] eq 1">
+								
+						
+							<div class="form-group" style="margin-top:20px;">
+							    <label class="col-sm-2 control-label">身份证正面</label>
+							    <div class="col-sm-10 col-xs-12">
+							        <img src="__ROOT__/Uploads/{$info["idcard_positive"]}" style="width:50px;height:50px;padding:1px;border:1px solid #ccc">
+				                </div>
+		                    </div>
+		                    
+		                    <div class="form-group" style="margin-top:20px;">
+							    <label class="col-sm-2 control-label">身份证反面</label>
+							    <div class="col-sm-10 col-xs-12">
+							        <img src="__ROOT__/Uploads/{$info["idcars_reverse"]}" style="width:50px;height:50px;padding:1px;border:1px solid #ccc">
+				                </div>
+		                    </div>
+		                    
+		                    <div class="form-group" style="margin-top:20px;">
+							    <label class="col-sm-2 control-label">驾驶证</label>
+							    <div class="col-sm-10 col-xs-12">
+							        <img src="__ROOT__/Uploads/{$info["driver_license"]}" style="width:50px;height:50px;padding:1px;border:1px solid #ccc">
+				                </div>
+		                    </div>
+		                    
+		                    <div class="form-group" style="margin-top:20px;">
+							    <label class="col-sm-2 control-label">行驶证</label>
+							    <div class="col-sm-10 col-xs-12">
+							        <img src="__ROOT__/Uploads/{$info["driving_this"]}" style="width:50px;height:50px;padding:1px;border:1px solid #ccc">
+				                </div>
+		                    </div>
+		                    </if>
+							<!--<div class="form-group" style="margin-top:20px;">
+							    <label class="col-sm-2 control-label">黑名单</label>
+							    <div class="col-sm-10 col-xs-12">
+							    	<if condition="$info['blacklist'] eq 1">
+								        <label class="radio-inline"><input type="radio" name="" value="1" checked>是</label>
+								        <label class="radio-inline"><input type="radio" name="" value="0" >否</label>
+					    			</if>
+					    			<if condition="$info['blacklist'] eq 0">
+								        <label class="radio-inline"><input type="radio" name="" value="1">是</label>
+								        <label class="radio-inline"><input type="radio" name="" value="0" checked>否</label>
+					    			</if>
+							        <span class="help-block">设置黑名单后，此会员将无法下单！</span>			        
+							    </div>
+							</div>-->
+							<!--<div class="form-group" style="padding-top:20px;">
+							    <label class="col-sm-2 control-label">备注</label>
+							    <div class="col-sm-10 col-xs-12">
+							        <textarea name="" class="form-control valid" aria-invalid="false"></textarea>
+							    </div>
+							</div>-->
+					
+						</div>
+						
+					<!--密码管理-->
+						<div id="tab-account" class="tab-pane" >
+							<form onsubmit="return check02();" action="{:U('CarMembers/change_psw',array('id'=>$info['id']))}" method="post" >
+							<div class="form-group" style="margin-top:26px;">
+								<label class="col-sm-2 control-label " style="padding:8px;">新密码</label>
+								<div class="col-sm-10 col-xs-12">
+									 <input type="text" name="psw" id="psw" class="form-control" value="">
+								</div>
+								<span class="help-block">.</span>
+							</div>
+							 
+							<div class="form-group">
+								<label class="col-sm-2 control-label" style="padding:8px;">再次输入密码</label>
+								<div class="col-sm-10 col-xs-12">
+									 <input type="text"  id="psw02" class="form-control" value="">
+								</div>
+							</div>
+							<div class="form-group" >
+				                <label class="col-sm-2 control-label"></label>
+				                <div class="col-sm-9 col-xs-12" style="text-align:right;margin-top:26px;">
+				                	<input type="submit"  value="确认提交" class="btn btn-primary">
+				                </div>
+				            </div> 	
+						</div>
+					<!--	//成交订单数-->
+						<div id="tab-trade" class="tab-pane">
+							<div class="form-group">
+								<label class="col-sm-2 control-label">成交订单数</label>
+								<div class="col-sm-10 col-xs-12">
+									<div class="form-control-static">{$count} </div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">成交金额</label>
+								<div class="col-sm-10 col-xs-12">
+									<div class="form-control-static">{$price} 元</div>
+								</div>
+							</div>
+						<!--	<div class="form-group">
+								<label class="col-sm-2 control-label">最后一次成交时间</label>
+								<div class="col-sm-10 col-xs-12">
+									<div class="form-control-static">无任何交易</div>
+								</div>
+							</div>-->
+						</div>
+						
+					<!--	//修改等级-->
+						<div id="tab-lever" class="tab-pane">
+							<form name="myupload" onsubmit="return check();" id="myupload" enctype='multipart/form-data' action="__URL__/change_lever" method="post">
+								<input type="hidden" name="id" class="form-control" value="{$info.id}">
+								
+								
+								<div class="form-group" style="margin-top:20px;">
+								    <label class="col-sm-2 control-label">当前等级</label>
+								    <div class="col-sm-10 col-xs-12">
+								        <input type="text" name="" class="form-control" readonly value="{$info["level_name"]}">
+								         <span class="help-block"></span>	
+								    </div>
+								</div>
+								<div class="form-group" style="margin-top:20px;">
+								    <label class="col-sm-2 control-label">手动变更等级</label>
+								    <div class="col-sm-10 col-xs-12">
+								       <select name="lever_id" id="lever_id" class="form-control">
+								            <option value="">请选择等级</option>
+								            <foreach name="lever_list" item="v">
+								            	 <option value="{$v.id}">{$v.member_level_name}</option>
+								            </foreach>
+								           
+								        </select>
+								         <span class="help-block"></span>	
+								    </div>
+								</div>
+					            <div class="form-group" style="margin-top:80px;">
+									<label class="col-sm-1 control-label"></label>
+									<div class="col-sm-11 col-xs-12">
+										<input type="submit" id="addons" value="确认提交"   class="btn btn-primary">
+									</div>
+								</div>
+								
+							</form>	
+						</div>
+						
+						<!--	//积分充值-->
+						<div id="tab-003" class="tab-pane">
+							<form name="myupload"   enctype='multipart/form-data' action="{:U('CarMembers/integral_chongzhi',array('id'=>$info['id']))}" method="post">
+								<input type="hidden" name="id" class="form-control" value="{$info.id}">
+								
+								
+								<div class="form-group" style="margin-top:20px;">
+								    <label class="col-sm-2 control-label">当前积分</label>
+								    <div class="col-sm-10 col-xs-12">
+								        <input type="text" name="" class="form-control" readonly value="{$info["integral"]}">
+								         <span class="help-block"></span>	
+								    </div>
+								</div>
+								<div class="form-group" style="margin-top:20px;">
+								    <label class="col-sm-2 control-label">充值积分</label>
+								    <div class="col-sm-10 col-xs-12">
+								        <input type="text" name="integral_song" class="form-control"  value="">
+								         <span class="help-block"></span>	
+								    </div>
+								</div>
+					            <div class="form-group" style="margin-top:80px;">
+									<label class="col-sm-1 control-label"></label>
+									<div class="col-sm-11 col-xs-12">
+										<input type="submit" id="addons" value="确认提交"   class="btn btn-primary" style="    float: right;">
+									</div>
+								</div>
+								
+							</form>	
+							
+							<table id="maintable" class="table table-hover table-responsive">
+		            <thead class="navbar-inner">
+		                <tr>
+		                    <th style="width:30px;"><input type="checkbox" id="checkAll"></th>		                    
+		                    <th style="width:140px;">单号</th>
+		                    <th style="width:100px;">积分</th>             
+		                  
+		                    <th style="width:100px;">充值时间</th>
+
+		                    <!--<th style="width:104px;">操作</th>-->
+		                </tr>
+		            </thead>
+		            <tbody id="blacklis">		       
+			           	<foreach name="record" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+							<td>
+								 {$v.order_num}
+							</td>
+							<td>
+							 	 {$v.record}
+							 </td>
+							<td>
+							 	 <?=date("Y-m-d H:i:s",$v['time']);?>
+							 </td>
+                           <!-- <td>
+								<a class="btn btn-default" title="详情" alt="详情" href="car_members_con/id/{$v['id']}" >详情</a>
+								<a  class="btn btn-danger" style="color:white;" title="删除" alt="删除" href="car_man_delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+						
+                            </td>-->
+                        </tr>
+                    </foreach>	
+            		</tbody>
+        		</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>   
+				<!--====================主体  结束===============-->
+    </div>				
+</div>	
+
+</body>
+<script>
+	//自定义修改会员等级，一定要选择了等级才能提交
+	function check(){
+		var lever_id=$("#lever_id").find("option:selected").text();
+		 if(lever_id=="请选择等级"){
+                alert("请选择等级");
+                return false;
+            }
+            return true;
+	}
+	
+	function check02(){
+
+		 if(!$("#psw").val()){
+                alert("新密码不能为空");
+                return false;
+            }
+		  if(!$("#psw02").val()){
+                alert("请再次输入新密码");
+                return false;
+            }
+		   if($("#psw").val()!=$("#psw02").val()){
+                alert("两次密码输入不一致");
+                return false;
+            }
+            return true;
+	}
+</script>
+
+<script>
+	$(".peng_is_ok").click(function(){
+		var onw_id=$(this).children('input').val();
+		//var str01=that.attr("class");
+			//	var arr01=str.split(" ");
+		//alert(arr[1]);
+		var that = this;
+		 $.post('__ROOT__/adp.php/Members/ajax_change_ok',{'id':onw_id},function(date){
+	        if(date==1){
+	        	if($(that).attr("class")=="peng_is_ok peng_ok"){
+	        		$(that).attr("class","peng_is_ok peng_not");
+	        		$(that).children('span').text("黑名单");
+	        	}else if($(that).attr("class")=="peng_is_ok peng_not"){
+	        		$(that).attr("class","peng_is_ok peng_ok");
+	        		$(that).children('span').text("正常");
+	        	}
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>
+</html>

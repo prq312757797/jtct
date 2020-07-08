@@ -1,0 +1,78 @@
+		<style>
+			.modal_text{
+				text-align: center;
+			    color: #555555;
+			    font-size: 28px;
+			    font-weight: normal;
+			}
+			.modal_label{
+				width: 21%;
+			    float: left;
+			    text-align: center;
+			    height: 30px;
+			    line-height: 41px;
+			}
+		</style>
+
+		<!-- 按钮触发模态框 -->
+<a id="add-event_fahuo" style="display:none;" data-toggle="modal" href="#modal-add-event_fahuo" class="btn btn-success btn-mini"><i class="icon-plus icon-white"></i> </a>
+		<div class="modal hide" id="modal-add-event_fahuo">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h3> 订单发货</h3>
+			</div>
+			<div class="modal-body">
+			
+				<div class="control-group">
+					<label class="control-label modal_label">交易单号：</label>
+					<div class="controls">
+						 <input type="text" id="order_num12138_fahuo" readonly class="form-control w70 mt5">
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label modal_label">收货姓名：</label>
+					<div class="controls">
+						 <input type="text" id="shouhuo_man" readonly class="form-control w70 mt5">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label modal_label">联系电话：</label>
+					<div class="controls">
+						 <input type="text" id="shouhuo_phone" readonly class="form-control w70 mt5">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label modal_label">收货地址：</label>
+					<div class="controls">
+						 <input type="text" id="man_address" readonly class="form-control w70 mt5">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label modal_label">快递公司：</label>
+					<div class="controls">
+						<select class="form-control" id="express_id" name="express_id" style="width:72%;">
+						    <option>选择快递公司</option>
+							<foreach name="kuaidi" item="v">
+								<option value="{$v.id}">{$v.name}</option>
+							</foreach>
+					    </select>	
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label modal_label">快递单号：</label>
+					<div class="controls">
+						 <input type="text" id="express_num"  class="form-control w70 mt5">
+					</div>
+				</div>
+	
+			</div>
+			<input type="hidden" value="" id="openid" name="openid"> 
+			<div class="modal-footer">
+				<a href="#" class="btn" data-dismiss="modal">取消</a>
+				<input type="submit" value="确认" class="btn btn-primary " id="div_submit_fahuo">
+			</div>
+		</div>
+
+			
+			

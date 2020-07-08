@@ -1,0 +1,58 @@
+
+	<include file="Public/head" />
+
+		<div class="tab" style="width:90%;height:auto;margin:20px auto; background-color:#CAE1FF; padding:20px; border-radius:6px;">
+			<div class="tab-cont">
+				<h2 style="padding:20px;border-bottom:1px solid #000000;">消费记录</h2>			
+				<div class="box">
+					<div class="box-bor">
+						<table class="table">									
+							<thead>
+								<tr>
+							         <th style="width:6%;">流水号</th>
+							         <th style="width:10%;">客户账号</th>
+							         <th style="width:10%;">平台类型</th>
+							         <th style="width:10%;">合作平台</th>
+							         <th style="width:10%;">交易类型</th>
+							         <th style="width:10%;">交易金额</th>								        
+							       <!--  <th style="width:10%;">可用余额</th>-->
+							         <th style="width:12%;">交易日期</th>
+							         <th style="width:10%;">交易状态</th>
+							         <th style="width:16%;">备注</th>
+							    </tr>
+							</thead>
+							<tbody>
+								<foreach name="record_xf" item="v">
+								<tr class="active">
+								    <td>{$v.running_num}</td>
+							        <td>{$v.user_name}</td>
+							        <td>小程序</td>
+							        <td>小程序名称</td>
+							        <td>
+	<!--消费类型 1、购买模板、 2:代表平台消费充值 3:新开客户扣费、4：换版本补差价-->		        	
+							        	<if condition="$v.deal_type eq 1">购买模板</if>
+							      		<if condition="$v.deal_type eq 2">平台消费充值</if>	
+							       		<if condition="$v.deal_type eq 3">新开客户扣费</if>
+							      		<if condition="$v.deal_type eq 4">换版本补差价</if>	
+							       
+							        </td>
+							        <td>{$v.deal_gold}</td>
+							      <!--  <td>{$v.balance}</td>-->
+							        <td>
+							        <?=date("Y-m-d H:i:s",$v['deal_time']);?>
+							        </td>
+							        <td>
+							        	<if condition="$v.state eq 1">成功</if>
+							      		<if condition="$v.state eq 2">失败</if>	
+							        </td>
+							        <td>客户留言</td>
+							    </tr>	
+							    </foreach>
+							</tbody>
+						</table>
+					</div>							
+			    </div>
+			</div>
+		</div>
+		<include file="Public/foot" />
+	

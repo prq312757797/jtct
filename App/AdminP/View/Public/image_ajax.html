@@ -1,0 +1,53 @@
+<div class="modal fade" id="mystar_tuikuan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog"style="width:800px;height: auto;">
+						<div class="modal-content" >
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+									&times;
+								</button>
+								<h4 class="modal-title" id="myModalLabel">
+									上传荣誉证书
+								</h4>
+							</div>
+							<div class="modal-body" style="min-height: 320px;">
+								<form  action="{:U('Distribution/image_ajax')}" enctype="multipart/form-data" method="post" >
+									<div class="form-group line-height">
+									    <label for="firstname" class="col-sm-3 control-label">沙田荣誉证书：</label>
+									    <div class="col-sm-8">
+									      <input type="file" name="image02" class="form-control" id="order_num_tk" >
+									      <div class="help-block"></div>
+									    </div>
+								    </div>
+								    <div class="form-group line-height">
+									    <label for="firstname" class="col-sm-3 control-label">公益荣誉证书：</label>
+									    <div class="col-sm-8">
+									      <input type="file" name="image03" class="form-control" id="order_num_tk" >
+									      <div class="help-block"></div>
+									    </div>
+								    </div>
+								    <input type="hidden" value="" id="openid" name="openid"> 
+								    <div class="modal-footer">		
+								    	<input type="submit" value="确认" class="btn btn-primary">
+									<!--	<button type="button" class="btn btn-primary" id="div_submit_tk">确认</button>	-->
+										<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>	
+									</div>
+								</form>
+							</div>
+							
+						</div><!-- /.modal-content -->
+					</div>
+						
+					<!-- /.modal -->
+				</div>
+
+<script>
+
+		$(".click_image").click(function(){
+		var that=this;	
+
+		$("#openid").val($(this).attr("a"));
+
+		
+	})
+		
+</script>		

@@ -1,0 +1,103 @@
+<include file="Public/head" />     
+<style>
+	th{
+   
+}
+
+</style>
+	<div class="contert">
+		<include file="Public/menu_preferential" />
+		<!--优惠券管理-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">	
+				<div style="border-bottom:1px solid #000000;height:60px;padding:20px;">
+					<p style="float:left;font-size:18px;">优惠券管理</p>	
+				<!--	<form name="myupload" id="myupload" enctype='multipart/form-data' action="{:U('Goods/selling')}" method="post">
+						<div class="input-group" style="margin:0px 40px;    width: 20%; float: right;">				 
+	                 	   <input type="text" class="input-sm form-control" name="str" value="" placeholder="商品名称"><span class="input-group-btn">                  		
+	               	    	<button class="btn btn-sm btn-primary" type="submit">搜索</button></span>
+	               		</div> 
+              	 	</form>-->
+					<a href="manager_add"><button class="btn btn-primary" style="float:right;">+添加优惠券</button></a>	
+				</div>
+				
+			<!--<p style="margin:10px 40px;width: 30%;float: left;">商品管理</p>-->	    		
+            <!--<a href="goods_add"><button class="btn btn-primary" style="float:right;">+添加商品</button></a>-->				   
+			
+                <form action="">
+					<table class="table table-hover table-responsive" style="margin:0px auto;"> 
+					    <thead class="navbar-inner">
+					        <tr style="background:gainsboro;">
+					           <!-- <th style="width:60px;"><input type="checkbox" id="checkAll">编号</th>-->
+					            <th style="width:5%;text-align:center; vertical-align: middle;">排序</th>
+					            <th style="width:5%;text-align:center; vertical-align: middle;">优惠券名称</th>
+					            <th style="width:10%; vertical-align: middle;">使用条件<br>优惠</th>
+					            <th style="width:5%; vertical-align: middle;">剩余数量</th>
+					            <th style="width:5%; vertical-align: middle;">领取中心</th>
+					            <th style="width:5%; vertical-align: middle;">创建时间</th>
+					           
+					            <th style="width:10%; vertical-align: middle;">操作</th>
+					        </tr>
+					    </thead>
+					    
+					   
+					     	<tbody id="bots">
+					     		<foreach name="list" item="v">
+                        <tr>
+                          <!--  <td>{$v.id}</td>-->
+							 <td>
+							 	<a  href="javascript:;" val="{$v.id}" class="edit_sort">{$v.sort}</a>
+							 	<input type="text" class="sort_value" value="{$v.sort}" style="display:none;width: 38px;text-align: center;    margin-left: auto;margin-right: auto;">
+							 </td>
+							 <td>
+							  	<a  href="javascript:;" val="{$v.id}" text_name="title" class="edit_text">{$v.title}</a>
+							 	<input type="text" class="sort_text" value="{$v.title}" style="display:none;width: 80px;text-align: center;    margin-left: auto;margin-right: auto;">
+							
+							 </td>
+							 
+							 <td>
+								  {$v.conditions}<br> 立减&nbsp{$v.pre_price}&nbsp元
+							 
+							 </td>
+							  <td>
+							   	<a  href="javascript:;" val="{$v.id}" text_name="num" class="edit_text">{$v.num}</a>
+							 	<input type="text" class="sort_text" value="{$v.num}" style="display:none;width: 50px;text-align: center;    margin-left: auto;margin-right: auto;">
+							
+							  </td>
+							  <td>
+							  	<a  href="javascript:;" val="{$v.id}" text_name="sell_num" class="edit_text">领取中心</a>
+							 	<input type="text" class="sort_text" value="{$v.sell_num}" style="display:none;width: 50px;text-align: center;    margin-left: auto;margin-right: auto;">
+							
+							  
+							    </td>
+							    <td>
+							  		<a  href="javascript:;" val="{$v.id}" text_name="sell_num" class="edit_text">{$v.time_set}</a>
+							 		<input type="text" class="sort_text" value="{$v.time_set}" style="display:none;width: 50px;text-align: center;    margin-left: auto;margin-right: auto;">
+							
+							  
+								</td>
+							  	<td>
+                            	<a class="btn btn-default"  title="修改" alt="修改" href="manager_edit/id/{$v['id']}" >编辑</a>
+                            	
+								<a   class="btn btn-info" style="color:white;" title="回收" alt="回收" href="manager_delete/id/{$v['id']}" onclick="if(confirm('确认删除该优惠券吗？')==false)return false;">删除</a>
+			
+								<a class="btn btn-default"  title="修改" alt="修改" href="send" >发放优惠券</a>
+                            </td>
+                        </tr>
+  					</foreach>
+                       
+                       </tbody> 
+					    				   
+	                </table>  
+
+				 </form>
+            </div>			    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+		<!--====================主体  结束===============-->
+	</div>	
+
+</body>
+</html>

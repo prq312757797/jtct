@@ -1,0 +1,183 @@
+<include file="Public/head" />
+<include file="Public/menu_car_members" />
+<div id="content">
+	<div id="content-header">
+		<h1>签约会员管理</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="{:U('CarMembers/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 会员管理</a>
+		<a href="#" class="current">签约会员管理</a>
+
+			<button id="search_button" class="btn" style="float: right;margin-top: 3px;margin-left: -3px;margin-right: 22px;" >搜索</button>
+		<input type="text" placeholder="会员昵称 / openid"  id="search_str" style="float: right;margin-top: 3px;" onBlur="this.value=ignoreSpaces(this.value);">
+
+
+<a href="audit_list?state=3" class="add_button"><button class="btn" >注册审核（<span style="color:;">{$count_register}</span>）</button></a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>签约会员管理</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th ><input type="checkbox" id="checkAll"></th>	
+								<th>签约会员</th>
+								<th>积分</th>
+								<th>注册时间</th>
+								<th>审核时间</th>
+								<th>操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							<foreach name="list" item="v">
+								<tr>
+									<td class="l_h45">{$v.id}</td>
+									<td class="l_h45" style="text-align:left;"><img style="width:50px;height:50px;" src="__ROOT__/Uploads/{$v.headimage}"> {$v.name}</td>
+									<td class="l_h45">
+									 	<?=$v['integral_buy']+$v['integral_song'];?> 
+									</td>
+									<td class="l_h45">
+									 	<?php  echo date("Y-m-d H:i:s",$v['time_register']);?>
+									</td>
+									<td class="l_h45">
+								 	 	<?=date("Y-m-d H:i:s",$v['time_agree']);?>
+									</td>
+									<td>
+										<a class="btn btn-default" title="详情" alt="详情" href="car_members_con/id/{$v['id']}" >
+											详情
+										</a>
+										<a class="btn btn-danger" style="color:white;"  title="删除" alt="删除" href="car_man_delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">
+											删除
+										</a>	
+									</td>
+								</tr>
+							</foreach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<include file="Public/foot" />
+<include file="Public/input_search" />
+<script>
+	//异步修改商品是否加精品
+	$(".make_jingpin").click(function(){
+		//alert($(this).attr("a"));
+		$.post('__ROOT__/adp.php/Goods/ajax_jingpin',{'id':$(this).attr("a")},function(date){
+	        if(date==1){
+	        	alert("设置成功");
+	        	window.location.reload();
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>
+<script>
+
+	//异步列表页的内容     ==============================================
+//style   1:车种管理表、2:车种分类管理表、3：计价管理表、
+	$(".edit_text").click(function(){
+		var self_input=$(this).parent('td').children('input')
+		var that=this
+
+		$(this).css("display","none");
+		self_input.css("display","block");
+		self_input.focus();
+		self_input.blur(function(){
+			//异步修改排序
+			$(that).text(self_input.val());
+			$(that).css("display","block");
+			self_input.css("display","none");
+			 $.post('__ROOT__/adp.php/CarManager/ajax_change_text',{'style':1,'text_name':$(that).attr("text_name"),'id':$(that).attr("val"),'text_val':self_input.val()},function(date){
+	        if(date==1){
+	        	alert("成功");
+	        }else{
+	        	
+	        }
+        },'json');
+		});
+	})
+</script>
+<script>
+	//异步修改商品 排序
+	$(".edit_sort").click(function(){
+		var self_input=$(this).parent('td').children('input')
+		var that=this
+		
+		$(this).css("display","none");
+		self_input.css("display","block");
+		self_input.focus();
+		self_input.blur(function(){
+			//异步修改排序
+			$(that).text(self_input.val());
+			$(that).css("display","block");
+			self_input.css("display","none");
+			 $.post('__ROOT__/adp.php/Goods/ajax_sort_goods',{'id':$(that).attr("val"),'sort_val':self_input.val()},function(date){
+	        if(date==1){
+	        	alert("成功");
+	        }else{
+	        	
+	        }
+        },'json');
+		});
+	})
+</script>
+<script>
+	//商品ajax上下架
+	$(".peng_is_ok").click(function(){
+		var onw_id=$(this).children('input').val();
+
+		var that = this;
+		$.post('__ROOT__/adp.php/CarManager/ajax_change_ok',{'id':onw_id},function(date){
+	        if(date==1){
+	        	if($(that).attr("class")=="peng_is_ok peng_ok"){
+	        		$(that).attr("class","peng_is_ok peng_not");
+	        		$(that).children('span').text("下架");
+	        	}else if($(that).attr("class")=="peng_is_ok peng_not"){
+	        		$(that).attr("class","peng_is_ok peng_ok");
+	        		$(that).children('span').text("上架");
+	        	}
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>
+<script>
+	//异步设置推荐
+	$(".peng_is_ok_tj").click(function(){
+		var onw_id=$(this).children('input').val();
+	
+		var that = this;
+		$.post('__ROOT__/adp.php/CarManager/ajax_change_tj',{'id':onw_id},function(date){
+	        if(date==1){
+	        	if($(that).attr("class")=="peng_is_ok_tj peng_ok"){
+	        	
+	        		$(that).attr("class","peng_is_ok_tj peng_not");
+	        		$(that).children('span').text("一般展示");
+	        	}else if($(that).attr("class")=="peng_is_ok_tj peng_not"){
+	        		
+	        		$(that).attr("class","peng_is_ok_tj peng_ok");
+	        		$(that).children('span').text("正在推荐");
+	        	}
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>

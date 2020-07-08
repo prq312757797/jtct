@@ -1,0 +1,54 @@
+<div id="sidebar">
+
+			<ul>
+				<li ><a href="{:U('Distribution/index')}"><i class="icon icon-shopping-cart"></i>
+					<span>分销商管理</span></a></li>
+				<!--<li ><a href="{:U('Distribution/fx_trend')}"><i class="icon icon-shopping-cart"></i>
+					<span>分销商增长趋势</span></a></li>-->
+				<li><a href="{:U('Distribution/fx_lever')}"><i class="icon icon-shopping-cart"></i>
+					<span>分销佣金管理</span></a></li>
+				<li><a href="{:U('Distribution/fx_order')}"><i class="icon icon-shopping-cart"></i>
+					<span>分销订单</span></a></li>
+
+				<if condition="$program_id eq JT201712021113483120">
+					<li><a href="{:U('Distribution/man_contect')}"><i class="icon icon-shopping-cart"></i>
+						<span>代理关系管理</span></a></li>
+				</if>
+
+		<!--		<li ><a href="{:U('Distribution/index')}"><i class="icon icon-shopping-cart"></i>
+					<span>分销商统计</span></a></li>
+				<li><a href="{:U('Distribution/contect')}"><i class="icon icon-shopping-cart"></i>
+					<span>分销关系</span></a></li>-->
+
+				<!--提现申请-->
+				<li class="submenu open">
+					<a href="{:U('Distribution/cash_ing')}"><i class="icon icon-th-list"></i> 
+						<span>提现申请</span> <span class="label">4</span></a>
+					<ul>
+						<li><a href="{:U('Distribution/cash_ing')}">
+							<span>待审核的</span>
+						</a></li>
+						<li><a href="{:U('Distribution/cash_git')}">
+							<span>待打款的</span>
+						</a></li>
+						<li><a href="{:U('Distribution/cash_done')}">
+							<span>已打款的</span>
+						</a></li>
+						<li><a href="{:U('Distribution/cash_none')}">
+							<span>无效的</span>
+						</a></li>
+					</ul>
+				</li>
+
+				<li><a href="{:U('Distribution/cash_set')}"><i class="icon icon-shopping-cart"></i>
+					<span>基础设置</span></a></li>
+
+		<!--		<li><a href="{:U('Distribution/shanxuan')}"><i class="icon icon-shopping-cart"></i>
+					<span>联系方式</span></a></li>
+				<li><a href="{:U('Distribution/biaoqian')}"><i class="icon icon-shopping-cart"></i>
+					<span>平台联系</span></a></li>-->
+
+			</ul>
+
+
+		</div>

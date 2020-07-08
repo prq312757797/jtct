@@ -1,0 +1,421 @@
+<include file="Public/head" />
+
+<style>
+	.function_edit{
+		float: right;
+	    border: 1px solid #cac3c3;
+	    border-radius: 3px;
+	    padding: 4px;
+	    margin-toP: -5px;
+	}
+</style>
+	<div class="tab" style="width:90%;height:auto;margin:10px auto;background-color:#CAE1FF;padding:20px;border-radius:6px;">
+		<div class="tab-cont">
+			
+			
+			<form action="{:U('ProgramList/PLcanshu_edit')}" method="post" class="form-horizontal" role="form" enctype="multipart/form-data" id="form1">
+				<input type="hidden" name="shanghu_id" value="{$shagnhu.user_id}">
+				<input type="hidden" name="program_id" value="{$shagnhu.program_id}">
+	
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						小程序信息
+						<span class="function_edit show_form2" >模板功能管理</span>
+					</div>
+				<div class="panel-body">
+					<input type="hidden" name="acid" value="0">
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-3 col-md-2 control-label">小程序登录用户</label>
+						<div class="col-sm-9 col-xs-12">
+							<input type="text" name="name" id="username" class="form-control" value="{$shagnhu.user_shagnhu_name}" autocomplete="off" onblur="verifyGen()"  onkeyup="this.value=this.value.replace(/\s+/g,'')">
+							<span class="help-block">请输入你的小程序用户名</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-3 col-md-2 control-label">小程序登录密码</label>
+						<div class="col-sm-9 col-xs-12">
+							<input type="password" name="psw" class="form-control"  autocomplete="off" onkeyup="this.value=this.value.replace(/\s+/g,'')">
+							<span class="help-block">请输入你的小程序密码</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span style="color:red">*</span> 小程序名称</label>
+						<div class="col-sm-9 col-xs-12">
+							<input type="text" name="appmcheng" required="" class="form-control" value="{$shagnhu.appmcheng}" autocomplete="off" onkeyup="this.value=this.value.replace(/\s+/g,'')">
+							<span class="help-block" id="un">填写小程序名称</span>
+						</div>
+					</div>
+				    <div id="auth">
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label">原始ID</label>
+							<div class="col-sm-9 col-xs-12">
+								<input type="text" name="start_id" class="form-control" value="{$shagnhu.start_id}" autocomplete="off" onkeyup="this.value=this.value.replace(/\s+/g,'')">
+								<div class="help-block">请填写小程序的原始ID</div>
+							</div>
+						</div>
+		
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label">AppId</label>
+							<div class="col-sm-9 col-xs-12">
+								<input type="text" name="appid" class="form-control" value="{$shagnhu.appid}" autocomplete="off"  onkeyup="this.value=this.value.replace(/\s+/g,'')">
+								<div class="help-block">请填写微信小程序后台的AppId</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label">AppSecret</label>
+							<div class="col-sm-9 col-xs-12">
+								<input type="text" name="appsecret" class="form-control" value="{$shagnhu.appsecret}" autocomplete="off"  onkeyup="this.value=this.value.replace(/\s+/g,'')">
+								<div class="help-block">请填写微信小程序后台的AppSecret。</div>
+							</div>
+						</div>
+				   </div>
+                </div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						小程序支付
+					</div>
+	                <div class="panel-body">
+						<!--<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label">支付模式</label>
+								<div class="col-sm-9 col-xs-12">
+									<select name="paymod" class="form-control">
+										<option value="1" selected="">单商户模式</option>
+										<option value="2">服务商模式</option>
+									</select>
+									<div class="help-block">请选择支付模式</div>
+								</div>
+						</div>-->
+		                <!--<div id="ser" style="display:none">
+							<div class="form-group">
+								<label class="col-xs-12 col-sm-3 col-md-2 control-label">服务商appid</label>
+								<div class="col-sm-9 col-xs-12">
+									<input type="text" name="sappid" class="form-control" value="" autocomplete="off">
+									<div class="help-block">请填写您服务商的appid</div>
+								</div>
+							</div>
+		
+							<div class="form-group">
+								<label class="col-xs-12 col-sm-3 col-md-2 control-label">服务商商户号</label>
+								<div class="col-sm-9 col-xs-12">
+									<input type="text" name="smuchid" class="form-control" value="" autocomplete="off">
+									<div class="help-block">请填写您服务商的商户号</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-xs-12 col-sm-3 col-md-2 control-label">服务商支付密钥</label>
+								<div class="col-sm-9 col-xs-12">
+									<input type="password" name="skey" class="form-control" value="" autocomplete="off">
+									<div class="help-block">请填写您服务商的支付密钥</div> shanghu_num
+								</div>
+							</div>
+		                </div>-->
+							<div class="form-group">
+								<label class="col-xs-12 col-sm-3 col-md-2 control-label">商户号</label>
+								<div class="col-sm-9 col-xs-12">
+									<input type="text" name="shanghu_num" class="form-control" value="{$shagnhu.shanghu_num}" autocomplete="off" onkeyup="this.value=this.value.replace(/\s+/g,'')">
+									<div class="help-block">请填写微信支付的商户号</div>
+								</div>
+							</div>
+		
+							<div class="form-group" id="key">
+								<label class="col-xs-12 col-sm-3 col-md-2 control-label">支付密钥</label>
+								<div class="col-sm-9 col-xs-12">
+									<input type="password" name="pay_key" class="form-control" value="{$shagnhu.pay_key}" autocomplete="off" onkeyup="this.value=this.value.replace(/\s+/g,'')">
+									<div class="help-block">修改微信支付密钥</div>
+								</div>
+							</div>
+			
+							<div class="form-group">
+								<label class="col-xs-12 col-sm-3 col-md-2 control-label"></label>
+								<div class="col-sm-9 col-xs-12">
+									<input name="" type="submit" value="确认提交" class="btn btn-primary span2">
+									<input type="button" name="" id="" value="返回上一级" onclick="history.back(-1);" class="btn btn-danger "/>
+									<input type="hidden" name="token"  value="c72e41a7">
+								</div>
+							</div>
+			            </div>
+				   </div>				
+		        </div>
+		    </form>
+            <form action="{:U('ProgramList/PL_function_edit')}" method="post" class="form-horizontal" role="form" enctype="multipart/form-data" id="form2" style="display:none;">
+				<input type="hidden" name="shanghu_id" value="{$shagnhu.user_id}">
+				<input type="hidden" name="program_id" value="{$shagnhu.program_id}">
+	
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						功能编辑
+						<span class="function_edit show_form1">返回小程序信息</span>
+					</div>
+					<div class="panel-body">
+						<input type="hidden" name="acid" value="0">
+						
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label"><span style="color:red">*</span> 小程序名称</label>
+							<div class="col-sm-9 col-xs-12">
+								<input type="text" readonly  class="form-control" value="{$shagnhu.appmcheng}" autocomplete="off" onkeyup="this.value=this.value.replace(/\s+/g,'')">
+							
+							</div>
+						</div>
+<!--是否启用首页视频-->						
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label">首页展示视频</label>
+							<div class="col-sm-9 col-xs-12">
+								<if condition="$store.is_show_vedio eq 1">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_show_vedio" value="1" checked=""> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_show_vedio" value="2"> 禁用
+			                        </label>
+		                        </if>
+		                        <if condition="$store.is_show_vedio eq 2">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_show_vedio" value="1"> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_show_vedio" value="2"  checked=""> 禁用
+			                        </label>
+		                        </if>
+							</div>
+						</div>
+<!--是否启用首页提价联系资料-->						
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label">首页联系资料</label>
+							<div class="col-sm-9 col-xs-12">
+								<if condition="$store.is_submit_contect eq 1">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_submit_contect" value="1" checked=""> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_submit_contect" value="0"> 禁用
+			                        </label>
+		                        </if>
+		                        <if condition="$store.is_submit_contect eq 0">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_submit_contect" value="1"> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_submit_contect" value="0"  checked=""> 禁用
+			                        </label>
+		                        </if>
+							</div>
+						</div>
+<!--是否启用首页展示资讯列表-->						
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label">首页展示资讯</label>
+							<div class="col-sm-9 col-xs-12">
+								<if condition="$store.is_artical eq 1">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_artical" value="1" checked=""> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_artical" value="0"> 禁用
+			                        </label>
+		                        </if>
+		                        <if condition="$store.is_artical eq 0">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_artical" value="1"> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_artical" value="0"  checked=""> 禁用
+			                        </label>
+		                        </if>
+							</div>
+						</div>
+<!--是否启用规格-->						
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label">是否启用规格</label>
+							<div class="col-sm-9 col-xs-12">
+								<if condition="$store.in_on_guige eq 1">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="in_on_guige" value="1" checked=""> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="in_on_guige" value="0"> 禁用
+			                        </label>
+		                        </if>
+		                        <if condition="$store.in_on_guige eq 0">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="in_on_guige" value="1"> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="in_on_guige" value="0"  checked=""> 禁用
+			                        </label>
+		                        </if>
+							</div>
+						</div>		
+<!--是否启用批发-->						
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label">是否启用批发</label>
+							<div class="col-sm-9 col-xs-12">
+								<if condition="$store.is_on_pifa eq 1">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_on_pifa" value="1" checked=""> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_on_pifa" value="0"> 禁用
+			                        </label>
+		                        </if>
+		                        <if condition="$store.is_on_pifa eq 0">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_on_pifa" value="1"> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_on_pifa" value="0"  checked=""> 禁用
+			                        </label>
+		                        </if>
+							</div>
+						</div>	
+<!--是否启用推荐商品-->						
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label">启用推荐商品</label>
+							<div class="col-sm-9 col-xs-12">
+								<if condition="$store.is_on_showgoods eq 1">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_on_showgoods" value="1" checked=""> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_on_showgoods" value="0"> 禁用
+			                        </label>
+		                        </if>
+		                        <if condition="$store.is_on_showgoods eq 0">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_on_showgoods" value="1"> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_on_showgoods" value="0"  checked=""> 禁用
+			                        </label>
+		                        </if>
+							</div>
+						</div>	
+<!--首页双幻灯片-->						
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label">首页双幻灯片</label>
+							<div class="col-sm-9 col-xs-12">
+								<if condition="$store.is_double_huandeng eq 1">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_double_huandeng" value="1" checked=""> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_double_huandeng" value="0"> 禁用
+			                        </label>
+		                        </if>
+		                        <if condition="$store.is_double_huandeng eq 0">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_double_huandeng" value="1"> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_double_huandeng" value="0"  checked=""> 禁用
+			                        </label>
+		                        </if>
+							</div>
+						</div>	
+<!--是否首页展示商品分类-->						
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label">是否首页展示商品分类</label>
+							<div class="col-sm-9 col-xs-12">
+								<if condition="$store.is_show_indexfl eq 1">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_show_indexfl" value="1" checked=""> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_show_indexfl" value="0"> 禁用
+			                        </label>
+		                        </if>
+		                        <if condition="$store.is_show_indexfl eq 0">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_show_indexfl" value="1"> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_show_indexfl" value="0"  checked=""> 禁用
+			                        </label>
+		                        </if>
+							</div>
+						</div>								
+<!--设置分类为一级分类还是二级分类-->						
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label">设置分类等级</label>
+							<div class="col-sm-9 col-xs-12">
+								<if condition="$store.fenlei_lever eq 1">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="fenlei_lever" value="1" checked=""> 一级分类
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="fenlei_lever" value="2"> 二级分类
+			                        </label>
+		                        </if>
+		                        <if condition="$store.fenlei_lever eq 2">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="fenlei_lever" value="1"> 一级分类
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="fenlei_lever" value="2"  checked=""> 二级分类
+			                        </label>
+		                        </if>
+							</div>
+						</div>	
+<!--预约服务-->						
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label">预约服务</label>
+							<div class="col-sm-9 col-xs-12">
+								<if condition="$store.is_booking_server eq 1">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_booking_server" value="1" checked=""> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_booking_server" value="0"> 禁用
+			                        </label>
+		                        </if>
+		                        <if condition="$store.is_booking_server eq 0">
+		                       		 <label class="radio-inline">
+			                            <input type="radio" name="is_booking_server" value="1"> 启用
+			                    	</label>
+			                        <label class="radio-inline">
+			                            <input type="radio" name="is_booking_server" value="0"  checked=""> 禁用
+			                        </label>
+		                        </if>
+							</div>
+						</div>							
+						
+						<div class="form-group">
+							<label class="col-xs-12 col-sm-3 col-md-2 control-label"></label>
+							<div class="col-sm-9 col-xs-12">
+								<input name="" type="submit" value="确认提交" class="btn btn-primary span2">
+								<input type="button" name="" id="" value="返回参数信息"  class="btn btn-danger show_form1"/>
+								<input type="hidden" name="token"  value="c72e41a7">
+							</div>
+						</div>
+	               </div>						
+		        </div>
+		    </form>
+			
+			</div>
+		</div>
+		<include file="Public/foot" />
+	</body>
+<script type="text/javascript">
+
+$(".show_form2").click(function(){
+	$("#form1").css("display","none")
+	$("#form2").css("display","block")
+})
+$(".show_form1").click(function(){
+	$("#form1").css("display","block")
+	$("#form2").css("display","none")
+})
+
+
+	$("select[name='paymod']").change(function(event) {
+		if($(this).val()==1){
+			$("#ser").attr('style','display: none')	
+			$("#key").attr('style','display: block')	
+		}else{
+			$("#ser").attr('style','display: block')
+			$("#key").attr('style','display: none')
+		}
+	});
+</script>
+			
+</html>

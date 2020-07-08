@@ -1,0 +1,30 @@
+<div id="sidebar">
+
+	 	<ul>
+			<li ><a href="{:U('Goodsbear/selling')}"><i class="icon icon-shopping-cart"></i> 
+					<span>出售中</span></a></li>
+			<li><a href="{:U('Goodsbear/haved_selled')}"><i class="icon icon-shopping-cart"></i> 
+					<span>已售罄</span></a></li>
+			<li><a href="{:U('Goodsbear/cangku')}"><i class="icon icon-shopping-cart"></i> 
+					<span>仓库中</span></a></li>
+			<li><a href="{:U('Goodsbear/huishou')}"><i class="icon icon-shopping-cart"></i> 
+					<span>回收站</span></a></li>
+			<li><a href="{:U('Goodsbear/fenlei')}"><i class="icon icon-shopping-cart"></i> 
+					<span>在线酒水分类</span></a></li>
+
+		<if condition="$program_id eq JT201712021113483120">
+			<li><a href="{:U('Goodsbear/price_daili')}"><i class="icon icon-shopping-cart"></i> 
+			<span>代理购买价管理</span></a></li>
+		</if>
+		<if condition="$program_id eq JT201806151732369242">
+			<li><a href="{:U('Goodsbear/goods_havedsell')}"><i class="icon icon-shopping-cart"></i> 
+			<span>已售商品汇总</span></a></li>
+		</if>
+			
+		</ul>
+
+</div>
+
+
+
+		

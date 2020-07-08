@@ -1,0 +1,118 @@
+<include file="Public/head" />
+<include file="Public/menu_distribution" />
+<div id="content">
+	<div id="content-header">
+		<h1>更换上级</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 分销系统</a>
+		<a href="#" class="current">更换上级</a>
+
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>更换上级</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th><input type="checkbox"></th>
+								<th >粉丝</th>
+								<th>姓名 / 手机号码</th>
+								<th>等级</th>
+						
+								<th>上级分销商</th>
+								<th>下级分销商</th>
+		
+								<th>状态</th>
+								<th>操作</th>
+								
+							</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>总店</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>
+										<a onclick="if(confirm('确认更换上线吗？')==false)return false;" class="btn btn-default" title="确定更换" alt="确定更换" href="__ROOT__/adp.php/Distribution/sure_change?id=0&to_id={$to_id}" >
+											确定更换
+										</a>
+									</td>
+								</tr>
+							<foreach name="list" item="v">
+								<tr>
+									<if condition="$v['members_id'] neq $to_id">
+									<td><input value="{$v.members_id}" type="checkbox"></td>
+									<td style="text-align:left!important;">
+										<img src="{$v.members_head}" style="width:30px;height:30px;padding1px;border:1px solid #ccc">
+				                          {$v.members_nickname}
+									</td>
+									<td>
+										{$v.realname} / {$v.tel}
+									</td>
+									<td>{$v.fx_lever_title}</td>
+									
+									<td>  <if condition="$v['fx_uid'] eq 0">
+										总店<else/>
+										{$v.up_nickname}<br>
+										
+									</if> 
+									</td>
+									<td>  {$v.child_count} </td>
+								
+									<td>
+			                            <if condition="$v.fx_state eq 1">
+			                            	
+											<a class="btn btn-default" title="修改" alt="修改"  href="shenhe/id/{$v['members_id']}" onclick="if(confirm('确认通过审核吗？')==false)return false;">
+												点击审核
+											</a>
+			                           	
+			                           		
+			                            </if>
+			                            <if condition="$v.fx_state eq 2">
+			                            	 <span class="label label-success fx_state"  a="{$v.members_id}" b="{$v.fx_state}" data-toggle="ajaxSwitch" data-confirm="确认要取消审核?">
+													  已审核
+			                           		 </span>
+			                            </if>
+			                            <if condition="$v.fx_state eq 3">
+			                            	 <span class="label label-success fx_state" a="{$v.members_id}" b="{$v.fx_state}" data-toggle="ajaxSwitch" data-confirm="确认要取消审核?">
+													  停用
+			                           		 </span>
+			                            </if>
+				                         
+									</td>
+									<td>
+			                           	<a onclick="if(confirm('确认更换上线吗？')==false)return false;" class="btn btn-default" title="确定更换" alt="确定更换" href="__ROOT__/adp.php/Distribution/sure_change?id={$v['members_id']}&to_id={$to_id}" >
+											确定更换
+										</a>
+									</td>
+									</if>
+								</tr>
+							</foreach>
+							</tbody>
+						</table>
+						<div class="pages self_css" > {$pages} </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<include file="Public/image_ajax" /> 
+<include file="Public/foot" />
+
+

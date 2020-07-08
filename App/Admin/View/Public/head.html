@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>深恒利管理员管理</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="__ROOT__/Public/css/tube.css" />
+
+	<link rel="stylesheet" href="__PUBLIC__/keditor/themes/default/default.css" />
+    <link rel="stylesheet" href="__ROOT__/Public/keditor/plugins/code/prettify.css" />
+    <script charset="utf-8" src="__ROOT__/Public/keditor/kindeditor-all-min.js"></script>
+    <script charset="utf-8" src="__ROOT__/Public/keditor/lang/zh-CN.js"></script>
+    <script charset="utf-8" src="__ROOT__/Public/keditor/plugins/code/prettify.js"></script>
+
+<style>
+
+</style>
+	</head>
+	<body>
+		<div class="box">欢迎您登录深恒利后台管理</div>		            		
+		<div id="menu2" class="menu">
+			<ul>
+<if condition="$is_admin eq 1">
+				<li><a href="{:U('Members/index')}">管理员管理</a></li>
+				
+				<li><a href="{:U('Servicer/index')}">服务商管理</a></li>
+				<li><a href="{:U('Formwork/index')}">小程序管理</a></li>		
+				<li><a href="{:U('Muban/index')}">小程序模板管理</a></li>		
+				<li><a href="{:U('Audit/index')}">微信小程序审核</a></li>
+				<li><a href="{:U('Program/index')}">管理小程序码</a></li>
+</if>
+				
+<if condition="$is_admin eq 2">
+				<li><a href="{:U('Servicer/index')}">服务商管理</a></li>
+				<li><a href="{:U('Formwork/index')}">小程序管理</a></li>		
+				<li><a href="{:U('Muban/index')}">小程序模板管理</a></li>		
+				<li><a href="{:U('Audit/index')}">微信小程序审核</a></li>
+				<li><a href="{:U('Program/index')}">管理小程序码</a></li>
+</if>
+<if condition="$is_admin eq 3">
+				<li><a href="{:U('Program/index')}">管理小程序码</a></li>
+</if>
+				<li style="float:right;"><a href="{:U('Login/logout')}">退出</a></li>	
+			</ul>
+			<div class="cls"></div>
+		</div>	

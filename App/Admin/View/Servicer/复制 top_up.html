@@ -1,0 +1,92 @@
+<include file="Public/head" />
+<style>
+td{
+text-align:center;
+}
+</style>
+<style>
+	.self_top{
+	width:100%;
+	margin-top:4px;
+	}
+
+	.self_left{
+	padding-left:12px;
+	width:150px;
+	float:left;
+	}
+	.self_back{
+	margin-top: 12px;
+	float: left;
+	width: 39px;
+	text-align: center;
+	border: 1px solid;
+	padding: 3px;
+	margin-left: 35%;
+	font-size: 12px;
+	border-radius: 3px;
+	}
+	
+	.self_left1{
+	border: 1px solid;
+width: 9%;
+text-align: center;
+padding: 5px;
+border-radius: 7px;
+margin-left: 35%;
+margin-top: 12px;
+	}
+</style>
+<div style="width:100%;border:1px solid red;min-height:400px;">
+	
+	<h4>服务商管理<notempty name="title">--</notempty>{$title}</h4>
+	<if condition="$show_add eq 1">
+		<a href="add">&nbsp&nbsp添加服务商</a><div style="height:12px;clear:both;"></div>
+	</if>
+	<div style="float:right;border:1px solid ;padding:5px;margin-top: -3%;margin-right: 3%; " >
+	<a href="__ROOT__/index.php/Admin/Servicer/index">返回</a></div>
+
+
+	<div class="self_top">
+		<div class="self_left">服务商账号:</div>
+		<input type="text" class="input" readonly size="60" value="{$info.user_name}">        
+			
+    </div>
+
+<div class="self_top">
+		<div class="self_left">服务商公司:</div>
+		<input type="text" class="input" readonly size="60" value="{$info.user_company}">        
+    </div>		
+	<div class="self_top">
+		<div class="self_left">当前余额:</div>
+		<input type="text" id="user_balance" readonly size="60" value="{$info.user_balance}">        
+    </div>	
+	<div class="self_top">
+		<div class="self_left">电话:</div>
+		<input type="text" class="input" readonly size="60" value="{$info.user_mail}">        
+    </div>	
+	
+	
+<form action="__ROOT__/index.php/Admin/Servicer/top_up_add/user_id/{$v['user_id']}" method="post">
+	<div class="self_top" style="margin-top:30px;">
+		<div class="self_left" >充值:</div>
+		<input type="hidden" name="user_id"   value="{$info.user_id}">  
+		<input type="hidden" name="man_action"   value="{$man_action}"> 
+		<input type="hidden" name="running_num"   value="{$running_num}"> 
+		<input type="hidden" name="user_balance"  value="{$info.user_balance}">   
+		<input type="text" class="input"  size="60" name="price_add" onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" onafterpaste="this.value=this.value.replace(/[^0-9]/g,'')">
+    </div>	
+
+	<div class="self_top">
+		<div class="self_left">备注:</div>
+		<input type="text" class="input"  size="60" value="{$info.content}">        
+    </div>	
+	<button style="margin-left: 1%;margin-top: 12px;" type='submit'>确认充值</button>
+	</form>
+</div>
+
+
+<script src="__ROOT__/Public/js/jquery-3.1.1.min.js"></script>
+
+
+

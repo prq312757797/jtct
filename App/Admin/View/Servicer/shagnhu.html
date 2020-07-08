@@ -1,0 +1,42 @@
+<include file="Public/head" />
+<div class="contert">
+			<h2 style="width: 15%;float: left;">商户管理</h2>
+				<div style="float:right;margin-bottom:20px;    margin-top: 20px;">
+					<button class="btn btn-danger"onclick="history.go(-1)">返回</button>
+				</div>	
+		    <table class="table table-hover">		    	   
+				<thead>
+				    <tr>
+				      <th>编号</th>
+				      <th>账号</th>
+				 
+				      <th>商户姓名</th>				      
+				      <th>商户电话</th>
+				      <th>添加时间</th>
+				      <th>操作</th>
+				    </tr>
+				</thead>
+				<tbody>
+				  <foreach name="user_info" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+							 <td>{$v.name}</td>
+                         
+							 <td>{$v.realname}</td>
+                            <td>{$v.tel}</td>
+                            <td>
+                            	<?=date("Y-m-d H:i:s",$v['add_time']);?>
+                            </td>
+                            <td>
+								<a  title="详情" alt="详情" href="__ROOT__/adz.php/Servicer/shanghu_con/id/{$v['id']}">详情</a>
+								<a  title="删除" alt="删除" href="delete_sh/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            </td>
+                        </tr>
+                    </foreach>		   
+				</tbody>
+			</table>				
+		</div>
+	<div class="pages" style=" width: 100%;
+             margin-left: auto;    margin-top: 21px;text-align:center;
+             margin-right: auto;"> {$pages}</div>
+	</div>

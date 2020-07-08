@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>深恒利信息技术有限公司</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+html,body{
+		width:100%; 
+		height:100%;
+		background: url(../../../Public/img_login/123456.jpg);
+		}	
+#container{
+		width:100%;
+		height:100%; 
+		position:relative;
+		}
+.box{
+	position:absolute;
+	top: 220px;
+	left:580px;
+	width:500px;
+	height:500px;
+	border-radius:6px;
+	background:rgba(0,255,255,0.4);
+	padding-left:40px;
+	margin:0px auto;
+	}
+.bottom{
+		width:100%;
+		height: 60px;
+		font-size: 20px;
+		margin-top:100px;
+	}
+</style>
+</head>
+<body>
+
+<!--<div id="container">
+	<div class="box">
+		<h2 style="padding:20px;">深恒利信息技术有限公司</h2>
+	    <form action="__URL__/login" method="post" class="form-horizontal" role="form" style="margin-top:40px;">
+			<div class="form-group">
+			    <label for="firstname" class="col-sm-2 control-label">账号：</label>
+			    <div class="col-sm-8">
+			      <input type="text" class="form-control"  name="name" id="user_name" placeholder="请输入您的账号">
+			    </div>
+			</div>
+			<div class="form-group">
+			    <label for="lastname" class="col-sm-2 control-label">密码：</label>
+			    <div class="col-sm-8">
+			      <input type="password" class="form-control" name="psw" id="user_psw" placeholder="请输入您的密码">
+			    </div>
+			</div>
+			<div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <div class="checkbox">
+			        <label>
+			          <input type="checkbox">请记住我
+			        </label>
+			      </div>
+			    </div>
+			</div>
+				
+		    <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			        <button type="submit" id="submit" class="btn btn-primary" style="padding:10px 40px;">欢迎登录</button>
+			        <button type="" class="btn btn-warning" style="padding:10px 40px;">加入我们</button>
+			    </div>
+		    </div>
+		</form>	
+		<div class="bottom">
+			版权所有：2017深恒利信息技术有限公司
+		</div>		
+	</div>
+</div>	-->	
+<div class="signin">
+	<div class="signin-head">服务商登录:</div>
+	<form class="form-signin" role="form" action="__URL__/login" method="post">
+		<input type="text" name="name" class="form-control" placeholder="请输入账号" required autofocus />
+		<input type="password" name="psw" class="form-control" placeholder="请输入密码" required />
+		<button class="btn btn-lg btn-warning btn-block" type="submit">登录</button>
+		<label class="checkbox">
+		  <input type="checkbox" value="remember-me"> 记住密码
+		</label>
+	</form>
+</div>
+<script src="../../../Public/js_login/collision.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+function rand(m,n){return m+parseInt((n-m)*Math.random());}
+var says=['爱拼才会赢！','少壮不努力','老大徒伤悲','欲速则不达','三思而后行','好学近乎之','日久见人心'];
+var saysLength=says.length;
+var oC=document.getElementById('container');
+var mxwidth=oC.offsetWidth;
+var mxheight=oC.offsetHeight;
+var oB=new BallBox('container');
+oB.ballRun();
+for(var i=0;i<15;i++){
+	var b=rand(40,60);
+	var x=rand(b,mxwidth-b);
+	var y=rand(b,mxheight-b);
+	var ball=new Ball({
+		'b':b,
+		'x':x,
+		'y':y,
+		'sx':rand(1,4),
+		'sy':rand(1,4),
+		'c':'url(../../../Public/img_login/paopao'+rand(1,6)+'.png)',
+		'opa':rand(60,100)/100,
+		'callBack':function(n){
+			//this.setB(rand(30,50));
+			//this.setM();
+			this.setOpa(rand(60,100)/100);
+			if(n%3==0){this.setC('url(../../../Public/img_login/paopao'+rand(1,6)+'.png)')};//撞三次改变下图片
+			if(n%50==0){
+				this.setB(rand(40+parseInt((n>1000?1000:n)/50),60+parseInt((n>1000?1000:n)/50)));
+			}//撞50次改大小
+			this.setHTML(says[rand(0,saysLength)]);
+		}
+	});
+	oB.addBall(ball);
+}
+</script>
+
+</body>
+</html>

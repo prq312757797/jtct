@@ -1,0 +1,71 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">
+				<div style="border-bottom:1px solid #000000;height:60px; padding:20px;">
+				    <span style="font-size:20px;">商品概述</span>
+			<!--	    <a href="../goods/goods.html"><button class="btn btn-primary" style="float:right;">+添加商品</button></a>				   
+			-->	</div> 			
+
+			    <div >
+		            <div class="contact-box contte">
+		            	<div class="peng_index">            			
+			                <div class="col-sm-1" name="program_logo" style="margin-top: 2%;">
+			                   <img src="__ROOT__/Uploads/{$storeinfo.program_logo}" style="width:65px;height:65px;border-radius:5px">
+			                </div>
+				            <div class="col-sm-10" style="padding-left:10px;margin-top: 1.5%;">
+				                <h3 name="program_title">{$storeinfo.program_title}</h3>
+				                <p class="abstract">{$storeinfo.abstract}</p>
+				            </div>
+				        	<div class="col-sm-1" style="padding-left: 0px;padding-top:20px;">
+				        		<a class="btn btn-primary btn-sm" href="{:U('Set/index')}" style="color: #fff"> 点击修改</a>
+				        	</div>
+				            <div class="clearfix"></div>
+			            </div>
+		            </div>
+                </div>
+			    			   	    
+		        <div class="contact-box bug peng_index_count" style="text-align:center;">
+		            <div class=" col-md-12 col-sm-12">
+		                <div class="row">
+		                	<a href="">
+		                        <div class="col-sm-3 forum-info">
+		                        <span class="views-number goods_totals">(<span style="color:red;">{$order_form_1}</span>)</span>
+		                            <div>
+		                                <small>已成交订单</small>
+		                            </div>
+		                        </div>
+		                   </a>		                                        
+		                    <a href="">
+		                        <div class="col-sm-3 forum-info">
+		                            <span class="views-number status1">(<span style="color:red;">{$order_form_2}</span>)</span>
+		                            <div>
+		                                <small>待发货订单</small>
+		                            </div>
+		                        </div>
+		                    </a>			                                                
+		                    <a href="">
+		                        <div class="col-sm-3 forum-info">
+		                            <span class="views-number status4">(<span style="color:red;">{$order_form_5}</span>)</span>
+		                            <div>
+		                                <small>退换/售后</small>
+		                            </div>
+		                        </div>
+		                    </a>			                                        
+		                    <a href="">
+		                   
+		                    </a>
+		                </div>
+		            </div>
+		        </div>
+			      
+			</div>			    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+</html>

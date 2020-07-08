@@ -1,0 +1,76 @@
+		<div id="sidebar">
+			<ul>
+				<li ><a href="{:U('Supermarket/index')}"><i class="icon icon-shopping-cart"></i>
+					<span>超市日用</span></a></li>
+				<!--多商户管理-->
+				<li class="submenu open">
+					<a href="{:U('Supermarket/in_wait')}"><i class="icon icon-th-list"></i> 
+						<span>超市管理</span> <span class="label">3</span></a>
+					<ul>
+						<li><a href="{:U('Supermarket/in_ing')}">
+							<span>入驻中<span style="color:red;"> </span></span>
+						</a></li>
+						<li><a href="{:U('Supermarket/in_stop')}">
+							<span>暂停中<span style="color:red;"> </span></span>
+						</a></li>
+					</ul>
+				</li>
+
+				<!--商品-->
+				<li class="submenu open">
+					<a href="{:U('Supermarket/selling')}"><i class="icon icon-th-list"></i> 
+						<span>商品管理</span> <span class="label">5</span></a>
+					<ul>
+						<li><a href="{:U('Supermarket/selling')}">
+							<span>出售中<span style="color:red;"></span></span>
+						</a></li>
+						<li><a href="{:U('Supermarket/haved_selled')}">
+							<span>已售罄<span style="color:red;"></span></span>
+						</a></li>
+						<li><a href="{:U('Supermarket/cangku')}">
+							<span>仓库中<span style="color:red;"></span></span>
+						</a></li>
+						<li><a href="{:U('Supermarket/huishou')}">
+							<span>回收站<span style="color:red;"> </span></span>
+						</a></li>
+						<li><a href="{:U('Supermarket/fenlei')}">
+							<span>分类<span style="color:red;"> </span></span>
+						</a></li>
+					</ul>
+				</li>
+				<!--订单-->
+				<li class="submenu open">
+					<a href="{:U('Supermarket/allder_fukuan')}"><i class="icon icon-th-list"></i> 
+						<span>订单管理</span> <span class="label">7</span></a>
+					<ul>
+						<li><a href="{:U('Supermarket/allder_fukuan')}">
+							<span>待付款<span style="color:red;"></span></span>
+						</a></li>
+						<li><a href="{:U('Supermarket/allder_fahuo')}">
+							<span>已付款<span style="color:red;"></span></span>
+						</a></li>
+						<li><a href="{:U('Supermarket/allder_shouhuo')}">
+							<span>待收货<span style="color:red;"></span></span>
+						</a></li>
+						<li><a href="{:U('Supermarket/allder_wancehgn')}">
+							<span>已完成<span style="color:red;"> </span></span>
+						</a></li>
+						<li><a href="{:U('Supermarket/allder_tuikuan')}">
+							<span>待退款<span style="color:red;"> </span></span>
+						</a></li>
+						<li><a href="{:U('Supermarket/allder_close')}">
+							<span>已关闭<span style="color:red;"> </span></span>
+						</a></li>
+						<li><a href="{:U('Supermarket/order_all')}">
+							<span>全部订单<span style="color:red;"> </span></span>
+						</a></li>
+					</ul>
+				</li>
+				<!--<li><a href="{:U('Supermarket/merch_fenlei')}"><i class="icon icon-shopping-cart"></i>
+					<span>分类管理</span></a></li>-->
+				<!--基础设置-->
+				<li><a href="{:U('Supermarket/merch_set')}"><i class="icon icon-shopping-cart"></i>
+					<span>基础设置</span></a></li>
+
+			</ul>
+		</div>

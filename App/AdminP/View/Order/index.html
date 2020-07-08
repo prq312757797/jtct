@@ -1,0 +1,90 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_order" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">	
+				<div class="page-heading" style="border-bottom:1px solid #000000;">
+					<h4 style="margin:10px;">订单概述:</h4>							
+				</div>
+				<table class="table table-bordered" style="text-align:center;background:paleturquoise;">
+					<h4 style="margin:10px;">今日成交:</h4>
+					<thead >
+						<tr>
+							<th style="text-align:center;">成交量</th>
+							<th style="text-align:center;">成交额</th>						
+						</tr>
+					</thead>
+					<tbody id="today">
+						<tr>
+							<td id="finish_num1">{$data.t.num}</td>
+							<td id="finish_gold1">{$data.t.sum}</td>						
+						</tr>		
+					</tbody>
+				</table>
+				
+				<table class="table table-bordered" style="text-align:center;background:paleturquoise;">
+					<h4 style="margin:10px;">昨日成交:</h4>
+					<thead >
+						<tr>
+							<th style="text-align:center;">成交量</th>
+							<th style="text-align:center;">成交额</th>						
+						</tr>
+					</thead>
+					<tbody id="yestday">
+						<tr>
+							<td id="finish_num2">{$data.y.num}</td>
+							<td id="finish_gold2">{$data.y.sum}</td>						
+						</tr>		
+					</tbody>
+				</table>
+				
+				<table class="table table-bordered" style="text-align:center;background:paleturquoise;">
+					<h4 style="margin:10px;">近7日成交:</h4>
+					<thead>
+						<tr>
+							<th style="text-align:center;">成交量</th>
+							<th style="text-align:center;">成交额</th>							
+						</tr>
+					</thead>
+					<tbody id='seven'>
+						<tr>
+							<td id="finish_num3">{$data.w.num}</td>
+							<td id="finish_gold3">{$data.w.sum}</td>						
+						</tr>		
+					</tbody>
+				</table>
+				
+				<table class="table table-bordered" style="text-align:center;background:paleturquoise;">
+					<h4 style="margin:10px;">近1个月成交:</h4>
+					<thead >
+						<tr>
+							<th style="text-align:center;">成交量</th>
+							<th style="text-align:center;">成交额</th>							
+						</tr>
+					</thead>
+					<tbody id="month">
+					    <tr>
+							<td id="finish_num4">{$data.m.num}</td>
+							<td id="finish_gold4">{$data.m.sum}</td>						
+						</tr>	
+					</tbody>
+				</table>		
+								
+            </div>			    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+<script>
+    for(i=1;i<=4;i++){
+    	var t=document.getElementById('finish_gold'+i).textContent;
+//  	console.log(t);
+    	if(t==''){
+    		document.getElementById('finish_gold'+i).textContent=0;
+    	}
+    }
+	
+</script>
+</body>
+</html>

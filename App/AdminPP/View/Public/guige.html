@@ -1,0 +1,112 @@
+<script>
+    //添加规格
+    var val02=1;
+    var val_102=val02-1;
+    var num_add
+ 
+    $("#more_guige").click(function(){
+//		console.log($(this).attr("num"))
+   	
+   		 
+   		console.log($(this).attr("num"))
+        var dh = '';
+//      dh += ' <input type=\"text\" name=\"qq\"    class=\"form-control\" placeholder=\"请输入参数名\">  ';
+//      <input type="number" name="price[]" value="" id="sales" class="form-control valid"  aria-invalid="false">
+        dh += '<div class="" style="border: 1px solid #d0d0d0; padding: 20px;">规格 '+$(this).attr("num")+' ：';
+//      dh += '<span style="background:#F2F2F2;height: 20px; line-height: 20px;" class="delete_guige" a="{$info['id']}" b="'+val02+'" c="1">取消</span>';
+        dh += '<div class="btn btn-primary delete_guige" a="{$info['id']}" b="'+$(this).attr("num")+'" c="1" style="position: relative;top:-2px;">取消</div>';
+        
+        dh += '<div class="input-group">';
+        dh += '<input class="changeimg_key" name="changeimg_key[]" type="hidden"  value="1">';
+        dh += '<input style="position: absolute; left: 450px; height: 60px; width: 75px;" type="file" value="" name="img[]" id="guige_input'+$(this).attr("num")+'" onchange="guige_img('+$(this).attr("num")+')">';
+        dh += '<img style="position: absolute; left: 530px;top: -29px;" id="guige_img'+$(this).attr("num")+'" src=""/>';
+        dh += '<div style="width:50px;display: inline-block;">规格名: </div><input type="text" name="guige[]" placeholder="规格名" value="" id="sales" class="w32"  aria-invalid="false">';
+        dh += '<if condition="$program_id neq JT201810111844206577">';
+        dh += '<div style="width:40px;display: inline-block; margin-left: 20px;">价格: </div><input type="text" name="price[]" placeholder="价格" value="" id="sales" class="w32"  aria-invalid="false">';
+        dh += '</if>';
+        dh += '<div style="height: 10px;"></div><div style="width:50px;display: inline-block;">库存: </div><input type="text" name="num[]" placeholder="库存" value="" id="sales" class="w32"  aria-invalid="false"><div style="width:40px;display: inline-block; margin-left: 20px;"><if condition="$program_id eq JT201810111844206577">克重<else/>备注</if>	: </div><input type="text" name="remark[]" placeholder="<if condition="$program_id eq JT201810111844206577">克重<else/>备注</if>	" value="" id="sales" class="w32"  aria-invalid="false"></div>';
+ 
+ 		dh += '<if condition="$program_id eq JT201810111844206577">';
+ 		dh += '<div style="height: 10px;"></div>';
+		dh += '<div style="width:50px;display: inline-block;">材料价: </div><input type="text" name="gg_price_cl_title_to_'+$(this).attr("num")+'[]" placeholder="材料价名称" value="" id="sales" class="w32"  aria-invalid="false">';
+		dh += '<div style="width:40px;display: inline-block; margin-left: -30px;"> </div><input type="text" name="gg_price_cl_to_'+$(this).attr("num")+'[]" placeholder="材料价价格" value="" id="sales" class="w32"  aria-invalid="false">';
+		
+		dh += '<div style="height: 10px;"></div>';
+		dh += '<div style="width:50px;display: inline-block;"> </div><input type="text" name="gg_price_cl_title_to_'+$(this).attr("num")+'[]" placeholder="材料价名称" value="" id="sales" class="w32"  aria-invalid="false">';
+		dh += '<div style="width:40px;display: inline-block; margin-left: -30px;"> </div><input type="text" name="gg_price_cl_to_'+$(this).attr("num")+'[]" placeholder="材料价价格" value="" id="sales" class="w32"  aria-invalid="false">';
+
+		dh += '<div style="height: 10px;"></div>';
+		dh += '<div style="width:50px;display: inline-block;"> </div><input type="text" name="gg_price_cl_title_to_'+$(this).attr("num")+'[]" placeholder="材料价名称" value="" id="sales" class="w32"  aria-invalid="false">';
+		dh += '<div style="width:40px;display: inline-block; margin-left: -30px;"> </div><input type="text" name="gg_price_cl_to_'+$(this).attr("num")+'[]" placeholder="材料价价格" value="" id="sales" class="w32"  aria-invalid="false">';
+		dh += '</if>';
+//      document.getElementById('muban_b_'+val_102).innerHTML = dh;
+        $('#test123').append(dh)
+        if(val02<14){
+            val02++;
+            val_102++;
+        }else{
+            alert("限制15个参数");
+        }
+        
+      $(this).attr("num",parseInt($(this).attr("num"))+parseInt(1))
+    })
+</script>
+<script>
+    //设置二级规格
+    var val022=1;
+    var val_1022=val022-1;
+    $("#more_guige02").click(function(){
+        var dh = '';
+        //dh += ' <input type=\"text\" name=\"qq\"    class=\"form-control\" placeholder=\"请输入参数名\">  ';
+        //<input type="number" name="price[]" value="" id="sales" class="form-control valid"  aria-invalid="false">
+        dh += ' <div class="input-group">  ';
+        dh += ' <input type="text" name="guige02[]" placeholder="规格名" value="" id="sales" class="w60"  aria-invalid="false">  ';
+        dh += ' </div> ';
+
+        //document.getElementById('muban_b_'+val_102).innerHTML = dh;
+        $('#test1234').append(dh)
+        if(val022<14){
+            val022++;
+            val_1022++;
+        }else{
+            alert("限制15个参数");
+        }
+    })
+</script>
+<script>
+ //=======================================这里是规格上传图片预览===========================================
+ function guige_img(e,n){
+ 	var guige_input_file	= document.getElementById('guige_input'+e);
+ 	var guige_img_show 		= document.getElementById('guige_img'+e);
+ 	if(n){
+ 		var change_imgkey	= document.getElementById('changeimg'+e);
+		change_imgkey.value = '1';
+ 	}
+ 	
+
+ 	if(guige_input_file.files[0]){
+		guige_img_show.style.display 	= 'block';
+		guige_img_show.style.width	 	= '110px';
+		guige_img_show.style.height 	= '110px'; 
+		if(document.getElementById("guige_input_file")!=null){
+			document.getElementById("guige_input_file").style.display = 'none';
+		}	
+		guige_img_show.src = window.URL.createObjectURL(guige_input_file.files[0]);
+	}else{
+		alert("上传错误！")
+	}
+	return true;
+ }
+    //删除规格
+    $(".delete_guige").click(function(){
+        if(confirm("确定要删除规格吗？")==true){
+            $.post('__ROOT__/adp.php/Goods/ajax_delete_guige',{'id':$(this).attr("a"),'key':$(this).attr("b"),'state':$(this).attr("c")},function(date){
+                if(date==1){
+                   window.location.reload();
+                }else{
+                    alert('删除失败');
+                }
+            },'json');
+        }
+    })
+</script>

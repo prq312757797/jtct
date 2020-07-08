@@ -1,0 +1,110 @@
+<include file="Public/head" />
+<include file="Public/menu_car_order" />
+<style>
+	.feilei{
+		margin-bottom: 4px;
+		padding: 8px 35px 8px 14px;
+		color: #468847;
+		background-color: #dff0d8;
+		border-color: #d6e9c6;
+	}
+	.function{
+		padding: 3px;
+		float: right;
+		margin-right: 1%;
+		margin-top: 4px;
+	}
+	.title_self{
+		width:100%!important;line-height: 43px!important;font-size: 18px!important;
+	}
+	.con_self{
+		width:100%!important;
+	}
+</style>
+<div id="content">
+	<div id="content-header">
+		<h1>订单概述</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 订单</a>
+		<a href="#" class="current">订单概述</a>
+
+
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>订单概述</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<div class="row-fluid">
+					<div class="span12 center" style="text-align: center;">					
+						<ul class="stat-boxes" style="width:100%;">
+							<li style="width:10%;    height: 60px;">
+								<div class="right title_self" >今日成交</div>
+							</li>
+							<li style="width:20%;">
+								<div class="right con_self" >成交量<strong>{$data.k1.num}</strong></div>
+							</li>
+							<li style="width:20%;">
+								<div class="right con_self">成交额<strong><empty name="data['k1']['sum']">0<else/>{$data.k1.sum}</empty></strong></div>
+							</li>
+						</ul>
+						
+						<ul class="stat-boxes" style="width:100%;">
+							<li style="width:10%;    height: 60px;">
+								<div class="right title_self" >昨日成交</div>
+							</li>
+							<li style="width:20%;">
+								<div class="right con_self" >成交量<strong>{$data.k2.num}</strong></div>
+							</li>
+							<li style="width:20%;">
+								<div class="right con_self">成交额<strong><empty name="data['k2']['sum']">0<else/>{$data.k2.sum}</empty></strong></div>
+							</li>
+						</ul>
+						
+						<ul class="stat-boxes" style="width:100%;">
+							<li style="width:10%;    height: 60px;">
+								<div class="right title_self" >近7日成交</div>
+							</li>
+							<li style="width:20%;">
+								<div class="right con_self" >成交量<strong>{$data.k3.num}</strong></div>
+							</li>
+							<li style="width:20%;">
+								<div class="right con_self">成交额<strong><empty name="data['k3']['sum']">0<else/>{$data.k3.sum}</empty></strong></div>
+							</li>
+						</ul>
+						<ul class="stat-boxes" style="width:100%;">
+							<li style="width:10%;    height: 60px;">
+								<div class="right title_self" >近1个月成交</div>
+							</li>
+							<li style="width:20%;">
+								<div class="right con_self" >成交量<strong>{$data.k4.num}</strong></div>
+							</li>
+							<li style="width:20%;">
+								<div class="right con_self">成交额<strong><empty name="data['k4']['sum']">0<else/>{$data.k4.sum}</empty></strong></div>
+							</li>
+						</ul>
+					</div>	
+				</div>
+
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<include file="Public/foot" />
+
+

@@ -1,0 +1,69 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_merch" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con" style="min-height: 840px;">
+				<div style="height:60px;border-bottom:1px solid #000000;padding:10px;background:skyblue;">
+					<h4 style="margin:10px;float:left;">多商户管理 <small>总数: <span>0</span></small></h4>
+					<div style="float:right;">
+						<a href="add_sh" class="btn btn-primary">添加新商户</a>
+						<div class="input-group" style="margin:3px 40px;    width: 20%; float: right;">				 
+	                 	<input type="text" class="input-sm form-control" id="text_str" value="{$his_str}" placeholder="商户名称"><span class="input-group-btn">                  		
+	               	    <a href="" id="a_str"><button class="btn btn-sm btn-primary" style="float:right;">搜索</button></a>	
+	               	</div> 
+					</div>
+				</div>
+				<table class="table table-hover table-responsive">
+				    <thead class="navbar-inner">
+				    <tr>
+				        <th style="width:25px;"><input type="checkbox"></th>
+				        <th style="width:40px;">排序</th>
+				        <th style="width:150px;">商户名称</th>
+				        <th style="width:90px;">主营项目</th>
+				        <th style="width:90px;">联系人</th>
+				        <th style="width:90px;">申请时间</th>
+				        <th style="width:100px;">操作</th>
+				    </tr>
+				    </thead>
+				    <tbody>
+				    	<foreach name="list" item="v">
+				        <tr rel="pop" data-title="ID: {$v.id}  ">				
+					        <td>
+					            <input value="{$v.id} " type="checkbox">
+					        </td>
+					        <td>{$v.sort} </td>
+					        <td>{$v.sh_name} </td>
+					        <td>{$v.main_project} </td>
+					        <td>{$v.linkman} <br>{$v.tel} </td>
+					        <td>
+					        	<?=date("Y-m-d H:i:s",$v['time_add']);?>
+					        </td>
+					        <td style="overflow:visible;">
+			                  
+			                    <a href="sh_back_used/id/{$v['id']}" onclick="if(confirm('确认恢复使用吗？')==false)return false;" class="btn btn-default btn-sm">
+					                <i class="fa fa-edit"></i> 点击恢复
+					            </a>
+					            
+                                <a data-toggle="ajaxRemove" href="sh_delete/id/{$v['id']}" class="btn btn-default btn-sm" onclick="if(confirm('确认删除吗？')==false)return false;">
+                                	<i class="fa fa-trash"></i> 删除
+                                </a>    
+                                
+					        </td>
+					    </tr>
+					    </foreach>	      
+			        </tbody>
+			    </table>
+			    <div class="pages self_css"> {$pages}</div>
+			</div>
+		</div>
+		<!--====================主体  结束===============-->
+	</div>	
+<script>	
+	$("#text_str").change(function(){
+		$("#a_str").attr("href","in_stop?str="+$("#text_str").val());
+	})	
+</script>
+</body>
+</html>

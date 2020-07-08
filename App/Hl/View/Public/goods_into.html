@@ -1,0 +1,116 @@
+		<style>
+			.modal_text{
+				text-align: center;
+			    color: #555555;
+			    font-size: 28px;
+			    font-weight: normal;
+			}
+			.modal_label{
+				width: 21%;
+			    float: left;
+			    text-align: center;
+			    height: 30px;
+			    line-height: 41px;
+			}
+			.modal{
+				    left: 35%!important;
+				   width: 78%!important;
+			}
+		</style>
+
+		<!-- 按钮触发模态框 -->
+<a id="add-event_goods_into" style="display:none;" data-toggle="modal" href="#modal-add-event_goods_into" class="btn btn-success btn-mini"><i class="icon-plus icon-white"></i> </a>
+		<div class="modal hide" id="modal-add-event_goods_into">
+	
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h3> 表单列表</h3>
+			</div>
+			<div class="modal-body">
+				<foreach name="list" item="v" key="ky">
+				
+				<table class="table table-bordered table-striped tr_shenhe_info" style="display:none; border-top: 1px solid #ccc;" id="tr_shenhe_info_{$ky}" >
+					<thead>
+					<tr>
+						<if condition="$v['action_state'] eq 1">
+							<th style="width:10%;">供应商</th>
+							<th style="width:10%;">入仓</th>
+						</if>	
+						<if condition="$v['action_state'] eq 2">
+							<th style="width:10%;">入仓</th>
+						</if>
+						<if condition="$v['action_state'] eq 3">
+							<th style="width:10%;">出仓</th>
+							<th style="width:10%;">入仓</th>
+						</if>	
+						<if condition="$v['action_state'] eq 4">
+							<th style="width:10%;">出仓</th>
+							<th style="width:10%;">入仓</th>
+						</if>	
+						<if condition="$v['action_state'] eq 5">
+							<th style="width:10%;">出仓</th>
+						</if>	
+						<if condition="$v['action_state'] eq 6">
+							<th style="width:10%;">入仓</th>
+						</if>	
+						
+					
+						<th style="width:10%;">商品名称</th>
+						<th style="width:10%;">数量</th>
+						<th style="width:10%;">提交时间</th>
+					</tr>
+					</thead>
+
+					<tbody > 
+						<foreach name="v['shenhe_info']" item="v0" key="key0">
+						<tr >
+							<if condition="$v['action_state'] eq 1">
+								
+								<td>{$v0.supplier}</td>
+								<td>{$v0.warehouse}</td>
+							</if>	
+							<if condition="$v['action_state'] eq 2">
+								
+								<td>{$v0.warehouse}</td>
+							</if>	
+							<if condition="$v['action_state'] eq 3">
+								<td>{$v0.warehouse_ru}</td>
+								<td>{$v0.warehouse}</td>
+							</if>	
+							<if condition="$v['action_state'] eq 4">
+								<td>{$v0.warehouse_ru}</td>
+								<td>{$v0.warehouse}</td>
+							</if>	
+							<if condition="$v['action_state'] eq 5">
+								<td>{$v0.warehouse_ru}</td>
+							</if>	
+							<if condition="$v['action_state'] eq 6">
+								<td>{$v0.warehouse}</td>
+							</if>
+							<td>{$v0.goods_title}</td>
+							<td>{$v0.num}</td>
+							<td><?php echo date("Y-m-d H:i:s",$v0['time_set']); ?></td>
+						</tr>
+						</foreach>
+					</tbody>
+			
+				</table>
+				</foreach>
+			</div>
+		
+			<div class="modal-footer">
+				<input type="hidden" id="action_state" value="{$v['action_state']}">
+				<a href="#" class="btn" data-dismiss="modal">关闭</a>
+				<empty name="done">
+				<foreach name="list" item="v" key="ky">
+				
+					<input type="submit" value="通过审核" class="btn btn-primary submit_show only_class_{$ky} div_submit_shenhe" sid="{$v.group_num}" state="ok"  style="display:none;float: right;">
+					<input type="submit" value="拒绝审核" class="btn btn-primary submit_show only_class_{$ky} div_submit_shenhe" sid="{$v.group_num}" state="no"  style="display:none;float: right;">
+					
+				</foreach>
+				</empty>
+			</div>
+		</div>
+
+			
+			

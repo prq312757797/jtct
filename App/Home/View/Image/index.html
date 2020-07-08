@@ -1,0 +1,99 @@
+
+	<include file="Public/head" />
+
+<div class="tab" style="width:90%;height:auto;margin:20px auto;background-color:gainsboro; padding:20px;">
+	<div class="tab-cont">					
+	    <div class="clearfix">
+			<h5 class="page-header">添加新用户</h5>
+			<form action="{:U('User/add_user',array('id'=>$sh0912['id']))}" enctype="multipart/form-data" method="post" class="form-horizontal ajaxfrom" role="form" id="form-user" onsubmit="return ck()">
+
+               <div class="form-group">
+					<label class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">身份证反面</label>
+					<div class="col-sm-10 col-lg-9 col-xs-12">								
+						<div class="input-group ">
+							<input type="file" name="idcard2" id="idcard2" class="form-control" autocomplete="off">			
+						
+							  <div class="col-sm-10">
+						      	<img id="previewa"style="display:block; width:140px; height:160px;border:1px solid #000000; border-radius:6px;margin-top:10px;">
+							    <span class="help-block">
+									<strong class="text-info">注意：上传后不可修改</strong>
+								</span>
+						    </div>	    
+						</div>					                
+						<span class="help-block">
+							<strong class="text-info">注意：上传后不可修改</strong>
+						</span>
+					</div>
+				</div>
+           																						
+				<div class="form-group">
+				    <label for="inputPassword" class="col-sm-2 control-label">身份证反面：</label>
+				     <input type="file" name="idcard2" id="doca" onchange="javascript:setImagePreviews();">			
+				    <div class="col-sm-10">
+				      	<img id="previewa"style="display:block; width:140px; height:160px;border:1px solid #000000; border-radius:6px;margin-top:10px;">
+					    <span class="help-block">
+							<strong class="text-info">注意：上传后不可修改</strong>
+						</span>
+				    </div>	    
+				</div>	
+				
+		
+     
+     
+     
+		<div class="form-group" style=" text-align:center; margin-right:100px;">
+			<div class="col-sm-offset-2 col-md-offset-2 col-lg-offset-1 col-xs-12 col-sm-10 col-md-10 col-lg-11">
+				<input type="submit" class="btn btn-primary span3" name="submit" value="确认注册">
+				<input type="button" class="btn btn-default" value="返回上一级" onclick="history.go(-1)"/>
+				<input type="hidden" name="token" value="c72e41a7">
+			</div>
+		</div>
+	</form>
+</div>	
+		<include file="Public/foot" />
+			</div>
+		</div>
+	
+	<script type="text/javascript">
+//下面用于图片上传预览功能
+function setImagePreviews(avalue) {
+	var docObj=document.getElementById("doca");
+	var imgObjPreview=document.getElementById("previewa");
+	if(docObj.files &&docObj.files[0]){
+		//火狐下，直接设img属性
+		imgObjPreview.style.display = 'block';
+		imgObjPreview.style.width = '140px';
+		imgObjPreview.style.height = '160px'; 
+		 
+		imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+	}else{
+	//IE下，使用滤镜
+	docObj.select();
+	var imgSrc = document.selection.createRange().text;
+	var localImagId = document.getElementById("localImag");
+	//图片必须设置初始大小
+	localImagId.style.width ="140px";
+	localImagId.style.height = "160px";
+	//图片异常的捕捉，防止用户修改后缀来伪造图片
+	try{
+		localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+		localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+	}catch(e){
+		alert("您上传的图片格式不正确，请重新选择!");
+		return false;
+	}
+		imgObjPreview.style.display = 'none';
+		document.selection.empty();
+	}
+		return true;
+	}
+ 
+</script>
+	
+	
+	
+	
+	
+	</body>
+</html>
+		

@@ -1,0 +1,307 @@
+<include file="Public/head" />
+<style type="text/css">
+body {
+	/*margin: 20px auto;
+	padding: 0;
+	width: 580px;
+	font: 75%/120% Arial, Helvetica, sans-serif;*/
+}
+h2 {
+	font: bold 190%/100% Arial, Helvetica, sans-serif;
+	margin: 0 0 .2em;
+}
+h2 em {
+	font: normal 80%/100% Arial, Helvetica, sans-serif;
+	color: #999999;
+}
+#largeImg {
+	border: solid 1px #ccc;
+	width: 97%;
+	
+	padding: 5px;
+}
+.thumbs img {
+	border: solid 1px #ccc;
+	width: 95px;
+	height: 130px;
+	padding: 4px;
+}
+.thumbs img:hover {
+	border-color: #FF9900;
+}
+.divcss5-b{ width:550px; height:300px; float:left; border:1px solid #F00;overflow-y:scroll;
+   
+ ;} 
+ .divcss5-b02{ 
+	width: 82%;
+    height: 73%;
+    position: relative;
+    border: currentColor;
+    overflow-x: scroll;
+    top: 13%;
+    left: 9%;
+ ;} 
+.phone{
+width:320px; height:568px;
+    float: left;
+	background-image: url(__ROOT__/Public/images1025/2.png);
+    background-size: 100% 100%;
+    margin:12px;
+}
+.self_phone{
+width: 500px;
+    border: 1px solid #f7e8e8;
+    border-radius: 7px;
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    height: 585px;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    top: 2%;
+    left: 60%;
+    background-color: white;
+    display:none;
+}
+.list{
+	float: right; 
+		width: 28%;
+height:525px;
+	overflow-y:scroll
+}
+.close{
+	width:100%;
+	margin-top:2px;
+	
+}
+</style>
+<div class="tab" style="
+	width:90%;height:auto;margin:20px auto;background-color:#CAE1FF;border-radius:6px; padding:20px;">
+	<div class="tab-cont">
+		<div class="contert">
+			<div class="center">
+				<div class="conter-center">
+					<h4 style="padding:10px;border-bottom:1px dashed #000000;">请填写小程序基本信息:</h4>
+					<form class="form-horizontal" role="form" action="__URL__/addprogram_submit" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="lastname" class="col-sm-2 control-label">账号:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" name="name" id="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="lastname" class="col-sm-2 control-label">密码:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" name="psw" id="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="lastname" class="col-sm-2 control-label">合同号：</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" name="contract_id" id="">
+							</div>
+						</div>						
+						<div class="form-group">
+							<label for="inputPassword" class="col-sm-2 control-label">合同附件：</label>
+							<input type="file" name="contract_img" id="doc" onchange="javascript:setImagePreview();">
+							<div class="col-sm-10">
+								<img id="preview" src="" style="display:none; width:140px; height:160px;border:1px solid #000000; border-radius:6px;">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2  control-label">功能选择：</label> &nbsp&nbsp&nbsp
+							<div class="col-sm-8">
+								<foreach name="list01" item="v">
+									<label><input name="function_list[]" class="function_list" type="checkbox" value="{$v.id}" />{$v.name} </label> &nbsp&nbsp&nbsp
+								</foreach>
+								<br>
+								<foreach name="list02" item="v">
+									<label><input name="function_list[]" class="function_list" type="checkbox" value="{$v.id}" />{$v.name} </label> &nbsp&nbsp&nbsp
+								</foreach>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-2  control-label">年限：</label> &nbsp&nbsp&nbsp
+							<div class="col-sm-8">
+							  <input type="text" class="form-control" readonly="readonly" value="1" name="years" id="years" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="lastname" class="col-sm-2 control-label">价格：</label>
+							<div class="col-sm-8">
+							  <input type="text" class="form-control" readonly="readonly" value="" name="price" id="price" />
+							</div>
+						</div>
+						<!--原先代码-->
+						<!--<div class="form-group">
+							<label class="col-sm-2  control-label">备注：</label> &nbsp&nbsp&nbsp
+							<input type="text" value="" name="remark" id="remark" />
+						</div>-->
+						
+						<div class="form-group">
+						    <label class="col-sm-2  control-label">备注：</label>
+						    <div class="col-sm-8">
+						         <textarea class="form-control" rows="3"  name="remark" id="remark" ></textarea>
+						    </div>
+						</div>
+						
+						<div style="margin-left:200px;">
+							<input class="btn btn-primary" type="submit" value="提交" />
+							<input class="btn btn-danger" type="button" onclick="history.go(-1)" value="返回上一页">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="self_phone" s>
+				<li style="list-style:none;"><img  id="close_phone" src="__ROOT__/Public/images/say_no.png"  style="clear:both;width:30px;height:30px;float: right;margin: 6px;"/>
+				</li>
+				<div class="phone">
+					<div class="divcss5-b02" >
+						<img id="largeImg" class="index_phone" src="__ROOT__/Public/images1025/582587b2601d7.jpg" alt="" />
+					</div> 
+				</div>
+				<div class="list" >
+					<p class="thumbs" id="phone_list">
+						</p>
+				</div>
+</div>
+
+<include file="Public/foot" />
+
+<script>
+	function aa() {
+			var arr = [];
+			var r = document.getElementsByName("r");
+			for(var i = 0; i < r.length; i++) {
+				if(r[i].checked) {
+					arr.push(r[i].value);
+				}
+			}
+			console.log(arr)
+		}
+	function bb(){
+		alert(23);
+	}
+	
+	//关闭手机预览框
+		$("#close_phone").click(function(){
+		
+		$("#close_phone").attr("src","__ROOT__/Public/images/say_no_2.png");
+		
+		 setTimeout(function(){
+		 	 $(".self_phone").css("display","none");
+		 },100)
+		 
+	})
+
+			var test_arr=null;
+	$(".function_list").click(function(){
+
+	var arr = [];
+	var r=$(".function_list");
+	var strs;
+	for(var i = 0; i < r.length; i++){
+				if(r[i].checked) {
+					arr.push(r[i].value);
+				}
+	}
+	strs=arr.toString(",");//toString 数组转换成字符串    split 字符串转换成数组
+
+	$.post('__ROOT__/index.php/ProgramList/ajax_preview',{'str':strs},function(arr){
+		    $(".self_phone").css("display","block");
+		    $("#close_phone").attr("src","__ROOT__/Public/images/say_no.png");
+            		console.log(arr[0]);
+            		$(".index_phone").attr("src","__ROOT__/Uploads/"+arr[0])
+            		var obj = eval(arr);
+					var dh = '';
+					
+					for(var i = 0; i < obj.length; i++) {
+							//	dh += '<input type="radio" value="' + obj[i].id + '" name="muban_fengge" checked="false"  class="muban_fengge" onclick="f32(this)"  price="' + obj[i].price + '" id="' + obj[i].id + '" > ' + obj[i].name + '  &nbsp';
+								dh += '<a href="__ROOT__/Uploads/'+ obj[i] +'" onclick="change_phone(this); return false;"  title="Image 2"><img src="__ROOT__/Uploads/'+ obj[i] +'" /></a> ' ;
+								
+								document.getElementById('phone_list').innerHTML = dh;
+							}
+            },'json');
+
+	})
+	
+	
+</script>
+<script type="text/javascript">
+//手机边框预览
+$(document).ready(function(){
+
+	$("h2").append('<em></em>')
+	$(".thumbs a").click(function(){
+	
+		var largePath = $(this).attr("href");
+		var largeAlt = $(this).attr("title");
+		
+		$("#largeImg").attr({ src: largePath, alt: largeAlt });
+		
+		$("h2 em").html(" (" + largeAlt + ")"); return false;
+	});
+	
+});
+function change_phone(item){
+	//alert($(item).attr("href"));
+//	$("h2").append('<em></em>')
+	//var largePath = $(item).attr("href");
+	//	var largeAlt = $(item).attr("title");
+		
+	//	$("#largeImg").attr({ src: $(item).attr("href") });
+		
+		//$("h2 em").html(" (" + largeAlt + ")");
+	$(".index_phone").attr("src",$(item).attr("href"))	
+		
+}
+
+</script>
+
+
+
+
+	<!--图片预览-->
+	<script type="text/javascript">
+		//下面用于图片上传预览功能
+		function setImagePreview(avalue) {
+			var docObj = document.getElementById("doc");
+			var imgObjPreview = document.getElementById("preview");
+			if(docObj.files && docObj.files[0]) {
+				//火狐下，直接设img属性
+				imgObjPreview.style.display = 'block';
+				imgObjPreview.style.width = '150px';
+				imgObjPreview.style.height = '200px';
+
+				imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+			} else {
+				//IE下，使用滤镜
+				docObj.select();
+				var imgSrc = document.selection.createRange().text;
+				var localImagId = document.getElementById("localImag");
+				//图片必须设置初始大小
+				localImagId.style.width = "140px";
+				localImagId.style.height = "160px";
+				//图片异常的捕捉，防止用户修改后缀来伪造图片
+				try {
+					localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+					localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+				} catch(e) {
+					alert("您上传的图片格式不正确，请重新选择!");
+					return false;
+				}
+				imgObjPreview.style.display = 'none';
+				document.selection.empty();
+			}
+			return true;
+		}
+	</script>
+
+	</body>
+
+	</html>

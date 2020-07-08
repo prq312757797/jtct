@@ -1,0 +1,146 @@
+<include file="Public/head" />
+		<div class="tab" style="width:80%;height:auto;margin:20px auto;background-color:#CAE1FF;padding:20px;border-radius:6px;">
+			<div class="tab-cont">					
+				<div class="modal-content">
+		            <div class="modal-header">		       
+		                <h4 class="modal-title">	                
+		                    <span id="" style="font-weight:bold">客户充值</span>
+		                </h4>
+		            </div>
+		            <form class="form-horizontal form-bordered form-row-strippe" id="" method="post" action="__URL__/recharge_save?aid={$name.agency_id}&uid={$name.id}" enctype="multipart/form-data">
+		                <div class="modal-body" style="height:700px;">
+		                    <div class="row" style=" height:465px;">
+	                            <div class="form-group">
+	                                <label class="control-label col-md-2">充值账号</label>
+	                                <div class="col-md-9">
+	                                    <input class="form-control" name="" readonly="readonly" type="text" value="{$name.name}" placeholder="充值账号"> 
+	                                </div>
+		                        </div>
+				                <div class="form-group">
+				                    <label class="control-label col-md-2">充值平台</label>
+				                    <div class="col-md-9">
+				                       <select name="" class="form-control">
+				                       	<option value="2">小程序</option>
+				                       </select>
+				                    </div>
+				                </div>
+
+	                            <div class="form-group">
+	                                <label class="control-label col-md-2">新合同号</label>
+	                                <div class="col-md-9">
+	                                    <input class="form-control" name="" type="text" value="" placeholder="新合同号" > 
+	                                </div>
+	                            </div>            
+	                            <!--<div class="form-group">-->
+	                                <!--<label class="control-label col-md-2">新合同</label>-->
+	                                <!--<div class="col-md-9">-->	                                  
+										<!--<div class="input-group ">-->
+											<!--<input type="file" name="contract_img" value="" class="form-control" >-->
+											<!--<span class="input-group-btn">
+												<button class="btn btn-default" type="button">选择图片</button>
+											</span>-->
+										<!--</div>-->
+										<!--<div class="input-group " style="margin-top:.5em;">
+											<img src="" onerror=" " class="img-responsive img-thumbnail" width="150">
+											<em class="" style="position:absolute; top: 0px; right: -14px;" title="删除这张图片" onclick="deleteImage(this)">×</em>
+										</div>                        -->
+	                                <!--</div>-->
+                                <!--</div>-->
+                                <div class="form-group">
+								    <label for="inputPassword" class="col-sm-2 control-label">新合同：</label>
+								    <input type="file" name="contract_img" id="doca" onchange="javascript:setImagePreviews();">			
+								    <div class="col-sm-10">
+								      	<img id="previewa"style="display:block; width:140px; height:160px;border:1px solid #000000; border-radius:6px;margin-top:10px;">
+								    </div>
+								</div>	
+	                            <div class="form-group">
+	                                <label class="control-label col-md-2">充值年限</label>
+	                                <div class="col-md-9">
+	                                	<!--<input type="text" name="deal_years" class="form-control" id="year" value="1" readonly="readonly"/>一年</input>-->
+	                                   <select name="deal_years" class="form-control" id="">
+		                                   <option value="1">一年</option>
+		                                   <!--<option value="1">一年</option>-->
+		                                   <!--<option value="2">二年</option>
+		                                   <option value="3">三年</option>
+		                                   <option value="4">四年</option>
+		                                   <option value="5">五年</option>
+		                                   <option value="6">六年</option>
+		                                   <option value="7">七年</option>
+		                                   <option value="8">八年</option>
+		                                   <option value="9">九年</option>
+		                                   <option value="10">十年</option>-->
+	                                    </select>
+	                                </div>
+	                            </div>
+	                            <div class="form-group">
+	                                <label class="control-label col-md-2">金额</label>
+	                                <input type="hidden" name="deal_gold" value="{$price}" />
+	                                <div class="col-md-9" id="val" style="color:#F00; font-size:24px">{$price}</div>
+	                            </div>
+	                            <div class="form-group">
+	                                <label class="control-label col-md-2">交易密码</label>
+	                                <div class="col-md-9">
+	                                    <input id="" name="jypsw" type="password" class="form-control" placeholder="请输入正确的交易密码" >
+	                                </div>
+	                            </div>
+		                        <div class="col-md-12">
+		                            <div class="form-group">
+		                                <label class="control-label col-md-2">备注</label>
+		                                <div class="col-md-9">
+		                                    <textarea id="" name="remark" class="form-control" placeholder="备注..." ></textarea>
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div style="text-align:center;">					             
+					                <button type="submit" class="btn btn-primary">确认充值</button>
+					                <button type="button" id="qx" class="btn green" data-dismiss="modal" onclick="history.go(-1)">取消充值</button>	
+					            </div>
+				            </div>
+		                </div>	               	               
+	                </form>
+                </div>									
+			</div>
+		</div>	
+		<include file="Public/foot" />
+		<!--图片预览-->
+<script type="text/javascript">
+	//下面用于图片上传预览功能
+	function setImagePreviews(avalue) {
+	var docObj=document.getElementById("doca");
+	var imgObjPreview=document.getElementById("previewa");
+	if(docObj.files &&docObj.files[0])
+	{
+	//火狐下，直接设img属性
+	imgObjPreview.style.display = 'block';
+	imgObjPreview.style.width = '140px';
+	imgObjPreview.style.height = '160px'; 
+	 
+	imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+	}
+	else
+	{
+	//IE下，使用滤镜
+	docObj.select();
+	var imgSrc = document.selection.createRange().text;
+	var localImagId = document.getElementById("localImag");
+	//图片必须设置初始大小
+	localImagId.style.width ="140px";
+	localImagId.style.height = "160px";
+	//图片异常的捕捉，防止用户修改后缀来伪造图片
+	try{
+	localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+	localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+	}
+	catch(e)
+	{
+	alert("您上传的图片格式不正确，请重新选择!");
+	return false;
+	}
+	imgObjPreview.style.display = 'none';
+	document.selection.empty();
+	}
+	return true;
+	} 
+</script>
+	</body>
+</html>

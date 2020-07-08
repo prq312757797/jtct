@@ -1,0 +1,100 @@
+<!--<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+	   <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	   <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<title></title>
+	</head>
+	<style type="text/css">
+		body{
+			background:url(__ROOT__/Public/images/backgroung.jpg);
+		}
+		#bot{
+			width:500px;
+			 height:400px;
+			 margin: 160px auto;
+			 background-color: paleturquoise;
+			 border-radius:6px;
+			 text-align: center;			 
+		}
+		#bot-b{
+			font-size:38px;
+			padding-top:60px;
+		}
+		#bot-bule{
+			font-size:20px;
+		}
+		#submit{
+			padding: 4px 48px;			
+		}
+		#bottom{
+			width: auto;
+			height:60px;
+			text-align:center;
+			line-height:60px;
+			border-radius:6px;
+			font-size:20px;
+			background-color:gainsboro;
+		}
+	</style>
+	<body>
+
+		<div id="bot" style="">				
+			<p id="bot-b">深恒利登录：</p>
+			<div id="bot-bule">
+				<form id="form" action="{:U('login/login')}" method="post">
+					<table>
+						<p>账号：<input type="text" placeholder="请输入账号" name="name" id="name" /></p>
+						<br/>
+						<p>密码：<input type="password" placeholder="请输入密码" name="psw" id="psw" /></p>
+						<p><input type="submit" id="submit" value="登录"/></p>
+					</table>
+				</form>			
+			</div>	
+		</div>
+		<div id="bottom">
+			<p>版权所有：2017深恒利信息技术有限公司</p>
+		</div>		
+		<script>
+    		$("#submit").click(function(){
+    			$.post("http://123.207.41.93/jtct/index.php/Program/Index/check_load",{
+ 				'program_id':'JT201708311505546673',
+    				'name':$("input[name='name']").val(),
+    				'psw':$("input[name='psw']").val(),
+    			},function(data){
+    				console.log(data)
+    			})
+    		})        
+		</script>
+	</body>
+</html>
+-->
+	<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="IE=edge">
+<title>互联网生态圈营销中心</title>
+<link href="../../../Public/css_alogin/bootstrap.min.css" rel="stylesheet">
+<link href="../../../Public/css_alogin/signin.css" rel="stylesheet">
+</head>
+<body>
+<div class="signin">
+	<div class="signin-head">{$title}:</div>
+	<form class="form-signin" role="form" action="{:U('login/login')}" method="post">
+		<input type="hidden" value="{$is_child}" name="is_child">
+		
+		<input type="text" name="name" class="form-control" placeholder="请输入账号" required autofocus />
+		<input type="password" name="psw" class="form-control" placeholder="请输入密码" required />
+		<button class="btn btn-lg btn-warning btn-block" type="submit">登录</button>
+		<label class="checkbox">
+		  <input type="checkbox" value="remember-me"> 记住密码
+		</label>
+	</form>
+</div>
+
+</body>
+</html>
+

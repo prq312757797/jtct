@@ -1,0 +1,146 @@
+<include file="Public/head" />     
+
+<include file="Public/menu_goods" />
+
+<div id="content">
+	<div id="content-header">
+		<h1>已售商品汇总</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 商品</a>
+		<a href="#" class="current">已售商品汇总</a>
+
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+						<span class="icon">
+							<i class="icon-th"></i>
+						</span>
+						<h5>已售商品汇总</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th style="width:5%;">商品编号</th>
+									<th style="width:10%;">图片</th>
+									<th style="width:5%;">商品名称</th>
+									<th style="width:10%;">商品成交订单数</th>
+								</tr>
+							</thead>
+							<tbody>
+								<foreach name="goods_sell_list" item="v">
+									<tr>
+										<td class="l_h50">{$v.goods_id}</td>
+										<td>
+										 	<img style="width:55px;height:55px;" src="__ROOT__/Uploads/{$v.image}">
+										</td>
+										<td class="l_h50">
+											<a  href="javascript:;" val="{$v.id}" text_name="goods_title" class="edit_text">{$v.goods_title}</a>
+										 	<input type="text" class="sort_text" value="{$v.goods_title}" style="display:none;width: 80px;text-align: center;    margin-left: auto;margin-right: auto;">
+										</td>
+										<td class="l_h50">
+											<foreach name="count_goods_id" item="vo" key="k">
+												<if condition="$v['goods_id'] eq $k">{$vo}</if>
+											</foreach>
+											<input type="text" class="sort_text" value="{$v.num}" style="display:none;width: 80px;text-align: center;    margin-left: auto;margin-right: auto;">
+										</td>
+									
+									</tr>
+									</foreach>	 
+								</tbody>
+							</table>	
+						</div>
+					</div>
+				<div class="pages self_css"> {$pages}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
+
+    
+	<include file="Public/foot" /> 
+<script>
+	//一部修改商品展示属性
+	
+	$(".attribute").click(function(){
+		var onw_id=$(this).parent('li.m_goods').children('input').val();
+		var that = this;
+		 $.post('__ROOT__/adp.php/Goods/ajax_com_shuxing',{'id':onw_id,'position':$(this).attr("a")},function(ajax_back){
+			console.log(ajax_back);
+			if(ajax_back==1){
+				$(that).css("color","red");
+			}else if(ajax_back==2){
+				$(that).css("color","");
+			}
+        },'json');
+	})
+</script>	
+	
+<script>
+	
+		//异步修改商品是否可以使用消费券
+	$(".change_state").click(function(){
+	
+		//alert($(this).attr("a"));
+		$.post('__ROOT__/adp.php/Goods/change_state',{'id':$(this).attr("id")},function(date){
+	        if(date==1){
+	        	alert("设置成功");
+	        	window.location.reload();
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>
+<script>
+
+	//异步列表页的内容     ==============================================
+	//style   1:商品表内容
+	$(".edit_text").click(function(){
+		var self_input=$(this).parents('td').children('input')
+		var that=this
+console.log(self_input.val())
+		$(this).css("display","none");
+		self_input.css("display","block");
+		self_input.focus();
+		self_input.blur(function(){
+
+			$(that).text(self_input.val());
+			$(that).css("display","block");
+			self_input.css("display","none");
+			 $.post('__ROOT__/adp.php/Index/ajax_change_text',{'style':1,'text_name':$(that).attr("text_name"),'id':$(that).attr("val"),'text_val':self_input.val()},function(date){
+	        if(date==1){
+	        	alert("成功");
+	        }else{
+	        	
+	        }
+        },'json');
+		});
+	})
+</script> 
+<script>
+	//商品ajax上下架
+	$(".peng_is_ok").click(function(){
+		var onw_id=$(this).children('input').val();
+	
+		var that = this;
+		$.post('__ROOT__/adp.php/Goods/ajax_change_ok',{'id':onw_id},function(date){
+	        if(date==1){
+	        	if($(that).attr("class")=="peng_is_ok peng_ok"){
+	        		$(that).attr("class","peng_is_ok peng_not");
+	        		$(that).children('span').text("下架");
+	        	}else if($(that).attr("class")=="peng_is_ok peng_not"){
+	        		$(that).attr("class","peng_is_ok peng_ok");
+	        		$(that).children('span').text("上架");
+	        	}
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>

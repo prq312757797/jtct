@@ -1,0 +1,63 @@
+<include file="Public/head" />
+<include file="Public/menu_gold" />
+<div id="content">
+	<div id="content-header">
+		<h1>收藏买入订单</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="{:U('Gold/shoucang_order')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 实时金价</a>
+		<a href="#" class="current">收藏买入订单</a>
+
+	<!--	<a href="ad_add" class="add_button"><button class="btn" >+添加新广告</button></a>-->
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>收藏买入订单</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th>单号</th>
+								<th>购买人</th>
+								<th>购买品类</th>
+								<th>购买克重</th>
+								<th>当时价格</th>
+								<th>付款时间</th>
+							
+							</tr>
+							</thead>
+							<tbody>
+							<foreach name="list" item="v">
+								<tr>
+									<td>{$v.order_num}</td>
+									<td><img src="{$v.head}" style="width:50px;height:50px;border:1px solid #ccc; padding:1px;"> {$v.nickname} </td>
+									<td>
+										<if condition="$v.goods_id eq 1">黄金<else/>白银</if>
+									</td>
+									<td>{$v.num} 克</td>
+									<td>{$v.onprice} 元</td>
+									 <td ><?=date("Y-m-d H:i:s",$v['time_pay']);?></td>
+									
+								</tr>
+							</foreach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<include file="Public/foot" />
+
+

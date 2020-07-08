@@ -1,0 +1,121 @@
+<include file="Public/head" />
+<div class="contert"style="padding-right:20px;">
+	<form action="{:U('Audit/runAdd',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" role="form" style="">
+		<div class="form-group">
+			<label for="firstname" class="col-sm-1 control-label">小程序名称:</label>
+			<div class="col-sm-11">
+				<input type="text" name="appmcheng" value="{$info.qianyue_appmcheng}" class="form-control" id="firstname">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="lastname" class="col-sm-1 control-label">原始ID：</label>
+			<div class="col-sm-11">
+				<input type="text" name="start_id" value="{$info.qianyue_start_id}"  class="form-control" id="lastname">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="firstname" class="col-sm-1 control-label">AppId:</label>
+			<div class="col-sm-11">
+				<input type="text" name="appid" value="{$info.qianyue_appid}" class="form-control" id="firstname" >
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="lastname" class="col-sm-1 control-label">appsecret：</label>
+			<div class="col-sm-11">
+				<input type="text" name="appsecret" value="{$info.qianyue_appsecret}" class="form-control" id="lastname">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="firstname" class="col-sm-1 control-label">支付模式:</label>
+			<div class="col-sm-11">
+				<input type="text" name="payment" value="{$info.qianyue_payment}" class="form-control" id="firstname" >
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="lastname" class="col-sm-1 control-label">支付秘钥：</label>
+			<div class="col-sm-11">
+				<input type="text" name="paykey" value="{$info.qianyue_paykey}" class="form-control" id="lastname" >
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="firstname" class="col-sm-1 control-label">服务商公司:</label>
+			<div class="col-sm-11">
+				<input type="text" name="agency_name" value="{$info.jt_user_info_user_company}" class="form-control" id="firstname">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="lastname" class="col-sm-1 control-label">状态 ：</label>
+			<div class="col-sm-11">
+				<input type="text" name="state" value="{$info.qianyue_state}"  class="form-control" id="lastname" >
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="firstname" class="col-sm-1 control-label">合同号:</label>
+			<div class="col-sm-11">
+				<input type="text" name="contract_id" value="{$info.qianyue_contract_id}" class="form-control" id="firstname" >
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="lastname" class="col-sm-1 control-label">合同附件：</label>
+			<div class="col-sm-11">
+				<input type="text" name="contract_img" value="{$info.qianyue_contract_img}"  class="form-control" id="lastname">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="firstname" class="col-sm-1 control-label">签约信息备注:</label>
+			<div class="col-sm-11">
+				<input type="text" name="remark" value="{$info.qianyue_remark}" class="form-control" id="firstname" >
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="lastname" class="col-sm-1 control-label">小程序模板类型：</label>
+			<div class="col-sm-11">
+				<input type="text" name="muban_type" value="{$info.muban_l_name}" class="form-control" id="lastname">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="lastname" class="col-sm-1 control-label">小程序模板风格：</label>
+			<div class="col-sm-11">
+				<foreach name="info" item="v">
+					<foreach name="v['id_arr']" item="vo">
+						{$vo.name}
+					</foreach>
+				</foreach>
+				<input type="text" name="muban_type" value="{$info.muban_l_name}" class="form-control" id="lastname">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="firstname" class="col-sm-1 control-label">小程序模板型号:</label>
+			<div class="col-sm-11">
+				<input type="text" name="muban_b" value="{$info.qianyue_muban_b}" class="form-control" id="firstname">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="firstname" class="col-sm-1 control-label">小程序模板风格:</label>
+			<div class="col-sm-11">
+				<input type="text" name="muban_b" value="{$info.muban_f_name}" class="form-control" id="firstname">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="lastname" class="col-sm-1 control-label">模板价格：</label>
+			<div class="col-sm-11">
+				<input type="text" name="muban_price" value="{$info.qianyue_muban_price}" class="form-control" id="lastname">
+			</div>
+		</div>
+		<!--<div class="form-group">
+			<label for="firstname" class="col-sm-1 control-label">商户账号:</label>
+			<div class="col-sm-11">
+				<input type="text" name="user_name" value="{$info.user_name}" class="form-control" id="firstname">
+			</div>
+		</div>-->
+		
+
+		<div style="float:right;">
+			<!--<button type='' class="btn btn-default">确认添加</button>-->
+			<div class="btn btn-primary"onclick="history.go(-1)">返回</div>
+	    </div>
+	
+	</form>
+	
+</div>

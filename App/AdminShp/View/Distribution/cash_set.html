@@ -1,0 +1,173 @@
+<include file="Public/head" />
+<include file="Public/menu_distribution" />
+<script src="__ROOT__/Public/ys0925/jquery.js"></script>
+<style>
+	.fileinput-button {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.fileinput-button input{
+		position:absolute;
+		right: 0px;
+		top: 0px;
+		opacity: 0;
+		-ms-filter: 'alpha(opacity=0)';
+		font-size: 200px;
+	}
+</style>
+
+<div id="content">
+	<div id="content-header">
+		<h1>基础设置</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="{:U('Distribution/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 分销系统</a>
+		<a href="#" class="current">基础设置</a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-align-justify"></i>
+								</span>
+						<h5>基础设置</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<form action="__URL__/fx_save" method="post" enctype="multipart/form-data" class="form-horizontal" />
+						
+						<div class="control-group">
+							<label class="control-label">是否开启分销功能</label>
+							<empty name="list">
+								<div class="controls">
+									<label class="radio-inline is_show">
+										<input type="radio" name="is_on_fenxiao" value="1" checked="checked"> 开启
+									</label>
+									<label class="radio-inline is_show">
+										<input type="radio" name="is_on_fenxiao" value="2"> 关闭
+									</label>
+								</div>
+								<else/>
+								<if condition="$list.is_on_fenxiao eq 1">
+									<div class="controls">
+										<label class="radio-inline is_show">
+											<input type="radio" name="is_on_fenxiao" value="1" checked="checked"> 开启
+										</label>
+										<label class="radio-inline is_show">
+											<input type="radio" name="is_on_fenxiao" value="2"> 关闭
+										</label>
+									</div>
+								</if>
+								<if condition="$list.is_on_fenxiao eq 2">
+									<div class="controls">
+										<label class="radio-inline is_show">
+											<input type="radio" name="is_on_fenxiao" value="1" > 开启
+										</label>
+										<label class="radio-inline is_show">
+											<input type="radio" name="is_on_fenxiao" value="2" checked="checked"> 关闭
+										</label>
+									</div>
+								</if>
+							</empty>
+
+						</div>
+						<div class="control-group">
+							<label class="control-label">是否开启商品分销专区</label>
+							<empty name="list">
+								<div class="controls">
+									
+									<label class="radio-inline is_show">
+										<input type="radio" name="is_globle_fenxiao" value="2">  开启
+									</label>
+									<label class="radio-inline is_show">
+										<input type="radio" name="is_globle_fenxiao" value="1" checked="checked"> 关闭
+									</label>
+								</div>
+								<else/>
+								<if condition="$list.is_globle_fenxiao eq 1">
+									<div class="controls">
+										
+										<label class="radio-inline is_show">
+											<input type="radio" name="is_globle_fenxiao" value="2"> 开启
+										</label>
+										<label class="radio-inline is_show">
+											<input type="radio" name="is_globle_fenxiao" value="1" checked="checked">  关闭
+										</label>
+									</div>
+								</if>
+								<if condition="$list.is_globle_fenxiao eq 2">
+									<div class="controls">
+										
+										<label class="radio-inline is_show">
+											<input type="radio" name="is_globle_fenxiao" value="2" checked="checked">  开启
+										</label>
+										<label class="radio-inline is_show">
+											<input type="radio" name="is_globle_fenxiao" value="1" > 关闭
+										</label>
+									</div>
+								</if>
+							</empty>
+
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label">是否开启分销内购</label>
+							<empty name="list">
+								<div class="controls">
+									<label class="radio-inline is_show">
+										<input type="radio" name="neigou" value="1" checked="checked"> 开启
+									</label>
+									<label class="radio-inline is_show">
+										<input type="radio" name="neigou" value="2"> 关闭
+									</label>
+								</div>
+								<else/>
+								<if condition="$list.neigou eq 1">
+									<div class="controls">
+										<label class="radio-inline is_show">
+											<input type="radio" name="neigou" value="1" checked="checked"> 开启
+										</label>
+										<label class="radio-inline is_show">
+											<input type="radio" name="neigou" value="2"> 关闭
+										</label>
+									</div>
+								</if>
+								<if condition="$list.neigou eq 2">
+									<div class="controls">
+										<label class="radio-inline is_show">
+											<input type="radio" name="neigou" value="1" > 开启
+										</label>
+										<label class="radio-inline is_show">
+											<input type="radio" name="neigou" value="2" checked="checked"> 关闭
+										</label>
+									</div>
+								</if>
+							</empty>
+
+						</div>
+						
+						
+						<div class="form-actions">
+							<button type="submit" class="btn btn-primary">保存</button>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--原来的 modal 框位置-->
+<include file="Public/self_url" />
+<include file="Public/foot" />
+<include file="Public/image_yl" />
+
+
+
+
+

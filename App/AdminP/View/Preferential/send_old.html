@@ -1,0 +1,82 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_preferential" />
+		<!--发送优惠券-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con" style="min-height: 640px;">
+				<div style="border-bottom:1px solid #000000;height:60px; padding:20px;">
+				    <span style=" font-size:20px;">发2送优惠券</span>
+				</div>	
+				
+				<select id="self_select" onchange="gradeChange()">
+					<option>选择优惠券</option>
+					<foreach name="list" item="v">
+						<option value="{$v.id}">{$v.title}</option>
+					</foreach>
+				
+					
+					
+				</select>
+					<li>每人发放数量：<input name="num" value="1"></li>
+
+					<hr>
+					发送对象
+					<hr>
+					指定用户发送	<textarea name="str_openid"></textarea>请用半角逗号隔开openid，如aaa,bbb
+					
+					
+					全部发送
+					<div class="btn btn-default" id="sure_send">确认发送</div>
+					
+				<div 
+			</div>
+		</div>
+		<!--====================主体  结束===============-->
+	</div>	
+	
+
+	<input id="youhui" style="display:none;" >
+	<input id="all_openid" style="display:none;" >
+	<input id="count_openid" style="display:none;" >
+<script>
+	
+
+	//下拉框内容选择
+	 function gradeChange(){
+	 	
+    	var city_area=$("#self_select").find("option:selected").val();
+   
+    	if(city_area=="选择优惠券"){
+    		return false;
+    	}
+    	$("#youhui").val(city_area);
+    	
+       /* $("#road_from_select").empty();
+        */  
+    }
+	 $("#sure_send").click(function(){
+	 	$.post('__ROOT__/adp.php/Preferential/ajax_all_openid',{'title':1},function(arr_road){
+
+        $("#all_openid").val(arr_road.a);
+   	    $("#count_openid").val(arr_road.b);
+   	    
+   	    
+   	    input;
+        },'json');
+	 })
+	 
+	 function input(){
+
+for(var i=0;i<$("#count_openid").val();i++){
+	$.post('__ROOT__/adp.php/Preferential/ajax_all_openid',{'openid':1},function(arr_road){
+
+        },'json');
+	 }
+}
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<include file="Public/head" />
+<include file="Public/menu_car_order" />
+<style>
+	 .bottom_u{
+		 margin-bottom: 1px;
+		 margin-top: -10px;
+	}
+	.bottom_d{
+		margin-bottom: 1px;
+		margin-top: 2px;
+	}
+	td{
+		border-bottom: 1px solid #ddd;
+	}
+</style>
+<div id="content">
+	<div id="content-header">
+		<h1 >订单管理</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 订单管理</a>
+		<a href="#" class="current">已关闭订单</a>
+
+
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>订单管理</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th style="width:5%;">车型</th>
+								<th style="width:5%;">价格</th>
+								<th style="width:5%;">联系人</th>
+								<th style="width:5%;">联系电话</th>
+								<th style="width:5%;">下单时间</th>
+								<th style="width:5%;">取消时间</th>
+								<th style="width:5%;">退款操作</th>
+								<th style="width:7%;">操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							<volist name="list" id="vo">
+	
+									<tr>
+										<td style="border: 1px;"><div style="width: 184%;font-weight: 600;">订单编号:  {$vo.order_num}</div></td>
+									</tr>
+							
+								<tr>
+									<td>
+										<img src="__ROOT__/Uploads/{$vo.car_image}" style="width:50px;height:50px;border:1px solid #ccc; padding:1px;">
+									{$vo.car_title}
+									</td>
+								
+									<td>
+										<if condition="$vo.is_change_price eq 1">
+							      			<span style="color:red;">{$vo.change_price}</span>（<span style="text-decoration:line-through; text-decoration;">{$vo.price}</span>）
+							      			<else/>{$vo.price}
+							    		</if>
+									</td>
+									
+									<td>{$vo.fw_name} </td>
+
+									<td>{$vo.fw_tel}</td>
+									<td>
+										{$vo.time_xd|date="Y-m-d",###}<br>{$vo.time_xd|date="H:i:s",###}
+									</td>
+									<td>
+										{$vo.time_pass|date="Y-m-d",###}<br>{$vo.time_pass|date="H:i:s",###}
+									</td>
+									<td>
+								<if condition="$vo['state'] eq 5">
+										<if condition="$vo['state_tuikuan'] eq 0">无需退款</if>
+							       	 	<if condition="$vo['state_tuikuan'] eq 1">已退款：{$vo.pirce_tuikuan}元</if>
+							       	 	<if condition="$vo['state_tuikuan'] eq 2"> <span class="btn btn-primary btn-xs enter_tk"  a="{$vo.order_num}" b="{$vo.price}">待退款</span> </if>
+						    
+						    	</if>
+									</td>
+
+									<td>
+										
+										<a style="color:white;"  title="查看详情" alt="查看详情" href="order_con?order_num={$vo.order_num}" class="btn btn-danger ">查看详情</a>
+										
+										<a style="color:white;"  title="查看备注" alt="查看备注"  a="{$vo.remark}"  class="btn btn-danger edit_remark">查看备注</a>
+										
+									</td>
+
+								</tr>
+					
+							</volist>
+							</tbody>
+						</table>
+						<div class="pages self_css">{$pages}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<input type="hidden" value="{$program_id}" id="program_id">
+<include file="Public/modal" /> 
+<include file="Public/change_price" />  
+<include file="Public/order_remark" /> 
+<include file="Public/order_tuikuan" /> 
+<include file="Public/foot" />
+
+<script>
+
+$(".enter_tk").click(function(){
+	$("#add-event_tuikuan").click();	
+	$("#order_num_tk").val($(this).attr("a"))
+	$("#price_payed").val($(this).attr("b"))
+})
+	
+</script>
+<script>
+	$("#div_submit_tk").click(function(){
+
+		if(!$("#price_tk").val()){
+			alert("请填写退款金额");
+			return false;
+		}
+		$.post('__ROOT__/index.php/Wxtk/refund_111',{'order_num':$("#order_num_tk").val(),'refund_fee':$("#price_tk").val(),'program_id':$("#program_id").val(),'buy_state':1},function(date){	
+			if(date==1){
+				alert("退款成功");
+			window.location.reload();
+			}else{
+				alert("退款失败");
+			}
+        },'json');
+	})
+
+</script>	

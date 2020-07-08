@@ -1,0 +1,133 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_merch" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con" style="height:840px;">
+				<div style="height:60px;border-bottom:1px solid #000000;padding:10px;background:skyblue;">
+					<h4 style="margin:10px;float:left;">生成结算单</h4>
+					<div style="float:right;">
+						<button class="btn btn-primary">生成结算单</button>
+						<button class="btn btn-default">返回列表</button>
+					</div>
+				</div>
+				<div style="width: 100%;height:600px;padding:20px 80px;">
+					<div class="form-group">
+						<label class="col-sm-2 control-label must">商户名称</label>
+						<div class="col-sm-10">
+							<div id="merchid_selector" class="selector" data-type="text" data-key="id" data-text="merchname" data-thumb="thumb" data-multi="0">
+								<div class="input-group">
+									<input type="text" id="" name="" value="" class="form-control text" readonly="" data-rule-required="true" aria-required="true">
+									<div class="input-group-btn">
+										<button class="btn btn-primary" type="button" onclick="">选择商户 </button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label must">选择生成时间</label>
+						<div class="col-sm-9 col-xs-12">
+							<div style="float:left">
+								<input name="" type="hidden" value="">
+								<input name="" type="hidden" value="">
+							</div>
+							<div class="btn-group btn-group-sm" style="padding-right:0;">
+								<button style="width:240px" class="btn btn-default daterange daterange-time" type="button">
+									<span class="date-title">按结算时间查询</span>
+								</button>
+								<button class="btn btn-default btn-sm"  type="button" placeholder="按结算时间查询"></button>
+							</div>
+							<div class="help-block">请先选择商户,再选择时间! 否则不计算</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label must">订单商品总额</label>
+						<div class="col-sm-10 col-xs-12">
+							<input type="text" name="" class="form-control"  readonly="" value="">
+							<span id="payrate-error" class="help-block">此项必须填写</span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label must">快递金额</label>
+						<div class="col-sm-10 col-xs-12">
+							<input type="text" name="" class="form-control" value="" readonly="">
+							<span id="payrate-error" class="help-block">此项必须填写</span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label must">满减金额</label>
+						<div class="col-sm-10 col-xs-12">
+							<input type="text" name="" class="form-control" value="" readonly="">
+							<span id="payrate-error" class="help-block">此项必须填写</span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label must">实际支付金额</label>
+						<div class="col-sm-10 col-xs-12">
+							<input type="text" name="" class="form-control" value="" readonly="">
+							<span id="payrate-error" class="help-block">此项必须填写</span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label must">商户满减金额</label>
+						<div class="col-sm-10 col-xs-12">
+							<input type="text" name="" class="form-control"value="" readonly="">
+							<span id="payrate-error" class="help-block">此项必须填写</span>
+						</div>
+					</div>
+
+					<div class="form-group ">
+						<label class="col-sm-2 control-label must">商家获得金额</label>
+						<div class="col-sm-10 col-xs-12">
+							<input type="text" name="" class="form-control"value="" readonly="">
+							<span id="realprice-error" class="help-block-validate">此项必须填写</span>
+						</div>
+					</div>
+
+					<div class="form-group ">
+						<label class="col-sm-2 control-label must">抽成比例</label>
+						<div class="col-sm-10 col-xs-12">
+							<div class="input-group">
+								<input type="text" class="form-control" name="" readonly="" value="">
+								<span class="input-group-addon">%</span>
+							</div>
+							<span id="payrate-error" class="help-block">此项必须填写</span>
+						</div>
+					</div>
+
+					<div class="form-group ">
+						<label class="col-sm-2 control-label must">抽成后金额</label>
+						<div class="col-sm-10 col-xs-12">
+							<input type="text" name="" class="form-control" readonly="" value="">
+							<span id="realpricerate-error" class="help-block-validate">此项必须填写</span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label">备注</label>
+						<div class="col-sm-10 col-xs-12">
+							<textarea name="" class="form-control valid" aria-invalid="false"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label"></label>
+						<div class="col-sm-10 col-xs-12">
+							<input type="submit" value="确认提交" class="btn btn-primary">
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!--====================主体  结束===============-->
+	</div>	
+
+</body>
+</html>

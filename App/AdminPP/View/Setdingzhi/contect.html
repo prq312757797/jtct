@@ -1,0 +1,78 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_set" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">
+				<div class="page-heading" style="padding:10px;border-bottom:1px solid #000000;">		      
+			    	<h4>联系方式：</h4>
+		       </div>		        
+		        <form action="__URL__/contect_save" method="post" class="form-horizontal form-validate" enctype="" novalidate="novalidate">	        	
+	                <!--<input type="hidden" name="program_id" class="form-control" value="1">-->                        
+	             		        	
+	               <div class="form">
+	                    <label class="col-xs-12 col-sm-3 col-md-2 control-label">联系人:</label>
+	                    <div class="col-sm-9 col-xs-12">                       
+	                        <input type="text" name="linkman" class="form-control valid" value="{$data.linkman}" aria-invalid="false">                       
+	                    </div>
+	                </div>
+	                <div class="form">
+	                    <label class="col-xs-12 col-sm-3 col-md-2 control-label" style="margin-top:10px;">咨询电话:</label>
+	                    <div class="col-sm-9 col-xs-12" style="margin-top:10px;">                      
+	                        <input type="text" name="phone_ask" class="form-control" value="{$data.phone_ask}">                       
+	                    </div>
+	                </div>
+	
+	                <div class="form">
+	                    <label class="col-xs-12 col-sm-3 col-md-2 control-label"style="margin-top:10px;">客服电话:</label>
+	                    <div class="col-sm-9 col-xs-12"style="margin-top:10px;">                       
+	                        <input type="text" name="cs_phone" class="form-control" value="{$data.cs_phone}">                        
+	                    </div>
+	                </div>
+	                
+	                <div class="form" style="margin-top:10px;">
+	                    <label class="col-xs-12 col-sm-3 col-md-2 control-label"style="margin-top:10px;">客服QQ:</label>
+	                    <div class="col-sm-9 col-xs-12"style="margin-top:10px;">                       
+	                        <input type="text" name="cs_qq" class="form-control" value="{$data.cs_qq}">                       
+	                    </div>
+	                </div>	                
+	                
+	                <div class="form">
+	                    <label class="col-xs-12 col-sm-3 col-md-2 control-label" style="margin-top:10px;">客服微信:</label>
+	                    <div class="col-sm-9 col-xs-12" style="margin-top:10px;">                       
+	                        <input type="text" name="cs_wx" class="form-control" value="{$data.cs_wx}">                      
+	                    </div>
+	                </div>                
+	                 <div class="form">
+	                    <label class="col-xs-12 col-sm-3 col-md-2 control-label"style="margin-top:10px;">客服邮箱:</label>
+	                    <div class="col-sm-9 col-xs-12"style="margin-top:10px;">                       
+	                        <input type="text" name="cs_mail" class="form-control" value="{$data.cs_mail}">                      
+	                    </div>
+	                </div>                      
+	
+	                <div class="form">
+	                    <label class="col-xs-12 col-sm-3 col-md-2 control-label"style="margin-top:10px;">所在地址:</label>
+	                    <div class="col-sm-9 col-xs-12"style="margin-top:10px;">                       
+	                        <input type="text" id="address" name="address" class="form-control" value="{$data.address}">                       
+	                    </div>
+	                </div>
+	                <div class="form">
+	                    <label class="col-xs-12 col-sm-3 col-md-2 control-label"style="margin-top:10px;">商城简介:</label>
+	                    <div class="col-sm-9 col-xs-12"style="margin-top:10px;">                        
+	                        <textarea name="abstract" class="form-control richtext" cols="70" value="">{$data.abstract}</textarea>                       
+	                    </div>
+	                </div>	       
+		            <div class="form">	              
+	                    <div class="col-sm-9 col-xs-12"style="text-align:center;margin-top:20px;">
+	                        <input type="submit" id="areas" value="确认提交" class="btn btn-primary">
+	                   </div>
+		            </div> 
+               </form>            
+			</div>		    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+		<div class="tabT">
+			<ul class="tab">
+				<a href="{:U('Merch/index')}"><li>多商户{$qq}概述</li></a>
+			<hr>
+			<li style="text-align:left;padding: 0;">入驻申请</li>	
+				<a href="{:U('Merch/apply_ing')}"><li>申请中<span style="color:red;"> ( {$apply_ing} ) </span></li></a>
+				<a href="{:U('Merch/apply_reject')}"><li>驳回<span style="color:red;"> ( {$apply_reject} ) </span></li></a>
+			<hr>
+			<li style="text-align:left;padding: 0;">多商户管理</li>	
+				<a href="{:U('Merch/in_wait')}"><li>待入驻<span style="color:red;"> ( {$in_wait} ) </span></li></a>
+				<a href="{:U('Merch/in_ing')}"><li>入驻中<span style="color:red;"> ( {$in_ing} ) </span></li></a>
+				<a href="{:U('Merch/in_stop')}"><li>暂停中<span style="color:red;"> ( {$in_stop} ) </span></li></a>
+				<!--<a href="{:U('Merch/in_stop_soon')}"><li>即将到期</li></a>-->
+				<!--<a href="{:U('Merch/merch_group')}"><li>多商户分组</li></a>    1031...9.07暂关-->
+				<a href="{:U('Merch/merch_fenlei')}"><li>多商户分类</li></a>
+				<!--<hr>
+				<a href="{:U('Merch/order_count')}"><li>订单统计</li></a>
+				<a href="{:U('Merch/merch_count')}"><li>多商户统计</li></a>-->
+			<hr>	
+			<li style="text-align:left;padding: 0;">提现申请</li>
+				<a href="{:U('Merch/cash_appay')}"><li>待确认</li></a>
+				<a href="{:U('Merch/cash_pay')}"><li>待打款</li></a>
+				<a href="{:U('Merch/cash_pay_done')}"><li>已打款</li></a>
+				<a href="{:U('Merch/cash_none')}"><li>无效的</li></a>
+			<hr>
+			<li style="text-align:left;padding: 0;">订单结算</li>
+				<a href="{:U('Merch/m_merch_appay')}"><li>待确认</li></a>
+				<a href="{:U('Merch/m_merch_wite')}"><li>待结算</li></a>
+				<a href="{:U('Merch/m_merch_done')}"><li>已结算</li></a>
+				<a href="{:U('Merch/m_merch_build')}"><li>创建结算清单</li></a>
+			<hr>
+			<li style="text-align:left;padding: 0;">基础设置</li>
+				<a href="{:U('Merch/merch_set')}"><li>基础设置</li></a>
+			<!--<a href="shanxuan"><li>筛选区间</li></a>
+				<a href="biaoqian"><li>标签管理</li></a>-->
+				
+			</ul>
+		</div>

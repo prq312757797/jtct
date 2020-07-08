@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>互联网生态圈营销中心</title>
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="__ROOT__/Public/new0127/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="__ROOT__/Public/new0127/css/bootstrap-responsive.min.css" />
+        <link rel="stylesheet" href="__ROOT__/Public/new0127/css/unicorn.login.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+    <body>
+        <div id="logo">
+            <img src="img/logo.png" alt="" />
+        </div>
+        <div id="loginbox">            
+            <form id="loginform" method="post" class="form-vertical" action="{:U('login/login',array('ownid'=>$ownid))}" >
+				<p>{$title}</p>
+                <div class="control-group">
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-user"></i></span>
+                            <input name="name" type="text" placeholder="用户名" />
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-lock"></i></span>
+                            <input name="psw" type="password" placeholder="密码" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <span class="pull-left"><a href="#" class="flip-link" id="to-recover">忘记密码</a></span>
+                    <span class="pull-right"><input type="submit" class="btn btn-inverse" value="登录" />
+                    
+                    </span>
+                </div>
+            </form>
+            <form id="recoverform" action="#" class="form-vertical" />
+				<p>输入您的邮箱地址，我们将会回复你如何修改密码.</p>
+				<div class="control-group">
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-envelope"></i></span><input type="text" placeholder="邮箱地址" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <span class="pull-left"><a href="#" class="flip-link" id="to-login">&lt; 返回登陆</a></span>
+                    <span class="pull-right"><input type="submit" class="btn btn-inverse" value="Recover" /></span>
+                </div>
+            </form>
+        </div>
+        
+        <script src="__ROOT__/Public/new0127/js/jquery.min.js"></script>  
+        <script src="__ROOT__/Public/new0127/js/unicorn.login.js"></script> 
+    </body>
+</html>
+

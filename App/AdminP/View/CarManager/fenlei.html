@@ -1,0 +1,153 @@
+<include file="Public/head" />     
+
+	<div class="contert">
+		<include file="Public/menu_car" />
+		<!--车种分类-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">															        		        
+		       
+                <div class="page-heading" style="border-bottom:1px solid #000000; padding:20px;"> 
+				    <span class="pull-right">
+				               
+				            <a href="fenlei_add" class="btn btn-primary"><i class="fa fa-plus"></i> 添加新分类</a>				        
+				    </span>
+				    <h4>车种分类</h4>
+				</div>			
+				<div class="panel-group" id="accordion">
+					<foreach name="fenlei" item="v">
+				    <div class="panel panel-default show_div"> 
+				    	
+				        <div  class="dd-handle show01"style="width:auto;height:40px;border:1px solid bisque; background:white;border-radius:6px;line-height:38px;">
+				           <!--加号-->
+				           <span class="glyphicon glyphicon-plus is_show_child" href="#collapseOne"></span>
+				                [ID: {$v.id}] {$v.title}                   
+				            <span style="float: right; padding:0px 20px;">
+					         <if condition="$v.is_show eq 1">
+                    		  <div class="label label-success peng_is_ok peng_ok" data-toggle="ajaxSwitch" data-switch-value="1" >
+                    		  		<input type="hidden" value="{$v.id}">
+							 		<span>显示</span>
+                    		  </div>
+                    		</if>
+	                    	<if condition="$v.is_show eq 2">
+	                    		  <div class="label label-default peng_is_ok peng_not" data-toggle="ajaxSwitch" data-switch-value="1" >
+	                    		  	<input type="hidden" value="{$v.id}">
+							 			<span>隐藏</span>
+	                    		  </div>
+	                      
+	                    	</if>
+					            <a style="margin-left: 12px;" class="btn btn-default btn-sm" href="fenlei_edit?id={$v.id}" title="编辑">编辑</a>                                                       
+					        <!--    <a class="btn btn-default btn-sm" href="fenlei_add02?id={$v.id}" title="添加"> <span class="glyphicon glyphicon-plus"></span></a>
+					       -->     <a class="btn btn-default btn-sm" data-toggle="ajaxPost" title="删除" href="fenlei_delete?id={$v.id}" data-confirm="确认删除此分类吗？" onclick="if(confirm('确认删除吗？')==false)return false;">
+					            	删除</a>            
+				            </span>
+				        </div>
+				       <foreach name="v['child']" item="vo">
+					        <div  class="panel-collapse collapse in show02" style="    margin-top: 5px;margin-bottom: 5px;margin-left: 2%;">         
+					           <input type="hidden" value="2">
+					           <div class="dd-handle" style="width:auto;height:40px;border:1px solid gainsboro; background:gainsboro;border-radius:6px;padding-top:4px;">                
+					                <img src="http://res.cnmmsc.org/attachment/images/6099/2017/09/dtflTDDPT4iLT9t40E9MpZT9gFzE0m.jpg" width="30" height="30" onerror="$(this).remove()" style="padding:1px;border: 1px solid #ccc;float:left;"> &nbsp;
+						                              [ID: {$vo.id}] {$vo.title}                    
+					                <span style="float: right;line-height:10px; padding-right:20px;">                   	 
+					                     <if condition="$vo.is_show eq 1">
+			                    			  <div class="label label-success peng_is_ok peng_ok" data-toggle="ajaxSwitch" data-switch-value="1" >
+			                    			  		<input type="hidden" value="{$vo.id}">
+							 						<span>显示</span>
+			                    			  </div>
+			                    		</if>
+				                    	<if condition="$vo.is_show eq 2">
+				                    		  <div class="label label-default peng_is_ok peng_not" data-toggle="ajaxSwitch" data-switch-value="1" >
+				                    		  	<input type="hidden" value="{$vo.id}">
+							 			<span>隐藏</span>
+				                    		  </div>
+				                      
+				                    	</if>                   		             			                       
+								        <a class="btn btn-default btn-sm" href="fenlei_edit?id={$vo.id}">
+								             <span class="glyphicon glyphicon-edit"></span>
+								        </a>					    		                  
+					                	<a class="btn btn-default btn-sm" href="fenlei_delete02?id={$vo.id}" onclick="if(confirm('确认删除吗？')==false)return false;">
+								            <span class="glyphicon glyphicon-remove"></span> 
+								        </a>					 
+								    </span>            	                
+					            </div>              
+					        </div>
+				        </foreach>
+				    </div>    
+				    </foreach>
+				</div>  
+                
+			</div>		    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+<script>
+	//
+	$(".peng_is_ok").click(function(){
+		
+		var onw_id=$(this).children('input').val();
+	//alert(onw_id);
+		var that = this;
+	
+		 $.post('__ROOT__/adp.php/Index/ajax_change_show',{'id':onw_id,'from_id':"5"},function(date){
+	        if(date==1){
+	        	if($(that).attr("class")=="label label-success peng_is_ok peng_ok"){
+	        		
+	        		$(that).attr("class","label label-default peng_is_ok peng_not");
+	        		$(that).children('span').text("隐藏");
+	        	}else if($(that).attr("class")=="label label-default peng_is_ok peng_not"){
+	        	
+	        		$(that).attr("class","label label-success peng_is_ok peng_ok");
+	        		$(that).children('span').text("显示");
+	        	}
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>
+<script>
+	//点击主分类控制是否显示子分类
+	$(".is_show_child").click(function(){
+		
+		var change=$(this).parent('div.show01').parent('div.show_div').children('div.show02');
+		var change_num=change.children('input').val();
+		if(change_num==1){
+			change.css("display","block");
+			change.children('input').val("2");
+		}else if(change_num==2){
+			change.css("display","none");
+			change.children('input').val("1");
+			
+		}
+		
+	})
+	
+	//控制所有子类 展开 关闭
+	$("#btnExpand").click(function(){
+		var action_all=$(this).children('input').val();
+	
+		if(action_all=="1"){
+		
+			$(".show02").css("display","none");
+			$(".show02").children('input').val("1");
+			
+			$("#qq").text("显示所有");
+			$(this).children('input').val("2");
+			
+		}else {
+		
+			$(".show02").css("display","block");
+			$(".show02").children('input').val("2");
+			
+			
+			$("#qq").text("折叠所有");
+			$(this).children('input').val("1");
+			
+		}
+		
+	})
+</script>
+
+</html>

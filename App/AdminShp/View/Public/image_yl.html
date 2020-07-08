@@ -1,0 +1,74 @@
+<script>
+	     //图片预览函数
+        function setImagePreviews(avalue) {
+			var docObj=document.getElementById("doca");
+			var imgObjPreview=document.getElementById("previewa");
+
+		 var file = docObj.files[0];
+		
+		if (window.FileReader) {  
+            var reader = new FileReader();  
+            reader.readAsDataURL(file);  
+            //监听文件读取结束后事件  
+            reader.onloadend = function (e) {
+                showXY(e.target.result,file.fileName);  
+            }; 
+        }  
+        
+        function showXY(source){  
+		    var img = document.getElementById("loc_img");  
+		    img.src = source;  
+		    $("#image_area").css("display","block"); 
+		} 
+			return true;
+		}
+        	     //图片预览函数
+        function setImagePreviews_2(avalue) {
+			var docObj_2=document.getElementById("doca_2");
+
+		 var file = docObj_2.files[0];
+		
+		if (window.FileReader) {  
+            var reader = new FileReader();  
+            reader.readAsDataURL(file);  
+            //监听文件读取结束后事件  
+            reader.onloadend = function (e) {
+                showXY_2(e.target.result,file.fileName);  
+            }; 
+        }  
+        
+        function showXY_2(source){  
+		    var img = document.getElementById("loc_img_2");  
+		    img.src = source;  
+		    $("#image_area_2").css("display","block"); 
+		} 
+			return true;
+		}
+        //有图片显示图片
+
+	if($("#image_name").val()!=""){
+		 $("#image_area").css("display","block");
+		 $("#image_area").children("img#loc_img").attr("src","__ROOT__/Uploads/"+$("#image_name").val());
+	}
+	if($("#image_name_2").val()!=""){
+		 $("#image_area_2").css("display","block");
+		 $("#image_area_2").children("img#loc_img_2").attr("src","__ROOT__/Uploads/"+$("#image_name_2").val());
+	}
+</script>
+<script>
+		//删除图片
+		$(".delete_img").click(function(){
+
+			if(confirm("确定要删除图片吗？")==true){
+					 $.post('__ROOT__/adpp.php/Goods/ajax_delete_img',{'id':$(this).attr("a"),'key':$(this).attr("b")},function(date){
+			  				if(date==1){
+			  					window.location.reload();
+			  				}else{
+			  					alert('删除失败');
+			  				}
+				        },'json');	
+				} 	
+		})
+		
+		
+	</script>

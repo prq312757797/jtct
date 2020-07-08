@@ -1,0 +1,162 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_order" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">
+			    <div class="page-heading" style="border-bottom:1px solid #000000;padding-left:20px;">
+					<h4 style="margin-top:20px;">订单管理</h4>
+					<span>订单数:  <span class="text-danger" id="ygb_num">0</span>  订单金额:  <span class="text-danger" id="ygb_sum">0.00</span> </span>					
+				</div>
+				<!--<div class="panel panel-default" name="ygb">                 
+				        暂时没有任何订单				  
+				</div>-->
+				<table class="table table-responsive" style="table-layout: fixed; background:paleturquoise;">
+				    <tbody>
+					    <tr style="background:plum" style="width:100%;">
+					        <td style="width:15%;border-left:1px solid #f2f2f2;">商品</td>
+					        <td style="width:12%;"></td>
+					        <td style="width:12%;text-align: right;;">单价/数量</td>
+					        <td style="width:12%;text-align: center;">买家</td>
+					        <td style="width:12%;text-align: center;">支付/配送</td>
+					        <td style="width:12%;text-align: center;">价格</td>
+					        <td style="width:12%;text-align: center;">下单时间</td>
+					        <td style="width:15%;text-align: center">状态</td>
+					    </tr>
+					    <volist name="list" id="vo">
+					    	<volist name="vo[info]" id="sub" key="k">
+					    <if condition="$k eq 1">
+					    <tr class="trorder">
+					        <td colspan="4">订单编号:  {$vo.order_num}   </td>                                        
+					         <td colspan="4" style="text-align:right;font-size:12px;" class="aops"> 
+					         <if condition="$vo[state] eq 1">
+						        <a class="op" data-toggle="ajaxModal" href="__URL__/close_order?id={$vo.id}&act=ret">关闭订单</a>
+					            <a class="op" data-toggle="ajaxModal" href="">订单改价</a>                                                                                                  
+					            <a class="op" href="order_con?order_num={$vo.order_num}">查看详情</a>
+					            <a class="op" data-toggle="ajaxModal" href="">备注</a>
+					        <elseif condition="$vo[state] eq 3"/>
+					        	<a class="op" data-toggle="ajaxModal" href="">修改物流</a>                                               
+		                        <a class="op" href="order_con?order_num={$vo.order_num}">查看详情</a>
+		                        <a class="op" data-toggle="ajaxModal" href="">物流信息</a>
+		                        <a class="op" data-toggle="ajaxModal" href="">备注</a>
+					        <elseif condition="$vo[state] eq 2"/>
+					        	<a class="op" data-toggle="ajaxModal" href="">修改物流</a>                                               
+		                        <a class="op" href="order_con?order_num={$vo.order_num}">查看详情</a>
+		                        <a class="op" data-toggle="ajaxModal" href="">物流信息</a>
+		                        <a class="op" data-toggle="ajaxModal" href="">备注</a>
+						    <else/>
+						    	<a class="op" data-toggle="ajaxModal" href="">修改物流</a>                                               
+		                        <a class="op" href="order_con?order_num={$vo.order_num}">查看详情</a>
+		                        <a class="op" data-toggle="ajaxModal" href="">物流信息</a>
+		                        <a class="op" data-toggle="ajaxModal" href="">备注</a>
+					         	</if>
+		                    </td>
+					    </tr>
+					    </if>
+					        <tr class="trbody">
+					        <td style="overflow:hidden;"><img src="__ROOT__/Uploads/{$sub.image}" style="width:50px;height:50px;border:1px solid #ccc; padding:1px;"></td>
+					        <td style="text-align: left;overflow:hidden;border-left:none;">{$sub.goods_title}<br></td>
+					        <td style="text-align:right;border-left:none;">{$sub.price_sell}<br>x{$sub.buy_num}</td>
+					        <if condition="$k eq 1">
+					        <td rowspan="1" style="text-align: center;">                  
+					            {$vo.nickname} <br/>{$vo.tel} aaa {$k}
+					        </td>         
+					        <td rowspan="1" style="text-align:center;">
+					            <label class="label label-default">{$vo.payment}微信支付</label>
+					            <br>
+					            <span style="margin-top:5px;display:block;">快递</span>
+					        </td>
+					        <td rowspan="1" style="text-align:center">
+					            ￥{$vo.buy_price}  <a data-toggle="popover" data-html="true" data-placement="top" data-content="<table style='width:100%;'>
+					            <tr>
+					                <td  style='border:none;text-align:right;'>商品小计：</td>
+					                <td  style='border:none;text-align:right;;'>￥188.00</td>
+					            </tr>
+					            <tr>
+					                <td  style='border:none;text-align:right;'>运费：</td>
+					                <td  style='border:none;text-align:right;;'>￥0.00</td>
+					            </tr>                                                                                                                                                                           
+					            <tr>
+					                <td style='border:none;text-align:right;'>应收款：</td>
+					                <td  style=`'border:none;text-align:right;color:green;'>￥188.00</td>
+					            </tr>
+					               
+					            </table>
+					            <"data-original-title="" title=""><i class="fa fa-question-circle"></i></a>           
+						        </td>
+						        <td rowspan="1" style="text-align:center">
+						            {$vo.time_build|date="Y-m-d",###}<br>{$vo.time_build|date="H:i:s",###}1221
+						        </td>
+						    <if condition="$vo['state'] eq 1">
+						         <td rowspan="1" class="ops" style="line-height:20px;text-align:center"><span class="text-danger">待付款</span><br><!--未付款-->
+						            <a class="btn btn-primary btn-xs" data-toggle="ajaxPost" href="__URL__/fukuan?id={$vo.id}&act=ret" data-confirm="确认此订单已付款吗？">确认付款</a>   
+						        </td>
+						    <elseif condition="$vo['state'] eq 2"/>
+					        	<td rowspan="1" class="ops" style="line-height:20px;text-align:center"><span class="text-warning">待发货</span><br><!--已发货-->		
+					        		<a class="btn btn-primary btn-xs" data-toggle="ajaxPost" href="__URL__/fahuo_queren?id={$vo.id}&act=ret" data-confirm="确认订单法货吗？">确认发货</a><br><br>
+					        		<!--快递 取消发货-->		
+					        		<a class="btn-xs" data-toggle="ajaxModal" href="__URL__/del_fahuo?id={$vo.id}&act=ret">取消发货</a> 
+						        </td>
+					        <elseif condition="$vo['state'] eq 3"/>
+					        	<td rowspan="1" class="ops" style="line-height:20px;text-align:center"><span class="text-warning">待收货</span><br><!--已发货-->
+					              	<!--快递 取消发货-->				
+					         		<a class="btn btn-primary btn-xs" data-toggle="ajaxPost" href="__URL__/shouhuo_queren?id={$vo.id}&act=ret" data-confirm="确认订单收货吗？">确认收货</a><br><br>
+					         	</td>
+					        <elseif condition="$vo['state'] eq 4"/>
+					        	<td rowspan="1" class="ops" style="line-height:20px;text-align:center"><span class="text-warning">待评价</span><br><!--4：待评价-->
+					              	<a class="btn btn-primary btn-xs" data-toggle="ajaxPost" href="order_con?order_num={$vo.order_num}" >查看订单</a><br><br>
+					          	</td>
+					        <elseif condition="$vo['state'] eq 5"/>
+					        	<td rowspan="1" class="ops" style="line-height:20px;text-align:center"><span class="text-warning">退换/售后</span><br><!--4：退换/售后-->
+					              	<a class="btn btn-primary btn-xs" data-toggle="ajaxPost" href="order_con?order_num={$vo.order_num}" >查看订单</a><br><br>
+					          	</td> 
+					        <elseif condition="$vo['state'] eq 6"/>
+					        	<td rowspan="1" class="ops" style="line-height:20px;text-align:center"><span class="text-warning">已关闭</span><br><!--4：已关闭-->
+					              	<a class="btn btn-primary btn-xs" data-toggle="ajaxPost" href="order_con?order_num={$vo.order_num}" >查看订单</a><br><br>
+					          	</td> 
+					        <elseif condition="$vo['state'] eq 7"/>
+					        	<td rowspan="1" class="ops" style="line-height:20px;text-align:center"><span class="text-warning">已完成</span><br><!--4：已完成-->
+					              	<a class="btn btn-primary btn-xs" data-toggle="ajaxPost" href="order_con?order_num={$vo.order_num}" >查看订单</a><br><br>
+					          	</td> 
+						   </if>
+					        </tr>
+
+					        </if> 
+					        
+					        </volist>
+					         <tr style=";border-bottom:none;background:#f9f9f9;">
+						        <td colspan="4" style="text-align:left">
+						        	<empty name="vo['sh_name']">
+						        		<else/> 商户名称:
+						        	</empty>
+						        <span class="text-info">{$vo.sh_name}</span>
+						        </td>
+						        
+						        <td colspan="5" style="text-align:right">
+						        	<empty name="vo['dfx_price01']">
+						        		<else/>
+						        		<b>1级佣金:</b> {$vo.dfx_price01}元         
+						        	</empty>
+						        	<empty name="vo['dfx_price02']">
+						        		<else/> 
+						        	    <b>2级佣金:</b> {$vo.dfx_price02}元     
+						        	</empty>
+						        	<empty name="vo['dfx_price03']">
+						        		<else/> 
+						        	    <b>3级佣金:</b> {$vo.dfx_price03}元     
+						        	</empty>
+						          	<!--  <b>1级佣金:</b> {$vo.dfx_price01}元            <b>2级佣金:</b> {$vo.dfx_price02} 元   -->                                          
+						            <!--<a href="">修改佣金</a>  dfx_price01  -->
+						        </td>				        
+						    </tr>
+                           </volist>
+				    </tbody>
+				</table>
+			</div>		    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+</html>

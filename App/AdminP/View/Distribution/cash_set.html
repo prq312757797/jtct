@@ -1,0 +1,794 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_distribution" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">
+				<div style="height:60px;border-bottom:1px solid #000000;padding:20px 20px;background:skyblue;">
+					<h4>基础设置</h4>
+				</div>
+				<div class="tabs-container">
+					<div class="tabs">
+						<ul class="nav nav-tabs"style="height:40px;width:100%;">
+							<li class="active">
+								<a data-toggle="tab" href="#tab-basic" aria-expanded="true"> 基本</a>
+							</li>
+							<li class="">
+								<a data-toggle="tab" href="#tab-trade" aria-expanded="false"> 上下线关系及分销资格</a>
+							</li>
+							<!--<li class="">
+								<a data-toggle="tab" href="#tab-babkc" aria-expanded="false">结算</a>
+							</li>
+							<li class="">
+								<a data-toggle="tab" href="#tab-backs" aria-expanded="false">分销商升级</a>
+							</li>
+							<li class="">
+								<a data-toggle="tab" href="#tab-backd" aria-expanded="false">样式/文字</a>
+							</li>
+							<li class="">
+								<a data-toggle="tab" href="#tab-backp" aria-expanded="false">申请协议</a>
+							</li>-->
+						</ul>
+			<div class="tab-content">
+				<div id="tab-basic" class="tab-pane active">					
+					<div class="panel-body">
+					  <form action="__URL__/fx_save" method="post">	
+					 <!--分销功能-->
+					  	<div class="form-group">
+						    <label class="col-sm-2 control-label">是否开启分销功能</label>
+						    
+						    <empty name="list">
+						    	   <div class="col-sm-10 col-xs-12">
+							    		<label class="radio-inline">
+							    			<input type="radio" name="is_on_fenxiao" value="2"> 关闭
+							    		</label>
+										<label class="radio-inline">
+											<input type="radio" name="is_on_fenxiao" value="1" checked="checked"> 开启
+										</label>
+										<span class="help-block"></span>
+								    </div>
+						    	<else/>
+						    	   <div class="col-sm-10 col-xs-12">
+						    	   	<if condition="$list['is_on_fenxiao'] eq 1">
+						    	   		<label class="radio-inline">
+							    			<input type="radio" name="is_on_fenxiao" value="2" > 关闭
+							    		</label>
+										<label class="radio-inline">
+											<input type="radio" name="is_on_fenxiao" value="1" checked="checked"> 开启
+										</label>
+						    	   		<else/>
+						    	   			<label class="radio-inline">
+							    			<input type="radio" name="is_on_fenxiao" value="2" checked="checked"> 关闭
+							    		</label>
+										<label class="radio-inline">
+											<input type="radio" name="is_on_fenxiao" value="1" > 开启
+										</label>
+						    	   	</if>
+							    		
+										<span class="help-block">开启分销功能，分销商的下的交易产生会产生分销佣金</span>
+								    </div>
+						    	
+						    </empty>
+						 
+						</div>
+						<!--分销专区-->
+						<div class="form-group">
+						    <label class="col-sm-2 control-label">是否开启商品分销专区</label>
+						     <empty name="list">
+						    	  <div class="col-sm-10 col-xs-12">
+							    		<label class="radio-inline">
+							    			<input type="radio" name="is_globle_fenxiao" value="1"> 关闭
+							    		</label>
+										<label class="radio-inline">
+											<input type="radio" name="is_globle_fenxiao" value="2" > 开启
+										</label>
+										<span class="help-block">开启分销专区，分销功能只针对分销专区内商品</span>
+								    </div>
+						    	<else/>
+						    	   <div class="col-sm-10 col-xs-12">
+						    	   	<if condition="$list['is_globle_fenxiao'] eq 2">
+						    	   		<label class="radio-inline">
+							    			<input type="radio" name="is_globle_fenxiao" value="1" > 关闭
+							    		</label>
+										<label class="radio-inline">
+											<input type="radio" name="is_globle_fenxiao" value="2" checked="checked"> 开启
+										</label>
+						    	   		<else/>
+						    	   			<label class="radio-inline">
+							    			<input type="radio" name="is_globle_fenxiao" value="1" checked="checked"> 关闭
+							    		</label>
+										<label class="radio-inline">
+											<input type="radio" name="is_globle_fenxiao" value="2" > 开启
+										</label>
+						    	   	</if>
+							    		
+										<span class="help-block">开启分销专区，分销功能只针对分销专区内商品</span>
+								    </div>
+						    	
+						    </empty>
+						   <!-- <div class="col-sm-10 col-xs-12">
+					    		<label class="radio-inline">
+					    			<input type="radio" name="is_globle_fenxiao" value="2"> 关闭
+					    		</label>
+								<label class="radio-inline">
+									<input type="radio" name="is_globle_fenxiao" value="1" checked="checked"> 开启
+								</label>
+								<span class="help-block">开启分销专区，分销功能只针对分销专区内商品</span>
+						    </div>-->
+						</div>
+						<!--分销内购-->
+						<div class="form-group">
+						    <label class="col-sm-2 control-label">是否开启分销内购</label>
+						     <empty name="list">
+						    	  <div class="col-sm-10 col-xs-12">
+							    		<label class="radio-inline">
+							    			<input type="radio" name="neigou" value="2"> 关闭
+							    		</label>
+										<label class="radio-inline">
+											<input type="radio" name="neigou" value="1" > 开启
+										</label>
+										<span class="help-block">开启分销内购，分销商自己购买商品，享受一级佣金，上级享受二级佣金，上上级享受三级佣金</span>
+								    </div>
+						    	<else/>
+						    	   <div class="col-sm-10 col-xs-12">
+						    	   	<if condition="$list['neigou'] eq 1">
+						    	   		<label class="radio-inline">
+							    			<input type="radio" name="neigou" value="2" > 关闭
+							    		</label>
+										<label class="radio-inline">
+											<input type="radio" name="neigou" value="1" checked="checked"> 开启
+										</label>
+						    	   		<else/>
+						    	   			<label class="radio-inline">
+							    			<input type="radio" name="neigou" value="2" checked="checked"> 关闭
+							    		</label>
+										<label class="radio-inline">
+											<input type="radio" name="neigou" value="1" > 开启
+										</label>
+						    	   	</if>
+							    		
+										<span class="help-block">开启分销内购，分销商自己购买商品，享受一级佣金，上级享受二级佣金，上上级享受三级佣金</span>
+								    </div>
+						    	
+						    </empty>
+						 
+						</div>
+						
+						<div class="form-group">
+						    <label class="col-sm-2 control-label">分销层级</label>    
+						    <div class="col-sm-10">
+						    	<!--<label class="radio-inline">
+						    		<input type="radio" name="level" value="0"> 不开启
+						    	</label>
+								<label class="radio-inline">
+									<input type="radio" name="level" value="1"> 一级分销
+								</label>-->
+								<!--<label class="radio-inline">
+									<input type="radio" name="level" value="2" checked="checked"> 二级分销
+								</label>-->
+								<label class="radio-inline">
+									<input type="radio" name="" value="3" checked="checked"> 三级分销
+								</label>
+								<div class="help-block">默认佣金比例请到
+									<a href="" target="_blank">【分销商等级】</a>进行设置
+								</div>
+							</div>
+						</div> 
+						
+						<!--<div class="form-group">
+						    <label class="col-sm-2 control-label">分销内购</label>
+						    <div class="col-sm-10 col-xs-12">
+					    		<label class="radio-inline">
+					    			<input type="radio" name="" value="0"> 关闭
+					    		</label>
+								<label class="radio-inline">
+									<input type="radio" name="" value="1" checked="checked"> 开启
+								</label>
+								<span class="help-block">开启分销内购，分销商自己购买商品，享受一级佣金，上级享受二级佣金，上上级享受三级佣金</span>
+						    </div>
+						</div>
+
+						<div class="form-group">
+						    <label class="col-sm-2 control-label">分销订单商品详情</label>
+						    <div class="col-sm-10 col-xs-12">
+						        <label class="radio-inline">
+						        	<input type="radio" name="" value="0"> 关闭
+						        </label>
+						        <label class="radio-inline">
+						        	<input type="radio" name="" value="1" checked="checked"> 显示
+						        </label>
+						        <span class="help-block">分销订单是否显示商品详情</span>
+						    </div>
+						</div>
+						<div class="form-group">
+						    <label class="col-sm-2 control-label">分销订单购买者详情</label>
+						    <div class="col-sm-10 col-xs-12">
+						        <label class="radio-inline">
+						        	<input type="radio" name="" value="0"> 关闭
+						        </label>
+						        <label class="radio-inline">
+						        	<input type="radio" name="" value="1" checked="checked">显示</label>
+						        <span class="help-block">分销订单是否显示购买者</span>
+						    </div>
+						</div>
+
+						<div class="form-group">
+						    <label class="col-sm-2 control-label">分销订单商品详情</label>
+						    <div class="col-sm-10 col-xs-12">
+						        <label class="radio-inline">
+						        	<input type="radio" name="" value="0"> 关闭
+						        </label>
+						        <label class="radio-inline">
+						        	<input type="radio" name="" value="1" checked="checked">显示
+						        </label>
+						        <span class="help-block">分销订单是否显示商品详情</span>
+						    </div>
+						</div>
+						<div class="form-group">
+						    <label class="col-sm-2 control-label">分销订单购买者详情</label>
+						    <div class="col-sm-9 col-xs-12">
+						        <label class="radio-inline">
+						        	<input type="radio" name="" value="0"> 关闭
+						        </label>
+						        <label class="radio-inline">
+						        	<input type="radio" name="" value="1" checked="checked"> 显示
+						        </label>
+						        <span class="help-block">分销订单是否显示购买者</span>
+						    </div>
+						</div>-->
+						<div class="form-group">
+							<label class="col-sm-2 control-label"></label>
+							<div class="col-sm-9 col-xs-12">
+							    <input value="确认提交" class="btn btn-primary" type="submit">
+							</div>
+						</div>
+					  </form>
+                   </div>				  
+			    </div>
+			  <!--上下线关系及分销资格-->
+                <div id="tab-trade" class="tab-pane">	
+                	<div class="tab-pane   active" id="tab_basic">
+						<div class="panel-body">
+					       	<div class="form-group-title" style="border-bottom:1px dashed #000000;padding:10px 0px;margin:20px;">上下线关系设置</div>
+				            <form action="" method="post">		          					          				      
+					           <div class="form-group" style="margin-top:20px;">
+					                <label class="col-sm-2 control-label" style="padding-left:10px;">成为下线条件</label>
+					                <div class="col-sm-10 col-xs-12">
+				                	    <label class="radio-inline">
+				                	    	<input name="" value="0" checked="checked" type="radio">首次点击分享链接
+				                	    </label>
+					                   <!-- <label class="radio-inline">
+					                    	<input name="" value="1" type="radio"> 首次下单
+					                    </label>
+					                    <label class="radio-inline">
+					                    	<input name="" value="2" type="radio"> 首次付款
+					                    </label>-->
+					                    <span class="help-block">首次点击分享链接： 可以自由设置分销商条件</span>
+					                    <span class="help-block">首次下单/首次付款： 无条件不可用</span>
+				                    </div>
+						        </div>
+		    
+							    <div class="form-group-title" style="border-bottom:1px dashed #000000;padding:10px 0px;margin:20px;">分销资格设置</div>										
+					            <div class="form-group" style="height:20px;">
+					                <label class="col-sm-2 control-label">成为分销商条件</label>
+					                <div class="col-sm-10">
+				                		<!--<label class="radio-inline">
+				                			<input name="" value="0" data-needcheck="1"  type="radio" > 无条件
+				                		</label>-->
+					                    <label class="radio-inline">
+					                    	<input name="" value="1"  data-needcheck="1" type="radio" checked="checked"> 申请
+					                    </label>
+					                   <!-- <label class="radio-inline">
+					                    	<input name="" value="2" data-needcheck="1" type="radio"> 消费次数
+					                    </label>
+										<label class="radio-inline">
+											<input name="" value="3" data-needcheck="1"  type="radio"> 消费金额
+										</label>
+										<label class="radio-inline">
+											<input name="" value="4" data-needcheck="1" type="radio"> 购买商品
+										</label>-->
+						        	</div> 
+					            </div>
+					            
+					            <div class="form-group" style="height:20px;">
+					                <label class="col-sm-2 control-label">是否需要审核</label>
+					                <div class="col-sm-10">				                	
+				                	<!--	<label class="radio-inline">
+				                			<input name="" value="0" data-needcheck="1"  type="radio"> 需要
+				                		</label>-->
+					                    <label class="radio-inline">
+					                    	<input name="" value="1" checked="checked" data-needcheck="1" type="radio"> 不需要
+					                    </label>				                   
+						        	</div> 
+					            </div>
+						        								    				      
+							  <!--  <div class="form-group" style="height:20px;">
+						            <label class="col-sm-2 control-label">显示申请协议</label>
+					                <div class="col-sm-10">
+						                <label class="radio-inline">
+						                	<input name="bb" value="0" type="radio"> 隐藏
+						                </label>
+						                <label class="radio-inline">
+						                	<input name="vv" value="1" checked="checked" type="radio"> 显示
+						                </label>
+						            </div>
+						        </div>-->
+	
+					          <!--  <div class="form-group" style="height:20px;">
+					                <label class="col-sm-2 control-label">分销商必须完善资料</label>
+					                <div class="col-sm-10">
+					                    <label class="radio-inline">
+					                    	<input name="" value="0" checked="checked" type="radio"> 需要
+					                    </label>
+					                    <label class="radio-inline">
+					                    	<input name="" value="1" type="radio"> 不需要
+					                    </label>
+					                    <span class="help-block">分销商在分销或提现时是否必须完善资料</span>
+					                </div>
+					            </div>-->
+				            
+							   <div class="form-group">
+									<label class="col-sm-2 control-label"></label>
+									<div class="col-sm-10 col-xs-12">
+									    <input value="确认提交" class="btn btn-primary" type="submit">
+									</div>
+								</div>	
+						    </form> 
+						</div>
+					</div>	
+				</div>
+				<!--结算-->
+			    <div id="tab-babkc" class="tab-pane">	
+			    	<div class="tab-pane   active" id="tab_basic">
+						<div class="panel-body">
+							<form action="" method="post">																							
+						        <div class="form-group">
+								    <label class="col-sm-2 control-label">提现方式</label>
+								    <div class="col-sm-9 col-xs-12">
+								        <label for="cashweixin" class="checkbox-inline">
+								            <input name="" value="1" id="cashweixin" checked="true" type="checkbox"> 提现到微信钱包
+								        </label>
+								        <label for="cashother" class="checkbox-inline">
+								            <input name="" value="1" id="cashother" type="checkbox"> 其他提现方式
+								        </label>
+								        <div class="help-block">提示: 提现方式支持多选</div>
+								    </div>
+								</div>
+								
+						        <div class="form-group">
+								    <label class="col-sm-2 control-label">提现额度</label>
+								    <div class="col-sm-9 col-xs-12">
+								        <input name="least_cash" class="form-control" value="{$list.least_cash}" type="text">
+								        <span class="help-block">分销商的佣金达到此额度时才能提现,最低1元</span>
+								    </div>
+								</div>
+								
+						       <!-- <div class="form-group">
+								    <label class="col-sm-2 control-label">佣金计算方式</label>
+								    <div class="col-sm-9 col-xs-12">
+								        <label class="radio-inline">
+								        	<input name="" value="0" type="radio"> 默认方式
+								        </label>
+								        <label class="radio-inline">
+								        	<input name="" value="1" checked="checked" type="radio"> 实际支付方式
+								        </label>
+								        <span class="help-block">默认方式: 除运费和会员折扣(或促销折扣)外其他所有费用全部计算佣金<br>
+								        <!--实际支付方式: 只计算实际支付和余额抵扣部分的佣金(包括余额支付)--   </span>
+								    </div>
+								</div>-->
+							
+								<!--<div class="form-group">
+								    <label class="col-sm-2 control-label">佣金个人所得税</label>
+								    <div class="col-sm-9 col-xs-12">
+								        <div class="input-group">
+								            <input name="" class="form-control valid" value="0.6" aria-invalid="false" type="text">
+								            <div class="input-group-addon">%</div>
+								        </div>
+								        <span class="help-block">佣金提现时,扣除的个人所得税.空为不扣除个人所得税</span>
+								    </div>
+								</div>		-->				         
+								<!--
+								<div class="form-group">
+								    <label class="col-sm-2 control-label">免个人所得税金额区间</label>
+								    <div class="col-sm-9 col-xs-12">
+								        <div class="input-group">
+								            <span class="input-group-addon">开始金额￥</span>
+								            <input name="" class="form-control" value="0" type="text">
+								            <span class="input-group-addon">结束金额￥</span>
+								            <input name="" class="form-control" value="0" type="text">
+								        </div>
+								        <span class="help-block">当个人所得税金额在此区间内时,不扣除个人所得税. 结束金额 必须大于 开始金额才能生效</span>
+								        <span class="help-block">例如 设置开始金额0元 结束金额5元,只有个人所得税金额高于5元时,才扣除</span>
+								    </div>
+								</div>-->
+								
+								<div class="form-group">
+								    <label class="col-sm-2 control-label">结算天数</label>
+								    <div class="col-sm-9 col-xs-12">
+								        <input name="cash_least_day" class="form-control" value="{$list.cash_least_day}" type="text">
+								        <span class="help-block">当订单完成后的n天后，佣金才能申请提现,设置0或空，订单完成就可以结算</span>
+								    </div>
+								</div>
+							         
+						        <div class="form-group">
+									<label class="col-sm-2 control-label"></label>
+									<div class="col-sm-9 col-xs-12">
+									    <input value="确认提交" class="btn btn-primary" type="submit">
+									</div>
+								</div>
+							</form>
+					    </div>
+					</div>  
+			    </div>
+			    <!--分销商升级-->
+			    <div id="tab-backs" class="tab-pane">	
+			    	<div class="tab-pane   active" id="tab_basic">
+						<div class="panel-body">
+							<form action="" method="post">																					
+					     	 <div class="form-group">
+				                <label class="col-sm-2 control-label">分销商等级升级依据</label>
+				                <div class="col-sm-9 col-xs-12">
+				              		<label class="radio radio-inline" style="width:240px">
+				                        <input name="fenx_level_condition" value="1" checked="" type="radio"> 分销订单总额(完成的订单)
+				                    </label>
+						    		<label class="radio radio-inline" style="width:240px">
+				                        <input name="fenx_level_condition" value="2" type="radio"> 一级分销订单金额(完成的订单)
+				                    </label>							                        
+				                        <br>					                        
+			                        <label class="radio radio-inline" style="width:240px">
+			                              <input name="fenx_level_condition" value="3" type="radio"> 分销订单总数(完成的订单)
+			                        </label>
+									<label class="radio radio-inline" style="width:240px">
+			                              <input name="fenx_level_condition" value="4" type="radio"> 一级分销订单总数(完成的订单)
+			                        </label>					                        
+										<br><br>	
+																
+					   				<label class="radio radio-inline" style="width:240px">
+			                              <input name="fenx_level_condition" value="5" type="radio"> 自购订单金额(完成的订单)
+			                        </label>		
+									<label class="radio radio-inline" style="width:240px">
+			                              <input name="fenx_level_condition" value="6" type="radio"> 自购订单数量(完成的订单)
+			                        </label>		
+									    <br> <br>																																	
+					              	<label class="radio radio-inline" style="width:240px">
+				                        <input name="fenx_level_condition" value="7" type="radio"> 下线总人数（分销商+非分销商）
+				                    </label>		
+						   			<label class="radio radio-inline" style="width:240px">
+				                        <input name="fenx_level_condition" value="8" type="radio"> 一级下线人数（分销商+非分销商）
+				                    </label> 
+										<br>	
+						   			<label class="radio radio-inline" style="width:240px">
+				                        <input name="fenx_level_condition" value="9" type="radio"> 下级分销商总人数
+				                    </label>		
+						   			<label class="radio radio-inline" style="width:240px">
+				                        <input name="fenx_level_condition" value="10" type="radio"> 一级分销商人数
+				                    </label>
+										<br><br>																
+								 	<label class="radio radio-inline" style="width:240px">
+				                         <input name="fenx_level_condition" value="11" type="radio"> 已提现佣金总金额
+				                    </label>	
+				                        <span class="help-block">默认为分销订单总金额</span> 
+				                </div>
+					        </div>	
+				            <div class="form-group">
+								<label class="col-sm-2 control-label"></label>
+								<div class="col-sm-9 col-xs-12">
+								    <input value="确认提交" class="btn btn-primary" type="submit">
+								</div>
+						    </div>
+						  </form>
+				    	</div>
+					</div>
+			    </div>
+			    <!--样式/文字-->
+			    <div id="tab-backd" class="tab-pane">
+			    	<div class="tab-pane   active" id="tab_basic">
+						<div class="panel-body">
+							<form action="" method="post">
+					    	<div class="form-group">
+							    <label class="col-sm-2 control-label">模板选择</label>
+							    <div class="col-sm-9 col-xs-12">
+						    		<select class="form-control valid" name="" aria-invalid="false">
+								    	<option value="default" selected="">default</option>
+								    </select>
+								      <span class="help-block"></span>
+								</div>									
+							</div>
+					
+							<div class="form-group">
+							    <label class="col-sm-2 control-label">注册面头部图片</label>
+							    <div class="col-sm-9 col-xs-12">								    														
+									<div class="input-group ">
+										<input name="" value="" class="form-control" autocomplete="off" type="text">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button">选择图片</button>
+										</span>
+									</div>
+									<!--<div class="input-group " style="margin-top:.5em;">
+										<img src="../addons/ewei_shopv2/plugin/commission/template/mobile/default/static/images/bg.png" class="img-responsive img-thumbnail" width="150">
+										<em class="close" style="position:absolute; top: 0px; right: -14px;" title="删除这张图片" onclick="deleteImage(this)">×</em>
+									</div>		  -->
+									  <span class="help-block"></span>
+							   </div>							    
+							</div>
+							
+							<div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+								<div class="input-group">
+								    <div class="input-group-addon">分销商名称</div>
+								    	<input name="" class="form-control" value="分销商" type="text">
+								   </div>
+								    <span class="help-block"></span>
+							    </div>
+							</div>	
+								
+							<div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+									    <div class="input-group-addon">分销中心</div>
+									    <input name="" class="form-control" value="分销中心" type="text">										   
+									</div>
+									 <span class="help-block"></span>
+							    </div>
+							</div>						    	
+						    	
+					    	<div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+									    <div class="input-group-addon">成为分销商</div>
+									    <input name="" class="form-control" value="成为分销商" type="text">
+									</div>
+									 <span class="help-block"></span>
+							    </div>
+							</div>
+							
+							<div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+									    <div class="input-group-addon">提现</div>
+									    <input name="" class="form-control" value="提现" type="text">
+									</div>
+									 <span class="help-block"></span>
+							    </div>
+							</div>
+						    	
+					    	<div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+									    <div class="input-group-addon">佣金</div>
+									    <input name="" class="form-control" value="佣金" type="text">
+									</div>
+									<span class="help-block"></span>
+							    </div>
+							</div>
+					    	
+					    	<div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+									    <div class="input-group-addon">分销佣金</div>
+									    <input name="" class="form-control" value="分销佣金" type="text">
+									</div>
+									<span class="help-block"></span>
+							    </div>
+							</div>
+						    	
+					    	<div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+									    <div class="input-group-addon">累计佣金</div>
+									    <input name="" class="form-control" value="累计佣金" type="text">
+									</div>
+									<span class="help-block"></span>
+							    </div>
+							</div>
+				    	
+					    	<div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+									    <div class="input-group-addon">可提现佣金</div>
+									    <input name="" class="form-control" value="可提现佣金" type="text">
+									</div>
+									<span class="help-block"></span>
+							    </div>
+							</div>
+					    	
+					    	<div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+									    <div class="input-group-addon">已申请佣金</div>
+									    <input name="" class="form-control" value="已申请佣金" type="text">
+									</div>
+									<span class="help-block"></span>
+							    </div>
+							</div>
+							
+							<div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+									    <div class="input-group-addon">待打款佣金</div>
+									    <input name="" class="form-control" value="待打款佣金" type="text">
+									</div>
+									<span class="help-block"></span>
+							    </div>
+							</div>
+									
+							<div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+									    <div class="input-group-addon">未结算佣金</div>
+									    <input name="" class="form-control" value="未结算佣金" type="text">
+									</div>
+									<span class="help-block"></span>
+							    </div>
+							</div>
+					    	
+					    	<div class="form-group">
+								<label class="col-sm-2 control-label"></label>
+								<div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+										<div class="input-group-addon">待收货佣金</div>
+										<input name="" class="form-control" value="待收货佣金" type="text">
+									</div>
+									<span class="help-block"></span>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-2 control-label"></label>
+								<div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+										<div class="input-group-addon">无效佣金</div>
+										<input name="" class="form-control" value="无效佣金" type="text">
+									</div>
+									<span class="help-block"></span>
+								</div>
+							</div>
+						    	
+						    <div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+									    <div class="input-group-addon">成功提现佣金</div>
+									    <input name="" class="form-control" value="成功提现佣金" type="text">
+									</div>
+									<span class="help-block"></span>
+							    </div>
+							</div>	
+						    
+						    <div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+							        <div class="input-group">
+							            <div class="input-group-addon">扣除个人所得税</div>
+							            <input name="" class="form-control" value="扣除个人所得税" type="text">
+							        </div>
+							        <span class="help-block"></span>
+							    </div>
+							</div>
+						    	
+						    <div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+									    <div class="input-group-addon">佣金明细</div>
+									    <input name="" class="form-control" value="佣金明细" type="text">
+									</div>
+									<span class="help-block"></span>
+							    </div>
+							</div>
+							
+							<div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+									    <div class="input-group-addon">分销订单</div>
+									    <input name="" class="form-control" value="佣金明细" type="text">
+									</div>
+									<span class="help-block"></span>
+							    </div>
+							</div>
+							
+							<div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+									    <div class="input-group-addon">下线</div>
+									    <input name="" class="form-control" value="下线" type="text">
+									</div>
+									<span class="help-block"></span>
+							    </div>
+							</div>
+							
+							<div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+									    <div class="input-group-addon">我的下线</div>
+									    <input name="" class="form-control" value="我的下线" type="text">
+									</div>
+									<span class="help-block"></span>
+							    </div>
+							</div>
+							
+							<div class="form-group">
+							    <label class="col-sm-2 control-label"></label>
+							    <div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+									    <div class="input-group-addon">级别名称</div>
+									    <input name="" class="form-control" value="一级" style="width:100px;" type="text">
+									    <input name="" class="form-control" value="二级" style="width:100px;" type="text">
+									    <input name="" class="form-control" value="三级" style="width:100px;" type="text">
+									 </div>
+									 <span class="help-block"></span>
+							    </div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-sm-2 control-label"></label>
+								<div class="col-sm-9 col-xs-12">
+									<div class="input-group">
+										<div class="input-group-addon">元</div>
+										<input name="" class="form-control" value="元" type="text">
+									</div>
+									<span class="help-block"></span>
+								</div>
+							</div>
+						    
+						    <div class="form-group">
+								<label class="col-sm-2 control-label"></label>
+								<div class="col-sm-9 col-xs-12">
+								    <input value="确认提交" class="btn btn-primary" type="submit">
+								</div>
+							</div>	
+						  </form>
+						</div>
+					</div>							    	
+				</div>
+			    <!--申请协议-->
+			    <div id="tab-backp" class="tab-pane">
+			    	<div class="panel-body">
+			    		<form action="" method="post">			    						    						    		
+				    		<div class="form-group">
+							    <label class="col-sm-2 control-label">协议名称</label>
+							    <div class="col-sm-9 col-xs-12">
+							        <input class="form-control valid" name="" value="贵州茅台集团习酒黔坤酒商城人人分销" aria-invalid="false" type="text">
+							    </div>
+							</div>
+	
+							<div class="form-group">
+							    <label class="col-sm-2 control-label">协议内容</label>
+							    <div class="col-sm-9 col-xs-12" style="">
+							            
+							    </div>
+							</div>
+                        </form>
+                    </div>
+			    </div>				
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+			</div>		    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+</html>

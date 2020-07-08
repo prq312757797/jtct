@@ -1,0 +1,231 @@
+<include file="Public/head" />  
+
+	<div class="contert">
+		<include file="Public/menu_car" />
+		<!--车场管理-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">	
+				<div style="border-bottom:1px solid #000000;height:60px;padding:20px;">
+					<p style="float:left;font-size:18px;">发车位置管理</p>	
+
+					<a href="car_parking_add"><button class="btn btn-primary" style="float:right;">+添加发车位置</button></a>	
+				</div>
+			     <form action="">
+					<table class="table table-hover table-responsive" style="margin:0px auto;"> 
+					    <thead class="navbar-inner">
+					        <tr style="background:gainsboro;">
+					            <th style="width:60px;"><input type="checkbox" id="checkAll">编号</th>
+					            <th style="width:60px;text-align:center;">排序</th>
+					            <th style="width:80px;text-align:center;">名称</th>
+					          
+					            <th style="width:60px;">坐标</th>
+								
+					            <th style="width:120px;">操作</th>
+					        </tr>
+					    </thead>
+					    
+					     <foreach name="list" item="v">
+					     	<tbody id="bots">
+                        <tr>
+                            <td>{$v.id}</td>
+							 <td>
+							 	<a  href="javascript:;" val="{$v.id}" text_name="sort" class="edit_text">{$v.sort}</a>
+							 	<input type="text" class="sort_text" value="{$v.sort}" style="display:none;width: 38px;text-align: center;    margin-left: auto;margin-right: auto;">
+							 </td>
+							 <td>
+							  	<a  href="javascript:;" val="{$v.id}" text_name="address" class="edit_text">{$v.address}</a>
+							 	<input type="text" class="sort_text" value="{$v.address}" style="display:none;width: 80px;text-align: center;    margin-left: auto;margin-right: auto;">
+							
+							 </td>
+							 <td>
+							 	 	<a  href="javascript:;" val="{$v.id}" text_name="lng_lat" class="edit_text">{$v.lng_lat}</a>
+							 	<input type="text" class="sort_text" value="{$v.lng_lat}" style="display:none;width: 80px;text-align: center;    margin-left: auto;margin-right: auto;">
+							
+							
+							 </td>
+							  
+		
+							
+                            <td>
+                            	<a class="btn btn-default"  title="编辑" alt="编辑" href="car_parking_edit/id/{$v['id']}" >编辑</a>
+								<a   class="btn btn-info" style="color:white;" title="回收" alt="回收" href="car_parking_delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+						
+                            </td>
+                        </tr>
+     
+                        
+                        </tbody> 
+                    </foreach>	
+					    				   
+	                </table>  
+
+				 </form>
+            </div>			    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+<script>
+	//异步修改商品是否加精品
+	$(".make_jingpin").click(function(){
+		//alert($(this).attr("a"));
+		$.post('__ROOT__/adp.php/Goods/ajax_jingpin',{'id':$(this).attr("a")},function(date){
+	        if(date==1){
+	        	alert("设置成功");
+	        	window.location.reload();
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>
+<script>
+
+	//异步列表页的内容     ==============================================
+//style   1:车种管理表、2:车种分类管理表、3：计价管理表、
+	$(".edit_text").click(function(){
+		
+		var self_input=$(this).parent('td').children('input')
+		var that=this
+
+		$(this).css("display","none");
+		self_input.css("display","block");
+		self_input.focus();
+		self_input.blur(function(){
+			//异步修改排序
+		
+			$(that).text(self_input.val());
+			$(that).css("display","block");
+			self_input.css("display","none");
+			 $.post('__ROOT__/adp.php/CarManager/ajax_change_text',{'style':3,'text_name':$(that).attr("text_name"),'id':$(that).attr("val"),'text_val':self_input.val()},function(date){
+	        if(date==1){
+	        	alert("成功");
+	        }else{
+	        	
+	        }
+        },'json');
+		});
+	})
+</script>
+<script>
+	//异步修改商品 排序
+	$(".edit_sort").click(function(){
+		var self_input=$(this).parent('td').children('input')
+		var that=this
+		
+		$(this).css("display","none");
+		self_input.css("display","block");
+		self_input.focus();
+		self_input.blur(function(){
+			//异步修改排序
+			$(that).text(self_input.val());
+			$(that).css("display","block");
+			self_input.css("display","none");
+			 $.post('__ROOT__/adp.php/Goods/ajax_sort_goods',{'id':$(that).attr("val"),'sort_val':self_input.val()},function(date){
+	        if(date==1){
+	        	alert("成功");
+	        }else{
+	        	
+	        }
+        },'json');
+		});
+	})
+</script>
+<script>
+	//商品ajax上下架
+	$(".peng_is_ok").click(function(){
+		var onw_id=$(this).children('input').val();
+	
+		var that = this;
+		$.post('__ROOT__/adp.php/CarManager/ajax_change_ok',{'id':onw_id},function(date){
+	        if(date==1){
+	        	if($(that).attr("class")=="peng_is_ok peng_ok"){
+	        		$(that).attr("class","peng_is_ok peng_not");
+	        		$(that).children('span').text("下架");
+	        	}else if($(that).attr("class")=="peng_is_ok peng_not"){
+	        		$(that).attr("class","peng_is_ok peng_ok");
+	        		$(that).children('span').text("上架");
+	        	}
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>
+<script>
+
+	
+
+	$(".attribute01").click(function(){
+		var onw_id=$(this).parent('td.get_id').children('input').val();
+		var that = this;
+		//{:U('get_price')}
+		//$.post('__ROOT__/adp.php/Goods/ajax_change_shuxing01',{'id':onw_id},function(ajax_back){
+		$.post('{:U('Goods/ajax_change_shuxing01')}',{'id':onw_id},function(ajax_back){
+		
+			console.log(ajax_back);
+			if(ajax_back==1){
+				$(that).css("color","red");
+			}else if(ajax_back==2){
+				$(that).css("color","");
+			}
+        },'json');
+	})
+	
+	$(".attribute02").click(function(){
+		var onw_id=$(this).parent('td.get_id').children('input').val();
+		var that = this;
+		 $.post('__ROOT__/adp.php/Goods/ajax_change_shuxing02',{'id':onw_id},function(ajax_back){
+			console.log(ajax_back);
+			if(ajax_back==1){
+				$(that).css("color","red");
+			}else if(ajax_back==2){
+				$(that).css("color","");
+			}
+        },'json');
+	})
+	
+	$(".attribute03").click(function(){
+		var onw_id=$(this).parent('td.get_id').children('input').val();
+		var that = this;
+		 $.post('__ROOT__/adp.php/Goods/ajax_change_shuxing03',{'id':onw_id},function(ajax_back){
+			console.log(ajax_back);
+			if(ajax_back==1){
+				$(that).css("color","red");
+			}else if(ajax_back==2){
+				$(that).css("color","");
+			}
+        },'json');
+	})
+	
+	$(".attribute04").click(function(){
+		var onw_id=$(this).parent('td.get_id').children('input').val();
+		var that = this;
+		 $.post('__ROOT__/adp.php/Goods/ajax_change_shuxing04',{'id':onw_id},function(ajax_back){
+			console.log(ajax_back);
+			if(ajax_back==1){
+				$(that).css("color","red");
+			}else if(ajax_back==2){
+				$(that).css("color","");
+			}
+        },'json');
+	})
+	
+	$(".attribute05").click(function(){
+		var onw_id=$(this).parent('td.get_id').children('input').val();
+		var that = this;
+		 $.post('__ROOT__/adp.php/Goods/ajax_change_shuxing05',{'id':onw_id},function(ajax_back){
+			console.log(ajax_back);
+			if(ajax_back==1){
+				//显示红色
+				$(that).css("color","red");
+			}else if(ajax_back==2){
+				$(that).css("color","");
+			}
+        },'json');
+	})
+</script>
+</body>
+
+</html>

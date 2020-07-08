@@ -1,0 +1,167 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_distribution" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">
+				<div style="height:60px;border-bottom:1px solid #000000;padding:20px 20px;background:skyblue;">
+					<h4>分销商管理 <small>总数: <span>0</span></small></h4>
+				</div>
+				<form action="" method="post">
+					<table class="table table-hover table-responsive">
+						<thead class="navbar-inner">
+						<tr>
+							<th style="width:25px;"><input type="checkbox"></th>
+							<th style="width:100px;">粉丝</th>
+							<th style="width:110px;">姓名<br>手机号码</th>
+							<th style="width:80px;">等级</th>
+							<th style="width:120px;">累计佣金<br>打款佣金</th>
+							<th style="width:80px;">下级分销商</th>
+							<th style="width:120px;">注册时间</th>
+							<if condition="$program_id neq JT201803151807521312">
+							<th style="width:120px;">审核时间</th>
+							<else/>
+							<th style="width:120px;">沙田荣誉证书</th>
+							<th style="width:120px;">公益荣誉证书</th>
+							</if>
+							<th style="width:70px;">状态</th>
+							<if condition="$program_id eq JT201803151807521312">
+							<th style="width:120px;">操作</th>
+							</if>
+						</tr>
+						</thead>
+						<tbody id="blacklis">
+							<foreach name="list" item="v">
+							<tr rel="pop" data-title="ID: {$v.members_id} " data-content="推荐人 <br/> 				  				      <label class='label label-primary'>总店</label>
+					      				" data-original-title="" title="">
+							<td>
+								<input value="{$v.members_id}" type="checkbox">
+							</td>
+							<td>
+				                    <span data-toggle="tooltip" title="" data-original-title="KaaLa Sir">
+				                        <img src="{$v.members_head}" style="width:30px;height:30px;padding1px;border:1px solid #ccc">
+				                          {$v.members_nickname}
+				                    </span>
+							</td>
+							<td> <br> </td>
+							<td> {$v.fx_lever_title}</td>
+							<td>0<br>0</td>
+							<td>  {$v.child_count} </td>
+							<td>
+								<?=date("Y-m-d",$v['fx_time_registe']);?><br> <?=date("H:i:s",$v['fx_time_registe']);?>
+							</td>
+							<td>
+							
+								<if condition="$program_id neq JT201803151807521312">
+									<?=date("Y-m-d",$v['fx_time_agree']);?><br> <?=date("H:i:s",$v['fx_time_agree']);?>
+									<else/>
+									<empty name="v['reward_info']['honor_image']">
+										未发放
+										<else/>
+								
+										<img src="__ROOT__/Uploads/{$v['reward_info']['honor_image']}" style="width:30px;height:30px;padding1px;border:1px solid #ccc">
+									
+									</empty>
+								</if>
+							</td>
+							<td>
+								<if condition="$program_id eq JT201803151807521312">
+								<empty name="v['reward_info']['honor_image_welfare']">
+										未发放
+										<else/>
+								
+										<img src="__ROOT__/Uploads/{$v['reward_info']['honor_image_welfare']}" style="width:30px;height:30px;padding1px;border:1px solid #ccc">
+									
+								</empty>
+							</if>
+							</td>
+							<td>
+		                            <if condition="$v.fx_state eq 1">
+		                            	 <span class="label label-success" data-toggle="ajaxSwitch" data-confirm="确认要取消审核?">
+												  待审核
+		                           		 </span>
+		                            </if>
+		                            <if condition="$v.fx_state eq 2">
+		                            	 <span class="label label-success fx_state"  a="{$v.members_id}" b="{$v.fx_state}" data-toggle="ajaxSwitch" data-confirm="确认要取消审核?">
+												  已审核
+		                           		 </span>
+		                            </if>
+		                            <if condition="$v.fx_state eq 3">
+		                            	 <span class="label label-success fx_state" a="{$v.members_id}" b="{$v.fx_state}" data-toggle="ajaxSwitch" data-confirm="确认要取消审核?">
+												  停用
+		                           		 </span>
+		                            </if>
+		                            <!--<br>
+		                            
+								<span class="label label-success" data-toggle="ajaxSwitch" data-confirm="确认要设置黑名单?">
+									  正常
+                                    </span>-->
+							</td>
+							<if condition="$program_id eq JT201803151807521312">
+							<td style="overflow:visible;">
+								<div class="btn-group btn-group-sm">
+									<a class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="javascript:;">操作 <span class="caret"></span></a>
+									<ul class="dropdown-menu dropdown-menu-left">
+										<li><a href="javascript:" title="上传荣誉证书" class="click_image" target="_blank" data-toggle="modal" data-target="#mystar_tuikuan" a="{$v.members_openid}">上传荣誉证书</a></li>
+										
+									<!--<li><a href="" title="会员信息" target="_blank">会员信息</a></li>
+										<li><a href="" title="推广订单" target="_blank">推广订单</a></li>
+										<li><a href="" title="推广下线" target="_blank">推广下线</a></li>
+										<li><a data-toggle="ajaxRemove" href="javascript:" a="{$v.members_id}" class="fx_delete" title="删除" data-confirm="确定要删除该分销商吗？"> 删除分销商</a></li>
+										<li class="divider"></li>
+										<li><a href="" title="会员订单" target="_blank">会员订单</a></li>
+										<li><a data-toggle="ajaxRemove" href="" title="删除会员" data-confirm="确定要删除该会员吗？">删除会员</a></li>
+									</ul>-->
+								</div>
+							</td>
+							</if>
+						</tr>
+						</foreach>
+						
+						</tbody>
+					</table>
+				</form>
+				<div class="pages self_css" > {$pages} </div>
+			</div>
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+	
+	<include file="Public/image_ajax" /> 
+<script>
+	$(".fx_state").click(function(){
+		var id=$(this).attr("a");
+		var fx_state=$(this).attr("b");
+
+	$.post('__ROOT__/adp.php/Distribution/blacklist',{'id':id,'fx_state':fx_state},function(date){
+		//	console.log(ajax_back);
+		
+			if(date==1){
+			alert("修改成功");
+		location.reload() ;
+			}else if(date==2){
+			alert("修改失败");
+			}
+        },'json');
+	
+	})
+	
+	
+	//删除分销商
+	
+	$(".fx_delete").click(function(){
+		var id=$(this).attr("a");
+		$.post('__ROOT__/adp.php/Distribution/fx_delete',{'id':id},function(date){
+
+			if(date==1){
+			alert("删除成功");
+		location.reload() ;
+			}else if(date==2){
+			alert("删除失败");
+			}
+        },'json');
+	})
+</script>
+</body>
+</html>

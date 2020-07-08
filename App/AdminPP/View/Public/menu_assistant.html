@@ -1,0 +1,29 @@
+		<div id="sidebar">
+			<ul>
+				<li><a href="{:U('Assistant/manager_list')}"><i class="icon icon-shopping-cart"></i>
+				<span>平台管理员</span></a></li>
+				
+				<li><a href="{:U('Assistant/order_ing')}"><i class="icon icon-shopping-cart"></i>
+				<span>订单提醒</span></a></li>
+<!--店员管理-->
+
+				<li class="submenu open">
+					<a href="{:U('Assistant/assistant_is')}"><i class="icon icon-th-list"></i> 
+						<span>店员管理</span> <span class="label">3</span></a>
+					<ul>
+						<li><a href="{:U('Assistant/assistant_is')}">
+							<span>申请中<span style="color:red;"> ( {$assistant_is} ) </span></span>
+						</a></li>
+						<li><a href="{:U('Assistant/assistant_ing')}">
+							<span>服务中<span style="color:red;"> ( {$assistant_ing} ) </span></span>
+						</a></li>
+						<li><a href="{:U('Assistant/assistant_stop')}">
+							<span>暂停中<span style="color:red;"> ( {$assistant_stop} ) </span></span>
+						</a></li>
+						
+					</ul>
+				</li>
+
+
+			</ul>
+		</div>

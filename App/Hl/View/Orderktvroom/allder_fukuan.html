@@ -1,0 +1,129 @@
+<include file="Public/head" />
+<include file="Public/menu_orderktvroom" />
+<style>
+	 .bottom_u{
+		 margin-bottom: 1px;
+		 margin-top: -10px;
+	}
+	.bottom_d{
+		margin-bottom: 1px;
+		margin-top: 2px;
+	}
+	td{
+		border-bottom: 1px solid #ddd;
+	}
+</style>
+<div id="content">
+	<div id="content-header">
+		<h1>房台套餐订单管理</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 房台套餐订单管理</a>
+		<a href="#" class="current">待付款</a>
+
+		<button id="search_button_order_num" class="btn" style="float: right;margin-top: 3px;margin-left: -3px;margin-right: 22px;" >搜索</button>
+		<input type="text" placeholder="订单号码" value="{$his_str}" id="search_str" style="float: right;margin-top: 3px;" onBlur="this.value=ignoreSpaces(this.value);">
+	
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>房台套餐订单管理</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th style="width:5%;">房台套餐</th>
+								<th style="width:5%;"></th>
+	
+								<th style="width:5%;">价格</th>
+								<th style="width:5%;">下单时间</th>
+								<th style="width:9%;">操作</th>
+							</tr>
+							</thead>
+							<tbody>
+								<volist name="list" id="v">
+									<tr>
+										<td style="border: 1px;"><div style="width: 184%;font-weight: 600;">订单编号:  {$v.order_num}</div></td>
+										<td></td>
+										
+									</tr>
+									<tr>
+										<td><img src="__ROOT__/Uploads/{$v.goods_info.image}" style="width:50px;height:50px;border:1px solid #ccc; padding:1px;"></td>
+										<td>{$v.goods_info.goods_title}</td>
+										<td>{$v.price}</td>
+										<td>
+											{$v.time_build|date="Y-m-d",###}<br>{$v.time_build|date="H:i:s",###}
+										</td>
+										<td>
+									
+											<a class="btn btn-danger bottom_u" style="color:white;"  title="关闭订单" alt="关闭订单" href="__URL__/close_order?id={$vo.id}" onclick="if(confirm('确认关闭订单吗？')==false)return false;">关闭订单</a>
+									
+											<!--<a class="btn btn-danger bottom_u change_price" style="color:white;"  href="javascript:"   a="{$vo.order_num}" b="{$vo.price_all_a}">订单改价</a>
+									-->
+											<a class="btn btn-danger bottom_u" style="color:white;"  title="确认付款" alt="确认付款" href="__URL__/fukuan?id={$vo.id}" onclick="if(confirm('确认此订单已付款吗？')==false)return false;">确认付款</a>
+									
+											<!--<a class="btn btn-danger bottom_d" style="color:white;"  title="查看详情" alt="查看详情" href="order_con?order_num={$vo.order_num}" >查看详情</a>
+									-->
+										</td>
+									</tr>
+							</volist>
+							</tbody>
+						</table>
+						<div class="pages self_css"> {$pages}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<include file="Public/modal" /> 
+<include file="Public/change_price" />  
+<include file="Public/foot" />
+<include file="Public/input_search" />
+
+<script>
+
+$(".edit_remark").click(function(){
+	$("#add-event_1").click();	
+	$("#text_remark").text($(this).attr("a"))
+})
+	
+$(".change_price").click(function(){
+	$("#add-event_2").click();	
+	$("#order_num12138").val($(this).attr("a"))
+	$("#price_old").val($(this).attr("b"))
+})
+
+
+</script>
+<script>
+	$("#div_submit").click(function(){
+		if(!$("#change_price").val()){
+			alert("请填写修改价格");
+			return false;
+		}
+
+		$.post('__ROOT__/adpp.php/Order/change_price',{'order_num':$("#order_num12138").val(),'price':$("#change_price").val()},function(date){	
+			if(date==1){
+				$("#add-event_2").click();	
+				$("#myModalLabel").text("设置成功")
+				$("#add-event").click();
+				setTimeout(function(){
+					window.location.reload();
+				},2000);
+			}else{
+				$("#myModalLabel").text("设置失败")
+					$("#add-event").click();
+			}
+        },'json');
+	})
+
+</script>	

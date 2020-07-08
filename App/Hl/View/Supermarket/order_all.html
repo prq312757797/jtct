@@ -1,0 +1,117 @@
+<include file="Public/head" />
+<include file="Public/menu_supermarket" />
+<style>
+	.bottom_u{
+		margin-bottom: 1px;
+		margin-top: -10px;
+	}
+	.bottom_d{
+		margin-bottom: 1px;
+		margin-top: 2px;
+	}
+	td{
+		border-bottom: 1px solid #ddd;
+	}
+</style>
+<div id="content">
+	<div id="content-header">
+		<h1>订单管理</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 订单管理</a>
+		<a href="#" class="current">待付款</a>
+
+	<button id="search_button_order_num" class="btn" style="float: right;margin-top: 3px;margin-left: -3px;margin-right: 22px;" >搜索</button>
+		<input type="text" placeholder="订单号码" value="{$his_str}" id="search_str" style="float: right;margin-top: 3px;" onBlur="this.value=ignoreSpaces(this.value);">
+	
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+						<h5>订单管理</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped">
+							<thead>
+							<tr>
+								<th style="width:5%;">商品</th>
+								<th style="width:5%;"></th>
+								<th style="width:5%;">单价/数量</th>
+								<th style="width:5%;">买家</th>
+								<th style="width:5%;">支付/配送</th>
+								<th style="width:5%;">价格</th>
+								<th style="width:5%;">下单时间</th>
+								<th style="width:9%;">操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							<volist name="list" id="vo">
+								<volist name="vo[info]" id="sub" key="k">
+									<if condition="$k eq 1">
+										<tr>
+											<td style="border: 1px;"><div style="width: 184%;font-weight: 600;">订单编号:  {$vo.order_num}</div></td>
+										<td></td>
+										<notempty name="vo[sh_name]">
+											<td style="border: 1px;"><div style="width: 184%;font-weight: 600;text-align: left;">商户：{$vo.sh_name}</div></td>
+											</notempty>
+										</tr>
+									</if>
+									<tr>
+										<td><img src="__ROOT__/Uploads/{$sub.image}" style="width:50px;height:50px;border:1px solid #ccc; padding:1px;"></td>
+										<td>{$sub.goods_title}</td>
+										<td <if condition="$k neq 1"> style="border-right: 1px solid #ddd;"</if>>
+										<if condition="$sub.is_use_guige eq 2">{$sub.guige_price}	<else/>{$sub.price_sell}</if>
+										<br>x{$sub.buy_num}
+										<br>
+										<if condition="$vo.is_change_price eq 1">
+											<span style="color:red;">(改价)</span>{$vo.change_price}
+										</if>
+										</td>
+										<if condition="$k eq 1">
+											<td> {$vo.nickname} <br/>{$vo.tel} </td>
+
+											<td>
+												<label class="label label-default">未支付</label>
+												<br>
+												<span style="margin-top:5px;display:block;">快递</span>
+											</td>
+											<td>
+												￥{$vo.price_all_a}<br/>
+												<if condition="$vo['pay_method'] eq 2"><text style="color:red;">积分支付</text></if>
+												<if condition="$vo['pay_method'] eq 3"><text style="color:red;">消费券支付</text></if>
+											</td>
+											<td>
+												{$vo.time_build|date="Y-m-d",###}<br>{$vo.time_build|date="H:i:s",###}
+											</td>
+
+											<td>
+										
+												<a class="btn btn-danger bottom_d style="color:white;"  title="查看详情" alt="查看详情" href="order_con?order_num={$vo.order_num}" >查看详情</a>
+											
+											</td>
+
+										</if>
+									</tr>
+								</volist>
+							</volist>
+
+							</tbody>
+						</table>
+						<div class="pages self_css"> {$pages}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<include file="Public/foot" />
+
+<include file="Public/input_search" />

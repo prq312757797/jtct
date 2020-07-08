@@ -1,0 +1,159 @@
+<include file="Public/head" />
+<div class="contert">	
+	<if condition="$is_edit eq 1">
+				<h2>小程序基本信息</h2><else/><h2>小程序添加</h2>
+	</if>
+		<form  class="form-horizontal" role="form" action="{:U('Formwork/runAdd',array('id'=>$info['id']))}" method="post">
+			
+				<div class="form-group">
+					<label for="firstname" class="col-sm-1 control-label">模板编号：</label>
+					<div class="col-sm-11">
+						<empty name="muban_num">
+							<input value="{$info.program_id}" readonly   type="text" class="form-control" id="firstname" placeholder=""> 							  
+						
+						<else/>
+							<input value="{$muban_num}" readonly name="program_id"  type="text" class="form-control" id="firstname" placeholder=""> 							  
+						
+						</empty>
+					</div>
+				</div>																						
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">小程序名称:</label>
+					<div class="col-sm-11">
+						<input value="{$info.appmcheng}"  type="text" class="form-control" id="lastname" placeholder="">								  
+					</div>
+				</div>	
+			<!--	<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">模板名称:</label>
+					<div class="col-sm-11">
+						<input value="{$info.muban_name}"  type="text" class="form-control" id="lastname" placeholder="">								  
+					</div>
+				</div>	-->
+				
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">商户账号:</label>
+					<div class="col-sm-11">
+						<input value="{$info.user_name}"  type="text" class="form-control" id="lastname" placeholder="">								  
+					
+					</div>
+				</div>	
+				
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">商户姓名:</label>
+					<div class="col-sm-11">
+						<input value="{$info.realname}"  type="text" class="form-control" id="lastname" placeholder="">								  
+					
+					</div>
+				</div>	
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">模板类型:</label>
+					<div class="col-sm-11">
+						<input value="{$info.moban_l_name}"  type="text" class="form-control" id="lastname" placeholder="">								  
+					
+					</div>
+				</div>	
+				
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">模板版本:</label>
+					<div class="col-sm-11">
+						<input value="{$info.muban_b}"  type="text" class="form-control" id="lastname" placeholder="">								  
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">模板特色:</label>
+					<div class="col-sm-11">
+						<input value="{$info.muban_tese}<notempty name="info['tese01']">+{$info.tese01}</notempty><notempty name="info['tese02']">+{$info.tese02}</notempty><notempty name="info['tese03']">+{$info.tese03}</notempty>"  type="text" class="form-control" id="lastname" placeholder="请输入模板版本">								  
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">模板风格:</label>
+					<div class="col-sm-11">
+						<input value="{$info.muban_f_name}"  type="text" class="form-control" id="lastname" placeholder="">								  
+					</div>
+				</div>				
+				
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">模板价格:</label>
+					<div class="col-sm-11">
+						<input value="{$info.muban_price}"  type="text" class="form-control" id="lastname" placeholder="">								  
+					</div>
+				</div>
+				
+				<empty name="muban_num">
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">录入时间:</label>
+					<div class="col-sm-11">
+						<input value="<?=date("Y-m-d H:i:s",$info['add_time']);?>"  type="text" class="form-control" id="lastname" placeholder="" readonly>								  
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">到期时间:</label>
+					<div class="col-sm-11">
+						<input value="<?=date("Y-m-d H:i:s",$info['end_time']);?>"  type="text" class="form-control" id="lastname" placeholder="" readonly>								  
+					</div>
+				</div>
+				</empty>
+				<!--<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">模板特点:</label>
+					<div class="col-sm-11">
+						<textarea name="action" class="form-control" rows="3"></textarea>								  
+					</div>
+				</div>-->
+				</form>
+				<hr>
+				<h3>基本信息修改</h3>
+			<form  class="form-horizontal" role="form" action="{:U('Formwork/runAdd',array('id'=>$info['id']))}" method="post">
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">原始ID:</label>
+					<div class="col-sm-11">
+						<input value="{$info.start_id}" name="start_id"  type="text" class="form-control" id="lastname" placeholder="">								  
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">appid:</label>
+					<div class="col-sm-11">
+						<input value="{$info.appid}" name="appid" type="text" class="form-control" id="lastname" placeholder="">								  
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">appsecret:</label>
+					<div class="col-sm-11">
+						<input value="{$info.appsecret}" name="appsecret" type="text" class="form-control" id="lastname" placeholder="">								  
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">商户号:</label>
+					<div class="col-sm-11">
+						<input value="{$info.shanghu_num}" name="shanghu_num" type="text" class="form-control" id="lastname" placeholder="">								  
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">支付秘钥:</label>
+					<div class="col-sm-11">
+						<input value="{$info.pay_key}" name="pay_key" type="text" class="form-control" id="lastname" placeholder="">								  
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="lastname" class="col-sm-1 control-label">续费时长:</label>
+					<div class="col-sm-11">
+						<select name="end_time_add">
+							<option value="">下拉选择</option>
+							<option value="one_month">一个月</option>
+							<option value="half_year">半年</option>
+							<option value="one_year">一年</option>
+						</select>								  
+					</div>
+				</div>
+				<div style="float:right;">
+					<!--<button type="button" class="btn btn-default">返回</button>-->
+					<a class="btn btn-default" href="__ROOT__/adz.php/Formwork/index">返回</a>
+					<button type="submit" class="btn btn-primary">确认</button>								
+				</div>
+			</form>							
+				
+															
+		</div>
+

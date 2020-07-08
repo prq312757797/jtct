@@ -1,0 +1,200 @@
+
+	<include file="Public/head" />
+
+<div class="tab" style="width:80%;height:auto;margin:20px auto;background-color:#CAE1FF;padding:20px;border-radius:6px;">
+	<div class="tab-cont">					
+	    <div class="clearfix">
+	    	<empty name="sh0912">
+	    			<h5 class="page-header">添加新用户</h5>
+	    			<else/>	<h5 class="page-header">编辑用户</h5>
+	    	</empty>	
+			<form action="{:U('User/add_user',array('id'=>$sh0912['id']))}" enctype="multipart/form-data" method="post" class="form-horizontal ajaxfrom" role="form" id="form-user" onsubmit="return ck()">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">用户账号</label>
+					<div class="col-sm-10 col-lg-9 col-xs-12">
+						<input id="" name="name" required="" type="text" class="form-control" value="{$sh0912['name']}">
+						<span class="help-block" id="un">请输入用户名，用户名为 3 到 15 个字符组成，大小写字母（不区分大小写）</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">用户姓名</label>
+					<div class="col-sm-10 col-lg-9 col-xs-12">
+						<input id="" name="realname" required="" type="text" class="form-control" value="{$sh0912['realname']}">
+						<span class="help-block" id="un">请输入用户名，用户名为 3 到 15 个字符组成，包括汉字，大小写字母（不区分大小写）</span>
+					</div>
+				</div>
+				<empty name="is_edit">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">密码</label>
+					<div class="col-sm-10 col-lg-9 col-xs-12">
+						<input id="password" name="psw1" required="" type="password" class="form-control" value="" >
+						<span class="help-block">请填写密码，最小长度为 8 个字符</span>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">确认密码</label>
+					<div class="col-sm-10 col-lg-9 col-xs-12">
+						<input id="repassword" name="psw2" type="password" required="" class="form-control" value="" >
+						<span class="help-block">重复输入密码，确认正确输入</span>
+					</div>
+				</div>
+		      
+		        <div class="form-group">
+					<label class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">客户姓名</label>
+					<div class="col-sm-10 col-lg-9 col-xs-12">
+						<input name="realname" required="" type="text" class="form-control" value="" >
+					</div>
+				</div>
+                 </empty>
+			    <div class="form-group">
+					<label class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">身份证号</label>
+					<div class="col-sm-10 col-lg-9 col-xs-12">
+						<input name="idcard" required="" type="text" class="form-control" value="{$sh0912['idcard']}" >
+					</div>
+				</div>
+			    <div class="form-group">
+					<label class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">手机号</label>
+					<div class="col-sm-10 col-lg-9 col-xs-12">
+						<input name="tel" required="" type="text" class="form-control" value="{$sh0912['tel']}" >   
+					</div>
+				</div>
+   
+	            <div class="form-group">
+					<label class="col-xs-12 col-sm-2 col-md-2 col-lg-2 control-label">邮箱</label>
+					<div class="col-sm-10 col-lg-9 col-xs-12">
+						<input name="mail" type="text" required="" class="form-control" value="{$sh0912['mail']}" >
+					</div>
+			    </div>
+
+			   <div class="form-group">
+				    <label for="inputPassword" class="col-sm-2 control-label">身份证正面：</label>
+				    <div class="col-sm-10 col-lg-9 col-xs-12">	
+					     <input type="file" name="idcard1" id="doc" onchange="javascript:setImagePreview();">			
+					 		    <notempty name="sh0912['idcardz']">
+									<img style="width:240px;height:146px;" id="old_img" src="__ROOT__/Uploads/{$sh0912.idcardz}">
+								</notempty>
+					   <div class="col-sm-10">
+					      	<img id="preview" style="display:none; width:240px; height:160px;border:1px solid #000000; border-radius:6px;margin-top:10px;">
+						    <span class="help-block">
+								<strong class="text-info">注意：上传后不可修改</strong>
+							</span>
+					    </div>																		
+					</div>
+				</div>
+  	
+				<div class="form-group">
+				    <label for="inputPassword" class="col-sm-2 control-label">身份证反面：</label>
+				    <div class="col-sm-10 col-lg-9 col-xs-12">	
+					     <input type="file" name="idcard2" id="doca" onchange="javascript:setImagePreviews();">			
+					    		<notempty name="sh0912['idcardf']">
+									<img style="width:240px;height:146px;" id="old_img02" src="__ROOT__/Uploads/{$sh0912.idcardf}">
+								</notempty>
+					   <div class="col-sm-10">
+					      	<img id="previewa"style="display:none; width:240px; height:160px;border:1px solid #000000; border-radius:6px;margin-top:10px;">
+						    <span class="help-block">
+								<strong class="text-info">注意：上传后不可修改</strong>
+							</span>
+					    </div>																		
+					</div>
+				</div>     
+				<div class="form-group" style=" text-align:center; margin-right:100px;">
+					<div class="col-sm-offset-2 col-md-offset-2 col-lg-offset-1 col-xs-12 col-sm-10 col-md-10 col-lg-11">
+						<empty name="sh0912">
+			    			<input type="submit" class="btn btn-primary span3" name="submit" value="确认注册">				
+			    			<else/>	<input type="submit" class="btn btn-primary span3" name="submit" value="确认修改">			
+			    	</empty>
+						<input type="button" class="btn btn-default" value="返回上一级" onclick="history.go(-1)"/>
+						<input type="hidden" name="token" value="c72e41a7">
+					</div>
+				</div>
+	        </form>
+       </div>									                   
+	</div>
+</div>		  
+<include file="Public/foot" />
+<script type="text/javascript">
+//下面用于图片上传预览功能
+function setImagePreview(avalue) {
+var docObj=document.getElementById("doc");
+var imgObjPreview=document.getElementById("preview");
+if(docObj.files &&docObj.files[0])
+{
+//火狐下，直接设img属性
+imgObjPreview.style.display = 'block';
+imgObjPreview.style.width = '240px';
+imgObjPreview.style.height = '160px'; 
+ if(document.getElementById("old_img")!=null){
+			document.getElementById("old_img").style.display = 'none';
+		}
+ 
+imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+}
+else
+{
+//IE下，使用滤镜
+docObj.select();
+var imgSrc = document.selection.createRange().text;
+var localImagId = document.getElementById("localImag");
+//图片必须设置初始大小
+localImagId.style.width ="240px";
+localImagId.style.height = "160px";
+//图片异常的捕捉，防止用户修改后缀来伪造图片
+try{
+localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+}
+catch(e)
+{
+alert("您上传的图片格式不正确，请重新选择!");
+return false;
+}
+imgObjPreview.style.display = 'none';
+document.selection.empty();
+}
+return true;
+}
+
+//反面
+//下面用于图片上传预览功能
+function setImagePreviews(avalue) {
+var docObj=document.getElementById("doca");
+var imgObjPreviewa=document.getElementById("previewa");
+if(docObj.files &&docObj.files[0])
+{
+//火狐下，直接设img属性
+imgObjPreviewa.style.display = 'block';
+imgObjPreviewa.style.width = '240px';
+imgObjPreviewa.style.height = '160px'; 
+if(document.getElementById("old_img02")!=null){
+			document.getElementById("old_img02").style.display = 'none';
+		}
+ 
+imgObjPreviewa.src = window.URL.createObjectURL(docObj.files[0]);
+}
+else{
+//IE下，使用滤镜
+docObj.select();
+var imgSrc = document.selection.createRange().text;
+var localImagId = document.getElementById("localImag");
+//图片必须设置初始大小
+localImagId.style.width ="240px";
+localImagId.style.height = "160px";
+//图片异常的捕捉，防止用户修改后缀来伪造图片
+try{
+localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+}
+catch(e){
+alert("您上传的图片格式不正确，请重新选择!");
+return false;
+}
+imgObjPreview.style.display = 'none';
+document.selection.empty();
+}
+return true;
+}
+</script>
+	</body>
+</html>
+		

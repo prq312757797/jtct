@@ -1,0 +1,57 @@
+<include file="Public/head" />  
+
+	<div class="contert">
+		<include file="Public/menu_car_order" />
+		<!--订单备注管理-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">	
+				<div style="border-bottom:1px solid #000000;height:60px;padding:20px;">
+					<p style="float:left;font-size:18px;">订单备注管理</p>	
+
+					<a href="car_extra_need_add"><button class="btn btn-primary" style="float:right;">+添加订单备注</button></a>	
+				</div>
+			     <form action="">
+					<table class="table table-hover table-responsive" style="margin:0px auto;"> 
+					    <thead class="navbar-inner">
+					        <tr style="background:gainsboro;">
+					            <th style="width:60px;"><input type="checkbox" id="checkAll">编号</th>
+					            <th style="width:80px;text-align:center;">内容</th>
+					            <th style="width:120px;">操作</th>
+					        </tr>
+					    </thead>
+					    
+					     <foreach name="info" item="v">
+					     	<tbody id="bots">
+                        <tr>
+                            <td>{$v.id}</td>
+							
+							 <td>
+							  	<a  href="javascript:;" val="{$v.id}" text_name="title" class="edit_text">{$v.title}</a>
+							 	<input type="text" class="sort_text" value="{$v.title}" style="display:none;width: 80px;text-align: center;    margin-left: auto;margin-right: auto;">
+							
+							 </td>
+							
+                            <td>
+                            	<a class="btn btn-default"  title="编辑" alt="编辑" href="car_extra_need_edit/id/{$v['id']}" >编辑</a>
+								<a   class="btn btn-info" style="color:white;" title="删除" alt="删除" href="car_extra_need_delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+						
+                            </td>
+                        </tr>
+     
+                        
+                        </tbody> 
+                    </foreach>	
+					    				   
+	                </table>  
+
+				 </form>
+            </div>			    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>互联网生态圈营销中心</title>
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="__ROOT__/Public/new0127/css/selfcss.css" />
+		<link rel="stylesheet" href="__ROOT__/Public/new0127/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="__ROOT__/Public/new0127/css/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" href="__ROOT__/Public/new0127/css/fullcalendar.css" />	
+		<link rel="stylesheet" href="__ROOT__/Public/new0127/css/unicorn.main.css" />
+		<link rel="stylesheet" href="__ROOT__/Public/new0127/css/unicorn.grey.css" class="skin-color" />
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+	<body>
+		<!-- 代码 开始 -->
+		<div id="header"><h1><a href="#">互联网生态圈营销中心</a></h1></div>
+        
+		<div id="user-nav" class="w80 navbar navbar-inverse ">
+           
+            	<ul class="w100 nav btn-group ">
+	                <li class="btn btn-inverse"><a title="" href="{:U('Index/index')}"><i class="icon icon-home"></i> 
+	                	<span class="text">首页</span></a></li>
+<if condition="$is_sell_servers eq 1">	                	
+	                <li class="btn btn-inverse"><a title="" href="{:U('Goods/selling')}"><i class="icon icon-shopping-cart"></i>
+	                	<span class="text">商品</span></a></li>
+</if>	                	
+ <if condition="$is_put_info eq 1">
+ 		
+	 				<li class="btn btn-inverse"><a title="" href="{:U('Info/artical')}"><i class="icon icon-list-alt"></i> 
+		          	    <span class="text">资讯</span></a></li>
+</if>
+<if condition="$program_id neq JT201711081030423109"> 
+					<li class="btn btn-inverse"><a title="" href="{:U('Order/index')}"><i class="icon icon-list-alt"></i> 
+	          	    	<span class="text">订单</span></a></li>
+</if>	
+          	    
+<if condition="$duodian eq 1">    	
+	                <li class="btn btn-inverse"><a title="" href="{:U('Merch/index')}"><i class="icon icon-hdd"></i> 
+	                	<span class="text">多商户</span></a></li>
+</if>  
+<if condition="$fenxiao eq 1">
+	        	    <li class="btn btn-inverse"><a title="" href="{:U('Distribution/index')}"><i class="icon icon-fullscreen"></i> 
+	        	    	<span class="text">分销</span></a></li>
+</if>
+	         	   <li class="btn btn-inverse"><a title="" href="{:U('Set/index')}"><i class="icon  icon-asterisk"></i> 
+	                	<span class="text">设置</span></a></li>
+	                <li class="fl_r btn btn-inverse "><a title="" href="__ROOT__/adsh.php/Login/logout?ownid={$ownid}"><i class="icon  icon-share-alt"></i> 
+	                	<span class="text">退出</span></a></li>
+	            </ul>
+   
+           
+        </div>     

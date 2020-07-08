@@ -1,0 +1,233 @@
+<include file="Public/head" />
+<include file="Public/menu_warehouse" />
+<script src="__ROOT__/Public/ys0925/jquery.js"></script>
+<style>
+	.fileinput-button {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.fileinput-button input{
+		position:absolute;
+		right: 0px;
+		top: 0px;
+		opacity: 0;
+		-ms-filter: 'alpha(opacity=0)';
+		font-size: 200px;
+	}
+	.w93{
+		width:93%!important;
+	}
+		input[type="text"]{
+    margin-bottom: 5px;
+	}
+	td{
+		padding:0!important;	
+		line-height: 30px!important;
+	}
+	.f30{
+		font-size: 30px;
+	}
+</style>
+
+<div id="content">
+	<div id="content-header">
+		<h1>入库单</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="{:U('Index/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+		<a href="{:U('Warehouse/canggui')}" class="tip-bottom">仓柜管理</a>
+		<a href="#" class="current">入库单</a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-align-justify"></i>
+								</span>
+						<h5>入库单  <span style="color:#ccc;font-size:12px;">商品入库到一级仓柜，一级仓柜的库存会增加</span></h5>
+					</div>
+					<div class="widget-content nopadding">
+			
+		
+<script>
+	function action_12(item){
+	
+			$(".child_"+$(item).attr("k")).css("display","none")
+			$(".child_"+$(item).attr("k")).each(function(){    
+                $(this).children("select").attr("name","")
+            })
+
+			$("#id_"+$(item).attr("k")+"_"+$("#id_"+$(item).attr("k")).find("option:selected").val()).css("display","block")
+			$("#id_"+$(item).attr("k")+"_"+$("#id_"+$(item).attr("k")).find("option:selected").val()).children("select").attr("name","a100[]")
+		
+	}
+	function action_122(item){
+
+			$(".child_goodsinfo_"+$(item).attr("k")+"_"+$(item).find("option:selected").val()).each(function(){    
+                $(this).children("select").attr("name","")
+            })
+
+		var k=$(item).attr("k")
+		var c_id=$(item).find("option:selected").val()
+		
+		$(".child_goodsinfo_"+k+"_"+c_id).css("display","none")
+		console.log("child_goodsinfo_"+k+"_"+c_id)
+		console.log("choosegoodid_"+k+"_"+c_id)
+
+
+
+$("#choosegoodid_"+k+"_"+c_id).css("display","block")
+$("#choosegoodid_"+k+"_"+c_id).children("select").attr("name","a1000[]")
+//			$("#choosegoodid_"+$(item).attr("k")+"_"+$("#id_"+$(item).attr("k")+"_"+$(item).find("option:selected").val())).css("display","block")
+//			$("#choosegoodid_"+$(item).attr("k")+"_"+$("#id_"+$(item).attr("k")+"_"+$(item).find("option:selected").val())).find("option:selected").val()).children("select").attr("name","a1000[]")
+//	
+	}
+	function action_123(item){
+		
+//		console.log(111);
+//		console.log($(item).attr("k"));
+//		console.log(111);
+		var key_1=$(item).attr("k")
+		$.post('__ROOT__/adp.php/Warehouse/ajax_goods_info', {
+					'fenlei_2': $(item).find("option:selected").val()
+				}, function(date) {
+					var obj = eval(date);
+					var dh = '';
+				
+					dh += ' <option>  ';
+					dh += '商品名称';
+					dh += ' </option>  ';
+					for(var i = 0; i < obj.length; i++) {
+						dh += ' <option  value="' + obj[i].id + '">  ';
+						dh += obj[i].goods_title;
+						dh += ' </option>  ';
+						document.getElementById('muban_b_'+key_1).innerHTML = dh;
+					}
+
+		
+					}, 'json');
+	}
+	
+</script>
+
+						<table class="table table-bordered table-striped" style="    border-top: 1px solid #ccc;">
+							<thead>
+							<tr>
+								<th style="width:10%;">一级仓</th>
+								<th style="width:10%;">供应商</th>
+								<th style="width:10%;">大类</th>
+								<th style="width:10%;">小类</th>
+								<th style="width:10%;">物品名称</th>
+								
+								<th style="width:10%;">数量</th>
+							
+								
+							</tr>
+							</thead>
+							<form action="{:U('Warehouse/run_ruku_add',array('id'=>$info['id'],'action_state'=>'ruku'))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+							
+							<tbody>
+							<foreach name="arr" item="arr">
+								<tr>
+									<td><!--一级仓-->
+										<select name="warehouse[]" class="w100" >
+											<option ></option>
+											<foreach name="warehouse" item="v">
+												<option value="{$v.id}">{$v.title}</option>
+											</foreach>
+										</select>
+									</td>
+									<td><!--供货商-->
+										
+										<select name="supplier[]" class="w100" >
+											<option ></option>
+											<foreach name="supplier" item="v">
+												<option value="{$v.id}">{$v.title}</option>
+											</foreach>
+										</select>
+									</td>
+									<td><!--大类-->
+										
+										<select name="a10[]" class="w100" onchange="action_12(this)"  k="{$arr}" id="id_{$arr}" >
+											<option ></option>
+											<foreach name="fenlei" item="v">
+												<option value="{$v.id}">{$v.title}</option>
+											</foreach>
+										</select>
+									</td>
+									<td><!--小类     choosegoodid_1_1475 choosegoodid_1_1475-->
+										
+										<foreach name="fenlei" item="v">
+											<div id="id_{$arr}_{$v.id}" class="child_{$arr}" style="display:none;">
+												<select name="" class="w100"  a="{$arr}_{$v.id}" onchange="action_123(this)"  k="{$arr}" id="id_{$arr}_{$v['id']}">
+													<option ></option>
+													<foreach name="v['child']" item="vo">
+														<option value="{$vo.id}">{$vo.title}</option>
+													</foreach>
+												</select>
+											</div>
+										</foreach>
+									</td>
+									<td><!--小类所属商品-->
+								
+										<select name="goods[]" class="w100"   id="muban_b_{$arr}">
+											<option ></option>
+										</select>
+									</td>
+									<td><input type="text" class="w93" name="num[]" value=""/></td>
+								
+			
+								
+								</tr>
+							
+							</foreach>
+	
+							</tbody>
+							
+								<div class="form-actions"  style=" padding: 6px 50px 4px;">
+									<button type="submit" style="float: right;  " class="btn btn-primary">提交入库</button>
+									<a href="goods_shenhe?text=入库单&action_state=1" style="float: right; margin-right: 13px; " class="btn btn-primary">待审核入库单<span style="color:red;">（{$count_1}）</span></a>
+									<a href="goods_shenhe02?text=入库单&action_state=1" style="float: right; margin-right: 13px; " class="btn btn-primary">已审核入库单<span style="color:red;">（{$count_2}）</span></a>
+								</div>
+							
+							</form>
+							
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--原来的 modal 框位置-->
+<include file="Public/self_url" />
+<include file="Public/foot" />
+<include file="Public/image_yl" />
+
+	<script>
+//		$(".action").click(function(){
+//
+//			for (var i=1;i<3;i++){
+//					$(".child_"+$(this).attr("k")).css("display","none")
+//					$("#id_"+$(this).attr("k")+"_"+$(this).attr("a")).css("display","block")
+//			}
+//			
+//		})
+		function ac2tion(item){
+//					console.log($(item).attr("a"))
+console.log($("#id_"+$(item).attr("k")).find("option:selected").val())
+//			for (var i=1;i<3;i++){
+//				$(".child_"+$(item).attr("k")).css("display","none")
+//				$("#id_"+$(item).attr("k")+"_"+$("#id_"+$(item).attr("k")).find("option:selected").val()).css("display","block")
+//			}
+		}
+	</script>
+
+
+

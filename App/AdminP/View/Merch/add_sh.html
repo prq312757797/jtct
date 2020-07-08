@@ -1,0 +1,566 @@
+<include file="Public/head" />  
+ <script type="text/javascript" src="__ROOT__/Public/js/jquery.min.js"></script>
+ <script src="__ROOT__/Public/js/distpicker.data.js"></script>
+ <script src="__ROOT__/Public/js/distpicker.js"></script>
+ <script src="__ROOT__/Public/js/main.js"></script>
+ 
+ <style>
+ 	.choose_css{
+ 		    border: 1px solid #ccc;
+	    width: 80px;
+	    text-align: center;
+	    height: 28px;
+	    line-height: 28px;
+	    float: left;
+   		 margin-left: 3px;
+       margin-botton: 6px;
+ 	}
+ </style>
+  <!--百度编辑器-->
+    	    <script type="text/javascript" charset="utf-8" src="__ROOT__/Public/ueditor/ueditor.config.js"></script>
+	    <script type="text/javascript" charset="utf-8" src="__ROOT__/Public/ueditor/ueditor.all.min.js"> </script>
+	    
+	    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+	    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+	    <script type="text/javascript" charset="utf-8" src="__ROOT__/Public/ueditor/lang/zh-cn/zh-cn.js"></script>
+	<div class="contert">
+		<include file="Public/menu_merch" />
+		<!--新添加多商户-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con" style="height:auto;">
+				
+				<div class="page-heading" style="border-bottom:1px solid #000000;height:60px;padding:10px;">
+					<span class="pull-right">
+					  <!--  <a class="btn btn-primary btn-sm" href="">添加新商户</a>-->
+						<a class="btn btn-default  btn-sm" href="{:U('Merch/index')}">返回列表</a>
+					</span>
+				   <empty name="info">
+				   	 <h2>添加商户 <small></small></h2>
+				   	 <else/> 
+				   	 <h2>编辑商户 <small></small></h2>
+				   </empty>
+				</div>	
+				<form  action="{:U('/Merch/runAdd_merch',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-x one-form form-auto form-horizontal" id="form">
+
+	<div style="width:100%; padding:40px;">
+			<div class="tab-pane   active" id="tab_basic">
+			    <div class="panel-body">	   
+					<div class="form">
+					    <label class="col-sm-2 control-label">排序</label>
+					    <div class="col-sm-9">     
+					        <input type="number" class="form-control" name="sort" value="<?php echo $info['sort']?$info['sort']:1;?>">
+					        <span class="help-block"></span>
+					    </div>
+					</div>
+					
+					<div class="form">
+					    <label class="col-sm-2 control-label">商户名称</label>
+					    <div class="col-sm-9">
+					        <input type="text" class="form-control" name="sh_name" value="{$info['sh_name']}" data-rule-required="true" aria-required="true">
+					        <span class="help-block"></span>
+					    </div>
+					</div>
+					<div class="form">
+								<label class="col-sm-2 control-label">商户分类</label>
+								<div class="col-sm-9">
+									<div class="row row-fix tpl-category-container">
+										<div class="col-sm-4 col-md-6 col-lg-6">
+											<select name="fl_id" class="form-control tpl-category-parent valid" value="selected"   >											
+												<empty name="is_edit">
+													<option value="">请选择分类</option>
+													<else/>
+													<option value="{$info.fl_id}">{$info.fl_title}</option>
+												</empty>
+												<foreach name="fenlei" item="v">
+														<option value="{$v.id}">{$v.title}</option>
+												</foreach>
+											</select>
+										</div>
+
+									</div>
+									<span class="help-block"></span>
+								</div>
+							</div>
+							<if condition="$program_id eq JT201711081030423109">
+							<div class="form">
+								<label class="col-sm-2 control-label">支付方式</label>
+								<div class="col-sm-9">
+									<div class="row row-fix tpl-category-container">
+										<div class="col-sm-4 col-md-6 col-lg-6">
+											<select name="pa222yment_method_id" id="payment_method_id" class="form-control tpl-category-parent valid" value="selected"  onchange="selectShow(this)" >											
+											
+													<option value="">请选择支付方式</option>
+												<foreach name="payment_method" item="v">
+														<option value="{$v.id}">{$v.title}</option>
+												</foreach>
+											</select>
+										</div>
+
+									</div>
+									<span class="help-block pay_list" id="pay_list">
+										<foreach name="info['payment_method_title']" item="v">
+										<div class="choose_css date_choose" b="{$info.id}" a="{$v.id}">{$v.title}</div><input name="pay_list_id[]" value="{$v.id}" type="hidden">
+										</foreach>
+									</span>
+									<div style="color:white;">.</div>
+									<span class="help-block "></span>
+								</div>
+							</div>
+						<input type="hidden" value="{$info.id}" id="dsh_id">
+							<!--<input type="hidden" value="{$info.payment_method_div}" id="payment_method_div">-->
+					<script>
+						var dh = '';
+						var only=1;
+						   function selectShow(item){
+						   	if(only==1){
+		
+						   			$.post('__ROOT__/adp.php/Merch/ajax_pay',{'dsh_id':$("#dsh_id").val()},function(arr){
+									 dh +=arr
+						   			dh += '<div class="choose_css temp_choose" a="'+$(item).find("option:selected").val()+'" onclick="temp_choose(this)">'+$(item).find("option:selected").text()+'</div><input name="pay_list_id[]" value="'+$(item).find("option:selected").val()+'" type="hidden">' ;
+						           document.getElementById('pay_list').innerHTML = dh;
+						        //    item.remove(item.selectedIndex)
+						        $(item).find("option:selected").css("display","none")
+								 only+=1
+							            },'json');
+							}else{
+									dh += '<div class="choose_css temp_choose" a="'+$(item).find("option:selected").val()+'" onclick="temp_choose(this)">'+$(item).find("option:selected").text()+'</div><input name="pay_list_id[]" value="'+$(item).find("option:selected").val()+'" type="hidden">' ;
+						           document.getElementById('pay_list').innerHTML = dh;
+						        //    item.remove(item.selectedIndex)
+						         $(item).find("option:selected").css("display","none")
+							}
+									
+						    }
+
+						   function temp_choose(item){
+						   		console.log($(item).attr("a"))
+						   		var pay_id=$(item).attr("a")
+						   		$("#payment_method_id").children("option").each(function(){
+										         if( $(this).val()==pay_id){
+										             $(this).css("display","block")
+										         }
+										     })
+						   		item.remove()
+						   }
+						   $(".date_choose").click(function(){
+						   	if(confirm('删除支付方式？')==true){
+							   	$.post('__ROOT__/adp.php/Merch/ajax_del_pay',{'dsh_id':$(this).attr("b"),'pay_id':$(this).attr("a")},function(arr){
+									if(arr.state==1){
+											window.location.reload();
+									}
+								},'json');
+						   	}else{
+						   		console.log(222)
+						   	}
+					
+					
+						   })
+						
+					</script>
+					</if>
+					<!--<div class="form">
+								<label class="col-sm-2 control-label">区域选择</label>
+								<div class="col-sm-9">
+									<div class="row row-fix tpl-category-container">
+										<div class="col-sm-4 col-md-6 col-lg-6">
+											<select name="merch_area_id" class="form-control tpl-category-parent valid" value="selected"   >											
+												<empty name="is_edit">
+													<option value="">请选择区域</option>
+													<else/>
+													<option value="{$info.merch_area_id}">{$info.merch_area_title}</option>
+												</empty>
+												<foreach name="merch_area" item="v">
+														<option value="{$v.id}">{$v.title}</option>
+												</foreach>
+											</select>
+										</div>
+
+									</div>
+									<span class="help-block"></span>
+								</div>
+							</div>		-->
+					<div class="form">
+                        <label class="col-sm-2 control-label">商户logo</label>
+					    <div class="col-sm-9 col-xs-12">               		
+							<div class="input-group ">
+								<input type="file" name="image"  class="form-control" >
+								   <span class="help-block"></span>
+								<!--<span class="input-group-btn">
+									<button class="btn btn-default" type="button" onclick="showImageDialog(this);">选择图片</button>
+								</span>-->
+							</div>
+							<div class="input-group " style="margin-top:.5em;">
+							<!--	<img src="__ROOT__/Uploads/{$image02}"  this.title='图片未找到.'" class="img-responsive img-thumbnail" width="150">
+								<em class="close" style="position:absolute; top: 0px; right: -14px;" title="删除这张图片" onclick="deleteImage(this)">×</em>
+						-->
+								<notempty name="info['logo']">
+									<img style="width:120px;height:146px;" id="old_img" src="__ROOT__/Uploads/{$info.logo}">
+								</notempty>
+							</div>        
+							<span class="help-block">商户logo 建议尺寸 300 * 300</span>
+					    </div>
+					</div>
+					<div class="form">
+					    <label class="col-sm-2 control-label must">主营项目</label>
+					    <div class="col-sm-9">
+					        <input type="text" class="form-control" name="main_project" value="{$info['main_project']}" data-rule-required="true" aria-required="true">
+					        <span class="help-block"></span>
+					    </div>
+					</div>
+					<!--<div class="form-group">
+					    <label class="col-sm-2 control-label must">商户分类</label>
+					    <div class="col-sm-10">
+			                <select class="form-control" name="cateid" required="" aria-required="true">
+			                        <option value="2634">合作商户</option>
+			                </select>	
+			                <span class="help-block"></span>
+					    </div>
+					</div>-->
+					<div class="form">
+					    <label class="col-sm-2 control-label must">联系人</label>
+					    <div class="col-sm-9">
+					        <input type="text" class="form-control" name="linkman" value="{$info['linkman']}" data-rule-required="true" aria-required="true">
+					        <span class="help-block"></span>
+					    </div>
+					</div>
+					<div class="form-">
+					    <label class="col-sm-2 control-label must">联系电话</label>
+					    <div class="col-sm-9">
+					        <input type="tel" class="form-control" name="tel" value="{$info['tel']}" data-rule-required="true" aria-required="true">
+					        <span class="help-block"></span>
+					    </div>
+					</div>
+					<div class="form">
+					    <label class="col-sm-2 control-label">商户简介</label>
+					    <div class="col-sm-9">
+					        <textarea name="introduce" class="form-control">{$info['introduce']}</textarea>
+					          <span class="help-block"></span>
+					    </div>
+					</div>
+					                 
+                    <div class="form">
+						<label class="col-sm-2 control-label">省市区县:</label>    
+						<div class="col-sm-9 edit_address_01">
+					        <input type="tel" class="form-control edit_address"   value="{$info['province']}&nbsp&nbsp&nbsp{$info['city']}&nbsp&nbsp&nbsp{$info['district']}" data-rule-required="true" aria-required="true">
+					        <span class="help-block"></span>
+					    </div>
+					    <div class="form-inline col-sm-10 edit_address_02" style="display:none;">
+					        <div data-toggle="distpicker">				           
+						        <div class="form-group col-sm-3">
+						          <label class="sr-only " for="province1">省</label>
+						          <select class="form-control edit_province" name="" id="province1"></select>
+						        </div>
+						        <div class="form-group col-sm-3">
+						          <label class="sr-only" for="city1">市</label>
+						          <select class="form-control edit_city" name="" id="city1"></select>
+						        </div>
+						        <div class="form-group col-sm-3">
+						          <label class="sr-only"  for="district1">区</label>
+						          <select class="form-control edit_district" name="" id="district1"></select>
+						            <span class="help-block"></span>
+						        </div>		
+						        
+				          </div>				           
+				        </div>
+				    </div>    
+                     <script>
+                     	$(".edit_address").click(function(){
+                     		$(".edit_address_01").css("display","none")
+                     		$(".edit_address_02").css("display","block")
+                     		
+                     		$(".edit_province").attr("name","province")
+                     		$(".edit_city").attr("name","city")
+                     		$(".edit_district").attr("name","district")
+                     		
+                     	})
+                     </script>
+                    <div class="form">
+					    <label class="col-sm-2 control-label">详细地址</label>
+					    <div class="col-sm-9 col-xs-12">
+					        <input type="text" name="detail_address" class="form-control" value="{$info['detail_address']}">
+					         <span class="help-block"></span>
+					    </div>
+					</div>
+				<!--	<div class="form-group">
+					    <label class="col-sm-2 control-label">显示区域</label>
+					    <div class="col-sm-9 col-xs-12"> 
+					        <div id="areas" class="form-control-static" style="display: none"></div>
+					        <a href="javascript:;" class="btn btn-default" onclick="selectAreas()">选择地区</a>
+					        <input type="hidden" id="selectedareas" name="dispatch" value="">
+					          <span class="help-block"></span>
+					    </div>
+					</div>-->
+					
+					<div class="form">
+					    <label class="col-sm-2 control-label">联系电话</label>
+					    <div class="col-sm-9 col-xs-12">
+					        <input type="text" name="sh_phone" class="form-control valid" value="{$info['sh_phone']}" aria-invalid="false">
+					          <span class="help-block"></span>
+					    </div>
+					</div>
+
+					<div class="form">
+					    <label class="col-sm-2 control-label">经度、纬度</label>
+					    <div class="col-sm-10 col-xs-12">					         
+							<div class="row row-fix">
+								<div class="col-xs-4 col-sm-4">
+									<input type="text" name="sh_jd" value="{$info['sh_jd']}" placeholder="地理经度、纬度" class="form-control">
+								</div>
+								<!--<div class="col-xs-4 col-sm-4">
+									<input type="text" name=" value="" placeholder="地理纬度" class="form-control">
+								</div>
+					
+								<input type="hidden" name="" value="" class="form-control">-->
+					
+								<div class="col-xs-4 col-sm-4">
+									<a href="http://lbs.qq.com/tool/getpoint/index.html" target='__blank' class="btn btn-default" type="button">选择坐标</a>
+								<!--	<a href="http://api.map.baidu.com/lbsapi/getpoint/index.html" target='__blank' class="btn btn-default" type="button">选择坐标</a>
+								-->
+								
+								</div>
+								<span class="help-block">商户地理位置  点击<选择坐标>将真实地址的当前坐标内容复制到本框内</span>
+							</div>  
+							  <span class="help-block"></span>
+					    </div>
+                    </div>-
+					
+					<div class="form">
+					    <label class="col-sm-2 control-label">是否推荐</label>
+					    <div class="col-sm-9 col-xs-12">
+					    	<empty name="info">
+					    			<label class="radio-inline"><input type="radio" name="is_recommend" value="1" checked="true"> 是</label>
+						    		<label class="radio-inline"><input type="radio" name="is_recommend" value="2" > 否</label>
+					    		<else/>
+					    		<if condition="$info.is_recommend eq 1">
+									<label class="radio-inline"><input type="radio" name="is_recommend" value="1" checked="true"> 是</label>
+						    		<label class="radio-inline"><input type="radio" name="is_recommend" value="2" > 否</label>
+						    	</if>
+						    	<if condition="$info.is_recommend eq 2">
+						    		<label class="radio-inline"><input type="radio" name="is_recommend" value="1"> 是</label>
+								    <label class="radio-inline"><input type="radio" name="is_recommend" value="2" checked="true"> 否</label>
+						      </if>
+					    	</empty>
+					    	
+					         <span class="help-block"></span>
+					    </div>					   
+					</div>
+					
+					<if condition="$program_id eq JT201711081030423109">
+					    <div class="form">
+						    <label class="col-sm-2 control-label">是否有额度</label>
+						    <div class="col-sm-9 col-xs-12">
+						    	<if condition="$info.is_lines eq 1">
+									<label class="radio-inline"><input type="radio" name="is_lines" value="1" checked="true"> 是</label>
+						    		<else/>	
+								    <label class="radio-inline"><input type="radio" name="is_lines" value="1"> 是</label>
+						    	</if>
+						    	<if condition="$info.is_lines eq 0">
+								    <label class="radio-inline"><input type="radio" name="is_lines" value="0" checked="true"> 否</label>
+						      		<else/>	
+								    <label class="radio-inline"><input type="radio" name="is_lines" value="0" > 否</label>
+						      </if>
+						         <span class="help-block"></span>
+						    </div>					   
+						</div>  
+					</if>
+					<div class="form">
+					    <label class="col-sm-2 control-label">商户登录账号</label>
+					    <div class="col-sm-9">
+					        <input type="text" class="form-control" name="sh_account" value="{$info['sh_account']}">
+					         <span class="help-block"></span>
+					    </div>
+					</div>
+					
+					<empty name="info">
+						<div class="form">
+						    <label class="col-sm-2 control-label">商户登录户密码</label>
+						    <div class="col-sm-9">
+						        <input type="text" class="form-control" name="sh_psw">
+						        <span class="help-block"></span>
+						    </div>
+						</div>
+						<else/>
+						<div class="form">
+						    <label class="col-sm-2 control-label">商户登录户密码</label>
+						    <div class="col-sm-9">
+						        <input type="text" class="form-control" readonly value="{$info['sh_psw_show']}">
+						        <span class="help-block"></span>
+						    </div>
+						</div>
+					</empty>
+					<!--<div class="form">
+					    <label class="col-sm-2 control-label">商户数量</label>
+					    <div class="col-sm-9">
+					        <input type="num" class="form-control" name="sh_account_l_num" value="{$info['sh_account_l_num']}">
+					       <span class="help-block"></span>
+					    </div>
+					</div>-->
+					<div class="form">
+					    <label class="col-sm-2 control-label">服务到期时间</label>
+					    <div class="col-sm-9">		
+					    <empty name="info['time_over']">
+					    	<input type="text" name="time_over_f" value="{$time_over}" placeholder="请选择日期时间" readonly="readonly" class="datetimepicker form-control" style="padding-left:12px;">        <span class="help-block">商户账户有效期限</span>
+					    <else/>
+					    	<input type="text" name="time_over_f" value="{$info.time_over}" placeholder="请选择日期时间" readonly="readonly" class="datetimepicker form-control" style="padding-left:12px;">        <span class="help-block">商户账户有效期限</span>
+					    </empty>
+						 </div>
+					</div>
+					
+					<!--<div class="form">
+					    <label class="col-sm-2 control-label must">商户组</label>
+					    <div class="col-sm-9">
+					         <select class="form-control valid" name="fz_id" required="" aria-required="true" aria-invalid="false" aria-describedby="groupid-error">
+					            <option value="2728">深圳商户</option>
+					        </select>
+					        <span id="groupid-error" class="help-block-validate"></span>	
+					          <span class="help-block"></span>
+					    </div>
+					</div>-->
+					<div class="form">
+					    <label class="col-sm-2 control-label">商户备注</label>
+					    <div class="col-sm-9">
+					        <textarea name="remark" class="form-control">{$info.remark}</textarea>
+					        <span class="help-block"></span>
+					    </div>
+					</div>
+					<div class="form">
+					    <label class="col-sm-2 control-label">状态</label>
+					    <div class="col-sm-9">	
+					    	<if condition="$info.state eq 3">
+								 <label class="radio-inline"><input type="radio" name="state" value="3" checked="true">允许入驻</label>
+					       		<else/>	
+								 <label class="radio-inline"><input type="radio" name="state" value="3">允许入驻</label>
+					        </if>
+					        <if condition="$info.state eq 5">
+								 <label class="radio-inline"><input type="radio" name="state" value="5" checked="true"> 暂停中</label>
+					        	<else/>	
+								 <label class="radio-inline"><input type="radio" name="state" value="5"> 暂停中</label>
+					        </if>
+					         <span class="help-block"></span>
+					    </div>
+					</div>					
+					
+					<div class="form">
+					    <label class="col-sm-2 control-label">抽成利率</label>
+					    <div class="col-sm-9">
+					        <div class="input-group">
+					            <input type="text" class="form-control" name="sh_choucheng" value="{$info.sh_choucheng}"><span class="input-group-addon">%</span>				            
+					        </div>
+					         <span class="help-block"></span>
+					    </div>
+					</div>
+						<!--详细介绍-->						
+							<div class="form">
+								<label class="col-sm-2 control-label">详细介绍</label>
+								<div class="col-sm-10 col-xs-12">
+									<div class="input-group">
+										<textarea rows="32" name="detailed_introduction" id="detailed_introduction" >{$info.detailed_introduction}</textarea>
+										<span class="input-group-addon"></span>
+									</div>
+									<span class="help-block"></span>
+								</div>
+							</div>
+						<!--<table class="table">
+						    <thead>
+						        <tr>
+						            <td style="width:150px;">用户名</td>
+						            <td>openid <small> </small></td>
+						            <td>手机号 <small> </small></td>
+						            <td>邮箱 <small> </small></td>
+						            <th style="width:50px;"></th>
+						        </tr>
+						    </thead>
+						    <tbody  class="ui-sortable"> 
+						    	
+						    </tbody> 					
+						    <tbody>
+						        <tr>
+						            <td colspan="3">
+						                <a href="javascript:;" id="add-param"  class="btn btn-default" title="添加参数"><i class="fa fa-plus"></i> 添加用户</a>
+						            </td>
+						        </tr>
+						    </tbody> 
+					    </table>-->
+					    
+					    <div class="form-group">
+						    <label class="col-sm-2 control-label"></label>
+						    <div class="col-sm-9 col-xs-12">						
+						       <button data-dismiss="modal" class="btn btn-primary" id="guanbi" type="submit">提交</button>
+						    </div>
+						</div>
+					   
+					    
+				</div>
+			</div>
+			</div>
+			</form>
+			<notempty name="info">
+				
+				<hr>
+				<div class="page-heading" style="border-bottom:1px solid #000000;height:60px;padding:10px;">
+				    <h2>修改商户密码</h2>
+				</div>	
+		<form  action="{:U('/Merch/change_psw',array('id'=>$info['id']))}" onsubmit="return checkLogin();" method="post" enctype="multipart/form-data" class="form-x one-form form-auto form-horizontal" id="form">
+					<div class="form">
+					    <label class="col-sm-2 control-label">新密码</label>
+					    <div class="col-sm-9">
+					        <input type="password" class="form-control" id="psw" name="sh_psw">
+					         <span class="help-block"></span>
+					    </div>
+					</div>
+					<div class="form">
+					    <label class="col-sm-2 control-label">再次输入密码</label>
+					    <div class="col-sm-9">
+					        <input type="password" class="form-control" id="psw01" name="psw01">
+					         <span class="help-block"></span>
+					    </div>
+					</div>
+					
+		 			   <div class="form-group">
+						    <label class="col-sm-2 control-label"></label>
+						    <div class="col-sm-9 col-xs-12">						
+						       <button data-dismiss="modal" class="btn btn-primary" id="guanbi" type="submit">提交</button>
+						    </div>
+						</div>
+		</form>
+				
+				
+			</notempty>
+
+          		</div>
+			</div>
+		</div>
+		<!--====================主体  结束===============-->
+	</div>	
+	
+	<script type="text/javascript">
+//====================================百度编辑器
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    var ue = UE.getEditor('detailed_introduction');
+</script>
+  <script type="text/javascript" charset="utf-8" src="__ROOT__/Public/ueditor/self_editor.js"> </script>
+<script>
+	  function checkLogin() {
+        if(!$("#psw").val()){
+            alert("请填写新密码");
+            $("#psw").focus();
+            return false;
+        }
+         if(!$("#psw01").val()){
+            alert("请再次填写密码");
+            $("#psw01").focus();
+            return false;
+        }
+         
+         if($("#psw").val()!=$("#psw01").val()){
+         	  $("#psw01").val("");
+         	alert("两次密码输入不一致");
+         	
+         	return false;
+         }
+       }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+	<style>
+	td{
+	    text-align: center;
+}
+</style>
+	<div class="tabT">
+			<ul class="tab">
+				<a href="{:U('Goods/selling')}"><li>出售中</li></a>
+				<a href="{:U('Goods/haved_selled')}"><li>已售罄</li></a>
+				<a href="{:U('Goods/cangku')}"><li>仓库中</li></a>
+				<a href="{:U('Goods/huishou')}"><li>回收站</li></a>
+				
+				
+					<a href="{:U('Goods/fenlei')}"><li>商品分类</li></a>
+				
+				
+				<if condition="$head_menu eq 6">
+					<a href="{:U('Goods/jingpin')}"><li>精品商品</li></a>
+				</if>
+				<if condition="$program_id eq JT201712021113483120">
+					<a href="{:U('Goods/price_daili')}"><li>代理购买价管理</li></a>
+				</if>
+				<!--<a href="shanxuan"><li>筛选区间</li></a>
+				<a href="biaoqian"><li>标签管理</li></a>-->
+
+			</ul>
+		</div>

@@ -1,0 +1,90 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_members" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">	
+				<div style="border-bottom:1px solid #000000;">
+					<h3 style="margin:20px 0px 20px 20px;">会员概述</h3>
+				</div>	
+				<table id="maintable" class="table table-hover table-responsive">
+		            <thead class="navbar-inner">
+		                <tr>
+		                    <th style="width:30px;"><input type="checkbox" id="checkAll"></th>		                    
+		                    <th style="width:140px;text-align:left;">会员</th>
+		                    <th style="width:120px;">详细信息</th>                    
+		                    <th style="width:100px;">等级/分组</th>
+		                    <th style="width:100px;">注册时间</th>
+		                    <th style="width:100px;">成交</th>                   
+		                    <th style="width:100px;">黑名单</th>
+		                    <th style="width:104px;">操作</th>
+		                </tr>
+		            </thead>
+		            <tbody id="blacklis">		       
+			           	<foreach name="list" item="v">
+                        <tr>
+                            <td>{$v.id}</td>
+							 <td style="text-align:left;"><img style="width:50px;height:50px;" src="{$v.head}"> {$v.nickname}</td>
+							<td></td>
+							<td>{$v.level_name}/{$v.group_name}</td>
+							 <td>
+							 	 <?=date("Y-m-d H:i:s",$v['register_time']);?>
+							 		
+							 </td>
+							<td>{$v.deal_num}</td>
+							 <td>
+							 	<if condition="$v.blacklist eq 0">
+							 		<div class="peng_is_ok peng_ok">
+							 			<input type="hidden" value="{$v.id}">
+							 			<span>正常</span>
+							 		</div>
+							 	</if>
+							 	<if condition="$v.blacklist eq 1">
+							 		<div class="peng_is_ok peng_not">
+							 			<input type="hidden" value="{$v.id}">
+							 			<span>黑名单</span>
+							 		</div>
+							 	</if>
+							 </td>
+                            <td>
+                            	<button class="btn btn-default">
+                            	   <a title="删除" alt="删除" href="members_con/id/{$v['id']}" >详情</a>
+                            	</button>
+                            	<button class="btn btn-danger">
+								  <a style="color:white;" title="删除" alt="删除" href="delete/id/{$v['id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+							    </button>
+                            </td>
+                        </tr>
+                    </foreach>	
+            		</tbody>
+        		</table>
+            </div>	    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+<script>
+	$(".peng_is_ok").click(function(){
+		var onw_id=$(this).children('input').val();
+		//var str01=that.attr("class");
+			//	var arr01=str.split(" ");
+		//alert(arr[1]);
+		var that = this;
+		 $.post('__ROOT__/adp.php/Members/ajax_change_ok',{'id':onw_id},function(date){
+	        if(date==1){
+	        	if($(that).attr("class")=="peng_is_ok peng_ok"){
+	        		$(that).attr("class","peng_is_ok peng_not");
+	        		$(that).children('span').text("黑名单");
+	        	}else if($(that).attr("class")=="peng_is_ok peng_not"){
+	        		$(that).attr("class","peng_is_ok peng_ok");
+	        		$(that).children('span').text("正常");
+	        	}
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>
+</html>

@@ -1,0 +1,147 @@
+<include file="Public/head" />
+<include file="Public/menu_warehouse" />
+<script src="__ROOT__/Public/ys0925/jquery.js"></script>
+<style>
+	.fileinput-button {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.fileinput-button input{
+		position:absolute;
+		right: 0px;
+		top: 0px;
+		opacity: 0;
+		-ms-filter: 'alpha(opacity=0)';
+		font-size: 200px;
+	}
+	.w93{
+		width:93%!important;
+	}
+		input[type="text"]{
+    margin-bottom: 5px;
+	}
+	td{
+		padding:0!important;	
+		line-height: 30px!important;
+	}
+	.f30{
+		font-size: 30px;
+	}
+</style>
+
+<div id="content">
+	<div id="content-header">
+		<h1>审核{$text}</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="{:U('Index/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+		<a href="{:U('Warehouse/canggui')}" class="tip-bottom">仓柜管理</a>
+		<a href="#" class="current">审核{$text}</a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-align-justify"></i>
+								</span>
+						<h5>审核{$text}</h5>
+					<foreach name="l2ist" item="v" key="key">
+						<foreach name="v['shenhe_info']" item="v0" key="key0">
+								--{$v0.goods_id}--
+						</foreach>
+					</foreach>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-bordered table-striped" style="    border-top: 1px solid #ccc;">
+							<thead>
+							<tr>
+								
+								<th style="width:10%;">单号</th>
+								<th style="width:10%;">表单类型</th>
+								<th style="width:10%;">条目数</th>
+								<th style="width:10%;">提交时间</th>
+					
+								<!--<th style="width:10%;">操作</th>-->
+							</tr>
+							</thead>
+							
+							<tbody>
+							<foreach name="list" item="v" key="key">
+								<tr class="list_click" ky={$key}>
+									<td>{$v.group_num}</td>
+									<td>
+										<if condition="$v['action_state'] eq 1">入库单</if>	
+										<if condition="$v['action_state'] eq 2">出库单</if>	
+										<if condition="$v['action_state'] eq 3">调拨单</if>
+										<if condition="$v['action_state'] eq 4">退库单</if>
+										<if condition="$v['action_state'] eq 5">退货单</if>
+										<if condition="$v['action_state'] eq 6">直拨单</if>
+									</td>
+									<td>{$v.count_num}</td>
+									<td><?php  echo date("Y-m-d H:i:s",$v['time_set']);?></td>
+							
+									<!--<td>
+										<div class="btn btn-primary">通过审核</div>
+										<div class="btn btn-primary">拒绝审核</div>
+									</td>-->
+								</tr>
+							
+							</foreach>
+	
+							</tbody>
+
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--原来的 modal 框位置-->
+
+<include file="Public/foot" />
+
+<include file="Public/goods_into" /> 
+	<script>
+	$(".list_click").click(function(){
+	//	alert($(this).attr("ky"))
+		$("#add-event_goods_into").click();	
+		$(".tr_shenhe_info").css("display","none")
+		$("#tr_shenhe_info_"+$(this).attr("ky")).css("display","block")
+	
+	
+		$(".submit_show").css("display","none")
+		$(".only_class_"+$(this).attr("ky")).css("display","block")
+		
+	})
+
+//	审核操作
+$(".div_submit_shenhe").click(function(){
+			console.log($(this).attr("sid"))
+			console.log($(this).attr("state"))
+	
+			var data={
+			'state':$("#action_state").val(),
+			'group_num':$(this).attr("sid"),
+			'ok_no':$(this).attr("state"),
+
+		}
+	$.post('__ROOT__/adp.php/Warehouse/shenhe',data,function(data){
+	        if(data==1){
+	        	alert("操作成功");
+	        	location.reload()
+	        }else{
+	        	alert("操作失败");
+	        }
+        },'json');
+})
+	</script>
+
+
+

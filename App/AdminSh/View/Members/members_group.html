@@ -1,0 +1,37 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_members" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">
+				<div style="border-bottom:1px solid #000000;">
+					<h3 style="margin:20px 0px 20px 20px;">会员概述</h3>
+				</div>
+				<table class="table table-hover table-responsive" id="maintable2">
+			        <thead>
+			            <tr>
+			                <th style="width:25px;"><input type="checkbox"></th>
+			                <th>分组名称</th>
+			                <th>会员数</th>
+			                <th>操作</th>
+			            </tr>
+			        </thead>
+			        <tbody>
+			        	<foreach name="member_group" item="v">
+				            <tr style="background:#D8BFD8;" id="content2" target="sid_user">
+				                <td><input type="checkbox"></td>
+				                <td id="member_group_name">{$v.member_group_name}</td>
+				                <td id="num_member"></td>
+				                <td><a class="btn btn-default  btn-sm" href="">分组会员</a>    </td>   			                	                                 			               
+				            </tr>  
+			            </foreach>
+			        </tbody>
+			    </table>
+			</div>   
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+</html>

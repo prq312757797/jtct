@@ -1,0 +1,198 @@
+<include file="Public/head" />
+<include file="Public/menu_car_servers" />
+<script src="__ROOT__/Public/ys0925/jquery.js"></script>
+<style>
+	.fileinput-button {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+	}
+
+	.fileinput-button input{
+		position:absolute;
+		right: 0px;
+		top: 0px;
+		opacity: 0;
+		-ms-filter: 'alpha(opacity=0)';
+		font-size: 200px;
+	}
+</style>
+
+<div id="content">
+	<div id="content-header">
+		<h1>司机编辑</h1>
+	</div>
+	<div id="breadcrumb">
+		<a href="{:U('CarServers/index')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 车辆管理</a>
+		<a href="{:U('CarServers/car_num')}" class="tip-bottom">司机录入管理</a>
+		<a href="#" class="current">司机编辑</a>
+	</div>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="widget-box">
+					<div class="widget-title">
+								<span class="icon">
+									<i class="icon-align-justify"></i>
+								</span>
+						<h5>司机编辑</h5>
+					</div>
+					<div class="widget-content nopadding">
+						<form action="{:U('CarServers/run_driver_add',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+				
+
+						<div class="control-group">
+							<label class="control-label">姓名</label>
+							<div class="controls">
+								<input type="text" name="name" value="{$info['name']}" />
+								<span class="help-block">此项必填</span>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">电话</label>
+							<div class="controls">
+								<input type="text" name="linktel" value="{$info['linktel']}" />
+								<span class="help-block">此项必填</span>
+							</div>
+						</div>
+				
+						
+						<div class="control-group">
+							<label class="control-label">车场选择：</label>
+							<div class="controls">
+								<div class="controls input_select ml0 w40">
+									<select name="parking_id" class="w100" onchange="gradeChange()" id="city_area_select" >
+										<empty name="info">
+											<option value="">请选择车场</option>
+											<else/>
+											<option value="{$info.parking_id}">{$info.address}</option>
+										</empty>
+										<foreach name="list" item="v">
+											<option value="{$v.id}">{$v.address}</option>
+										</foreach>
+									</select>
+								</div>
+								<span class="help-block" ></span>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">信息绑定码</label>
+							<div class="controls">
+								<notempty name="code_tied">
+									<input type="text"  readonly name="code_tied" value="{$code_tied}" >
+								
+									<else/>
+									<input type="text"  readonly name="code_tied" value="{$info.code_tied}">
+									
+								</notempty>
+								<span class="help-block"></span>
+							</div>
+						</div>
+						
+<!--头像-->
+						<div class="control-group ">
+							<label class="control-label">头像</label>
+							<div class="controls">
+								<input type="text" value="{$info['headimage']}" id="image_name" />
+								<span class="btn btn-success fileinput-button">
+									<span>上传</span>
+									<input type="file" name="headimage" id="doca"  onchange="javascript:setImagePreviews();">
+								</span>
+
+								<div class="help-block bd_gray mt15 w81 b_r_4 max_h_165 " style="display:none;" id="image_area">
+									<img class="h_92 p_1" src="" id="loc_img" />
+								</div>
+
+							</div>
+						</div>
+						
+<!--身份证正面-->
+						<div class="control-group ">
+							<label class="control-label">身份证正面</label>
+							<div class="controls">
+								<input type="text" value="{$info['idcard_positive']}" id="image_name_2" />
+								<span class="btn btn-success fileinput-button">
+									<span>上传</span>
+									<input type="file" name="idcard_positive" id="doca_2"  onchange="javascript:setImagePreviews_2();">
+								</span>
+
+								<div class="help-block bd_gray mt15 w81 b_r_4 max_h_165 " style="display:none;" id="image_area_2">
+									<img class="h_92 p_1" src="" id="loc_img_2" />
+								</div>
+
+							</div>
+						</div>	
+<!--身份证反面-->
+						<div class="control-group ">
+							<label class="control-label">身份证反面</label>
+							<div class="controls">
+								<input type="text" value="{$info['idcars_reverse']}" id="image_name_3" />
+								<span class="btn btn-success fileinput-button">
+									<span>上传</span>
+									<input type="file" name="idcars_reverse" id="doca_3"  onchange="javascript:setImagePreviews_3();">
+								</span>
+
+								<div class="help-block bd_gray mt15 w81 b_r_4 max_h_165 " style="display:none;" id="image_area_3">
+									<img class="h_92 p_1" src="" id="loc_img_3" />
+								</div>
+
+							</div>
+						</div>	
+<!--驾驶证正面-->
+						<div class="control-group ">
+							<label class="control-label">驾驶证正面</label>
+							<div class="controls">
+								<input type="text" value="{$info['driver_license']}" id="image_name_4" />
+								<span class="btn btn-success fileinput-button">
+									<span>上传</span>
+									<input type="file" name="driver_license" id="doca_4"  onchange="javascript:setImagePreviews_4();">
+								</span>
+
+								<div class="help-block bd_gray mt15 w81 b_r_4 max_h_165 " style="display:none;" id="image_area_4">
+									<img class="h_92 p_1" src="" id="loc_img_4" />
+								</div>
+
+							</div>
+						</div>	
+<!--驾驶证反面-->
+						<div class="control-group ">
+							<label class="control-label">驾驶证反面</label>
+							<div class="controls">
+								<input type="text" value="{$info['driving_this']}" id="image_name_5" />
+								<span class="btn btn-success fileinput-button">
+									<span>上传</span>
+									<input type="file" name="driving_this" id="doca_5"  onchange="javascript:setImagePreviews_5();">
+								</span>
+
+								<div class="help-block bd_gray mt15 w81 b_r_4 max_h_165 " style="display:none;" id="image_area_5">
+									<img class="h_92 p_1" src="" id="loc_img_5" />
+								</div>
+
+							</div>
+						</div>							
+						
+						
+						
+						<div class="form-actions">
+							<button type="submit" class="btn btn-primary">保存</button>
+							
+							<input type="button" onclick="history.back()" class="btn btn-default" value="返回">
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--原来的 modal 框位置-->
+<include file="Public/self_url" />
+<include file="Public/foot" />
+<include file="Public/image_yl" />
+
+
+
+
+

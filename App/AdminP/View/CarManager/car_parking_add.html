@@ -1,0 +1,77 @@
+
+	<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_car" />
+		<!--发车位置管理-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con"  style="width:1000px;margin:20px auto;" >
+				<div style="margin:10px 20px;border-bottom:1px solid #000000;">
+					<span style="font-size:26px;">发车位置管理</span>
+				</div>
+				<form action="{:U('CarManager/run_car_parking_add',array('id'=>$info['id']))}" method="post" class="form-horizontal form-validate" enctype="multipart/form-data" novalidate="novalidate">
+
+                    <div class="form">
+                       <label class="col-sm-2 control-label">排序</label>
+	                    <div class="col-sm-9 col-xs-12">
+	                        <input type="text" name="sort" class="form-control valid" value="<?php echo $info['sort']?$info['sort']:1;?>" aria-invalid="false">
+	                        <span class="help-block">数字越小，排名越靠前</span>
+	                    </div>
+                    </div>
+                <!--名称-->
+	                <div class="form">
+	                    <label class="col-sm-2 control-label must">地址</label>
+	                    <div class="col-sm-9 col-xs-12 ">
+	                        <input type="text" id="" name="address" class="form-control" value="{$info['address']}" data-rule-required="true" aria-required="true">
+	                      <span class="help-block">.</span>
+	                    </div>
+	                </div>
+	           <!--起步价-->
+	           
+	                <div class="form">
+					    <label class="col-sm-2 control-label">经度、纬度</label>
+					    <div class="col-sm-9 col-xs-12">					         
+							<div class="row row-fix">
+								<div class="col-xs-4 col-sm-4">
+									<input type="text" name="lng_lat" value="{$info['lng_lat']}" placeholder="地理经度、纬度" class="form-control">
+								</div>
+								<div class="col-xs-4 col-sm-4">
+									<a href="http://lbs.qq.com/tool/getpoint/index.html" target='__blank' class="btn btn-default" type="button">选择坐标</a>
+								</div>
+								<span class="help-block">地理位置  点击<选择坐标>将真实地址的当前坐标内容复制到本框内</span>
+							</div>  
+							  <span class="help-block"></span>
+					    </div>
+                    </div>
+	            <!--备注-->
+	                   <div class="form">
+	                    <label class="col-sm-2 control-label must">备注</label>
+	                    <div class="col-sm-9 col-xs-12 ">
+	                        <input type="text" id="" name="remark" class="form-control" value="{$info['remark']}" data-rule-required="true" aria-required="true">
+	                      <span class="help-block"></span>
+	                    </div>
+	                </div>
+	           
+	         
+	               
+            
+		            <div class="form">
+		                <label class="col-sm-2 control-label"></label>
+		                <div class="col-sm-9 col-xs-12" style="margin-top: 25px;float: right;width: 30%;">
+		                	<input type="submit" id="box" value="确认提交" class="btn btn-primary">
+		                	<input type="button" name="" onclick="history.back()" style="margin-left:10px;" value="返回列表" class="btn btn-default">
+		                </div>
+		            </div> 
+                </form>
+           </div>
+			      
+			</div>			    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+
+</html>
+
+	

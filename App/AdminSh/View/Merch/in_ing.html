@@ -1,0 +1,67 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_merch" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con" style="min-height: 840px;">
+				<div style="height:60px;border-bottom:1px solid #000000;padding:10px;background:skyblue;">
+					<h4 style="margin:10px;float:left;">多商户管理 <small>总数: <span>0</span></small></h4>
+					<div style="float:right;">
+						"<a href="add_sh" class="btn btn-primary">添加新商户</a>
+					</div>
+				</div>
+				<table class="table table-hover table-responsive" style="background-color:white;">
+					<thead class="navbar-inner" style="background-color:skyblue;">
+					<tr>
+						<th style="width:3%;"><input type="checkbox"></th>
+						<th style="width:5%;">排序</th>
+						<th style="width:13%;">商户名称</th>
+						<th style="width:10%;">主营项目</th>
+						<th style="width:10%;">联系人</th>
+						<th style="width:10%;">入驻时间</th>
+						<th style="width:10%;">到期时间</th>
+						<th style="width:7%;">状态</th>
+						<th style="width:20%;">操作</th>
+					</tr>
+					</thead>
+					<tbody>
+					<foreach name="list" item="v">
+				        <tr rel="pop" data-title="ID: {$v.id} ">				
+					        <td>
+					            <input value="{$v.id}" type="checkbox">
+					        </td>
+					        <td>{$v.sort}</td>					                        
+					        <td>{$v.sh_name}</td>
+					        <td>{$v.main_project}</td>
+					        <td>{$v.linkman}<br>{$v.tel}</td>
+					        <td>
+					        	<?=date("Y-m-d H:i:s",$v['time_add']);?>
+					        </td>
+					        <td>
+					        	<?=date("Y-m-d H:i:s",$v['time_over']);?>
+					        </td>
+					        <td>
+					        	<if condition="$v.state eq 1">待审核</if>
+					        	<if condition="$v.state eq 2">待入驻</if>
+					        	<if condition="$v.state eq 3">入驻中</if>
+					        	<if condition="$v.state eq 4">申请拒绝</if>
+					        	<if condition="$v.state eq 5">禁止</if>
+                           <!--      <span class="label label-default">待入驻</span>-->
+                            </td>
+					        <td style="overflow:visible;">
+					            <a href="edit_sh/id/{$v['id']}" class="btn btn-default btn-sm"> 详情  </a>     
+					            <a data-toggle="ajaxRemove" href="sh_stop_used/id/{$v['id']}" class="btn btn-default btn-sm" onclick="if(confirm('确认停止服务吗？')==false)return false;">暂停</a>
+					        </td>
+					    </tr>
+					    </foreach>
+					
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!--====================主体  结束===============-->
+	</div>	
+
+</body>
+</html>

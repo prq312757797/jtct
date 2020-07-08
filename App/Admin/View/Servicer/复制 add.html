@@ -1,0 +1,80 @@
+<include file="Public/head" />
+<style>
+	.self_top{
+	width:100%;
+	margin-top:4px;
+	}
+
+	.self_left{
+	padding-left:12px;
+	width:150px;
+	float:left;
+	}
+	.self_back{
+	margin-top: 12px;
+	float: left;
+	width: 39px;
+	text-align: center;
+	border: 1px solid;
+	padding: 3px;
+	margin-left: 35%;
+	font-size: 12px;
+	border-radius: 3px;
+	}
+</style>
+<form method="post" enctype="multipart/form-data" class="form-x one-form form-auto form-horizontal" id="form" action="{:U('Servicer/runAdd',array('user_id'=>$info['user_id']))}">
+	<div class="self_top">
+		<div class="self_left">账号:</div>
+		<input type="text" class="input" name="user_name" value="{$info.user_name}" size="60" >
+	</div>	
+    <div class="self_top"> 
+		<div class="self_left">所属公司:</div>
+		<input type="text" class="input" name="user_company" size="60" value="{$info.user_company}">
+	</div>	
+
+	<div class="self_top">
+		<div class="self_left">电话:</div>
+		<input type="text" class="input"  size="60" value="{$info.user_tel}">        
+    </div>	
+	
+	<div class="self_top">
+		<div class="self_left">邮箱:</div>
+		<input type="text" class="input"  size="60" value="{$info.user_mail}">        
+    </div>	
+	
+	<div class="self_top">
+		<div class="self_left">小程序appid:</div>
+		<input type="text" class="input"  size="60" value="{$info.appid}">        
+    </div>	
+	
+	<hr>
+	<div class="self_top">
+		<div class="self_left">最近登录时间:</div>
+		<input type="text" class="input" readonly size="60" value="{$info.user_lasttime}">        
+    </div>	
+	<div class="self_top">
+		<div class="self_left">最近登录ip:</div>
+		<input type="text" class="input" readonly size="60" value="{$info.user_lastip}">        
+    </div>	
+	<div class="self_top">
+		<div class="self_left">身份证号码:</div>
+		<input type="text" class="input" readonly size="60" value="{$info.user_idcard}">        
+    </div>	
+	<div class="self_top">
+		<div class="self_left">身份证正面图:</div>
+		<input type="text" class="input" readonly size="60" value="{$info.user_balance}">        
+    </div>	
+	<div class="self_top">
+		<div class="self_left">身份证反面图:</div>
+		<input type="text" class="input" readonly size="60" value="{$info.user_balance}">        
+    </div>	
+	
+
+	
+	<div class="self_back" onclick="history.go(-1)">返回</div>		
+	
+	<button style="margin-left: 1%;margin-top: 12px;" id="ajaxForm" type='submit'>保存</button>
+		
+</form>
+
+<div style="clear:both;height:50px;"></div>

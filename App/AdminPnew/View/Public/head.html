@@ -1,0 +1,131 @@
+
+ <!DOCTYPE html>
+<html xmlns="">
+<head>
+<meta http-equiv="Content-Type" content="charset=utf-8"/>
+<title>互联网生态圈营销中心</title>
+  
+<!--    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	-->
+			<link rel="stylesheet" href="__ROOT__/Public/ys0925/bootstrap.min.css">
+		<script src="__ROOT__/Public/ys0925/jquery.js"></script>
+		<script src="__ROOT__/Public/ys0925/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="__ROOT__/Public/css/tube.css" />
+	<script src="__ROOT__/Public/jsP/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="__ROOT__/Public/cssP/system.css"/>
+	<link rel="stylesheet" href="__ROOT__/Public/cssP/index.css" />
+<style>
+
+</style>	
+</head>
+<body>
+	    <div class="header-top">
+	        <div class="width-center">	        
+	          
+	        </div>
+        </div>
+             <!-- 代码 开始 -->
+		<div id="nav">
+			
+				<ul class="Menu">
+			        <li><a href="{:U('Index/index')}" class="current">首页</a></li>
+			        <li><a href="{:U('Goods/selling')}">商品</a></li>
+			        <li><a href="{:U('Members/index')}">会员</a></li>
+			        <li><a href="{:U('Order/index')}">订单</a></li>
+			        
+			        
+			       <if condition="$is_06 eq 1"></if>
+			        <li><a href="{:U('Preferential/index')}">营销</a></li>
+			        <!-- <li><a href="#">数据</a></li>-->
+			        <if condition="$is_04 eq 1">
+			       		<li><a href="{:U('Merch/index')}">多商铺</a></li>
+			        </if>
+			        <if condition="$is_05 eq 1">
+					 	<li><a href="{:U('Distribution/index')}">分销系统</a></li>
+					</if>
+					<if condition="$is_02 eq 1">
+						
+						<if condition="$program_id eq JT201711161127509059">
+							<elseif   condition="$program_id eq JT201710160953394557"/>
+								<li><a href="{:U('InfoZiXun/caigou')}">信息管理</a></li>
+							<else/>
+								<li><a href="{:U('InfoZiXun/info_list')}">信息管理</a></li>
+						</if>
+			       		
+			        </if>
+			         <if condition="$is_16 eq 1">
+			       		<li><a href="{:U('Case/index')}">案例管理</a></li>
+		    	    	
+			        </if>
+			        <if condition="$is_03 eq 1">
+			       		<li><a href="{:U('FuWucontect/index')}">联系管理</a></li>
+		    	    	<li><a href="{:U('FuWuinfo/tiezi')}">帖子</a></li>
+		    	    	<li><a href="{:U('FuWurendezvous/index')}">预约</a></li> 
+			        </if>
+					<!-- <li><a href="#">DIY系统</a></li>-->
+	                <!--<li><a href="">工具箱</a></li>-->
+	                
+			       	<li><a href="{:U('Set/index')}">设置</a></li>
+			       	
+
+			        <li style="float: right;margin-right: 10%;"><a href="{:U('Login/logout')}">退出</a></li>
+		    	</ul>
+		
+		    <if condition="$head_menu eq 5">
+		    	<!----------------------------资讯版---------------------------------------------->
+		    	<!----------------------------资讯版---------------------------------------------->
+		    	<!----------------------------资讯版---------------------------------------------->
+		    	<ul class="Menu">
+		       <li><a href="{:U('IndexZiXun/index')}" class="current">首页</a></li>
+		       <li><a href="{:U('InfoZiXun/caigou')}">信息管理</a></li>
+		       <li><a href="{:U('Members/index')}">会员</a></li>
+		      <!-- <li><a href="{:U('Order/index')}">订单</a></li>-->
+		      <!-- <li><a href="#">营销</a></li>
+		       <li><a href="#">数据</a></li>  -->
+		       <if condition="$duodian eq 1">
+		       		<li><a href="{:U('Merch/index')}">多商铺</a></li>
+		       </if>
+		        <if condition="$fenxiao eq 1">
+				 	<li><a href="{:U('Distribution/index')}">分销系统</a></li>
+				 </if>
+				  <if condition="$diy eq 1">
+				  <!-- <li><a href="#">DIY系统</a></li>-->
+					</if>
+                   <!--<li><a href="">工具箱</a></li>-->
+		        <li><a href="{:U('Set/index')}">设2置</a></li>
+		       
+		        <li style="float: right;margin-right: 10%;"><a href="{:U('Login/logout')}">退出</a></li>
+		    </ul>
+		    </if>
+		     <if condition="$head_menu eq 6">
+		    	<!----------------------------生活服务版---------------------------------------------->
+		    	<!----------------------------生活服务版---------------------------------------------->
+		    	<!----------------------------生活服务版---------------------------------------------->
+		    	<ul class="Menu">
+		        <li><a href="{:U('IndexFuWu/index')}" class="current">首页</a></li>
+		        <li><a href="{:U('Goods/selling')}">商品</a></li>
+		        <li><a href="{:U('FuWucontect/index')}">联系管理</a></li>
+		        <li><a href="{:U('FuWuinfo/tiezi')}">帖子</a></li>
+		        <li><a href="{:U('Members/index')}">会员</a></li>
+		        <li><a href="{:U('Order/index')}">订单</a></li>
+		        <li><a href="{:U('FuWurendezvous/index')}">预约</a></li>
+		        <li><a href="{:U('Preferential/index')}">营销</a></li>
+		        <!-- <li><a href="#">数据</a></li>  -->
+		        <if condition="$duodian eq 1">
+		       		<li><a href="{:U('Merch/index')}">多商铺</a></li>
+		        </if>
+		        <if condition="$fenxiao eq 1">
+				 	<li><a href="{:U('Distribution/index')}">分销系统</a></li>
+				</if>
+				<if condition="$diy eq 1">
+				<!-- <li><a href="#">DIY系统</a></li>-->
+				</if>
+                   <!--<li><a href="">工具箱</a></li>-->
+		        <li><a href="{:U('Set/index')}">设3置</a></li>
+		       
+		        <li style="float: right;margin-right: 10%;"><a href="{:U('Login/logout')}">退出</a></li>
+		    </ul>
+		    </if>
+	 </div>	   

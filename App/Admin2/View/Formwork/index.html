@@ -1,0 +1,40 @@
+<include file="Public/head" />
+<div style="width:100%;border:1px solid red;min-height:400px;">
+	<h4>服务商管理</h4>
+	<a href="add">&nbsp&nbsp添加服务商</a>
+
+<form method="post">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>编号</th>
+						<th>账号</th>
+                        <th>所属公司</th>
+                        <th>余额</th>
+                        <th>电话</th>
+						<th>邮箱</th>
+						<th>添加时间</th>
+                        <th>操作</th>
+                    </tr>
+                    <foreach name="user_info" item="v">
+                        <tr>
+                            <td>{$v.user_id}</td>
+							 <td>{$v.user_name}</td>
+                            <td>{$v.user_company}</td>
+							 <td>{$v.user_balance}</td>
+                            <td>{$v.user_tel}</td>
+							<td>{$v.user_mail}</td>
+							<td>{$v.add_time}</td>
+                            <td>
+								<!--<a  title="修改" alt="修改" href="edit/user_id/{$v['user_id']}">修改</a>-->
+								<!--<a  title="修改" alt="修改" href="{:U('Servicer/edit'),array('user_id'=>$v['user_id'])}">修改</a>-->
+								<a  title="修改" alt="修改" href="__ROOT__/index.php/Admin/Servicer/edit/user_id/{$v['user_id']}">修改</a>
+								<a  title="删除" alt="删除" href="delete/user_id/{$v['user_id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            </td>
+                        </tr>
+                    </foreach>
+                </tbody>
+            </table>
+</form>
+	{$pages}
+</div>

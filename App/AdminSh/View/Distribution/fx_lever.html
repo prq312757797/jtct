@@ -1,0 +1,63 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_distribution" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">
+				<div style="height:60px;border-bottom:1px solid #000000;padding:20px;background:skyblue;">
+					<h4 style="float:left;">分销商管理 <small>总数: <span>0</span></small></h4>
+					<button class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="float:right;">添加新等级</button>
+				</div>
+				<div class="alert alert-danger" style="margin:10px 20px;">
+					提示: 没有设置等级的分销商将按默认设置计算提成。商品指定的佣金金额的优先级仍是最高的，也就是说只要商品指定了佣金金额就按商品的佣金金额来计算，不受等级影响
+				</div>
+				<form action="" method="post">
+					<table class="table table-responsive table-hover" >
+						<thead>
+						<tr>
+							<th style="width:180px;">等级名称</th>
+							<th style="width:100px;">一级佣金比例</th>
+							<th style="width:100px;">二级佣金比例</th>
+							<th style="width:280px;">升级条件</th>
+							<th style="width:280px;">操作</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr style="background:#f2f2f2">
+							<td>默认等级【默认等级】</td>
+							<td>10.00%</td>
+							<td>10.00%</td>
+							<td>默认等级</td>
+							<td><a class="btn btn-default btn-sm" data-toggle="modal" data-target="#mystar"  href="" title="编辑">编辑</a></td>
+						</tr>
+						<tr>
+							<td>一级</td>
+							<td>10.00%</td>
+							<td>10.00%</td>
+							<td>分销订单金额满 388.00 元 	</td>
+							<td>
+								<a class="btn btn-default btn-sm" data-toggle="modal" data-target="#mystar" href="" title="编辑">编辑</a>
+								<a class="btn btn-default btn-sm"  href="" data-confirm="确认删除此等级吗？">删除</a></td>
+						</tr>
+						<tr>
+							<td>二级</td>
+							<td>10.00%</td>
+							<td>10.00%</td>
+							<td>分销订单金额满 288.00 元 </td>
+							<td>
+								<a class="btn btn-default btn-sm"  href="" title="编辑">编辑</a>
+								<a class="btn btn-default btn-sm"  href="" data-confirm="确认删除此等级吗？">删除</a>
+							</td>
+						</tr>
+
+						</tbody>
+					</table>
+				</form>
+			</div>		    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+</html>

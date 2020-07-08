@@ -1,0 +1,1015 @@
+<include file="Public/head" />
+<include file="Public/menu_goods" />
+<script src="__ROOT__/Public/ys0925/jquery.js"></script>
+<script src="__ROOT__/Public/ys0925/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/imgupload/css/webuploader.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/imgupload/css/diyUpload.css">
+<script type="text/javascript" src="__PUBLIC__/imgupload/js/webuploader.html5only.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/imgupload/js/diyUpload.js"></script>
+<!--百度编辑器-->
+    	    <script type="text/javascript" charset="utf-8" src="__ROOT__/Public/ueditor/ueditor.config.js"></script>
+	    <script type="text/javascript" charset="utf-8" src="__ROOT__/Public/ueditor/ueditor.all.min.js"> </script>
+	    
+	    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+	    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+	    <script type="text/javascript" charset="utf-8" src="__ROOT__/Public/ueditor/lang/zh-cn/zh-cn.js"></script>
+   <script src="__ROOT__/Public/js/distpicker.data.js"></script>
+<script src="__ROOT__/Public/js/distpicker.js"></script>
+ <style>
+   	.con{
+   		/*padding:40px;
+*/   	}
+   	  	.p_laber{
+   	
+   	}
+<style>
+.del_guige{
+
+}
+	*{ margin:0; padding:0;}
+	#box{
+		width: 100%;
+		background: #FF9;
+		padding-top: 7px;
+		clear: both;
+		border-radius: 12px;
+	}
+	#demo{
+		width:81.5%;
+		background:white;
+		border-radius: 4px;
+		border: 1px solid #ccc;
+
+	}
+</style>
+<style>
+        .fileinput-button {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .fileinput-button input{
+            position:absolute;
+            right: 0px;
+            top: 0px;
+            opacity: 0;
+            -ms-filter: 'alpha(opacity=0)';
+            font-size: 200px;
+        }
+    </style>
+<div id="content">
+			<div id="content-header">
+				<h1>商品编辑</h1>
+			</div>
+			<div id="breadcrumb">
+				<a href="{:U('Goods/selling')}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 商品</a>
+				<a href="{:U('Goods/selling')}" class="tip-bottom">商品管理</a>
+				<a href="#" class="current">商品编辑</a>
+			</div>
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="widget-box">
+					<div class="tabs-container">
+	                <div class="tabs">	
+							<div class="widget-title">
+								<span class="icon">
+									<i class="icon-align-justify"></i>									
+								</span>
+
+								<ul class="nav nav-tabs"style="height:60px;width:100%;">
+									<li class="active">
+										<a data-toggle="tab" href="#tab-01" aria-expanded="true"> 基本信息</a>
+									</li>
+									<notempty name="info">
+									<li class="">
+										<a data-toggle="tab" href="#tab-02" aria-expanded="false">商品图片</a>
+									</li>
+									</notempty>
+									<li class="">
+										<a data-toggle="tab" href="#tab-03" aria-expanded="false">规格</a>
+									</li>	
+									<li class="">
+										<a data-toggle="tab" href="#tab-04" aria-expanded="true"> 详情</a>
+									</li>
+									<li class="">
+										<a data-toggle="tab" href="#tab-05" aria-expanded="false">库存</a>
+									</li>	
+									<li class="">
+										<a data-toggle="tab" href="#tab-06" aria-expanded="false">参数</a>
+									</li>	
+									<if condition="$program_id neq JT201810111844206577">
+								<notempty name="info">
+									<li class="">
+										<a data-toggle="tab" href="#tab-07" aria-expanded="true"> 会员价</a>
+									</li>
+									<li class="">
+										<a data-toggle="tab" href="#tab-08" aria-expanded="false">批发折扣</a>
+									</li>	
+								</notempty>
+									<li class="">
+										<a data-toggle="tab" href="#tab-09" aria-expanded="false">分销设置</a>
+									</li>	
+									</if>
+								</ul>
+							</div>
+							<!--开始-->
+					<!--<form action="{:U('Goods/run_goods_add',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+				-->
+				<div class="form-horizontal">
+							<div class="tab-content">	
+<!--============基本信息======================================================-->
+<!--============基本信息======================================================-->	
+
+									<div id="tab-01" class="tab-pane active">
+										<form action="{:U('Goods/run_goods_add',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+									    <div class="widget-content nopadding">
+											<!--排序-->
+											<div class="control-group">
+												<label class="control-label">排序：</label>
+												<div class="controls">
+													<input type="text"  name="sort" value="<?php  echo empty($info['sort'])?1:$info['sort'];?>"/>
+													<span class="help-block">数字越小，排名越靠前</span>
+												</div>
+											</div>
+											<!--商品副标题-->
+											<div class="control-group">
+												<label class="control-label">商品标题：</label>
+												<div class="controls">
+													<input type="text"  name="goods_title" value="{$info.goods_title}"/>
+													<span class="help-block" style="color:red;">此项必填</span>
+												</div>
+											</div>
+											<!--商品副标题-->
+											<div class="control-group">
+												<label class="control-label">商品副标题：</label>
+												<div class="controls">
+													<input type="text"  name="goods_subtitle" value="{$info.goods_subtitle}"/>
+													<span class="help-block" ></span>
+												</div>
+											</div>
+											<!--商品推送-->
+											<if condition="$program_id eq JT201810111844206577">
+									        <div class="control-group">
+												<label class="control-label">商品推送：</label>
+												<div class="controls">
+													<input type="text"  name="area_re" readonly value="{$info.area_re}"/>
+													<span class="help-block" ></span>
+												</div>
+												<div class="controls edit_address_02">
+														<div data-toggle="distpicker">				           
+													        <select name="" id="province1" class="edit_province"></select>
+													        <select name="" id="city1" class="edit_city"></select>
+													        <!--<select name="" id="district1" class="edit_district"></select> -->
+													        <a href="javascript:" id="sure_choose"   class="btn btn-default" type="button">确定推送</a>
+															<a href="javascript:" id="clear_none"   class="btn btn-default" type="button">清空推送</a>
+											        	</div>	
+													</div>
+												<input type="hidden"  id="goods_id" value="{$info.id}"/>
+												</div>
+									            	<script>
+									    
+									            		
+									            		$("#sure_choose").click(function(){
+							                     		 	$.post('__ROOT__/adp.php/Goods/ajax_area_re',{'goods_id':$("#goods_id").val(),'area_re':$("#city1").find("option:selected").text()},function(state){
+																if(state==1){
+																	window.location.reload();
+																}else if(state==2){
+																	alert("该城市已推送")
+																}else if(state==-1){
+																	alert("修改失败")
+																}
+													        },'json');
+								                     		
+								                     	})  
+									            		$("#clear_none").click(function(){
+							                     		 	$.post('__ROOT__/adp.php/Goods/ajax_clear_none',{'goods_id':$("#goods_id").val()},function(state){
+																if(state==1){
+																	window.location.reload();
+																}else{
+																	alert("修改失败")
+																}
+													        },'json');
+								                     		
+								                     	}) 
+									            	</script>
+									            	
+									        </if>
+											<!--商品短标题-->
+											<div class="control-group">
+												<label class="control-label">商品短标题：</label>
+												<div class="controls">
+													<input type="text"  name="goods_shorttitle" value="{$info.goods_shorttitle}"/>
+													<span class="help-block" ></span>
+												</div>
+											</div>
+											<!--商品分类-->
+											<div class="control-group">
+												<label class="control-label">商品分类：</label>
+												<div class="controls">
+													<div class="controls input_select ml0 w40">
+														<select name="fenlei_1_title" class="w100" onchange="gradeChange()" id="city_area_select" >
+															<empty name="is_edit">
+																<option >请选择分类</option>
+																<else/>
+																<option>{$info.fenlei_1_title}</option>
+															</empty>
+															<foreach name="fenlei" item="v">
+																	<option >{$v.title}</option>
+															</foreach>
+														</select>
+													</div>
+													<div class="controls  input_select ml12 w40">
+														<select name="fenlei_2_title" class="w100" id="road_from_select" >
+															<empty name="is_edit">
+																<option>请选择子分类</option>
+																<else/>
+																<option>{$info.fenlei_2_title}</option>
+															</empty>
+														</select>
+													</div>
+													<span class="help-block" ></span>
+												</div>
+											</div>
+											<!--商品图片-->
+											<empty name="info">
+											<div class="control-group ">
+												<label class="control-label">商品图片</label>
+												<div class="controls">
+													<input type="text" value="{$info['image']}" id="image_name" />
+													<span class="btn btn-success fileinput-button">
+											            <span>上传</span>
+											            <input type="file" name="image" id="doca"  onchange="javascript:setImagePreviews();">
+											       </span>
+					
+													<div class="help-block bd_gray mt15 w81 b_r_4 max_h_165 " style="display:none;" id="image_area">
+														<img class="h_92 p_1" src="" id="loc_img" />
+													</div>
+					
+												</div>
+											</div>
+											</empty>
+											<!--商品属性-->
+											<div class="control-group">
+												<label class="control-label">商品属性：</label>
+												<div class="controls">
+														<label class="radio-inline is_show w5">
+									                    <if condition="$info.goods_subtitle01 eq 1">
+															<input type="checkbox" name="good_attribute01" value="1" id="good_attribute" checked> 新品
+															<else/>
+															 <input type="checkbox" name="good_attribute01" value="1" id="good_attribute" > 新品
+														</if>
+														</label>
+														<label class="radio-inline is_show w5">
+									                    <if condition="$info.goods_subtitle02 eq 1">
+															<input type="checkbox" name="goods_subtitle02" value="1" id="good_attribute" checked> 热卖
+															<else/>
+															 <input type="checkbox" name="goods_subtitle02" value="1" id="good_attribute" > 热卖
+														</if>
+														</label>
+														<label class="radio-inline is_show w5">
+									                    <if condition="$info.goods_subtitle03 eq 1">
+															<input type="checkbox" name="goods_subtitle03" value="1" id="good_attribute" checked> 推荐
+															<else/>
+															 <input type="checkbox" name="goods_subtitle03" value="1" id="good_attribute" > 推荐
+														</if>
+														</label>
+														<label class="radio-inline is_show w5">
+									                    <if condition="$info.goods_subtitle04 eq 1">
+															<input type="checkbox" name="goods_subtitle04" value="1" id="good_attribute" checked> 促销
+															<else/>
+															 <input type="checkbox" name="goods_subtitle04" value="1" id="good_attribute" > 促销
+														</if>
+														</label>
+														<label class="radio-inline is_show w5">
+									                    <if condition="$info.goods_subtitle05 eq 1">
+															<input type="checkbox" name="goods_subtitle05" value="1" id="good_attribute" checked> 包邮
+															<else/>
+															 <input type="checkbox" name="goods_subtitle05" value="1" id="good_attribute" > 包邮
+														</if>
+														</label>
+												</div>
+											</div>
+											<!--商品价格-->
+											<div class="control-group">
+												<label class="control-label">商品价格：</label>
+												<div class="controls">
+													<div class="input-group">
+														<span class="input-group-addon">售价</span>
+														<input type="text" name="price_sell"  value="{$info.price_sell}" id="price_sell" class="form-control " >
+														<span class="input-group-addon">原价</span>
+														<input type="text" name="price_own" value="{$info.price_own}" id="price_own" class="form-control valid "  aria-invalid="false">
+														<span class="input-group-addon">成本价</span>
+														<input type="text" name="cost" value="{$info.cost}" id="cost" class="form-control " >
+
+													</div>
+													<span class="help-block" ></span>
+												</div>
+											</div>
+											<!--已出售数-->
+											<div class="control-group">
+												<label class="control-label">已出售数：</label>
+												<div class="controls">
+													<input type="text"  name="sell_num" value="{$info.sell_num}"/> 件
+													<span class="help-block" >商品支付成功后出售数量加一</span>
+												</div>
+											</div>
+											<!--用户收藏数-->
+											<div class="control-group">
+												<label class="control-label">用户收藏数：</label>
+												<div class="controls">
+													<input type="text"  name="collect_num" value="{$info.collect_num}"/> 次
+													<span class="help-block" >用户点击收藏后收藏数加一</span>
+												</div>
+											</div>
+											<!--标签-->
+											<!--<div class="control-group">
+												<label class="control-label">标签：</label>
+												<div class="controls">
+
+													<label class="radio-inline is_show "><input type="checkbox" name="quality" value="1"> 正品保证</label>
+													<label class="radio-inline is_show "><input type="checkbox" name="seven" value="1"> 7天无理由退换</label>
+													<label class="radio-inline is_show "><input type="checkbox" name="repair" value="1"> 保修</label>
+													<span class="help-block"></span>
+
+												</div>
+											</div>-->
+
+											<!--是否上架-->
+											<div class="control-group">
+												<label class="control-label">上架：</label>
+												<empty name="info">
+													<div class="controls">
+														<label class="radio-inline is_show">
+															<input type="radio" name="goods_state" value="1" > 上架
+														</label>
+														<label class="radio-inline is_show">
+															<input type="radio" name="goods_state" value="3" checked="checked"> 下架
+														</label>
+													</div>
+													<else/>
+													<if condition="$info.goods_state eq 1">
+														<div class="controls">
+															<label class="radio-inline is_show">
+																<input type="radio" name="goods_state" value="1" checked="checked"> 上架
+															</label>
+															<label class="radio-inline is_show">
+																<input type="radio" name="goods_state" value="3"> 下架
+															</label>
+														</div>
+													</if>
+													<if condition="$info.goods_state eq 3">
+														<div class="controls">
+															<label class="radio-inline is_show">
+																<input type="radio" name="goods_state" value="1" > 上架
+															</label>
+															<label class="radio-inline is_show">
+																<input type="radio" name="goods_state" value="3" checked="checked"> 下架
+															</label>
+														</div>
+													</if>
+												</empty>
+
+											</div>
+											<!--是否支持退换货-->
+											<!--<div class="control-group">
+												<label class="control-label">是否支持退换货</label>
+												<empty name="info">
+													<div class="controls">
+														<label class="radio-inline is_show">
+															<input type="radio" name="is_tuihuan" value="1" > 否
+														</label>
+														<label class="radio-inline is_show">
+															<input type="radio" name="is_tuihuan" value="0" checked="checked"> 是
+														</label>
+													</div>
+													<else/>
+													<if condition="$info.is_tuihuan eq 1">
+														<div class="controls">
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_tuihuan" value="1" checked="checked"> 否
+															</label>
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_tuihuan" value="0"> 是
+															</label>
+														</div>
+													</if>
+													<if condition="$info.is_tuihuan eq 0">
+														<div class="controls">
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_tuihuan" value="1" > 否
+															</label>
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_tuihuan" value="0" checked="checked"> 是
+															</label>
+														</div>
+													</if>
+												</empty>
+
+											</div>-->
+											<!--确认收货时间-->
+											<!--<div class="control-group">
+												<label class="control-label">确认收货时间：</label>
+												<div class="controls">
+													<div class="input-group">
+														<span class="input-group-addon">发货后</span>
+														<input type="text" name="day_shouhuo"  value="{$info.day_shouhuo}" id="day_shouhuo" class="form-control " > 天
+													</div>
+													<span class="help-block" ></span>
+												</div>
+											</div>-->
+
+
+											<div class="form-actions">
+													<button type="submit" class="btn btn-primary">保存</button>
+											</div>
+										</div>
+										</form>
+									</div>
+<!--============商品图片======================================================-->
+<!--============商品图片======================================================-->	
+
+									<div id="tab-02" class="tab-pane">
+									    <div class="widget-content nopadding">
+											<div class="control-group ">
+												<label class="control-label">商品图片</label>
+
+												<div class="controls">
+													<notempty name="info">
+													<div class="help-block bd_gray mt15 w81 b_r_4 max_h_165 "	>
+													<volist name="info['image']" id="vo" offset="0" length='4' key="k">
+														<img class="h_92 p_1 w20" src="__ROOT__/Uploads/{$vo}"  />
+														<em class="delete_goods_img delete_img" a="{$info['id']}" b="<?php echo $a=$k-1; ?>">X</em>
+													</volist>
+													</div>
+													<notempty name="info['image'][4]">
+													<div class="help-block bd_gray mt15 w81 b_r_4 max_h_165 "	>
+														<volist name="info['image']" id="vo" offset="4" length='4'>
+															<img class="h_92 p_1 w20" src="__ROOT__/Uploads/{$vo}"  />
+															<em class="delete_goods_img delete_img" a="{$info['id']}" b="<?php echo $a=$k-1; ?>">X</em>
+														</volist>
+													</div>
+													</notempty>
+														<notempty name="info['image'][8]">
+														<div class="help-block bd_gray mt15 w81 b_r_4 max_h_165 "	>
+															<volist name="info['image']" id="vo" offset="8" length='4'>
+																<img class="h_92 p_1 w20" src="__ROOT__/Uploads/{$vo}"  />
+																<em class="delete_goods_img delete_img" a="{$info['id']}" b="<?php echo $a=$k-1; ?>">X</em>
+															</volist>
+														</div>
+														</notempty>
+
+													<div id="demo" style="margin-top:12px;">
+														<div id="as" ></div>
+													</div>
+
+														<script>
+                                                            $('#as').diyUpload({
+                                                                //   url:'__ROOT__/AA/fileupload',
+                                                                //	if(1){
+                                                                url:'__ROOT__/adp.php/Goodstest/fileupload?goods_id='+{$info["id"]},
+                                                                success:function( data ) {
+                                                                    console.info( data );
+                                                                },
+                                                                error:function( err ) {
+                                                                    console.info( err );
+                                                                },
+                                                                buttonText : '选择文件',
+                                                                chunked:true,
+                                                                // 分片大小
+                                                                chunkSize:512 * 1024,
+                                                                //最大上传的文件数量, 总文件大小,单个文件大小(单位字节);
+                                                                fileNumLimit:6,
+                                                                fileSizeLimit:500000 * 1024,
+                                                                fileSingleSizeLimit:1024 * 1024,
+                                                                accept: {}
+                                                            });
+														</script>
+													<else/>
+													<form action="{:U('Goods/run_goods_add',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+													<!--<input type="text" value="{$info['image']}" id="image_name" />
+													<span class="btn btn-success fileinput-button">
+										            <span>上传</span>
+										          	     <input type="file" name="image" id="doca"  onchange="javascript:setImagePreviews();">
+										    	    </span>
+
+													<div class="help-block bd_gray mt15 w81 b_r_4 max_h_165 " style="display:none;" id="image_area">
+														<img class="h_92 p_1" src="" id="loc_img" />
+													</div>
+														<div class="form-actions">
+															<button type="submit" class="btn btn-primary">保存</button>
+														</div>
+													</form>-->
+													</notempty>
+
+												</div>
+											</div>
+											<div class="form-actions">
+													<a class="btn btn-primary" onclick="window.location.reload();">刷新</a>
+											</div>
+										</div>
+									</div>
+<!--============规格======================================================-->
+<!--============规格======================================================-->									
+									<div id="tab-03" class="tab-pane">
+										<form action="{:U('Goods/run_goods_add',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+									    <div class="widget-content nopadding">
+											<!--是否上架-->
+											<div class="control-group">
+												<label class="control-label">是否启用规格</label>
+												<empty name="info">
+													<div class="controls">
+														<label class="radio-inline is_show">
+															<input type="radio" name="is_use_guige" value="2" > 启用
+														</label>
+														<label class="radio-inline is_show">
+															<input type="radio" name="is_use_guige" value="1" checked="checked"> 禁用
+														</label>
+													</div>
+													<else/>
+													<if condition="$info.is_use_guige eq 1">
+														<div class="controls">
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_use_guige" value="2" > 启用
+															</label>
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_use_guige" value="1" checked="checked"> 禁用
+															</label>
+														</div>
+													</if>
+													<if condition="$info.is_use_guige eq 2">
+														<div class="controls">
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_use_guige" value="2" checked="checked"> 启用
+															</label>
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_use_guige" value="1" > 禁用
+															</label>
+														</div>
+													</if>
+												</empty>
+
+
+											</div>
+											<!--一级规格-->
+											<div class="control-group">
+												<div id="more_guige"  class="btn btn-primary more_guige" num="{$guige_num}">添加规格</div>
+												<label class="control-label">商品规格：</label>
+
+												<div class="controls" id="test123">
+														<empty name="guige">
+														<div class="" style="border: 1px solid #d0d0d0; padding: 20px;">
+																规格 0 ：
+															<div class="input-group">
+																
+																<input class="changeimg_key" name="changeimg_key[]" type="hidden" id="changeimg{$k}" value="1">
+																<input style="position: absolute; left: 450px; height: 60px; width: 75px;" type="file"  name="img[]" id="guige_input0" onchange="guige_img(0)">
+																<img style="position: absolute; left: 530px;top: -29px;" id="guige_img0" src=""/>
+																<div style="width:50px;display: inline-block;">规格名: </div><input type="text" name="guige[]" placeholder="规格名"  id="sales" class="w32"  aria-invalid="false">
+																<div style="width:40px;display: inline-block; margin-left: 20px;">价格: </div><input type="text" name="price[]" placeholder="价格"  id="sales" class="w32"  aria-invalid="false">
+																<div style="height:6px;"> </div>
+																<div style="width:50px;display: inline-block;">库存: </div><input type="text" name="num[]" placeholder="库存"  id="sales" class="w32"  aria-invalid="false">
+																<div style="width:40px;display: inline-block; margin-left: 20px;">备注: </div><input type="text" name="remark[]" placeholder="备注"  id="sales" class="w32"  aria-invalid="false">
+																<!--<input type="file"  name="img[]" id="image01" onchange="" style="clear: both;"> -->
+																<!--<div><input  name="image2[]" type="file"></div>-->
+															</div>
+														</div>
+														<else/>
+														<foreach name="guige" item="v" key="k">
+															<div class="" style="border: 1px solid #d0d0d0; padding: 20px;">
+																规格 {$k} ：
+																<!--<span style="background:#F2F2F2;height: 20px; line-height: 20px;" class="delete_guige " a="{$info['id']}" b="{$k}" c="1">删 除</span>-->
+																<div class="btn btn-primary delete_guige" a="{$info['id']}" b="{$k}" c="1" style="position: relative;top:-2px;">删 除</div>
+																<div class="input-group">
+																	<input class="changeimg_key" name="changeimg_key[]" type="hidden" id="changeimg{$k}" value="0">
+																	<input style="position: absolute; left: 450px; height: 60px; width: 75px;" type="file"  name="img[]" id="guige_input{$k}" onchange="guige_img({$k},1)">
+																	<img style="position: absolute; left: 530px;top: -29px;" id="guige_img{$k}" src=""/>
+																	<img style="position: absolute; left: 700px;width:110px;height:110px;top: -29px;"  src="__ROOT__/Uploads/{$v.img}"/>
+																	<div style="width:50px;display: inline-block;">规格名: </div><input type="text" name="guige[]" placeholder="规格名" value="{$v.guige}" id="sales" class="w32"  aria-invalid="false">
+																	<div style="width:40px;display: inline-block; margin-left: 20px;">价格: </div><input type="text" name="price[]" placeholder="价格" value="{$v.price}" id="sales" class="w32"  aria-invalid="false">
+																	<div style="height: 10px;"></div>
+																	<div style="width:50px;display: inline-block;">库存: </div><input type="text" name="num[]" placeholder="库存" value="{$v.num}" id="sales" class="w32"  aria-invalid="false">
+																	<div style="width:40px;display: inline-block; margin-left: 20px;">备注: </div><input type="text" name="remark[]" placeholder="备注" value="{$v.remark}" id="sales" class="w32"  aria-invalid="false">
+																</div>
+
+															</div>
+														</foreach>
+													</empty>
+													<span class="help-block" ></span>
+												</div>
+											</div>
+											<!--二级规格-->
+											<div class="control-group">
+												<div id="more_guige02"  class="btn btn-primary more_guige">添加规格</div>
+												<label class="control-label">商品二级规格：</label>
+
+												<div class="controls" id="test1234">
+													<empty name="guige02">
+														<div class="input-group">
+															<input type="text" name="guige02[]" placeholder="参数名"  id="sales" class="w60"  aria-invalid="false">
+														</div>
+
+														<else/>
+														<foreach name="guige02" item="v" key="k">
+															<div class="input-group">
+																<input type="text" name="guige02[]" placeholder="参数名" value="{$v.guige02}" id="sales" class="w60"  aria-invalid="false">
+																<span  class="delete_guige" a="{$info['id']}" b="{$k}" c="2" style="background:#F2F2F2;height: 20px;margin-left: 30px; line-height: 20px;">删 除</span>
+															</div>
+														</foreach>
+													</empty>
+													<span class="help-block" ></span>
+												</div>
+											</div>
+											<div class="form-actions">
+													<button type="submit" class="btn btn-primary">保存</button>
+											</div>
+										</div>
+										</form>
+									</div>
+<!--============详情======================================================-->
+<!--============详情======================================================-->									
+									<div id="tab-04" class="tab-pane">
+										<form action="{:U('Goods/run_goods_add',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+									    <div class="widget-content nopadding">
+											<div class="control-group">
+												<label class="control-label">商品详情</label>
+												<div class="controls">
+													<textarea rows="6" name="goods_content" id="goods_content" >{$info.goods_content}</textarea>
+												<span class="help-block"></span>
+												</div>
+											</div>
+											<div class="form-actions">
+													<button type="submit" class="btn btn-primary">保存</button>
+											</div>
+										</div>
+										</form>
+									</div>
+<!--============库存======================================================-->
+<!--============库存======================================================-->									
+									<div id="tab-05" class="tab-pane">
+										<form action="{:U('Goods/run_goods_add',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+									    <div class="widget-content nopadding">
+											<div class="control-group">
+												<label class="control-label">编码</label>
+												<div class="controls">
+													<input type="text"  name="bianma" value="{$info.bianma}"/>
+													<span class="help-block"></span>
+												</div>
+												
+												<label class="control-label">条码</label>
+												<div class="controls">
+													<input type="text"  name="tiaoma" value="{$info.tiaoma}"/>
+													<span class="help-block"></span>
+												</div>
+												
+												<label class="control-label">重量</label>
+												<div class="controls">
+													<input type="text"  name="zhongliang" value="{$info.zhongliang}"/>
+													<span class="help-block"></span>
+												</div>
+												
+												<label class="control-label">库存</label>
+												<div class="controls">
+													<input type="number"  name="number" value="<?php echo (empty($info['number']))?10:$info['number'];?>"/>
+													<span class="help-block">商品的剩余数量, 如启用多规格，则此处设置无效.</span>
+												</div>
+												
+								
+													<div class="controls">
+														<label class="radio-inline is_show">
+															<input type="radio" name="totalcnf" value="0" > 拍下减库存
+														</label>
+														<label class="radio-inline is_show">
+															<input type="radio" name="totalcnf" value="1" checked="checked"> 付款减库存
+														</label>
+														<label class="radio-inline is_show">
+															<input type="radio" name="totalcnf" value="1" > 永不减库存
+														</label>
+													</div>
+											</div>
+											
+											<div class="form-actions">
+													<button type="submit" class="btn btn-primary">保存</button>
+											</div>
+										</div>
+										</form>
+									</div>
+<!--============参数======================================================-->
+<!--============参数======================================================-->									
+									<div id="tab-06" class="tab-pane">
+										<form action="{:U('Goods/run_goods_add',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+									    <div class="widget-content nopadding">
+											<div class="control-group">
+												<div id="more_img" style="border:1px solid;padding:3px;width:100px;text-align:center;margin-right:12px;float:right;border-radius:4px;" class="btn btn-primary">更多参数</div>
+				
+												<empty name="canshu">
+													<div class="canshu_total">
+														<div class="canshu_name">
+															<input type="text" name="canshu_title[]"   class="form-control" placeholder="请输入参数名">
+														</div>
+														<div class="canshu_val">									
+															<input type="text" name="canshu_con[]"   class="form-control" placeholder="请输入参数值">
+														</div>
+														<div class="col-sm-1">
+															
+														</div>
+													</div>
+												<else/>
+												<foreach name="canshu" item="v">
+													<div class="canshu_total">
+														<div class="canshu_name">
+															<input type="text" name="canshu_title[]"  value="{$v.title}" class="form-control" placeholder="请输入参数名">
+														</div>
+														<div class="canshu_val">									
+															<input type="text" name="canshu_con[]"  value="{$v.content}" class="form-control" placeholder="请输入参数值">
+														</div>
+														<div class="col-sm-1">
+															<span  onclick="delet_canshu(this)" style="line-height: 54px;">X</span>
+														</div>
+													</div>
+												</foreach>
+												</empty>
+												<div id="muban_b_0"></div>
+											</div>
+											<div class="form-actions">
+													<button type="submit" class="btn btn-primary">保存</button>
+											</div>
+										</div>
+										</form>
+									</div>
+<!--============会员价======================================================-->
+<!--============会员价======================================================-->									
+									<div id="tab-07" class="tab-pane">
+										<form action="{:U('Goods/run_goods_add',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+									    <div class="widget-content nopadding">
+											
+											<div class="control-group">
+												<label class="control-label">是否使用会员价</label>
+												<empty name="info">
+													<div class="controls">
+														<label class="radio-inline is_show">
+															<input type="radio" name="is_on_lever_price" value="1" > 启用
+														</label>
+														<label class="radio-inline is_show">
+															<input type="radio" name="is_on_lever_price" value="2" checked="checked"> 禁用
+														</label>
+													</div>
+													<else/>
+													<if condition="$info.is_on_lever_price eq 1">
+														<div class="controls">
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_on_lever_price" value="1" checked="checked"> 启用
+															</label>
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_on_lever_price" value="2" > 禁用
+															</label>
+														</div>
+													</if>
+													<if condition="$info.is_on_lever_price eq 2">
+														<div class="controls">
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_on_lever_price" value="1" > 启用
+															</label>
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_on_lever_price" value="2" checked="checked"> 禁用
+															</label>
+														</div>
+													</if>
+												</empty>
+												
+											
+													<span class="help-block" ></span>
+											</div>
+											<foreach name="lever" item="v">
+												 <input name="lever_id[]" type="hidden" value="{$v.id}">
+											<div class="control-group">
+												<div class="controls">
+													<div class="input-group">
+														<span class="input-group-addon">等级</span>
+														<input type="text"  readonly  value="{$v.member_level_name}"  class="form-control " >
+														<span class="input-group-addon">折扣</span>
+														<input type="text" name="discount[]" value="{$v.discount}" id="price_own" class="form-control valid discount"  aria-invalid="false">
+														<span class="input-group-addon">会员价</span>
+														<input type="text" name="price_mem[]" value="{$v.price}" id="cost" class="form-control price_mem" >
+
+													</div>
+													<span class="help-block" ></span>
+												</div>
+												</div>
+												</foreach>
+											<div class="form-actions">
+													<button type="submit" class="btn btn-primary">保存</button>
+											</div>
+										</div>
+										</form>
+									</div>
+<!--============批发折扣======================================================-->
+<!--============批发折扣======================================================-->									
+									<div id="tab-08" class="tab-pane">
+										<form action="{:U('Goods/run_goods_add',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+									    <div class="widget-content nopadding">
+										
+											<div class="control-group">
+												<label class="control-label">是否使用批发折扣</label>
+												<empty name="info">
+													<div class="controls">
+														<label class="radio-inline is_show">
+															<input type="radio" name="is_on_wholesale_discount" value="1" > 启用
+														</label>
+														<label class="radio-inline is_show">
+															<input type="radio" name="is_on_wholesale_discount" value="2" checked="checked"> 禁用
+														</label>
+													</div>
+													<else/>
+													<if condition="$info.is_on_wholesale_discount eq 1">
+														<div class="controls">
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_on_wholesale_discount" value="1" checked="checked"> 启用
+															</label>
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_on_wholesale_discount" value="2" > 禁用
+															</label>
+														</div>
+													</if>
+													<if condition="$info.is_on_wholesale_discount eq 2">
+														<div class="controls">
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_on_wholesale_discount" value="1" > 启用
+															</label>
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_on_wholesale_discount" value="2" checked="checked"> 禁用
+															</label>
+														</div>
+													</if>
+												</empty>
+		
+													<span class="help-block" ></span>	
+											</div>
+											<div class="control-group" id="test456">
+												<div id="more_wholesale"  class="btn btn-primary more_guige">更多批发价</div>
+												<label class="control-label">商品批发价：</label>
+										<empty name="wholesale">
+												<div class="pifa_total">
+													<span class="input-group-addon pifa_input" >起始件数(≥)</span>	
+													<input  type="text" name="num_start[]"   id="num_start" class="form-control num_start pifa_input_2" >
+													<span class="input-group-addon pifa_input" >结束件数(<)</span>									
+													<input  type="text" name="num_end[]"   id="num_end" class="form-control num_end pifa_input_2" >
+													
+													<span class="input-group-addon pifa_input" >折扣</span>									
+													<input  type="text" name="wholesale_discount[]"   id="wholesale_discount" class="form-control wholesale_discount12138 pifa_input_2" >
+													
+													<span class="input-group-addon pifa_input" >参考价</span>	
+													<input  type="text" name="wholesale_price[]"    id="wholesale_price" class="form-control valid price_reference pifa_input_2"  aria-invalid="false" style="text-align:center;">
+													<span class="input-group-addon" style="width:5px;"> 元  </span>	
+													<span  onclick="delet_pifa(this)" a="{$v.id}" style="width:5px;" class="input-group-addon">X</span>
+												</div>
+										<else/>
+												
+										<foreach name="wholesale" item="v">
+												<div class="pifa_total">
+													<span class="input-group-addon pifa_input" >起始件数(≥)</span>	
+													<input  type="text" name="num_start[]"  value="{$v.num_start}" id="num_start" class="form-control num_start pifa_input_2" >
+													<span class="input-group-addon pifa_input" >结束件数(<)</span>									
+													<input  type="text" name="num_end[]"  value="{$v.num_end}" id="num_end" class="form-control num_end pifa_input_2" >
+													
+													<span class="input-group-addon pifa_input" >折扣</span>									
+													<input  type="text" name="wholesale_discount[]"  value="{$v.discount}" id="wholesale_discount" class="form-control wholesale_discount12138 pifa_input_2" >
+													
+													<span class="input-group-addon pifa_input" >参考价</span>	
+													<input  type="text" name="wholesale_price[]"  value="{$v.price}"  id="wholesale_price" class="form-control valid price_reference pifa_input_2"  aria-invalid="false" style="text-align:center;">
+													<span class="input-group-addon" style="width:5px;"> 元  </span>	
+													<span  onclick="delet_pifa(this)" a="{$v.id}" style="width:5px;" class="input-group-addon">X</span>
+												</div>
+										</foreach>
+										</empty>
+												
+											</div>
+											<div ></div>
+											<div class="form-actions">
+													<button type="submit" class="btn btn-primary">保存</button>
+											</div>
+										</div>
+										</form>
+									</div>
+<!--============分销设置======================================================-->
+<!--============分销设置======================================================-->									
+									<div id="tab-09" class="tab-pane">
+										<form action="{:U('Goods/run_goods_add',array('id'=>$info['id']))}" method="post" enctype="multipart/form-data" class="form-horizontal" />
+									    <div class="widget-content nopadding">
+											<div class="control-group">
+												<label class="control-label">是否开启独立分销比例</label>
+												<empty name="info">
+													<div class="controls">
+														<label class="radio-inline is_show">
+															<input type="radio" name="is_on_self_fx" value="1" > 启用
+														</label>
+														<label class="radio-inline is_show">
+															<input type="radio" name="is_on_self_fx" value="2" checked="checked"> 禁用
+														</label>
+													</div>
+													<else/>
+													<if condition="$info.is_on_self_fx eq 1">
+														<div class="controls">
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_on_self_fx" value="1" checked="checked"> 启用
+															</label>
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_on_self_fx" value="2" > 禁用
+															</label>
+														</div>
+													</if>
+													<if condition="$info.is_on_self_fx eq 2">
+														<div class="controls">
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_on_self_fx" value="1" > 启用
+															</label>
+															<label class="radio-inline is_show">
+																<input type="radio" name="is_on_self_fx" value="2" checked="checked"> 禁用
+															</label>
+														</div>
+													</if>
+												</empty>
+											<span class="help-block" >分销系统的分销专区开启状态本设置才能生效</span>	
+											</div>
+											
+											<div class="control-group">
+												<label class="control-label">一级分销比例：</label>
+												<div class="controls">
+													<input type="text"  name="bl_lever_1" value="{$info['bl_lever_1']}" style="float:left;"/>
+													<span class="input-group-addon " style="float:left;width: 2%;">%</span>	
+													<span class="help-block" ></span>
+												</div>
+											</div>
+											
+											<div class="control-group">
+												<label class="control-label">二级分销比例：</label>
+												<div class="controls">
+													<input type="text"  name="bl_lever_2" value="{$info.bl_lever_2}" style="float:left;"/>
+													<span class="input-group-addon " style="float:left;width: 2%;">%</span>	
+													<span class="help-block" ></span>
+												</div>
+											</div>
+											
+											<div class="control-group">
+												<label class="control-label">三级分销比例：</label>
+												<div class="controls">
+													<input type="text"  name="bl_lever_3" value="{$info.bl_lever_3}" style="float:left;"/>
+													<span class="input-group-addon " style="float:left;width: 2%;">%</span>	
+													<span class="help-block" ></span>
+												</div>
+											</div>
+											
+											<div class="form-actions">
+													<button type="submit" class="btn btn-primary">保存</button>
+											</div>
+										</div>
+										</form>
+									</div>									  
+								</div>
+								<!--</form>--></div>
+							</div>
+						</div>
+							<!--结束-->
+						</div>						
+					</div>
+				</div>
+				
+			</div>
+	</div>
+	<include file="Public/foot" /> 
+	<include file="Public/image_yl" />
+	<include file="Public/guige" />
+	<include file="Public/canshu" />
+	<include file="Public/huiyuanjia" />
+	<include file="Public/pifa" />
+<script>
+	//商品分类选择
+	 function gradeChange(){
+	 	
+    	var city_area=$("#city_area_select").find("option:selected").text();
+    	if(city_area=="请选择分类"){
+    		return false;
+    	}
+        $("#road_from_select").empty();
+    
+        $.post('__ROOT__/adpp.php/Goods/ajax_fenlei_2',{'title':city_area},function(arr_road){
+    	
+         for (var i=0;i<arr_road.length;i++){
+                $("#road_from_select").append($("<option></option>").text(arr_road[i]));
+            }
+
+        },'json');
+         
+    }
+</script>
+<script type="text/javascript">
+//====================================百度编辑器
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    var ue = UE.getEditor('goods_content');
+</script>
+</body>
+</html>

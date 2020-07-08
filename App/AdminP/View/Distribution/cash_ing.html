@@ -1,0 +1,61 @@
+<include file="Public/head" />     
+	<div class="contert">
+		<include file="Public/menu_distribution" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			<div class="con">
+				<div style="height:60px;border-bottom:1px solid #000000;padding:20px 20px;background:skyblue;">
+					<h4>待审核提现申请 <small>总数: <span>{$count}</span></small></h4>
+				</div>
+
+				<div class="panel panel-default" style="margin:0px 20px;">
+					<!--<div class="panel" style="text-align:center;padding:20px;">
+						暂时没有任何申请!
+					</div>-->
+					
+					<table id="maintable1"  class="table table-hover table-responsive">
+		        <thead>
+			        <tr>
+			            <th style="width:30px;"><input type="checkbox"></th>
+			            <th style="width:60px;">单号</th>
+			            <th style="width:60px;">申请人</th>
+			            <th style="width:80px;">申请金额</th>	
+			            <th style="width:60px;">申请状态</th>
+			            <th style="width:60px;">申请时间</th>
+			           
+			            <th style="width:60px;">操作</th>
+			        </tr>
+		        </thead>
+		        <tbody id="grade">    
+		        	<foreach name="info" item="v">
+			        <tr style="background-color:#eee;" id="content1" target="sid_user">
+				        <td><input type="checkbox"></td>        
+				        <td >{$v.order_num}</td>              
+				        <td ><img src="{$v.head}" style="width:50px;height:50px;border:1px solid #ccc; padding:1px;"> {$v.nickname} </td>
+				        <td>{$v.money_01} 元</td>
+				       <td >
+				        	<if condition="$v.state eq 1">待审核</if>
+				        	<if condition="$v.state eq 2">审核通过</if>
+				        	<if condition="$v.state eq 3">审核拒绝</if>
+				        	<if condition="$v.state eq 4">已打款</if>
+				        	<if condition="$v.state eq 5">位置错误</if>
+				        	
+				        </td>  
+				            <td ><?=date("Y-m-d H:i:s",$v['time_set']);?></td>
+				        <td>
+				             <a href="cash_yes?id={$v.id}&sta=2" onclick="if(confirm('确认通过审核吗？')==false)return false;" class="btn btn-default btn-sm"><i class="fa fa-edit"></i>通过申请</a>            
+				         	 <a href="cash_yes?id={$v.id}&sta=3" onclick="if(confirm('确认拒绝审核吗？')==false)return false;" class="btn btn-default btn-sm"><i class="fa fa-edit"></i>拒绝申请</a>            
+				        </td>
+			        </tr> 
+			        </foreach>
+		        </tbody>
+                </table>
+				</div>
+			</div>		    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+</body>
+</html>

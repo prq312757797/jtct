@@ -1,0 +1,174 @@
+<include file="Public/head" />
+<div class="contert">
+	<include file="Public/menu_preferential" />
+	<!--发送优惠券-->
+	<!--====================主体-----开始========================-->
+	<div class="show" id="tabC1">
+		<div class="con" style="min-height: 640px;">
+			<div style="border-bottom:1px solid #000000;height:60px; padding:20px;">
+				<span style=" font-size:20px;">发送优惠券</span>
+			</div>
+			<div class="mar_50 page_row">
+				<text class="wih_200">
+				选择优惠券:
+			</text>
+				<select class="" id="self_select" onchange="gradeChange()">
+					<option></option>
+					<foreach name="list" item="v">
+						<option value="{$v.id}">{$v.title}</option>
+					</foreach>
+
+				</select>
+			</div>
+			<div class="mar_50 page_row"><text class="wih_200">每人发放数量：</text><input name="num" value="1"></div>
+			<span class="mar_50">
+					此处受总数限制，如果剩余张数不足以发放给选定会员数量，则无法发放
+				</span>
+
+			<div style="border-bottom:1px solid #000000;height:60px; padding:20px;">
+				<span style=" font-size:20px;">发送对象</span>
+			</div>
+			<div class="page_row">
+
+				<div class="mar_50">
+					发送类型:
+				</div>
+				<div class="mar_50">
+					<span style=" font-size:20px;">指定用户发送</span>
+					<input id='radio_1' type='radio' value='2' name='test1' checked='checked' onchange="fn2(id)" />
+				</div>
+				<div class="mar_50"><span style=" font-size:20px;">全部发送</span>
+					<input id='radio_2' type='radio' value='1' name='test1' onchange="fn2(id)" />
+				</div>
+			</div>
+			<div id="radio_1_detail" class="mar_50">
+				<span class="" style=" font-size:20px;">选择会员:</span>
+				<span class="mar_50" style=" font-size:20px; margin-left: 50px;">按用户发送</span>
+				<div class="mar_50">
+					<textarea class="" name="str_openid" id="str_openid" placeholder='请用半角逗号隔开openid，如aaa,bbb'></textarea>
+				</div>
+				<button class="mar_50" id="sure_send01">确认发送</button>
+			</div>
+			<div class="" id="radio_2_detail" style="display: none;">
+				<div class="radio_2_detail mar_50 self_show_1" style="display:none;">
+					正在获取发送用户的openid,请稍后...
+				</div>
+				<div class="radio_2_detail mar_50 self_show_2" style="display:none;">
+					已发送<text id="up_user_num1">0</text>/<text id="up_user_num2">0</text>个用户的openid
+				</div>
+				<button class="mar_50" id="sure_send">确认发送</button>
+			</div>
+
+			
+		</div>
+		<!--====================主体  结束===============-->
+	</div>
+
+	<input id="youhui" style="display:none;">
+	<input id="all_openid" style="display:none;">
+	<input id="count_openid" style="display:none;">
+	<script>
+	/*	$("#sure_send").click(function(){
+			
+		})*/
+
+		//		单选按钮显示隐藏对应的盒子
+		function fn2(id) {
+			if(id == 'radio_1') {
+				$('#radio_1_detail').show();
+				$('#radio_2_detail').hide();
+			} else {
+				$('#radio_1_detail').hide();
+				$('#radio_2_detail').show();
+				//自增,数据你自己
+				var num_arr=$("#count_openid").val();
+				$('#up_user_num2').text(num_arr); 
+				var num = 0 
+				add_num(num)
+			}
+		}
+		function add_num(num,count_num){
+			
+			if(count_num<$("#count_openid").val()){
+					setTimeout(function(){
+	
+					
+					$.post('__ROOT__/adp.php/Preferential/ajax_all_openid_send', {
+						'openid': 1
+					}, function(arr_road) {
+					console.log(arr_road)
+					if(arr_road==1){
+						$('#up_user_num1').text(num+1); 
+						num++
+					
+						add_num(num,count_num)
+					}
+	
+					}, 'json');
+					
+					
+				},10)
+				
+				count_num++
+			}else if(count_num==$("#count_openid").val()){
+				window.location.reload();
+			}
+			
+		}
+		//下拉框内容选择
+		function gradeChange() {
+			var city_area = $("#self_select").find("option:selected").val();
+
+			if(city_area == "选择优惠券") {
+				return false;
+			}
+			$("#youhui").val(city_area);
+
+		}
+		$("#sure_send01").click(function(){
+			$.post('__ROOT__/adp.php/Preferential/ajax_wr', {
+						'openid': $("#str_openid").val();
+					}, function(arr_road) {
+					console.log(arr_road)
+			
+	
+					}, 'json');
+		})
+		$("#sure_send").click(function() {
+			$(".self_show_1").css("display","block");
+			$.post('__ROOT__/adp.php/Preferential/ajax_all_openid', {
+				'title': 1
+			}, function(arr_road) {
+
+				$("#all_openid").val(arr_road.a);
+				$("#count_openid").val(arr_road.b);
+		//	console.log($("#count_openid").val())	
+					$(".self_show_1").css("display","none");
+					$(".self_show_2").css("display","block");
+					
+					
+				var num_arr=$("#count_openid").val();
+				$('#up_user_num2').text(num_arr); 
+				
+					var count_num=0;
+					
+					add_num(0,count_num)
+					
+				input;
+			}, 'json');
+		})
+
+		function input() {
+
+			for(var i = 0; i < $("#count_openid").val(); i++) {
+				$.post('__ROOT__/adp.php/Preferential/ajax_all_openid_send', {
+					'openid': 1
+				}, function(arr_road) {
+
+				}, 'json');
+			}
+		}
+	</script>
+	</body>
+
+	</html>

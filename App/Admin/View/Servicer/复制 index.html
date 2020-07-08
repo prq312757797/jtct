@@ -1,0 +1,66 @@
+<include file="Public/head" />
+<style>
+td{
+text-align:center;
+}
+</style>
+<div style="width:100%;border:1px solid red;min-height:400px;">
+	<h4>服务商管理<notempty name="title">--</notempty>{$title}</h4>
+	<if condition="$show_add eq 1">
+		<a href="add">&nbsp&nbsp添加服务商</a><div style="height:12px;clear:both;"></div>
+	</if>
+<form method="post">
+            <table>
+                <tbody>
+                    <tr style="width:100%;">
+                        <th style="width:5%;">>编号</th>
+						<th style="width:5%;">账号</th>
+                        <th style="width:5%;">所属公司</th>
+                        <th style="width:5%;">余额</th>
+                        <th style="width:5%;">电话</th>
+						<th style="width:5%;">邮箱</th>
+						
+						<th style="width:5%;">点击充值</th>
+						
+						<th style="width:5%;">消费记录</th>
+						<th style="width:5%;">充值记录</th>
+						<th style="width:5%;">添加时间</th>
+                        <th style="width:5%;">操作</th>
+                    </tr>
+                    <foreach name="user_info" item="v">
+                        <tr>
+                            <td>{$v.user_id}</td>
+							 <td>{$v.user_name}</td>
+                            <td>{$v.user_company}</td>
+							 <td>{$v.user_balance}</td>
+                            <td>{$v.user_tel}</td>
+							<td>{$v.user_mail}</td>
+							
+							<td>
+							<a href="top_up/user_id/{$v['user_id']}">点击充值</a>
+							</td>
+							<td>
+							<a href="record_xf/user_id/{$v['user_id']}">交易记录</a>
+							</td>
+							<td>
+							<a href="record_cz/user_id/{$v['user_id']}">充值记录</a>
+							</td>
+							<td>
+								<?=date("Y-m-d H:i:s",$v['add_time']);?>
+						
+							</td>
+                            <td>
+								<!--<a  title="修改" alt="修改" href="edit/user_id/{$v['user_id']}">修改</a>-->
+								<!--<a  title="修改" alt="修改" href="{:U('Servicer/edit'),array('user_id'=>$v['user_id'])}">修改</a>-->
+								<a  title="修改" alt="修改" href="__ROOT__/index.php/Admin/Servicer/edit/user_id/{$v['user_id']}">详情</a>
+								<a  title="删除" alt="删除" href="delete/user_id/{$v['user_id']}" onclick="if(confirm('确认删除吗？')==false)return false;">删除</a>
+                            </td>
+                        </tr>
+                    </foreach>
+                </tbody>
+            </table>
+</form>
+	<div class="pages" style=" width: 100%;
+             margin-left: auto;    margin-top: 21px;text-align:center;
+             margin-right: auto;"> {$pages}</div>
+</div>

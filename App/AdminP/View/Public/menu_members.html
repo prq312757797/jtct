@@ -1,0 +1,39 @@
+<div class="tabT">
+			<ul class="tab">
+				<a href="{:U('Members/index')}"><li>会员概述</li></a>
+				<a href="{:U('Members/members')}"><li>会员管理</li></a>
+				<a href="{:U('Members/members_lever')}"><li>会员等级</li></a>
+				<if condition="($program_id neq JT201711081030423109)">
+						<a href="{:U('Members/members_group')}"><li>会员分组</li></a>
+				</if>
+			
+				
+				<if condition="($program_id eq JT201802032149345468)">
+					<a href="{:U('Members/members_zhuanfa')}"><li>开店福利</li></a>
+				</if>
+				<if condition="($program_id eq JT201711101339052665) or ($program_id eq JT201709011821539094)">
+					<hr>
+					<a href="{:U('Members/members_account')}"><li>会员账号管理</li></a>
+				</if>
+				
+				<if condition="$head_menu eq 1">
+				<!----------------------------商城版---------------------------------------------->
+		    	<!----------------------------商城版---------------------------------------------->
+		    	<!----------------------------商城版---------------------------------------------->
+				</if>
+				
+				<if condition="$head_menu eq 5">
+		    	<!----------------------------资讯版---------------------------------------------->
+		    	<!----------------------------资讯版---------------------------------------------->
+		    	<!----------------------------资讯版---------------------------------------------->
+		    		
+		    	<hr>
+					<a href="{:U('Members/cash_ing')}"><li>待审核的</li></a>
+					<a href="{:U('Members/cash_git')}"><li>待打款的</li></a>
+					<a href="{:U('Members/cash_done')}"><li>已打款的</li></a>
+					<a href="{:U('Members/cash_none')}"><li>无效的</li></a>
+		    	<hr>
+					<a href="{:U('Members/integral_set')}"><li>会员积分充值设置</li></a>
+		    	</if>
+			</ul>
+		</div>

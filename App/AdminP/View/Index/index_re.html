@@ -1,0 +1,145 @@
+<include file="Public/head" />  
+
+
+<script src="__ROOT__/Public/dragsort/jquery-1.7.2.js"></script>
+<script src="__ROOT__/Public/dragsort/jquery.dragsort-0.5.1.js"></script>
+<script type="text/javascript">
+	$("div:first").dragsort();
+		function init(){	
+		$("#list1").dragsort({ dragSelector: "div", dragBetween: true, dragEnd: saveOrder, placeHolderTemplate: "" });
+		function saveOrder() {
+			var data = $("#list1 b").map(function() { 
+				
+						return $(this).find("input.a").val(); 
+						}).get();
+			$("input[name=list1SortOrder]").val(data.join(","));
+		};
+		}
+	</script>
+<style>
+	.div0511{
+		width:800px;height:43px;border:1px solid #000000;line-height:45px;background:white;float:left; padding-left:20px;
+	}
+	.fenlei{
+		width:15%;
+		height:80%;
+		border:1px solid #000000;
+		float:left;margin-top: 5px;
+		text-align: center;
+		margin-left:10px;
+		border-radius: 8px;
+	}
+	.list0511{
+		border:1px solid #000000; background:gainsboro;padding:4px 8px;
+	}
+	.img0511{
+            width: 14px;
+            height: 14px;
+            position: relative;
+            top: -12px;
+            left: -8px;
+	}
+	.a{
+            height: 26px;
+            float: left;
+            width: 69px;
+            margin-top: 8px;
+            margin-left: 6px;
+            text-align: center;
+            line-height: 26px;
+	}
+</style>
+<body onload="init();">
+<!-- 按钮触发模态框 -->
+<button class="btn btn-primary btn-lg modal_button" data-toggle="modal" data-target="#myModal" style="display:none;">
+	开始演示模态框
+</button>
+
+	<div class="contert" >
+		<include file="Public/menu" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+                        <div class="con">	
+				<div style="border-bottom:1px solid #000000;height:60px; padding:20px;">
+				    <span style=" font-size:20px;">首页推荐</span>				   
+				</div>	
+		            <div class="alert alert-success">
+		            	提示: 请在下方选择要显示的推荐分类;<br>
+		            	拖动改变选择顺序即为显示顺序;<br>
+		            	点击编辑按钮编辑推荐分类;<br>
+		            </div>  				        
+                            <div style="width: auto;height:36px;">
+                                <div style="width:120px;height:36px;float:left;font-size:20px;line-height:40px;    padding-left: 18px;">
+					商品分类:
+				</div>
+			
+                                <div class="div0511" id="list1" >			
+			    	<!--<b><input class="a" type="hidden" value="1"/><span class="list0511">推荐新品</span><img class="img0511" src="__ROOT__/Public/dragsort/image/tb03_gb.png"></b>
+			        <b><input class="a" type="hidden" value="2"/><span class="list0511">热卖商品</span><img class="img0511" src="__ROOT__/Public/dragsort/image/tb03_gb.png"></b>
+			        <b><input class="a" type="hidden" value="3"/><span class="list0511">促销商品</span><img class="img0511" src="__ROOT__/Public/dragsort/image/tb03_gb.png"></b>
+			        <b><input class="a" type="hidden" value="4"/><span class="list0511">新上商品</span><img class="img0511" src="__ROOT__/Public/dragsort/image/tb03_gb.png"></b>
+			        <b><input class="a" type="hidden" value="5"/><span class="list0511">包邮商品</span><img class="img0511" src="__ROOT__/Public/dragsort/image/tb03_gb.png"></b>
+			     -->   <foreach name="index_recommend" item="v">
+                                    <b>
+                                        <input class="a" type="text" style="display:none;" value="{$v}"/>
+                                        <span class="list0511">{$v}</span>
+                                        <!--<img class="img0511" src="__ROOT__/Public/dragsort/image/tb03_gb.png">-->
+                                    </b>
+			        </foreach>
+                            </div>
+                            <input class="list" name="list1SortOrder" type="text" style="display:none" />
+                            <button id="enter" class="btn btn-primary" style="float:right;margin-right:100px;">保存</button>
+			    <button id="edit" class="btn btn-primary" style="float:right;margin-right:100px;">编辑</button>
+                        </div> 
+                </div>		    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+	<include file="Public/modal" /> 
+<script>
+    
+    $("#nav").hover(function(){
+        window.location='__ROOT__/adp.php/index/index.html';
+    })
+	$("#enter").click(function(){
+		var data = $("#list1 b").map(function() { 
+						return $(this).find("input.a").val(); 
+						}).get();
+			$("input[name=list1SortOrder]").val(data.join(","));
+		console.log($(".list").val())
+	
+		 $.post('__ROOT__/adp.php/Index/ajax_re',{'con':$(".list").val()},function(data){
+			
+			
+					$("#myModalLabel").text(data.msg)
+					$(".modal_button").click();
+			
+        },'json');
+	})
+	$("#edit").click(function(){
+		if($(this).text()=="编辑"){
+			$(this).text("返回")
+			$(".a").each(function(){
+				$(this).css("display","block");
+				
+			})
+			$(".list0511").each(function(){
+				$(this).css("display","none");
+			})
+		}else{
+			$(this).text("编辑") 
+			$(".a").each(function(){
+				$(this).css("display","none");
+				
+			})
+			$(".list0511").each(function(){
+				$(this).css("display","");
+			})
+		}
+		
+		
+	})
+</script>
+</body>
+</html>

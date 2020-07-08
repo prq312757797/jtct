@@ -1,0 +1,314 @@
+<include file="Public/head" />  
+
+	<div class="contert">
+		<include file="Public/menu_goods" />
+		<!--商城概述-->
+		<!--====================主体-----开始========================-->
+		<div class="show" id="tabC1">
+			
+			
+			<div class="con">	
+				<div style="border-bottom:1px solid #000000;height:60px;padding:20px;">
+					<p style="float:left;font-size:18px;">商品管理</p>	
+					<a href="goods_add"><button class="btn btn-primary" style="float:right;">+添加商品</button></a>	
+				</div>
+				<!--<p style="margin:10px 40px;width: 30%;float: left;">商品管理</p>-->	    
+			<!--	<div class="input-group" style="margin:0px 40px;">				 
+                    <input type="text" class="input-sm form-control" name="keyword" value="" placeholder="ID/名称/编号/条码/商户名称"><span class="input-group-btn">                  		
+                    <button class="btn btn-sm btn-primary" type="submit">搜索</button></span>
+                </div> -->
+            <!--<a href="goods_add"><button class="btn btn-primary" style="float:right;">+添加商品</button></a>-->				   
+			<div style="width:100%;height:180px;">
+				<form name="myupload" id="myupload" enctype='multipart/form-data' action="__URL__/jingpin_save" method="post">
+				
+				    <div class="form" style="height:210px; width:80%;">
+						<label class="col-sm-2 control-label">精品页广告:</label>
+						<div class="col-sm-10 col-xs-12">
+							<input type="file" class="files" name="image_jingpin" id="doca" onchange="javascript:setImagePreviews();" style="width:150px;">
+							
+							<notempty name="image">
+								<img src="__ROOT__/Uploads/{$image.image_jingpin}" id="old_img" style="width:230px;height:180px;"/>							
+							</notempty>
+							<div class="col-sm-10">
+							    <img id="previewa" src=""style="display:none; border-radius:6px;">							    
+						    </div>
+						      <span class="help-block"></span>
+						      	<input type="submit" id="box" value="确认提交" class="btn btn-primary">
+						</div>
+					</div>
+					
+				
+				</form>	
+			</div>
+				<!--<div class="input-group" style="margin:0px 40px;">				 
+                    <input type="text" class="input-sm form-control" name="keyword" value="" placeholder="商品名称"><span class="input-group-btn">                  		
+                    <button class="btn btn-sm btn-primary" type="submit">搜索</button></span>
+                </div>-->
+                <form action="">
+					<table class="table table-hover table-responsive" style="margin:0px auto;"> 
+					    <thead class="navbar-inner">
+					        <tr style="background:gainsboro;">
+					            <th style="width:60px;"><input type="checkbox" id="checkAll">编号</th>
+					            <th style="width:60px;text-align:center;">排序</th>
+					            <th style="width:80px;text-align:center;">商品名称</th>
+					            <th style="width:100px;">图片</th>
+					            <th style="width:60px;">价格</th>
+					            <th style="width:60px;">库存</th>
+					            <th style="width:70px;">销量</th>
+					            <th style="width:60px;">状态</th>
+					            <th style="width:100px;">操作</th>
+					        </tr>
+					    </thead>
+					    
+					     <foreach name="goods" item="v">
+					     	<tbody id="bots">
+                        <tr>
+                            <td>{$v.id}</td>
+							 <td>
+							 	<a  href="javascript:;" val="{$v.id}" class="edit_sort">{$v.sort}</a>
+							 	<input type="text" class="sort_value" value="{$v.sort}" style="display:none;width: 38px;text-align: center;    margin-left: auto;margin-right: auto;">
+							 </td>
+							 <td>{$v.goods_title}</td>
+							 <td>
+							 	<img style="width:40px;height:40px;" src="__ROOT__/Uploads/{$v.image}">
+							
+						<!--	 <img src="__ROOT__/Uploads/2017-09-01/59a936cf44aa2.jpg">
+						-->	 </td>
+							 <td>{$v.price_sell}</td>
+							  <td>{$v.number}</td>
+							  <td>{$v.sell_num}</td>
+		
+							 <td>
+							 	<if condition="$v.goods_state eq 1">
+							 		<div class="peng_is_ok peng_ok">
+							 			<input type="hidden" value="{$v.id}">
+							 			<span>上架</span>
+							 		</div>
+								 </if>
+							 	<if condition="$v.goods_state eq 3">
+							 		<div class="peng_is_ok peng_not">
+							 			<input type="hidden" value="{$v.id}">
+							 			<span>下架</span>
+							 		</div>
+							 	</if>
+							 </td>
+                            <td>
+                            	
+                            	<a class="btn btn-default"  title="修改" alt="修改" href="goods_edit/id/{$v['id']}" >修改</a>
+								<a class="btn btn-info"  style="color:white;" title="回收" alt="回收" href="goods_huishou/id/{$v['id']}" onclick="if(confirm('确认移到回收站吗？')==false)return false;">放回收站</a>
+							   
+                            </td>
+                        </tr>
+                
+                        <tr>
+			                    <td colspan="4" style="text-align: left;border-top:none;padding:5px 0;" class="aops"></td>
+			
+			                    <td colspan="5" class="get_id" style="text-align:right;border-top:none;padding:5px 20px;" class="aops">
+								<input class="own_id" type="hidden" value="{$v.id}">
+			                       <if condition="$v.goods_subtitle01 eq 1">
+			                       		<a class="attribute01" style="color:red;">新品</a>
+			                      	<else/>
+			                      		<a class="attribute01" >新品</a> 	
+			                       </if>
+			                       <if condition="$v.goods_subtitle02 eq 1">
+			                       		 <a class="attribute02" style="color:red;">热卖</a>
+			                      	<else/>
+			                      		 <a class="attribute02" >热卖</a>
+			                       </if>
+			                       
+			                       <if condition="$v.goods_subtitle03 eq 1">
+			                       		  <a class="attribute03" style="color:red;">推荐</a>
+			                      	<else/>
+			                      		 <a class="attribute03" >推荐</a>
+			                       </if>
+			                       
+			                       <if condition="$v.goods_subtitle04 eq 1">
+			                       		<a class="attribute04" style="color:red;">促销</a>
+			                      	<else/>
+			                      		<a class="attribute04" >促销</a>
+			                       </if>
+			                       
+			                       <if condition="$v.goods_subtitle05 eq 1">
+			                       		 <a class="attribute05" style="color:red;">包邮</a>
+			                      	<else/>
+			                      		  <a class="attribute05" >包邮</a>
+			                       </if>
+			                      
+			                       
+			                        
+			                       
+			                             
+			                    </td>
+                            </tr>
+                        </tbody> 
+                    </foreach>	
+					    				   
+	                </table>  
+
+				 </form>
+            </div>			    
+				<!--====================主体  结束===============-->
+           </div>				
+	</div>	
+
+
+<script>
+	//异步修改商品 排序
+	$(".edit_sort").click(function(){
+		var self_input=$(this).parent('td').children('input')
+		var that=this
+		//alert($(this).attr("val"));
+		$(this).css("display","none");
+		self_input.css("display","block");
+		self_input.focus();
+		self_input.blur(function(){
+			//异步修改排序
+			//alert($(that).attr("val"));
+			$(that).text(self_input.val());
+			$(that).css("display","block");
+			self_input.css("display","none");
+			 $.post('__ROOT__/adp.php/Goods/ajax_sort_goods',{'id':$(that).attr("val"),'sort_val':self_input.val()},function(date){
+	        if(date==1){
+	        	alert("成功");
+	        }else{
+	        	
+	        }
+        },'json');
+		});
+	})
+</script>
+<script>
+	//商品ajax上下架
+	$(".peng_is_ok").click(function(){
+		var onw_id=$(this).children('input').val();
+	
+		var that = this;
+		 $.post('__ROOT__/adp.php/Goods/ajax_change_ok',{'id':onw_id},function(date){
+	        if(date==1){
+	        	if($(that).attr("class")=="peng_is_ok peng_ok"){
+	        		$(that).attr("class","peng_is_ok peng_not");
+	        		$(that).children('span').text("下架");
+	        	}else if($(that).attr("class")=="peng_is_ok peng_not"){
+	        		$(that).attr("class","peng_is_ok peng_ok");
+	        		$(that).children('span').text("上架");
+	        	}
+	        }else{
+	        	alert("操作过于频繁");
+	        }
+        },'json');
+	})
+</script>
+<script>
+
+	
+
+	$(".attribute01").click(function(){
+		var onw_id=$(this).parent('td.get_id').children('input').val();
+		var that = this;
+		//{:U('get_price')}
+		//$.post('__ROOT__/adp.php/Goods/ajax_change_shuxing01',{'id':onw_id},function(ajax_back){
+		$.post('{:U('Goods/ajax_change_shuxing01')}',{'id':onw_id},function(ajax_back){
+		
+			console.log(ajax_back);
+			if(ajax_back==1){
+				$(that).css("color","red");
+			}else if(ajax_back==2){
+				$(that).css("color","");
+			}
+        },'json');
+	})
+	
+	$(".attribute02").click(function(){
+		var onw_id=$(this).parent('td.get_id').children('input').val();
+		var that = this;
+		 $.post('__ROOT__/adp.php/Goods/ajax_change_shuxing02',{'id':onw_id},function(ajax_back){
+			console.log(ajax_back);
+			if(ajax_back==1){
+				$(that).css("color","red");
+			}else if(ajax_back==2){
+				$(that).css("color","");
+			}
+        },'json');
+	})
+	
+	$(".attribute03").click(function(){
+		var onw_id=$(this).parent('td.get_id').children('input').val();
+		var that = this;
+		 $.post('__ROOT__/adp.php/Goods/ajax_change_shuxing03',{'id':onw_id},function(ajax_back){
+			console.log(ajax_back);
+			if(ajax_back==1){
+				$(that).css("color","red");
+			}else if(ajax_back==2){
+				$(that).css("color","");
+			}
+        },'json');
+	})
+	
+	$(".attribute04").click(function(){
+		var onw_id=$(this).parent('td.get_id').children('input').val();
+		var that = this;
+		 $.post('__ROOT__/adp.php/Goods/ajax_change_shuxing04',{'id':onw_id},function(ajax_back){
+			console.log(ajax_back);
+			if(ajax_back==1){
+				$(that).css("color","red");
+			}else if(ajax_back==2){
+				$(that).css("color","");
+			}
+        },'json');
+	})
+	
+	$(".attribute05").click(function(){
+		var onw_id=$(this).parent('td.get_id').children('input').val();
+		var that = this;
+		 $.post('__ROOT__/adp.php/Goods/ajax_change_shuxing05',{'id':onw_id},function(ajax_back){
+			console.log(ajax_back);
+			if(ajax_back==1){
+				//显示红色
+				$(that).css("color","red");
+			}else if(ajax_back==2){
+				$(that).css("color","");
+			}
+        },'json');
+	})
+</script>
+<script>
+	//下面用于图片上传预览功能
+function setImagePreviews(avalue) {
+var docObj=document.getElementById("doca");
+var imgObjPreview=document.getElementById("previewa");
+	if(docObj.files &&docObj.files[0]){
+		//火狐下，直接设img属性
+		imgObjPreview.style.display = 'block';
+		imgObjPreview.style.width = '230px';
+		imgObjPreview.style.height = '150px'; 
+		if(document.getElementById("old_img")!=null){
+			document.getElementById("old_img").style.display = 'none';
+		}
+		 
+		imgObjPreview.src = window.URL.createObjectURL(docObj.files[0]);
+	}else{
+		//IE下，使用滤镜
+		docObj.select();
+			var imgSrc = document.selection.createRange().text;
+			var localImagId = document.getElementById("localImag");
+		//图片必须设置初始大小
+		localImagId.style.width ="230px";
+		localImagId.style.height = "150px";
+		//图片异常的捕捉，防止用户修改后缀来伪造图片
+			try{
+			localImagId.style.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+			localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+			}
+			catch(e){
+				alert("您上传的图片格式不正确，请重新选择!");
+				return false;
+				}
+				imgObjPreview.style.display = 'none';
+				document.selection.empty();
+				}
+			return true;
+			}
+</script>
+</body>
+
+</html>

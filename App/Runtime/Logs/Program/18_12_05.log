@@ -1,0 +1,780 @@
+[ 2018-12-05T00:10:47+08:00 ] 127.0.0.1 /pg.php/Custom/ft_user?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&num_code=371880425
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( program_id='JT201808090855119076'and num_code='371880425' ) LIMIT 1   [ RunTime:0.0130s ]
+
+[ 2018-12-05T01:00:13+08:00 ] 127.0.0.1 /pg.php/Custom/ft_user_2?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&num_code=371880425&room_num=301
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `room_manager` WHERE ( room_num='301' ) LIMIT 1   [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( program_id='JT201808090855119076'and num_code='371880425' ) LIMIT 1   [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0220s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0160s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3365' ) LIMIT 1   [ RunTime:0.0150s ]
+NOTIC: [8] Undefined variable: end_time D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 953 行.
+
+[ 2018-12-05T01:00:28+08:00 ] 127.0.0.1 /pg.php/Custom/ft_user_2?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&num_code=371880425&room_num=301
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `room_manager` WHERE ( room_num='301' ) LIMIT 1   [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( program_id='JT201808090855119076'and num_code='371880425' ) LIMIT 1   [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0130s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3365' ) LIMIT 1   [ RunTime:0.0130s ]
+NOTIC: [8] Undefined variable: end_time D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 953 行.
+
+[ 2018-12-05T01:00:42+08:00 ] 127.0.0.1 /pg.php/Custom/ft_user_2?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&num_code=371880425&room_num=301
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `room_manager` WHERE ( room_num='301' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( program_id='JT201808090855119076'and num_code='371880425' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0150s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3365' ) LIMIT 1   [ RunTime:0.0150s ]
+NOTIC: [8] Undefined variable: end_time D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 953 行.
+
+[ 2018-12-05T01:01:11+08:00 ] 127.0.0.1 /pg.php/Custom/ft_user_2?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&num_code=371880425&room_num=301
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `room_manager` WHERE ( room_num='301' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( program_id='JT201808090855119076'and num_code='371880425' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3365' ) LIMIT 1   [ RunTime:0.0150s ]
+NOTIC: [8] Undefined variable: end_time D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 953 行.
+
+[ 2018-12-05T01:03:29+08:00 ] 127.0.0.1 /pg.php/Custom/ft_user_2?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&num_code=371880425&room_num=301
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `room_manager` WHERE ( room_num='301' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( program_id='JT201808090855119076'and num_code='371880425' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0150s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3365' ) LIMIT 1   [ RunTime:0.0150s ]
+NOTIC: [8] Undefined variable: end_time D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 953 行.
+
+[ 2018-12-05T01:04:22+08:00 ] 127.0.0.1 /pg.php/Custom/ft_user_2?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&num_code=371880425&room_num=301
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `room_manager` WHERE ( room_num='301' ) LIMIT 1   [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( program_id='JT201808090855119076'and num_code='371880425' ) LIMIT 1   [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0180s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0170s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3365' ) LIMIT 1   [ RunTime:0.0160s ]
+NOTIC: [8] Undefined variable: end_time D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 954 行.
+
+[ 2018-12-05T01:05:09+08:00 ] 127.0.0.1 /pg.php/Custom/ft_user_2?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&num_code=371880425&room_num=301
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `room_manager` WHERE ( room_num='301' ) LIMIT 1   [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( program_id='JT201808090855119076'and num_code='371880425' ) LIMIT 1   [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0150s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3365' ) LIMIT 1   [ RunTime:0.0160s ]
+NOTIC: [8] Undefined variable: end_time D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 954 行.
+NOTIC: [8] Undefined variable: end_time D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 956 行.
+
+[ 2018-12-05T01:05:26+08:00 ] 127.0.0.1 /pg.php/Custom/ft_user_2?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&num_code=371880425&room_num=301
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `room_manager` WHERE ( room_num='301' ) LIMIT 1   [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( program_id='JT201808090855119076'and num_code='371880425' ) LIMIT 1   [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0160s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3365' ) LIMIT 1   [ RunTime:0.0160s ]
+NOTIC: [8] Undefined variable: end_time D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 954 行.
+
+[ 2018-12-05T01:06:10+08:00 ] 127.0.0.1 /pg.php/Custom/ft_user_2?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&num_code=371880425&room_num=301
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `room_manager` WHERE ( room_num='301' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( program_id='JT201808090855119076'and num_code='371880425' ) LIMIT 1   [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0150s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3365' ) LIMIT 1   [ RunTime:0.0150s ]
+NOTIC: [8] Undefined variable: end_time D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 954 行.
+
+[ 2018-12-05T01:06:28+08:00 ] 127.0.0.1 /pg.php/Custom/ft_user_2?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&num_code=371880425&room_num=301
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `room_manager` WHERE ( room_num='301' ) LIMIT 1   [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( program_id='JT201808090855119076'and num_code='371880425' ) LIMIT 1   [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0160s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3365' ) LIMIT 1   [ RunTime:0.0160s ]
+NOTIC: [8] Undefined variable: end_time D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 954 行.
+
+[ 2018-12-05T01:06:46+08:00 ] 127.0.0.1 /pg.php/Custom/ft_user_2?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&num_code=371880425&room_num=301
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `room_manager` WHERE ( room_num='301' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( program_id='JT201808090855119076'and num_code='371880425' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0150s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3365' ) LIMIT 1   [ RunTime:0.0140s ]
+NOTIC: [8] Undefined variable: end_time D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 954 行.
+
+[ 2018-12-05T01:08:06+08:00 ] 127.0.0.1 /pg.php/Custom/ft_user_2?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&num_code=371880425&room_num=301
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `room_manager` WHERE ( room_num='301' ) LIMIT 1   [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( program_id='JT201808090855119076'and num_code='371880425' ) LIMIT 1   [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0160s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3365' ) LIMIT 1   [ RunTime:0.0160s ]
+
+[ 2018-12-05T01:08:19+08:00 ] 127.0.0.1 /pg.php/Custom/ft_user_2?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&num_code=371880425&room_num=301
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `room_manager` WHERE ( room_num='301' ) LIMIT 1   [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( program_id='JT201808090855119076'and num_code='371880425' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SELECT * FROM `goods` WHERE ( id='3365' ) LIMIT 1   [ RunTime:0.0140s ]
+
+[ 2018-12-05T01:41:50+08:00 ] 127.0.0.1 /pg.php/Custom/order_ontime?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `room_orderbooking` WHERE ( state=2 and state_peisong=0 and  program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0180s ]
+SQL: SHOW COLUMNS FROM `order_form` [ RunTime:0.0140s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `order_form` WHERE ( state=2 and  program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `beer_save` [ RunTime:0.0140s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `beer_save` WHERE ( state=2 and  program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0160s ]
+
+[ 2018-12-05T01:41:54+08:00 ] 127.0.0.1 /pg.php/Custom/ft_user_2?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&num_code=371880425&room_num=301
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_manager` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `room_manager` WHERE ( room_num='301' ) LIMIT 1   [ RunTime:0.0140s ]
+
+[ 2018-12-05T01:41:57+08:00 ] 127.0.0.1 /pg.php/Custom/order_ontime?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0160s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `room_orderbooking` WHERE ( state=2 and state_peisong=0 and  program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `order_form` [ RunTime:0.0200s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `order_form` WHERE ( state=2 and  program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `beer_save` [ RunTime:0.0150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `beer_save` WHERE ( state=2 and  program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0150s ]
+
+[ 2018-12-05T01:42:03+08:00 ] 127.0.0.1 /pg.php/Custom/order_ontime?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0140s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `room_orderbooking` WHERE ( state=2 and state_peisong=0 and  program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `order_form` [ RunTime:0.0160s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `order_form` WHERE ( state=2 and  program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `beer_save` [ RunTime:0.0150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `beer_save` WHERE ( state=2 and  program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0140s ]
+
+[ 2018-12-05T01:42:45+08:00 ] 127.0.0.1 /pg.php/Custom/order_ing_room?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-05T01:42:57+08:00 ] 127.0.0.1 /pg.php/Custom/order_ing_room?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( state=2 and state_peisong=0 and   program_id='JT201808090855119076' ) ORDER BY time_pay desc  [ RunTime:0.0170s ]
+
+[ 2018-12-05T01:43:09+08:00 ] 127.0.0.1 /pg.php/Custom/order_ing_room?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( state=2 and state_peisong=0 and   program_id='JT201808090855119076' ) ORDER BY time_pay desc  [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0160s ]
+SQL: SELECT `image`,`goods_title`,`ktv_tie_goods_id`,`ktv_tie_goods_num` FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0140s ]
+
+[ 2018-12-05T01:44:48+08:00 ] 127.0.0.1 /pg.php/Custom/order_ing_room?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( state=2 and state_peisong=0 and   program_id='JT201808090855119076' ) ORDER BY time_pay desc  [ RunTime:0.0200s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0140s ]
+SQL: SELECT `image`,`goods_title`,`ktv_tie_goods_id`,`ktv_tie_goods_num` FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0120s ]
+
+[ 2018-12-05T01:45:18+08:00 ] 127.0.0.1 /pg.php/Custom/order_ing_room?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( state=2 and state_peisong=0 and   program_id='JT201808090855119076' ) ORDER BY time_pay desc  [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0170s ]
+SQL: SELECT `image`,`goods_title`,`ktv_tie_goods_id`,`ktv_tie_goods_num` FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SELECT `goods_title` FROM `goods` WHERE ( id='3364' ) LIMIT 1   [ RunTime:0.0140s ]
+
+[ 2018-12-05T01:45:52+08:00 ] 127.0.0.1 /pg.php/Custom/order_ing_room?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( state=2 and state_peisong=0 and   program_id='JT201808090855119076' ) ORDER BY time_pay desc  [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0160s ]
+SQL: SELECT `image`,`goods_title`,`ktv_tie_goods_id`,`ktv_tie_goods_num` FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0130s ]
+SQL: SELECT `goods_title` FROM `goods` WHERE ( id='3364' ) LIMIT 1   [ RunTime:0.0130s ]
+
+[ 2018-12-05T02:01:00+08:00 ] 127.0.0.1 /pg.php/Custom/room_order_list?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&state=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE `program_id` = 'JT201808090855119076' AND `openid` = 'obv5r5bzAix3KtpqZvxIgsp4WhOA' AND `state` = 2 ORDER BY time_build desc  [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0130s ]
+SQL: SELECT `image`,`goods_title` FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0110s ]
+SQL: SELECT `image`,`goods_title` FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0110s ]
+
+[ 2018-12-05T02:01:18+08:00 ] 127.0.0.1 /pg.php/Custom/room_order_list?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&state=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE `program_id` = 'JT201808090855119076' AND `openid` = 'obv5r5bzAix3KtpqZvxIgsp4WhOA' AND `state` = 2 ORDER BY time_build desc  [ RunTime:0.0130s ]
+
+[ 2018-12-05T02:01:43+08:00 ] 127.0.0.1 /pg.php/Custom/room_order_list?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&state=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0190s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE `program_id` = 'JT201808090855119076' AND `openid` = 'obv5r5bzAix3KtpqZvxIgsp4WhOA' AND `state` = 2 ORDER BY time_build desc  [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0160s ]
+SQL: SELECT `image`,`goods_title` FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SELECT `image`,`goods_title` FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0170s ]
+
+[ 2018-12-05T02:01:50+08:00 ] 127.0.0.1 /pg.php/Custom/room_order_list?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&state=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0200s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE `program_id` = 'JT201808090855119076' AND `openid` = 'obv5r5bzAix3KtpqZvxIgsp4WhOA' AND `state` = 2 ORDER BY time_build desc  [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0180s ]
+SQL: SELECT `image`,`goods_title` FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0130s ]
+SQL: SELECT `image`,`goods_title` FROM `goods` WHERE ( id='3105' ) LIMIT 1   [ RunTime:0.0130s ]
+
+[ 2018-12-05T02:24:42+08:00 ] 127.0.0.1 /pg.php/Custom/aaaaa?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&state=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-05T02:24:51+08:00 ] 127.0.0.1 /pg.php/Custom/aaaaa?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&state=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-05T02:25:32+08:00 ] 127.0.0.1 /pg.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:index
+
+[ 2018-12-05T02:25:37+08:00 ] 127.0.0.1 /pg.php/Custom/aaaaa?program_id=JT201808090855119076&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&state=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-12-05T11:00:49+08:00 ] 127.0.0.1 /pg.php/Custom/order_submin_ktv?willbay_order_num=JT20181205110019949462&zhekou=0.95&from_id=0&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0140s ]
+SQL: SELECT `id` FROM `room_orderbooking` WHERE ( num_code='426161024' ) LIMIT 1   [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0140s ]
+SQL: SELECT members.id as members_id,members.fx_lever_id,fx_lever.id as fx_lever_id,fx_lever.bl_lever_1,fx_lever.bl_lever_2,fx_lever.bl_lever_3 FROM `members` left join fx_lever ON fx_lever.id=members.fx_lever_id  WHERE ( members.openid='obv5r5bzAix3KtpqZvxIgsp4WhOA'and members.program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0670s ]
+NOTIC: [8] Undefined index: fx_uid D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 446 行.
+
+[ 2018-12-05T11:01:09+08:00 ] 127.0.0.1 /pg.php/Custom/order_submin_ktv?willbay_order_num=JT20181205110019949462&zhekou=0.95&from_id=0&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0140s ]
+SQL: SELECT `id` FROM `room_orderbooking` WHERE ( num_code='928141276' ) LIMIT 1   [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0140s ]
+SQL: SELECT members.id as members_id,members.fx_lever_id,fx_lever.id as fx_lever_id,fx_lever.bl_lever_1,fx_lever.bl_lever_2,fx_lever.bl_lever_3 FROM `members` left join fx_lever ON fx_lever.id=members.fx_lever_id  WHERE ( members.openid='obv5r5bzAix3KtpqZvxIgsp4WhOA'and members.program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0670s ]
+NOTIC: [8] Undefined index: fx_uid D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 446 行.
+
+[ 2018-12-05T11:01:50+08:00 ] 127.0.0.1 /pg.php/Custom/order_submin_ktv?willbay_order_num=JT20181205110019949462&zhekou=0.95&from_id=0&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0140s ]
+SQL: SELECT `id` FROM `room_orderbooking` WHERE ( num_code='344184027' ) LIMIT 1   [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0140s ]
+SQL: SELECT members.id as members_id,members.fx_lever_id,fx_lever.id as fx_lever_id,fx_lever.bl_lever_1,fx_lever.bl_lever_2,fx_lever.bl_lever_3 FROM `members` left join fx_lever ON fx_lever.id=members.fx_lever_id  WHERE ( members.openid='obv5r5bzAix3KtpqZvxIgsp4WhOA'and members.program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.0730s ]
+NOTIC: [8] Undefined index: fx_uid D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 446 行.
+
+[ 2018-12-05T11:05:55+08:00 ] 127.0.0.1 /pg.php/Custom/order_submin_ktv?willbay_order_num=JT20181205110019949462&zhekou=0.95&from_id=0&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0150s ]
+SQL: SELECT `id` FROM `room_orderbooking` WHERE ( num_code='525689019' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0160s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''obv5r5bzAix3KtpqZvxIgsp4WhOA'' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `fx_uid` FROM `members` WHERE ( program_id='JT201808090855119076'and openid='obv5r5bzAix3KtpqZvxIgsp4WhOA'' ) LIMIT 1  
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''obv5r5bzAix3KtpqZvxIgsp4WhOA'' ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `fx_uid` FROM `members` WHERE ( program_id='JT201808090855119076'and openid='obv5r5bzAix3KtpqZvxIgsp4WhOA'' ) LIMIT 1  
+
+[ 2018-12-05T11:07:18+08:00 ] 127.0.0.1 /pg.php/Custom/order_submin_ktv?willbay_order_num=JT20181205110019949462&zhekou=0.95&from_id=0&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0140s ]
+SQL: SELECT `id` FROM `room_orderbooking` WHERE ( num_code='541992187' ) LIMIT 1   [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0150s ]
+SQL: SELECT `fx_uid` FROM `members` WHERE ( program_id='JT201808090855119076'and openid='obv5r5bzAix3KtpqZvxIgsp4WhOA' ) LIMIT 1   [ RunTime:0.0660s ]
+SQL: SELECT members.id as members_id,members.fx_lever_id,fx_lever.id as fx_lever_id,fx_lever.bl_lever_1,fx_lever.bl_lever_2,fx_lever.bl_lever_3 FROM `members` left join fx_lever ON fx_lever.id=members.fx_lever_id  WHERE ( members.id='58939' ) LIMIT 1   [ RunTime:0.0130s ]
+
+[ 2018-12-05T11:07:40+08:00 ] 127.0.0.1 /pg.php/Custom/order_submin_ktv?willbay_order_num=JT20181205110019949462&zhekou=0.95&from_id=0&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0140s ]
+SQL: SELECT `id` FROM `room_orderbooking` WHERE ( num_code='565375433' ) LIMIT 1   [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0150s ]
+SQL: SELECT `fx_uid` FROM `members` WHERE ( program_id='JT201808090855119076'and openid='obv5r5bzAix3KtpqZvxIgsp4WhOA' ) LIMIT 1   [ RunTime:0.0670s ]
+SQL: SELECT members.id as members_id,members.fx_lever_id,fx_lever.id as fx_lever_id,fx_lever.bl_lever_1,fx_lever.bl_lever_2,fx_lever.bl_lever_3 FROM `members` left join fx_lever ON fx_lever.id=members.fx_lever_id  WHERE ( members.id='58939' ) LIMIT 1   [ RunTime:0.0130s ]
+
+[ 2018-12-05T11:07:50+08:00 ] 127.0.0.1 /pg.php/Custom/order_submin_ktv?willbay_order_num=JT20181205110019949462&zhekou=0.95&from_id=0&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0140s ]
+SQL: SELECT `id` FROM `room_orderbooking` WHERE ( num_code='437282986' ) LIMIT 1   [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0150s ]
+SQL: SELECT `fx_uid` FROM `members` WHERE ( program_id='JT201808090855119076'and openid='obv5r5bzAix3KtpqZvxIgsp4WhOA' ) LIMIT 1   [ RunTime:0.0950s ]
+SQL: SELECT members.id as members_id,members.fx_lever_id,fx_lever.id as fx_lever_id,fx_lever.bl_lever_1,fx_lever.bl_lever_2,fx_lever.bl_lever_3 FROM `members` left join fx_lever ON fx_lever.id=members.fx_lever_id  WHERE ( members.id='58939' ) LIMIT 1   [ RunTime:0.0130s ]
+
+[ 2018-12-05T11:09:13+08:00 ] 127.0.0.1 /pg.php/Custom/order_submin_ktv?willbay_order_num=JT20181205110019949462&zhekou=0.95&from_id=0&openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `room_orderbooking` [ RunTime:0.0150s ]
+SQL: SELECT `id` FROM `room_orderbooking` WHERE ( num_code='182020399' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SELECT * FROM `room_orderbooking` WHERE ( willbay_order_num='JT20181205110019949462' ) LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0180s ]
+SQL: SELECT `fx_uid` FROM `members` WHERE ( program_id='JT201808090855119076'and openid='obv5r5bzAix3KtpqZvxIgsp4WhOA' ) LIMIT 1   [ RunTime:0.0680s ]
+SQL: SELECT members.id as members_id,members.fx_lever_id,fx_lever.id as fx_lever_id,fx_lever.bl_lever_1,fx_lever.bl_lever_2,fx_lever.bl_lever_3 FROM `members` left join fx_lever ON fx_lever.id=members.fx_lever_id  WHERE ( members.id='58939' ) LIMIT 1   [ RunTime:0.0140s ]
+
+[ 2018-12-05T11:28:24+08:00 ] 127.0.0.1 /pg.php/Custom/goods_fl_list_n?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0130s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( is_show=1 and uid=1459 and attribute_style=4 and program_id='JT201808090855119076' )  [ RunTime:0.0130s ]
+NOTIC: [8] Undefined variable: z D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 654 行.
+
+[ 2018-12-05T11:28:39+08:00 ] 127.0.0.1 /pg.php/Custom/goods_fl_list_n?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0130s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( is_show=1 and uid=1459 and attribute_style=4 and program_id='JT201808090855119076' )  [ RunTime:0.0140s ]
+
+[ 2018-12-05T11:29:36+08:00 ] 127.0.0.1 /pg.php/Custom/goods_fl_list_n?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0140s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( is_show=1 and uid=1459 and attribute_style=4 and program_id='JT201808090855119076' )  [ RunTime:0.0140s ]
+
+[ 2018-12-05T11:34:40+08:00 ] 127.0.0.1 /pg.php/Custom/goods_fl_list_n?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0130s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( is_show=1 and uid=1459 and attribute_style=4 and program_id='JT201808090855119076' )  [ RunTime:0.0140s ]
+
+[ 2018-12-05T11:34:52+08:00 ] 127.0.0.1 /pg.php/Custom/goods_fl_list_n?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0160s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( is_show=1 and uid=1459 and attribute_style=4 and program_id='JT201808090855119076' )  [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0160s ]
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_1` = 1475 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0170s ]
+NOTIC: [8] Undefined variable: x D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 646 行.
+NOTIC: [8] Undefined variable: x D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 649 行.
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_1` = 1476 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0180s ]
+NOTIC: [8] Undefined variable: x D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 646 行.
+NOTIC: [8] Undefined variable: x D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 649 行.
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_1` = 1477 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0170s ]
+NOTIC: [8] Undefined variable: x D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 646 行.
+NOTIC: [8] Undefined variable: x D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 649 行.
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_1` = 1478 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0170s ]
+NOTIC: [8] Undefined variable: x D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 646 行.
+NOTIC: [8] Undefined variable: x D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 649 行.
+NOTIC: [8] Undefined variable: z D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 656 行.
+
+[ 2018-12-05T11:35:50+08:00 ] 127.0.0.1 /pg.php/Custom/goods_fl_list_n?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0110s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( is_show=1 and uid=1459 and attribute_style=4 and program_id='JT201808090855119076' )  [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0130s ]
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1475 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0140s ]
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1476 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0130s ]
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 646 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 649 行.
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1477 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0130s ]
+NOTIC: [8] Undefined offset: 2 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 646 行.
+NOTIC: [8] Undefined offset: 2 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 649 行.
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1478 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0140s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 646 行.
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 649 行.
+
+[ 2018-12-05T11:36:33+08:00 ] 127.0.0.1 /pg.php/Custom/goods_fl_list_n?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0130s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( is_show=1 and uid=1459 and attribute_style=4 and program_id='JT201808090855119076' )  [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0140s ]
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1475 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0150s ]
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1476 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0150s ]
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 646 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 649 行.
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1477 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0160s ]
+NOTIC: [8] Undefined offset: 2 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 646 行.
+NOTIC: [8] Undefined offset: 2 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 649 行.
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1478 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0150s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 646 行.
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 649 行.
+
+[ 2018-12-05T11:37:06+08:00 ] 127.0.0.1 /pg.php/Custom/goods_fl_list_n?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0130s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( is_show=1 and uid=1459 and attribute_style=4 and program_id='JT201808090855119076' )  [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0150s ]
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1475 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0160s ]
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1476 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0160s ]
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 646 行.
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 649 行.
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1477 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0160s ]
+NOTIC: [8] Undefined offset: 2 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 646 行.
+NOTIC: [8] Undefined offset: 2 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 649 行.
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1478 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0160s ]
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 646 行.
+NOTIC: [8] Undefined offset: 3 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 649 行.
+
+[ 2018-12-05T11:37:52+08:00 ] 127.0.0.1 /pg.php/Custom/goods_fl_list_n?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0110s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( is_show=1 and uid=1459 and attribute_style=4 and program_id='JT201808090855119076' )  [ RunTime:0.0120s ]
+
+[ 2018-12-05T11:38:50+08:00 ] 127.0.0.1 /pg.php/Custom/goods_fl_list_n?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0140s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( is_show=1 and uid=1459 and attribute_style=4 and program_id='JT201808090855119076' )  [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0140s ]
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1475 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0160s ]
+
+[ 2018-12-05T11:40:11+08:00 ] 127.0.0.1 /pg.php/Custom/goods_fl_list_n?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0120s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( is_show=1 and uid=1459 and attribute_style=4 and program_id='JT201808090855119076' )  [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0140s ]
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1475 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0160s ]
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1476 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0140s ]
+
+[ 2018-12-05T11:40:31+08:00 ] 127.0.0.1 /pg.php/Custom/goods_fl_list_n?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0140s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( is_show=1 and uid=1459 and attribute_style=4 and program_id='JT201808090855119076' )  [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0150s ]
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1475 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0170s ]
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1476 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0170s ]
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 649 行.
+
+[ 2018-12-05T11:40:42+08:00 ] 127.0.0.1 /pg.php/Custom/goods_fl_list_n?program_id=JT201808090855119076
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `attribute` [ RunTime:0.0150s ]
+SQL: SELECT `id`,`uid`,`title` FROM `attribute` WHERE ( is_show=1 and uid=1459 and attribute_style=4 and program_id='JT201808090855119076' )  [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0150s ]
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1475 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0180s ]
+SQL: SELECT `id`,`goods_title`,`image`,`price_sell`,`ktv_kucun`,`fenlei_1` FROM `goods` WHERE `program_id` = 'JT201808090855119076' AND `goods_state` = 1 AND `fenlei_2` = 1476 AND `goods_baiye` = 1 ORDER BY sort  [ RunTime:0.0170s ]
+NOTIC: [8] Undefined offset: 1 D:\phpStudy\WWW\jtct\App\Program\Controller\CustomController.class.php 第 649 行.
+
+[ 2018-12-05T11:40:42+08:00 ] 127.0.0.1 /pg.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:index
+
+[ 2018-12-05T12:41:03+08:00 ] 127.0.0.1 /pg.php/Dfx/fx_order?openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&program_id=JT201808090855119076&state=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `members` WHERE ( openid='obv5r5bzAix3KtpqZvxIgsp4WhOA' and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.2450s ]
+SQL: SELECT * FROM `members` WHERE ( program_id='JT201808090855119076' )  [ RunTime:0.2600s ]
+NOTIC: [8] Undefined variable: id_arr D:\phpStudy\WWW\jtct\App\Program\Controller\DfxController.class.php 第 532 行.
+SQL: SHOW COLUMNS FROM `order_form` [ RunTime:0.0170s ]
+SQL: SELECT order_form.id,order_form.order_num,order_form.array_id,order_form.time_build,order_form.state,order_form.buy_price,order_form.dsh_id,order_form.dfx_id,order_form.dfx_price01,order_form.dfx_price02,order_form.dfx_price03,user_info_dsh.id as user_info_dsh_id,user_info_dsh.sh_name,members.nickname,members.tel,members.head FROM `order_form` INNER JOIN members ON order_form.openid=members.openid left join user_info_dsh ON order_form.dsh_id=user_info_dsh.id  WHERE order_form.dfx_id IN ('60018') AND order_form.program_id = 'JT201808090855119076' GROUP BY order_form.id ORDER BY order_form.time_build desc  [ RunTime:0.0190s ]
+
+[ 2018-12-05T12:41:41+08:00 ] 127.0.0.1 /pg.php/Dfx/fx_order?openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&program_id=JT201808090855119076&state=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `members` WHERE ( openid='obv5r5bzAix3KtpqZvxIgsp4WhOA' and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.2370s ]
+SQL: SELECT * FROM `members` WHERE ( program_id='JT201808090855119076' )  [ RunTime:0.2660s ]
+NOTIC: [8] Undefined variable: id_arr D:\phpStudy\WWW\jtct\App\Program\Controller\DfxController.class.php 第 533 行.
+
+[ 2018-12-05T12:46:04+08:00 ] 127.0.0.1 /pg.php/Dfx/fx_order?openid=obv5r5bzAix3KtpqZvxIgsp4WhOA&program_id=JT201808090855119076&state=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `members` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `members` WHERE ( openid='obv5r5bzAix3KtpqZvxIgsp4WhOA' and program_id='JT201808090855119076' ) LIMIT 1   [ RunTime:0.2400s ]
+SQL: SELECT * FROM `members` WHERE ( program_id='JT201808090855119076' )  [ RunTime:0.2580s ]
+NOTIC: [8] Undefined variable: id_arr D:\phpStudy\WWW\jtct\App\Program\Controller\DfxController.class.php 第 562 行.
+NOTIC: [8] Undefined variable: id_arr D:\phpStudy\WWW\jtct\App\Program\Controller\DfxController.class.php 第 562 行.
+NOTIC: [8] Undefined variable: id_arr D:\phpStudy\WWW\jtct\App\Program\Controller\DfxController.class.php 第 562 行.
+NOTIC: [8] Undefined variable: id_arr D:\phpStudy\WWW\jtct\App\Program\Controller\DfxController.class.php 第 567 行.
+SQL: SHOW COLUMNS FROM `order_form` [ RunTime:0.0160s ]
+SQL: SELECT order_form.id,order_form.order_num,order_form.array_id,order_form.time_build,order_form.state,order_form.buy_price,order_form.dsh_id,order_form.dfx_id,order_form.dfx_price01,order_form.dfx_price02,order_form.dfx_price03,user_info_dsh.id as user_info_dsh_id,user_info_dsh.sh_name,members.nickname,members.tel,members.head FROM `order_form` INNER JOIN members ON order_form.openid=members.openid left join user_info_dsh ON order_form.dsh_id=user_info_dsh.id  WHERE order_form.dfx_id IN ('58939','60018','58939','60018') AND order_form.program_id = 'JT201808090855119076' GROUP BY order_form.id ORDER BY order_form.time_build desc  [ RunTime:0.0870s ]
+SQL: SHOW COLUMNS FROM `order` [ RunTime:0.0160s ]
+SQL: SELECT order.id,order.buy_num,order.order_num,goods.goods_title,goods.price_sell,goods_img.image FROM `order` INNER JOIN goods ON order.goods_id=goods.id INNER JOIN goods_img ON order.goods_id=goods_img.goods_id  WHERE order.program_id = 'JT201808090855119076' AND ( order.id in(11032) ) GROUP BY order.id  [ RunTime:0.0150s ]
+

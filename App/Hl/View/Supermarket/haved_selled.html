@@ -1,0 +1,70 @@
+<include file="Public/head" />     
+<include file="Public/menu_supermarket" /> 
+		<div id="content">
+			<div id="content-header">
+				<h1>已售商品汇总</h1>
+			</div>
+			<div id="breadcrumb">
+				<a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 商品</a>
+				<a href="#" class="current">已售商品汇总</a>
+				
+				<!-- <a href="goods_add" class="add_button"><button class="btn" >+添加商品</button></a>-->
+			</div>
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="widget-box">
+							<div class="widget-title">
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+								<h5>已售商品汇总</h5>
+							</div>
+							<div class="widget-content nopadding">
+								<table class="table table-bordered table-striped">
+									<thead>
+										<tr>
+											<th style="width:5%;">商品编号</th>
+											<th style="width:10%;">图片</th>
+											<th style="width:5%;">商品名称</th>
+											<th style="width:10%;">商品成交订单数</th>
+	
+										</tr>
+									</thead>
+									<tbody>
+										<foreach name="goods" item="v">
+										<tr>
+											<td class="l_h50">{$v.goods_id}</td>
+											<td>
+											 	<img style="width:55px;height:55px;" src="__ROOT__/Uploads/{$v.image}">
+											</td>
+											<td class="l_h50">
+												<a  href="javascript:;" val="{$v.id}" text_name="goods_title" class="edit_text">{$v.goods_title}</a>
+											 	<input type="text" class="sort_text" value="{$v.goods_title}" style="display:none;width: 80px;text-align: center;    margin-left: auto;margin-right: auto;">
+											</td>
+											<td class="l_h50">
+												<input type="text" class="sort_text" value="{$v.num}" style="display:none;width: 80px;text-align: center;    margin-left: auto;margin-right: auto;">
+											</td>
+										
+										</tr>
+										</foreach>	 
+									</tbody>
+								</table>	
+								
+
+							</div>
+
+						</div>
+<div class="pages" style=" width: 100%;margin-left: auto;text-align:center;margin-top: -7px;margin-bottom: 10px;margin-right: auto;"> 
+	{$pages}
+</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+            
+	<include file="Public/foot" /> 
+	
+
